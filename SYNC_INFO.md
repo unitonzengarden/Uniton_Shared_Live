@@ -1,8 +1,8 @@
 # Uniton_Shared_Live — Sync Info
 
 **Source repo**: unitonzengarden/Uniton_Shared (private)
-**Last sync**: 2026-04-27T17:49:03Z
-**Source commit**: 1186142568a01f6b877f286caa5b651015cde9ad
+**Last sync**: 2026-04-27T18:26:53Z
+**Source commit**: 0b20fdba6b0c98ebb31fd8b887af8f78d1c1d05b
 **Triggered by**: push
 
 ## Purpose
@@ -15,6 +15,7 @@ Canon, laws, skills, lab, rules remain private in Uniton_Shared.
 - runtime/current_state.md
 - runtime/checklist/MASTER_CHECKLIST.md
 - runtime/ACTION_REQUIRED_BOARD.md
+- runtime/PROJECT_STATUS.md
 - notifications/NOTIFICATION_LEDGER.md
 
 ## CLA fetch URLs (raw)
@@ -22,4 +23,5 @@ Canon, laws, skills, lab, rules remain private in Uniton_Shared.
 - https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/runtime/current_state.md
 - https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/runtime/checklist/MASTER_CHECKLIST.md
 - https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/runtime/ACTION_REQUIRED_BOARD.md
+- https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/runtime/PROJECT_STATUS.md
 - https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/notifications/NOTIFICATION_LEDGER.md

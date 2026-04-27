@@ -7,10 +7,10 @@
 - Canonical root: `D:\UZG\Projects-v2\Uniton_Shared`
 - Remote: `https://github.com/unitonzengarden/Uniton_Shared.git`
 - Branch: `main`
-- Last verified commit before this update: `2ed56b9` (Lane_03 W1 core-skills state-surface reconcile, on top of LV-RUN-3 archive `f992b1f`)
-- Last updated: `2026-04-28T04:30:00Z`
-- Updated by: Lane_01 / CLAC-1 (`LANE01-W1-LOOP-VALIDATION-V1` — V1.1 W1.6 PASS) on top of Lane_03 reconcile
-- Current state version: `v1.11`
+- Last verified commit before this update: `1186142` (LANE01-W1-LOOP-VALIDATION-V1 backfill)
+- Last updated: `2026-04-28T05:30:00Z`
+- Updated by: Lane_01 / CLAC-1 (`LANE01-W2-T1-PROJECT-STATUS-AUTO-V1` — V1.1 W2.T1 PASS)
+- Current state version: `v1.12`
 - Current state mode: `CONTROLLED_EXECUTION / GOVERNANCE_FIRST / RUNTIME_DRYRUN_ONLY`
 - Source evidence:
   - `reports/LANE03-AIER-CODE-CANON-NTS-APPROVAL-APPLY-V1_REPORT.md`
@@ -29,8 +29,8 @@ This file is the repo-backed hot-memory entry for cold-start Lane readers. It re
 
 - Authority: NTS remains final authority for canon, roadmap gates, deploy, backend side effects, new Lanes, and halt/resume decisions.
 - Mode: `CONTROLLED_EXECUTION / GOVERNANCE_FIRST / RUNTIME_DRYRUN_ONLY`
-- Phase: `ROADMAP_W1_EXECUTION / LAW_N12_ACTIVE / W1.6_LOOP_VALIDATION_PASS`
-- Gate: `W1.7_NTS_AMENDMENT_NEXT_ALLOWED` — Roadmap V1 FINAL remains APPROVED + LOCKED at git tag `roadmap-locked-v2-final` (commit `14f7509`); V1.1 W1.6 LOOP VALIDATION delivered 3/3 ENDORSE + 24/24 schema validation + 4/4 standard validators + idempotency conclusively verified across 6+ hashes per LANE01-W1-LOOP-VALIDATION-V1; the immediate next allowed action is V1.1 W1.7 — Lane_03 author NTS amendment packet for `aier-canon-guard` DRAFT v0.1 → ACTIVE v1.0 per LAW_N9 §L9.20 + R-SKILL-01 (canon-adjacent skill activation requires NTS direct approval).
+- Phase: `ROADMAP_W1_EXECUTION / LAW_N12_ACTIVE / W1.6_LOOP_VALIDATION_PASS / W2.T1_PROJECT_STATUS_AUTO_PASS (parallel)`
+- Gate: `W1.7_NTS_AMENDMENT_IN_FLIGHT` (Lane_03 authoring) `AND W2.T2_DISPATCHER_NEXT_ALLOWED` (Lane_01) — Roadmap V1 FINAL remains APPROVED + LOCKED. V1.1 W1.6 LOOP VALIDATION PASS (`LANE01-W1-LOOP-VALIDATION-V1` commit `d8eab75`); V1.1 W2.T1 PROJECT_STATUS auto-generation PASS (`LANE01-W2-T1-PROJECT-STATUS-AUTO-V1` — this commit). Lane_03 W1.7 in flight: `LANE03-W1-AIER-CANON-GUARD-NTS-AMENDMENT-AUTHOR-V1`. Lane_01 next allowed action: V1.1 W2.T2 — `LANE01-W2-T2-DISPATCHER-IMPLEMENTATION-V1` (Python dispatcher script invoking aier-dispatch skill mechanically; tech non-canon).
 - Operational note: AIER Code Canon (6 files at `docs/LAW_CLA_LLM/CANON/`) is ACTIVE v1.1 by direct NTS approval applied via `LANE03-AIER-CODE-CANON-NTS-APPROVAL-APPLY-V1` (commit `035195c`). 4 tech non-canon SHARED skills now ACTIVE v1.0 per `LANE01-W1-CORE-SKILLS-ACTIVATE-V1`: `aier-dispatch v1.0`, `aier-verify v1.0`, `aier-state-update v1.0`, `aier-handoff-route v1.0` (Lane_01-owned, `canon_adjacent: false`, self-approved under `AMD_LANE01_CTO_AUTO_APPROVE_TECH_NON_CANON §3.1`). 5th skill `aier-canon-guard v0.1 DRAFT` (Lane_03-owned, `canon_adjacent: true`) remains DRAFT pending V1.1 W1.6 LOOP VALIDATION PASS + W1.7 NTS amendment per LAW_N9 §L9.20 + R-SKILL-01. Skills infrastructure docs aligned to LAW_N9 §L9.7-§L9.22 verbatim: `SKILL_AUTHORING_GUIDE v1.1` + `SKILL_INVOCATION_PROTOCOL v1.1` + `REGISTRY.md v1.2` (renamed from `INDEX.md` per LAW_N9 §L9.12; bumped v1.1 → v1.2 with 4 ACTIVE rows). Public runtime mirror sync exists for visibility only; `Uniton_Shared` on `main` remains the source of truth. `LAW_N12_REPO_RUNTIME_STANDARD.md` is `v1.0 ACTIVE` via approved packet `docs/LAW_CLA_LLM/SHARED/amendments/approved/AMD_LANE03_LAW_N12_REPO_RUNTIME_STANDARD_2026-04-27/` and binds repo-runtime boot/task-close behavior without authorizing daemon mode, backend mutation, deploy, or capability expansion.
 
 ## 2. WHO IS WHO
@@ -118,6 +118,7 @@ Approval was granted directly by NTS and mechanically applied by Lane_03 / Codex
 - `runtime/current_state.md` — single human-readable hot-memory entry and the only operational current-state file per `LAW_N7_MEMORY.md` R-MEM-04.
 - `runtime/checklist/MASTER_CHECKLIST.md` — active task/progression ledger.
 - `runtime/ACTION_REQUIRED_BOARD.md` — active visibility board for unresolved actions and next task routing.
+- `runtime/PROJECT_STATUS.md` — **AUTO-GENERATED** consolidated project status by `scripts/runtime/generate_project_status.py` (caller of `aier-state-update` SHARED skill v1.0 ACTIVE) per `LANE01-W2-T1-PROJECT-STATUS-AUTO-V1`. Triggered by `.github/workflows/auto_project_status.yml` on push to main when paths-filter matches (current_state, checklist, action_board, ledger, AMENDMENTS_LOG, skill METADATA). Idempotent — same input → same output → no re-commit. Public mirror via `sync_runtime_to_public.yml` paths whitelist.
 - `notifications/NOTIFICATION_LEDGER.md` + `notifications/NOTIFICATION_LEDGER.json` — notification visibility surfaces.
 - `reports/AIER-CODE-CURRENT-STATE-FOR-AITAO-HANDOFF-V1.{md,json}` — historical AITAO handoff artifacts only; not the live current-state file.
 - `runtime/current_state.json` — not present. No dedicated machine-readable runtime state file currently exists in `runtime/`.
@@ -125,6 +126,7 @@ Approval was granted directly by NTS and mechanically applied by Lane_03 / Codex
   - `https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/runtime/current_state.md`
   - `https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/runtime/checklist/MASTER_CHECKLIST.md`
   - `https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/runtime/ACTION_REQUIRED_BOARD.md`
+  - `https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/runtime/PROJECT_STATUS.md`
   - `https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/notifications/NOTIFICATION_LEDGER.md`
   These are read-only mirror copies generated by `sync_runtime_to_public.yml`. `Uniton_Shared` remains source of truth.
 
@@ -255,3 +257,4 @@ Rules:
 - 2026-04-28 - `LANE01-W1-CORE-SKILLS-ACTIVATE-V1` promoted `aier-dispatch`, `aier-verify`, `aier-state-update`, and `aier-handoff-route` from DRAFT to `ACTIVE v1.0`, preserved the upstream W1.T4 spec-drift fixes, and kept `aier-canon-guard` DRAFT pending W1.6 and W1.7.
 - 2026-04-28 - `LANE01-W1-LV-RUN2-RUNTIME-NOTE-V1` (V1.1 W1.6 LOOP VALIDATION Run 2 — state-update idempotency intensive test) — appended this changelog row via real loop run end-to-end through `aier-dispatch` v1.0 → `aier-handoff-route` v1.0 → execute → `aier-state-update` v1.0 (idempotent verified) → `aier-verify` v1.0 (verdict ENDORSE). No SHARED/laws or canon edited; no SKILL.md/METADATA.yaml of 4 ACTIVE skills modified.
 - 2026-04-28 - `LANE01-W1-LOOP-VALIDATION-V1` — V1.1 W1.6 LOOP VALIDATION = PASS. 3/3 loop runs ENDORSE (LV-RUN-1 doc update; LV-RUN-2 runtime changelog state-update intensive; LV-RUN-3 handoff archive handoff-route intensive). 24/24 schema validation across 4 ACTIVE skills (aier-dispatch + aier-verify + aier-state-update + aier-handoff-route v1.0). 4/4 standard validators PASS (contract_files + aier_loop SelfTest + route_messages SelfTest + pytest 35/35). aier-state-update idempotency verified 6+ hashes (a==b same input, a!=c different input). Run 3 handoff archive used `git mv` 100% rename — content preserved per R-CANON-02. W1.7 NTS amendment unblocked for `aier-canon-guard` DRAFT v0.1 → ACTIVE v1.0.
+- 2026-04-28 - `LANE01-W2-T1-PROJECT-STATUS-AUTO-V1` (V1.1 W2.T1 AUTOMATE) — built PROJECT_STATUS auto-generation: `scripts/runtime/generate_project_status.py` (caller of `aier-state-update` skill v1.0 ACTIVE per LAW_N9 §L9.13; self-test PASS; idempotent; emits §L9.15 audit event); `.github/workflows/auto_project_status.yml` (push-trigger paths filter on current_state + checklist + action_board + ledger + AMENDMENTS_LOG + skill METADATA + workflow_dispatch; concurrency group prevents lost updates; auto-commits regenerated PROJECT_STATUS.md with `[auto-status]` marker; `permissions: contents: write` only); `runtime/PROJECT_STATUS.md` initial population (10 sections §0-§10 per spec). Updated `sync_runtime_to_public.yml` paths whitelist + cp step + SYNC_INFO + fetch URLs to mirror PROJECT_STATUS.md to public Uniton_Shared_Live. Lane_01 self-approve under `AMD_LANE01_CTO_AUTO_APPROVE_TECH_NON_CANON §3.1` YES list (workflow YAML + python script + auto-generated runtime mirror are tech non-canon). NO daemon/cron/schedule (R-RUN-01..06 — only push-trigger + workflow_dispatch); NO secrets hardcoded (R-AUTH-04 — uses `secrets.GITHUB_TOKEN`); NO `aier-canon-guard/`, NO `aier-state-update` SKILL.md/METADATA.yaml modified (only INVOKED).
