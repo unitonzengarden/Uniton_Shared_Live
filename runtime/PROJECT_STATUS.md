@@ -10,7 +10,7 @@
 ## §0. Header
 
 - **Generator:** `aier-state-update v1.0` invoked via `scripts/runtime/generate_project_status.py v1.0`
-- **Source commit:** `0b20fdba6b0c98ebb31fd8b887af8f78d1c1d05b` (short: `0b20fdb`)
+- **Source commit:** `ae64d7cfd85e91d486823f507e8dc6eb20c76d33` (short: `ae64d7c`)
 - **Auto-generated:** `true` (do not hand-edit)
 - **Authority:** repo-backed automation per LAW_N8 §L8.2 explicitly enabled CI mode (state-mirror auto-regenerate scope only)
 
@@ -65,17 +65,17 @@
 
 | SHA | Author | Subject |
 |---|---|---|
+| `ae64d7c` | CLAC Executor | chore(checklist): backfill LANE01-W2-T1-PROJECT-STATUS-AUTO-V1 SHA + workflow proof [vercel skip] |
+| `cb38f33` | AIER State Bot | [auto-status] regen PROJECT_STATUS.md from 0b20fdb [vercel skip] |
 | `0b20fdb` | CLAC Executor | feat(automation): W2.T1 PROJECT_STATUS auto-generation [vercel skip] |
 | `1186142` | CLAC Executor | chore(checklist): backfill LANE01-W1-LOOP-VALIDATION-V1 SHA [vercel skip] |
 | `d8eab75` | CLAC Executor | feat(validation): V1.1 W1.6 loop validation - 3 runs PASS [vercel skip] |
-| `2ed56b9` | unitonzengarden | chore(runtime): reconcile W1 core skills activation state [vercel skip] |
-| `f992b1f` | CLAC Executor | chore(handoffs): LV-RUN-3 archive 2 stale LAW_N7-N11 review msgs [vercel skip] |
 
 ## §7. Latest 5 DONE Tasks (from MASTER_CHECKLIST)
 
 | Task ID | Completed | Commit |
 |---|---|---|
-| LANE01-W2-T1-PROJECT-STATUS-AUTO-V1 | 2026-04-28 | `(this commit)` |
+| LANE01-W2-T1-PROJECT-STATUS-AUTO-V1 | 2026-04-28 | `0b20fdb` (apply) + `cb38f33` (auto-status workflo |
 | LANE01-W1-LOOP-VALIDATION-V1 | 2026-04-28 | `d8eab755329b0873e8a80941530dfa91bb49195a` |
 | LANE01-W1-CORE-SKILLS-ACTIVATE-V1 | 2026-04-28 | `245ecd9e14bdcd3c3a8d502d4ada71dd2627185d` |
 | LANE01-W1-SKILLS-INFRASTRUCTURE-FINALIZE-V1 | 2026-04-28 | `60da98ad94c48501505da2de79a95d46431d9ce7` |
