@@ -7,9 +7,9 @@
 - Canonical root: `D:\UZG\Projects-v2\Uniton_Shared`
 - Remote: `https://github.com/unitonzengarden/Uniton_Shared.git`
 - Branch: `main`
-- Last verified commit before this update: `76487b2` (origin/main after LV-RUN-2 changelog note on top of `245ecd9` W1.5 core skills ACTIVE)
-- Last updated: `2026-04-27T17:38:39Z`
-- Updated by: Lane_03 / Codex (`LANE01-W1-CORE-SKILLS-ACTIVATE-V1` state-surface reconcile)
+- Last verified commit before this update: `2ed56b9` (Lane_03 W1 core-skills state-surface reconcile, on top of LV-RUN-3 archive `f992b1f`)
+- Last updated: `2026-04-28T04:30:00Z`
+- Updated by: Lane_01 / CLAC-1 (`LANE01-W1-LOOP-VALIDATION-V1` — V1.1 W1.6 PASS) on top of Lane_03 reconcile
 - Current state version: `v1.11`
 - Current state mode: `CONTROLLED_EXECUTION / GOVERNANCE_FIRST / RUNTIME_DRYRUN_ONLY`
 - Source evidence:
@@ -29,8 +29,8 @@ This file is the repo-backed hot-memory entry for cold-start Lane readers. It re
 
 - Authority: NTS remains final authority for canon, roadmap gates, deploy, backend side effects, new Lanes, and halt/resume decisions.
 - Mode: `CONTROLLED_EXECUTION / GOVERNANCE_FIRST / RUNTIME_DRYRUN_ONLY`
-- Phase: `ROADMAP_W1_EXECUTION / LAW_N12_ACTIVE / W1.5_CORE_SKILLS_ACTIVE`
-- Gate: `W1.6_LOOP_VALIDATION_NEXT_ALLOWED` — Roadmap V1 FINAL remains APPROVED + LOCKED at git tag `roadmap-locked-v2-final` (commit `14f7509`); 4 tech non-canon skills now ACTIVE v1.0 (V1.1 W1.5 ACTIVATE PASS); the immediate next allowed action is V1.1 W1.6 LOOP VALIDATION (run 2-3 real tasks end-to-end through the dispatch → execute → verify loop with all 4 ACTIVE skills, then on PASS proceed to W1.7 NTS approve `aier-canon-guard` ACTIVE).
+- Phase: `ROADMAP_W1_EXECUTION / LAW_N12_ACTIVE / W1.6_LOOP_VALIDATION_PASS`
+- Gate: `W1.7_NTS_AMENDMENT_NEXT_ALLOWED` — Roadmap V1 FINAL remains APPROVED + LOCKED at git tag `roadmap-locked-v2-final` (commit `14f7509`); V1.1 W1.6 LOOP VALIDATION delivered 3/3 ENDORSE + 24/24 schema validation + 4/4 standard validators + idempotency conclusively verified across 6+ hashes per LANE01-W1-LOOP-VALIDATION-V1; the immediate next allowed action is V1.1 W1.7 — Lane_03 author NTS amendment packet for `aier-canon-guard` DRAFT v0.1 → ACTIVE v1.0 per LAW_N9 §L9.20 + R-SKILL-01 (canon-adjacent skill activation requires NTS direct approval).
 - Operational note: AIER Code Canon (6 files at `docs/LAW_CLA_LLM/CANON/`) is ACTIVE v1.1 by direct NTS approval applied via `LANE03-AIER-CODE-CANON-NTS-APPROVAL-APPLY-V1` (commit `035195c`). 4 tech non-canon SHARED skills now ACTIVE v1.0 per `LANE01-W1-CORE-SKILLS-ACTIVATE-V1`: `aier-dispatch v1.0`, `aier-verify v1.0`, `aier-state-update v1.0`, `aier-handoff-route v1.0` (Lane_01-owned, `canon_adjacent: false`, self-approved under `AMD_LANE01_CTO_AUTO_APPROVE_TECH_NON_CANON §3.1`). 5th skill `aier-canon-guard v0.1 DRAFT` (Lane_03-owned, `canon_adjacent: true`) remains DRAFT pending V1.1 W1.6 LOOP VALIDATION PASS + W1.7 NTS amendment per LAW_N9 §L9.20 + R-SKILL-01. Skills infrastructure docs aligned to LAW_N9 §L9.7-§L9.22 verbatim: `SKILL_AUTHORING_GUIDE v1.1` + `SKILL_INVOCATION_PROTOCOL v1.1` + `REGISTRY.md v1.2` (renamed from `INDEX.md` per LAW_N9 §L9.12; bumped v1.1 → v1.2 with 4 ACTIVE rows). Public runtime mirror sync exists for visibility only; `Uniton_Shared` on `main` remains the source of truth. `LAW_N12_REPO_RUNTIME_STANDARD.md` is `v1.0 ACTIVE` via approved packet `docs/LAW_CLA_LLM/SHARED/amendments/approved/AMD_LANE03_LAW_N12_REPO_RUNTIME_STANDARD_2026-04-27/` and binds repo-runtime boot/task-close behavior without authorizing daemon mode, backend mutation, deploy, or capability expansion.
 
 ## 2. WHO IS WHO
@@ -147,21 +147,21 @@ Approval was granted directly by NTS and mechanically applied by Lane_03 / Codex
 
 (5 most recent; older entries see `runtime/archive/` once rotation begins.)
 
-- `LANE01-W1-CORE-SKILLS-ACTIVATE-V1` — PASS. Promoted `aier-dispatch`, `aier-verify`, `aier-state-update`, and `aier-handoff-route` from DRAFT to ACTIVE v1.0; preserved upstream W1.T4 spec-drift fixes; kept `aier-canon-guard` DRAFT; updated registry, checklist, notification, and state surfaces.
-- `LANE01-W1-SKILLS-INFRASTRUCTURE-FINALIZE-V1` — PASS. Finalized the LAW_N9-aligned skill infrastructure, renamed `INDEX.md` to `REGISTRY.md`, and preserved W1.T4 spec-drift fixes while leaving the 4 operational skills DRAFT pending activation.
+- `LANE01-W1-LOOP-VALIDATION-V1` — PASS. V1.1 W1.6 LOOP VALIDATION delivered 3/3 ENDORSE loop runs end-to-end through dispatch → handoff-route → execute → state-update → verify pipeline; 24/24 schema validation; 4/4 standard validators; idempotency conclusively verified; W1.7 NTS amendment unblocked for `aier-canon-guard` ACTIVATE.
+- `LANE01-W1-CORE-SKILLS-ACTIVATE-V1` — PASS. V1.1 W1.5 ACTIVATE bundle promoted 4 tech non-canon SHARED skills DRAFT → ACTIVE v1.0 (aier-dispatch + aier-verify + aier-state-update + aier-handoff-route); aier-canon-guard preserved DRAFT pending W1.7.
+- `LANE01-W1-SKILLS-INFRASTRUCTURE-FINALIZE-V1` — PASS. SKILL_AUTHORING_GUIDE + SKILL_INVOCATION_PROTOCOL aligned to LAW_N9 §L9.7-§L9.22 verbatim v1.1; INDEX.md → REGISTRY.md per LAW_N9 §L9.12; aier-dispatch + aier-verify v0.1 → v0.2 spec-drift fixes from W1.T4 smoke.
 - `LANE03-W1-T2-CANON-GUARD-AUTHOR-V1` — PASS. Authored `aier-canon-guard` as a full LAW_N9-conformant DRAFT v0.1 skill bundle under Lane_03 ownership without activating it.
 - `LANE03-LAW-N12-REPO-RUNTIME-STANDARD-APPLY-V1` — PASS. Applied direct NTS approval for `LAW_N12_REPO_RUNTIME_STANDARD.md`, promoted it to `v1.0 ACTIVE`, moved the AMD packet from `pending/` to `approved/`, and updated SHARED/runtime/notification surfaces so LAW_N12 is now binding.
-- `LANE01-W1-T4-COMBINED-V1` — PASS. Added `runtime/archive/` and `notifications/archive/` infrastructure, slimmed hot-memory visibility, and verified W1.T4-related runtime sync and smoke steps without changing the LAW_N12 approval scope.
 
 ## 7. CURRENT AND NEXT RECOMMENDED WORK
 
-- Current task: `LANE01-W1-CORE-SKILLS-ACTIVATE-V1` (completed; repo truth verified).
-- Next allowed action: `LANE01-W1-LOOP-VALIDATION-V1`
+- Current task: `LANE01-W1-LOOP-VALIDATION-V1` (completed; V1.1 W1.6 PASS; repo truth verified).
+- Next allowed action: `LANE03-LAW-N12-CANON-GUARD-NTS-AMENDMENT-V1` (or equivalent) — V1.1 W1.7 NTS amendment for `aier-canon-guard` DRAFT v0.1 → ACTIVE v1.0 per LAW_N9 §L9.20 + R-SKILL-01.
 - Secondary planned actions:
-  - `LANE03-LAW-N12-CANON-GUARD-NTS-AMENDMENT-V1` (or equivalent) after W1.6 PASS
   - `LANE03-DISPATCHER-SPEC-V1-CROSS-REVIEW-V1`
   - `LANE02-AIER-CODE-CONSUMER-READINESS-SMOKE-V1`
   - `LANE03-AIER-CODE-NOTIFICATION-COLLECTOR-DRYRUN-DESIGN-V1`
+  - V1.1 W2 AUTOMATE phase (after W1.7 PASS) — runtime live sync auto-trigger workflow + GitHub Actions integration for the dispatch → verify loop.
 
 ## 8. OPEN BLOCKERS AND WARNINGS
 
@@ -254,3 +254,4 @@ Rules:
 - 2026-04-27 - `LANE03-W1-T2-CANON-GUARD-AUTHOR-V1` authored `aier-canon-guard` as a LAW_N9-conformant DRAFT v0.1 skill bundle without activating it.
 - 2026-04-28 - `LANE01-W1-CORE-SKILLS-ACTIVATE-V1` promoted `aier-dispatch`, `aier-verify`, `aier-state-update`, and `aier-handoff-route` from DRAFT to `ACTIVE v1.0`, preserved the upstream W1.T4 spec-drift fixes, and kept `aier-canon-guard` DRAFT pending W1.6 and W1.7.
 - 2026-04-28 - `LANE01-W1-LV-RUN2-RUNTIME-NOTE-V1` (V1.1 W1.6 LOOP VALIDATION Run 2 — state-update idempotency intensive test) — appended this changelog row via real loop run end-to-end through `aier-dispatch` v1.0 → `aier-handoff-route` v1.0 → execute → `aier-state-update` v1.0 (idempotent verified) → `aier-verify` v1.0 (verdict ENDORSE). No SHARED/laws or canon edited; no SKILL.md/METADATA.yaml of 4 ACTIVE skills modified.
+- 2026-04-28 - `LANE01-W1-LOOP-VALIDATION-V1` — V1.1 W1.6 LOOP VALIDATION = PASS. 3/3 loop runs ENDORSE (LV-RUN-1 doc update; LV-RUN-2 runtime changelog state-update intensive; LV-RUN-3 handoff archive handoff-route intensive). 24/24 schema validation across 4 ACTIVE skills (aier-dispatch + aier-verify + aier-state-update + aier-handoff-route v1.0). 4/4 standard validators PASS (contract_files + aier_loop SelfTest + route_messages SelfTest + pytest 35/35). aier-state-update idempotency verified 6+ hashes (a==b same input, a!=c different input). Run 3 handoff archive used `git mv` 100% rename — content preserved per R-CANON-02. W1.7 NTS amendment unblocked for `aier-canon-guard` DRAFT v0.1 → ACTIVE v1.0.
