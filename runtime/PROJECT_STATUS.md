@@ -10,13 +10,13 @@
 ## §0. Header
 
 - **Generator:** `aier-state-update v1.0` invoked via `scripts/runtime/generate_project_status.py v1.0`
-- **Source commit:** `ae64d7cfd85e91d486823f507e8dc6eb20c76d33` (short: `ae64d7c`)
+- **Source commit:** `763ba6425f8afe6ea5ef91721bfea0d3729f5b07` (short: `763ba64`)
 - **Auto-generated:** `true` (do not hand-edit)
 - **Authority:** repo-backed automation per LAW_N8 §L8.2 explicitly enabled CI mode (state-mirror auto-regenerate scope only)
 
 ## §1. Phase + Gate
 
-- **Phase:** `ROADMAP_W1_EXECUTION / LAW_N12_ACTIVE / W1.6_LOOP_VALIDATION_PASS / W2.T1_PROJECT_STATUS_AUTO_PASS (parallel)`
+- **Phase:** `ROADMAP_W1_EXECUTION / LAW_N12_ACTIVE / W1.6_LOOP_VALIDATION_PASS / W2.T1_PROJECT_STATUS_AUTO_PASS / W2.T2_DISPATCHER_PASS (parallel)`
 - **Gate:** `(unknown)`
 - **Roadmap:** Roadmap V1 FINAL APPROVED + LOCKED at git tag `roadmap-locked-v2-final` (commit `14f7509`)
 
@@ -55,31 +55,31 @@
 
 ## §5. Active AMDs (AMENDMENTS_LOG counts)
 
-- **Total rows:** 17
+- **Total rows:** 18
 - **PENDING:** 11
-- **APPROVED (non-pending):** 6
-- **Lane self-approve (under AMD_LANE01_CTO_AUTO_APPROVE_TECH_NON_CANON §3.1):** 8
+- **APPROVED (non-pending):** 7
+- **Lane self-approve (under AMD_LANE01_CTO_AUTO_APPROVE_TECH_NON_CANON §3.1):** 9
 - **Authoritative source:** `docs/LAW_CLA_LLM/SHARED/amendments/AMENDMENTS_LOG.md`
 
 ## §6. Latest 5 Commits
 
 | SHA | Author | Subject |
 |---|---|---|
+| `763ba64` | CLAC Executor | feat(automation): W2.T2 dispatcher CLI [vercel skip] |
+| `fb58aa7` | AIER State Bot | [auto-status] regen PROJECT_STATUS.md from ae64d7c [vercel skip] |
 | `ae64d7c` | CLAC Executor | chore(checklist): backfill LANE01-W2-T1-PROJECT-STATUS-AUTO-V1 SHA + workflow proof [vercel skip] |
 | `cb38f33` | AIER State Bot | [auto-status] regen PROJECT_STATUS.md from 0b20fdb [vercel skip] |
 | `0b20fdb` | CLAC Executor | feat(automation): W2.T1 PROJECT_STATUS auto-generation [vercel skip] |
-| `1186142` | CLAC Executor | chore(checklist): backfill LANE01-W1-LOOP-VALIDATION-V1 SHA [vercel skip] |
-| `d8eab75` | CLAC Executor | feat(validation): V1.1 W1.6 loop validation - 3 runs PASS [vercel skip] |
 
 ## §7. Latest 5 DONE Tasks (from MASTER_CHECKLIST)
 
 | Task ID | Completed | Commit |
 |---|---|---|
+| LANE01-W2-T2-DISPATCHER-IMPLEMENTATION-V1 | 2026-04-28 | `(this commit)` |
 | LANE01-W2-T1-PROJECT-STATUS-AUTO-V1 | 2026-04-28 | `0b20fdb` (apply) + `cb38f33` (auto-status workflo |
 | LANE01-W1-LOOP-VALIDATION-V1 | 2026-04-28 | `d8eab755329b0873e8a80941530dfa91bb49195a` |
 | LANE01-W1-CORE-SKILLS-ACTIVATE-V1 | 2026-04-28 | `245ecd9e14bdcd3c3a8d502d4ada71dd2627185d` |
 | LANE01-W1-SKILLS-INFRASTRUCTURE-FINALIZE-V1 | 2026-04-28 | `60da98ad94c48501505da2de79a95d46431d9ce7` |
-| LANE03-LAW-N12-REPO-RUNTIME-STANDARD-APPLY-V1 | 2026-04-27 | `e6c8cf4ddf020c8274866284a91a904acf3ee37e` |
 
 ## §8. Pending NTS Decisions
 
