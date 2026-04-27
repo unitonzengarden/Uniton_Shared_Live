@@ -7,10 +7,10 @@
 - Canonical root: `D:\UZG\Projects-v2\Uniton_Shared`
 - Remote: `https://github.com/unitonzengarden/Uniton_Shared.git`
 - Branch: `main`
-- Last verified commit before this update: `261816a` (LANE01-W1-SKILLS-INFRASTRUCTURE-FINALIZE-V1 backfill)
-- Last updated: `2026-04-28T02:30:00Z`
-- Updated by: Lane_01 / CLAC-1 (`LANE01-W1-CORE-SKILLS-ACTIVATE-V1`)
-- Current state version: `v1.10`
+- Last verified commit before this update: `76487b2` (origin/main after LV-RUN-2 changelog note on top of `245ecd9` W1.5 core skills ACTIVE)
+- Last updated: `2026-04-27T17:38:39Z`
+- Updated by: Lane_03 / Codex (`LANE01-W1-CORE-SKILLS-ACTIVATE-V1` state-surface reconcile)
+- Current state version: `v1.11`
 - Current state mode: `CONTROLLED_EXECUTION / GOVERNANCE_FIRST / RUNTIME_DRYRUN_ONLY`
 - Source evidence:
   - `reports/LANE03-AIER-CODE-CANON-NTS-APPROVAL-APPLY-V1_REPORT.md`
@@ -36,9 +36,9 @@ This file is the repo-backed hot-memory entry for cold-start Lane readers. It re
 ## 2. WHO IS WHO
 
 - NTS: Kernel human and final authority.
-- Lane_01: active CTO-style contributor operating under active law, approved amendments, and task-scoped authority. Current visible state: Roadmap V1 FINAL locked, W1.T1 skill infrastructure PASS, W1.T2 core skill authoring PASS, W1.T2 LAW_N9 repair PASS, runtime live sync PASS.
+- Lane_01: active CTO-style contributor operating under active law, approved amendments, and task-scoped authority. Current visible state: Roadmap V1 FINAL locked, W1.T1 skill infrastructure PASS, W1.T2 core skill authoring PASS, W1.T2 LAW_N9 repair PASS, runtime live sync PASS, and 4 tech non-canon core skills ACTIVE v1.0.
 - Lane_02: scaffolded AIER Code consumer Lane. Smoke readiness is still pending. Product execution is disabled.
-- Lane_03: active execution-support and canon-boundary review Lane. Current visible state: canon apply PASS, LAB/RULE foundation PASS, runtime hot-memory adoption PASS.
+- Lane_03: active execution-support and canon-boundary review Lane. Current visible state: canon apply PASS, LAB/RULE foundation PASS, runtime hot-memory adoption PASS, and `aier-canon-guard` authored DRAFT v0.1.
 - Future Lanes: unopened unless NTS explicitly registers them.
 
 ## 3. ACTIVE CANON AND SUPPORT TRUTH
@@ -58,6 +58,7 @@ Active law files per `docs/LAW_CLA_LLM/SHARED/SHARED_INDEX.md`:
 - `docs/LAW_CLA_LLM/SHARED/laws/LAW_N9_SKILL.md`
 - `docs/LAW_CLA_LLM/SHARED/laws/LAW_N10_CAPABILITY_MATRIX.md`
 - `docs/LAW_CLA_LLM/SHARED/laws/LAW_N11_BACKEND_BRIDGE.md`
+- `docs/LAW_CLA_LLM/SHARED/laws/LAW_N12_REPO_RUNTIME_STANDARD.md`
 - `docs/LAW_CLA_LLM/SHARED/laws/REDLINES.md`
 
 ### 3.2 Active Support and Operating Docs
@@ -129,49 +130,48 @@ Approval was granted directly by NTS and mechanically applied by Lane_03 / Codex
 
 ## 4. CURRENT PHASE, MODE, AND GATE
 
-- Current phase: `ROADMAP_W1_EXECUTION / LAW_N12_ACTIVE`
+- Current phase: `ROADMAP_W1_EXECUTION / LAW_N12_ACTIVE / W1.5_CORE_SKILLS_ACTIVE`
 - Mode: `CONTROLLED_EXECUTION / GOVERNANCE_FIRST / RUNTIME_DRYRUN_ONLY`
-- Gate: `LAW_N12_ACTIVE / CANON_GUARD_NEXT_ALLOWED`. `LAW_N12_REPO_RUNTIME_STANDARD.md` is now binding, and the immediate next allowed action is `LANE03-W1-T2-CANON-GUARD-AUTHOR-V1`.
+- Gate: `W1.6_LOOP_VALIDATION_NEXT_ALLOWED`. `LAW_N12_REPO_RUNTIME_STANDARD.md` is binding, 4 tech non-canon SHARED skills are now ACTIVE v1.0, and the immediate next allowed action is `LANE01-W1-LOOP-VALIDATION-V1`.
 - Runtime authority: DryRun and scoped foreground Apply only when separately authorized. The public runtime mirror sync workflow is active visibility automation only; it is not daemon authority, scheduler authority, autonomous execution, backend mutation, or deploy authority.
 - Backend authority: `LAW_N11` remains boundary law only. No backend mutation, no direct API/DB writes, no external side effects.
 - Roadmap authority: V1 FINAL is APPROVED + LOCKED. Future structural changes still require proper amendment workflow.
 
 ## 5. ACTIVE LANE STATUS
 
-- Lane_01: `ACTIVE / CTO trial day 2/30 / FAST-ENDORSER MODE ACTIVE / W1.T1 DONE / W1.T2 core skills authored / LAW_N9 repair PASS / runtime live sync PASS / LAW_N12 ACTIVE`
+- Lane_01: `ACTIVE / CTO trial day 2/30 / FAST-ENDORSER MODE ACTIVE / W1.5 core skills ACTIVE / W1.6 loop validation next / runtime live sync PASS / LAW_N12 ACTIVE`
 - Lane_02: `ONBOARDING_SCAFFOLDED / SMOKE_PENDING / PRODUCT_EXECUTION_DISABLED`
-- Lane_03: `ACTIVE / EXECUTION_SUPPORT / LAB+RULE foundation DONE / canon apply DONE / hot-memory adoption DONE / LAW_N12 apply DONE / canon-guard next`
+- Lane_03: `ACTIVE / EXECUTION_SUPPORT / LAB+RULE foundation DONE / canon apply DONE / hot-memory adoption DONE / LAW_N12 apply DONE / canon-guard authored DRAFT`
 
 ## 6. LATEST COMPLETED KEY TASKS
 
 (5 most recent; older entries see `runtime/archive/` once rotation begins.)
 
-- `LANE03-LAW-N12-REPO-RUNTIME-STANDARD-APPLY-V1` — PASS. Applied direct NTS approval for `LAW_N12_REPO_RUNTIME_STANDARD.md`, promoted it to `v1.0 ACTIVE`, moved the AMD packet from `pending/` to `approved/`, and updated SHARED/runtime/notification surfaces so LAW_N12 is now binding and `LANE03-W1-T2-CANON-GUARD-AUTHOR-V1` is the next allowed action.
-- `LANE01-W1-T4-COMBINED-V1` — PASS (repo truth observed after rebase). Added `runtime/archive/` and `notifications/archive/` infrastructure, slimmed hot-memory visibility, and verified W1.T4-related runtime sync/smoke steps without changing the LAW_N12 approval scope of this task.
-- `LANE03-LAW-N12-REPO-RUNTIME-STANDARD-AUTHOR-V1` — PASS. Authored `LAW_N12_REPO_RUNTIME_STANDARD.md` as `v0.1 DRAFT / PENDING_NTS_APPROVAL`, created the full pending AMD packet, and updated runtime visibility surfaces to route review without implying approval or activation.
-- `LANE01-FULL-REPO-AUDIT-V1` — PASS. Read-only audit of repo state (local + GitHub); 9 tables + §A-§E conclusions; identified W1 next-actions and cleanup follow-ups.
-- `AIER-CODE-RUNTIME-HOT-MEMORY-ADOPTION-V1` — PASS. Adopted the existing hot-memory file instead of creating a duplicate; refreshed `runtime/current_state.md`; aligned checklist, action board, notification ledger, and task templates.
+- `LANE01-W1-CORE-SKILLS-ACTIVATE-V1` — PASS. Promoted `aier-dispatch`, `aier-verify`, `aier-state-update`, and `aier-handoff-route` from DRAFT to ACTIVE v1.0; preserved upstream W1.T4 spec-drift fixes; kept `aier-canon-guard` DRAFT; updated registry, checklist, notification, and state surfaces.
+- `LANE01-W1-SKILLS-INFRASTRUCTURE-FINALIZE-V1` — PASS. Finalized the LAW_N9-aligned skill infrastructure, renamed `INDEX.md` to `REGISTRY.md`, and preserved W1.T4 spec-drift fixes while leaving the 4 operational skills DRAFT pending activation.
+- `LANE03-W1-T2-CANON-GUARD-AUTHOR-V1` — PASS. Authored `aier-canon-guard` as a full LAW_N9-conformant DRAFT v0.1 skill bundle under Lane_03 ownership without activating it.
+- `LANE03-LAW-N12-REPO-RUNTIME-STANDARD-APPLY-V1` — PASS. Applied direct NTS approval for `LAW_N12_REPO_RUNTIME_STANDARD.md`, promoted it to `v1.0 ACTIVE`, moved the AMD packet from `pending/` to `approved/`, and updated SHARED/runtime/notification surfaces so LAW_N12 is now binding.
+- `LANE01-W1-T4-COMBINED-V1` — PASS. Added `runtime/archive/` and `notifications/archive/` infrastructure, slimmed hot-memory visibility, and verified W1.T4-related runtime sync and smoke steps without changing the LAW_N12 approval scope.
 
 ## 7. CURRENT AND NEXT RECOMMENDED WORK
 
-- Current task: `LANE03-LAW-N12-REPO-RUNTIME-STANDARD-APPLY-V1` (completed in this update).
-- Next allowed action: `LANE03-W1-T2-CANON-GUARD-AUTHOR-V1`
+- Current task: `LANE01-W1-CORE-SKILLS-ACTIVATE-V1` (completed; repo truth verified).
+- Next allowed action: `LANE01-W1-LOOP-VALIDATION-V1`
 - Secondary planned actions:
-  - `LANE01-W1-AUTHORING-INFRASTRUCTURE-LAW-N9-ALIGNMENT-V1`
-  - `LANE01-W1-SHARED-SKILL-REGISTRY-NAMING-V1`
+  - `LANE03-LAW-N12-CANON-GUARD-NTS-AMENDMENT-V1` (or equivalent) after W1.6 PASS
   - `LANE03-DISPATCHER-SPEC-V1-CROSS-REVIEW-V1`
   - `LANE02-AIER-CODE-CONSUMER-READINESS-SMOKE-V1`
   - `LANE03-AIER-CODE-NOTIFICATION-COLLECTOR-DRYRUN-DESIGN-V1`
 
 ## 8. OPEN BLOCKERS AND WARNINGS
 
-- The 4 repaired SHARED skill bundles are DRAFT only. They are not ACTIVE and cannot create new authority.
+- `aier-canon-guard` remains DRAFT v0.1 only; it was not activated with the 4 tech non-canon skills and still requires W1.6 PASS plus W1.7 NTS amendment.
+- The 4 ACTIVE skills do not authorize daemon mode, scheduler autonomy, backend mutation, deploy, product repo work, or capability expansion.
 - `LAW_N12_REPO_RUNTIME_STANDARD.md` is ACTIVE v1.0 and binding for repo-runtime boot/task-close behavior, but it does not authorize daemon mode, scheduler autonomy, backend mutation, deploy, product repo work, or capability grants.
-- `aier-canon-guard` is unblocked but not yet authored.
 - No dedicated `runtime/current_state.json` exists. Do not invent one without a separate scoped task or explicit repo evidence.
 - The notification and ACK protocol remains `DRAFT / PENDING_REVIEW`.
 - Lane_02 smoke readiness is still pending. Product execution remains disabled until a scoped smoke task passes.
-- Skill infrastructure follow-ups remain open: `SKILL_AUTHORING_GUIDE.md` / `SKILL_INVOCATION_PROTOCOL.md` LAW_N9 alignment and `SHARED/skills/REGISTRY.md` naming reconciliation.
+- Future skill-governance cleanup remains separately scoped; the W1.5 activation does not change canon-adjacent or capability authority boundaries.
 - No daemon, scheduler, autonomy, backend mutation, deploy, or external write authority is active.
 
 ## 9. BOOT AND READ ORDER
@@ -210,7 +210,7 @@ If a private clone is unavailable, a Lane may fetch the read-only mirror copies 
 - Do not create a second `current_state` file.
 - Do not treat review as approval.
 - Do not treat draft as active.
-- Do not author `aier-canon-guard` inside a task that is not explicitly scoped for it.
+- Do not activate `aier-canon-guard` without a separate approval path.
 - Do not infer deploy, backend mutation, daemon/autonomy, product repo work, or capability grants from runtime state or mirror automation.
 - Do not bypass NTS, active law, canon, or checklist/action-board evidence.
 
@@ -251,4 +251,6 @@ Rules:
 - 2026-04-27 - `LANE03-LAW-N12-REPO-RUNTIME-STANDARD-AUTHOR-V1` authored `LAW_N12_REPO_RUNTIME_STANDARD.md` plus a pending AMD packet and routed the next action into Lane_01 review / NTS decision flow without activating the law.
 - 2026-04-27 - `LANE01-W1-T4-COMBINED-V1` Phase A created `runtime/archive/` and `notifications/archive/` infrastructure with rotation policy, trimmed §6 to 5 most-recent, updated sync workflow to exclude archive folders. Phase B verifies mirror sync timing. Phase C runs W1.T4 smoke loop (aier-dispatch + aier-verify) on a real W1.T3 boot-protocol update.
 - 2026-04-27 - `LANE03-LAW-N12-REPO-RUNTIME-STANDARD-APPLY-V1` applied direct NTS approval, promoted `LAW_N12_REPO_RUNTIME_STANDARD.md` to `v1.0 ACTIVE`, moved the AMD packet to `approved/`, and made LAW_N12 the binding repo-runtime standard while keeping daemon/backend/deploy/capability boundaries unchanged.
+- 2026-04-27 - `LANE03-W1-T2-CANON-GUARD-AUTHOR-V1` authored `aier-canon-guard` as a LAW_N9-conformant DRAFT v0.1 skill bundle without activating it.
+- 2026-04-28 - `LANE01-W1-CORE-SKILLS-ACTIVATE-V1` promoted `aier-dispatch`, `aier-verify`, `aier-state-update`, and `aier-handoff-route` from DRAFT to `ACTIVE v1.0`, preserved the upstream W1.T4 spec-drift fixes, and kept `aier-canon-guard` DRAFT pending W1.6 and W1.7.
 - 2026-04-28 - `LANE01-W1-LV-RUN2-RUNTIME-NOTE-V1` (V1.1 W1.6 LOOP VALIDATION Run 2 — state-update idempotency intensive test) — appended this changelog row via real loop run end-to-end through `aier-dispatch` v1.0 → `aier-handoff-route` v1.0 → execute → `aier-state-update` v1.0 (idempotent verified) → `aier-verify` v1.0 (verdict ENDORSE). No SHARED/laws or canon edited; no SKILL.md/METADATA.yaml of 4 ACTIVE skills modified.
