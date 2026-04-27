@@ -10,13 +10,13 @@
 ## §0. Header
 
 - **Generator:** `aier-state-update v1.0` invoked via `scripts/runtime/generate_project_status.py v1.0`
-- **Source commit:** `e4196d9af4434b3af3c14cc7217647465eb3e04f` (short: `e4196d9`)
+- **Source commit:** `9f5ab3a1d7723035e412182fefb6a41eeddefc02` (short: `9f5ab3a`)
 - **Auto-generated:** `true` (do not hand-edit)
 - **Authority:** repo-backed automation per LAW_N8 §L8.2 explicitly enabled CI mode (state-mirror auto-regenerate scope only)
 
 ## §1. Phase + Gate
 
-- **Phase:** `ROADMAP_W1_EXECUTION / LAW_N12_ACTIVE / W1.6_LOOP_VALIDATION_PASS / W2.T1_PROJECT_STATUS_AUTO_PASS / W2.T2_DISPATCHER_PASS (parallel)`
+- **Phase:** `ROADMAP_W1_EXECUTION / LAW_N12_ACTIVE / W2_AUTOMATE_LOOP_CLOSED (parallel)`
 - **Gate:** `(unknown)`
 - **Roadmap:** Roadmap V1 FINAL APPROVED + LOCKED at git tag `roadmap-locked-v2-final` (commit `14f7509`)
 
@@ -55,31 +55,31 @@
 
 ## §5. Active AMDs (AMENDMENTS_LOG counts)
 
-- **Total rows:** 18
-- **PENDING:** 11
+- **Total rows:** 19
+- **PENDING:** 12
 - **APPROVED (non-pending):** 7
-- **Lane self-approve (under AMD_LANE01_CTO_AUTO_APPROVE_TECH_NON_CANON §3.1):** 9
+- **Lane self-approve (under AMD_LANE01_CTO_AUTO_APPROVE_TECH_NON_CANON §3.1):** 10
 - **Authoritative source:** `docs/LAW_CLA_LLM/SHARED/amendments/AMENDMENTS_LOG.md`
 
 ## §6. Latest 5 Commits
 
 | SHA | Author | Subject |
 |---|---|---|
+| `9f5ab3a` | CLAC Executor | feat(automation): W2.T3 aier-scan worker [vercel skip] |
+| `e23c046` | AIER State Bot | [auto-status] regen PROJECT_STATUS.md from e4196d9 [vercel skip] |
 | `e4196d9` | CLAC Executor | chore(checklist): backfill LANE01-W2-T2-DISPATCHER-IMPLEMENTATION-V1 SHA + workflow proof [vercel sk |
 | `c40baf7` | AIER State Bot | [auto-status] regen PROJECT_STATUS.md from 763ba64 [vercel skip] |
 | `763ba64` | CLAC Executor | feat(automation): W2.T2 dispatcher CLI [vercel skip] |
-| `fb58aa7` | AIER State Bot | [auto-status] regen PROJECT_STATUS.md from ae64d7c [vercel skip] |
-| `ae64d7c` | CLAC Executor | chore(checklist): backfill LANE01-W2-T1-PROJECT-STATUS-AUTO-V1 SHA + workflow proof [vercel skip] |
 
 ## §7. Latest 5 DONE Tasks (from MASTER_CHECKLIST)
 
 | Task ID | Completed | Commit |
 |---|---|---|
+| LANE01-W2-T3-AIER-WORKER-SCAN-V1 | 2026-04-28 | `(this commit)` |
 | LANE01-W2-T2-DISPATCHER-IMPLEMENTATION-V1 | 2026-04-28 | `763ba64` |
 | LANE01-W2-T1-PROJECT-STATUS-AUTO-V1 | 2026-04-28 | `0b20fdb` (apply) + `cb38f33` (auto-status workflo |
 | LANE01-W1-LOOP-VALIDATION-V1 | 2026-04-28 | `d8eab755329b0873e8a80941530dfa91bb49195a` |
 | LANE01-W1-CORE-SKILLS-ACTIVATE-V1 | 2026-04-28 | `245ecd9e14bdcd3c3a8d502d4ada71dd2627185d` |
-| LANE01-W1-SKILLS-INFRASTRUCTURE-FINALIZE-V1 | 2026-04-28 | `60da98ad94c48501505da2de79a95d46431d9ce7` |
 
 ## §8. Pending NTS Decisions
 
