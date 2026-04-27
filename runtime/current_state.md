@@ -7,10 +7,10 @@
 - Canonical root: `D:\UZG\Projects-v2\Uniton_Shared`
 - Remote: `https://github.com/unitonzengarden/Uniton_Shared.git`
 - Branch: `main`
-- Last verified commit before this update: `f8be2ea` (Lane_03 aier-canon-guard DRAFT v0.1 authored on top of `e6c8cf4` LAW_N12 ACTIVE)
-- Last updated: `2026-04-28T01:30:00Z`
-- Updated by: Lane_01 / CLAC-1 (`LANE01-W1-SKILLS-INFRASTRUCTURE-FINALIZE-V1`)
-- Current state version: `v1.9`
+- Last verified commit before this update: `261816a` (LANE01-W1-SKILLS-INFRASTRUCTURE-FINALIZE-V1 backfill)
+- Last updated: `2026-04-28T02:30:00Z`
+- Updated by: Lane_01 / CLAC-1 (`LANE01-W1-CORE-SKILLS-ACTIVATE-V1`)
+- Current state version: `v1.10`
 - Current state mode: `CONTROLLED_EXECUTION / GOVERNANCE_FIRST / RUNTIME_DRYRUN_ONLY`
 - Source evidence:
   - `reports/LANE03-AIER-CODE-CANON-NTS-APPROVAL-APPLY-V1_REPORT.md`
@@ -29,9 +29,9 @@ This file is the repo-backed hot-memory entry for cold-start Lane readers. It re
 
 - Authority: NTS remains final authority for canon, roadmap gates, deploy, backend side effects, new Lanes, and halt/resume decisions.
 - Mode: `CONTROLLED_EXECUTION / GOVERNANCE_FIRST / RUNTIME_DRYRUN_ONLY`
-- Phase: `ROADMAP_W1_EXECUTION / LAW_N12_ACTIVE / SKILLS_INFRASTRUCTURE_FINALIZED`
-- Gate: `CORE_SKILLS_ACTIVATE_NEXT_ALLOWED` — Roadmap V1 FINAL remains APPROVED + LOCKED at git tag `roadmap-locked-v2-final` (commit `14f7509`); 5 core skills DRAFT-complete; the immediate next allowed action is `LANE01-W1-CORE-SKILLS-ACTIVATE-V1` (bundled DRAFT→ACTIVE promotion).
-- Operational note: AIER Code Canon (6 files at `docs/LAW_CLA_LLM/CANON/`) is ACTIVE v1.1 by direct NTS approval applied via `LANE03-AIER-CODE-CANON-NTS-APPROVAL-APPLY-V1` (commit `035195c`). Five authored SHARED skills are LAW_N9-conformant DRAFT bundles: `aier-dispatch v0.2`, `aier-verify v0.2`, `aier-state-update v0.1`, `aier-handoff-route v0.1` (Lane_01-owned, tech non-canon), `aier-canon-guard v0.1` (Lane_03-owned, canon-adjacent — authored in commit `f8be2ea`). Skills infrastructure docs aligned to LAW_N9 §L9.7-§L9.22 verbatim: `SKILL_AUTHORING_GUIDE v1.1` + `SKILL_INVOCATION_PROTOCOL v1.1` + `REGISTRY.md` (renamed from `INDEX.md` per LAW_N9 §L9.12) — landed via `LANE01-W1-SKILLS-INFRASTRUCTURE-FINALIZE-V1`. Public runtime mirror sync exists for visibility only; `Uniton_Shared` on `main` remains the source of truth. `LAW_N12_REPO_RUNTIME_STANDARD.md` is `v1.0 ACTIVE` via approved packet `docs/LAW_CLA_LLM/SHARED/amendments/approved/AMD_LANE03_LAW_N12_REPO_RUNTIME_STANDARD_2026-04-27/` and binds repo-runtime boot/task-close behavior without authorizing daemon mode, backend mutation, deploy, or capability expansion.
+- Phase: `ROADMAP_W1_EXECUTION / LAW_N12_ACTIVE / W1.5_CORE_SKILLS_ACTIVE`
+- Gate: `W1.6_LOOP_VALIDATION_NEXT_ALLOWED` — Roadmap V1 FINAL remains APPROVED + LOCKED at git tag `roadmap-locked-v2-final` (commit `14f7509`); 4 tech non-canon skills now ACTIVE v1.0 (V1.1 W1.5 ACTIVATE PASS); the immediate next allowed action is V1.1 W1.6 LOOP VALIDATION (run 2-3 real tasks end-to-end through the dispatch → execute → verify loop with all 4 ACTIVE skills, then on PASS proceed to W1.7 NTS approve `aier-canon-guard` ACTIVE).
+- Operational note: AIER Code Canon (6 files at `docs/LAW_CLA_LLM/CANON/`) is ACTIVE v1.1 by direct NTS approval applied via `LANE03-AIER-CODE-CANON-NTS-APPROVAL-APPLY-V1` (commit `035195c`). 4 tech non-canon SHARED skills now ACTIVE v1.0 per `LANE01-W1-CORE-SKILLS-ACTIVATE-V1`: `aier-dispatch v1.0`, `aier-verify v1.0`, `aier-state-update v1.0`, `aier-handoff-route v1.0` (Lane_01-owned, `canon_adjacent: false`, self-approved under `AMD_LANE01_CTO_AUTO_APPROVE_TECH_NON_CANON §3.1`). 5th skill `aier-canon-guard v0.1 DRAFT` (Lane_03-owned, `canon_adjacent: true`) remains DRAFT pending V1.1 W1.6 LOOP VALIDATION PASS + W1.7 NTS amendment per LAW_N9 §L9.20 + R-SKILL-01. Skills infrastructure docs aligned to LAW_N9 §L9.7-§L9.22 verbatim: `SKILL_AUTHORING_GUIDE v1.1` + `SKILL_INVOCATION_PROTOCOL v1.1` + `REGISTRY.md v1.2` (renamed from `INDEX.md` per LAW_N9 §L9.12; bumped v1.1 → v1.2 with 4 ACTIVE rows). Public runtime mirror sync exists for visibility only; `Uniton_Shared` on `main` remains the source of truth. `LAW_N12_REPO_RUNTIME_STANDARD.md` is `v1.0 ACTIVE` via approved packet `docs/LAW_CLA_LLM/SHARED/amendments/approved/AMD_LANE03_LAW_N12_REPO_RUNTIME_STANDARD_2026-04-27/` and binds repo-runtime boot/task-close behavior without authorizing daemon mode, backend mutation, deploy, or capability expansion.
 
 ## 2. WHO IS WHO
 
@@ -91,16 +91,16 @@ Approval was granted directly by NTS and mechanically applied by Lane_03 / Codex
 
 ### 3.5 Active Skill Infrastructure
 
-- `docs/LAW_CLA_LLM/SHARED/skills/REGISTRY.md` (ACTIVE registry per LAW_N9 §L9.12; renamed from `INDEX.md` in `LANE01-W1-SKILLS-INFRASTRUCTURE-FINALIZE-V1`)
+- `docs/LAW_CLA_LLM/SHARED/skills/REGISTRY.md` v1.2 (ACTIVE registry per LAW_N9 §L9.12; bumped v1.1 → v1.2 with 4 ACTIVE rows in `LANE01-W1-CORE-SKILLS-ACTIVATE-V1`)
 - `docs/LAW_CLA_LLM/SHARED/skills/SKILL_AUTHORING_GUIDE.md` (ACTIVE authoring standard v1.1 — aligned to LAW_N9 §L9.7-§L9.12 verbatim)
 - `docs/LAW_CLA_LLM/SHARED/skills/SKILL_INVOCATION_PROTOCOL.md` (ACTIVE invocation standard v1.1 — aligned to LAW_N9 §L9.10-§L9.22 verbatim)
 - `docs/LAW_CLA_LLM/SHARED/skills/README.md` (ACTIVE folder overview)
 - Skill bundle status:
-  - `aier-dispatch` — DRAFT v0.2, LAW_N9-conformant (contract fix `lane_message.schema.json`)
-  - `aier-verify` — DRAFT v0.2, LAW_N9-conformant (oneOf input: `report_path` OR `commit_evidence`)
-  - `aier-state-update` — DRAFT v0.1, LAW_N9-conformant
-  - `aier-handoff-route` — DRAFT v0.1, LAW_N9-conformant
-  - `aier-canon-guard` — DRAFT v0.1, Lane_03-authored (commit `f8be2ea`); canon_adjacent: true
+  - `aier-dispatch` — **ACTIVE v1.0**, LAW_N9-conformant; activated 2026-04-28 by `LANE01-W1-CORE-SKILLS-ACTIVATE-V1`
+  - `aier-verify` — **ACTIVE v1.0**, LAW_N9-conformant; activated 2026-04-28 by `LANE01-W1-CORE-SKILLS-ACTIVATE-V1`
+  - `aier-state-update` — **ACTIVE v1.0**, LAW_N9-conformant; activated 2026-04-28 by `LANE01-W1-CORE-SKILLS-ACTIVATE-V1`
+  - `aier-handoff-route` — **ACTIVE v1.0**, LAW_N9-conformant; activated 2026-04-28 by `LANE01-W1-CORE-SKILLS-ACTIVATE-V1`
+  - `aier-canon-guard` — DRAFT v0.1, Lane_03-authored (commit `f8be2ea`); `canon_adjacent: true` → ACTIVE pending V1.1 W1.6 LOOP VALIDATION PASS + W1.7 NTS amendment per R-SKILL-01
 
 ### 3.6 Lab + Rule Foundation
 
