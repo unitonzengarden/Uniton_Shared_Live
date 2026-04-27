@@ -7,10 +7,10 @@
 - Canonical root: `D:\UZG\Projects-v2\Uniton_Shared`
 - Remote: `https://github.com/unitonzengarden/Uniton_Shared.git`
 - Branch: `main`
-- Last verified commit before this update: `cb740090e97fc9316b2d5c4b3f8dfc6baf407cfb`
-- Last updated: `2026-04-27T15:28:06Z`
-- Updated by: Lane_03 / Codex (`LANE03-LAW-N12-REPO-RUNTIME-STANDARD-AUTHOR-V1`)
-- Current state version: `v1.6`
+- Last verified commit before this update: `7f9e3a7` (Lane_03 LAW_N12 DRAFT proposal landed)
+- Last updated: `2026-04-27T16:05:00Z`
+- Updated by: Lane_01 / CLAC-1 (`LANE01-W1-T4-COMBINED-V1` Phase A — runtime slim + archive infrastructure; rebased on top of Lane_03 LAW_N12 DRAFT)
+- Current state version: `v1.7`
 - Current state mode: `CONTROLLED_EXECUTION / GOVERNANCE_FIRST / RUNTIME_DRYRUN_ONLY`
 - Source evidence:
   - `reports/LANE03-AIER-CODE-CANON-NTS-APPROVAL-APPLY-V1_REPORT.md`
@@ -144,13 +144,13 @@ Approval was granted directly by NTS and mechanically applied by Lane_03 / Codex
 
 ## 6. LATEST COMPLETED KEY TASKS
 
+(5 most recent; older entries see `runtime/archive/` once rotation begins.)
+
 - `LANE03-LAW-N12-REPO-RUNTIME-STANDARD-AUTHOR-V1` — PASS. Authored `LAW_N12_REPO_RUNTIME_STANDARD.md` as `v0.1 DRAFT / PENDING_NTS_APPROVAL`, created the full pending AMD packet, and updated runtime visibility surfaces to route review without implying approval or activation.
+- `LANE01-FULL-REPO-AUDIT-V1` — PASS. Read-only audit of repo state (local + GitHub); 9 tables + §A-§E conclusions; identified W1 next-actions and cleanup follow-ups.
 - `AIER-CODE-RUNTIME-HOT-MEMORY-ADOPTION-V1` — PASS. Adopted the existing hot-memory file instead of creating a duplicate; refreshed `runtime/current_state.md`; aligned checklist, action board, notification ledger, and task templates.
 - `LANE01-RUNTIME-LIVE-SYNC-V1` — PASS. Registered `sync_runtime_to_public.yml` so the runtime surfaces are mirrored to `Uniton_Shared_Live` for read-only fetch.
 - `LANE01-W1-T2-SHARED-SKILL-LAW-N9-CONFORMANCE-REPAIR-V1` — PASS. Repaired `aier-dispatch`, `aier-verify`, `aier-state-update`, and `aier-handoff-route` to LAW_N9 structure while keeping all 4 skills DRAFT.
-- `LANE01-W1-T2-CORE-SKILLS-AUTHOR-V1` — PASS. Authored 4 of 5 core SHARED skills to DRAFT; `aier-canon-guard` remained deferred.
-- `LANE03-AIER-CODE-CANON-NTS-APPROVAL-APPLY-V1` — PASS. The six-file AIER Code Canon bundle is ACTIVE v1.1 by direct NTS approval.
-- `LANE03-LAB-RULE-FOUNDATION-V1` — PASS. LAB and RULE foundation surfaces remain SKELETON / DRAFT only.
 
 ## 7. CURRENT AND NEXT RECOMMENDED WORK
 
@@ -248,4 +248,6 @@ Rules:
 - 2026-04-27 - `LANE01-W1-T2-SHARED-SKILL-LAW-N9-CONFORMANCE-REPAIR-V1` repaired the 4 authored DRAFT SHARED skills to active `LAW_N9` structure while keeping every skill DRAFT.
 - 2026-04-27 - `LANE01-RUNTIME-LIVE-SYNC-V1` enabled read-only runtime mirror sync to `Uniton_Shared_Live`.
 - 2026-04-27 - `AIER-CODE-RUNTIME-HOT-MEMORY-ADOPTION-V1` adopted `runtime/current_state.md` as the active hot-memory entry, aligned checklist/action board/ledger, and recorded the future-task update rule.
+- 2026-04-27 - `LANE01-FULL-REPO-AUDIT-V1` produced a 9-table read-only audit of repo state with §A-§E conclusions.
 - 2026-04-27 - `LANE03-LAW-N12-REPO-RUNTIME-STANDARD-AUTHOR-V1` authored `LAW_N12_REPO_RUNTIME_STANDARD.md` plus a pending AMD packet and routed the next action into Lane_01 review / NTS decision flow without activating the law.
+- 2026-04-27 - `LANE01-W1-T4-COMBINED-V1` Phase A created `runtime/archive/` and `notifications/archive/` infrastructure with rotation policy, trimmed §6 to 5 most-recent, updated sync workflow to exclude archive folders. Phase B verifies mirror sync timing. Phase C runs W1.T4 smoke loop (aier-dispatch + aier-verify) on a real W1.T3 boot-protocol update.
