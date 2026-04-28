@@ -10,7 +10,7 @@
 ## §0. Header
 
 - **Generator:** `aier-state-update v1.0` invoked via `scripts/runtime/generate_activity_feed.py v1.0`
-- **Source commit:** `3dc15a788cc51a762bc47bf110b9a65f9da08542` (short: `3dc15a7`)
+- **Source commit:** `6bda4445ebd07421a53418f48669be07885cfe95` (short: `6bda444`)
 - **Total events shown:** 20 (capped at 20)
 - **Auto-generated:** `true` (do not hand-edit)
 - **Authority:** repo-backed automation per LAW_N8 §L8.2 explicitly enabled CI mode (visibility surface only — does NOT replace authoritative sources: NOTIFICATION_LEDGER, audit_logs, git log).
@@ -29,18 +29,18 @@ Format: `<timestamp> | <lane_id> | <event_type> | <ref>` — see the `Summary` c
 | `2026-04-29T01:40:00Z` | `Lane_01` | `NOTIFICATION` | LANE01-W2-MASTER-TASK-LIST-COMMIT-AND-BATCH-AUTHOR-V1 | `ntf:NTF-L01-ALL-20260429-026` | MASTER_TASK_LIST_COMMITTED → ALL |
 | `2026-04-29T00:25:00Z` | `Lane_01` | `NOTIFICATION` | LANE01-W2-T5-AIER-QA-SKILL-V1 | `ntf:NTF-L01-ALL-20260429-024` | SKILL_QA_WORKER_ACTIVE → ALL |
 | `2026-04-29T00:00:00Z` | `Lane_03` | `NOTIFICATION` | LANE03-W1-LANE02-ROLE-REFRAME-APPLY-V1 | `ntf:NTF-L03-ALL-20260429-023` | AMENDMENT_APPLIED → ALL |
-| `2026-04-28T21:31:41Z` | `(unknown)` | `TASK_COMPLETE` | (no task id) | `git:a8d430d` | feat(day1): multi-repo setup + Lane_02/03 pause handoffs + Brain MVP pre-audit [vercel skip] |
+| `2026-04-28T23:06:24Z` | `Lane_01` | `TASK_COMPLETE` | LANE01- | `git:6bda444` | Merge pull request #7 from unitonzengarden/chore/LANE01-naming-convention-2026-04-29 |
+| `2026-04-28T22:59:17Z` | `Lane_01` | `TASK_COMPLETE` | LANE01 | `git:267170e` | chore(naming): LANE01- prefix convention + rename existing deliverables [vercel skip] |
+| `2026-04-28T22:19:32Z` | `(unknown)` | `TASK_COMPLETE` | (no task id) | `git:614dbca` | fix(ci): rename snapshot to .snapshot.live.json suffix per check_deliverables convention [vercel skip] |
 | `2026-04-28T18:20:00+07:00` | `Lane_03` | `NOTIFICATION` | LANE03-W3-AIER-NEXT-TASK-ENGINE-V1 | `ntf:NTF-L03-ALL-20260428-032` | STATUS_UPDATE → ALL |
 | `2026-04-28T17:58:59Z` | `Lane_01` | `TASK_COMPLETE` | LANE01-V1-GA-RESUME-V1 | `git:561db00` | chore(autopilot): LANE01-V1-GA-RESUME-V1 complete — V1.0 GA RELEASED [vercel skip] |
 | `2026-04-28T16:46:25+07:00` | `Lane_03` | `NOTIFICATION` | LANE03-W3-AIER-OPERATOR-CONSOLE-V1 | `ntf:NTF-L03-ALL-20260428-031` | STATUS_UPDATE → ALL |
 | `2026-04-28T16:25:01Z` | `Lane_01` | `TASK_COMPLETE` | LANE01-V1-GA-AUTOPILOT-LOOP-V1 | `git:4c38fbf` | chore(autopilot): LANE01-V1-GA-AUTOPILOT-LOOP-V1 HALT at iter 5 NTS_SIGN_OFF [vercel skip] |
 | `2026-04-28T15:50:28Z` | `Lane_02` | `TASK_COMPLETE` | LANE02-W4-RELEASE-NOTES-DRAFT-V1 | `git:3d21792` | chore(snapshot): backfill SHA for LANE02-W4-RELEASE-NOTES-DRAFT-V1 [vercel skip] |
 | `2026-04-28T15:45:03Z` | `Lane_02` | `TASK_COMPLETE` | LANE02-W4-DOCS-OPERATOR-MANUAL-V1 | `git:ca93d0a` | chore(snapshot): backfill SHA for LANE02-W4-DOCS-OPERATOR-MANUAL-V1 [vercel skip] |
-| `2026-04-28T15:42:16Z` | `Lane_01` | `TASK_COMPLETE` | LANE01-W3-FIRE-3-LANES-V1 | `git:b28c402` | chore(checklist): backfill LANE01-W3-FIRE-3-LANES-V1 + LANE01-W3-QA-LOOP-WIRE-V1 SHA + workflow proof [vercel skip] |
 | `2026-04-28T15:39:22Z` | `Lane_02` | `TASK_COMPLETE` | LANE02-W3-DOMAIN-CANONS-DRAFT-V1 | `git:e34c8a1` | chore(snapshot): backfill SHA for LANE02-W3-DOMAIN-CANONS-DRAFT-V1 [vercel skip] |
-| `2026-04-28T15:00:56Z` | `Lane_02` | `TASK_COMPLETE` | LANE02-W3-LANE-NETWORK-CONSOLIDATE-V1 | `git:0531fea` | chore(snapshot): backfill SHA for LANE02-W3-LANE-NETWORK-CONSOLIDATE-V1 [vercel skip] |
-| `2026-04-28T14:15:00+07:00` | `Lane_03` | `NOTIFICATION` | LANE03-W2-AIER-DEV-TOOLS-SUITE-V1 | `ntf:NTF-L03-ALL-20260428-029` | STATUS_UPDATE → ALL |
-| `2026-04-28T13:48:14Z` | `Lane_01` | `AUDIT_LOG` | UNITON-SHARED-LIVE-RUNTIME-ACCEPTANCE-V1 | `audit:UNITON-SHARED-LIVE-RUNTIME-ACCEPTANCE-V1_audit.log` | [2026-04-25T15:25:32Z] STEP 1 - PREFLIGHT |
+| `2026-04-28T15:06:37Z` | `Lane_01` | `AUDIT_LOG` | UNITON-SHARED-RUNTIME-SYNC-SYSTEM-V1 | `audit:UNITON-SHARED-RUNTIME-SYNC-SYSTEM-V1_audit.log` | [2026-04-25T15:13:05Z] STEP 1 - PREFLIGHT |
+| `2026-04-28T15:06:37Z` | `Lane_01` | `AUDIT_LOG` | UNITON-SHARED-OS-OPERATIONS-DRAFT-UPLOAD-AND-AMENDMENT-PACKET-V1 | `audit:UNITON-SHARED-OS-OPERATIONS-DRAFT-UPLOAD-AND-AMENDMENT-PACKET-V1_audit.log` | 2026-04-26T17:55:01+07:00 TASK START UNITON-SHARED-OS-OPERATIONS-DRAFT-UPLOAD-AND-AMENDMENT-PACKET-V1 |
 
 ## §2. Sources & Coverage
 

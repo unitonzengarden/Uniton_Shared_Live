@@ -10,7 +10,7 @@
 ## §0. Header
 
 - **Generator:** `aier-state-update v1.0` invoked via `scripts/runtime/generate_project_status.py v1.1`
-- **Source commit:** `3dc15a788cc51a762bc47bf110b9a65f9da08542` (short: `3dc15a7`)
+- **Source commit:** `6bda4445ebd07421a53418f48669be07885cfe95` (short: `6bda444`)
 - **Auto-generated:** `true` (do not hand-edit)
 - **Authority:** repo-backed automation per LAW_N8 §L8.2 explicitly enabled CI mode (state-mirror auto-regenerate scope only)
 
@@ -65,21 +65,21 @@
 
 | SHA | Author | Subject |
 |---|---|---|
-| `3dc15a7` | unitonzengarden | chore(lane_02): multi-repo setup DONE - Uniton_OS cloned read-only [vercel skip] |
-| `c42027f` | AIER State Bot | [auto-status] regen runtime+network surfaces from a8d430d [vercel skip] |
-| `a8d430d` | CLAC Executor | feat(day1): multi-repo setup + Lane_02/03 pause handoffs + Brain MVP pre-audit [vercel skip] |
-| `1e2a2a5` | Uniton Zen | Merge pull request #6 from unitonzengarden/audit/migration-prep-2026-04-29 |
-| `68a27d6` | CLAC Executor | audit(migration): AIER Code inventory + data + API map for Cursor T-INT-03/04 [vercel skip] |
+| `6bda444` | Uniton Zen | Merge pull request #7 from unitonzengarden/chore/LANE01-naming-convention-2026-04-29 |
+| `83163ab` | AIER State Bot | [auto-status] regen runtime+network surfaces from dd7e197 [vercel skip] |
+| `dd7e197` | unitonzengarden | review(aier-life): lane03 integration contract review [vercel skip] |
+| `267170e` | CLAC Executor | chore(naming): LANE01- prefix convention + rename existing deliverables [vercel skip] |
+| `83fda04` | AIER State Bot | [auto-status] regen runtime+network surfaces from 63ed0ad [vercel skip] |
 
 ## §7. Latest 5 DONE Tasks (from MASTER_CHECKLIST)
 
 | Task ID | Completed | Commit |
 |---|---|---|
+| LANE03-W3-LAW-N13-INTEGRATION-HARDEN-V1 | 2026-04-28 | (this commit) |
 | LANE01-V1-CONTINUE-FINISH-V1 | 2026-04-29 | (this commit) |
 | LANE01-W5-UNITON-FUTURE-HANDOFF-V1 | 2026-04-29 | `524aad3` (rebased over Lane_02 push) |
 | LANE01-W5-V1-RELEASE-COMMIT-V1 | 2026-04-29 | `7a02007` (apply) + `a122cd0` (annotated tag objec |
 | LANE01-W5-V1-FINAL-AUDIT-V1 | 2026-04-29 | `347e39c` (rebased from `9993534`) |
-| LANE01-W4-V1-RC-COMMIT-V1 | 2026-04-29 | `27c7958` (orphan, tag preservation) → `d996a46` ( |
 
 ## §8. Pending NTS Decisions
 
@@ -118,7 +118,7 @@ Per-phase task completion counted from `runtime/checklist/MASTER_CHECKLIST.md` D
 
 - **W1** [██████████] 100% — 13/7 tasks DONE
 - **W2** [██████████] 100% — 14/12 tasks DONE
-- **W3** [██████████] 100% — 9/7 tasks DONE
+- **W3** [██████████] 100% — 10/7 tasks DONE
 - **W4** [██████░░░░] 62% — 5/8 tasks DONE
 - **W5** [██████░░░░] 60% — 3/5 tasks DONE
 
