@@ -1,8 +1,8 @@
 # Uniton_Shared_Live — Sync Info
 
 **Source repo**: unitonzengarden/Uniton_Shared (private)
-**Last sync**: 2026-04-28T05:37:31Z
-**Source commit**: 8ba755271443a79ee0f37bd46362998fb5955097
+**Last sync**: 2026-04-28T05:45:21Z
+**Source commit**: 099f7c2028c8071044f9d0177b60eff08bd125eb
 **Triggered by**: push
 
 ## Purpose
@@ -29,3 +29,6 @@ Canon, laws, skills, lab, rules remain private in Uniton_Shared.
 - https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/notifications/NOTIFICATION_LEDGER.md
 - https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/network/LANE_REGISTRY.md
 - https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/network/ACTIVITY_FEED.md
+- https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/network/task_queues/Lane_01.md
+- https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/network/task_queues/Lane_02.md
+- https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/network/task_queues/Lane_03.md
