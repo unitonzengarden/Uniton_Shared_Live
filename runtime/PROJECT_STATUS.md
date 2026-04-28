@@ -10,27 +10,27 @@
 ## §0. Header
 
 - **Generator:** `aier-state-update v1.0` invoked via `scripts/runtime/generate_project_status.py v1.0`
-- **Source commit:** `aa1b852ecef61c5c2ac73b55e8ebcf122c3a9f55` (short: `aa1b852`)
+- **Source commit:** `4caf91f9aecac18e8412d9d23e6065efad314e87` (short: `4caf91f`)
 - **Auto-generated:** `true` (do not hand-edit)
 - **Authority:** repo-backed automation per LAW_N8 §L8.2 explicitly enabled CI mode (state-mirror auto-regenerate scope only)
 
 ## §1. Phase + Gate
 
-- **Phase:** `ROADMAP_W1_EXECUTION / LAW_N12_ACTIVE / W1.7_NTS_DECISION_PENDING / W2.T2_DISPATCHER_PASS`
-- **Gate:** `(unknown)`
+- **Phase:** `ROADMAP_W1_COMPLETE / LAW_N12_ACTIVE / W1.7_APPLIED / W2_AUTOMATION_PHASE`
+- **Gate:** `W1_COMPLETE / W2_CONTROLLED_EXECUTION`
 - **Roadmap:** Roadmap V1 FINAL APPROVED + LOCKED at git tag `roadmap-locked-v2-final` (commit `14f7509`)
 
 ## §2. Active Lanes
 
-- Lane_01: `ACTIVE / CTO trial day 2/30 / FAST-ENDORSER MODE ACTIVE / W1.6 loop validation PASS / W2.T1 project-status automation PASS / W2.T2 dispatcher PASS / W2.T3 worker-scan next allowed / runtime live sync PASS / LAW_N12 ACTIVE`
+- Lane_01: active CTO-style contributor operating under active law, approved amendments, and task-scoped authority. Current visible state: Roadmap V1 FINAL locked, W1 complete with 5/5 core skills ACTIVE, runtime live sync PASS, W2.T1 PROJECT_STATUS automation PASS, W2.T2 dispatcher PASS, and W2.T3 worker-scan PASS.
 - Lane_02: `ONBOARDING_SCAFFOLDED / SMOKE_PENDING / PRODUCT_EXECUTION_DISABLED`
-- Lane_03: `ACTIVE / EXECUTION_SUPPORT / LAB+RULE foundation DONE / canon apply DONE / hot-memory adoption DONE / LAW_N12 apply DONE / canon-guard authored DRAFT / W1.7 packet authored`
+- Lane_03: active execution-support and canon-boundary review Lane. Current visible state: canon apply PASS, LAB/RULE foundation PASS, runtime hot-memory adoption PASS, LAW_N12 apply PASS, `aier-canon-guard` ACTIVE v1.0, and W1.7 apply PASS.
 
 ## §3. Active Skills
 
-- **Counts:** ACTIVE = 4, DRAFT = 1, SKELETON = 0, OTHER = 0
+- **Counts:** ACTIVE = 5, DRAFT = 0, SKELETON = 0, OTHER = 0
 - **Per skill:**
-  - `aier-canon-guard` — DRAFT v0.1 (owner: Lane_03)
+  - `aier-canon-guard` — ACTIVE v1.0 (owner: Lane_03)
   - `aier-dispatch` — ACTIVE v1.0 (owner: Lane_01)
   - `aier-handoff-route` — ACTIVE v1.0 (owner: Lane_01)
   - `aier-state-update` — ACTIVE v1.0 (owner: Lane_01)
@@ -65,25 +65,25 @@
 
 | SHA | Author | Subject |
 |---|---|---|
+| `4caf91f` | AIER State Bot | [auto-status] regen PROJECT_STATUS.md from 7a0e64a [vercel skip] |
+| `7a0e64a` | unitonzengarden | feat(skill): activate canon guard via NTS-approved amendment [vercel skip] |
+| `11246fa` | AIER State Bot | [auto-status] regen PROJECT_STATUS.md from aa1b852 [vercel skip] |
 | `aa1b852` | unitonzengarden | docs(amendment): propose canon guard activation packet [vercel skip] |
 | `cf36c4d` | AIER State Bot | [auto-status] regen PROJECT_STATUS.md from eb275d7 [vercel skip] |
-| `eb275d7` | CLAC Executor | chore(checklist): backfill LANE01-W2-T3-AIER-WORKER-SCAN-V1 SHA + workflow proof [vercel skip] |
-| `77f584a` | AIER State Bot | [auto-status] regen PROJECT_STATUS.md from 9f5ab3a [vercel skip] |
-| `9f5ab3a` | CLAC Executor | feat(automation): W2.T3 aier-scan worker [vercel skip] |
 
 ## §7. Latest 5 DONE Tasks (from MASTER_CHECKLIST)
 
 | Task ID | Completed | Commit |
 |---|---|---|
+| LANE03-W1-AIER-CANON-GUARD-NTS-AMENDMENT-APPLY-V1 | 2026-04-28 | recorded in task commit after validation |
 | LANE03-W1-AIER-CANON-GUARD-NTS-AMENDMENT-AUTHOR-V1 | 2026-04-28 | recorded in task commit after validation |
 | LANE01-W2-T2-DISPATCHER-IMPLEMENTATION-V1 | 2026-04-28 | `763ba64` |
 | LANE01-W2-T1-PROJECT-STATUS-AUTO-V1 | 2026-04-28 | `0b20fdb` (apply) + `cb38f33` (auto-status workflo |
 | LANE01-W1-LOOP-VALIDATION-V1 | 2026-04-28 | `d8eab755329b0873e8a80941530dfa91bb49195a` |
-| LANE01-W1-CORE-SKILLS-ACTIVATE-V1 | 2026-04-28 | `245ecd9e14bdcd3c3a8d502d4ada71dd2627185d` |
 
 ## §8. Pending NTS Decisions
 
-- AMD_LANE03_AIER_CANON_GUARD_ACTIVATE_2026-04-28
+- (none currently pending — check `runtime/checklist/MASTER_CHECKLIST.md §PENDING DECISION` for authoritative source)
 
 ## §9. Open Blockers / Warnings
 
