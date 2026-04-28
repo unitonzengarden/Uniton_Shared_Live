@@ -7,10 +7,10 @@
 - Canonical root: `D:\UZG\Projects-v2\Uniton_Shared`
 - Remote: `https://github.com/unitonzengarden/Uniton_Shared.git`
 - Branch: `main`
-- Last verified commit before this update: `c882953531758273676096d7bf6f5a7c1337b605` (origin/main after Lane_01 W2.T5 + Lane_03 LANE02 role-reframe APPLY)
-- Last updated: `2026-04-28T05:00:51Z`
-- Updated by: Lane_02 / CLAC2 (`LANE02-W2-NETWORK-BRAIN-MVP-V1` Task A) — dispatched by Lane_01 CTO under `AMD_LANE01_CTO_AUTO_APPROVE_TECH_NON_CANON`; Option C scope split (code+tests only; governance surfaces deferred to Task B / Lane_01)
-- Current state version: `v1.22`
+- Last verified commit before this update: `d8e2a08eea232f4d358c997f2a989629b22c489f` (origin/main after Lane_02 W2 Network Brain MVP and before Lane_03 template standard registration)
+- Last updated: `2026-04-28T12:25:44+07:00`
+- Updated by: Lane_03 / Codex (`LANE03-W2-TEMPLATE-STANDARDIZATION-AND-ENFORCEMENT-V1`)
+- Current state version: `v1.23`
 - Current state mode: `CONTROLLED_EXECUTION / GOVERNANCE_FIRST / RUNTIME_DRYRUN_ONLY`
 - Source evidence:
   - `reports/LANE03-AIER-CODE-CANON-NTS-APPROVAL-APPLY-V1_REPORT.md`
@@ -34,6 +34,7 @@
   - `reports/LANE01-W2-T4-AIER-QA-CANON-V1_REPORT.md`
   - `reports/LANE03-W1-LANE02-ROLE-REFRAME-APPLY-V1_REPORT.md`
   - `reports/LANE01-W2-T5-AIER-QA-SKILL-V1_REPORT.md`
+  - `reports/LANE03-W2-TEMPLATE-STANDARDIZATION-AND-ENFORCEMENT-V1_REPORT.md`
 
 This file is the repo-backed hot-memory entry for cold-start Lane readers. It records current repo truth and task state. It does not approve canon, approve roadmap phases, activate drafts, replace `LAW_SYSTEM.md`, replace `REDLINES.md`, or override NTS authority.
 
@@ -78,6 +79,7 @@ Active law files per `docs/LAW_CLA_LLM/SHARED/SHARED_INDEX.md`:
 - `docs/LAW_CLA_LLM/SHARED/boot/AIER_CODE_BOOT_MINIMUM_V1.md`
 - `docs/LAW_CLA_LLM/SHARED/boot/AIER_CODE_TASK_CONTEXT_TEMPLATE_V1.md`
 - `docs/LAW_CLA_LLM/SHARED/boot/AIER_CODE_DOCUMENT_STACK_INDEX_V1.md`
+- `docs/LAW_CLA_LLM/SHARED/templates/README.md` and the AIER Code Template Standard V2 bundle are registered as SHARED template operating standards for future task/report/amendment/handoff/notification/snapshot/QA evidence. They support LAW_N5, LAW_N7, LAW_N9, LAW_N12, and REDLINES, but do not override active laws or NTS authority.
 - `docs/LAW_CLA_LLM/SHARED/os_operations/AIER_CODE_TOKEN_AND_CONTEXT_OPTIMIZATION_PROTOCOL_V1.md`
 - `docs/LAW_CLA_LLM/SHARED/os_operations/AUDIT_PROCEDURE.md`
 - `docs/LAW_CLA_LLM/SHARED/os_operations/PROPAGATION_PROCEDURE.md`
@@ -259,6 +261,7 @@ Rules:
 
 ## 13. CHANGELOG
 
+- 2026-04-28 - `LANE03-W2-TEMPLATE-STANDARDIZATION-AND-ENFORCEMENT-V1` registered AIER Code Template Standard V2 in `docs/LAW_CLA_LLM/SHARED/templates/`, validated all 14 required template files and `SNAPSHOT_JSON_TEMPLATE.json`, updated SHARED_INDEX/current_state/checklist/notification visibility, and preserved boundaries: no SHARED/laws, CANON, Lane folders, scripts, contracts, workflows, daemon/backend/deploy, or capability grants.
 - 2026-04-26 - `T-RUNTIME-001` created the initial current-state memory file.
 - 2026-04-26 - `T-L01-RUNTIME-FIX-CHECKLIST-001` corrected path and checklist references.
 - 2026-04-26 - `T-L01-NTS-APPROVE-AND-MIGRATE-CANON-STACK-001` activated the AIER Code architecture stack under `SHARED/architecture/`.

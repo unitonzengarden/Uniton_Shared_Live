@@ -10,7 +10,7 @@
 ## §0. Header
 
 - **Generator:** `aier-state-update v1.0` invoked via `scripts/runtime/generate_project_status.py v1.0`
-- **Source commit:** `ff2b11663833a05c55b72916e14c75b67d9c24cd` (short: `ff2b116`)
+- **Source commit:** `de14a91a2e958fce05f5f0ba76524850712bd705` (short: `de14a91`)
 - **Auto-generated:** `true` (do not hand-edit)
 - **Authority:** repo-backed automation per LAW_N8 §L8.2 explicitly enabled CI mode (state-mirror auto-regenerate scope only)
 
@@ -65,21 +65,21 @@
 
 | SHA | Author | Subject |
 |---|---|---|
+| `de14a91` | unitonzengarden | feat(brain): Network Brain MVP code + tests (Task A scope) [vercel skip] |
+| `f9c08fe` | AIER State Bot | [auto-status] regen runtime+network surfaces from ff2b116 [vercel skip] |
 | `ff2b116` | unitonzengarden | docs(report): clarify canon hygiene redirect target blocker [vercel skip] |
 | `c882953` | AIER State Bot | [auto-status] regen runtime+network surfaces from ea1e4a4 [vercel skip] |
 | `ea1e4a4` | CLAC Executor | chore(checklist): backfill LANE01-W2-T5-AIER-QA-SKILL-V1 SHA + workflow proof [vercel skip] |
-| `61820e3` | AIER State Bot | [auto-status] regen runtime+network surfaces from 7b1fda7 [vercel skip] |
-| `7b1fda7` | CLAC Executor | feat(automation): W2.T5 aier-qa-skill worker [vercel skip] |
 
 ## §7. Latest 5 DONE Tasks (from MASTER_CHECKLIST)
 
 | Task ID | Completed | Commit |
 |---|---|---|
+| LANE02-W2-NETWORK-BRAIN-MVP-V1 (Task A) | 2026-04-28 | (this commit) |
 | LANE01-W2-T5-AIER-QA-SKILL-V1 | 2026-04-29 | `7b1fda7` (apply rebased over Lane_03 b603832 + La |
 | LANE01-W2-T4-AIER-QA-CANON-V1 | 2026-04-28 | `bd727f3` (apply rebased over Lane_02 W2-TEST-EXPA |
 | LANE02-W2-TEST-EXPAND-V1 | 2026-04-28 | (this commit) |
 | LANE01-W2-T3-5-CTO-IMPROVEMENT-BATCH-V1 |  | true` before `git push` (race-safe — same pattern  |
-| LANE01-W2-T3-AIER-WORKER-SCAN-V1 | 2026-04-28 | `9f5ab3a` (apply) + `eb275d7` (backfill) |
 
 ## §8. Pending NTS Decisions
 
