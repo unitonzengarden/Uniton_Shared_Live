@@ -1,8 +1,8 @@
 # Lane_02 Task Queue — V1 GA path
 
 **Lane:** Lane_02 (per `AMD_LANE02_AIER_CODE_ROLE_REFRAME_2026-04-29` — AIER Code parallel executor for tech non-canon work; dispatched under Lane_01 CTO scope)
-**Queue version:** v1.0
-**Source:** `roadmaps/MASTER_TASK_LIST_V1.1.md`
+**Queue version:** v1.1 (rebaselined `LANE01-W3-QUEUE-REBASELINE-V1` 2026-04-29 — row 2 deps rebased off Lane_04)
+**Source:** `roadmaps/MASTER_TASK_LIST_V1.1.md` + W3 rebaseline
 **Status notation:** `PENDING` | `READY` | `RUNNING` | `DONE` | `FAILED` | `BLOCKED`
 
 > **Auto-managed.** Read by `scripts/runtime/lane_dispatch.py --lane Lane_02 --pick-next`. Lane_02 operator dispatches via `gh workflow run lane_dispatch.yml -f lane_id=Lane_02`.
@@ -10,7 +10,7 @@
 | Order | Task ID | Status | Depends On | Phase | NTS_GATE |
 |---|---|---|---|---|---|
 | 1 | LANE02-W2-NETWORK-BRAIN-MVP-V1 | DONE | AMD_LANE02_AIER_CODE_ROLE_REFRAME_2026-04-29 (APPLIED) | W2 | NO |
-| 2 | LANE02-W3-LANE-NETWORK-CONSOLIDATE-V1 | PENDING | LANE01-W3-LANE04-LIVE-V1 + LANE02-W2-NETWORK-BRAIN-MVP-V1 | W3 | NO |
+| 2 | LANE02-W3-LANE-NETWORK-CONSOLIDATE-V1 | READY | LANE01-W2-CLOSEOUT-V1 + LANE02-W2-NETWORK-BRAIN-MVP-V1 | W3 | NO |
 | 3 | LANE02-W3-DOMAIN-CANONS-DRAFT-V1 | PENDING | LANE02-W3-LANE-NETWORK-CONSOLIDATE-V1 | W3 | NO |
 | 4 | LANE02-W4-DOCS-OPERATOR-MANUAL-V1 | PENDING | LANE02-W3-DOMAIN-CANONS-DRAFT-V1 | W4 | NO |
 | 5 | LANE02-W4-RELEASE-NOTES-DRAFT-V1 | PENDING | LANE02-W4-DOCS-OPERATOR-MANUAL-V1 | W4 | NO |
@@ -24,4 +24,8 @@
 
 ## NTS approval gates (Lane_02-direct: 0)
 
-Lane_02 has no direct NTS gates in V1 path; all Lane_02 tasks are tech non-canon under existing AMD_LANE02_AIER_CODE_ROLE_REFRAME authority. Cross-Lane gates (NTS_GATE_W3_LANE04_OPEN + NTS_SIGN_OFF) are Lane_01-side; Lane_02 waits for upstream Lane_01 tasks to clear before its dependent rows become READY.
+Lane_02 has no direct NTS gates in V1 path; all Lane_02 tasks are tech non-canon under existing AMD_LANE02_AIER_CODE_ROLE_REFRAME authority. Cross-Lane gate (NTS_SIGN_OFF V1.0 RC→FINAL) is Lane_01-side; Lane_02 waits for upstream Lane_01 tasks to clear before its dependent rows become READY.
+
+## Rebaseline history
+
+- **2026-04-29 (v1.0 → v1.1):** `LANE01-W3-QUEUE-REBASELINE-V1` — rebased row 2 `LANE02-W3-LANE-NETWORK-CONSOLIDATE-V1` deps off `LANE01-W3-LANE04-LIVE-V1` (deferred strategic) onto `LANE01-W2-CLOSEOUT-V1` (DONE) — status flips PENDING → READY. Lane_02 unblocked for parallel W3 execution.

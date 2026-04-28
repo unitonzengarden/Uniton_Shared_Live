@@ -10,7 +10,7 @@
 ## §0. Header
 
 - **Generator:** `aier-state-update v1.0` invoked via `scripts/runtime/generate_activity_feed.py v1.0`
-- **Source commit:** `2b6923d0a457a5225fe5509530a78c17b8333cbb` (short: `2b6923d`)
+- **Source commit:** `ba3f73908097a5080c4a0ae23a4f27738692884f` (short: `ba3f739`)
 - **Total events shown:** 20 (capped at 20)
 - **Auto-generated:** `true` (do not hand-edit)
 - **Authority:** repo-backed automation per LAW_N8 §L8.2 explicitly enabled CI mode (visibility surface only — does NOT replace authoritative sources: NOTIFICATION_LEDGER, audit_logs, git log).
@@ -25,6 +25,7 @@ Format: `<timestamp> | <lane_id> | <event_type> | <ref>` — see the `Summary` c
 | `2026-04-29T01:40:00Z` | `Lane_01` | `NOTIFICATION` | LANE01-W2-MASTER-TASK-LIST-COMMIT-AND-BATCH-AUTHOR-V1 | `ntf:NTF-L01-ALL-20260429-026` | MASTER_TASK_LIST_COMMITTED → ALL |
 | `2026-04-29T00:25:00Z` | `Lane_01` | `NOTIFICATION` | LANE01-W2-T5-AIER-QA-SKILL-V1 | `ntf:NTF-L01-ALL-20260429-024` | SKILL_QA_WORKER_ACTIVE → ALL |
 | `2026-04-29T00:00:00Z` | `Lane_03` | `NOTIFICATION` | LANE03-W1-LANE02-ROLE-REFRAME-APPLY-V1 | `ntf:NTF-L03-ALL-20260429-023` | AMENDMENT_APPLIED → ALL |
+| `2026-04-28T14:18:15Z` | `Lane_01` | `TASK_COMPLETE` | LANE01-W2-CLOSEOUT-V1 | `git:587783d` | chore(checklist): backfill LANE01-W2-CLOSEOUT-V1 SHA + workflow proof [vercel skip] |
 | `2026-04-28T14:12:49Z` | `(unknown)` | `TASK_COMPLETE` | (no task id) | `git:2b6923d` | fix(ci): rename W2 retrospective to drop _REPORT suffix [vercel skip] |
 | `2026-04-28T13:47:15Z` | `Lane_01` | `TASK_COMPLETE` | LANE01-W2-MASTER-TASK-LIST-V1 | `git:2011978` | chore(checklist): backfill LANE01-W2-MASTER-TASK-LIST-V1 SHA + workflow proof [vercel skip] |
 | `2026-04-28T12:37:33Z` | `Lane_01` | `TASK_COMPLETE` | LANE01-W2-T5-AIER-QA-SKILL-V1 | `git:ea1e4a4` | chore(checklist): backfill LANE01-W2-T5-AIER-QA-SKILL-V1 SHA + workflow proof [vercel skip] |
@@ -38,9 +39,8 @@ Format: `<timestamp> | <lane_id> | <event_type> | <ref>` — see the `Summary` c
 | `2026-04-28T10:53:44Z` | `(unknown)` | `TASK_COMPLETE` | LANE02 | `git:0c90e35` | feat(tests): LANE02 W2 test infrastructure expand [vercel skip] |
 | `2026-04-28T10:35:03Z` | `(unknown)` | `AMENDMENT_PROPOSED` | (no task id) | `git:cd90803` | docs(amendment): author Lane_02 role reframe packet [vercel skip] |
 | `2026-04-28T06:30:00Z` | `Lane_01` | `NOTIFICATION` | LANE01-W2-T2-DISPATCHER-IMPLEMENTATION-V1 | `ntf:NTF-L01-ALL-20260428-018` | DISPATCHER_ACTIVE → ALL |
-| `2026-04-28T06:13:01Z` | `Lane_01` | `AUDIT_LOG` | UNITON-SHARED-LANE01-GITHUB-SYNC-AUDIT-AND-ACTION-V1 | `audit:UNITON-SHARED-LANE01-GITHUB-SYNC-AUDIT-AND-ACTION-V1_audit.log` | 2026-04-26T10:20:00+07:00 TASK UNITON-SHARED-LANE01-GITHUB-SYNC-AUDIT-AND-ACTION-V1 started. |
-| `2026-04-28T06:13:01Z` | `Lane_01` | `AUDIT_LOG` | UNITON-SHARED-CANONICAL-LOCAL-GITHUB-SYNC-AUDIT-V1 | `audit:UNITON-SHARED-CANONICAL-LOCAL-GITHUB-SYNC-AUDIT-V1_audit.log` | 2026-04-26T09:51:33+07:00 TASK UNITON-SHARED-CANONICAL-LOCAL-GITHUB-SYNC-AUDIT-V1 started. |
-| `2026-04-28T06:13:01Z` | `Lane_01` | `AUDIT_LOG` | T-POSTMERGE-CLEANUP-001 | `audit:T-POSTMERGE-CLEANUP-001_audit.log` | [2026-04-25T10:30:00Z] T-POSTMERGE-CLEANUP-001 START |
+| `2026-04-28T06:27:14Z` | `Lane_01` | `AUDIT_LOG` | UNITON-SHARED-LANE01-GITHUB-SYNC-AUDIT-AND-ACTION-V1 | `audit:UNITON-SHARED-LANE01-GITHUB-SYNC-AUDIT-AND-ACTION-V1_audit.log` | 2026-04-26T10:20:00+07:00 TASK UNITON-SHARED-LANE01-GITHUB-SYNC-AUDIT-AND-ACTION-V1 started. |
+| `2026-04-28T06:27:14Z` | `Lane_01` | `AUDIT_LOG` | UNITON-SHARED-LIVE-RUNTIME-ACCEPTANCE-V1 | `audit:UNITON-SHARED-LIVE-RUNTIME-ACCEPTANCE-V1_audit.log` | [2026-04-25T15:25:32Z] STEP 1 - PREFLIGHT |
 
 ## §2. Sources & Coverage
 

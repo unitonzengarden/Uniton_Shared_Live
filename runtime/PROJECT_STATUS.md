@@ -10,7 +10,7 @@
 ## §0. Header
 
 - **Generator:** `aier-state-update v1.0` invoked via `scripts/runtime/generate_project_status.py v1.0`
-- **Source commit:** `2b6923d0a457a5225fe5509530a78c17b8333cbb` (short: `2b6923d`)
+- **Source commit:** `ba3f73908097a5080c4a0ae23a4f27738692884f` (short: `ba3f739`)
 - **Auto-generated:** `true` (do not hand-edit)
 - **Authority:** repo-backed automation per LAW_N8 §L8.2 explicitly enabled CI mode (state-mirror auto-regenerate scope only)
 
@@ -65,17 +65,17 @@
 
 | SHA | Author | Subject |
 |---|---|---|
+| `ba3f739` | unitonzengarden | docs(report): record blocked Lane_02 compliance reframe authoring [vercel skip] |
+| `049b920` | AIER State Bot | [auto-status] regen runtime+network surfaces from 587783d [vercel skip] |
+| `587783d` | CLAC Executor | chore(checklist): backfill LANE01-W2-CLOSEOUT-V1 SHA + workflow proof [vercel skip] |
+| `e608f67` | AIER State Bot | [auto-status] regen runtime+network surfaces from 2b6923d [vercel skip] |
 | `2b6923d` | CLAC Executor | fix(ci): rename W2 retrospective to drop _REPORT suffix [vercel skip] |
-| `a8fd7d5` | AIER State Bot | [auto-status] regen runtime+network surfaces from 2c7f1de [vercel skip] |
-| `2c7f1de` | CLAC Executor | chore(w2): closeout — 3 QA workers re-run + retrospective [vercel skip] |
-| `814b019` | AIER State Bot | [auto-status] regen runtime+network surfaces from 2011978 [vercel skip] |
-| `2011978` | CLAC Executor | chore(checklist): backfill LANE01-W2-MASTER-TASK-LIST-V1 SHA + workflow proof [vercel skip] |
 
 ## §7. Latest 5 DONE Tasks (from MASTER_CHECKLIST)
 
 | Task ID | Completed | Commit |
 |---|---|---|
-| LANE01-W2-CLOSEOUT-V1 | 2026-04-29 | (this commit) |
+| LANE01-W2-CLOSEOUT-V1 | 2026-04-29 | `2c7f1de` (apply rebased over Lane_02 + Lane_03) + |
 | LANE03-W2-TEMPLATE-STANDARDIZATION-AND-ENFORCEMENT-V1 | 2026-04-28 | (Lane_03 commit) |
 | LANE01-W2-MASTER-TASK-LIST-COMMIT-AND-BATCH-AUTHOR-V1 | 2026-04-29 | `099f7c2` (apply rebased over Lane_02 + Lane_03) + |
 | LANE03-W2-TEMPLATE-STANDARDIZATION-AND-ENFORCEMENT-V1 | 2026-04-28 | (Lane_03 commit) |
