@@ -10,7 +10,7 @@
 ## §0. Header
 
 - **Generator:** `aier-state-update v1.0` invoked via `scripts/runtime/generate_lane_registry.py v1.0`
-- **Source commit:** `814b0199f35cb47af0cbc0cca56e89c8bc3856b8` (short: `814b019`)
+- **Source commit:** `2c7f1de37b1e25faf4e9758e7f31a50777f553fa` (short: `2c7f1de`)
 - **Auto-generated:** `true` (do not hand-edit)
 - **Authority:** repo-backed automation per LAW_N8 §L8.2 explicitly enabled CI mode (visibility surface only — does NOT register Lanes; new Lane registration remains NTS-gated per LAW_N10 §L10.x).
 
