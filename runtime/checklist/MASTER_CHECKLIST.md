@@ -1,18 +1,20 @@
 # MASTER CHECKLIST - Uniton_Shared
-Updated: 2026-04-28T12:35:00Z by Lane_01 - LANE01-W2-T4-AIER-QA-CANON-V1 DONE (rebased over Lane_02 W2-TEST-EXPAND-V1 + Lane_03 W1-LANE02-ROLE-REFRAME-AUTHOR-V1; W2.T5 aier-qa-skill PRIMARY NEXT)
+Updated: 2026-04-29T00:00:00Z by Lane_03 - LANE03-W1-LANE02-ROLE-REFRAME-APPLY-V1 DONE (rebased over Lane_01 W2.T4 canon QA + Lane_02 W2 test expansion; Lane_02 role reframe approved/applied; W2.T5 aier-qa-skill remains PRIMARY NEXT)
 
 ## RECENTLY RESOLVED DECISION
 
 | Task ID | Lane | Description | Target Date | Status |
 |---|---|---|---|---|
+| AMD_LANE02_AIER_CODE_ROLE_REFRAME_2026-04-29 | NTS / Lane_03 / Lane_02 | NTS approved and Lane_03 applied Lane_02 role reframe to AIER Code parallel executor for controlled tech non-canon work. | 2026-04-29 | APPROVED_APPLIED / RESOLVED |
 | AMD_LANE03_AIER_CANON_GUARD_ACTIVATE_2026-04-28 | NTS / Lane_03 | NTS approved and Lane_03 applied `aier-canon-guard` from `DRAFT v0.1` to `ACTIVE v1.0`. | 2026-04-28 | APPROVED_APPLIED / RESOLVED |
 
 ## NEXT (planned, theo priority)
 
 | Task ID | Lane | Description | ETA | Status |
 |---|---|---|---|---|
+| LANE03-W1-LANE02-ROLE-REFRAME-APPLY-V1 | Lane_03 | Applied NTS-approved `AMD_LANE02_AIER_CODE_ROLE_REFRAME_2026-04-29`; Lane_02 is now AIER Code parallel executor for controlled tech non-canon work. | 2026-04-29 | DONE / APPLIED |
 | LANE03-W1-LANE02-ROLE-REFRAME-AUTHOR-V1 | Lane_03 | Authored pending amendment packet `AMD_LANE02_AIER_CODE_ROLE_REFRAME_2026-04-29` from NTS/Lane_01 draft. No approval/apply; no Lane_02 files changed. | 2026-04-28 | DONE / AUTHOR_ONLY |
-| AMD_LANE02_AIER_CODE_ROLE_REFRAME_2026-04-29 | NTS / Lane_01 / Lane_02 | Review pending Lane_02 role-reframe packet and decide APPROVE / REJECT / NEEDS_REVISION. If APPROVE, run separate scoped apply task. | 2026-04-29 | PENDING_NTS_DECISION |
+| LANE02-NEXT-SCOPED-AIER-CODE-TASK | Lane_02 | Begin execution under new AIER Code parallel executor role only after explicit task dispatch. | 2026-04-29 | NEXT / WAITING_TASK_DISPATCH |
 | LANE03-W1-AIER-CANON-GUARD-NTS-AMENDMENT-APPLY-V1 | Lane_03 | Apply `aier-canon-guard` DRAFT v0.1 -> ACTIVE v1.0 per NTS-approved `AMD_LANE03_AIER_CANON_GUARD_ACTIVATE_2026-04-28`. | 2026-04-28 | DONE / W1 COMPLETE |
 | W2-AUTOMATION-PHASE-CONTINUATION | Lane_01 / Lane_03 | Continue W2 automation work only under controlled execution and existing runtime boundaries. Repo truth records W2.T1 PROJECT_STATUS PASS, W2.T2 DISPATCHER PASS, W2.T3 WORKER-SCAN PASS, and W2.T3.5 CTO IMPROVEMENT BATCH PASS. | 2026-04-28 | NEXT / CONTROLLED_EXECUTION |
 | LANE01-W2-T5-AIER-QA-SKILL-V1 | Lane_01 | V1.1 W2.T5 PRIMARY NEXT — 3rd AIER worker = skill consistency QA worker (verify SHARED/skills/* registry consistency, METADATA.yaml drift, SKILL.md schema). Tech non-canon per AMD_LANE01_CTO_AUTO_APPROVE_TECH_NON_CANON §3.1. | 2026-04-29 | PRIMARY NEXT |

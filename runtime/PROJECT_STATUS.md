@@ -10,7 +10,7 @@
 ## §0. Header
 
 - **Generator:** `aier-state-update v1.0` invoked via `scripts/runtime/generate_project_status.py v1.0`
-- **Source commit:** `bd727f38e7040efec5dde16ff3ffa82d7c8a3820` (short: `bd727f3`)
+- **Source commit:** `ec594bf13febd52032f95acf0179487ad4c926d7` (short: `ec594bf`)
 - **Auto-generated:** `true` (do not hand-edit)
 - **Authority:** repo-backed automation per LAW_N8 §L8.2 explicitly enabled CI mode (state-mirror auto-regenerate scope only)
 
@@ -65,17 +65,17 @@
 
 | SHA | Author | Subject |
 |---|---|---|
+| `ec594bf` | CLAC Executor | chore(checklist): backfill LANE01-W2-T4-AIER-QA-CANON-V1 SHA + workflow proof [vercel skip] |
+| `7d54fa4` | AIER State Bot | [auto-status] regen runtime+network surfaces from bd727f3 [vercel skip] |
 | `bd727f3` | CLAC Executor | feat(automation): W2.T4 aier-qa-canon worker [vercel skip] |
 | `24958f3` | unitonzengarden | chore(snapshot): backfill commit SHA for LANE02-W2-TEST-EXPAND-V1 [vercel skip] |
 | `78ac0fe` | AIER State Bot | [auto-status] regen runtime+network surfaces from 0c90e35 [vercel skip] |
-| `0c90e35` | unitonzengarden | feat(tests): LANE02 W2 test infrastructure expand [vercel skip] |
-| `e57fdfb` | AIER State Bot | [auto-status] regen runtime+network surfaces from cd90803 [vercel skip] |
 
 ## §7. Latest 5 DONE Tasks (from MASTER_CHECKLIST)
 
 | Task ID | Completed | Commit |
 |---|---|---|
-| LANE01-W2-T4-AIER-QA-CANON-V1 | 2026-04-28 | (this commit) |
+| LANE01-W2-T4-AIER-QA-CANON-V1 | 2026-04-28 | `bd727f3` (apply rebased over Lane_02 W2-TEST-EXPA |
 | LANE02-W2-TEST-EXPAND-V1 | 2026-04-28 | (this commit) |
 | LANE01-W2-T3-5-CTO-IMPROVEMENT-BATCH-V1 |  | true` before `git push` (race-safe — same pattern  |
 | LANE01-W2-T3-AIER-WORKER-SCAN-V1 | 2026-04-28 | `9f5ab3a` (apply) + `eb275d7` (backfill) |
