@@ -10,7 +10,7 @@
 ## §0. Header
 
 - **Generator:** `aier-state-update v1.0` invoked via `scripts/runtime/generate_project_status.py v1.0`
-- **Source commit:** `1635c9bee8012aeeaf7e3c1cb900a15525d0f01e` (short: `1635c9b`)
+- **Source commit:** `fe44c53fcf7b29453df36df4bf2c9efbbfc8047d` (short: `fe44c53`)
 - **Auto-generated:** `true` (do not hand-edit)
 - **Authority:** repo-backed automation per LAW_N8 §L8.2 explicitly enabled CI mode (state-mirror auto-regenerate scope only)
 
@@ -65,11 +65,11 @@
 
 | SHA | Author | Subject |
 |---|---|---|
+| `fe44c53` | unitonzengarden | fix(skill): aier-canon-guard heading conformance — LAW_N9 §L9.8 canonical [vercel skip] |
+| `b28c402` | CLAC Executor | chore(checklist): backfill LANE01-W3-FIRE-3-LANES-V1 + LANE01-W3-QA-LOOP-WIRE-V1 SHA + workflow proo |
+| `ccc8e11` | AIER State Bot | [auto-status] regen runtime+network surfaces from 1635c9b [vercel skip] |
 | `1635c9b` | unitonzengarden | chore(devtools): refresh evidence after rebase [vercel skip] |
 | `4c8dd8b` | unitonzengarden | chore(devtools): refresh generated status after rebase [vercel skip] |
-| `fffd85d` | unitonzengarden | feat(devtools): add AIER state summary suite [vercel skip] |
-| `b67dbaf` | AIER State Bot | [auto-status] regen runtime+network surfaces from 9238779 [vercel skip] |
-| `9238779` | CLAC Executor | feat(automation): W3 QA loop coordinator — wires 3 workers into 1 workflow [vercel skip] |
 
 ## §7. Latest 5 DONE Tasks (from MASTER_CHECKLIST)
 
