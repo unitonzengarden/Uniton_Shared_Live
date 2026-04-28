@@ -9,8 +9,8 @@
 
 ## §0. Header
 
-- **Generator:** `aier-state-update v1.0` invoked via `scripts/runtime/generate_project_status.py v1.0`
-- **Source commit:** `51b277143c536909c273dd3dc6338031c7192a27` (short: `51b2771`)
+- **Generator:** `aier-state-update v1.0` invoked via `scripts/runtime/generate_project_status.py v1.1`
+- **Source commit:** `05fb9a08f36c029c48196d8136496af0f0cc9ae4` (short: `05fb9a0`)
 - **Auto-generated:** `true` (do not hand-edit)
 - **Authority:** repo-backed automation per LAW_N8 §L8.2 explicitly enabled CI mode (state-mirror auto-regenerate scope only)
 
@@ -65,11 +65,11 @@
 
 | SHA | Author | Subject |
 |---|---|---|
+| `05fb9a0` | AIER State Bot | [auto-status] regen runtime+network surfaces from bb3c6a9 [vercel skip] |
+| `bb3c6a9` | CLAC Executor | docs(roadmap): V1.1 supplement annotating W2-W3 actuals + W4-W5 plan [vercel skip] |
+| `0531fea` | unitonzengarden | chore(snapshot): backfill SHA for LANE02-W3-LANE-NETWORK-CONSOLIDATE-V1 [vercel skip] |
+| `acfad74` | AIER State Bot | [auto-status] regen runtime+network surfaces from 51b2771 [vercel skip] |
 | `51b2771` | unitonzengarden | docs(network): W3 Lane network consolidate - 3-Lane audit + Lane_04 deferred [vercel skip] |
-| `a1c1095` | AIER State Bot | [auto-status] regen runtime+network surfaces from fe44c53 [vercel skip] |
-| `fe44c53` | unitonzengarden | fix(skill): aier-canon-guard heading conformance — LAW_N9 §L9.8 canonical [vercel skip] |
-| `b28c402` | CLAC Executor | chore(checklist): backfill LANE01-W3-FIRE-3-LANES-V1 + LANE01-W3-QA-LOOP-WIRE-V1 SHA + workflow proo |
-| `ccc8e11` | AIER State Bot | [auto-status] regen runtime+network surfaces from 1635c9b [vercel skip] |
 
 ## §7. Latest 5 DONE Tasks (from MASTER_CHECKLIST)
 
@@ -98,6 +98,32 @@
 - **PROJECT_STATUS.md fetch URL:** https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/runtime/PROJECT_STATUS.md
 - **Note:** Workflow run health is observable via the GitHub Actions tab on the source repo; this script does not poll the API per R-RUN-01..06 (no daemon).
 
+## §11. QA Health Scores
+
+Latest scores from the 4-worker QA family (per `LANE01-W3-QA-LOOP-WIRE-V1`).
+
+| Worker | Latest Report | Health | Findings (C/W/I) |
+|---|---|---|---|
+| scan | `AIER-SCAN-AUTOPILOT-DIAG.json` | 0/100 | 10/4/0 |
+| canon | `AIER-CANON-QA-W2-CLOSEOUT.json` | 76/100 | 0/7/3 |
+| skill | `AIER-SKILL-QA-HEADING-FIX-VERIFY.json` | 97/100 | 0/1/0 |
+| qa_loop | `POST-LANE01-W4-ROADMAP-HOT-RELOAD-V1.json` | 60/100 | 10/12/3 |
+
+- **Aggregate health (weighted scan=30% + canon=40% + skill=30%):** `60/100`
+- **Source:** `scan_reports/`, `canon_qa_reports/`, `skill_qa_reports/`, `qa_loop_reports/` (per-worker schemas)
+
+## §12. Roadmap Phase Progress
+
+Per-phase task completion counted from `runtime/checklist/MASTER_CHECKLIST.md` DONE table.
+
+- **W1** [██████████] 100% — 13/7 tasks DONE
+- **W2** [██████████] 100% — 14/12 tasks DONE
+- **W3** [████████░░] 86% — 6/7 tasks DONE
+- **W4** [░░░░░░░░░░] 0% — 0/8 tasks DONE
+- **W5** [░░░░░░░░░░] 0% — 0/5 tasks DONE
+
+- **Source:** task IDs matching `-W[1-5]-` token in DONE rows; planned counts from V1.1 supplement §4
+
 ---
 
-**END PROJECT_STATUS.md** (generator `v1.0` — skill `aier-state-update v1.0`)
+**END PROJECT_STATUS.md** (generator `v1.1` — skill `aier-state-update v1.0`)

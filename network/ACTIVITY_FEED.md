@@ -10,7 +10,7 @@
 ## §0. Header
 
 - **Generator:** `aier-state-update v1.0` invoked via `scripts/runtime/generate_activity_feed.py v1.0`
-- **Source commit:** `51b277143c536909c273dd3dc6338031c7192a27` (short: `51b2771`)
+- **Source commit:** `bb3c6a92110f293aff9c94297fabf8254fdce3be` (short: `bb3c6a9`)
 - **Total events shown:** 20 (capped at 20)
 - **Auto-generated:** `true` (do not hand-edit)
 - **Authority:** repo-backed automation per LAW_N8 §L8.2 explicitly enabled CI mode (visibility surface only — does NOT replace authoritative sources: NOTIFICATION_LEDGER, audit_logs, git log).
@@ -27,9 +27,10 @@ Format: `<timestamp> | <lane_id> | <event_type> | <ref>` — see the `Summary` c
 | `2026-04-29T01:40:00Z` | `Lane_01` | `NOTIFICATION` | LANE01-W2-MASTER-TASK-LIST-COMMIT-AND-BATCH-AUTHOR-V1 | `ntf:NTF-L01-ALL-20260429-026` | MASTER_TASK_LIST_COMMITTED → ALL |
 | `2026-04-29T00:25:00Z` | `Lane_01` | `NOTIFICATION` | LANE01-W2-T5-AIER-QA-SKILL-V1 | `ntf:NTF-L01-ALL-20260429-024` | SKILL_QA_WORKER_ACTIVE → ALL |
 | `2026-04-29T00:00:00Z` | `Lane_03` | `NOTIFICATION` | LANE03-W1-LANE02-ROLE-REFRAME-APPLY-V1 | `ntf:NTF-L03-ALL-20260429-023` | AMENDMENT_APPLIED → ALL |
+| `2026-04-28T16:11:03Z` | `(unknown)` | `TASK_COMPLETE` | (no task id) | `git:bb3c6a9` | docs(roadmap): V1.1 supplement annotating W2-W3 actuals + W4-W5 plan [vercel skip] |
 | `2026-04-28T15:42:16Z` | `Lane_01` | `TASK_COMPLETE` | LANE01-W3-FIRE-3-LANES-V1 | `git:b28c402` | chore(checklist): backfill LANE01-W3-FIRE-3-LANES-V1 + LANE01-W3-QA-LOOP-WIRE-V1 SHA + workflow proof [vercel skip] |
-| `2026-04-28T15:23:08Z` | `(unknown)` | `TASK_COMPLETE` | (no task id) | `git:9238779` | feat(automation): W3 QA loop coordinator — wires 3 workers into 1 workflow [vercel skip] |
 | `2026-04-28T15:01:02Z` | `Lane_01` | `TASK_COMPLETE` | LANE01-W3-QUEUE-REBASELINE-V1 | `git:c515d96` | chore(checklist): backfill LANE01-W3-QUEUE-REBASELINE-V1 SHA + workflow proof [vercel skip] |
+| `2026-04-28T15:00:56Z` | `Lane_02` | `TASK_COMPLETE` | LANE02-W3-LANE-NETWORK-CONSOLIDATE-V1 | `git:0531fea` | chore(snapshot): backfill SHA for LANE02-W3-LANE-NETWORK-CONSOLIDATE-V1 [vercel skip] |
 | `2026-04-28T14:34:24Z` | `Lane_02` | `TASK_COMPLETE` | LANE02-LOOP-T5 | `git:a52c5a0` | chore(snapshot): backfill SHA for LANE02-LOOP-T5 [vercel skip] |
 | `2026-04-28T14:31:10Z` | `Lane_02` | `TASK_COMPLETE` | LANE02-LOOP-T4 | `git:5c4933b` | chore(snapshot): backfill SHA for LANE02-LOOP-T4 [vercel skip] |
 | `2026-04-28T14:27:48Z` | `Lane_02` | `TASK_COMPLETE` | LANE02-LOOP-T3 | `git:215d04f` | chore(snapshot): backfill SHA for LANE02-LOOP-T3 [vercel skip] |
@@ -38,7 +39,6 @@ Format: `<timestamp> | <lane_id> | <event_type> | <ref>` — see the `Summary` c
 | `2026-04-28T14:15:00+07:00` | `Lane_03` | `NOTIFICATION` | LANE03-W2-AIER-DEV-TOOLS-SUITE-V1 | `ntf:NTF-L03-ALL-20260428-029` | STATUS_UPDATE → ALL |
 | `2026-04-28T14:14:56Z` | `Lane_02` | `TASK_COMPLETE` | LANE02-LOOP-T1 | `git:004a165` | chore(snapshot): backfill SHA for LANE02-LOOP-T1 [vercel skip] |
 | `2026-04-28T13:47:15Z` | `Lane_01` | `TASK_COMPLETE` | LANE01-W2-MASTER-TASK-LIST-V1 | `git:2011978` | chore(checklist): backfill LANE01-W2-MASTER-TASK-LIST-V1 SHA + workflow proof [vercel skip] |
-| `2026-04-28T12:37:33Z` | `Lane_01` | `TASK_COMPLETE` | LANE01-W2-T5-AIER-QA-SKILL-V1 | `git:ea1e4a4` | chore(checklist): backfill LANE01-W2-T5-AIER-QA-SKILL-V1 SHA + workflow proof [vercel skip] |
 | `2026-04-28T12:30:00Z` | `Lane_01` | `NOTIFICATION` | LANE01-W2-T4-AIER-QA-CANON-V1 | `ntf:NTF-L01-ALL-20260428-023` | CANON_QA_WORKER_ACTIVE → ALL |
 | `2026-04-28T12:25:44+07:00` | `Lane_03` | `NOTIFICATION` | LANE03-W2-TEMPLATE-STANDARDIZATION-AND-ENFORCEMENT-V1 | `ntf:NTF-L03-ALL-20260428-025` | STATUS_UPDATE → ALL |
 
