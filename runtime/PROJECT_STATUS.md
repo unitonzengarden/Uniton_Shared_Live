@@ -10,7 +10,7 @@
 ## §0. Header
 
 - **Generator:** `aier-state-update v1.0` invoked via `scripts/runtime/generate_project_status.py v1.0`
-- **Source commit:** `ec594bf13febd52032f95acf0179487ad4c926d7` (short: `ec594bf`)
+- **Source commit:** `b86ac82ce8f83e258b7638b59e6e34ef2d5ce18c` (short: `b86ac82`)
 - **Auto-generated:** `true` (do not hand-edit)
 - **Authority:** repo-backed automation per LAW_N8 §L8.2 explicitly enabled CI mode (state-mirror auto-regenerate scope only)
 
@@ -23,7 +23,7 @@
 ## §2. Active Lanes
 
 - Lane_01: active CTO-style contributor operating under active law, approved amendments, and task-scoped authority. Current visible state: Roadmap V1 FINAL locked, W1 complete with 5/5 core skills ACTIVE, runtime live sync PASS, W2.T1 PROJECT_STATUS automation PASS, W2.T2 dispatcher PASS, and W2.T3 worker-scan PASS.
-- Lane_02: `ONBOARDING_SCAFFOLDED / WORKSPACE_BOOTSTRAPPED / READY_FOR_REFRAME / PRODUCT_EXECUTION_DISABLED / ROLE_REFRAME_AMD_PENDING_NTS_DECISION` (workspace at D:\UZG\Projects-v2\AIER_Code\Lane_02 verified 2026-04-28; `AMD_LANE02_AIER_CODE_ROLE_REFRAME_2026-04-29` authored by Lane_03 for review only; no role reframe is active until NTS approval and a separate apply task).
+- Lane_02: `AIER_CODE_PARALLEL_EXECUTOR / TECH_NON_CANON_ONLY / PRODUCT_EXECUTION_DISABLED` (workspace at D:\UZG\Projects-v2\AIER_Code\Lane_02 verified 2026-04-28; `AMD_LANE02_AIER_CODE_ROLE_REFRAME_2026-04-29` approved by NTS and applied by Lane_03 via `LANE03-W1-LANE02-ROLE-REFRAME-APPLY-V1`; UZG+ product work remains disabled until a later scoped NTS task).
 - Lane_03: active execution-support and canon-boundary review Lane. Current visible state: canon apply PASS, LAB/RULE foundation PASS, runtime hot-memory adoption PASS, LAW_N12 apply PASS, `aier-canon-guard` ACTIVE v1.0, and W1.7 apply PASS.
 
 ## §3. Active Skills
@@ -55,31 +55,31 @@
 
 ## §5. Active AMDs (AMENDMENTS_LOG counts)
 
-- **Total rows:** 23
-- **PENDING:** 16
-- **APPROVED (non-pending):** 7
-- **Lane self-approve (under AMD_LANE01_CTO_AUTO_APPROVE_TECH_NON_CANON §3.1):** 12
+- **Total rows:** 25
+- **PENDING:** 17
+- **APPROVED (non-pending):** 8
+- **Lane self-approve (under AMD_LANE01_CTO_AUTO_APPROVE_TECH_NON_CANON §3.1):** 13
 - **Authoritative source:** `docs/LAW_CLA_LLM/SHARED/amendments/AMENDMENTS_LOG.md`
 
 ## §6. Latest 5 Commits
 
 | SHA | Author | Subject |
 |---|---|---|
-| `ec594bf` | CLAC Executor | chore(checklist): backfill LANE01-W2-T4-AIER-QA-CANON-V1 SHA + workflow proof [vercel skip] |
-| `7d54fa4` | AIER State Bot | [auto-status] regen runtime+network surfaces from bd727f3 [vercel skip] |
-| `bd727f3` | CLAC Executor | feat(automation): W2.T4 aier-qa-canon worker [vercel skip] |
-| `24958f3` | unitonzengarden | chore(snapshot): backfill commit SHA for LANE02-W2-TEST-EXPAND-V1 [vercel skip] |
-| `78ac0fe` | AIER State Bot | [auto-status] regen runtime+network surfaces from 0c90e35 [vercel skip] |
+| `b86ac82` | AIER State Bot | [auto-status] regen runtime+network surfaces from 5177b3d [vercel skip] |
+| `5177b3d` | unitonzengarden | docs(report): block canon hygiene batch pending redirect target [vercel skip] |
+| `e8831c6` | AIER State Bot | [auto-status] regen runtime+network surfaces from b603832 [vercel skip] |
+| `b603832` | unitonzengarden | amend(lane): apply Lane_02 role reframe [vercel skip] |
+| `01bfdad` | AIER State Bot | [auto-status] regen runtime+network surfaces from ec594bf [vercel skip] |
 
 ## §7. Latest 5 DONE Tasks (from MASTER_CHECKLIST)
 
 | Task ID | Completed | Commit |
 |---|---|---|
+| LANE01-W2-T5-AIER-QA-SKILL-V1 | 2026-04-29 | (this commit) |
 | LANE01-W2-T4-AIER-QA-CANON-V1 | 2026-04-28 | `bd727f3` (apply rebased over Lane_02 W2-TEST-EXPA |
 | LANE02-W2-TEST-EXPAND-V1 | 2026-04-28 | (this commit) |
 | LANE01-W2-T3-5-CTO-IMPROVEMENT-BATCH-V1 |  | true` before `git push` (race-safe — same pattern  |
 | LANE01-W2-T3-AIER-WORKER-SCAN-V1 | 2026-04-28 | `9f5ab3a` (apply) + `eb275d7` (backfill) |
-| LANE02-W2-WORKSPACE-BOOTSTRAP-V1 | 2026-04-28 | (this commit) |
 
 ## §8. Pending NTS Decisions
 

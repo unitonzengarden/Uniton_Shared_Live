@@ -10,7 +10,7 @@
 ## §0. Header
 
 - **Generator:** `aier-state-update v1.0` invoked via `scripts/runtime/generate_lane_registry.py v1.0`
-- **Source commit:** `ec594bf13febd52032f95acf0179487ad4c926d7` (short: `ec594bf`)
+- **Source commit:** `b86ac82ce8f83e258b7638b59e6e34ef2d5ce18c` (short: `b86ac82`)
 - **Auto-generated:** `true` (do not hand-edit)
 - **Authority:** repo-backed automation per LAW_N8 §L8.2 explicitly enabled CI mode (visibility surface only — does NOT register Lanes; new Lane registration remains NTS-gated per LAW_N10 §L10.x).
 
@@ -18,9 +18,9 @@
 
 | Lane ID | Mission | Status | Capability summary | Owner | Last activity |
 |---|---|---|---|---|---|
-| `Lane_01` | CTO-style governance contributor and draft author inside `Uniton_Shared` under active law and explicit task scope | BOOTSTRAP / BASELINE / NO_NEW_CAPABILITY_GRANTED | limited: BASELINE_READ_AND_REPORT, BASELINE_NON_CANON_DRAFTING, BASELINE_REPO_VISIBILITY_UPDATES | NTS | `2026-04-28T12:30:00Z` |
-| `Lane_02` | (not declared) | BASELINE / CONSUMER_ONBOARDING | allowed: read AIER Code boot, current_state, checklist, handoffs, and scoped target files, read assigned task context, write Lane_02 readiness reports | NTS | `2026-04-28T03:50:11Z` |
-| `Lane_03` | execution-support, audit, cross-review, and state-reconciliation work inside `Uniton_Shared` under active law and explic | BOOTSTRAP / BASELINE / NO_NEW_CAPABILITY_GRANTED | limited: BASELINE_READ_AND_REPORT, BASELINE_CROSS_REVIEW, BASELINE_STATE_RECONCILIATION | NTS | `2026-04-28T03:25:00Z` |
+| `Lane_01` | CTO-style governance contributor and draft author inside `Uniton_Shared` under active law and explicit task scope | BOOTSTRAP / BASELINE / NO_NEW_CAPABILITY_GRANTED | limited: BASELINE_READ_AND_REPORT, BASELINE_NON_CANON_DRAFTING, BASELINE_REPO_VISIBILITY_UPDATES | NTS | `2026-04-29T00:25:00Z` |
+| `Lane_02` | (not declared) | ACTIVE / AIER_CODE_PARALLEL_EXECUTOR / TECH_NON_CANON_ONLY | allowed: read AIER Code boot, SHARED index, active laws, runtime/current_state, checklist, action board, notifications, handoffs, and scoped target files, read  | NTS | `2026-04-28T03:50:11Z` |
+| `Lane_03` | execution-support, audit, cross-review, and state-reconciliation work inside `Uniton_Shared` under active law and explic | BOOTSTRAP / BASELINE / NO_NEW_CAPABILITY_GRANTED | limited: BASELINE_READ_AND_REPORT, BASELINE_CROSS_REVIEW, BASELINE_STATE_RECONCILIATION | NTS | `2026-04-29T00:00:00Z` |
 
 ## §2. Pending Lanes
 
