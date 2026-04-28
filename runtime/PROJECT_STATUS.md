@@ -10,20 +10,20 @@
 ## §0. Header
 
 - **Generator:** `aier-state-update v1.0` invoked via `scripts/runtime/generate_project_status.py v1.0`
-- **Source commit:** `4caf91f9aecac18e8412d9d23e6065efad314e87` (short: `4caf91f`)
+- **Source commit:** `ca5cac91c1b8376ad02aaec5c9af4ff1fa7e8dfe` (short: `ca5cac9`)
 - **Auto-generated:** `true` (do not hand-edit)
 - **Authority:** repo-backed automation per LAW_N8 §L8.2 explicitly enabled CI mode (state-mirror auto-regenerate scope only)
 
 ## §1. Phase + Gate
 
 - **Phase:** `ROADMAP_W1_COMPLETE / LAW_N12_ACTIVE / W1.7_APPLIED / W2_AUTOMATION_PHASE`
-- **Gate:** `W1_COMPLETE / W2_CONTROLLED_EXECUTION`
+- **Gate:** `(unknown)`
 - **Roadmap:** Roadmap V1 FINAL APPROVED + LOCKED at git tag `roadmap-locked-v2-final` (commit `14f7509`)
 
 ## §2. Active Lanes
 
 - Lane_01: active CTO-style contributor operating under active law, approved amendments, and task-scoped authority. Current visible state: Roadmap V1 FINAL locked, W1 complete with 5/5 core skills ACTIVE, runtime live sync PASS, W2.T1 PROJECT_STATUS automation PASS, W2.T2 dispatcher PASS, and W2.T3 worker-scan PASS.
-- Lane_02: `ONBOARDING_SCAFFOLDED / SMOKE_PENDING / PRODUCT_EXECUTION_DISABLED`
+- Lane_02: `ONBOARDING_SCAFFOLDED / WORKSPACE_BOOTSTRAPPED / READY_FOR_REFRAME / PRODUCT_EXECUTION_DISABLED` (workspace at D:\UZG\Projects-v2\AIER_Code\Lane_02 verified 2026-04-28; pre-AMD-reframe state; smoke deferred until AMD applied).
 - Lane_03: active execution-support and canon-boundary review Lane. Current visible state: canon apply PASS, LAB/RULE foundation PASS, runtime hot-memory adoption PASS, LAW_N12 apply PASS, `aier-canon-guard` ACTIVE v1.0, and W1.7 apply PASS.
 
 ## §3. Active Skills
@@ -55,31 +55,31 @@
 
 ## §5. Active AMDs (AMENDMENTS_LOG counts)
 
-- **Total rows:** 20
-- **PENDING:** 13
+- **Total rows:** 21
+- **PENDING:** 14
 - **APPROVED (non-pending):** 7
-- **Lane self-approve (under AMD_LANE01_CTO_AUTO_APPROVE_TECH_NON_CANON §3.1):** 10
+- **Lane self-approve (under AMD_LANE01_CTO_AUTO_APPROVE_TECH_NON_CANON §3.1):** 11
 - **Authoritative source:** `docs/LAW_CLA_LLM/SHARED/amendments/AMENDMENTS_LOG.md`
 
 ## §6. Latest 5 Commits
 
 | SHA | Author | Subject |
 |---|---|---|
+| `ca5cac9` | AIER State Bot | [auto-status] regen PROJECT_STATUS.md from 280bb71 [vercel skip] |
+| `280bb71` | unitonzengarden | feat(lane02): workspace bootstrap complete - READY_FOR_REFRAME |
+| `5324214` | unitonzengarden | chore(runtime): refresh project status after canon guard apply [vercel skip] |
 | `4caf91f` | AIER State Bot | [auto-status] regen PROJECT_STATUS.md from 7a0e64a [vercel skip] |
 | `7a0e64a` | unitonzengarden | feat(skill): activate canon guard via NTS-approved amendment [vercel skip] |
-| `11246fa` | AIER State Bot | [auto-status] regen PROJECT_STATUS.md from aa1b852 [vercel skip] |
-| `aa1b852` | unitonzengarden | docs(amendment): propose canon guard activation packet [vercel skip] |
-| `cf36c4d` | AIER State Bot | [auto-status] regen PROJECT_STATUS.md from eb275d7 [vercel skip] |
 
 ## §7. Latest 5 DONE Tasks (from MASTER_CHECKLIST)
 
 | Task ID | Completed | Commit |
 |---|---|---|
+| LANE01-W2-T3-5-CTO-IMPROVEMENT-BATCH-V1 |  | true` before `git push` (race-safe — same pattern  |
+| LANE01-W2-T3-AIER-WORKER-SCAN-V1 | 2026-04-28 | `9f5ab3a` (apply) + `eb275d7` (backfill) |
+| LANE02-W2-WORKSPACE-BOOTSTRAP-V1 | 2026-04-28 | (this commit) |
 | LANE03-W1-AIER-CANON-GUARD-NTS-AMENDMENT-APPLY-V1 | 2026-04-28 | recorded in task commit after validation |
 | LANE03-W1-AIER-CANON-GUARD-NTS-AMENDMENT-AUTHOR-V1 | 2026-04-28 | recorded in task commit after validation |
-| LANE01-W2-T2-DISPATCHER-IMPLEMENTATION-V1 | 2026-04-28 | `763ba64` |
-| LANE01-W2-T1-PROJECT-STATUS-AUTO-V1 | 2026-04-28 | `0b20fdb` (apply) + `cb38f33` (auto-status workflo |
-| LANE01-W1-LOOP-VALIDATION-V1 | 2026-04-28 | `d8eab755329b0873e8a80941530dfa91bb49195a` |
 
 ## §8. Pending NTS Decisions
 
