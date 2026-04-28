@@ -10,7 +10,7 @@
 ## §0. Header
 
 - **Generator:** `aier-state-update v1.0` invoked via `scripts/runtime/generate_project_status.py v1.1`
-- **Source commit:** `a8d430d74d36744278b13784758891396eed43cc` (short: `a8d430d`)
+- **Source commit:** `3dc15a788cc51a762bc47bf110b9a65f9da08542` (short: `3dc15a7`)
 - **Auto-generated:** `true` (do not hand-edit)
 - **Authority:** repo-backed automation per LAW_N8 §L8.2 explicitly enabled CI mode (state-mirror auto-regenerate scope only)
 
@@ -65,11 +65,11 @@
 
 | SHA | Author | Subject |
 |---|---|---|
+| `3dc15a7` | unitonzengarden | chore(lane_02): multi-repo setup DONE - Uniton_OS cloned read-only [vercel skip] |
+| `c42027f` | AIER State Bot | [auto-status] regen runtime+network surfaces from a8d430d [vercel skip] |
 | `a8d430d` | CLAC Executor | feat(day1): multi-repo setup + Lane_02/03 pause handoffs + Brain MVP pre-audit [vercel skip] |
 | `1e2a2a5` | Uniton Zen | Merge pull request #6 from unitonzengarden/audit/migration-prep-2026-04-29 |
 | `68a27d6` | CLAC Executor | audit(migration): AIER Code inventory + data + API map for Cursor T-INT-03/04 [vercel skip] |
-| `0df9332` | AIER State Bot | [auto-status] regen runtime+network surfaces from 404ae4c [vercel skip] |
-| `404ae4c` | unitonzengarden | feat(tooling): add AIER next task engine [vercel skip] |
 
 ## §7. Latest 5 DONE Tasks (from MASTER_CHECKLIST)
 
@@ -104,7 +104,7 @@ Latest scores from the 4-worker QA family (per `LANE01-W3-QA-LOOP-WIRE-V1`).
 
 | Worker | Latest Report | Health | Findings (C/W/I) |
 |---|---|---|---|
-| scan | `AIER-SCAN-2026-04-28-VERIFY-T3-5.json` | 90/100 | 1/0/0 |
+| scan | `AIER-SCAN-W2-CLOSEOUT.json` | 70/100 | 3/0/0 |
 | canon | `AIER-CANON-QA-V1-FINAL-AUDIT.json` | 76/100 | 0/7/3 |
 | skill | `AIER-SKILL-QA-CAPABILITY-VERIFY.json` | 100/100 | 0/0/0 |
 | qa_loop | `POST-LANE01-W5-V1-FINAL-AUDIT-V1.json` | 60/100 | 10/12/3 |
