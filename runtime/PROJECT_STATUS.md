@@ -10,11 +10,7 @@
 ## §0. Header
 
 - **Generator:** `aier-state-update v1.0` invoked via `scripts/runtime/generate_project_status.py v1.0`
-<<<<<<< HEAD
-- **Source commit:** `8ba755271443a79ee0f37bd46362998fb5955097` (short: `8ba7552`)
-=======
-- **Source commit:** `d8e2a08eea232f4d358c997f2a989629b22c489f` (short: `d8e2a08`)
->>>>>>> 455e78b (feat(automation): Master task list + 22 task specs + lane_dispatch [vercel skip])
+- **Source commit:** `099f7c2028c8071044f9d0177b60eff08bd125eb` (short: `099f7c2`)
 - **Auto-generated:** `true` (do not hand-edit)
 - **Authority:** repo-backed automation per LAW_N8 §L8.2 explicitly enabled CI mode (state-mirror auto-regenerate scope only)
 
@@ -69,32 +65,21 @@
 
 | SHA | Author | Subject |
 |---|---|---|
-<<<<<<< HEAD
+| `099f7c2` | CLAC Executor | feat(automation): Master task list + 22 task specs + lane_dispatch [vercel skip] |
+| `518f9cc` | AIER State Bot | [auto-status] regen runtime+network surfaces from 8ba7552 [vercel skip] |
 | `8ba7552` | unitonzengarden | docs(templates): register AIER Code template standard v2 [vercel skip] |
-=======
->>>>>>> 455e78b (feat(automation): Master task list + 22 task specs + lane_dispatch [vercel skip])
 | `d8e2a08` | unitonzengarden | chore(snapshot): backfill commit SHA for LANE02-W2-NETWORK-BRAIN-MVP-V1 [vercel skip] |
 | `1bca7d6` | AIER State Bot | [auto-status] regen runtime+network surfaces from de14a91 [vercel skip] |
-| `de14a91` | unitonzengarden | feat(brain): Network Brain MVP code + tests (Task A scope) [vercel skip] |
-| `f9c08fe` | AIER State Bot | [auto-status] regen runtime+network surfaces from ff2b116 [vercel skip] |
-<<<<<<< HEAD
 
 ## §7. Latest 5 DONE Tasks (from MASTER_CHECKLIST)
 
 | Task ID | Completed | Commit |
 |---|---|---|
-| LANE03-W2-TEMPLATE-STANDARDIZATION-AND-ENFORCEMENT-V1 | 2026-04-28 | (this commit) |
+| LANE03-W2-TEMPLATE-STANDARDIZATION-AND-ENFORCEMENT-V1 | 2026-04-28 | (Lane_03 commit) |
+| LANE01-W2-MASTER-TASK-LIST-COMMIT-AND-BATCH-AUTHOR-V1 | 2026-04-29 | (this commit) |
+| LANE03-W2-TEMPLATE-STANDARDIZATION-AND-ENFORCEMENT-V1 | 2026-04-28 | (Lane_03 commit) |
 | LANE02-W2-NETWORK-BRAIN-MVP-V1 (Task A) | 2026-04-28 | (this commit) |
 | LANE01-W2-T5-AIER-QA-SKILL-V1 | 2026-04-29 | `7b1fda7` (apply rebased over Lane_03 b603832 + La |
-| LANE01-W2-T4-AIER-QA-CANON-V1 | 2026-04-28 | `bd727f3` (apply rebased over Lane_02 W2-TEST-EXPA |
-| LANE02-W2-TEST-EXPAND-V1 | 2026-04-28 | (this commit) |
-=======
-| `ff2b116` | unitonzengarden | docs(report): clarify canon hygiene redirect target blocker [vercel skip] |
-
-## §7. Latest 5 DONE Tasks (from MASTER_CHECKLIST)
-
-- (no DONE rows parsed)
->>>>>>> 455e78b (feat(automation): Master task list + 22 task specs + lane_dispatch [vercel skip])
 
 ## §8. Pending NTS Decisions
 
