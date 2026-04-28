@@ -10,7 +10,7 @@
 ## §0. Header
 
 - **Generator:** `aier-state-update v1.0` invoked via `scripts/runtime/generate_project_status.py v1.0`
-- **Source commit:** `b86ac82ce8f83e258b7638b59e6e34ef2d5ce18c` (short: `b86ac82`)
+- **Source commit:** `7b1fda7882e862baf9aa586b0b2e46965a821dc9` (short: `7b1fda7`)
 - **Auto-generated:** `true` (do not hand-edit)
 - **Authority:** repo-backed automation per LAW_N8 §L8.2 explicitly enabled CI mode (state-mirror auto-regenerate scope only)
 
@@ -65,11 +65,11 @@
 
 | SHA | Author | Subject |
 |---|---|---|
+| `7b1fda7` | CLAC Executor | feat(automation): W2.T5 aier-qa-skill worker [vercel skip] |
 | `b86ac82` | AIER State Bot | [auto-status] regen runtime+network surfaces from 5177b3d [vercel skip] |
 | `5177b3d` | unitonzengarden | docs(report): block canon hygiene batch pending redirect target [vercel skip] |
 | `e8831c6` | AIER State Bot | [auto-status] regen runtime+network surfaces from b603832 [vercel skip] |
 | `b603832` | unitonzengarden | amend(lane): apply Lane_02 role reframe [vercel skip] |
-| `01bfdad` | AIER State Bot | [auto-status] regen runtime+network surfaces from ec594bf [vercel skip] |
 
 ## §7. Latest 5 DONE Tasks (from MASTER_CHECKLIST)
 
