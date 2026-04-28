@@ -155,3 +155,4 @@ W2 automation phase closed via `LANE01-W2-CLOSEOUT-V1`. 3-worker QA family opera
 | T-L01-GOV-PREFLIGHT-001 | Lane_01 | Step 3 governance fix (preflight gate) | 2026-04-26 | `5e2eeb1` |
 | T-L01-GOV-HANDOFF-001 | Lane_01 | Step 2 governance fix (handoff validator) | 2026-04-26 | `e5e4a4c` |
 | T-L01-GOV-VALIDATOR-001 | Lane_01 | Step 1 governance fix (task prompt validator) | 2026-04-26 | `72a979d` |
+| LANE03-W3-AIER-OPERATOR-CONSOLE-V1 | Lane_03 | Created read-only AIER Operator Console generator, NTS-facing docs, generated runtime/operator_console Markdown/JSON outputs, and tests; no authority expansion or forbidden surface edits. | 2026-04-28 | pending final commit |

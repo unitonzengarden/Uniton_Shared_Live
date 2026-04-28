@@ -10,7 +10,7 @@
 ## §0. Header
 
 - **Generator:** `aier-state-update v1.0` invoked via `scripts/runtime/generate_project_status.py v1.1`
-- **Source commit:** `524aad33faab53c174c515218c43f09eb12b0c25` (short: `524aad3`)
+- **Source commit:** `561db000b21a165e310492b296bed7f88b3b93cc` (short: `561db00`)
 - **Auto-generated:** `true` (do not hand-edit)
 - **Authority:** repo-backed automation per LAW_N8 §L8.2 explicitly enabled CI mode (state-mirror auto-regenerate scope only)
 
@@ -65,11 +65,11 @@
 
 | SHA | Author | Subject |
 |---|---|---|
+| `561db00` | CLAC Executor | chore(autopilot): LANE01-V1-GA-RESUME-V1 complete — V1.0 GA RELEASED [vercel skip] |
+| `3cef977` | AIER State Bot | [auto-status] regen runtime+network surfaces from 524aad3 [vercel skip] |
 | `524aad3` | CLAC Executor | docs(v1.0): operator handoff + Uniton Future operations manual [vercel skip] |
 | `02f99b4` | AIER State Bot | [auto-status] regen runtime+network surfaces from 7a02007 [vercel skip] |
 | `7a02007` | CLAC Executor | release(v1.0): GA tag v1.0 + final release notes [vercel skip] |
-| `3d21792` | unitonzengarden | chore(snapshot): backfill SHA for LANE02-W4-RELEASE-NOTES-DRAFT-V1 [vercel skip] |
-| `77686c9` | AIER State Bot | [auto-status] regen runtime+network surfaces from b9d3c52 [vercel skip] |
 
 ## §7. Latest 5 DONE Tasks (from MASTER_CHECKLIST)
 
@@ -106,7 +106,7 @@ Latest scores from the 4-worker QA family (per `LANE01-W3-QA-LOOP-WIRE-V1`).
 |---|---|---|---|
 | scan | `AIER-SCAN-2026-04-28-VERIFY-T3-5.json` | 90/100 | 1/0/0 |
 | canon | `AIER-CANON-QA-V1-FINAL-AUDIT.json` | 76/100 | 0/7/3 |
-| skill | `AIER-SKILL-QA-CAPABILITY-VERIFY.json` | 100/100 | 0/0/0 |
+| skill | `AIER-SKILL-QA-2026-04-29-001.json` | 94/100 | 0/2/0 |
 | qa_loop | `POST-LANE01-W5-V1-FINAL-AUDIT-V1.json` | 60/100 | 10/12/3 |
 
 - **Aggregate health (weighted scan=30% + canon=40% + skill=30%):** `60/100`

@@ -10,7 +10,7 @@
 ## §0. Header
 
 - **Generator:** `aier-state-update v1.0` invoked via `scripts/runtime/generate_activity_feed.py v1.0`
-- **Source commit:** `524aad33faab53c174c515218c43f09eb12b0c25` (short: `524aad3`)
+- **Source commit:** `561db000b21a165e310492b296bed7f88b3b93cc` (short: `561db00`)
 - **Total events shown:** 20 (capped at 20)
 - **Auto-generated:** `true` (do not hand-edit)
 - **Authority:** repo-backed automation per LAW_N8 §L8.2 explicitly enabled CI mode (visibility surface only — does NOT replace authoritative sources: NOTIFICATION_LEDGER, audit_logs, git log).
@@ -28,6 +28,7 @@ Format: `<timestamp> | <lane_id> | <event_type> | <ref>` — see the `Summary` c
 | `2026-04-29T01:40:00Z` | `Lane_01` | `NOTIFICATION` | LANE01-W2-MASTER-TASK-LIST-COMMIT-AND-BATCH-AUTHOR-V1 | `ntf:NTF-L01-ALL-20260429-026` | MASTER_TASK_LIST_COMMITTED → ALL |
 | `2026-04-29T00:25:00Z` | `Lane_01` | `NOTIFICATION` | LANE01-W2-T5-AIER-QA-SKILL-V1 | `ntf:NTF-L01-ALL-20260429-024` | SKILL_QA_WORKER_ACTIVE → ALL |
 | `2026-04-29T00:00:00Z` | `Lane_03` | `NOTIFICATION` | LANE03-W1-LANE02-ROLE-REFRAME-APPLY-V1 | `ntf:NTF-L03-ALL-20260429-023` | AMENDMENT_APPLIED → ALL |
+| `2026-04-28T17:58:59Z` | `Lane_01` | `TASK_COMPLETE` | LANE01-V1-GA-RESUME-V1 | `git:561db00` | chore(autopilot): LANE01-V1-GA-RESUME-V1 complete — V1.0 GA RELEASED [vercel skip] |
 | `2026-04-28T17:56:54Z` | `(unknown)` | `TASK_COMPLETE` | (no task id) | `git:524aad3` | docs(v1.0): operator handoff + Uniton Future operations manual [vercel skip] |
 | `2026-04-28T16:25:01Z` | `Lane_01` | `TASK_COMPLETE` | LANE01-V1-GA-AUTOPILOT-LOOP-V1 | `git:4c38fbf` | chore(autopilot): LANE01-V1-GA-AUTOPILOT-LOOP-V1 HALT at iter 5 NTS_SIGN_OFF [vercel skip] |
 | `2026-04-28T15:50:28Z` | `Lane_02` | `TASK_COMPLETE` | LANE02-W4-RELEASE-NOTES-DRAFT-V1 | `git:3d21792` | chore(snapshot): backfill SHA for LANE02-W4-RELEASE-NOTES-DRAFT-V1 [vercel skip] |
@@ -40,7 +41,6 @@ Format: `<timestamp> | <lane_id> | <event_type> | <ref>` — see the `Summary` c
 | `2026-04-28T14:27:48Z` | `Lane_02` | `TASK_COMPLETE` | LANE02-LOOP-T3 | `git:215d04f` | chore(snapshot): backfill SHA for LANE02-LOOP-T3 [vercel skip] |
 | `2026-04-28T14:23:50Z` | `Lane_02` | `TASK_COMPLETE` | LANE02-LOOP-T2 | `git:6a6ed3d` | chore(snapshot): backfill SHA for LANE02-LOOP-T2 [vercel skip] |
 | `2026-04-28T14:15:00+07:00` | `Lane_03` | `NOTIFICATION` | LANE03-W2-AIER-DEV-TOOLS-SUITE-V1 | `ntf:NTF-L03-ALL-20260428-029` | STATUS_UPDATE → ALL |
-| `2026-04-28T12:30:00Z` | `Lane_01` | `NOTIFICATION` | LANE01-W2-T4-AIER-QA-CANON-V1 | `ntf:NTF-L01-ALL-20260428-023` | CANON_QA_WORKER_ACTIVE → ALL |
 
 ## §2. Sources & Coverage
 
