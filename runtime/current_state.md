@@ -118,6 +118,9 @@ Approval was granted directly by NTS and mechanically applied by Lane_03 / Codex
 ### 3.4 Active Roadmap
 
 - `roadmaps/AIER_CODE_V1_AUTOPILOT_ROADMAP_FINAL.md` â€” APPROVED + LOCKED (commit `14f7509`; git tag `roadmap-locked-v2-final`).
+- `roadmaps/AIER_CODE_V1.1_SUPPLEMENT.md` â€” **V1.1 ACTIVE supplement** (Lane_01 self-approve 2026-04-29 under `AMD_LANE01_CTO_AUTO_APPROVE_TECH_NON_CANON §3.1`); annotates W2-W3 actuals + W4-W5 plan + 5 scope drift items; V1 FINAL roadmap UNTOUCHED at git tag `roadmap-locked-v2-final`.
+- `roadmaps/MASTER_TASK_LIST_V1.1.md` â€” W2-W5 task source (rebaselined 2026-04-29 to defer Lane_04 strategic).
+- `roadmaps/strategic/future_lanes/README.md` â€” strategic deferred specs index (3 specs deferred 2026-04-29).
 - `roadmaps/AIER_CODE_V1_AUTOPILOT_ROADMAP.md` â€” SUPERSEDED (preserved per historical trail rules).
 - `roadmaps/IMPROVEMENTS_LOG.md` â€” active discovery log for later roadmap versions.
 

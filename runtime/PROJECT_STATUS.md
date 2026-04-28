@@ -10,7 +10,7 @@
 ## §0. Header
 
 - **Generator:** `aier-state-update v1.0` invoked via `scripts/runtime/generate_project_status.py v1.0`
-- **Source commit:** `fe44c53fcf7b29453df36df4bf2c9efbbfc8047d` (short: `fe44c53`)
+- **Source commit:** `51b277143c536909c273dd3dc6338031c7192a27` (short: `51b2771`)
 - **Auto-generated:** `true` (do not hand-edit)
 - **Authority:** repo-backed automation per LAW_N8 §L8.2 explicitly enabled CI mode (state-mirror auto-regenerate scope only)
 
@@ -65,21 +65,21 @@
 
 | SHA | Author | Subject |
 |---|---|---|
+| `51b2771` | unitonzengarden | docs(network): W3 Lane network consolidate - 3-Lane audit + Lane_04 deferred [vercel skip] |
+| `a1c1095` | AIER State Bot | [auto-status] regen runtime+network surfaces from fe44c53 [vercel skip] |
 | `fe44c53` | unitonzengarden | fix(skill): aier-canon-guard heading conformance — LAW_N9 §L9.8 canonical [vercel skip] |
 | `b28c402` | CLAC Executor | chore(checklist): backfill LANE01-W3-FIRE-3-LANES-V1 + LANE01-W3-QA-LOOP-WIRE-V1 SHA + workflow proo |
 | `ccc8e11` | AIER State Bot | [auto-status] regen runtime+network surfaces from 1635c9b [vercel skip] |
-| `1635c9b` | unitonzengarden | chore(devtools): refresh evidence after rebase [vercel skip] |
-| `4c8dd8b` | unitonzengarden | chore(devtools): refresh generated status after rebase [vercel skip] |
 
 ## §7. Latest 5 DONE Tasks (from MASTER_CHECKLIST)
 
 | Task ID | Completed | Commit |
 |---|---|---|
+| LANE02-W3-LANE-NETWORK-CONSOLIDATE-V1 | 2026-04-28 | (this commit) |
 | LANE01-W3-QA-LOOP-WIRE-V1 | 2026-04-29 | (this commit) |
 | LANE01-W3-FIRE-3-LANES-V1 | 2026-04-29 | (same commit as LANE01-W3-QA-LOOP-WIRE-V1) |
 | LANE02-LOOP-T3-TEST-INFRA-ROUND-2-V1 | 2026-04-28 | (Lane_02 commit) |
 | LANE02-LOOP-T2-BRAIN-MVP-V0-2-IMPROVEMENT-V1 | 2026-04-28 | (Lane_02 commit) |
-| LANE02-LOOP-T1-PROCESS-LANE03-REVIEW-V1 | 2026-04-28 | (Lane_02 commit) |
 
 ## §8. Pending NTS Decisions
 
