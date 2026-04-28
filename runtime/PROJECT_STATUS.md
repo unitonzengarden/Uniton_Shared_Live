@@ -10,7 +10,7 @@
 ## §0. Header
 
 - **Generator:** `aier-state-update v1.0` invoked via `scripts/runtime/generate_project_status.py v1.0`
-- **Source commit:** `a41bdb1373408d2faca869e47377e187a18e5727` (short: `a41bdb1`)
+- **Source commit:** `c515d96987c0e9431c4076acc3f3016bb19de60c` (short: `c515d96`)
 - **Auto-generated:** `true` (do not hand-edit)
 - **Authority:** repo-backed automation per LAW_N8 §L8.2 explicitly enabled CI mode (state-mirror auto-regenerate scope only)
 
@@ -65,17 +65,17 @@
 
 | SHA | Author | Subject |
 |---|---|---|
+| `c515d96` | CLAC Executor | chore(checklist): backfill LANE01-W3-QUEUE-REBASELINE-V1 SHA + workflow proof [vercel skip] |
+| `b25b414` | AIER State Bot | [auto-status] regen runtime+network surfaces from a41bdb1 [vercel skip] |
 | `a41bdb1` | CLAC Executor | feat(queue): rebaseline 3-lane W3 — defer Lane_04 strategic [vercel skip] |
 | `284a12c` | AIER State Bot | [auto-status] regen runtime+network surfaces from ba3f739 [vercel skip] |
 | `ba3f739` | unitonzengarden | docs(report): record blocked Lane_02 compliance reframe authoring [vercel skip] |
-| `049b920` | AIER State Bot | [auto-status] regen runtime+network surfaces from 587783d [vercel skip] |
-| `587783d` | CLAC Executor | chore(checklist): backfill LANE01-W2-CLOSEOUT-V1 SHA + workflow proof [vercel skip] |
 
 ## §7. Latest 5 DONE Tasks (from MASTER_CHECKLIST)
 
 | Task ID | Completed | Commit |
 |---|---|---|
-| LANE01-W3-QUEUE-REBASELINE-V1 | 2026-04-29 | (this commit) |
+| LANE01-W3-QUEUE-REBASELINE-V1 | 2026-04-29 | `a41bdb1` (apply) + `b25b414` (auto-status proof) |
 | LANE01-W2-CLOSEOUT-V1 | 2026-04-29 | `2c7f1de` (apply rebased over Lane_02 + Lane_03) + |
 | LANE03-W2-TEMPLATE-STANDARDIZATION-AND-ENFORCEMENT-V1 | 2026-04-28 | (Lane_03 commit) |
 | LANE01-W2-MASTER-TASK-LIST-COMMIT-AND-BATCH-AUTHOR-V1 | 2026-04-29 | `099f7c2` (apply rebased over Lane_02 + Lane_03) + |
