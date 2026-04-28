@@ -10,7 +10,7 @@
 ## §0. Header
 
 - **Generator:** `aier-state-update v1.0` invoked via `scripts/runtime/generate_project_status.py v1.1`
-- **Source commit:** `3a668a56b325c37a4ef77a42fa6ed5282721be94` (short: `3a668a5`)
+- **Source commit:** `241913ae3f2f76164dbad962390b2ed2f7b732e6` (short: `241913a`)
 - **Auto-generated:** `true` (do not hand-edit)
 - **Authority:** repo-backed automation per LAW_N8 §L8.2 explicitly enabled CI mode (state-mirror auto-regenerate scope only)
 
@@ -65,21 +65,21 @@
 
 | SHA | Author | Subject |
 |---|---|---|
-| `3a668a5` | unitonzengarden | docs(canon): W3 domain canons DRAFT v0.1 - UZG+, AIER_LIFE, AIFI_LIFE [vercel skip] |
-| `17b4d30` | AIER State Bot | [auto-status] regen runtime+network surfaces from 4c38fbf [vercel skip] |
-| `4c38fbf` | CLAC Executor | chore(autopilot): LANE01-V1-GA-AUTOPILOT-LOOP-V1 HALT at iter 5 NTS_SIGN_OFF [vercel skip] |
-| `90a089b` | AIER State Bot | [auto-status] regen runtime+network surfaces from 347e39c [vercel skip] |
-| `347e39c` | CLAC Executor | audit(v1.0): final V1 audit before NTS sign-off [vercel skip] |
+| `241913a` | unitonzengarden | fix(skill): aier-canon-guard capability registry reconcile [vercel skip] |
+| `cf5489c` | AIER State Bot | [auto-status] regen runtime+network surfaces from 8d6c7d0 [vercel skip] |
+| `ca93d0a` | unitonzengarden | chore(snapshot): backfill SHA for LANE02-W4-DOCS-OPERATOR-MANUAL-V1 [vercel skip] |
+| `8d6c7d0` | unitonzengarden | docs: operator manual v1.0 DRAFT - full upgrade from v0.1 [vercel skip] |
+| `e34c8a1` | unitonzengarden | chore(snapshot): backfill SHA for LANE02-W3-DOMAIN-CANONS-DRAFT-V1 [vercel skip] |
 
 ## §7. Latest 5 DONE Tasks (from MASTER_CHECKLIST)
 
 | Task ID | Completed | Commit |
 |---|---|---|
+| LANE02-W4-DOCS-OPERATOR-MANUAL-V1 | 2026-04-28 | (this commit) |
 | LANE02-W3-DOMAIN-CANONS-DRAFT-V1 | 2026-04-28 | (this commit) |
 | LANE02-W3-LANE-NETWORK-CONSOLIDATE-V1 | 2026-04-28 | (this commit) |
 | LANE01-W3-QA-LOOP-WIRE-V1 | 2026-04-29 | (this commit) |
 | LANE01-W3-FIRE-3-LANES-V1 | 2026-04-29 | (same commit as LANE01-W3-QA-LOOP-WIRE-V1) |
-| LANE02-LOOP-T3-TEST-INFRA-ROUND-2-V1 | 2026-04-28 | (Lane_02 commit) |
 
 ## §8. Pending NTS Decisions
 
@@ -104,9 +104,9 @@ Latest scores from the 4-worker QA family (per `LANE01-W3-QA-LOOP-WIRE-V1`).
 
 | Worker | Latest Report | Health | Findings (C/W/I) |
 |---|---|---|---|
-| scan | `AIER-SCAN-2026-04-28-VERIFY-T3-5.json` | 90/100 | 1/0/0 |
+| scan | `AIER-SCAN-W2-CLOSEOUT.json` | 70/100 | 3/0/0 |
 | canon | `AIER-CANON-QA-V1-FINAL-AUDIT.json` | 76/100 | 0/7/3 |
-| skill | `AIER-SKILL-QA-W2-CLOSEOUT.json` | 94/100 | 0/2/0 |
+| skill | `AIER-SKILL-QA-CAPABILITY-VERIFY.json` | 100/100 | 0/0/0 |
 | qa_loop | `POST-LANE01-W5-V1-FINAL-AUDIT-V1.json` | 60/100 | 10/12/3 |
 
 - **Aggregate health (weighted scan=30% + canon=40% + skill=30%):** `60/100`
@@ -119,7 +119,7 @@ Per-phase task completion counted from `runtime/checklist/MASTER_CHECKLIST.md` D
 - **W1** [██████████] 100% — 13/7 tasks DONE
 - **W2** [██████████] 100% — 14/12 tasks DONE
 - **W3** [██████████] 100% — 7/7 tasks DONE
-- **W4** [░░░░░░░░░░] 0% — 0/8 tasks DONE
+- **W4** [█░░░░░░░░░] 12% — 1/8 tasks DONE
 - **W5** [░░░░░░░░░░] 0% — 0/5 tasks DONE
 
 - **Source:** task IDs matching `-W[1-5]-` token in DONE rows; planned counts from V1.1 supplement §4
