@@ -10,13 +10,13 @@
 ## §0. Header
 
 - **Generator:** `aier-state-update v1.0` invoked via `scripts/runtime/generate_project_status.py v1.1`
-- **Source commit:** `7a02007bbccab0f340a9f392247bb1b9fff91426` (short: `7a02007`)
+- **Source commit:** `524aad33faab53c174c515218c43f09eb12b0c25` (short: `524aad3`)
 - **Auto-generated:** `true` (do not hand-edit)
 - **Authority:** repo-backed automation per LAW_N8 §L8.2 explicitly enabled CI mode (state-mirror auto-regenerate scope only)
 
 ## §1. Phase + Gate
 
-- **Phase:** `V1_0_RELEASED / GA_TAGGED`
+- **Phase:** `V1_0_GA_HANDED_OFF / UZG_PLUS_AIER_AIFI_READY`
 - **Gate:** `(unknown)`
 - **Roadmap:** Roadmap V1 FINAL APPROVED + LOCKED at git tag `roadmap-locked-v2-final` (commit `14f7509`)
 
@@ -65,11 +65,11 @@
 
 | SHA | Author | Subject |
 |---|---|---|
+| `524aad3` | CLAC Executor | docs(v1.0): operator handoff + Uniton Future operations manual [vercel skip] |
+| `02f99b4` | AIER State Bot | [auto-status] regen runtime+network surfaces from 7a02007 [vercel skip] |
 | `7a02007` | CLAC Executor | release(v1.0): GA tag v1.0 + final release notes [vercel skip] |
 | `3d21792` | unitonzengarden | chore(snapshot): backfill SHA for LANE02-W4-RELEASE-NOTES-DRAFT-V1 [vercel skip] |
 | `77686c9` | AIER State Bot | [auto-status] regen runtime+network surfaces from b9d3c52 [vercel skip] |
-| `b9d3c52` | unitonzengarden | docs: release notes v1.0 RC DRAFT (adapt mode) [vercel skip] |
-| `1cc8037` | AIER State Bot | [auto-status] regen runtime+network surfaces from 241913a [vercel skip] |
 
 ## §7. Latest 5 DONE Tasks (from MASTER_CHECKLIST)
 
