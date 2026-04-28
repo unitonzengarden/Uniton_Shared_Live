@@ -10,7 +10,7 @@
 ## §0. Header
 
 - **Generator:** `aier-state-update v1.0` invoked via `scripts/runtime/generate_lane_registry.py v1.0`
-- **Source commit:** `249371348e9c37afed3cb5611b8dfc22825403f6` (short: `2493713`)
+- **Source commit:** `9238779895774fb992f11c6f66b5f4f6a1cb3040` (short: `9238779`)
 - **Auto-generated:** `true` (do not hand-edit)
 - **Authority:** repo-backed automation per LAW_N8 §L8.2 explicitly enabled CI mode (visibility surface only — does NOT register Lanes; new Lane registration remains NTS-gated per LAW_N10 §L10.x).
 
@@ -18,8 +18,8 @@
 
 | Lane ID | Mission | Status | Capability summary | Owner | Last activity |
 |---|---|---|---|---|---|
-| `Lane_01` | CTO-style governance contributor and draft author inside `Uniton_Shared` under active law and explicit task scope | BOOTSTRAP / BASELINE / NO_NEW_CAPABILITY_GRANTED | limited: BASELINE_READ_AND_REPORT, BASELINE_NON_CANON_DRAFTING, BASELINE_REPO_VISIBILITY_UPDATES | NTS | `2026-04-29T03:30:00Z` |
-| `Lane_02` | (not declared) | ACTIVE / AIER_CODE_PARALLEL_EXECUTOR / TECH_NON_CANON_ONLY | allowed: read AIER Code boot, SHARED index, active laws, runtime/current_state, checklist, action board, notifications, handoffs, and scoped target files, read  | NTS | `2026-04-28T08:05:00Z` |
+| `Lane_01` | CTO-style governance contributor and draft author inside `Uniton_Shared` under active law and explicit task scope | BOOTSTRAP / BASELINE / NO_NEW_CAPABILITY_GRANTED | limited: BASELINE_READ_AND_REPORT, BASELINE_NON_CANON_DRAFTING, BASELINE_REPO_VISIBILITY_UPDATES | NTS | `2026-04-29T04:30:00Z` |
+| `Lane_02` | (not declared) | ACTIVE / AIER_CODE_PARALLEL_EXECUTOR / TECH_NON_CANON_ONLY | allowed: read AIER Code boot, SHARED index, active laws, runtime/current_state, checklist, action board, notifications, handoffs, and scoped target files, read  | NTS | `2026-04-28T08:25:00Z` |
 | `Lane_03` | execution-support, audit, cross-review, and state-reconciliation work inside `Uniton_Shared` under active law and explic | BOOTSTRAP / BASELINE / NO_NEW_CAPABILITY_GRANTED | limited: BASELINE_READ_AND_REPORT, BASELINE_CROSS_REVIEW, BASELINE_STATE_RECONCILIATION | NTS | `2026-04-29T00:00:00Z` |
 
 ## §2. Pending Lanes

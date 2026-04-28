@@ -10,13 +10,13 @@
 ## §0. Header
 
 - **Generator:** `aier-state-update v1.0` invoked via `scripts/runtime/generate_project_status.py v1.0`
-- **Source commit:** `249371348e9c37afed3cb5611b8dfc22825403f6` (short: `2493713`)
+- **Source commit:** `9238779895774fb992f11c6f66b5f4f6a1cb3040` (short: `9238779`)
 - **Auto-generated:** `true` (do not hand-edit)
 - **Authority:** repo-backed automation per LAW_N8 §L8.2 explicitly enabled CI mode (state-mirror auto-regenerate scope only)
 
 ## §1. Phase + Gate
 
-- **Phase:** `W3_AUTOMATION_PHASE_ACTIVE / 3-LANE-PARALLEL-RUN`
+- **Phase:** `W3_AUTOMATION_PHASE_ACTIVE / 3-LANE-PARALLEL-RUN / QA_LOOP_OPERATIONAL`
 - **Gate:** `(unknown)`
 - **Roadmap:** Roadmap V1 FINAL APPROVED + LOCKED at git tag `roadmap-locked-v2-final` (commit `14f7509`)
 
@@ -55,31 +55,31 @@
 
 ## §5. Active AMDs (AMENDMENTS_LOG counts)
 
-- **Total rows:** 28
+- **Total rows:** 29
 - **PENDING:** 20
-- **APPROVED (non-pending):** 8
-- **Lane self-approve (under AMD_LANE01_CTO_AUTO_APPROVE_TECH_NON_CANON §3.1):** 16
+- **APPROVED (non-pending):** 9
+- **Lane self-approve (under AMD_LANE01_CTO_AUTO_APPROVE_TECH_NON_CANON §3.1):** 17
 - **Authoritative source:** `docs/LAW_CLA_LLM/SHARED/amendments/AMENDMENTS_LOG.md`
 
 ## §6. Latest 5 Commits
 
 | SHA | Author | Subject |
 |---|---|---|
-| `2493713` | unitonzengarden | docs: operator manual DRAFT v0.1 [vercel skip] |
-| `215d04f` | unitonzengarden | chore(snapshot): backfill SHA for LANE02-LOOP-T3 [vercel skip] |
-| `88a1c5d` | AIER State Bot | [auto-status] regen runtime+network surfaces from 1d520cf [vercel skip] |
-| `1d520cf` | unitonzengarden | test: round 2 expansion - edge cases + schemas + surfaces [vercel skip] |
-| `6a6ed3d` | unitonzengarden | chore(snapshot): backfill SHA for LANE02-LOOP-T2 [vercel skip] |
+| `9238779` | CLAC Executor | feat(automation): W3 QA loop coordinator — wires 3 workers into 1 workflow [vercel skip] |
+| `a52c5a0` | unitonzengarden | chore(snapshot): backfill SHA for LANE02-LOOP-T5 [vercel skip] |
+| `2aeb14b` | unitonzengarden | docs: release notes v1.0 GA DRAFT [vercel skip] |
+| `5c4933b` | unitonzengarden | chore(snapshot): backfill SHA for LANE02-LOOP-T4 [vercel skip] |
+| `37ff5a4` | AIER State Bot | [auto-status] regen runtime+network surfaces from 2493713 [vercel skip] |
 
 ## §7. Latest 5 DONE Tasks (from MASTER_CHECKLIST)
 
 | Task ID | Completed | Commit |
 |---|---|---|
-| LANE02-LOOP-T4-DOCS-OPERATOR-MANUAL-DRAFT-V1 | 2026-04-28 | (this commit) |
-| LANE02-LOOP-T3-TEST-INFRA-ROUND-2-V1 | 2026-04-28 | (this commit) |
-| LANE02-LOOP-T2-BRAIN-MVP-V0-2-IMPROVEMENT-V1 | 2026-04-28 | (this commit) |
-| LANE02-LOOP-T1-PROCESS-LANE03-REVIEW-V1 | 2026-04-28 | (this commit) |
-| LANE01-W3-QUEUE-REBASELINE-V1 | 2026-04-29 | `a41bdb1` (apply) + `b25b414` (auto-status proof) |
+| LANE01-W3-QA-LOOP-WIRE-V1 | 2026-04-29 | (this commit) |
+| LANE01-W3-FIRE-3-LANES-V1 | 2026-04-29 | (same commit as LANE01-W3-QA-LOOP-WIRE-V1) |
+| LANE02-LOOP-T3-TEST-INFRA-ROUND-2-V1 | 2026-04-28 | (Lane_02 commit) |
+| LANE02-LOOP-T2-BRAIN-MVP-V0-2-IMPROVEMENT-V1 | 2026-04-28 | (Lane_02 commit) |
+| LANE02-LOOP-T1-PROCESS-LANE03-REVIEW-V1 | 2026-04-28 | (Lane_02 commit) |
 
 ## §8. Pending NTS Decisions
 

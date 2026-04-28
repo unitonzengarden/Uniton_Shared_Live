@@ -49,6 +49,7 @@
   - `reports/LANE01-W3-QUEUE-REBASELINE-V1_REPORT.md`
   - `reports/LANE01-W3-FIRE-3-LANES-V1_REPORT.md`
   - `reports/LANE01-W3-QA-LOOP-WIRE-V1_REPORT.md`
+  - `reports/LANE03-W2-AIER-DEV-TOOLS-SUITE-V1_REPORT.md`
 
 This file is the repo-backed hot-memory entry for cold-start Lane readers. It records current repo truth and task state. It does not approve canon, approve roadmap phases, activate drafts, replace `LAW_SYSTEM.md`, replace `REDLINES.md`, or override NTS authority.
 
@@ -94,6 +95,7 @@ Active law files per `docs/LAW_CLA_LLM/SHARED/SHARED_INDEX.md`:
 - `docs/LAW_CLA_LLM/SHARED/boot/AIER_CODE_TASK_CONTEXT_TEMPLATE_V1.md`
 - `docs/LAW_CLA_LLM/SHARED/boot/AIER_CODE_DOCUMENT_STACK_INDEX_V1.md`
 - `docs/LAW_CLA_LLM/SHARED/templates/README.md` and the AIER Code Template Standard V2 bundle are registered as SHARED template operating standards for future task/report/amendment/handoff/notification/snapshot/QA evidence. They support LAW_N5, LAW_N7, LAW_N9, LAW_N12, and REDLINES, but do not override active laws or NTS authority.
+- `docs/LAW_CLA_LLM/SHARED/devtools/README.md` and `runtime/devtools/AIER_DEVTOOLS_STATUS.{md,json}` provide read-only foreground AIER Dev Tools status summaries for NTS/AITAO. They are visibility-only, write only under `runtime/devtools/` when manually emitted, and do not override active laws, approve tasks, grant capabilities, or enable daemon/backend/deploy.
 - `docs/LAW_CLA_LLM/SHARED/os_operations/AIER_CODE_TOKEN_AND_CONTEXT_OPTIMIZATION_PROTOCOL_V1.md`
 - `docs/LAW_CLA_LLM/SHARED/os_operations/AUDIT_PROCEDURE.md`
 - `docs/LAW_CLA_LLM/SHARED/os_operations/PROPAGATION_PROCEDURE.md`
@@ -278,6 +280,7 @@ Rules:
 
 ## 13. CHANGELOG
 
+- 2026-04-28 - `LANE03-W2-AIER-DEV-TOOLS-SUITE-V1` created read-only AIER Dev Tools status summarizer `scripts/devtools/aier_devtools.py`, generated `runtime/devtools/AIER_DEVTOOLS_STATUS.{md,json}`, added non-technical docs and tests, and preserved boundaries: no SHARED/laws, CANON, Lane folders, amendments, contracts, workflows, daemon/backend/deploy, or capability grants.
 - 2026-04-28 - `LANE03-W2-TEMPLATE-STANDARDIZATION-AND-ENFORCEMENT-V1` registered AIER Code Template Standard V2 in `docs/LAW_CLA_LLM/SHARED/templates/`, validated all 14 required template files and `SNAPSHOT_JSON_TEMPLATE.json`, updated SHARED_INDEX/current_state/checklist/notification visibility, and preserved boundaries: no SHARED/laws, CANON, Lane folders, scripts, contracts, workflows, daemon/backend/deploy, or capability grants.
 - 2026-04-26 - `T-RUNTIME-001` created the initial current-state memory file.
 - 2026-04-26 - `T-L01-RUNTIME-FIX-CHECKLIST-001` corrected path and checklist references.
