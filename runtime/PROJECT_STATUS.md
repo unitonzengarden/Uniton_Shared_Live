@@ -10,7 +10,7 @@
 ## §0. Header
 
 - **Generator:** `aier-state-update v1.0` invoked via `scripts/runtime/generate_project_status.py v1.0`
-- **Source commit:** `24958f3bd937fcf6746e84485dcfe489b22222c0` (short: `24958f3`)
+- **Source commit:** `bd727f38e7040efec5dde16ff3ffa82d7c8a3820` (short: `bd727f3`)
 - **Auto-generated:** `true` (do not hand-edit)
 - **Authority:** repo-backed automation per LAW_N8 §L8.2 explicitly enabled CI mode (state-mirror auto-regenerate scope only)
 
@@ -65,11 +65,11 @@
 
 | SHA | Author | Subject |
 |---|---|---|
+| `bd727f3` | CLAC Executor | feat(automation): W2.T4 aier-qa-canon worker [vercel skip] |
 | `24958f3` | unitonzengarden | chore(snapshot): backfill commit SHA for LANE02-W2-TEST-EXPAND-V1 [vercel skip] |
 | `78ac0fe` | AIER State Bot | [auto-status] regen runtime+network surfaces from 0c90e35 [vercel skip] |
 | `0c90e35` | unitonzengarden | feat(tests): LANE02 W2 test infrastructure expand [vercel skip] |
 | `e57fdfb` | AIER State Bot | [auto-status] regen runtime+network surfaces from cd90803 [vercel skip] |
-| `cd90803` | unitonzengarden | docs(amendment): author Lane_02 role reframe packet [vercel skip] |
 
 ## §7. Latest 5 DONE Tasks (from MASTER_CHECKLIST)
 
