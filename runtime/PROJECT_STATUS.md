@@ -10,7 +10,7 @@
 ## §0. Header
 
 - **Generator:** `aier-state-update v1.0` invoked via `scripts/runtime/generate_project_status.py v1.1`
-- **Source commit:** `2cb41e9cbccfba76e7a7b93dbe7c5173d03facad` (short: `2cb41e9`)
+- **Source commit:** `ca700f68ba11664f91c46fb9c91272fc3ca27e45` (short: `ca700f6`)
 - **Auto-generated:** `true` (do not hand-edit)
 - **Authority:** repo-backed automation per LAW_N8 §L8.2 explicitly enabled CI mode (state-mirror auto-regenerate scope only)
 
@@ -65,11 +65,11 @@
 
 | SHA | Author | Subject |
 |---|---|---|
+| `ca700f6` | CLAC Executor | chore(v1.0): finalize complete + tracker sync [vercel skip] |
 | `2cb41e9` | AIER State Bot | [auto-status] regen runtime+network surfaces from 06eb89b [vercel skip] |
 | `06eb89b` | unitonzengarden | chore(operator-console): refresh console after rebase [vercel skip] |
 | `57c27b9` | unitonzengarden | feat(operator-console): add AIER Operator Console [vercel skip] |
 | `458e0a0` | AIER State Bot | [auto-status] regen runtime+network surfaces from 561db00 [vercel skip] |
-| `561db00` | CLAC Executor | chore(autopilot): LANE01-V1-GA-RESUME-V1 complete â€” V1.0 GA RELEASED [vercel skip] |
 
 ## §7. Latest 5 DONE Tasks (from MASTER_CHECKLIST)
 
@@ -104,10 +104,10 @@ Latest scores from the 4-worker QA family (per `LANE01-W3-QA-LOOP-WIRE-V1`).
 
 | Worker | Latest Report | Health | Findings (C/W/I) |
 |---|---|---|---|
-| scan | `AIER-SCAN-AUTOPILOT-DIAG.json` | 0/100 | 10/4/0 |
+| scan | `AIER-SCAN-2026-04-28-VERIFY-T3-5.json` | 90/100 | 1/0/0 |
 | canon | `AIER-CANON-QA-V1-FINAL-AUDIT.json` | 76/100 | 0/7/3 |
 | skill | `AIER-SKILL-QA-CAPABILITY-VERIFY.json` | 100/100 | 0/0/0 |
-| qa_loop | `POST-V1-GA-FINAL.json` | 60/100 | 14/11/3 |
+| qa_loop | `POST-LANE01-W5-V1-FINAL-AUDIT-V1.json` | 60/100 | 10/12/3 |
 
 - **Aggregate health (weighted scan=30% + canon=40% + skill=30%):** `60/100`
 - **Source:** `scan_reports/`, `canon_qa_reports/`, `skill_qa_reports/`, `qa_loop_reports/` (per-worker schemas)

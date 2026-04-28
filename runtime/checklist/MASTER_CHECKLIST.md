@@ -166,3 +166,4 @@ NTS verbatim approval ***"APPROVE V1.0 release — accept READY_WITH_NOTES cavea
 | T-L01-GOV-HANDOFF-001 | Lane_01 | Step 2 governance fix (handoff validator) | 2026-04-26 | `e5e4a4c` |
 | T-L01-GOV-VALIDATOR-001 | Lane_01 | Step 1 governance fix (task prompt validator) | 2026-04-26 | `72a979d` |
 | LANE03-W3-AIER-OPERATOR-CONSOLE-V1 | Lane_03 | Created read-only AIER Operator Console generator, NTS-facing docs, generated runtime/operator_console Markdown/JSON outputs, and tests; no authority expansion or forbidden surface edits. | 2026-04-28 | pending final commit |
+| LANE03-W3-AIER-NEXT-TASK-ENGINE-V1 | Lane_03 | Created read-only AIER Next Task Engine generator, support docs, tests, and generated runtime/next_task_engine Markdown/JSON/stub outputs. Current recommendation is `NO_SAFE_NEXT_TASK_FOUND`; no auto-dispatch/execution, no law/canon/Lane/amendment/capability changes, and no daemon/backend/deploy authority. | 2026-04-28 | pending final commit |
