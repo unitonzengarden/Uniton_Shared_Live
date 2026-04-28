@@ -10,7 +10,7 @@
 ## §0. Header
 
 - **Generator:** `aier-state-update v1.0` invoked via `scripts/runtime/generate_project_status.py v1.1`
-- **Source commit:** `347e39c671c713dbbafa637850d692bd9e728a4e` (short: `347e39c`)
+- **Source commit:** `4c38fbf4c47c378d7a15a15e7a0ab4a3419e670d` (short: `4c38fbf`)
 - **Auto-generated:** `true` (do not hand-edit)
 - **Authority:** repo-backed automation per LAW_N8 §L8.2 explicitly enabled CI mode (state-mirror auto-regenerate scope only)
 
@@ -65,11 +65,11 @@
 
 | SHA | Author | Subject |
 |---|---|---|
+| `4c38fbf` | CLAC Executor | chore(autopilot): LANE01-V1-GA-AUTOPILOT-LOOP-V1 HALT at iter 5 NTS_SIGN_OFF [vercel skip] |
+| `90a089b` | AIER State Bot | [auto-status] regen runtime+network surfaces from 347e39c [vercel skip] |
 | `347e39c` | CLAC Executor | audit(v1.0): final V1 audit before NTS sign-off [vercel skip] |
 | `fe869f3` | AIER State Bot | [auto-status] regen runtime+network surfaces from 0522068 [vercel skip] |
 | `0522068` | unitonzengarden | audit(lane3): map mission and next task order [vercel skip] |
-| `85295a0` | AIER State Bot | [auto-status] regen runtime+network surfaces from d996a46 [vercel skip] |
-| `d996a46` | CLAC Executor | release(v1.0-rc): release candidate notes + tag [vercel skip] |
 
 ## §7. Latest 5 DONE Tasks (from MASTER_CHECKLIST)
 
@@ -104,10 +104,10 @@ Latest scores from the 4-worker QA family (per `LANE01-W3-QA-LOOP-WIRE-V1`).
 
 | Worker | Latest Report | Health | Findings (C/W/I) |
 |---|---|---|---|
-| scan | `AIER-SCAN-2026-04-28-VERIFY-T3-5.json` | 90/100 | 1/0/0 |
+| scan | `AIER-SCAN-W2-CLOSEOUT.json` | 70/100 | 3/0/0 |
 | canon | `AIER-CANON-QA-V1-FINAL-AUDIT.json` | 76/100 | 0/7/3 |
-| skill | `AIER-SKILL-QA-W2-CLOSEOUT.json` | 94/100 | 0/2/0 |
-| qa_loop | `POST-LANE01-W4-ROADMAP-HOT-RELOAD-V1.json` | 60/100 | 10/12/3 |
+| skill | `AIER-SKILL-QA-HEADING-FIX-VERIFY.json` | 97/100 | 0/1/0 |
+| qa_loop | `POST-LANE01-W5-V1-FINAL-AUDIT-V1.json` | 60/100 | 10/12/3 |
 
 - **Aggregate health (weighted scan=30% + canon=40% + skill=30%):** `60/100`
 - **Source:** `scan_reports/`, `canon_qa_reports/`, `skill_qa_reports/`, `qa_loop_reports/` (per-worker schemas)
