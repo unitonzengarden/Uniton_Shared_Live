@@ -10,7 +10,7 @@
 ## §0. Header
 
 - **Generator:** `aier-state-update v1.0` invoked via `scripts/runtime/generate_project_status.py v1.1`
-- **Source commit:** `05fb9a08f36c029c48196d8136496af0f0cc9ae4` (short: `05fb9a0`)
+- **Source commit:** `b8982afc31a499c3c4342775159b330f7e851e3e` (short: `b8982af`)
 - **Auto-generated:** `true` (do not hand-edit)
 - **Authority:** repo-backed automation per LAW_N8 §L8.2 explicitly enabled CI mode (state-mirror auto-regenerate scope only)
 
@@ -65,11 +65,11 @@
 
 | SHA | Author | Subject |
 |---|---|---|
+| `b8982af` | CLAC Executor | chore(queue): mark-done iter 1+2 + diag artifacts [vercel skip] |
+| `3dd97fe` | CLAC Executor | feat(generator): PROJECT_STATUS v1.1 +§11 QA scores +§12 phase progress [vercel skip] |
 | `05fb9a0` | AIER State Bot | [auto-status] regen runtime+network surfaces from bb3c6a9 [vercel skip] |
 | `bb3c6a9` | CLAC Executor | docs(roadmap): V1.1 supplement annotating W2-W3 actuals + W4-W5 plan [vercel skip] |
 | `0531fea` | unitonzengarden | chore(snapshot): backfill SHA for LANE02-W3-LANE-NETWORK-CONSOLIDATE-V1 [vercel skip] |
-| `acfad74` | AIER State Bot | [auto-status] regen runtime+network surfaces from 51b2771 [vercel skip] |
-| `51b2771` | unitonzengarden | docs(network): W3 Lane network consolidate - 3-Lane audit + Lane_04 deferred [vercel skip] |
 
 ## §7. Latest 5 DONE Tasks (from MASTER_CHECKLIST)
 
@@ -104,7 +104,7 @@ Latest scores from the 4-worker QA family (per `LANE01-W3-QA-LOOP-WIRE-V1`).
 
 | Worker | Latest Report | Health | Findings (C/W/I) |
 |---|---|---|---|
-| scan | `AIER-SCAN-AUTOPILOT-DIAG.json` | 0/100 | 10/4/0 |
+| scan | `AIER-SCAN-W2-CLOSEOUT.json` | 70/100 | 3/0/0 |
 | canon | `AIER-CANON-QA-W2-CLOSEOUT.json` | 76/100 | 0/7/3 |
 | skill | `AIER-SKILL-QA-HEADING-FIX-VERIFY.json` | 97/100 | 0/1/0 |
 | qa_loop | `POST-LANE01-W4-ROADMAP-HOT-RELOAD-V1.json` | 60/100 | 10/12/3 |
