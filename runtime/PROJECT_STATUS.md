@@ -10,13 +10,13 @@
 ## §0. Header
 
 - **Generator:** `aier-state-update v1.0` invoked via `scripts/runtime/generate_project_status.py v1.1`
-- **Source commit:** `b9d3c52e83ab8c4de0215c23fb4bfd64ecf93265` (short: `b9d3c52`)
+- **Source commit:** `7a02007bbccab0f340a9f392247bb1b9fff91426` (short: `7a02007`)
 - **Auto-generated:** `true` (do not hand-edit)
 - **Authority:** repo-backed automation per LAW_N8 §L8.2 explicitly enabled CI mode (state-mirror auto-regenerate scope only)
 
 ## §1. Phase + Gate
 
-- **Phase:** `W5_FINAL_AUDIT_DONE / AWAITING_NTS_SIGN_OFF`
+- **Phase:** `V1_0_RELEASED / GA_TAGGED`
 - **Gate:** `(unknown)`
 - **Roadmap:** Roadmap V1 FINAL APPROVED + LOCKED at git tag `roadmap-locked-v2-final` (commit `14f7509`)
 
@@ -55,21 +55,21 @@
 
 ## §5. Active AMDs (AMENDMENTS_LOG counts)
 
-- **Total rows:** 29
-- **PENDING:** 20
+- **Total rows:** 30
+- **PENDING:** 21
 - **APPROVED (non-pending):** 9
-- **Lane self-approve (under AMD_LANE01_CTO_AUTO_APPROVE_TECH_NON_CANON §3.1):** 17
+- **Lane self-approve (under AMD_LANE01_CTO_AUTO_APPROVE_TECH_NON_CANON §3.1):** 18
 - **Authoritative source:** `docs/LAW_CLA_LLM/SHARED/amendments/AMENDMENTS_LOG.md`
 
 ## §6. Latest 5 Commits
 
 | SHA | Author | Subject |
 |---|---|---|
+| `7a02007` | CLAC Executor | release(v1.0): GA tag v1.0 + final release notes [vercel skip] |
+| `3d21792` | unitonzengarden | chore(snapshot): backfill SHA for LANE02-W4-RELEASE-NOTES-DRAFT-V1 [vercel skip] |
+| `77686c9` | AIER State Bot | [auto-status] regen runtime+network surfaces from b9d3c52 [vercel skip] |
 | `b9d3c52` | unitonzengarden | docs: release notes v1.0 RC DRAFT (adapt mode) [vercel skip] |
 | `1cc8037` | AIER State Bot | [auto-status] regen runtime+network surfaces from 241913a [vercel skip] |
-| `241913a` | unitonzengarden | fix(skill): aier-canon-guard capability registry reconcile [vercel skip] |
-| `cf5489c` | AIER State Bot | [auto-status] regen runtime+network surfaces from 8d6c7d0 [vercel skip] |
-| `ca93d0a` | unitonzengarden | chore(snapshot): backfill SHA for LANE02-W4-DOCS-OPERATOR-MANUAL-V1 [vercel skip] |
 
 ## §7. Latest 5 DONE Tasks (from MASTER_CHECKLIST)
 
@@ -104,7 +104,7 @@ Latest scores from the 4-worker QA family (per `LANE01-W3-QA-LOOP-WIRE-V1`).
 
 | Worker | Latest Report | Health | Findings (C/W/I) |
 |---|---|---|---|
-| scan | `AIER-SCAN-W2-CLOSEOUT.json` | 70/100 | 3/0/0 |
+| scan | `AIER-SCAN-2026-04-28-VERIFY-T3-5.json` | 90/100 | 1/0/0 |
 | canon | `AIER-CANON-QA-V1-FINAL-AUDIT.json` | 76/100 | 0/7/3 |
 | skill | `AIER-SKILL-QA-CAPABILITY-VERIFY.json` | 100/100 | 0/0/0 |
 | qa_loop | `POST-LANE01-W5-V1-FINAL-AUDIT-V1.json` | 60/100 | 10/12/3 |
