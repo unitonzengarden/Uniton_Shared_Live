@@ -5,6 +5,7 @@ Updated: 2026-04-29T04:30:00Z by Lane_01 - LANE01-W3-FIRE-3-LANES-V1 + LANE01-W3
 
 | Task ID | Lane | Description | Target Date | Status |
 |---|---|---|---|---|
+| AMD_LANE03_LAW_N13_AIER_LIFE_INTEGRATION_2026-04-29 | NTS / Lane_03 | NTS approved and Lane_03 applied LAW_N13 AIER Life integration law as `LAW_N13_MULTI_REPO_AND_HANDOFFS.md` v1.0 ACTIVE. | 2026-04-29 | APPROVED_APPLIED / LAW_N13_ACTIVE |
 | AMD_LANE02_AIER_CODE_ROLE_REFRAME_2026-04-29 | NTS / Lane_03 / Lane_02 | NTS approved and Lane_03 applied Lane_02 role reframe to AIER Code parallel executor for controlled tech non-canon work. | 2026-04-29 | APPROVED_APPLIED / RESOLVED |
 | AMD_LANE03_AIER_CANON_GUARD_ACTIVATE_2026-04-28 | NTS / Lane_03 | NTS approved and Lane_03 applied `aier-canon-guard` from `DRAFT v0.1` to `ACTIVE v1.0`. | 2026-04-28 | APPROVED_APPLIED / RESOLVED |
 
@@ -12,7 +13,6 @@ Updated: 2026-04-29T04:30:00Z by Lane_01 - LANE01-W3-FIRE-3-LANES-V1 + LANE01-W3
 
 | Task ID | Lane | Description | ETA | Status |
 |---|---|---|---|---|
-| AMD_LANE03_LAW_N13_AIER_LIFE_INTEGRATION_2026-04-29 | NTS / Lane_03 | Decide pending LAW_N13 AIER Life integration amendment packet. Options: APPROVE / REJECT / REVISE. LAW_N13 is not active until a separate approved apply task. | 2026-04-29 | PENDING_NTS_DECISION |
 | LANE03-W1-LANE02-ROLE-REFRAME-APPLY-V1 | Lane_03 | Applied NTS-approved `AMD_LANE02_AIER_CODE_ROLE_REFRAME_2026-04-29`; Lane_02 is now AIER Code parallel executor for controlled tech non-canon work. | 2026-04-29 | DONE / APPLIED |
 | LANE03-W1-LANE02-ROLE-REFRAME-AUTHOR-V1 | Lane_03 | Authored pending amendment packet `AMD_LANE02_AIER_CODE_ROLE_REFRAME_2026-04-29` from NTS/Lane_01 draft. No approval/apply; no Lane_02 files changed. | 2026-04-28 | DONE / AUTHOR_ONLY |
 | LANE02-NEXT-SCOPED-AIER-CODE-TASK | Lane_02 | Begin execution under new AIER Code parallel executor role only after explicit task dispatch. | 2026-04-29 | NEXT / WAITING_TASK_DISPATCH |
@@ -68,6 +68,7 @@ NTS verbatim approval ***"APPROVE V1.0 release — accept READY_WITH_NOTES cavea
 
 | Task ID | Lane | Description | Completed | Commit SHA |
 |---|---|---|---|---|
+| LANE03-AIER-LIFE-INTEGRATION-AMENDMENT-APPLY-V1 | Lane_03 | Applied NTS-approved `AMD_LANE03_LAW_N13_AIER_LIFE_INTEGRATION_2026-04-29`; created active `LAW_N13_MULTI_REPO_AND_HANDOFFS.md` v1.0 ACTIVE from the full candidate, preserved candidate history, moved packet pending -> approved, and updated SHARED/runtime/checklist/action-board/notification surfaces. No LAW_N1-LAW_N12 content, Uniton_OS files, bridge implementation, daemon/deploy/backend mutation, or new law logic changed. | 2026-04-29 | (this commit) |
 | LANE03-AIER-LIFE-INTEGRATION-AMENDMENT-PREP-V1 | Lane_03 | Prepared pending amendment packet `AMD_LANE03_LAW_N13_AIER_LIFE_INTEGRATION_2026-04-29` for NTS decision. Created PROPOSAL, RATIONALE, IMPACT_LANE_BREAKDOWN, CANDIDATE_SOURCE, and PENDING-only NTS_DECISION. LAW_N13 remains candidate-only; no active law/canon edits, Uniton_OS writes, bridge implementation, daemon/deploy/backend mutation, or activation. | 2026-04-29 | (this commit) |
 | LANE03-W3-LAW-N13-INTEGRATION-HARDEN-V1 | Lane_03 | Created draft-only LAW_N13 v1.1 integration hardening package under `SHARED/architecture/LAW_N13_INTEGRATION_HARDEN_V1_1/` with multi-repo source-of-truth rules, AIER Life integration model, integration handoff schema, execution boundary spec, and conceptual API bridge contract. LAW_N13 remains DRAFT / PENDING REVIEW; no active law/canon, Uniton_OS, product repo, daemon/backend/deploy/API execution, or capability authority changed. | 2026-04-28 | (this commit) |
 | LANE01-V1-CONTINUE-FINISH-V1 | Lane_01 (CTO scope; self-approve under `AMD_LANE01_CTO_AUTO_APPROVE_TECH_NON_CANON §3.1` — tracker hygiene = tech non-canon) | Audit gap + finalize V1.0 GA tracker hygiene. 6 NEW DONE rows added for Lane_01 W4-W5 tasks; stale PENDING row LANE01-W4-ROADMAP-HOT-RELOAD-V1 (line 21) removed (was DONE since `bb3c6a9`); 2 `(this commit)` placeholders backfilled on LANE01-W3-QA-LOOP-WIRE-V1 + LANE01-W3-FIRE-3-LANES-V1 (both → `9238779`). PROJECT_STATUS regenerated showing W4=100% + W5=100% in §12 phase progress. current_state.md §0 header dedup (3 stale "Last verified" blocks collapsed to single canonical v1.35 row). §1 Phase = `V1_0_GA_COMPLETE / READY_FOR_NEXT_PHASE`. **🎉 Lane_01 queue 9/9 DONE confirmed.** | 2026-04-29 | (this commit) |

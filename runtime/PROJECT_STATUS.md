@@ -10,7 +10,7 @@
 ## §0. Header
 
 - **Generator:** `aier-state-update v1.0` invoked via `scripts/runtime/generate_project_status.py v1.1`
-- **Source commit:** `e88f489dfd7e2b443ba237bccd960455a489d24f` (short: `e88f489`)
+- **Source commit:** `cfc5eac1d6848395be83b19ee6a567668ab5fc44` (short: `cfc5eac`)
 - **Auto-generated:** `true` (do not hand-edit)
 - **Authority:** repo-backed automation per LAW_N8 §L8.2 explicitly enabled CI mode (state-mirror auto-regenerate scope only)
 
@@ -55,8 +55,8 @@
 
 ## §5. Active AMDs (AMENDMENTS_LOG counts)
 
-- **Total rows:** 30
-- **PENDING:** 21
+- **Total rows:** 31
+- **PENDING:** 22
 - **APPROVED (non-pending):** 9
 - **Lane self-approve (under AMD_LANE01_CTO_AUTO_APPROVE_TECH_NON_CANON §3.1):** 18
 - **Authoritative source:** `docs/LAW_CLA_LLM/SHARED/amendments/AMENDMENTS_LOG.md`
@@ -65,21 +65,21 @@
 
 | SHA | Author | Subject |
 |---|---|---|
+| `cfc5eac` | unitonzengarden | record(lane03): capture NTS approval for LAW_N13 amendment [vercel skip] |
+| `d0dd86e` | AIER State Bot | [auto-status] regen runtime+network surfaces from acd227e [vercel skip] |
+| `acd227e` | unitonzengarden | amend(lane03): prepare LAW_N13 AIER Life integration packet [vercel skip] |
+| `ac5498c` | AIER State Bot | [auto-status] regen runtime+network surfaces from e88f489 [vercel skip] |
 | `e88f489` | unitonzengarden | review(lane03): validate full LAW_N13 candidate for amendment prep [vercel skip] |
-| `1f61712` | AIER State Bot | [auto-status] regen runtime+network surfaces from 93f9c6b [vercel skip] |
-| `93f9c6b` | unitonzengarden | chore(lane03): harden LAW_N13 v1.2 operational layer [vercel skip] |
-| `00fa03b` | AIER State Bot | [auto-status] regen runtime+network surfaces from 52e7f9c [vercel skip] |
-| `52e7f9c` | unitonzengarden | contract(aier-life): finalize Lane_03 bridge contract for Uniton_OS handoff [vercel skip] |
 
 ## §7. Latest 5 DONE Tasks (from MASTER_CHECKLIST)
 
 | Task ID | Completed | Commit |
 |---|---|---|
+| LANE03-AIER-LIFE-INTEGRATION-AMENDMENT-PREP-V1 | 2026-04-29 | (this commit) |
 | LANE03-W3-LAW-N13-INTEGRATION-HARDEN-V1 | 2026-04-28 | (this commit) |
 | LANE01-V1-CONTINUE-FINISH-V1 | 2026-04-29 | (this commit) |
 | LANE01-W5-UNITON-FUTURE-HANDOFF-V1 | 2026-04-29 | `524aad3` (rebased over Lane_02 push) |
 | LANE01-W5-V1-RELEASE-COMMIT-V1 | 2026-04-29 | `7a02007` (apply) + `a122cd0` (annotated tag objec |
-| LANE01-W5-V1-FINAL-AUDIT-V1 | 2026-04-29 | `347e39c` (rebased from `9993534`) |
 
 ## §8. Pending NTS Decisions
 
@@ -104,7 +104,7 @@ Latest scores from the 4-worker QA family (per `LANE01-W3-QA-LOOP-WIRE-V1`).
 
 | Worker | Latest Report | Health | Findings (C/W/I) |
 |---|---|---|---|
-| scan | `AIER-SCAN-W2-CLOSEOUT.json` | 70/100 | 3/0/0 |
+| scan | `AIER-SCAN-2026-04-28-VERIFY-T3-5.json` | 90/100 | 1/0/0 |
 | canon | `AIER-CANON-QA-V1-FINAL-AUDIT.json` | 76/100 | 0/7/3 |
 | skill | `AIER-SKILL-QA-CAPABILITY-VERIFY.json` | 100/100 | 0/0/0 |
 | qa_loop | `POST-LANE01-W5-V1-FINAL-AUDIT-V1.json` | 60/100 | 10/12/3 |
