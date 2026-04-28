@@ -10,13 +10,13 @@
 ## §0. Header
 
 - **Generator:** `aier-state-update v1.0` invoked via `scripts/runtime/generate_project_status.py v1.0`
-- **Source commit:** `099f7c2028c8071044f9d0177b60eff08bd125eb` (short: `099f7c2`)
+- **Source commit:** `814b0199f35cb47af0cbc0cca56e89c8bc3856b8` (short: `814b019`)
 - **Auto-generated:** `true` (do not hand-edit)
 - **Authority:** repo-backed automation per LAW_N8 §L8.2 explicitly enabled CI mode (state-mirror auto-regenerate scope only)
 
 ## §1. Phase + Gate
 
-- **Phase:** `ROADMAP_W1_COMPLETE / LAW_N12_ACTIVE / W1.7_APPLIED / W2_AUTOMATION_PHASE`
+- **Phase:** `W2_AUTOMATION_PHASE_COMPLETE / W3_PREP`
 - **Gate:** `(unknown)`
 - **Roadmap:** Roadmap V1 FINAL APPROVED + LOCKED at git tag `roadmap-locked-v2-final` (commit `14f7509`)
 
@@ -55,31 +55,31 @@
 
 ## §5. Active AMDs (AMENDMENTS_LOG counts)
 
-- **Total rows:** 26
-- **PENDING:** 18
+- **Total rows:** 27
+- **PENDING:** 19
 - **APPROVED (non-pending):** 8
-- **Lane self-approve (under AMD_LANE01_CTO_AUTO_APPROVE_TECH_NON_CANON §3.1):** 14
+- **Lane self-approve (under AMD_LANE01_CTO_AUTO_APPROVE_TECH_NON_CANON §3.1):** 15
 - **Authoritative source:** `docs/LAW_CLA_LLM/SHARED/amendments/AMENDMENTS_LOG.md`
 
 ## §6. Latest 5 Commits
 
 | SHA | Author | Subject |
 |---|---|---|
+| `814b019` | AIER State Bot | [auto-status] regen runtime+network surfaces from 2011978 [vercel skip] |
+| `2011978` | CLAC Executor | chore(checklist): backfill LANE01-W2-MASTER-TASK-LIST-V1 SHA + workflow proof [vercel skip] |
+| `c6fc6e9` | AIER State Bot | [auto-status] regen runtime+network surfaces from 099f7c2 [vercel skip] |
 | `099f7c2` | CLAC Executor | feat(automation): Master task list + 22 task specs + lane_dispatch [vercel skip] |
 | `518f9cc` | AIER State Bot | [auto-status] regen runtime+network surfaces from 8ba7552 [vercel skip] |
-| `8ba7552` | unitonzengarden | docs(templates): register AIER Code template standard v2 [vercel skip] |
-| `d8e2a08` | unitonzengarden | chore(snapshot): backfill commit SHA for LANE02-W2-NETWORK-BRAIN-MVP-V1 [vercel skip] |
-| `1bca7d6` | AIER State Bot | [auto-status] regen runtime+network surfaces from de14a91 [vercel skip] |
 
 ## §7. Latest 5 DONE Tasks (from MASTER_CHECKLIST)
 
 | Task ID | Completed | Commit |
 |---|---|---|
+| LANE01-W2-CLOSEOUT-V1 | 2026-04-29 | (this commit) |
 | LANE03-W2-TEMPLATE-STANDARDIZATION-AND-ENFORCEMENT-V1 | 2026-04-28 | (Lane_03 commit) |
-| LANE01-W2-MASTER-TASK-LIST-COMMIT-AND-BATCH-AUTHOR-V1 | 2026-04-29 | (this commit) |
+| LANE01-W2-MASTER-TASK-LIST-COMMIT-AND-BATCH-AUTHOR-V1 | 2026-04-29 | `099f7c2` (apply rebased over Lane_02 + Lane_03) + |
 | LANE03-W2-TEMPLATE-STANDARDIZATION-AND-ENFORCEMENT-V1 | 2026-04-28 | (Lane_03 commit) |
 | LANE02-W2-NETWORK-BRAIN-MVP-V1 (Task A) | 2026-04-28 | (this commit) |
-| LANE01-W2-T5-AIER-QA-SKILL-V1 | 2026-04-29 | `7b1fda7` (apply rebased over Lane_03 b603832 + La |
 
 ## §8. Pending NTS Decisions
 
