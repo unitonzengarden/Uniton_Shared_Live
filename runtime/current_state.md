@@ -7,18 +7,10 @@
 - Canonical root: `D:\UZG\Projects-v2\Uniton_Shared`
 - Remote: `https://github.com/unitonzengarden/Uniton_Shared.git`
 - Branch: `main`
-- Last verified commit before this update: `3d2179226791ec40038681bc262ee46085dcac3a` (origin/main after autopilot HALT close + Lane_02 LOOP)
-- Last updated: `2026-04-29T05:00:00Z`
-- Updated by: Lane_01 / CLAC-1 (`LANE01-V1-GA-RESUME-V1`) — **🎉 AIER Code V1.0 GA RELEASED 2026-04-29; tag `v1.0` pushed; NTS verbatim approval recorded; operator handoff in same task**
-- Current state version: `v1.34`
-- Last verified commit before this update: `215d04fe2641d0b603b08d856727f5fc7c5804f6` (origin/main after Lane_02 LOOP T3 backfill + rebase)
-- Last updated: `2026-04-28T08:05:00Z`
-- Updated by: Lane_02 / CLAC2 (`LANE02-LOOP-T4-DOCS-OPERATOR-MANUAL-DRAFT-V1`) — loop test 4/5; Operator Manual DRAFT v0.1
-- Current state version: `v1.30`
-- Last verified commit before this update: `5c4933b68a77aa923b1c672559f463b81bb799c0` (origin/main after Lane_02 LOOP T4 backfill + rebase)
-- Last updated: `2026-04-28T08:25:00Z`
-- Updated by: Lane_02 / CLAC2 (`LANE02-LOOP-T5-DOCS-RELEASE-NOTES-DRAFT-V1`) — loop test 5/5 (FINAL); Release Notes DRAFT v0.1; LOOP TEST COMPLETE
-- Current state version: `v1.31`
+- Last verified commit before this update: `2cb41e9cbccfba76e7a7b93dbe7c5173d03facad` (origin/main after V1.0 GA release + Lane_03 operator console + Lane_02 LOOP)
+- Last updated: `2026-04-29T05:30:00Z`
+- Updated by: Lane_01 / CLAC-1 (`LANE01-V1-CONTINUE-FINISH-V1`) — **🎉 AIER Code V1.0 GA 100% COMPLETE 2026-04-29; tag `v1.0` + `v1.0-rc` pushed; tracker hygiene finalized (6 missing DONE rows added + stale PENDING removed + 2 placeholder backfills + current_state header dedup)**
+- Current state version: `v1.35`
 - Current state mode: `CONTROLLED_EXECUTION / GOVERNANCE_FIRST / RUNTIME_DRYRUN_ONLY`
 - Source evidence:
   - `reports/LANE03-AIER-CODE-CANON-NTS-APPROVAL-APPLY-V1_REPORT.md`
@@ -58,8 +50,8 @@ This file is the repo-backed hot-memory entry for cold-start Lane readers. It re
 
 - Authority: NTS remains final authority for canon, roadmap gates, deploy, backend side effects, new Lanes, and halt/resume decisions.
 - Mode: `CONTROLLED_EXECUTION / GOVERNANCE_FIRST / RUNTIME_DRYRUN_ONLY`
-- Phase: `V1_0_GA_HANDED_OFF / UZG_PLUS_AIER_AIFI_READY`
-- Gate: `W3_ACTIVE / NTS_GATE_LANE04_OPEN_DEFERRED_STRATEGIC / NTS_SIGN_OFF_REMAINS_FOR_V1_RC_FINAL`. W3 queue rebaselined 2026-04-29 via `LANE01-W3-QUEUE-REBASELINE-V1`. **3 lane_dispatch workflow_dispatch fired 2026-04-29 via `LANE01-W3-FIRE-3-LANES-V1`** — 3 runs SUCCESS surfacing next READY task spec for each Lane (Lane_01 → QA-LOOP-WIRE, Lane_02 → NETWORK-CONSOLIDATE, Lane_03 → CANON-GUARD-HEADING-FIX). **Lane_01 W3.T1 DONE via `LANE01-W3-QA-LOOP-WIRE-V1`** — 4th worker `aier-qa-loop` coordinator built wiring the 3-worker QA family into a single workflow + emits unified `qa_loop_reports/AIER-QA-LOOP-YYYY-MM-DD-NNN.json`. First real run baseline: aggregate_health_score **76/100** (weighted: scan=58 × 30% + canon=76 × 40% + skill=94 × 30%); 19 total findings (3 critical / 13 warning / 3 info); 3/3 sub-workers OK. pytest 112→120 (+8 from test_aier_qa_loop). 4-worker QA family fully operational (3 sub-workers + 1 coordinator). **Lane_02 + Lane_03 next tasks await their executors** — workflow runs surfaced specs to step summary; CLAC-2/CLAC-3 (or Codex) pickup separately. Single remaining NTS gate for V1.0 GA = `NTS_SIGN_OFF` on `LANE01-W5-V1-RELEASE-COMMIT-V1`.
+- Phase: `V1_0_GA_COMPLETE / READY_FOR_NEXT_PHASE`
+- Gate: `ALL_LANE_01_TASKS_DONE / ECOSYSTEM_READY`. **🎉 AIER Code V1.0 GA RELEASED 2026-04-29 — 16 days ahead of original 2026-05-15 target.** Annotated git tags `v1.0` (commit `7a02007`; tag object `a122cd0`) + `v1.0-rc` (commit `27c7958`; preserved RC bundle) both pushed to origin. NTS verbatim approval ***"APPROVE V1.0 release — accept READY_WITH_NOTES caveats"*** recorded 2026-04-29 in `notifications/NOTIFICATION_LEDGER.md` row `NTF-NTS-LANE01-V1-SIGN-OFF-2026-04-29` per LAW_SYSTEM §4 STEP 4 + R-AUTH-01. **Lane_01 queue: 9/9 DONE** — `LANE01-W2-T5-AIER-QA-SKILL-V1` → `LANE01-W2-CLOSEOUT-V1` → `LANE01-W3-QA-LOOP-WIRE-V1` → `LANE01-W4-ROADMAP-HOT-RELOAD-V1` → `LANE01-W4-PROJECT-STATUS-EXTEND-V1` → `LANE01-W4-V1-RC-COMMIT-V1` → `LANE01-W5-V1-FINAL-AUDIT-V1` → `LANE01-W5-V1-RELEASE-COMMIT-V1` → `LANE01-W5-UNITON-FUTURE-HANDOFF-V1`. W4 8/8 + W5 5/5 phase tasks complete. Final QA loop: aggregate **60/100** (cross-Lane drift drag from Lane_02 RSP territory); canon 76/100 stable; **skill 100/100** (both Lane_03 hygiene tickets DONE during release window). pytest 151+ baseline. 4 standard validators PASS. NTS có thể đọc `runtime/PROJECT_STATUS.md §1` thấy phase = V1_0_GA_COMPLETE. **NO pending Lane_01 tasks.** Strategic deferred (V2.0+): Lane_04 + LAW_N13 + BLOCH/QOT/AIFI per `roadmaps/strategic/future_lanes/`.
 - Operational note: AIER Code Canon (6 files at `docs/LAW_CLA_LLM/CANON/`) is ACTIVE v1.1. LAW_N1-N12 are ACTIVE. Core SHARED skills are now 5/5 ACTIVE v1.0: `aier-dispatch`, `aier-verify`, `aier-state-update`, `aier-handoff-route`, and `aier-canon-guard` (Lane_03-owned, `canon_adjacent: true`, activated by NTS-approved amendment). Runtime/PROJECT_STATUS automation, dispatcher, and worker-scan remain controlled visibility/foreground tooling only; public runtime mirror sync remains visibility only; `Uniton_Shared` on `main` remains source of truth. No daemon mode, backend mutation, deploy, product repo work, or capability expansion is authorized by this state.
 
 ## 2. WHO IS WHO

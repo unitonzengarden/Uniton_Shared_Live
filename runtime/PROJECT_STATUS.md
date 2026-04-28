@@ -10,13 +10,13 @@
 ## §0. Header
 
 - **Generator:** `aier-state-update v1.0` invoked via `scripts/runtime/generate_project_status.py v1.1`
-- **Source commit:** `561db000b21a165e310492b296bed7f88b3b93cc` (short: `561db00`)
+- **Source commit:** `2cb41e9cbccfba76e7a7b93dbe7c5173d03facad` (short: `2cb41e9`)
 - **Auto-generated:** `true` (do not hand-edit)
 - **Authority:** repo-backed automation per LAW_N8 §L8.2 explicitly enabled CI mode (state-mirror auto-regenerate scope only)
 
 ## §1. Phase + Gate
 
-- **Phase:** `V1_0_GA_HANDED_OFF / UZG_PLUS_AIER_AIFI_READY`
+- **Phase:** `V1_0_GA_COMPLETE / READY_FOR_NEXT_PHASE`
 - **Gate:** `(unknown)`
 - **Roadmap:** Roadmap V1 FINAL APPROVED + LOCKED at git tag `roadmap-locked-v2-final` (commit `14f7509`)
 
@@ -65,21 +65,21 @@
 
 | SHA | Author | Subject |
 |---|---|---|
-| `561db00` | CLAC Executor | chore(autopilot): LANE01-V1-GA-RESUME-V1 complete — V1.0 GA RELEASED [vercel skip] |
-| `3cef977` | AIER State Bot | [auto-status] regen runtime+network surfaces from 524aad3 [vercel skip] |
-| `524aad3` | CLAC Executor | docs(v1.0): operator handoff + Uniton Future operations manual [vercel skip] |
-| `02f99b4` | AIER State Bot | [auto-status] regen runtime+network surfaces from 7a02007 [vercel skip] |
-| `7a02007` | CLAC Executor | release(v1.0): GA tag v1.0 + final release notes [vercel skip] |
+| `2cb41e9` | AIER State Bot | [auto-status] regen runtime+network surfaces from 06eb89b [vercel skip] |
+| `06eb89b` | unitonzengarden | chore(operator-console): refresh console after rebase [vercel skip] |
+| `57c27b9` | unitonzengarden | feat(operator-console): add AIER Operator Console [vercel skip] |
+| `458e0a0` | AIER State Bot | [auto-status] regen runtime+network surfaces from 561db00 [vercel skip] |
+| `561db00` | CLAC Executor | chore(autopilot): LANE01-V1-GA-RESUME-V1 complete â€” V1.0 GA RELEASED [vercel skip] |
 
 ## §7. Latest 5 DONE Tasks (from MASTER_CHECKLIST)
 
 | Task ID | Completed | Commit |
 |---|---|---|
-| LANE02-W4-RELEASE-NOTES-DRAFT-V1 | 2026-04-28 | (this commit) |
-| LANE02-W4-DOCS-OPERATOR-MANUAL-V1 | 2026-04-28 | (this commit) |
-| LANE02-W3-DOMAIN-CANONS-DRAFT-V1 | 2026-04-28 | (this commit) |
-| LANE02-W3-LANE-NETWORK-CONSOLIDATE-V1 | 2026-04-28 | (this commit) |
-| LANE01-W3-QA-LOOP-WIRE-V1 | 2026-04-29 | (this commit) |
+| LANE01-V1-CONTINUE-FINISH-V1 | 2026-04-29 | (this commit) |
+| LANE01-W5-UNITON-FUTURE-HANDOFF-V1 | 2026-04-29 | `524aad3` (rebased over Lane_02 push) |
+| LANE01-W5-V1-RELEASE-COMMIT-V1 | 2026-04-29 | `7a02007` (apply) + `a122cd0` (annotated tag objec |
+| LANE01-W5-V1-FINAL-AUDIT-V1 | 2026-04-29 | `347e39c` (rebased from `9993534`) |
+| LANE01-W4-V1-RC-COMMIT-V1 | 2026-04-29 | `27c7958` (orphan, tag preservation) → `d996a46` ( |
 
 ## §8. Pending NTS Decisions
 
@@ -104,10 +104,10 @@ Latest scores from the 4-worker QA family (per `LANE01-W3-QA-LOOP-WIRE-V1`).
 
 | Worker | Latest Report | Health | Findings (C/W/I) |
 |---|---|---|---|
-| scan | `AIER-SCAN-2026-04-28-VERIFY-T3-5.json` | 90/100 | 1/0/0 |
+| scan | `AIER-SCAN-AUTOPILOT-DIAG.json` | 0/100 | 10/4/0 |
 | canon | `AIER-CANON-QA-V1-FINAL-AUDIT.json` | 76/100 | 0/7/3 |
-| skill | `AIER-SKILL-QA-2026-04-29-001.json` | 94/100 | 0/2/0 |
-| qa_loop | `POST-LANE01-W5-V1-FINAL-AUDIT-V1.json` | 60/100 | 10/12/3 |
+| skill | `AIER-SKILL-QA-CAPABILITY-VERIFY.json` | 100/100 | 0/0/0 |
+| qa_loop | `POST-V1-GA-FINAL.json` | 60/100 | 14/11/3 |
 
 - **Aggregate health (weighted scan=30% + canon=40% + skill=30%):** `60/100`
 - **Source:** `scan_reports/`, `canon_qa_reports/`, `skill_qa_reports/`, `qa_loop_reports/` (per-worker schemas)
@@ -118,9 +118,9 @@ Per-phase task completion counted from `runtime/checklist/MASTER_CHECKLIST.md` D
 
 - **W1** [██████████] 100% — 13/7 tasks DONE
 - **W2** [██████████] 100% — 14/12 tasks DONE
-- **W3** [██████████] 100% — 7/7 tasks DONE
-- **W4** [██░░░░░░░░] 25% — 2/8 tasks DONE
-- **W5** [░░░░░░░░░░] 0% — 0/5 tasks DONE
+- **W3** [██████████] 100% — 8/7 tasks DONE
+- **W4** [██████░░░░] 62% — 5/8 tasks DONE
+- **W5** [██████░░░░] 60% — 3/5 tasks DONE
 
 - **Source:** task IDs matching `-W[1-5]-` token in DONE rows; planned counts from V1.1 supplement §4
 
