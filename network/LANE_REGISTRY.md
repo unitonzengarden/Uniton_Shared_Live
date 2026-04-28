@@ -10,7 +10,7 @@
 ## §0. Header
 
 - **Generator:** `aier-state-update v1.0` invoked via `scripts/runtime/generate_lane_registry.py v1.0`
-- **Source commit:** `5e6b1fbf8ea74fa8e328e745a6ac75071e09a843` (short: `5e6b1fb`)
+- **Source commit:** `cd908038fa2d8b89971e4dc3ae4441381c84067a` (short: `cd90803`)
 - **Auto-generated:** `true` (do not hand-edit)
 - **Authority:** repo-backed automation per LAW_N8 §L8.2 explicitly enabled CI mode (visibility surface only — does NOT register Lanes; new Lane registration remains NTS-gated per LAW_N10 §L10.x).
 
@@ -20,7 +20,7 @@
 |---|---|---|---|---|---|
 | `Lane_01` | CTO-style governance contributor and draft author inside `Uniton_Shared` under active law and explicit task scope | BOOTSTRAP / BASELINE / NO_NEW_CAPABILITY_GRANTED | limited: BASELINE_READ_AND_REPORT, BASELINE_NON_CANON_DRAFTING, BASELINE_REPO_VISIBILITY_UPDATES | NTS | `2026-04-28T11:30:00Z` |
 | `Lane_02` | (not declared) | BASELINE / CONSUMER_ONBOARDING | allowed: read AIER Code boot, current_state, checklist, handoffs, and scoped target files, read assigned task context, write Lane_02 readiness reports | NTS | `2026-04-28T02:38:59Z` |
-| `Lane_03` | execution-support, audit, cross-review, and state-reconciliation work inside `Uniton_Shared` under active law and explic | BOOTSTRAP / BASELINE / NO_NEW_CAPABILITY_GRANTED | limited: BASELINE_READ_AND_REPORT, BASELINE_CROSS_REVIEW, BASELINE_STATE_RECONCILIATION | NTS | `2026-04-27T19:39:04Z` |
+| `Lane_03` | execution-support, audit, cross-review, and state-reconciliation work inside `Uniton_Shared` under active law and explic | BOOTSTRAP / BASELINE / NO_NEW_CAPABILITY_GRANTED | limited: BASELINE_READ_AND_REPORT, BASELINE_CROSS_REVIEW, BASELINE_STATE_RECONCILIATION | NTS | `2026-04-28T03:25:00Z` |
 
 ## §2. Pending Lanes
 
