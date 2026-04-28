@@ -50,6 +50,7 @@
   - `reports/LANE01-W3-FIRE-3-LANES-V1_REPORT.md`
   - `reports/LANE01-W3-QA-LOOP-WIRE-V1_REPORT.md`
   - `reports/LANE03-W2-AIER-DEV-TOOLS-SUITE-V1_REPORT.md`
+  - `reports/LANE03-W2-CANON-GUARD-HEADING-FIX-V1_REPORT.md`
 
 This file is the repo-backed hot-memory entry for cold-start Lane readers. It records current repo truth and task state. It does not approve canon, approve roadmap phases, activate drafts, replace `LAW_SYSTEM.md`, replace `REDLINES.md`, or override NTS authority.
 
@@ -280,6 +281,7 @@ Rules:
 
 ## 13. CHANGELOG
 
+- 2026-04-28 - `LANE03-W2-CANON-GUARD-HEADING-FIX-V1` fixed `aier-canon-guard/SKILL.md` heading `Step-by-step workflow` to canonical `Step-by-step` per LAW_N9 §L9.8. Verification report `skill_qa_reports/AIER-SKILL-QA-HEADING-FIX-VERIFY.json` shows heading-order PASS with 0 findings and skill_health_score 97/100. No skill behavior, SHARED/laws, CANON, other skills, Lane folders, worker scripts, daemon/backend/deploy, or capability authority changed.
 - 2026-04-28 - `LANE03-W2-AIER-DEV-TOOLS-SUITE-V1` created read-only AIER Dev Tools status summarizer `scripts/devtools/aier_devtools.py`, generated `runtime/devtools/AIER_DEVTOOLS_STATUS.{md,json}`, added non-technical docs and tests, and preserved boundaries: no SHARED/laws, CANON, Lane folders, amendments, contracts, workflows, daemon/backend/deploy, or capability grants.
 - 2026-04-28 - `LANE03-W2-TEMPLATE-STANDARDIZATION-AND-ENFORCEMENT-V1` registered AIER Code Template Standard V2 in `docs/LAW_CLA_LLM/SHARED/templates/`, validated all 14 required template files and `SNAPSHOT_JSON_TEMPLATE.json`, updated SHARED_INDEX/current_state/checklist/notification visibility, and preserved boundaries: no SHARED/laws, CANON, Lane folders, scripts, contracts, workflows, daemon/backend/deploy, or capability grants.
 - 2026-04-26 - `T-RUNTIME-001` created the initial current-state memory file.
