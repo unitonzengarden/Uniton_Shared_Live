@@ -10,7 +10,7 @@
 ## §0. Header
 
 - **Generator:** `aier-state-update v1.0` invoked via `scripts/runtime/generate_project_status.py v1.0`
-- **Source commit:** `cd908038fa2d8b89971e4dc3ae4441381c84067a` (short: `cd90803`)
+- **Source commit:** `24958f3bd937fcf6746e84485dcfe489b22222c0` (short: `24958f3`)
 - **Auto-generated:** `true` (do not hand-edit)
 - **Authority:** repo-backed automation per LAW_N8 §L8.2 explicitly enabled CI mode (state-mirror auto-regenerate scope only)
 
@@ -55,31 +55,31 @@
 
 ## §5. Active AMDs (AMENDMENTS_LOG counts)
 
-- **Total rows:** 22
-- **PENDING:** 15
+- **Total rows:** 23
+- **PENDING:** 16
 - **APPROVED (non-pending):** 7
-- **Lane self-approve (under AMD_LANE01_CTO_AUTO_APPROVE_TECH_NON_CANON §3.1):** 11
+- **Lane self-approve (under AMD_LANE01_CTO_AUTO_APPROVE_TECH_NON_CANON §3.1):** 12
 - **Authoritative source:** `docs/LAW_CLA_LLM/SHARED/amendments/AMENDMENTS_LOG.md`
 
 ## §6. Latest 5 Commits
 
 | SHA | Author | Subject |
 |---|---|---|
+| `24958f3` | unitonzengarden | chore(snapshot): backfill commit SHA for LANE02-W2-TEST-EXPAND-V1 [vercel skip] |
+| `78ac0fe` | AIER State Bot | [auto-status] regen runtime+network surfaces from 0c90e35 [vercel skip] |
+| `0c90e35` | unitonzengarden | feat(tests): LANE02 W2 test infrastructure expand [vercel skip] |
+| `e57fdfb` | AIER State Bot | [auto-status] regen runtime+network surfaces from cd90803 [vercel skip] |
 | `cd90803` | unitonzengarden | docs(amendment): author Lane_02 role reframe packet [vercel skip] |
-| `843042d` | AIER State Bot | [auto-status] regen runtime+network surfaces from 5e6b1fb [vercel skip] |
-| `5e6b1fb` | CLAC Executor | chore(checklist): backfill LANE01-W2-T3-5-CTO-IMPROVEMENT-BATCH-V1 SHA + workflow proof [vercel skip |
-| `aa00763` | CLAC Executor | fix(ci): relax check_deliverables to skip non-task commits [vercel skip] |
-| `be7e0eb` | CLAC Executor | fix(ci): check_deliverables accept on-disk deliverables for report-only edits [vercel skip] |
 
 ## §7. Latest 5 DONE Tasks (from MASTER_CHECKLIST)
 
 | Task ID | Completed | Commit |
 |---|---|---|
+| LANE01-W2-T4-AIER-QA-CANON-V1 | 2026-04-28 | (this commit) |
+| LANE02-W2-TEST-EXPAND-V1 | 2026-04-28 | (this commit) |
 | LANE01-W2-T3-5-CTO-IMPROVEMENT-BATCH-V1 |  | true` before `git push` (race-safe — same pattern  |
 | LANE01-W2-T3-AIER-WORKER-SCAN-V1 | 2026-04-28 | `9f5ab3a` (apply) + `eb275d7` (backfill) |
 | LANE02-W2-WORKSPACE-BOOTSTRAP-V1 | 2026-04-28 | (this commit) |
-| LANE03-W1-AIER-CANON-GUARD-NTS-AMENDMENT-APPLY-V1 | 2026-04-28 | recorded in task commit after validation |
-| LANE03-W1-AIER-CANON-GUARD-NTS-AMENDMENT-AUTHOR-V1 | 2026-04-28 | recorded in task commit after validation |
 
 ## §8. Pending NTS Decisions
 
