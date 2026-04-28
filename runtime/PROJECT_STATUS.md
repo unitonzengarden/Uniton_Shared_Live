@@ -10,7 +10,7 @@
 ## §0. Header
 
 - **Generator:** `aier-state-update v1.0` invoked via `scripts/runtime/generate_project_status.py v1.1`
-- **Source commit:** `ca700f68ba11664f91c46fb9c91272fc3ca27e45` (short: `ca700f6`)
+- **Source commit:** `404ae4c5af7bd4faf59616c514e5307dff5aad9c` (short: `404ae4c`)
 - **Auto-generated:** `true` (do not hand-edit)
 - **Authority:** repo-backed automation per LAW_N8 §L8.2 explicitly enabled CI mode (state-mirror auto-regenerate scope only)
 
@@ -65,11 +65,11 @@
 
 | SHA | Author | Subject |
 |---|---|---|
+| `404ae4c` | unitonzengarden | feat(tooling): add AIER next task engine [vercel skip] |
+| `f545e29` | AIER State Bot | [auto-status] regen runtime+network surfaces from ca700f6 [vercel skip] |
 | `ca700f6` | CLAC Executor | chore(v1.0): finalize complete + tracker sync [vercel skip] |
 | `2cb41e9` | AIER State Bot | [auto-status] regen runtime+network surfaces from 06eb89b [vercel skip] |
 | `06eb89b` | unitonzengarden | chore(operator-console): refresh console after rebase [vercel skip] |
-| `57c27b9` | unitonzengarden | feat(operator-console): add AIER Operator Console [vercel skip] |
-| `458e0a0` | AIER State Bot | [auto-status] regen runtime+network surfaces from 561db00 [vercel skip] |
 
 ## §7. Latest 5 DONE Tasks (from MASTER_CHECKLIST)
 
@@ -118,7 +118,7 @@ Per-phase task completion counted from `runtime/checklist/MASTER_CHECKLIST.md` D
 
 - **W1** [██████████] 100% — 13/7 tasks DONE
 - **W2** [██████████] 100% — 14/12 tasks DONE
-- **W3** [██████████] 100% — 8/7 tasks DONE
+- **W3** [██████████] 100% — 9/7 tasks DONE
 - **W4** [██████░░░░] 62% — 5/8 tasks DONE
 - **W5** [██████░░░░] 60% — 3/5 tasks DONE
 
