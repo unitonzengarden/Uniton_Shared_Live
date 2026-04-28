@@ -10,13 +10,13 @@
 ## §0. Header
 
 - **Generator:** `aier-state-update v1.0` invoked via `scripts/runtime/generate_project_status.py v1.1`
-- **Source commit:** `0522068804b61d25836c9b1efe82659595447220` (short: `0522068`)
+- **Source commit:** `347e39c671c713dbbafa637850d692bd9e728a4e` (short: `347e39c`)
 - **Auto-generated:** `true` (do not hand-edit)
 - **Authority:** repo-backed automation per LAW_N8 §L8.2 explicitly enabled CI mode (state-mirror auto-regenerate scope only)
 
 ## §1. Phase + Gate
 
-- **Phase:** `W4_COMPLETE_V1_RC_TAGGED / AWAITING_W5_FINAL_AUDIT_AND_NTS_SIGN_OFF`
+- **Phase:** `W5_FINAL_AUDIT_DONE / AWAITING_NTS_SIGN_OFF`
 - **Gate:** `(unknown)`
 - **Roadmap:** Roadmap V1 FINAL APPROVED + LOCKED at git tag `roadmap-locked-v2-final` (commit `14f7509`)
 
@@ -65,11 +65,11 @@
 
 | SHA | Author | Subject |
 |---|---|---|
+| `347e39c` | CLAC Executor | audit(v1.0): final V1 audit before NTS sign-off [vercel skip] |
+| `fe869f3` | AIER State Bot | [auto-status] regen runtime+network surfaces from 0522068 [vercel skip] |
 | `0522068` | unitonzengarden | audit(lane3): map mission and next task order [vercel skip] |
 | `85295a0` | AIER State Bot | [auto-status] regen runtime+network surfaces from d996a46 [vercel skip] |
 | `d996a46` | CLAC Executor | release(v1.0-rc): release candidate notes + tag [vercel skip] |
-| `2043a05` | AIER State Bot | [auto-status] regen runtime+network surfaces from b8982af [vercel skip] |
-| `b8982af` | CLAC Executor | chore(queue): mark-done iter 1+2 + diag artifacts [vercel skip] |
 
 ## §7. Latest 5 DONE Tasks (from MASTER_CHECKLIST)
 
@@ -105,7 +105,7 @@ Latest scores from the 4-worker QA family (per `LANE01-W3-QA-LOOP-WIRE-V1`).
 | Worker | Latest Report | Health | Findings (C/W/I) |
 |---|---|---|---|
 | scan | `AIER-SCAN-2026-04-28-VERIFY-T3-5.json` | 90/100 | 1/0/0 |
-| canon | `AIER-CANON-QA-W2-CLOSEOUT.json` | 76/100 | 0/7/3 |
+| canon | `AIER-CANON-QA-V1-FINAL-AUDIT.json` | 76/100 | 0/7/3 |
 | skill | `AIER-SKILL-QA-W2-CLOSEOUT.json` | 94/100 | 0/2/0 |
 | qa_loop | `POST-LANE01-W4-ROADMAP-HOT-RELOAD-V1.json` | 60/100 | 10/12/3 |
 

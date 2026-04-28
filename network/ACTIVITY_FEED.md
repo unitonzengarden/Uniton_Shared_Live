@@ -10,7 +10,7 @@
 ## §0. Header
 
 - **Generator:** `aier-state-update v1.0` invoked via `scripts/runtime/generate_activity_feed.py v1.0`
-- **Source commit:** `0522068804b61d25836c9b1efe82659595447220` (short: `0522068`)
+- **Source commit:** `347e39c671c713dbbafa637850d692bd9e728a4e` (short: `347e39c`)
 - **Total events shown:** 20 (capped at 20)
 - **Auto-generated:** `true` (do not hand-edit)
 - **Authority:** repo-backed automation per LAW_N8 §L8.2 explicitly enabled CI mode (visibility surface only — does NOT replace authoritative sources: NOTIFICATION_LEDGER, audit_logs, git log).
@@ -27,7 +27,7 @@ Format: `<timestamp> | <lane_id> | <event_type> | <ref>` — see the `Summary` c
 | `2026-04-29T01:40:00Z` | `Lane_01` | `NOTIFICATION` | LANE01-W2-MASTER-TASK-LIST-COMMIT-AND-BATCH-AUTHOR-V1 | `ntf:NTF-L01-ALL-20260429-026` | MASTER_TASK_LIST_COMMITTED → ALL |
 | `2026-04-29T00:25:00Z` | `Lane_01` | `NOTIFICATION` | LANE01-W2-T5-AIER-QA-SKILL-V1 | `ntf:NTF-L01-ALL-20260429-024` | SKILL_QA_WORKER_ACTIVE → ALL |
 | `2026-04-29T00:00:00Z` | `Lane_03` | `NOTIFICATION` | LANE03-W1-LANE02-ROLE-REFRAME-APPLY-V1 | `ntf:NTF-L03-ALL-20260429-023` | AMENDMENT_APPLIED → ALL |
-| `2026-04-28T16:19:20Z` | `(unknown)` | `TASK_COMPLETE` | (no task id) | `git:d996a46` | release(v1.0-rc): release candidate notes + tag [vercel skip] |
+| `2026-04-28T16:22:30Z` | `(unknown)` | `TASK_COMPLETE` | (no task id) | `git:347e39c` | audit(v1.0): final V1 audit before NTS sign-off [vercel skip] |
 | `2026-04-28T15:42:16Z` | `Lane_01` | `TASK_COMPLETE` | LANE01-W3-FIRE-3-LANES-V1 | `git:b28c402` | chore(checklist): backfill LANE01-W3-FIRE-3-LANES-V1 + LANE01-W3-QA-LOOP-WIRE-V1 SHA + workflow proof [vercel skip] |
 | `2026-04-28T15:01:02Z` | `Lane_01` | `TASK_COMPLETE` | LANE01-W3-QUEUE-REBASELINE-V1 | `git:c515d96` | chore(checklist): backfill LANE01-W3-QUEUE-REBASELINE-V1 SHA + workflow proof [vercel skip] |
 | `2026-04-28T15:00:56Z` | `Lane_02` | `TASK_COMPLETE` | LANE02-W3-LANE-NETWORK-CONSOLIDATE-V1 | `git:0531fea` | chore(snapshot): backfill SHA for LANE02-W3-LANE-NETWORK-CONSOLIDATE-V1 [vercel skip] |
