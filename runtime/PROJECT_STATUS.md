@@ -10,7 +10,7 @@
 ## §0. Header
 
 - **Generator:** `aier-state-update v1.0` invoked via `scripts/runtime/generate_project_status.py v1.1`
-- **Source commit:** `241913ae3f2f76164dbad962390b2ed2f7b732e6` (short: `241913a`)
+- **Source commit:** `b9d3c52e83ab8c4de0215c23fb4bfd64ecf93265` (short: `b9d3c52`)
 - **Auto-generated:** `true` (do not hand-edit)
 - **Authority:** repo-backed automation per LAW_N8 §L8.2 explicitly enabled CI mode (state-mirror auto-regenerate scope only)
 
@@ -65,21 +65,21 @@
 
 | SHA | Author | Subject |
 |---|---|---|
+| `b9d3c52` | unitonzengarden | docs: release notes v1.0 RC DRAFT (adapt mode) [vercel skip] |
+| `1cc8037` | AIER State Bot | [auto-status] regen runtime+network surfaces from 241913a [vercel skip] |
 | `241913a` | unitonzengarden | fix(skill): aier-canon-guard capability registry reconcile [vercel skip] |
 | `cf5489c` | AIER State Bot | [auto-status] regen runtime+network surfaces from 8d6c7d0 [vercel skip] |
 | `ca93d0a` | unitonzengarden | chore(snapshot): backfill SHA for LANE02-W4-DOCS-OPERATOR-MANUAL-V1 [vercel skip] |
-| `8d6c7d0` | unitonzengarden | docs: operator manual v1.0 DRAFT - full upgrade from v0.1 [vercel skip] |
-| `e34c8a1` | unitonzengarden | chore(snapshot): backfill SHA for LANE02-W3-DOMAIN-CANONS-DRAFT-V1 [vercel skip] |
 
 ## §7. Latest 5 DONE Tasks (from MASTER_CHECKLIST)
 
 | Task ID | Completed | Commit |
 |---|---|---|
+| LANE02-W4-RELEASE-NOTES-DRAFT-V1 | 2026-04-28 | (this commit) |
 | LANE02-W4-DOCS-OPERATOR-MANUAL-V1 | 2026-04-28 | (this commit) |
 | LANE02-W3-DOMAIN-CANONS-DRAFT-V1 | 2026-04-28 | (this commit) |
 | LANE02-W3-LANE-NETWORK-CONSOLIDATE-V1 | 2026-04-28 | (this commit) |
 | LANE01-W3-QA-LOOP-WIRE-V1 | 2026-04-29 | (this commit) |
-| LANE01-W3-FIRE-3-LANES-V1 | 2026-04-29 | (same commit as LANE01-W3-QA-LOOP-WIRE-V1) |
 
 ## §8. Pending NTS Decisions
 
@@ -119,7 +119,7 @@ Per-phase task completion counted from `runtime/checklist/MASTER_CHECKLIST.md` D
 - **W1** [██████████] 100% — 13/7 tasks DONE
 - **W2** [██████████] 100% — 14/12 tasks DONE
 - **W3** [██████████] 100% — 7/7 tasks DONE
-- **W4** [█░░░░░░░░░] 12% — 1/8 tasks DONE
+- **W4** [██░░░░░░░░] 25% — 2/8 tasks DONE
 - **W5** [░░░░░░░░░░] 0% — 0/5 tasks DONE
 
 - **Source:** task IDs matching `-W[1-5]-` token in DONE rows; planned counts from V1.1 supplement §4

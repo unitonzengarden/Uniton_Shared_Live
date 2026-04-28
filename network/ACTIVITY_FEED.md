@@ -10,7 +10,7 @@
 ## §0. Header
 
 - **Generator:** `aier-state-update v1.0` invoked via `scripts/runtime/generate_activity_feed.py v1.0`
-- **Source commit:** `241913ae3f2f76164dbad962390b2ed2f7b732e6` (short: `241913a`)
+- **Source commit:** `b9d3c52e83ab8c4de0215c23fb4bfd64ecf93265` (short: `b9d3c52`)
 - **Total events shown:** 20 (capped at 20)
 - **Auto-generated:** `true` (do not hand-edit)
 - **Authority:** repo-backed automation per LAW_N8 §L8.2 explicitly enabled CI mode (visibility surface only — does NOT replace authoritative sources: NOTIFICATION_LEDGER, audit_logs, git log).

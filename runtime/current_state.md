@@ -7,10 +7,10 @@
 - Canonical root: `D:\UZG\Projects-v2\Uniton_Shared`
 - Remote: `https://github.com/unitonzengarden/Uniton_Shared.git`
 - Branch: `main`
-- Last verified commit before this update: `cf5489c2eaf65eb0e00a647858f7b6a61288dade` (origin/main after Lane_02 W3-W5 Loop L2 backfill + concurrent Lane_01 work)
-- Last updated: `2026-04-28T08:55:00Z`
-- Updated by: Lane_02 / CLAC2 (`LANE02-W4-RELEASE-NOTES-DRAFT-V1`) — Loop W3-W5 L3/3 FINAL SAFE; Release Notes RC DRAFT authored (241 lines, 12 sections, adapt mode); LOOP COMPLETE
-- Current state version: `v1.33`
+- Last verified commit before this update: `3d2179226791ec40038681bc262ee46085dcac3a` (origin/main after autopilot HALT close + Lane_02 LOOP)
+- Last updated: `2026-04-29T05:00:00Z`
+- Updated by: Lane_01 / CLAC-1 (`LANE01-V1-GA-RESUME-V1`) — **🎉 AIER Code V1.0 GA RELEASED 2026-04-29; tag `v1.0` pushed; NTS verbatim approval recorded; operator handoff in same task**
+- Current state version: `v1.34`
 - Last verified commit before this update: `215d04fe2641d0b603b08d856727f5fc7c5804f6` (origin/main after Lane_02 LOOP T3 backfill + rebase)
 - Last updated: `2026-04-28T08:05:00Z`
 - Updated by: Lane_02 / CLAC2 (`LANE02-LOOP-T4-DOCS-OPERATOR-MANUAL-DRAFT-V1`) — loop test 4/5; Operator Manual DRAFT v0.1
@@ -58,7 +58,7 @@ This file is the repo-backed hot-memory entry for cold-start Lane readers. It re
 
 - Authority: NTS remains final authority for canon, roadmap gates, deploy, backend side effects, new Lanes, and halt/resume decisions.
 - Mode: `CONTROLLED_EXECUTION / GOVERNANCE_FIRST / RUNTIME_DRYRUN_ONLY`
-- Phase: `W5_FINAL_AUDIT_DONE / AWAITING_NTS_SIGN_OFF`
+- Phase: `V1_0_RELEASED / GA_TAGGED`
 - Gate: `W3_ACTIVE / NTS_GATE_LANE04_OPEN_DEFERRED_STRATEGIC / NTS_SIGN_OFF_REMAINS_FOR_V1_RC_FINAL`. W3 queue rebaselined 2026-04-29 via `LANE01-W3-QUEUE-REBASELINE-V1`. **3 lane_dispatch workflow_dispatch fired 2026-04-29 via `LANE01-W3-FIRE-3-LANES-V1`** — 3 runs SUCCESS surfacing next READY task spec for each Lane (Lane_01 → QA-LOOP-WIRE, Lane_02 → NETWORK-CONSOLIDATE, Lane_03 → CANON-GUARD-HEADING-FIX). **Lane_01 W3.T1 DONE via `LANE01-W3-QA-LOOP-WIRE-V1`** — 4th worker `aier-qa-loop` coordinator built wiring the 3-worker QA family into a single workflow + emits unified `qa_loop_reports/AIER-QA-LOOP-YYYY-MM-DD-NNN.json`. First real run baseline: aggregate_health_score **76/100** (weighted: scan=58 × 30% + canon=76 × 40% + skill=94 × 30%); 19 total findings (3 critical / 13 warning / 3 info); 3/3 sub-workers OK. pytest 112→120 (+8 from test_aier_qa_loop). 4-worker QA family fully operational (3 sub-workers + 1 coordinator). **Lane_02 + Lane_03 next tasks await their executors** — workflow runs surfaced specs to step summary; CLAC-2/CLAC-3 (or Codex) pickup separately. Single remaining NTS gate for V1.0 GA = `NTS_SIGN_OFF` on `LANE01-W5-V1-RELEASE-COMMIT-V1`.
 - Operational note: AIER Code Canon (6 files at `docs/LAW_CLA_LLM/CANON/`) is ACTIVE v1.1. LAW_N1-N12 are ACTIVE. Core SHARED skills are now 5/5 ACTIVE v1.0: `aier-dispatch`, `aier-verify`, `aier-state-update`, `aier-handoff-route`, and `aier-canon-guard` (Lane_03-owned, `canon_adjacent: true`, activated by NTS-approved amendment). Runtime/PROJECT_STATUS automation, dispatcher, and worker-scan remain controlled visibility/foreground tooling only; public runtime mirror sync remains visibility only; `Uniton_Shared` on `main` remains source of truth. No daemon mode, backend mutation, deploy, product repo work, or capability expansion is authorized by this state.
 
