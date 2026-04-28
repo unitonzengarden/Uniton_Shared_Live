@@ -10,7 +10,7 @@
 ## §0. Header
 
 - **Generator:** `aier-state-update v1.0` invoked via `scripts/runtime/generate_project_status.py v1.1`
-- **Source commit:** `404ae4c5af7bd4faf59616c514e5307dff5aad9c` (short: `404ae4c`)
+- **Source commit:** `a8d430d74d36744278b13784758891396eed43cc` (short: `a8d430d`)
 - **Auto-generated:** `true` (do not hand-edit)
 - **Authority:** repo-backed automation per LAW_N8 §L8.2 explicitly enabled CI mode (state-mirror auto-regenerate scope only)
 
@@ -65,11 +65,11 @@
 
 | SHA | Author | Subject |
 |---|---|---|
+| `a8d430d` | CLAC Executor | feat(day1): multi-repo setup + Lane_02/03 pause handoffs + Brain MVP pre-audit [vercel skip] |
+| `1e2a2a5` | Uniton Zen | Merge pull request #6 from unitonzengarden/audit/migration-prep-2026-04-29 |
+| `68a27d6` | CLAC Executor | audit(migration): AIER Code inventory + data + API map for Cursor T-INT-03/04 [vercel skip] |
+| `0df9332` | AIER State Bot | [auto-status] regen runtime+network surfaces from 404ae4c [vercel skip] |
 | `404ae4c` | unitonzengarden | feat(tooling): add AIER next task engine [vercel skip] |
-| `f545e29` | AIER State Bot | [auto-status] regen runtime+network surfaces from ca700f6 [vercel skip] |
-| `ca700f6` | CLAC Executor | chore(v1.0): finalize complete + tracker sync [vercel skip] |
-| `2cb41e9` | AIER State Bot | [auto-status] regen runtime+network surfaces from 06eb89b [vercel skip] |
-| `06eb89b` | unitonzengarden | chore(operator-console): refresh console after rebase [vercel skip] |
 
 ## §7. Latest 5 DONE Tasks (from MASTER_CHECKLIST)
 
