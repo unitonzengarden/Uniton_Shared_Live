@@ -10,13 +10,13 @@
 ## §0. Header
 
 - **Generator:** `aier-state-update v1.0` invoked via `scripts/runtime/generate_project_status.py v1.0`
-- **Source commit:** `ba3f73908097a5080c4a0ae23a4f27738692884f` (short: `ba3f739`)
+- **Source commit:** `a41bdb1373408d2faca869e47377e187a18e5727` (short: `a41bdb1`)
 - **Auto-generated:** `true` (do not hand-edit)
 - **Authority:** repo-backed automation per LAW_N8 §L8.2 explicitly enabled CI mode (state-mirror auto-regenerate scope only)
 
 ## §1. Phase + Gate
 
-- **Phase:** `W2_AUTOMATION_PHASE_COMPLETE / W3_PREP`
+- **Phase:** `W3_AUTOMATION_PHASE_ACTIVE / 3-LANE-PARALLEL-RUN`
 - **Gate:** `(unknown)`
 - **Roadmap:** Roadmap V1 FINAL APPROVED + LOCKED at git tag `roadmap-locked-v2-final` (commit `14f7509`)
 
@@ -55,31 +55,31 @@
 
 ## §5. Active AMDs (AMENDMENTS_LOG counts)
 
-- **Total rows:** 27
-- **PENDING:** 19
+- **Total rows:** 28
+- **PENDING:** 20
 - **APPROVED (non-pending):** 8
-- **Lane self-approve (under AMD_LANE01_CTO_AUTO_APPROVE_TECH_NON_CANON §3.1):** 15
+- **Lane self-approve (under AMD_LANE01_CTO_AUTO_APPROVE_TECH_NON_CANON §3.1):** 16
 - **Authoritative source:** `docs/LAW_CLA_LLM/SHARED/amendments/AMENDMENTS_LOG.md`
 
 ## §6. Latest 5 Commits
 
 | SHA | Author | Subject |
 |---|---|---|
+| `a41bdb1` | CLAC Executor | feat(queue): rebaseline 3-lane W3 — defer Lane_04 strategic [vercel skip] |
+| `284a12c` | AIER State Bot | [auto-status] regen runtime+network surfaces from ba3f739 [vercel skip] |
 | `ba3f739` | unitonzengarden | docs(report): record blocked Lane_02 compliance reframe authoring [vercel skip] |
 | `049b920` | AIER State Bot | [auto-status] regen runtime+network surfaces from 587783d [vercel skip] |
 | `587783d` | CLAC Executor | chore(checklist): backfill LANE01-W2-CLOSEOUT-V1 SHA + workflow proof [vercel skip] |
-| `e608f67` | AIER State Bot | [auto-status] regen runtime+network surfaces from 2b6923d [vercel skip] |
-| `2b6923d` | CLAC Executor | fix(ci): rename W2 retrospective to drop _REPORT suffix [vercel skip] |
 
 ## §7. Latest 5 DONE Tasks (from MASTER_CHECKLIST)
 
 | Task ID | Completed | Commit |
 |---|---|---|
+| LANE01-W3-QUEUE-REBASELINE-V1 | 2026-04-29 | (this commit) |
 | LANE01-W2-CLOSEOUT-V1 | 2026-04-29 | `2c7f1de` (apply rebased over Lane_02 + Lane_03) + |
 | LANE03-W2-TEMPLATE-STANDARDIZATION-AND-ENFORCEMENT-V1 | 2026-04-28 | (Lane_03 commit) |
 | LANE01-W2-MASTER-TASK-LIST-COMMIT-AND-BATCH-AUTHOR-V1 | 2026-04-29 | `099f7c2` (apply rebased over Lane_02 + Lane_03) + |
 | LANE03-W2-TEMPLATE-STANDARDIZATION-AND-ENFORCEMENT-V1 | 2026-04-28 | (Lane_03 commit) |
-| LANE02-W2-NETWORK-BRAIN-MVP-V1 (Task A) | 2026-04-28 | (this commit) |
 
 ## §8. Pending NTS Decisions
 
