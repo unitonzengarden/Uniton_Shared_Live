@@ -10,7 +10,7 @@
 ## §0. Header
 
 - **Generator:** `aier-state-update v1.0` invoked via `scripts/runtime/generate_project_status.py v1.0`
-- **Source commit:** `2ac363b3a00400f840dcfb412c2312836658b8bb` (short: `2ac363b`)
+- **Source commit:** `7b85ef4ff625eaf4149b943e411b06ccdcf6196b` (short: `7b85ef4`)
 - **Auto-generated:** `true` (do not hand-edit)
 - **Authority:** repo-backed automation per LAW_N8 §L8.2 explicitly enabled CI mode (state-mirror auto-regenerate scope only)
 
@@ -65,21 +65,21 @@
 
 | SHA | Author | Subject |
 |---|---|---|
+| `7b85ef4` | unitonzengarden | feat(brain): v0.2 improvements - keyword extensions + scoring tuning [vercel skip] |
+| `004a165` | unitonzengarden | chore(snapshot): backfill SHA for LANE02-LOOP-T1 [vercel skip] |
+| `ec74de9` | AIER State Bot | [auto-status] regen runtime+network surfaces from 2ac363b [vercel skip] |
 | `2ac363b` | unitonzengarden | chore(review): Lane_02 process Lane_03 stale review request [vercel skip] |
 | `7e10f18` | AIER State Bot | [auto-status] regen runtime+network surfaces from c515d96 [vercel skip] |
-| `c515d96` | CLAC Executor | chore(checklist): backfill LANE01-W3-QUEUE-REBASELINE-V1 SHA + workflow proof [vercel skip] |
-| `b25b414` | AIER State Bot | [auto-status] regen runtime+network surfaces from a41bdb1 [vercel skip] |
-| `a41bdb1` | CLAC Executor | feat(queue): rebaseline 3-lane W3 — defer Lane_04 strategic [vercel skip] |
 
 ## §7. Latest 5 DONE Tasks (from MASTER_CHECKLIST)
 
 | Task ID | Completed | Commit |
 |---|---|---|
+| LANE02-LOOP-T2-BRAIN-MVP-V0-2-IMPROVEMENT-V1 | 2026-04-28 | (this commit) |
 | LANE02-LOOP-T1-PROCESS-LANE03-REVIEW-V1 | 2026-04-28 | (this commit) |
 | LANE01-W3-QUEUE-REBASELINE-V1 | 2026-04-29 | `a41bdb1` (apply) + `b25b414` (auto-status proof) |
 | LANE01-W2-CLOSEOUT-V1 | 2026-04-29 | `2c7f1de` (apply rebased over Lane_02 + Lane_03) + |
 | LANE03-W2-TEMPLATE-STANDARDIZATION-AND-ENFORCEMENT-V1 | 2026-04-28 | (Lane_03 commit) |
-| LANE01-W2-MASTER-TASK-LIST-COMMIT-AND-BATCH-AUTHOR-V1 | 2026-04-29 | `099f7c2` (apply rebased over Lane_02 + Lane_03) + |
 
 ## §8. Pending NTS Decisions
 
