@@ -1,5 +1,5 @@
 # MASTER CHECKLIST - Uniton_Shared
-Updated: 2026-04-28T11:30:00Z by Lane_01 - LANE01-W2-T3-5-CTO-IMPROVEMENT-BATCH-V1 DONE (network registry + activity feed + onboarding + CI hygiene; W2.T4 canon QA worker PRIMARY NEXT)
+Updated: 2026-04-28T03:25:00Z by Lane_03 - LANE03-W1-LANE02-ROLE-REFRAME-AUTHOR-V1 DONE (Lane_02 role-reframe amendment packet authored; pending NTS decision; no apply)
 
 ## RECENTLY RESOLVED DECISION
 
@@ -11,6 +11,8 @@ Updated: 2026-04-28T11:30:00Z by Lane_01 - LANE01-W2-T3-5-CTO-IMPROVEMENT-BATCH-
 
 | Task ID | Lane | Description | ETA | Status |
 |---|---|---|---|---|
+| LANE03-W1-LANE02-ROLE-REFRAME-AUTHOR-V1 | Lane_03 | Authored pending amendment packet `AMD_LANE02_AIER_CODE_ROLE_REFRAME_2026-04-29` from NTS/Lane_01 draft. No approval/apply; no Lane_02 files changed. | 2026-04-28 | DONE / AUTHOR_ONLY |
+| AMD_LANE02_AIER_CODE_ROLE_REFRAME_2026-04-29 | NTS / Lane_01 / Lane_02 | Review pending Lane_02 role-reframe packet and decide APPROVE / REJECT / NEEDS_REVISION. If APPROVE, run separate scoped apply task. | 2026-04-29 | PENDING_NTS_DECISION |
 | LANE03-W1-AIER-CANON-GUARD-NTS-AMENDMENT-APPLY-V1 | Lane_03 | Apply `aier-canon-guard` DRAFT v0.1 -> ACTIVE v1.0 per NTS-approved `AMD_LANE03_AIER_CANON_GUARD_ACTIVATE_2026-04-28`. | 2026-04-28 | DONE / W1 COMPLETE |
 | W2-AUTOMATION-PHASE-CONTINUATION | Lane_01 / Lane_03 | Continue W2 automation work only under controlled execution and existing runtime boundaries. Repo truth records W2.T1 PROJECT_STATUS PASS, W2.T2 DISPATCHER PASS, W2.T3 WORKER-SCAN PASS, and W2.T3.5 CTO IMPROVEMENT BATCH PASS. | 2026-04-28 | NEXT / CONTROLLED_EXECUTION |
 | LANE01-W2-T4-CANON-QA-WORKER-V1 | Lane_01 | V1.1 W2.T4 PRIMARY NEXT — 2nd AIER worker = canon QA worker (verify canon documents stay aligned with active law set, flag drift, surface to ACTION_REQUIRED_BOARD). Tech non-canon per AMD_LANE01_CTO_AUTO_APPROVE_TECH_NON_CANON §3.1. | 2026-04-28 | PRIMARY NEXT |

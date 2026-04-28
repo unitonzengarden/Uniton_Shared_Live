@@ -7,10 +7,10 @@
 - Canonical root: `D:\UZG\Projects-v2\Uniton_Shared`
 - Remote: `https://github.com/unitonzengarden/Uniton_Shared.git`
 - Branch: `main`
-- Last verified commit before this update: `ca5cac91c1b8376ad02aaec5c9af4ff1fa7e8dfe` (origin/main after Lane_01 W2.T3 backfill auto-status regen)
-- Last updated: `2026-04-28T11:30:00Z`
-- Updated by: Lane_01 / CLAC-1 (`LANE01-W2-T3-5-CTO-IMPROVEMENT-BATCH-V1`) after CTO continuous improvement batch (7 pain fixes)
-- Current state version: `v1.17`
+- Last verified commit before this update: `f64792795387d4a6cda7e273d1a72f1e202bf580` (origin/main after Lane_03 Lane_02 role-reframe author preflight sync)
+- Last updated: `2026-04-28T03:25:00Z`
+- Updated by: Lane_03 / Codex (`LANE03-W1-LANE02-ROLE-REFRAME-AUTHOR-V1`) after author-only pending amendment packet creation
+- Current state version: `v1.18`
 - Current state mode: `CONTROLLED_EXECUTION / GOVERNANCE_FIRST / RUNTIME_DRYRUN_ONLY`
 - Source evidence:
   - `reports/LANE03-AIER-CODE-CANON-NTS-APPROVAL-APPLY-V1_REPORT.md`
@@ -29,6 +29,7 @@
   - `reports/LANE03-W1-AIER-CANON-GUARD-NTS-AMENDMENT-APPLY-V1_REPORT.md`
   - `reports/LANE01-W2-T3-AIER-WORKER-SCAN-V1_REPORT.md`
   - `reports/LANE01-W2-T3-5-CTO-IMPROVEMENT-BATCH-V1_REPORT.md`
+  - `reports/LANE03-W1-LANE02-ROLE-REFRAME-AUTHOR-V1_REPORT.md`
 
 This file is the repo-backed hot-memory entry for cold-start Lane readers. It records current repo truth and task state. It does not approve canon, approve roadmap phases, activate drafts, replace `LAW_SYSTEM.md`, replace `REDLINES.md`, or override NTS authority.
 
@@ -44,7 +45,7 @@ This file is the repo-backed hot-memory entry for cold-start Lane readers. It re
 
 - NTS: Kernel human and final authority.
 - Lane_01: active CTO-style contributor operating under active law, approved amendments, and task-scoped authority. Current visible state: Roadmap V1 FINAL locked, W1 complete with 5/5 core skills ACTIVE, runtime live sync PASS, W2.T1 PROJECT_STATUS automation PASS, W2.T2 dispatcher PASS, and W2.T3 worker-scan PASS.
-- Lane_02: scaffolded AIER Code consumer Lane. Smoke readiness is still pending. Product execution is disabled.
+- Lane_02: scaffolded AIER Code consumer Lane. Pending role-reframe amendment `AMD_LANE02_AIER_CODE_ROLE_REFRAME_2026-04-29` has been authored for review only; smoke readiness is still pending and product execution remains disabled.
 - Lane_03: active execution-support and canon-boundary review Lane. Current visible state: canon apply PASS, LAB/RULE foundation PASS, runtime hot-memory adoption PASS, LAW_N12 apply PASS, `aier-canon-guard` ACTIVE v1.0, and W1.7 apply PASS.
 - Future Lanes: unopened unless NTS explicitly registers them.
 
@@ -154,13 +155,14 @@ Approval was granted directly by NTS and mechanically applied by Lane_03 / Codex
 ## 5. ACTIVE LANE STATUS
 
 - Lane_01: active CTO-style contributor operating under active law, approved amendments, and task-scoped authority. Current visible state: Roadmap V1 FINAL locked, W1 complete with 5/5 core skills ACTIVE, runtime live sync PASS, W2.T1 PROJECT_STATUS automation PASS, W2.T2 dispatcher PASS, and W2.T3 worker-scan PASS.
-- Lane_02: `ONBOARDING_SCAFFOLDED / WORKSPACE_BOOTSTRAPPED / READY_FOR_REFRAME / PRODUCT_EXECUTION_DISABLED` (workspace at D:\UZG\Projects-v2\AIER_Code\Lane_02 verified 2026-04-28; pre-AMD-reframe state; smoke deferred until AMD applied).
+- Lane_02: `ONBOARDING_SCAFFOLDED / WORKSPACE_BOOTSTRAPPED / READY_FOR_REFRAME / PRODUCT_EXECUTION_DISABLED / ROLE_REFRAME_AMD_PENDING_NTS_DECISION` (workspace at D:\UZG\Projects-v2\AIER_Code\Lane_02 verified 2026-04-28; `AMD_LANE02_AIER_CODE_ROLE_REFRAME_2026-04-29` authored by Lane_03 for review only; no role reframe is active until NTS approval and a separate apply task).
 - Lane_03: active execution-support and canon-boundary review Lane. Current visible state: canon apply PASS, LAB/RULE foundation PASS, runtime hot-memory adoption PASS, LAW_N12 apply PASS, `aier-canon-guard` ACTIVE v1.0, and W1.7 apply PASS.
 
 ## 6. LATEST COMPLETED KEY TASKS
 
 (5 most recent; older entries see `runtime/archive/` once rotation begins.)
 
+- `LANE03-W1-LANE02-ROLE-REFRAME-AUTHOR-V1` - PASS. Authored pending packet `AMD_LANE02_AIER_CODE_ROLE_REFRAME_2026-04-29` from the NTS/Lane_01 draft, updated amendment visibility/runtime/notification surfaces, and did not approve, apply, modify Lane_02 files, or activate the role reframe.
 - `LANE03-W1-AIER-CANON-GUARD-NTS-AMENDMENT-APPLY-V1` - PASS. Applied NTS-approved `AMD_LANE03_AIER_CANON_GUARD_ACTIVATE_2026-04-28`, promoted `aier-canon-guard` to ACTIVE v1.0, moved the packet to approved, and updated registry/index/runtime/checklist/action-board/notification surfaces.
 - `LANE01-W2-T2-DISPATCHER-IMPLEMENTATION-V1` - PASS. Built the dispatcher CLI and workflow-dispatch path around `scripts/runtime/dispatcher.py v1.0`, `contracts/task_spec.schema.json`, and `dispatch.yml`, with real dispatch proof and no autonomous runtime authority.
 - `LANE01-W2-T1-PROJECT-STATUS-AUTO-V1` - PASS. Added `runtime/PROJECT_STATUS.md` auto-generation through `scripts/runtime/generate_project_status.py` and `.github/workflows/auto_project_status.yml`, with public mirror visibility updates and idempotent state regeneration.
@@ -169,8 +171,8 @@ Approval was granted directly by NTS and mechanically applied by Lane_03 / Codex
 
 ## 7. CURRENT AND NEXT RECOMMENDED WORK
 
-- Current task: `LANE03-W1-AIER-CANON-GUARD-NTS-AMENDMENT-APPLY-V1` (completed; W1.7 applied; repo truth updated).
-- Next allowed action: W1 complete; continue W2 automation phase only under controlled execution and existing runtime boundaries.
+- Current task: `LANE03-W1-LANE02-ROLE-REFRAME-AUTHOR-V1` (completed author-only packet creation; `AMD_LANE02_AIER_CODE_ROLE_REFRAME_2026-04-29` is pending NTS decision).
+- Next allowed action: NTS / Lane_01 review of `AMD_LANE02_AIER_CODE_ROLE_REFRAME_2026-04-29` for APPROVE / REJECT / NEEDS_REVISION. If approved, run a separate scoped apply task; do not treat this authoring packet as activation.
 - Secondary planned actions:
   - `LANE01-W2-T3-AIER-WORKER-SCAN-V1`
   - `LANE03-DISPATCHER-SPEC-V1-CROSS-REVIEW-V1`
@@ -185,6 +187,7 @@ Approval was granted directly by NTS and mechanically applied by Lane_03 / Codex
 - No dedicated `runtime/current_state.json` exists. Do not invent one without a separate scoped task or explicit repo evidence.
 - The notification and ACK protocol remains `DRAFT / PENDING_REVIEW`.
 - Lane_02 smoke readiness is still pending. Product execution remains disabled until a scoped smoke task passes.
+- Lane_02 role-reframe amendment is pending NTS decision. Current Lane_02 role surfaces and product-execution boundaries remain unchanged until a separate approved apply task.
 - Future skill-governance cleanup remains separately scoped; `aier-canon-guard` ACTIVE status does not approve unrelated canon/law/amendment changes.
 - No daemon, scheduler, autonomy, backend mutation, deploy, or external write authority is active.
 
@@ -273,6 +276,7 @@ Rules:
 - 2026-04-28 - `LANE01-W2-T1-PROJECT-STATUS-AUTO-V1` (V1.1 W2.T1 AUTOMATE) â€” built PROJECT_STATUS auto-generation: `scripts/runtime/generate_project_status.py` (caller of `aier-state-update` skill v1.0 ACTIVE per LAW_N9 Â§L9.13; self-test PASS; idempotent; emits Â§L9.15 audit event); `.github/workflows/auto_project_status.yml` (push-trigger paths filter on current_state + checklist + action_board + ledger + AMENDMENTS_LOG + skill METADATA + workflow_dispatch; concurrency group prevents lost updates; auto-commits regenerated PROJECT_STATUS.md with `[auto-status]` marker; `permissions: contents: write` only); `runtime/PROJECT_STATUS.md` initial population (10 sections Â§0-Â§10 per spec). Updated `sync_runtime_to_public.yml` paths whitelist + cp step + SYNC_INFO + fetch URLs to mirror PROJECT_STATUS.md to public Uniton_Shared_Live. Lane_01 self-approve under `AMD_LANE01_CTO_AUTO_APPROVE_TECH_NON_CANON Â§3.1` YES list (workflow YAML + python script + auto-generated runtime mirror are tech non-canon). NO daemon/cron/schedule (R-RUN-01..06 â€” only push-trigger + workflow_dispatch); NO secrets hardcoded (R-AUTH-04 â€” uses `secrets.GITHUB_TOKEN`); NO `aier-canon-guard/`, NO `aier-state-update` SKILL.md/METADATA.yaml modified (only INVOKED).
 - 2026-04-28 - `LANE01-W2-T2-DISPATCHER-IMPLEMENTATION-V1` (V1.1 W2.T2 AUTOMATE) â€” built `scripts/runtime/dispatcher.py v1.0` (~360 lines stdlib+jsonschema): wraps `aier-dispatch` + `aier-handoff-route` SHARED skills v1.0 ACTIVE per LAW_N9 Â§L9.13 invocation citation requirements; CLI modes `--task-spec PATH`, `--stdin`, individual flags, `--dry-run`, `--self-test`, `--validate-spec`. Created `contracts/task_spec.schema.json` JSON Schema draft-07 (NEW) with required fields (task_id, title, owner_lane, target_lane, type, scope, deliverables, acceptance_criteria) + optional (boundary, evidence_refs, parent_task_id, parallel_safety_note, priority, rollback_plan); validates against meta-schema. Updated `scripts/ci/check_contract_files.ps1` to load + validate `task_specs/*.json` against task_spec.schema.json. Created `.github/workflows/dispatch.yml` workflow_dispatch only â€” NO push/cron/schedule per R-RUN-01..06; inputs: `task_spec_path` (required) + `dry_run` (boolean default false); steps: validate-spec â†’ self-test â†’ dispatch-or-dry-run â†’ optional auto-commit with `[auto-dispatch]` marker + pull-rebase before push. Created `tests/test_dispatcher.py` with 8 pytest tests (parse valid/invalid spec, dry-run, write-to-inbox, schema validate, idempotency, self-test mode, audit-event 9-field shape) â€” 8/8 PASS. pytest total 35 â†’ 43 PASS. Created `task_specs/W2-T2-FIXTURE-DISPATCH-V1.json` test fixture. Real dispatch CLI run dispatched `MSG-L01-L01-HANDOFF-20260427-002` to handoffs/inbox/Lane_01/, validated against lane_message.schema.json, then archived to handoffs/inbox/Lane_01/_archive/ per R-CANON-02 (content preserved). Boundary: NO SHARED/laws/* edited (R-AUTH-01); NO CANON edited; NO 5 skill files modified (only INVOKED via dispatcher); NO LANE_<other>/* (R-LANE-01); NO daemon/cron (R-RUN-01..06 â€” workflow_dispatch only); NO secrets hardcoded (R-AUTH-04 â€” `secrets.GITHUB_TOKEN`); NO break to existing PROJECT_STATUS pipeline / aier_loop / route_messages SelfTests. Standard validators 4/4 PASS.
 - 2026-04-28 - `LANE03-W1-AIER-CANON-GUARD-NTS-AMENDMENT-AUTHOR-V1` authored pending packet `AMD_LANE03_AIER_CANON_GUARD_ACTIVATE_2026-04-28`, updated SHARED/runtime/notification visibility to `W1.7_NTS_DECISION_PENDING`, and preserved `aier-canon-guard` as DRAFT v0.1 pending NTS APPROVE / REJECT / REVISE.
+- 2026-04-28 - `LANE03-W1-LANE02-ROLE-REFRAME-AUTHOR-V1` authored pending amendment packet `AMD_LANE02_AIER_CODE_ROLE_REFRAME_2026-04-29` from the NTS/Lane_01 draft now present in the repo. Created PROPOSAL, RATIONALE, IMPACT_LANE_BREAKDOWN, and PENDING-only NTS_DECISION; updated AMENDMENTS_LOG, SHARED_INDEX, runtime/current_state, checklist/action-board visibility, and notification ledger for Lane_01/Lane_02 review. No approval, no apply, no Lane_02 folder edit, no SHARED/laws or CANON edit, no daemon/backend/deploy/capability grant.
 - 2026-04-28 - `LANE02-W2-WORKSPACE-BOOTSTRAP-V1` Lane_02 workspace cloned + verified at D:\UZG\Projects-v2\AIER_Code\Lane_02; verdict READY_FOR_REFRAME; companion completion task `LANE02-W2-BOOTSTRAP-COMPLETION-AND-RUNTIME-NOTIFY-V1` published report + snapshot + cross-Lane notification.
 - 2026-04-28 - `LANE01-W2-T3-AIER-WORKER-SCAN-V1` (V1.1 W2.T3 AUTOMATE) â€” built `scripts/workers/aier_scan.py v1.0` (~700 lines stdlib+jsonschema): 5 check functions (stale_handoffs >7d, broken_refs scoped to docs/runtime/reports/roadmaps/evidence with markdown link regex, version_drift skill METADATA.yaml vs SKILL.md latest version-history, contract_violations against lane_message + lane_response schemas, pending_decisions NTS_DECISION.md PENDING >24h via mtime); ScanReport object validates `contracts/scan_report.schema.json` (NEW JSON Schema draft-07); modes (--scan-only / --dry-run / --self-test / --check NAME / --report-out PATH); dispatch_findings synthesizes task spec + invokes `dispatcher.py` subprocess; `.github/workflows/aier_scan.yml` workflow_dispatch only NO push/cron R-RUN-01..06; `tests/test_aier_scan.py` 10 pytest tests 10/10 PASS; pytest total 43 â†’ 53 PASS. First real scan output: `scan_reports/AIER-SCAN-2026-04-27-001.json` total_findings=6 (broken_refs WARNING in T-L01-AMD-ROLE-REFRAME-001 report). 4/4 standard validators PASS.
 - 2026-04-28 - `LANE01-W2-T3-5-CTO-IMPROVEMENT-BATCH-V1` (V1.1 W2.T3.5 CTO continuous improvement batch â€” 7 pain fixes) â€” Phase A: `network/LANE_REGISTRY.md` auto-generated 3-section registry + `scripts/runtime/generate_lane_registry.py v1.0` (caller of aier-state-update v1.0; reads LANE_*/lane_laws/LAW_LANE_CAPABILITIES.md + current_state §5 + NOTIFICATION_LEDGER; idempotent SHA-256; self-test PASS). Phase B: `network/ACTIVITY_FEED.md` auto-generated top-20 cross-Lane events + `scripts/runtime/generate_activity_feed.py v1.0` (aggregates last 50 git commits + last 20 ledger rows + latest 20 audit_logs; dedupe by task_id+event_type+source; self-test PASS). Phase C: `docs/LANE_ONBOARDING.md` v1.0 1-page onboarding (7 sections; explicitly disclaims registration authority NTS-only per LAW_N10). Phase D: fixed 6 broken_refs in `reports/T-L01-AMD-ROLE-REFRAME-001_REPORT.md` (pending/ â†’ approved/ + NTS_DECISION.md.template â†’ NTS_DECISION.md); re-scan `scan_reports/AIER-SCAN-2026-04-28-VERIFY-T3-5.json` broken_refs PASS findings=0. Phase E: `.github/workflows/build-artifacts.yml` race-safe pull-rebase pattern (same as W2.T2 dispatch.yml). Phase F: `scripts/ci/check_deliverables.ps1` -CommitMessagesPath param + 4-pattern skip (^chore\(checklist\): backfill / ^\[auto-status\] / ^\[auto-scan\] / ^\[auto-dispatch\]); `.github/workflows/lane-guardrails.yml` passes commit_messages.txt; 4 fixture tests PASS. Phase G: `docs/REPO_NOTIFICATIONS.md` v1.0 procedure for Gmail/Outlook/Apple filter + per-repo Watch override (NTS UI action; not code). Updated `auto_project_status.yml` paths +LANE_*/lane_laws/** + audit_logs/** + workflow regen step now invokes 3 generators with race-safe pull-rebase. Updated `sync_runtime_to_public.yml` mirror +network/LANE_REGISTRY.md + network/ACTIVITY_FEED.md. Standard validators 4/4 PASS (pytest 53/53). Boundary 11/11 PASS: NO SHARED/laws/ + NO CANON + NO 5 skill files + NO `aier-canon-guard` + NO dispatcher.py + NO aier_scan.py + NO LANE_02/* + NO LANE_03/* + NO daemon/cron + NO secrets + NO break existing pipelines. Lane_01 self-approve under `AMD_LANE01_CTO_AUTO_APPROVE_TECH_NON_CANON Â§3.1` YES list.

@@ -10,7 +10,7 @@
 ## §0. Header
 
 - **Generator:** `aier-state-update v1.0` invoked via `scripts/runtime/generate_project_status.py v1.0`
-- **Source commit:** `f6448fdff7717d5a16b874027991507788493bb2` (short: `f6448fd`)
+- **Source commit:** `5e6b1fbf8ea74fa8e328e745a6ac75071e09a843` (short: `5e6b1fb`)
 - **Auto-generated:** `true` (do not hand-edit)
 - **Authority:** repo-backed automation per LAW_N8 §L8.2 explicitly enabled CI mode (state-mirror auto-regenerate scope only)
 
@@ -65,11 +65,11 @@
 
 | SHA | Author | Subject |
 |---|---|---|
+| `5e6b1fb` | CLAC Executor | chore(checklist): backfill LANE01-W2-T3-5-CTO-IMPROVEMENT-BATCH-V1 SHA + workflow proof [vercel skip |
+| `aa00763` | CLAC Executor | fix(ci): relax check_deliverables to skip non-task commits [vercel skip] |
+| `be7e0eb` | CLAC Executor | fix(ci): check_deliverables accept on-disk deliverables for report-only edits [vercel skip] |
+| `f647927` | AIER State Bot | [auto-status] regen runtime+network surfaces from f6448fd [vercel skip] |
 | `f6448fd` | CLAC Executor | feat(network+ci): W2.T3.5 CTO improvement batch [vercel skip] |
-| `63dce77` | unitonzengarden | docs(report): backfill Lane_02 role reframe blocked evidence [vercel skip] |
-| `ca5cac9` | AIER State Bot | [auto-status] regen PROJECT_STATUS.md from 280bb71 [vercel skip] |
-| `280bb71` | unitonzengarden | feat(lane02): workspace bootstrap complete - READY_FOR_REFRAME |
-| `5324214` | unitonzengarden | chore(runtime): refresh project status after canon guard apply [vercel skip] |
 
 ## §7. Latest 5 DONE Tasks (from MASTER_CHECKLIST)
 
