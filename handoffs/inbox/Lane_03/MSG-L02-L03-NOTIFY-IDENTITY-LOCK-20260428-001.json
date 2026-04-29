@@ -1,0 +1,15 @@
+{
+  "schema_version": "lane_message_v1",
+  "message_id": "MSG-L02-L03-NOTIFY-IDENTITY-LOCK-20260428-001",
+  "from_lane": "Lane_02",
+  "to_lanes": ["Lane_03"],
+  "type": "GOVERNANCE_NOTIFY",
+  "subject": "Lane_02 Identity Lock — canon expert awareness",
+  "date_utc": "2026-04-28",
+  "task_id": "LANE02-AC-IDENTITY-LOCK-V1",
+  "authority": "NTS direct grant 2026-04-28",
+  "summary": "Lane_02 identity locked vĩnh viễn. Lane_03 awareness: future Lane_02 reviews + cross-Lane handoffs maintain LANE02-* prefix in all artifacts.",
+  "review_request": false,
+  "ack_required": false,
+  "note_to_lane_03": "Per LAW_N13, Lane_03 ratify post-migration. Identity Lock này không conflict với LAW_N13 — extends multi-repo governance with Lane_02-specific identity discipline."
+}

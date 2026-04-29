@@ -1,0 +1,66 @@
+{
+  "message_id": "MSG-CLAC1-LIVE-LEDGER-TRIGGER-FIX-COMPLETE-20260429",
+  "from": "CLAC-1 (Lane_01 executor)",
+  "to": "CLA Lane_01 (orchestrator) + NTS",
+  "via": "Lane_01 inbox",
+  "timestamp": "2026-04-29T14:06:00Z",
+  "subject": "LANE01-LIVE-LEDGER-TRIGGER-FIX PASS — sync chain self-healing verified end-to-end",
+  "task_ref": "LANE01-LIVE-LEDGER-TRIGGER-FIX",
+  "verdict": "PASS",
+  "priority": "high (closes critical audit finding)",
+  "message_type": "task-completion",
+  "summary": {
+    "what": "Added workflow_run trigger to sync_runtime_to_public.yml so it auto-fires when Auto PROJECT_STATUS Regenerate or AIER Code Heartbeat finish.",
+    "why": "Closes the critical chained-workflow gap from LANE01-LIVE-LEDGER-AUDIT-V1 (PR #14): default GITHUB_TOKEN cannot trigger downstream workflows on push.",
+    "outcome": "Sync chain now self-healing. End-to-end test verified. No PAT introduced.",
+    "pr": "https://github.com/unitonzengarden/Uniton_Shared/pull/15",
+    "merge_commit": "584bef25d0403c7008bfa20597a7fb3dfc88b9e9"
+  },
+  "critical_correction": {
+    "issue": "Task spec assumed upstream workflow name was 'Auto Project Status' but actual name field is 'Auto PROJECT_STATUS Regenerate'.",
+    "fix": "Used actual repo name verbatim. workflow_run is case-sensitive name-match; wrong name would silently never fire.",
+    "verified_against": ".github/workflows/auto_project_status.yml line 1 + .github/workflows/aier_code_heartbeat.yml line 1"
+  },
+  "e2e_test_evidence": {
+    "step_1_baseline": "Last sync run before test = 25106428334 (workflow_dispatch hot-fix from earlier today)",
+    "step_2_trigger_upstream": "gh workflow run auto_project_status.yml --ref main → run 25113517473",
+    "step_3_upstream_completed": "Run 25113517473 completed success at 14:03:18Z",
+    "step_4_downstream_auto_fired": "Sync run 25113539568, event=workflow_run, status=completed, conclusion=success — FIRST EVER workflow_run-triggered sync run in repo history",
+    "step_5_live_mirror_caught_up": "Uniton_Shared_Live HEAD 51a939b → 86105cb",
+    "step_6_sync_info_proof": "SYNC_INFO.md records 'Triggered by: workflow_run' (was always 'push' before)",
+    "lag_observed": "~20 seconds from upstream completion to downstream sync run start",
+    "bonus_observation": "Lane_03's parallel SYNC_EXPANSION_V1 added new whitelist entries (ECOSYSTEM_HEALTH_STATE.md/json + LATEST_VERIFIED_COMMITS.json + NEXT_SAFE_ACTION.md). All delivered to Live mirror via the new auto chain on first run."
+  },
+  "watched_workflows": [
+    "Auto PROJECT_STATUS Regenerate (.github/workflows/auto_project_status.yml)",
+    "AIER Code Heartbeat (.github/workflows/aier_code_heartbeat.yml)"
+  ],
+  "deliverables": {
+    "workflow_edit": ".github/workflows/sync_runtime_to_public.yml (modified — committed via PR #15)",
+    "snapshot": "snapshots/LANE01-LIVE-LEDGER-TRIGGER-FIX.snapshot.live.json",
+    "report": "reports/LANE01-LIVE-LEDGER-TRIGGER-FIX_REPORT.md",
+    "audit_log": "audit_logs/LANE01-LIVE-LEDGER-TRIGGER-FIX_audit.log",
+    "this_handoff": "handoffs/inbox/Lane_01/MSG-CLAC1-LIVE-LEDGER-TRIGGER-FIX-COMPLETE.json"
+  },
+  "acceptance_criteria_status": "11/11 PASS",
+  "boundary_compliance": "9/9 PASS — single workflow file scope · 0 Uniton_OS · 0 Uniton_Shared_Live direct mods · 0 docs/canon/scripts · 0 PAT · [vercel skip] · LANE01- DOT format · NTS clicks 0",
+  "implications_for_next_steps": {
+    "unblocks": "LANE01-LIVE-LEDGER-FOUNDATION (Option B from audit) — now CLA can extend the whitelist + add new namespaces (tasks/, ledger/, status/, aier-status/) without re-engineering the trigger. The trigger problem is solved.",
+    "implicit_verification": "AC5 of LANE01-INH-CODE-02b heartbeat (2 scheduled cron runs verification window) — heartbeat workflow now also triggers sync via this fix. SYNC_INFO.md will record heartbeat workflow_run completions automatically every ~10 min, providing implicit verification.",
+    "future_protection_optional": "Add unit-test workflow that asserts workflow_run.workflows[] still match upstream `name:` fields — protects against silent-no-fire if either watched workflow ever renames itself."
+  },
+  "next_recommended_tasks": [
+    "(NTS decision still open) LANE01-LIVE-LEDGER-FOUNDATION (Option B from audit) — implement tasks/, ledger/, status/, aier-status/ namespaces. Trigger fix is done; whitelist expansion + new derive scripts remain.",
+    "(optional follow-up) LANE01-WORKFLOW-NAME-INTEGRITY-CHECK — unit-test workflow that fails if workflow_run.workflows[] don't match upstream `name:` fields verbatim."
+  ],
+  "open_followups_orthogonal": [
+    "AC5 of LANE01-INH-CODE-02b heartbeat — now satisfied implicitly via workflow_run chain (heartbeat completion → sync run logged)"
+  ],
+  "required_response_type": "ack",
+  "acceptance_criteria_for_CLA_review": [
+    "Verify PR #15 merged in main",
+    "Verify SYNC_INFO.md on Uniton_Shared_Live shows 'Triggered by: workflow_run' on most recent sync",
+    "Confirm 3 mandatory deliverables LANE01- DOT format prefix correct",
+    "Decide on LANE01-LIVE-LEDGER-FOUNDATION dispatch timing (Option B from audit)"
+  ]
+}

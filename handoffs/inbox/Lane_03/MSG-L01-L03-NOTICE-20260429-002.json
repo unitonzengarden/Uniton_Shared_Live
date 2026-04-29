@@ -1,0 +1,27 @@
+{
+  "message_id": "MSG-L01-L03-NOTICE-20260429-002",
+  "from_lane": "Lane_01",
+  "to_lane": "Lane_03",
+  "message_type": "handoff-notice",
+  "priority": "normal",
+  "status": "sent",
+  "created_at": "2026-04-29T06:30:00Z",
+  "related_task_id": "CLAC-DAY1-BUNDLE-V1",
+  "subject": "Multi-repo setup + formal PAUSE + LAW_N13 DRAFT awareness (AIER Code → Uniton_OS migration in flight)",
+  "body": "Lane_03 — formal pause directive while migration AIER Code → Uniton_OS is in flight.\n\n## Status\n- Lane_03 PAUSED until T-INT-06 cutover (~Day 6, 2026-05-05)\n- Do NOT author new amendments during migration window\n- Do NOT modify SHARED/laws/* (canon stable during migration per R-MIGRATION-01 — applied stricter than usual R-AUTH-01)\n- Do NOT modify CANON/* (frozen during migration)\n- Hygiene tickets (CANON-GUARD-HEADING-FIX + CAPABILITY-REGISTRY-RECONCILE) already DONE pre-migration; Lane_03 queue post-migration tasks defer until cutover\n\n## Pre-arranged setup (canonical paths per docs/MULTI_REPO_LOCAL_PATHS.md)\n- D:\\UZG\\Projects-v2\\Uniton_Shared = Lane_03 own primary (Codex executes here)\n- D:\\UZG\\Projects-v2\\Uniton_OS = read-only reference (clone alongside Lane_03's Uniton_Shared)\n- Setup command on Lane_03 host: `cd D:\\UZG\\Projects-v2\\ && gh repo clone unitonzengarden/Uniton_OS`\n- Lane_03 should familiarize with brain structure (Uniton_OS L1-L4 layers) for canon-boundary review post-migration\n\n## LAW_N13 DRAFT (post-migration ratify)\n- DRAFT authored by Lane_01 in this conversation context (will land at SHARED/laws/LAW_N13_MULTI_REPO_AND_HANDOFFS.md)\n- Lane_03 will author official LAW_N13.md POST-migration via standard amendment packet (PROPOSAL + RATIONALE + IMPACT + NTS_DECISION) — NTS-gated per R-AUTH-01\n- Goal: standardize multi-repo workflow across Uniton_Shared, Uniton_OS, Uniton_Shared_Live, future UZG+/AIER_LIFE/AIFI projects\n- The strategic deferred LAW_N13 (currently at roadmaps/strategic/future_lanes/LANE03-W3-LAW-N13-AUTHOR-V1.md) was originally for Lane_04 QA Auto-Loop — that name remains for V2.0+ strategic. The new multi-repo LAW_N13 is a different topic; Lane_03 may use a different number or amend the strategic deferred topic name when the multi-repo law is ratified.\n\n## Post-migration\n- Lane_03 will receive new dispatch from Lane_01 after T-INT-06 cutover\n- Continue canon-boundary review on Uniton_OS-side canon (project_tag='UNITON_OS' chunks already ingested per Cursor T-INT-03)\n- Cross-Lane review for Uniton_OS canon-touching changes (per existing AMD_LANE01_FAST_ENDORSER_MODE pattern)\n\n## ACK required\nReply via handoffs/outbox/Lane_03/RSP-L03-L01-NOTICE-PAUSE-20260429-002.json with status='acknowledged' + result confirming pause + LAW_N13 awareness.\n\n## References\n- Audit: audit/AIER_CODE_INVENTORY.json\n- Audit: audit/AIER_CODE_API_MAP.md (handoff schema → episodic_events mapping)\n- Multi-repo doc: docs/MULTI_REPO_LOCAL_PATHS.md\n- NTS verbatim 2026-04-29: 'tranh thủ để tích hợp 2 hệ thống thành một hệ và cho các lane 2-3 làm việc'\n",
+  "requested_action": "ACK pause directive + verify Uniton_OS clone setup on Lane_03 host (D drive); preserve LAW_N13 DRAFT awareness for post-migration ratification",
+  "required_response_type": "ack",
+  "evidence_paths": [
+    "audit/AIER_CODE_INVENTORY.json",
+    "audit/AIER_CODE_API_MAP.md",
+    "docs/MULTI_REPO_LOCAL_PATHS.md",
+    "roadmaps/strategic/future_lanes/LANE03-W3-LAW-N13-AUTHOR-V1.md"
+  ],
+  "acceptance_criteria": [
+    "Lane_03 reads pause directive + acknowledges in outbox/Lane_03/RSP-L03-L01-NOTICE-PAUSE-20260429-002.json",
+    "Lane_03 confirms Uniton_OS clone available read-only on its host machine (D drive setup per multi-repo path doc)",
+    "Lane_03 does NOT author new amendments until T-INT-06 cutover signal",
+    "Lane_03 does NOT modify SHARED/laws/* or CANON/* during migration window (R-MIGRATION-01 reinforced)",
+    "Lane_03 acknowledges LAW_N13 multi-repo workflow standardization is forthcoming post-migration"
+  ]
+}

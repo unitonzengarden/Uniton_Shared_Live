@@ -1,0 +1,28 @@
+{
+  "message_id": "MSG-L01-L01-HANDOFF-20260427-001",
+  "from_lane": "Lane_01",
+  "to_lane": "Lane_01",
+  "message_type": "handoff-notice",
+  "priority": "high",
+  "status": "sent",
+  "created_at": "2026-04-27T16:10:00Z",
+  "related_task_id": "LANE01-W1-T3-BOOT-PROTOCOL-UPDATE-V1",
+  "subject": "W1.T3 boot protocol update — embed 5-step skill boot sequence",
+  "body": "Per Roadmap V1 FINAL §3 W1.T3, update `docs/LAW_CLA_LLM/SHARED/boot/AIER_CODE_BOOT_MINIMUM_V1.md` to embed the 5-step skill boot sequence from `SHARED/skills/SKILL_INVOCATION_PROTOCOL.md §1` so every Lane reads `SHARED/skills/INDEX.md` at turn-start before any task work. Boot Minimum updates are explicitly in `AMD_LANE01_CTO_AUTO_APPROVE_TECH_NON_CANON §3.1` YES list — Lane_01 self-approves. Also add a brief invocation note for the 4 W1.T2 DRAFT skills (with the DRAFT-consent caveat per SKILL_INVOCATION_PROTOCOL §5). Status of all 4 skills remains DRAFT — no ACTIVE promotion in this task. This handoff is the smoke-test product of `aier-dispatch` DRAFT v0.1 invocation in `LANE01-W1-T4-COMBINED-V1` Phase C.\n\nDeliverables (LAW 16 order):\n1. Snapshot — covered by parent task `LANE01-W1-T4-COMBINED-V1` snapshot\n2. Edit `docs/LAW_CLA_LLM/SHARED/boot/AIER_CODE_BOOT_MINIMUM_V1.md` — add new section after current §4 Read Order: §5 Skill Boot Sequence (5 steps from SKILL_INVOCATION_PROTOCOL §1)\n3. Report covered by parent\n\nRollback: git revert the boot-protocol commit; original `AIER_CODE_BOOT_MINIMUM_V1.md` is preserved in git history.",
+  "requested_action": "Lane_01 (CLAC-1) executor opens the boot file, appends the 5-step skill boot sequence section, commits, pushes; then aier-verify is invoked to validate the AC.",
+  "required_response_type": "evidence",
+  "evidence_paths": [
+    "docs/LAW_CLA_LLM/SHARED/boot/AIER_CODE_BOOT_MINIMUM_V1.md",
+    "docs/LAW_CLA_LLM/SHARED/skills/SKILL_INVOCATION_PROTOCOL.md",
+    "docs/LAW_CLA_LLM/SHARED/skills/INDEX.md",
+    "roadmaps/AIER_CODE_V1_AUTOPILOT_ROADMAP_FINAL.md"
+  ],
+  "acceptance_criteria": [
+    "Boot file contains a Step 1 instruction to read SHARED/skills/INDEX.md at turn-start",
+    "Boot file enumerates all 5 steps from SKILL_INVOCATION_PROTOCOL §1",
+    "Boot file references the DRAFT-consent caveat for invoking DRAFT skills",
+    "Boot file does NOT mark any DRAFT skill ACTIVE",
+    "Boot file does NOT modify SHARED/laws/* or CANON",
+    "Single commit with [vercel skip] suffix; pushed; HEAD matches origin/main; worktree clean"
+  ]
+}

@@ -1,0 +1,174 @@
+{
+  "task_id": "LANE01-UZG-PLUS-AUDIT-AND-SYSTEM-MAP-V1",
+  "snapshot_kind": "live",
+  "schema_version": "1",
+  "captured_at_utc": "2026-04-29T17:05:00Z",
+  "captured_at_local": "2026-04-29 (UTC+8)",
+  "executor": "Cursor / claude-sonnet-4-5 (extended thinking ON)",
+  "lane": "Lane_01",
+  "authority": ["AMD_LANE01_CTO_AUTO_APPROVE_TECH_NON_CANON", "AMD_NTS_FULL_TECH_AUTONOMY"],
+  "scope": "uzg-plus",
+  "mode": "READ_ONLY_AUDIT_AND_SYSTEM_MAP",
+  "repo": {
+    "full_name": "unitonzengarden/uzgplus-app",
+    "visibility": "private",
+    "default_branch": "main",
+    "head_sha_at_audit": "4b93ee754c997bd6577df190181885268e8d5eb3",
+    "head_message_at_audit": "docs(lane02): LANE02-UZG-LANG-CANON-LIBRARY-V1 ship report + snapshot + audit log [vercel skip]",
+    "audit_branch": "feat/lane01-uzg-plus-audit-and-system-map",
+    "size_kb": 50684,
+    "primary_language": "JavaScript",
+    "topics": ["active", "frontend", "product", "uniton-future", "uzgplus"],
+    "homepage_field_value": "https://uzgplus-app.vercel.app",
+    "homepage_field_alive": false,
+    "branches_remote": [
+      "main",
+      "codex/auto-go-live",
+      "codex/v2-p5-business-commission-publish",
+      "codex/v2-p6-notification-lock",
+      "codex/v2-p7-qot-system-lock",
+      "codex/v3-ui-flow-feed-redesign",
+      "codex/v3-ui-topbar-layout-base"
+    ],
+    "prs_total": 13,
+    "prs_open": 0,
+    "issues_open": 0
+  },
+  "live_deployment": {
+    "canonical_url": "https://uzg.plus",
+    "status": 200,
+    "host": "Cloudflare",
+    "runtime_split": ["product-v2-pages-shell", "product-v2-pages-worker"],
+    "active_workflow": ".github/workflows/deploy.yml",
+    "deprecated_workflow": ".github/workflows/cloudways-deploy.yml",
+    "vercel_alive": false,
+    "vercel_status_for_homepage_field": 404,
+    "headers_present": ["x-uzg-runtime", "Server: cloudflare", "CF-RAY", "Report-To"],
+    "headers_absent_security": ["Strict-Transport-Security", "Content-Security-Policy", "X-Frame-Options"]
+  },
+  "frontend": {
+    "stack": ["React 19.2", "Vite 7.3", "react-router-dom 7", "i18next 25", "@react-three", "mapbox-gl"],
+    "entry": "src/main.jsx",
+    "router_file": "src/App.jsx",
+    "router_loc_lines_approx": 4084,
+    "pages_count": 64,
+    "components_dirs": 22,
+    "routes_count_approx": 80,
+    "public_routes": ["/login", "/enta/:handle"],
+    "lazy_loaded": true,
+    "manualChunks": ["react-vendor", "vendor", "supabase-vendor", "three-vendor (lazy)", "mapbox-vendor (lazy)"],
+    "auth_method": "Supabase Auth OTP/JWT",
+    "guards": ["RouteGuard", "AdminGuard", "PublicProfileRouteBoundary", "gateByJourney"]
+  },
+  "backend": {
+    "surfaces": [
+      {"name": "api/wisdom.js", "runtime": "Vercel/CF Function", "purpose": "AIER Wisdom Q&A (strict JSON)"},
+      {"name": "server/aier_server.js", "runtime": "Long-lived Node Express", "loc_lines_approx": 21617, "endpoints_count_approx": 60, "exposed_on_uzg_plus": false},
+      {"name": "supabase/functions/reward_emit", "runtime": "Supabase Edge (Deno)", "verify_jwt": false},
+      {"name": "supabase/functions/wallet_convert_u_to_uzg", "runtime": "Supabase Edge (Deno)", "verify_jwt": false},
+      {"name": "supabase/functions/wallet_spend_uzg", "runtime": "Supabase Edge (Deno)", "verify_jwt": "default"}
+    ],
+    "external_integrations": ["@supabase/supabase-js@2.99.1", "openai@6.29.0", "@google/generative-ai@0.24.1", "three@0.183.2", "mapbox-gl@3.20.0"],
+    "aier_npm_scripts_count_approx": 50,
+    "ai_npm_scripts_count_approx": 25
+  },
+  "database": {
+    "uzg_plus_project_ref_in_config": "kkhhpecofolmrodyeslp",
+    "env_supplied_project_ref": "vstnvvwmztotgogobefx",
+    "env_project_is_uzg_plus": false,
+    "env_project_actual_purpose": "AIER Code / Uniton_OS governance DB",
+    "live_uzg_plus_dump_performed": false,
+    "live_aier_code_openapi_evidence": ".lane_01/audits/supabase_openapi_uniton_os_dump.json",
+    "migrations_count": 96,
+    "tables_count_approx": 90,
+    "rls_policy_lines_approx": 290,
+    "functions_count_approx": 250,
+    "domains_count": 16,
+    "edge_functions_count": 3,
+    "edge_functions": ["reward_emit", "wallet_convert_u_to_uzg", "wallet_spend_uzg"]
+  },
+  "canon_vs_implementation_summary": {
+    "ENTA": "PRESENT",
+    "QOT": "MVP_PRESENT",
+    "Quantum_Social_Network": "BACKEND_PRESENT_NO_USER_SURFACE",
+    "Circle_Business": "PRESENT",
+    "Wallet_UZGFi": "PRESENT",
+    "Membership_6_tiers": "TIER_CAPABLE_NAME_NOT_VERIFIED",
+    "Seven_core_specs_EX_GV_ID_SY_TT_VL": "NAME_MISMATCH",
+    "Phase_1_Identity_and_Social": "PRESENT",
+    "Phase_2_Connect_to_Earn": "SEMANTICALLY_PRESENT_PHRASE_NOT_VERBATIM",
+    "Phase_3_Global_Network": "PARTIAL",
+    "Phase_4": "PARTIAL",
+    "Phase_5": "PRESENT",
+    "Phase_6": "PARTIAL"
+  },
+  "lane_separation": {
+    "lane_01_dir": ".lane_01/",
+    "lane_02_dir": ".lane_02/",
+    "lane_02_active_scope": ["TAO calendar engine", "Bazi pillar + day master", "Language OS"],
+    "boundary_respected_by_lane_01": true
+  },
+  "boundary_check_pre_phase_K": {
+    "single_local_repo_only": true,
+    "no_uniton_shared_local_clone": true,
+    "no_files_outside_lane_01": true,
+    "no_lane_02_modifications": true,
+    "no_apps_api_ai_aier_data_docs_modifications": true,
+    "no_npm_install_run": true,
+    "no_supabase_mutations": true,
+    "no_vercel_deployment_actions": true,
+    "vercel_skip_in_commits": "to_be_set_in_phase_K",
+    "lane01_dot_format_on_3_deliverables": true,
+    "self_merge_per_amd": "pending_phase_K",
+    "nts_clicks_zero": true
+  },
+  "deliverables_paths": {
+    "audits_md": [
+      ".lane_01/audits/01_REPO_OVERVIEW.md",
+      ".lane_01/audits/02_BACKEND.md",
+      ".lane_01/audits/03_FRONTEND.md",
+      ".lane_01/audits/04_DATABASE.md",
+      ".lane_01/audits/05_CANON_VS_IMPLEMENTATION.md",
+      ".lane_01/audits/06_LIVE_DEPLOYMENT.md"
+    ],
+    "audits_evidence": [
+      ".lane_01/audits/supabase_openapi_uniton_os_dump.json",
+      ".lane_01/audits/supabase_config_excerpt.toml",
+      ".lane_01/audits/migrations_list.txt"
+    ],
+    "system_map_md": [
+      ".lane_01/system_map/UZG_PLUS_SYSTEM_MAP_V1.md",
+      ".lane_01/system_map/backend/SERVICES_MAP.md",
+      ".lane_01/system_map/frontend/ROUTES_TREE.md",
+      ".lane_01/system_map/database/SCHEMA_ERD.md"
+    ],
+    "system_map_json": [
+      ".lane_01/system_map/UZG_PLUS_SYSTEM_MAP_V1.json",
+      ".lane_01/system_map/state.live.json"
+    ],
+    "dot_format": {
+      "report": ".lane_01/reports/LANE01-UZG-PLUS-AUDIT-AND-SYSTEM-MAP-V1_REPORT.md",
+      "snapshot": ".lane_01/snapshots/LANE01-UZG-PLUS-AUDIT-AND-SYSTEM-MAP-V1.snapshot.live.json",
+      "audit_log": ".lane_01/audit_logs/LANE01-UZG-PLUS-AUDIT-AND-SYSTEM-MAP-V1_audit.log"
+    }
+  },
+  "honest_disclosure": [
+    "UZG+ Supabase project key (kkhhpecofolmrodyeslp) NOT in supplied env. Live UZG+ DB query not performed. Migrations remain authoritative.",
+    "Whitepaper does NOT enumerate 6 membership tiers by name. Code is tier-flexible (catalog-driven).",
+    "Whitepaper does NOT use abbreviations EX/GV/ID/SY/TT/VL. §4.2 lists 7 modules under different names.",
+    "Whitepaper §9 has 3 phases (Foundation/Platform/Global Network); product V2 build uses P0..P7 in migrations — distinct.",
+    "'Connect-to-Earn' phrase not in repo verbatim; reward_emit implements the concept.",
+    "VERCEL_TOKEN not in env; Vercel deployments list cannot be queried. uzgplus-app.vercel.app returns 404.",
+    "server/aier_server.js Express endpoints not exposed on uzg.plus per live probe; SPA fallback masks /aier/* paths.",
+    "QOT cross-system bridge (UZG+ qot_nodes ↔ AIER Code qot_lineage) not visible at source-code surface in uzgplus-app."
+  ],
+  "secrets_used": ["GH_TOKEN (from Uniton_OS .env.local)", "SUPABASE_SERVICE_ROLE_KEY (Uniton_OS DB only — not UZG+)", "SUPABASE_PROJECT_REF (Uniton_OS — not UZG+)"],
+  "secrets_missing": ["VERCEL_TOKEN", "UZG+ Supabase keys for kkhhpecofolmrodyeslp"],
+  "evidence_urls_post_phase_M": [
+    "https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/audits/ecosystem/uzg-plus/LANE01-UZG-PLUS-AUDIT-AND-SYSTEM-MAP-V1_REPORT.md",
+    "https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/audits/ecosystem/uzg-plus/LANE01-UZG-PLUS-AUDIT-AND-SYSTEM-MAP-V1.snapshot.live.json",
+    "https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/system_maps/UZG_PLUS_SYSTEM_MAP_V1.md",
+    "https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/aier-status/uzg-plus/state.live.json",
+    "https://github.com/unitonzengarden/uzgplus-app/pulls?q=is%3Apr+LANE01-UZG-PLUS-AUDIT-AND-SYSTEM-MAP-V1"
+  ]
+}

@@ -1,0 +1,114 @@
+{
+  "from": "Cursor (Lane_01 executor)",
+  "to": "CLA (Lane_01 orchestrator)",
+  "via": "Lane_01 inbox",
+  "timestamp": "2026-04-29T07:11:30Z",
+  "subject": "PR triage + CI recovery COMPLETE — main branch GREEN",
+  "task_ref": "LANE01-OPS-CLEANUP-01-PR-TRIAGE-CI-GREEN",
+  "authority": "AMD_NTS_FULL_TECH_AUTONOMY_2026-04-29",
+  "verdict": "PASS",
+  "details": {
+    "cleanup_pr": {
+      "number": 8,
+      "url": "https://github.com/unitonzengarden/Uniton_OS/pull/8",
+      "merged_at": "2026-04-29T07:08:55Z",
+      "merge_commit": "3ab6bfe05fc5029ed16c5a085d319a7049f36aa5",
+      "self_merge_actor": "Cursor",
+      "branch_deleted": true,
+      "commit_count_before_squash": 7,
+      "diff_stat": "9 files changed, 106 insertions(+), 23 deletions(-)"
+    },
+    "pr_triage_summary": {
+      "PR_1_audit_cla_integration": {
+        "verdict": "CLOSE",
+        "executed": true,
+        "state": "CLOSED",
+        "branch_deleted": true,
+        "rationale_one_line": "Audit-only artifacts pre-Bridge / pre-UDNA, superseded by newer LANE01-* canonical audits already on main."
+      },
+      "PR_2_T_INT_01_aier_code_schema": {
+        "verdict": "DEFER",
+        "executed": true,
+        "state": "OPEN",
+        "labels": ["deferred"],
+        "rationale_one_line": "Migration applied DB-side via different path (PASS_WITH_NOTES); canonical SQL file + DOWN still missing on main = code/DB drift; needs slim follow-up PR."
+      },
+      "PR_3_T_INT_02_service_token_broker": {
+        "verdict": "DEFER",
+        "executed": true,
+        "state": "OPEN",
+        "labels": ["deferred"],
+        "rationale_one_line": "Broker migration registered DB-side but app code (route.ts, lane-broker.ts) missing from main; auth surface OUT OF SCOPE for cleanup brief; needs slim follow-up."
+      },
+      "PR_4_LANE01_naming_convention": {
+        "verdict": "DEFER",
+        "executed": true,
+        "state": "OPEN",
+        "labels": ["deferred"],
+        "rationale_one_line": "Convention propagated de-facto via merged PRs #5/#6/#7; canonical NAMING_CONVENTION_DELIVERABLES.md missing = small governance gap; needs slim re-PR."
+      }
+    },
+    "ci_status": {
+      "before": {
+        "main_consecutive_failures": 8,
+        "earliest_failure_iso": "2026-04-24T11:56:39Z",
+        "stage_failing": "typecheck (route.test.ts ContextBundle fixtures)"
+      },
+      "after_post_merge": {
+        "main_run_id": 25095628636,
+        "main_head_sha": "3ab6bfe05fc5029ed16c5a085d319a7049f36aa5",
+        "conclusion": "success",
+        "ci_workflow_jobs": "Build & Typecheck (single job, GREEN)",
+        "note": "No separate governance/lint jobs exist in .github/workflows/ci.yml; the single job covers typecheck + build sequentially."
+      }
+    },
+    "ci_fixes_applied": [
+      "fix(test): align chat-stream route.test fixtures with current ContextBundle (179fccd1)",
+      "fix(credentials): split non-async exports into ./types.ts to satisfy use-server rule (875d0153)",
+      "fix(ci): make sync-env.mjs skip gracefully when root .env.local is absent in CI (1283cd0f)",
+      "fix(ci): reconcile missing platform-specific native deps after npm ci (7aab0977)",
+      "fix(ci): explicitly install missing tailwind oxide linux native binary (d93e7eb9)",
+      "fix(ci): add placeholder OPENAI_API_KEY/ANTHROPIC_API_KEY for build-time SDK init (df31b506)"
+    ],
+    "boundary_compliance": {
+      "nts_actions_required": 0,
+      "force_push_used": false,
+      "admin_flag_used": false,
+      "vercel_skip_on_all_commits": true,
+      "aier_code_or_bridge_or_lane03_files_modified": 0,
+      "udna_files_modified": 0,
+      "migration_files_modified": 0,
+      "uniton_shared_clac1_territory_modified": false
+    },
+    "deliverables_authored": {
+      "snapshot": "snapshots/LANE01-OPS-CLEANUP-01-PR-TRIAGE-CI-GREEN.snapshot.live.json",
+      "report": "reports/LANE01-OPS-CLEANUP-01-PR-TRIAGE-CI-GREEN_REPORT.md",
+      "audit_log": "audit_logs/LANE01-OPS-CLEANUP-01-PR-TRIAGE-CI-GREEN_audit.log",
+      "format": "LANE01- DOT format compliant"
+    }
+  },
+  "remaining_tech_debt": {
+    "R1_3_deferred_prs_need_slim_re_pr": {
+      "priority": "high",
+      "recommended_dispatch_order": ["PR_4_naming_doc", "PR_2_0030_SQL", "PR_3_broker_code"],
+      "owner_suggestion": "CLA dispatches sequentially after this cleanup"
+    },
+    "R2_lockfile_cross_platform_regen": {
+      "priority": "medium",
+      "description": "package-lock.json was generated on Windows; lacks resolved URLs for non-Windows platform native binaries. Long-term fix is to regenerate on Linux. Current CI workaround: explicit npm install of @tailwindcss/oxide-linux-x64-gnu."
+    },
+    "R3_env_policy_doc_update": {
+      "priority": "low",
+      "description": "Document the new CI-skip path in docs/06_POLICY/06_ENV_POLICY_v1.md."
+    },
+    "R4_claude_worktrees_gitlinks": {
+      "priority": "low",
+      "description": ".claude/worktrees/* committed as gitlinks without .gitmodules. Post-job CI cleanup emits non-blocking warning. Either register or remove."
+    },
+    "R5_embed_query_lazy_init": {
+      "priority": "medium",
+      "description": "apps/web/src/lib/memory/embed-query.ts eager-instantiates `new OpenAI()` at module load — works around with placeholder env var on CI but proper fix is lazy-init pattern."
+    }
+  },
+  "next_action_for_cla": "Acknowledge cleanup completion. Optional: dispatch follow-up tasks for R1 (3 deferred PRs) and R2/R5 (build hygiene). No blocker for any other in-flight task."
+}

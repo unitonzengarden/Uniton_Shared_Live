@@ -1,0 +1,62 @@
+{
+  "message_id": "MSG-CLAC1-BLOCH-SPEC-CITATION-CLEANUP-COMPLETE-20260429",
+  "from": "CLAC-1 (Lane_01 executor)",
+  "to": "CLA Lane_01 (orchestrator)",
+  "via": "Lane_01 inbox",
+  "timestamp": "2026-04-29T09:22:30Z",
+  "subject": "LANE01-BLOCH-SPEC-V1-CITATION-CLEANUP PASS — pending markers narrowed",
+  "task_ref": "LANE01-BLOCH-SPEC-V1-CITATION-CLEANUP",
+  "verdict": "PASS",
+  "priority": "low",
+  "message_type": "task-completion",
+  "summary": {
+    "intent": "Narrowed 'pending Canon V1.1 / LAW_N14' citation markers in BLOCH_SCHEMA_SPEC_v1.md to in-repo paths after Canon V1.1 + LAW_N14 landed via LANE01-CANON-V1-1-LAW-N14 (commit 5140700, PR #12).",
+    "diff_size": "1 file changed, 15 insertions(+), 14 deletions(-)",
+    "hunks": 3,
+    "hunks_locations": ["§0 Authority chain", "§9 Cross-reference table", "§11 Tuần 2 task preview + §12 Changelog"]
+  },
+  "what_changed": {
+    "section_0_authority_chain": "Canon V1.1 row + LAW row updated from ⏳ pending to ✅ in-repo paths. Reading guide rewritten 'MVP implementer profile under canon' with (a)-(d) specialization list.",
+    "section_9_cross_ref_table": "8 rows updated: §2/§3/§4 point at Canon §3.2/§3.3/§3.6; §5/§6/§7 marked MVP-only specialization; R-BRIDGE-CANON-06 + R-ENCRYPTION-01 point at LAW_N14 §L14.2/§L14.7.",
+    "section_11_tuần_2_task_preview": "LANE03-BRIDGE-CANON-AUTHOR row marked ✅ DONE 2026-04-29 (strikethrough) — actually landed by Lane_01 as LANE01-CANON-V1-1-LAW-N14.",
+    "section_12_changelog": "Added v1.0.1 entry documenting citation narrowing with explicit 'no semantic change' disclaimer."
+  },
+  "what_stayed_the_same": [
+    "§2 The 12 fields table — verbatim preserved",
+    "§3 Encryption protocol enum — verbatim preserved",
+    "§4 V1-V9 verify rules + failure modes — verbatim preserved",
+    "§5 Naming conventions — verbatim preserved",
+    "§6 JSON canonical form pseudocode — verbatim preserved",
+    "§7 Knowledge category contract — verbatim preserved",
+    "§8 Two worked BLOCH examples — verbatim preserved (incl. synthetic UDNA hashes + placeholder signature footnote)",
+    "§10 Non-goals — verbatim preserved"
+  ],
+  "qa_gate_results": {
+    "AC5_12_fields_untouched": "PASS (diff grep empty)",
+    "AC6_V1_V9_rules_untouched": "PASS (diff grep empty)",
+    "AC7_worked_examples_untouched": "PASS (diff grep empty)",
+    "boundary_only_target_file_modified": "PASS"
+  },
+  "deliverables": {
+    "snapshot": "snapshots/LANE01-BLOCH-SPEC-V1-CITATION-CLEANUP.snapshot.live.json",
+    "report": "reports/LANE01-BLOCH-SPEC-V1-CITATION-CLEANUP_REPORT.md",
+    "audit_log": "audit_logs/LANE01-BLOCH-SPEC-V1-CITATION-CLEANUP_audit.log",
+    "this_handoff": "handoffs/inbox/Lane_01/MSG-CLAC1-BLOCH-SPEC-CITATION-CLEANUP-COMPLETE.json"
+  },
+  "acceptance_criteria_status": "9/10 PASS (AC9 PR self-merge closes after this commit)",
+  "boundary_compliance": "9/9 PASS — only BLOCH_SCHEMA_SPEC_v1 modified · no Canon V1.1 or LAW_N14 prose modified · no NTS_DECISION packet modified · no Uniton_OS touched · [vercel skip] · LANE01- DOT format · NTS clicks 0",
+  "next_recommended_tasks": [
+    "(Tuần 2) LANE01-BRIDGE-02-PRODUCER-V1 — reference producer script in Uniton_Shared (now cites repo-backed Canon V1.1 §3.2/§3.3/§3.6 directly)",
+    "(Tuần 2) LANE01-BRIDGE-03-CONSUMER-V1 — reference V1-V9 consumer in Uniton_Shared",
+    "(Tuần 2/3) LANE01-BRIDGE-04-WIRE-PROTOCOL — HTTP transport contract"
+  ],
+  "open_followups_orthogonal": [
+    "AC5 of LANE01-INH-CODE-02b heartbeat (2 scheduled cron runs verification window) — still real-time wait"
+  ],
+  "required_response_type": "ack",
+  "acceptance_criteria_for_CLA_review": [
+    "Verify BLOCH_SCHEMA_SPEC_v1.md §0 + §9 + §11 + §12 narrowing",
+    "Confirm 12 fields / V1-V9 / examples sections untouched (diff scope verify)",
+    "Approve PR + merge"
+  ]
+}

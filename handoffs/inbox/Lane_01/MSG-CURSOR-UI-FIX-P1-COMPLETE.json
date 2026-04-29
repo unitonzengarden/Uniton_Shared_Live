@@ -1,0 +1,133 @@
+{
+  "schema": "uniton_shared.handoff.v1",
+  "msg_id": "MSG-CURSOR-UI-FIX-P1-COMPLETE",
+  "from": "Cursor (Claude Sonnet 4.5)",
+  "to": "CLA Lane_01",
+  "lane": "Lane_01",
+  "timestamp_utc": "2026-04-29T14:42:00Z",
+  "task_id": "LANE01-UI-FIX-P1",
+  "task_title": "Fix NFT Bloat + Dynamic Spawn Warning",
+  "status": "COMPLETE",
+  "verdict": "PASS",
+  "authority": "AMD_LANE01_CTO_AUTO_APPROVE_TECH_NON_CANON §3.1",
+
+  "git": {
+    "repo": "unitonzengarden/Uniton_OS",
+    "branch": "fix/LANE01-UI-FIX-P1",
+    "base": "main",
+    "head_before": "da381919836a4da517da9700799fccb1e336e8d4",
+    "head_after": "be4508ac972535452ca939a6599c6387001976b5",
+    "pr": 14,
+    "pr_url": "https://github.com/unitonzengarden/Uniton_OS/pull/14",
+    "merge_strategy": "squash",
+    "ci_status": "pass (Build & Typecheck, 1m18s)"
+  },
+
+  "headline_results": {
+    "build_warnings": { "before": 2, "after": 0, "cleared": ["W1_dynamic_spawn", "W2_nft_whole_project_trace"] },
+    "dispatch_route_nft": {
+      "files_before": 1791,
+      "files_after": 139,
+      "files_reduction_pct": 92.2,
+      "size_before_kb": 141.8,
+      "size_after_kb": 11.9,
+      "size_reduction_pct": 91.6
+    },
+    "next_build_size_mb": {
+      "audit_reported_before": 964,
+      "audit_reported_note": "964 MB was dominated by 951 MB .next/dev Turbopack hot-reload cache; actual prod build was always ~33 MB. The real win is the NFT trace going from 1,791 to 139 files, which directly reduces Vercel function bundle size.",
+      "after_clean_prod_build": 33.0,
+      "target_max": 250,
+      "verdict": "PASS"
+    },
+    "typecheck": "PASS (0 errors)",
+    "vitest": "147/147 PASS (no regression)",
+    "smoke_tests": {
+      "/admin/ingest GET": 200,
+      "/api/tasks/<id>/dispatch PATCH": 404,
+      "/ GET": 200,
+      "dev_log_runtime_errors": 0
+    }
+  },
+
+  "strategy_chosen": {
+    "option": "B (refactor) + targeted next.config.ts excludes",
+    "key_decisions": [
+      "Generate canon content as static TS module via apps/web/scripts/sync-canon.cjs (gitignored) instead of runtime fs.readFile of monorepo paths.",
+      "Refactor lib/canon/injection.ts to import from generated module — zero fs/path ops at request time.",
+      "Add outputFileTracingRoot + outputFileTracingExcludes to next.config.ts as defence-in-depth against future bloat (audit/, reports/, snapshots/, .claude/, etc.).",
+      "Replace spawn(\"node\", ...) with spawn(/* turbopackIgnore */ process.execPath, ...) in admin/ingest/actions.ts and clone process.env."
+    ],
+    "rationale": "Turbopack's outputFileTracingIncludes diverges from @vercel/nft (vercel/next.js#84960). Static-bundle approach is robust across Webpack/Turbopack/Vercel.",
+    "evidence_file": "audit/ui_audit/p1_root_cause_analysis.md"
+  },
+
+  "files_changed": {
+    "modified": [
+      ".gitignore",
+      "package.json",
+      "apps/web/next.config.ts",
+      "apps/web/src/app/admin/ingest/actions.ts",
+      "apps/web/src/lib/canon/injection.ts"
+    ],
+    "added_source": ["apps/web/scripts/sync-canon.cjs"],
+    "added_deliverables": [
+      "snapshots/LANE01-UI-FIX-P1.snapshot.live.json",
+      "reports/LANE01-UI-FIX-P1_REPORT.md",
+      "audit_logs/LANE01-UI-FIX-P1_audit.log"
+    ],
+    "added_evidence": [
+      "audit/ui_audit/p1_root_cause_analysis.md",
+      "audit/ui_audit/nft_inspect.cjs",
+      "audit/ui_audit/nft_check_includes.cjs",
+      "audit/ui_audit/p1_canon_injection_smoke.mjs",
+      "audit/ui_audit/p1_db_tasks.cjs",
+      "audit/ui_audit/p1_typecheck.log",
+      "audit/ui_audit/p1_build.log",
+      "audit/ui_audit/p1_dev.log",
+      "audit/ui_audit/p1_vitest.log",
+      "audit/ui_audit/p1_pr_body.md",
+      "audit/ui_audit/p1_commit_msg.txt"
+    ],
+    "generated_gitignored": ["apps/web/src/lib/canon/_canon_files.generated.ts"]
+  },
+
+  "acceptance_criteria": {
+    "AC1_root_cause_documented": "PASS",
+    "AC2_strategy_explained": "PASS",
+    "AC3_p1_2_fixed": "PASS",
+    "AC4_p1_3_fixed": "PASS",
+    "AC5_typecheck_pass": "PASS",
+    "AC6_build_zero_warnings": "PASS",
+    "AC7_size_under_target": "PASS (33 MB << 250 MB)",
+    "AC8_admin_ingest_smoke": "PASS (200)",
+    "AC9_dispatch_smoke": "PASS (404, no 500)",
+    "AC10_no_regression": "PASS (147/147 vitest)",
+    "AC11_three_deliverables_dot_format": "PASS",
+    "AC12_pr_self_merged": "PASS (#14 → be4508a)",
+    "AC13_nts_thao_tac_zero": "PASS"
+  },
+
+  "boundary_compliance": {
+    "no_migrations_modified": true,
+    "no_bloch_endpoints_modified": true,
+    "no_lane03_bridge_modified": true,
+    "no_uniton_shared_modified_except_handoff": true,
+    "scope_files_only": true,
+    "vercel_skip_in_commit": true,
+    "dot_format_deliverables": true,
+    "self_merge_per_amd": true,
+    "nts_thao_tac": 0
+  },
+
+  "ready_for_next_dispatch": "LANE01-UI-DEPLOY-PRECHECK",
+  "ready_for_next_dispatch_notes": [
+    "Build is Vercel-ready: 0 warnings, 33 MB .next, dispatch route NFT clean (no docs/ in trace).",
+    "Canon content travels with the route bundle as a static TS constant — no runtime fs reads, no NFT include surface needed.",
+    "ADMIN_INGEST_SPAWN env var still gates spawn behavior in production; production_deferred short-circuit still works.",
+    "Next steps (per task spec sequence): UI-FIX-P1 → DEPLOY-PRECHECK → DEPLOY-PREVIEW → DEPLOY-PROD."
+  ],
+
+  "open_questions": [],
+  "blockers": []
+}

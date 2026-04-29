@@ -1,0 +1,227 @@
+{
+  "from": "Cursor (Lane_01 executor)",
+  "to": "CLA (Lane_01 orchestrator)",
+  "via": "Lane_01 inbox",
+  "timestamp": "2026-04-29T11:25:00Z",
+  "subject": "LANE01-UI-AUDIT-V1 COMPLETE — UI inventory + bug audit + deploy readiness; Tuần 2 UI scope opens",
+  "task_ref": "LANE01-UI-AUDIT-V1",
+  "phase": "Phase 1 Tuần 1 → Tuần 2 transition — UI/UX scope opening",
+  "authority_chain": [
+    "AMD_LANE01_CTO_AUTO_APPROVE_TECH_NON_CANON §3.1 (read-only audit = tech non-canon)",
+    "NTS_DECISION 2026-04-29: open UI/UX scope after Tuần 1 (Bridge MVP) closure",
+    "AMD_NTS_FULL_TECH_AUTONOMY_2026-04-29 (executor self-merge authority)"
+  ],
+  "verdict": "PASS",
+
+  "details": {
+    "pr": {
+      "number": 13,
+      "url": "https://github.com/unitonzengarden/Uniton_OS/pull/13",
+      "branch": "audit/LANE01-UI-AUDIT-V1",
+      "base": "main",
+      "self_merge_actor": "Cursor",
+      "branch_deleted": true,
+      "merge_commit": "da381919836a4da517da9700799fccb1e336e8d4",
+      "merge_method": "squash"
+    },
+    "ci": {
+      "pr_check_run_id": "25106692344",
+      "pr_check_status": "pass",
+      "pr_check_duration": "1m21s",
+      "post_merge_run_id": "25106797890",
+      "post_merge_status": "completed",
+      "post_merge_conclusion": "success"
+    },
+    "scope": "READ-ONLY audit of apps/web/ Next.js v0.2.0-rc1 — 14 navigation tabs + 30 API routes + Vercel readiness + DB connectivity",
+    "audit_method_summary": [
+      "Phase A: file-system inventory walk (audit/ui_audit/inventory.cjs)",
+      "Phase B: tsc --noEmit (PASS) + next build via Turbopack (PASS, 41s compile, 2 warnings)",
+      "Phase C: next dev server + 33-route HTTP smoke test (audit/ui_audit/smoke_test.cjs)",
+      "Phase D: per-tab navigation via cursor-ide-browser MCP, 14 viewport screenshots, snapshot-tree inspection, console + network capture",
+      "Phase E: Vercel readiness — CLI presence, vercel.json, .vercel/, env keys (KEYS-only), .next size",
+      "Phase F: Supabase anon + service-role connectivity (audit/ui_audit/db_connectivity.cjs)",
+      "Phase G: 14-section comprehensive report",
+      "Phase H: 3 mandatory deliverables in DOT format"
+    ],
+    "build_status": {
+      "typecheck": "PASS (0 errors, 33s)",
+      "build": "PASS (Next.js 16.2.4 Turbopack, 84s total, 6 static + 42 dynamic routes)",
+      "warnings": [
+        "W1: apps/web/src/app/admin/ingest/actions.ts:208 — dynamic spawn cannot be statically resolved",
+        "W2: apps/web/next.config.ts → lib/canon/injection.ts NFT pulls whole project; .next is 964 MB"
+      ]
+    },
+    "smoke_test_summary": {
+      "ui_routes": "17/17 HTTP 200",
+      "api_routes": "9/16 HTTP 200, 4 HTTP 401 (cookie-protected, expected), 3 HTTP 405 (POST-only, expected)"
+    },
+    "per_tab_summary": {
+      "tabs_total": 14,
+      "renders_without_crash": 14,
+      "real_data": 8,
+      "explicit_phase5_stub": 3,
+      "empty_state_with_cta": 2,
+      "mixed_real_and_placeholder": 1,
+      "console_errors_pages": ["/cost"],
+      "hydration_warning_pages": ["/profile"]
+    },
+    "deploy_readiness": "NOT READY (3 P1 gaps)",
+    "db_connectivity": "OK (anon RLS-blocked, service-role count=1, 26/30 API routes use supabase admin)"
+  },
+
+  "bug_inventory": {
+    "P0": 0,
+    "P1": [
+      {
+        "id": "P1-1",
+        "title": "Vercel project not linked",
+        "where": "repo root",
+        "fix": "npm i -g vercel; vercel link",
+        "estimate": "30 min",
+        "suggested_task": "LANE01-UI-DEPLOY-PRECHECK"
+      },
+      {
+        "id": "P1-2",
+        "title": ".next build output is 964 MB (NFT trace pulls whole project)",
+        "where": "apps/web/next.config.ts → lib/canon/injection.ts",
+        "fix": "scope canon reads behind a stable path or add /*turbopackIgnore: true*/ comment",
+        "estimate": "0.5 day",
+        "suggested_task": "LANE01-UI-FIX-P1-NFT-BLOAT"
+      },
+      {
+        "id": "P1-3",
+        "title": "Dynamic spawn() in admin/ingest/actions.ts:208 not statically resolvable",
+        "where": "apps/web/src/app/admin/ingest/actions.ts:208",
+        "fix": "annotate with /*turbopackIgnore: true*/ or refactor to a static script entrypoint",
+        "estimate": "0.5 day",
+        "suggested_task": "LANE01-UI-FIX-P1 (combine with P1-2)"
+      }
+    ],
+    "P2": [
+      {"id": "P2-1",  "title": "/cost recharts width(-1)/height(-1) console error",       "estimate": "1 h"},
+      {"id": "P2-2",  "title": "/profile hydration mismatch on locale timestamp",          "estimate": "1 h"},
+      {"id": "P2-3",  "title": "Dashboard Active Tasks card unwired (T-0028)",             "estimate": "0.25 day"},
+      {"id": "P2-4",  "title": "Dashboard Recent Conversations card unwired (T-0011)",     "estimate": "0.25 day"},
+      {"id": "P2-5",  "title": "/canon explicit Phase-5 stub",                             "estimate": "Phase 5"},
+      {"id": "P2-6",  "title": "/documents explicit Phase-5 stub",                         "estimate": "Phase 5"},
+      {"id": "P2-7",  "title": "/settings explicit stub",                                  "estimate": "throughout phases"},
+      {"id": "P2-8",  "title": "/memory first-paint at 4.4s (150 KB HTML)",                "estimate": "0.5 day"},
+      {"id": "P2-9",  "title": "/ops/history 234 KB HTML for 482 events",                  "estimate": "0.5 day"},
+      {"id": "P2-10", "title": "/chat conversation rows missing first-message preview",    "estimate": "0.5 day"},
+      {"id": "P2-11", "title": "Empty-state copy thin on /commitments and /credentials",   "estimate": "0.5 day"}
+    ]
+  },
+
+  "vercel_deploy_gaps": [
+    "vercel CLI not installed on workstation",
+    "no vercel.json (root or apps/web)",
+    "no .vercel/ project link (run vercel link)",
+    ".next build output is 964 MB — must shrink below ~250 MB before deploy",
+    "29 env keys to push: 4 NEXT_PUBLIC_*, 5 AI providers, 5 BUDGETS, 5 SUPABASE server, 5 LANE/broker, 3 NTS identity, 1 OTHER, 1 GH_TOKEN (DO NOT push GH_TOKEN to Vercel — local-only)"
+  ],
+
+  "recommended_cla_dispatch_sequence": [
+    {
+      "order": 1,
+      "task": "LANE01-UI-FIX-P1",
+      "description": "Combine P1-2 (NFT bloat) + P1-3 (dynamic spawn) into a single PR; verify .next ≤ 250 MB after fix",
+      "estimate_days": 1.0,
+      "blocking_for": "Vercel deploy"
+    },
+    {
+      "order": 2,
+      "task": "LANE01-UI-DEPLOY-PRECHECK",
+      "description": "P1-1: install Vercel CLI, run vercel link, push 28/29 env keys (skip GH_TOKEN), no source changes",
+      "estimate_days": 0.5,
+      "blocking_for": "Vercel preview"
+    },
+    {
+      "order": 3,
+      "task": "LANE01-UI-DEPLOY-PREVIEW",
+      "description": "Push to Vercel preview, re-run the same 14-tab inspection from this audit against the preview URL, sign-off gate",
+      "estimate_days": 0.5,
+      "blocking_for": "Vercel prod"
+    },
+    {
+      "order": 4,
+      "task": "LANE01-UI-DEPLOY-PROD",
+      "description": "Promote preview to production alias after CLA + NTS sign-off; tag v0.2.0",
+      "estimate_days": 0.25,
+      "blocking_for": null
+    },
+    {
+      "order": 5,
+      "task": "LANE01-UI-FIX-P2-* (parallel-safe)",
+      "description": "All 11 P2 items can be dispatched in parallel after deploy, none block production. Total ≈ 2-4 days.",
+      "estimate_days": "2-4 (parallel)",
+      "blocking_for": null
+    }
+  ],
+
+  "deliverables": {
+    "snapshot": "snapshots/LANE01-UI-AUDIT-V1.snapshot.live.json",
+    "report":   "reports/LANE01-UI-AUDIT-V1_REPORT.md",
+    "audit_log":"audit_logs/LANE01-UI-AUDIT-V1_audit.log",
+    "evidence_root": "audit/ui_audit/",
+    "evidence_files": [
+      "audit/ui_audit/typecheck.log",
+      "audit/ui_audit/build.log",
+      "audit/ui_audit/inventory.cjs / .json",
+      "audit/ui_audit/smoke_test.cjs / smoke.json",
+      "audit/ui_audit/html_inspect.cjs / .json",
+      "audit/ui_audit/db_connectivity.cjs / .json",
+      "audit/ui_audit/per_tab.json",
+      "audit/ui_audit/screenshots/01-dashboard.png",
+      "audit/ui_audit/screenshots/02-chat.png",
+      "audit/ui_audit/screenshots/03-memory.png",
+      "audit/ui_audit/screenshots/04-profile.png",
+      "audit/ui_audit/screenshots/05-commitments.png",
+      "audit/ui_audit/screenshots/06-cost.png",
+      "audit/ui_audit/screenshots/07-ops.png",
+      "audit/ui_audit/screenshots/08-ops-history.png",
+      "audit/ui_audit/screenshots/09-ops-retro.png",
+      "audit/ui_audit/screenshots/10-canon.png",
+      "audit/ui_audit/screenshots/11-credentials.png",
+      "audit/ui_audit/screenshots/12-documents.png",
+      "audit/ui_audit/screenshots/13-projects.png",
+      "audit/ui_audit/screenshots/14-settings.png"
+    ]
+  },
+
+  "boundary_compliance": {
+    "modified_apps_web_source": 0,
+    "modified_supabase_migrations": 0,
+    "modified_lane03_bridge_code": 0,
+    "modified_bloch_endpoints_or_lib": 0,
+    "cross_repo_edits_uniton_shared": 1,
+    "cross_repo_note": "This handoff JSON is the single allowed cross-repo write per task §8 / §10",
+    "vercel_skip_on_commit": true,
+    "law_n11_pre_dispatch_verify_pass": true
+  },
+
+  "acceptance_criteria_status": {
+    "AC1_inventory":               "PASS (19 pages, 30 api, 18 components, 36 libs)",
+    "AC2_build_typecheck":         "PASS (both PASS; logs captured)",
+    "AC3_smoke_test":              "PASS (17 UI + 16 API routes)",
+    "AC4_per_tab_inspection":      "PASS (14 tabs, 7 aspects each, in audit/ui_audit/per_tab.json)",
+    "AC5_console_errors_captured": "PASS (1 error /cost; 1 hydration warning /profile)",
+    "AC6_vercel_readiness":        "PASS (NOT READY — 3 gaps catalogued)",
+    "AC7_db_connectivity":         "PASS (anon + service-role tested)",
+    "AC8_bug_inventory":           "PASS (P0=0, P1=3, P2=11 with severity classification)",
+    "AC9_phased_recommendations":  "PASS (3-phase plan with day estimates in §11)",
+    "AC10_screenshots":            "PASS (14 PNGs in audit/ui_audit/screenshots/)",
+    "AC11_three_deliverables":     "PASS",
+    "AC12_pr_self_merged":         "PASS (PR #13 merged at da38191; CI green; branch deleted)",
+    "AC13_nts_thao_tac_zero":      "PASS",
+    "AC14_no_code_changes":        "PASS (only audit/, reports/, snapshots/, audit_logs/ touched)"
+  },
+
+  "next_actions_for_cla": [
+    "Decide deploy strategy: P1-fix → preview → prod, or skip preview and ship straight after P1+precheck",
+    "Dispatch LANE01-UI-FIX-P1 (NFT bloat + dynamic spawn) — 1-day single-PR task",
+    "Dispatch LANE01-UI-DEPLOY-PRECHECK in parallel — 0.5-day task touching only .vercel/ and env",
+    "Confirm whether the 3 explicit Phase-5 stubs (canon/documents/settings) get a polish pass on their existing 'Coming in T-NN' copy or remain as-is until Phase 5"
+  ],
+
+  "identity_block": "LANE01-UI-AUDIT-V1 COMPLETE. PR #13 merged at da38191. 14/14 AC PASS. P0=0, P1=3, P2=11. Vercel NOT READY (3 gaps, ~1 day to ready). 3 mandatory deliverables LANE01-UI-AUDIT-V1 DOT format. 14 screenshots captured. NTS thao tác = 0. Ready for CLA dispatch fix tasks."
+}

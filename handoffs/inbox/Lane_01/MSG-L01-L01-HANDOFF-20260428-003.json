@@ -1,0 +1,30 @@
+{
+  "message_id": "MSG-L01-L01-HANDOFF-20260428-003",
+  "from_lane": "Lane_01",
+  "to_lane": "Lane_01",
+  "message_type": "handoff-notice",
+  "priority": "normal",
+  "status": "sent",
+  "created_at": "2026-04-28T04:00:00Z",
+  "related_task_id": "LANE01-W1-LV-RUN3-CLEANUP-V1",
+  "subject": "LV-RUN-3 — Archive 2 stale handoff messages from handoffs/inbox/Lane_01/",
+  "body": "Per parent task LANE01-W1-LOOP-VALIDATION-V1 (V1.1 W1.6) Run 3: archive 2 stale handoff messages from `handoffs/inbox/Lane_01/` to `handoffs/inbox/Lane_01/_archive/`. This run is the **handoff-route intensive** test — verify aier-handoff-route's pull/push behavior + ACK protocol in real workflow.\n\nStale messages identified:\n- `MSG-L03-L01-REVIEW-20260426-002.json` — review request for LAW_N7-N11 v0.4 packet (now ACTIVE since 2026-04-27 — review request superseded by activation; processed via `LANE01-LAWS-N7-N11-APPROVAL-APPLY-V1` commit `f10c885`).\n- `MSG-L03-L01-REVIEW-20260426-003.json` — review request likely related to same era, also superseded by canon activation.\n\nDeliverables:\n1. `git mv` 2 stale messages to `handoffs/inbox/Lane_01/_archive/` (preserve git history per R-CANON-02 — content NOT deleted).\n2. Single commit + push.\n\nRollback: `git mv` from _archive/ back to inbox parent.",
+  "requested_action": "Lane_01 (CLAC-1) executor identifies 2 stale messages, git mv to _archive subfolder, commits with [vercel skip], pushes. aier-handoff-route invoked again post-archive to confirm cleaned inbox listing.",
+  "required_response_type": "evidence",
+  "evidence_paths": [
+    "handoffs/inbox/Lane_01/MSG-L03-L01-REVIEW-20260426-002.json",
+    "handoffs/inbox/Lane_01/MSG-L03-L01-REVIEW-20260426-003.json",
+    "handoffs/inbox/Lane_01/_archive/"
+  ],
+  "acceptance_criteria": [
+    "2 stale messages archived to handoffs/inbox/Lane_01/_archive/ (git mv preserves history)",
+    "Stale messages NOT deleted (R-CANON-02 append-only)",
+    "Commit includes [vercel skip] suffix",
+    "HEAD matches origin/main; worktree clean post-push",
+    "aier-handoff-route post-archive pull_inbox returns inbox-without-archived-messages",
+    "ACK protocol exercised in handoff-route invocations",
+    "No SHARED/laws/* edited (R-AUTH-01)",
+    "No SKILL.md or METADATA.yaml of any skill modified (boundary: invoke only)",
+    "No aier-canon-guard touched"
+  ]
+}

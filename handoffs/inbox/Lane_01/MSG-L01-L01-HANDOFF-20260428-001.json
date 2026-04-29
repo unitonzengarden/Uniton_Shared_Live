@@ -1,0 +1,27 @@
+{
+  "message_id": "MSG-L01-L01-HANDOFF-20260428-001",
+  "from_lane": "Lane_01",
+  "to_lane": "Lane_01",
+  "message_type": "handoff-notice",
+  "priority": "normal",
+  "status": "sent",
+  "created_at": "2026-04-28T03:01:00Z",
+  "related_task_id": "LANE01-W1-LV-RUN1-DOC-UPDATE-V1",
+  "subject": "LV-RUN-1 — Update SHARED/skills/README.md with W1.5 ACTIVE status note",
+  "body": "Per parent task LANE01-W1-LOOP-VALIDATION-V1 (V1.1 W1.6) Run 1: update `docs/LAW_CLA_LLM/SHARED/skills/README.md` with a small note reflecting that 4 tech non-canon skills are now ACTIVE v1.0 post LANE01-W1-CORE-SKILLS-ACTIVATE-V1 (V1.1 W1.5). This is the smallest-scope baseline run for the 5-step loop coverage check.\n\nDeliverables:\n1. Edit `docs/LAW_CLA_LLM/SHARED/skills/README.md` — add 1 short paragraph after the Bootstrap status line noting 4 skills now ACTIVE v1.0 + REGISTRY.md v1.2 + canon-guard remains DRAFT pending W1.7.\n2. Single commit + push.\n\nRollback: git revert the doc-update commit.",
+  "requested_action": "Lane_01 (CLAC-1) executor opens the README, adds the W1.5 status paragraph, commits with [vercel skip], pushes; then aier-state-update + aier-verify invoked to close the loop.",
+  "required_response_type": "evidence",
+  "evidence_paths": [
+    "docs/LAW_CLA_LLM/SHARED/skills/README.md",
+    "docs/LAW_CLA_LLM/SHARED/skills/REGISTRY.md",
+    "docs/LAW_CLA_LLM/SHARED/amendments/AMENDMENTS_LOG.md"
+  ],
+  "acceptance_criteria": [
+    "README contains a paragraph reflecting 4 skills ACTIVE v1.0 post W1.5",
+    "Commit includes [vercel skip] suffix",
+    "HEAD matches origin/main; worktree clean post-push",
+    "No SHARED/laws/* edited (R-AUTH-01)",
+    "No SKILL.md or METADATA.yaml of any skill modified (boundary: invoke only)",
+    "No aier-canon-guard touched"
+  ]
+}

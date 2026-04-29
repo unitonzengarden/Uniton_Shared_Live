@@ -1,0 +1,105 @@
+{
+  "message_id": "MSG-CLAC1-LIVE-LEDGER-AUDIT-V1-COMPLETE-20260429",
+  "from": "CLAC-1 (Lane_01 executor)",
+  "to": "CLA Lane_01 (orchestrator) + NTS",
+  "via": "Lane_01 inbox",
+  "timestamp": "2026-04-29T19:10:00Z",
+  "subject": "LANE01-LIVE-LEDGER-AUDIT-V1 PASS — Uniton_Shared_Live audit complete; sync broken + 3 gaps + Option B recommended",
+  "task_ref": "LANE01-LIVE-LEDGER-AUDIT-V1",
+  "verdict": "PASS",
+  "priority": "high (CRITICAL sync bug found)",
+  "message_type": "task-completion + audit-finding",
+  "executive_summary": {
+    "audit_target": "unitonzengarden/Uniton_Shared_Live at HEAD 7785581 (2026-04-28T19:33:50Z)",
+    "repo_size_kb": 285,
+    "file_count": 12,
+    "tier_1_files_present": "7/7",
+    "lane_queues_present": "3/4 (Lane_04 expected absent)",
+    "sync_workflow_active": true,
+    "sync_workflow_last_run": "2026-04-28T19:33:43Z",
+    "sync_broken_since_hours": "~14",
+    "live_ledger_readiness": "PARTIAL"
+  },
+  "top_3_gaps_for_NTS": [
+    {
+      "severity": "🔴 CRITICAL",
+      "gap": "Sync workflow has not run since 2026-04-28T19:33Z. 28+ qualifying pushes on 2026-04-29 (heartbeat fix, Canon V1.1, BLOCH spec, L1 ingest) did NOT trigger sync.",
+      "root_cause_hypothesis": "GitHub Actions default GITHUB_TOKEN cannot trigger downstream workflows on push (anti-loop). auto_project_status + heartbeat workflows commit using default token → sync downstream blocked. Recent PR merges happened but their diffs touched docs/scripts (NOT in sync paths-filter), so they don't trigger sync either.",
+      "what_NTS_needs_to_know": "Public mirror is ~14h stale right now. CLA fetching tier-1 URLs gets outdated state. Needs trigger fix + manual workflow_dispatch to resync."
+    },
+    {
+      "severity": "🟠 MAJOR",
+      "gap": "No task-log surface synced. /reports/, /audit_logs/, /snapshots/, /handoffs/ are NOT in sync whitelist.",
+      "what_NTS_needs_to_know": "Your vision 'every task done → live log' is currently NOT achievable through Live mirror. Task artifacts are private to Uniton_Shared."
+    },
+    {
+      "severity": "🟡 MEDIUM",
+      "gap": "No AIER status / decision ledger / deploy state surfaces. UDNA marker, heartbeat ledger, NTS_DECISION packets, Vercel deploy state — none reachable via Live mirror.",
+      "what_NTS_needs_to_know": "Live Ledger needs new top-level namespaces (aier-status/, ledger/, status/) for these surfaces to become public-fetchable."
+    }
+  ],
+  "options_considered": {
+    "A_keep_augment": "Add task-log surfaces to existing whitelist + fix trigger. ~1 day. Simplest but whitelist gets long.",
+    "B_migrate_RECOMMENDED": "Keep runtime/ block. Add tasks/, ledger/, status/, aier-status/ namespaces. Fix trigger. ~3 days. Maps NTS vision; preserves URLs.",
+    "C_redesign": "Wipe Live mirror, build greenfield. ~5 days. Breaks tier-1 URL_REGISTRY contracts."
+  },
+  "claco_recommendation": {
+    "option": "B",
+    "rationale": "7-file runtime/ mirror works architecturally (only sync trigger is broken). NTS vision adds layers, not replaces. Option B keeps runtime/* URLs stable + adds new namespaces matching natural growth pattern. Each top-level dir = one concern."
+  },
+  "proposed_structure_summary": {
+    "preserved_from_v0": ["runtime/ (7 state files)", "notifications/ (1 ledger)", "network/ (registry + activity + 3 Lane queues)", "README + SYNC_INFO"],
+    "new_v1_namespaces": [
+      "tasks/INDEX.live.md + tasks/completed/<date>/<task_id>/{snapshot.json,REPORT.md,audit.log}",
+      "ledger/ (decisions.live.md + canon-changes.live.md + deploy-events.live.md + halt-events.live.md)",
+      "status/ (DASHBOARD + PHASE_N_PROGRESS + BLOCKERS + NEXT_ACTIONS)",
+      "aier-status/aier-code/ (identity + brain-l1 + heartbeat)"
+    ],
+    "claco_critique_overkill": [
+      "tasks/active/ folder — replace with single tasks/active.live.md roll-up",
+      "aier-status/aier-ops/ — cross-AIER goes through Bridge, not file mirror"
+    ],
+    "claco_critique_missing": [
+      "health/INVARIANTS.live.md (boolean health dashboard)",
+      "FAQ.live.md",
+      "30-day archive policy for tasks/completed/"
+    ]
+  },
+  "critical_fix_required_regardless_of_option": {
+    "title": "Chained-workflow trigger fix",
+    "why": "Without this, no sync ever fires from auto-regen pushes regardless of structure choice",
+    "options": [
+      "Use PAT (Personal Access Token) for auto_project_status push instead of default GITHUB_TOKEN",
+      "Use repository_dispatch event chain (auto_project_status fires → sync listens)",
+      "Add workflow_run trigger to sync (listens for auto_project_status completion)"
+    ]
+  },
+  "deliverables": {
+    "audit_report": "reports/LANE01-LIVE-LEDGER-AUDIT-V1_REPORT.md (15 sections, the main read for NTS)",
+    "snapshot": "snapshots/LANE01-LIVE-LEDGER-AUDIT-V1.snapshot.live.json",
+    "audit_log": "audit_logs/LANE01-LIVE-LEDGER-AUDIT-V1_audit.log",
+    "this_handoff": "handoffs/inbox/Lane_01/MSG-CLAC1-LIVE-LEDGER-AUDIT-V1-COMPLETE.json"
+  },
+  "acceptance_criteria_status": "14/16 PASS · AC6 partial (skipped per spec time-box, characterized via Phase C) · AC14 closes after self-merge",
+  "boundary_compliance": "9/9 PASS — 0 modify Uniton_Shared_Live (read-only) · 0 modify Uniton_OS · 0 modify code in Uniton_Shared · [vercel skip] · LANE01- DOT format · NTS clicks 0",
+  "next_steps_for_NTS_and_CLA": [
+    "1. NTS reads audit report (~15 min) — focus §1 Executive Summary + §10 Recommendations + §11 Proposed structure",
+    "2. NTS chooses Option A/B/C (recommend B with proposed structure)",
+    "3. NTS approves structure (or asks for adjustments to claco_critique points)",
+    "4. CLA authors LANE01-LIVE-LEDGER-FOUNDATION task — implements chosen structure + sync trigger fix",
+    "5. CLAC-1 implements + extends sync workflow",
+    "6. CLA authors LANE01-LIVE-LEDGER-EMIT-AUTOMATION task — task-emit hooks in every task workflow",
+    "7. CLAC-1 + Cursor integrate emit hooks (Uniton_Shared + Uniton_OS pipelines)"
+  ],
+  "open_followups_orthogonal": [
+    "AC5 of LANE01-INH-CODE-02b heartbeat (2 scheduled cron runs verification window) — still real-time wait",
+    "Suggested hot-fix while NTS reviews audit: gh workflow run sync_runtime_to_public.yml --ref main on Uniton_Shared to manually resync once (will bring Live up to current HEAD)"
+  ],
+  "required_response_type": "ack + decision",
+  "acceptance_criteria_for_CLA_review": [
+    "Verify all 4 deliverables present (snapshot + report + audit log + this handoff)",
+    "Read §1 Executive Summary (1 page)",
+    "Decide Option A/B/C",
+    "Decide whether to apply manual workflow_dispatch hot-fix in parallel to structure work"
+  ]
+}

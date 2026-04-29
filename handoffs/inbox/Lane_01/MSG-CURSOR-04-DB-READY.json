@@ -1,0 +1,132 @@
+{
+  "from": "Cursor (Lane_01 executor)",
+  "to": "CLAC1 (Lane_01 orchestrator + Phase B-G executor)",
+  "via": "Lane_01 inbox",
+  "timestamp": "2026-04-29T07:55:30Z",
+  "subject": "LANE01-INH-CODE-04 Phase A COMPLETE — DB ready for L1 ingest",
+  "task_ref": "LANE01-INH-CODE-04-BUILD-L1-INGEST",
+  "phase": "A",
+  "phase_role": "Cursor — DB schema preparation",
+  "authority_chain": [
+    "AMD packet AMD_LANE01_AIER_CODE_BRAIN_Q1_Q4_2026-04-29 (commit 22bfadb): Q1=A (prefix aier_code_*), Q2=A (Tuần 1 = L1 only)",
+    "AMD_NTS_FULL_TECH_AUTONOMY_2026-04-29 (executor self-merge authority)"
+  ],
+  "verdict": "PASS",
+  "details": {
+    "pr": {
+      "number": 9,
+      "url": "https://github.com/unitonzengarden/Uniton_OS/pull/9",
+      "merged_at": "2026-04-29T07:50:26Z",
+      "merge_commit": "f79a01cc38d90ce9abfc164c3565be5f7a5a6144",
+      "self_merge_actor": "Cursor",
+      "branch_deleted": true,
+      "diff_stat": "14 files changed, 1127 insertions(+)"
+    },
+    "ci_status": {
+      "pr_pre_merge_run_id": 25097088230,
+      "pr_pre_merge_conclusion": "success",
+      "main_post_merge_run_id": 25097161931,
+      "main_post_merge_head_sha": "f79a01cc38d90ce9abfc164c3565be5f7a5a6144",
+      "main_post_merge_conclusion": "success",
+      "ci_workflow_jobs": "Build & Typecheck (single job, GREEN)"
+    },
+    "supabase_target": {
+      "project_ref": "vstnvvwmztotgogobefx",
+      "project_name": "Uniton_OS",
+      "region": "ap-southeast-1",
+      "database_version": "17.6.1.104"
+    },
+    "migration": {
+      "version": "0033",
+      "name": "0033_aier_code_knowledge_chunks",
+      "up_file_in_repo": "supabase/migrations/0033_aier_code_knowledge_chunks.sql",
+      "down_file_in_repo": "supabase/migrations/0033_aier_code_knowledge_chunks_DOWN.sql",
+      "up_url": "https://github.com/unitonzengarden/Uniton_OS/blob/main/supabase/migrations/0033_aier_code_knowledge_chunks.sql",
+      "down_url": "https://github.com/unitonzengarden/Uniton_OS/blob/main/supabase/migrations/0033_aier_code_knowledge_chunks_DOWN.sql",
+      "applied_at_iso": "2026-04-29T07:35:57Z",
+      "apply_http_status": 201,
+      "registered_at_iso": "2026-04-29T07:38:16Z",
+      "register_http_status": 201,
+      "registered_created_by": "cursor-lane01-inh-code-04",
+      "registered_idempotency_key": "lane01-inh-code-04-phase-a-2026-04-29",
+      "registered_up_statement_count": 19,
+      "registered_down_statement_count": 6
+    },
+    "schema_contract_for_ingest": {
+      "table_fqn": "public.aier_code_knowledge_chunks",
+      "rpc_fqn": "public.search_aier_code_chunks(vector, float, int)",
+      "embedding_dim": 1536,
+      "embedding_model_target": "OpenAI text-embedding-3-small",
+      "category_enum": ["canon", "laws", "skills", "redlines", "glossary"],
+      "chunk_hash_format": "sha256 hex (64 lowercase hex chars), enforced by CHECK regex ^[0-9a-f]{64}$",
+      "content_tokens_range": "0 < tokens < 8192 (CHECK constraint)",
+      "chunk_index_constraint": ">= 0",
+      "tags_default": "'{}' (TEXT[] NOT NULL DEFAULT)",
+      "rls_state": "ENABLED + FORCED — only service_role can write/read directly via BYPASSRLS",
+      "acl_state": "REVOKE ALL on table+sequence+RPC from PUBLIC, anon, authenticated. service_role retains BYPASSRLS implicitly.",
+      "rpc_security": "SECURITY DEFINER, SET search_path = public, pg_catalog, STABLE, plpgsql",
+      "rpc_default_match_threshold": 0.7,
+      "rpc_default_match_count": 5,
+      "rpc_filters_null_embeddings": true,
+      "ingest_path_recommended": "Use SUPABASE_SERVICE_ROLE_KEY (already copied to Uniton_Shared/.env.local during LANE01-INFRA-AUTOMATION-V1) and `INSERT ... ON CONFLICT (chunk_hash) DO NOTHING` via supabase-js or Mgmt API",
+      "rollback_command_for_emergencies": "node scripts/_t_int_01_mgmt_api.cjs --file supabase/migrations/0033_aier_code_knowledge_chunks_DOWN.sql --label rollback-0033 (run from Cursor side; CLAC1 cannot do destructive DDL)"
+    },
+    "verification_results": {
+      "summary": "11/11 PASS (aggregate verify SQL via Mgmt API)",
+      "evidence_url": "https://github.com/unitonzengarden/Uniton_OS/blob/main/audit/lane01_inh_code_04_phase_a5_verify.json",
+      "checks": {
+        "check_1_table_exists": "PASS",
+        "check_2_columns": "PASS (10 columns matching brief)",
+        "check_3_check_constraints": "PASS (4 named: category_enum, chunk_hash_format, chunk_index_nonneg, content_tokens_range)",
+        "check_4_indexes": "PASS (5 indexes incl. ivfflat lists=100)",
+        "check_5_rls_enabled": "PASS (true)",
+        "check_5_rls_forced": "PASS (true)",
+        "check_6_rpc_function": "PASS (plpgsql, SECURITY DEFINER, search_path=public,pg_catalog)",
+        "check_7_table_privs_to_publishers": "PASS (empty — anon/authenticated/PUBLIC have NO grants)",
+        "check_8_rpc_privs_to_publishers": "PASS (empty)",
+        "check_9_sequence_privs_to_publishers": "PASS (empty)",
+        "check_10_row_count": "PASS (0 — population is your job)",
+        "check_11_migration_registered": "PASS"
+      }
+    },
+    "deliverables_authored_in_uniton_os": {
+      "snapshot": "snapshots/LANE01-INH-CODE-04-PHASE-A.snapshot.live.json",
+      "snapshot_url": "https://github.com/unitonzengarden/Uniton_OS/blob/main/snapshots/LANE01-INH-CODE-04-PHASE-A.snapshot.live.json",
+      "report": "reports/LANE01-INH-CODE-04-PHASE-A_REPORT.md",
+      "report_url": "https://github.com/unitonzengarden/Uniton_OS/blob/main/reports/LANE01-INH-CODE-04-PHASE-A_REPORT.md",
+      "audit_log": "audit_logs/LANE01-INH-CODE-04-PHASE-A_audit.log",
+      "audit_log_url": "https://github.com/unitonzengarden/Uniton_OS/blob/main/audit_logs/LANE01-INH-CODE-04-PHASE-A_audit.log",
+      "format": "LANE01-INH-CODE-04-PHASE-A DOT format compliant"
+    },
+    "boundary_compliance": {
+      "udna_tables_modified": 0,
+      "bridge_tables_modified": 0,
+      "lane03_source_modified": 0,
+      "uniton_shared_repo_modified_in_phase_a": "ONLY this handoff JSON (separate commit)",
+      "force_push_used": false,
+      "admin_flag_used": false,
+      "vercel_skip_on_all_commits": true,
+      "nts_actions_required": 0
+    },
+    "phase_a_acceptance_criteria": {
+      "AC_A1_migration_applied_and_registered_201": "PASS",
+      "AC_A2_table_indexes_rpc_rls_acl_verified": "PASS",
+      "AC_A3_zero_rows_initial": "PASS",
+      "AC_A4_three_deliverables_dot_format": "PASS",
+      "AC_A5_pr_self_merged_handoff_to_clac1": "PASS (this JSON delivers AC-A5)"
+    }
+  },
+  "next_action_for_clac1": [
+    "Phase B — Pre-flight in Uniton_Shared: pull main, verify 4 SUPABASE keys present in .env.local, find or build audit/AIER_CODE_DATA_FOR_INGEST.md, branch feat/LANE01-INH-CODE-04-build-l1-ingest",
+    "Phase C — Author scripts/lane01-inh-code-04-ingest-l1.cjs (chunk + sha256 + OpenAI batch + INSERT ON CONFLICT (chunk_hash) DO NOTHING)",
+    "Phase D — Author scripts/lane01-inh-code-04-query-l1.cjs (CLI: --query \"...\"; calls public.search_aier_code_chunks)",
+    "Phase E — Dry-run with --limit 10, then full ~290-chunk ingest (~$2.64 OpenAI cost ceiling $5)",
+    "Phase F — Verify queries: keyword (R-NTS-LLM-01), semantic (Lane scaling rules), citation visibility",
+    "Phase G — 3 deliverables in LANE01-INH-CODE-04-BUILD-L1-INGEST DOT format + PR self-merge + final CLA handoff"
+  ],
+  "blockers_for_clac1": "NONE. DB schema is LIVE, RPC is SECURITY DEFINER (callable from service_role), env vars already synced via LANE01-INFRA-AUTOMATION-V1.",
+  "remaining_tech_debt_observed_during_phase_a": [
+    "TD1: PowerShell pipe redirect (>) adds UTF-8 BOM that triggers Postgres 08P01 — workaround used: write to disk via Node fs.writeFileSync. Document in env policy if not already.",
+    "TD2: schema_migrations register helper splitter has minor false-splits on `;` inside comments — functionally fine because dollar-quoted strings concatenate back to the original source text, but a future cleanup could harden it."
+  ]
+}

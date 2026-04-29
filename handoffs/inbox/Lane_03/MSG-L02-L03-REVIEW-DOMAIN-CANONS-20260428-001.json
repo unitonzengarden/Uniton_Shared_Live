@@ -1,0 +1,30 @@
+{
+  "schema_version": "lane_message_v1",
+  "message_id": "MSG-L02-L03-REVIEW-DOMAIN-CANONS-20260428-001",
+  "from_lane": "Lane_02",
+  "to_lanes": ["Lane_03"],
+  "type": "REVIEW_REQUEST",
+  "subject": "Cross-review request: 3 domain canons DRAFT v0.1 (UZG+, AIER_LIFE, AIFI_LIFE)",
+  "date_utc": "2026-04-28",
+  "task_id": "LANE02-W3-DOMAIN-CANONS-DRAFT-V1",
+  "authority": "AMD_LANE02_AIER_CODE_ROLE_REFRAME — Lane_02 DRAFT authoring authorized; canon ACTIVATION remains NTS-only",
+  "summary": "Lane_02 authored 3 domain canon DRAFTs (v0.1) for UZG+, AIER_LIFE, AIFI_LIFE. Each canon defines identity, mission, authority hierarchy, boundary (R-DOMAIN-*), lifecycle, data/privacy rules, domain-specific invariants, integration patterns, and open questions list. All DRAFT status; activation pending NTS approval after Lane_03 cross-review.",
+  "review_focus": [
+    "Boundary correctness — do R-DOMAIN-* redlines cover the key domain-specific risks (medical for UZG+, autonomy for AIER_LIFE, financial regulation for AIFI_LIFE)?",
+    "Inheritance correctness — properly defer to project Canon? No accidental project-canon overrides?",
+    "Conflict detection — any conflict with active LAW_N1..N12 or project Canon §05 invariants?",
+    "Domain-specific completeness — gaps in scope coverage or missing edge cases?",
+    "Open questions list — any obvious items to add to NTS review?",
+    "Invariants list — is each invariant testable and enforceable, or is any item too vague?"
+  ],
+  "evidence": [
+    "docs/LAW_CLA_LLM/domain_canons/00_README_DOMAIN_CANONS.md",
+    "docs/LAW_CLA_LLM/domain_canons/01_UZG_PLUS_CANON_DRAFT_v0_1.md",
+    "docs/LAW_CLA_LLM/domain_canons/02_AIER_LIFE_CANON_DRAFT_v0_1.md",
+    "docs/LAW_CLA_LLM/domain_canons/03_AIFI_LIFE_CANON_DRAFT_v0_1.md",
+    "reports/LANE02-W3-DOMAIN-CANONS-DRAFT-V1_REPORT.md"
+  ],
+  "ack_required": true,
+  "expected_response_time_days": 7,
+  "boundary_note": "Lane_02 strict DRAFT status; no ACTIVE marker set; SHARED_INDEX edit APPEND-only (Tier 2 new section); no edits to project Canon, SHARED/laws, SHARED/amendments, or other Lane silos. Lane_03 may suggest revisions inline via cross-review document; Lane_02 incorporates revisions via separate task before NTS review."
+}

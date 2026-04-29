@@ -1,8 +1,8 @@
 # Uniton_Shared_Live — Sync Info
 
 **Source repo**: unitonzengarden/Uniton_Shared (private)
-**Last sync**: 2026-04-29T17:15:03Z
-**Source commit**: ff6baac5522afa1ded31f645d1bf9b19a5a659b2
+**Last sync**: 2026-04-29T17:59:10Z
+**Source commit**: cea94d02d65295d7a09a0db0bf04533046d0569f
 **Triggered by**: push
 
 ## Purpose
@@ -75,3 +75,11 @@ Canon, laws, skills, lab, rules remain private in Uniton_Shared.
 
 - https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/skills/aier-verify/EXECUTION_LOG.live.md
 - https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/skills/aier-verify/results/<TASK-ID>.verify.json
+
+## Audits + system maps + handoffs (LANE01-CANON-V2-RECONCILIATION-V1, HD-03 fix)
+
+- https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/audits/ecosystem/uzg-plus/LANE01-UZG-PLUS-AUDIT-AND-SYSTEM-MAP-V1_REPORT.md
+- https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/audits/ecosystem/uzg-plus/CANON_V2_RECONCILIATION_PROPOSAL.md
+- https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/system_maps/UZG_PLUS_SYSTEM_MAP_V1.md
+- https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/system_maps/UZG_PLUS_SYSTEM_MAP_V1.json
+- (handoffs/inbox/<lane>/<MSG-...>.json — fetch by exact path)

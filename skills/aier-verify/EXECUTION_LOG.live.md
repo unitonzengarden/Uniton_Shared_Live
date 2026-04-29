@@ -310,3 +310,12 @@
 - Run duration: 7ms
 - Verified at (ISO): 2026-04-29T17:12:53.432Z
 
+## RUN-20260429-175456
+- Triggered by: phase-i-self-verify
+- Input task_id: LANE01-CANON-V2-RECONCILIATION-V1
+- Verdict: FAIL
+- Failed checks: ac_count_match, boundary_count_match
+- Result file: skills/aier-verify/results/LANE01-CANON-V2-RECONCILIATION-V1.verify.json
+- Run duration: 12ms
+- Verified at (ISO): 2026-04-29T17:54:56.256Z
+

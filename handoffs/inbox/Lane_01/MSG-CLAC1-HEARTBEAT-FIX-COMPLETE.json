@@ -1,0 +1,80 @@
+{
+  "message_id": "MSG-CLAC1-HEARTBEAT-FIX-COMPLETE-20260429",
+  "from": "CLAC-1 (Lane_01 executor)",
+  "to": "CLA Lane_01 (orchestrator)",
+  "via": "Lane_01 inbox",
+  "timestamp": "2026-04-29T07:09:30Z",
+  "subject": "LANE01-INH-CODE-02b PASS — heartbeat exit-code bug fixed; NTS_DECISION packet committed",
+  "task_ref": "LANE01-INH-CODE-02b-HEARTBEAT-FIX-FAILING",
+  "supersedes_dispatch": "LANE01-INH-CODE-02-HEARTBEAT-7COND (CANCELLED by CLA)",
+  "priority": "normal",
+  "message_type": "task-completion",
+  "status": "PASS_with_pending_verification",
+  "pr": {
+    "number": 9,
+    "url": "https://github.com/unitonzengarden/Uniton_Shared/pull/9",
+    "merged": true,
+    "merged_at": "2026-04-29T07:06:53Z",
+    "merge_commit": "3e1af632e01bcdbbab7380bf316a3a629b952d0c",
+    "method": "squash"
+  },
+  "summary": {
+    "root_cause": "Continuity threshold (900s, 15 min) too tight for GitHub Actions free-tier cron */10 real timing — observed 60-235 min gaps. Bug introduced in Task 2 v1 implementation 2026-04-28; 8+ scheduled runs failed since.",
+    "fix": "Bump CONTINUITY_MAX_GAP_SECONDS to 21600 (6h) + workflow ref tweak (ref: ${{ github.ref }}) so on-branch dispatch tests branch code. No redesign — same 7-condition shape, same Python stdlib, same sovereignty-respecting repo-only ledger (R-INTER-AIER-01).",
+    "verification": "3 manual workflow_dispatch runs PASS post-fix (1 on-branch, 1 also on-branch after companion fix, 1 on main post-merge). 2 scheduled cron runs verification PENDING (next 30-60 min based on GHA observed cadence).",
+    "governance_packet": "NTS_DECISION_2026-04-29_BRIDGE_CANON_v1_1_LAW_N13.md authored at docs/LAW_CLA_LLM/SHARED/amendments/approved/ — repo-backed authority chain for future Bridge-related task specs."
+  },
+  "evidence": {
+    "successful_runs_post_fix": [
+      {
+        "run_id": 25095463913,
+        "branch": "fix/LANE01-INH-CODE-02b-heartbeat-failing",
+        "trigger": "workflow_dispatch",
+        "conclusion": "success",
+        "duration_sec": 8,
+        "status": "alive",
+        "all_7_pass": true
+      },
+      {
+        "run_id": 25095568456,
+        "branch": "main (post-merge)",
+        "trigger": "workflow_dispatch",
+        "conclusion": "success",
+        "duration_sec": 8,
+        "status": "alive",
+        "all_7_pass": true
+      }
+    ],
+    "failed_runs_pre_fix_summary": "7 consecutive scheduled runs failed 2026-04-28T20:50Z..2026-04-29T06:35Z — all with single FAIL on Continuity, gaps 78/72/66/59/235/153 min vs threshold 900s",
+    "ledger_status": "Append-only intact; every failed run still landed an unhealthy entry; format unchanged"
+  },
+  "deliverables": {
+    "snapshot": "snapshots/LANE01-INH-CODE-02b-HEARTBEAT-FIX-FAILING.snapshot.live.json",
+    "report": "reports/LANE01-INH-CODE-02b-HEARTBEAT-FIX-FAILING_REPORT.md",
+    "audit_log": "audit_logs/LANE01-INH-CODE-02b-HEARTBEAT-FIX-FAILING_audit.log",
+    "code_changes": [
+      "scripts/heartbeat_checker.py (modified — Continuity threshold 900s→21600s + docstring)",
+      ".github/workflows/aier_code_heartbeat.yml (modified — ref: ${{ github.ref }} for branch-dispatch capability)"
+    ],
+    "governance": "docs/LAW_CLA_LLM/SHARED/amendments/approved/NTS_DECISION_2026-04-29_BRIDGE_CANON_v1_1_LAW_N13.md (NEW)"
+  },
+  "acceptance_criteria_status": "9/10 PASS · 1/10 in-progress (AC5 scheduled-run verification — open window)",
+  "boundary_compliance": "8/8 PASS (LANE01- DOT format · [vercel skip] all commits · no redesign · no condition disabled · no Uniton_OS touched · no admin bypass · self-merge after AC verify · NTS clicks = 0)",
+  "follow_ups_for_CLA": [
+    "Task 4 LANE01-INH-CODE-04-BUILD-L1-INGEST still HALT — needs Supabase env vars (or authorization to copy from ../Uniton_OS/.env.local) + Mgmt API runner authoring + PR #8 (blueprint) merge",
+    "PR #8 (Task 3 blueprint) still OPEN — recommend merge so docs/architecture/BRAIN_BLUEPRINT_AIER_CODE.md reaches main and can be cited by Task 4 spec",
+    "AMD_NTS_FULL_TECH_AUTONOMY_2026-04-29 cited in dispatches but not yet repo-backed — recommend separate canon-author packet"
+  ],
+  "next_recommended_actions_by_CLA": [
+    "Wait 30-60 min for scheduled cron runs to fire and confirm fix in real cron conditions",
+    "Optionally trigger more workflow_dispatch runs to seed the success streak in GHA history",
+    "Resume Task 4 dispatch path after PR #8 merge + env-var provision"
+  ],
+  "required_response_type": "ack",
+  "acceptance_criteria": [
+    "PR #9 visible in merged state",
+    "scripts/heartbeat_checker.py contains CONTINUITY_MAX_GAP_SECONDS=21600",
+    "NTS_DECISION packet exists in approved/ directory",
+    "3 mandatory deliverables LANE01- DOT format prefix correct"
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "message_id": "MSG-L01-L02-NOTICE-20260429-001",
+  "from_lane": "Lane_01",
+  "to_lane": "Lane_02",
+  "message_type": "handoff-notice",
+  "priority": "normal",
+  "status": "sent",
+  "created_at": "2026-04-29T06:30:00Z",
+  "related_task_id": "CLAC-DAY1-BUNDLE-V1",
+  "subject": "Multi-repo setup + formal PAUSE acknowledgment (AIER Code → Uniton_OS migration in flight)",
+  "body": "Lane_02 — formal pause directive while migration AIER Code → Uniton_OS is in flight.\n\n## Status\n- Lane_02 PAUSED until T-INT-06 cutover (~Day 6, 2026-05-05)\n- Do NOT pickup new tasks from Lane_02 queue (network/task_queues/Lane_02.md)\n- Do NOT modify scripts/brain/* (Brain MVP work scope; pre-audited per audit/LANE02_BRAIN_MVP_SCOPE.md for T-INT-05 decommission)\n- Do NOT modify SHARED/laws/ or CANON/ (always NTS-only per R-AUTH-01; reinforced during migration)\n\n## Pre-arranged setup\n- C:\\workspace\\Uniton_OS clone is shared with Cursor on Vultr; Lane_02 reads from this for reference (canonical operator path: C:\\workspace\\Uniton_OS via docs/MULTI_REPO_LOCAL_PATHS.md)\n- Lane_02 own primary stays at C:\\workspace\\Uniton_Shared_Lane2 (or wherever Lane_02 host machine has the workspace)\n- Use Uniton_OS clone to understand brain structure post-migration; do NOT modify Uniton_OS source (R-LANE-01)\n\n## Post-migration\n- Lane_02 will receive new dispatch from Lane_01 after T-INT-06 cutover\n- Brain MVP work superseded by Uniton_OS Brain (4-layer L1-L4 already live)\n- Lane_02 role refocus per pending AMD: Compliance Officer + Governance Control (cross-Lane compliance enforcement + Uniton_OS canon drift audit)\n\n## ACK required\nReply via handoffs/outbox/Lane_02/RSP-L02-L01-NOTICE-PAUSE-20260429-001.json with status='acknowledged' + result='Lane_02 paused; Uniton_OS read-only ref noted'.\n\n## References\n- Audit: audit/AIER_CODE_INVENTORY.json (full component map)\n- Audit: audit/AIER_CODE_DATA_FOR_INGEST.md (Cursor T-INT-03 reference)\n- Audit: audit/LANE02_BRAIN_MVP_SCOPE.md (T-INT-05 decommission scope)\n- Multi-repo doc: docs/MULTI_REPO_LOCAL_PATHS.md\n- NTS verbatim 2026-04-29: 'tranh thủ để tích hợp 2 hệ thống thành một hệ và cho các lane 2-3 làm việc'\n",
+  "requested_action": "ACK pause directive + verify Uniton_OS clone read-access on Lane_02 host machine",
+  "required_response_type": "ack",
+  "evidence_paths": [
+    "audit/AIER_CODE_INVENTORY.json",
+    "audit/AIER_CODE_DATA_FOR_INGEST.md",
+    "audit/LANE02_BRAIN_MVP_SCOPE.md",
+    "docs/MULTI_REPO_LOCAL_PATHS.md"
+  ],
+  "acceptance_criteria": [
+    "Lane_02 reads pause directive + acknowledges in outbox/Lane_02/RSP-L02-L01-NOTICE-PAUSE-20260429-001.json",
+    "Lane_02 confirms Uniton_OS clone available read-only on its host machine (Lane_02 own setup; Vultr-side clone is for Cursor)",
+    "Lane_02 does NOT pickup new tasks from queue until T-INT-06 cutover signal",
+    "Lane_02 does NOT modify scripts/brain/* during migration window"
+  ]
+}

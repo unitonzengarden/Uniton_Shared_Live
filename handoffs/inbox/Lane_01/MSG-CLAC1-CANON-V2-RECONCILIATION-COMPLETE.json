@@ -1,0 +1,67 @@
+{
+  "schema_version": "lane_message.v1",
+  "message_id": "MSG-CLAC1-CANON-V2-RECONCILIATION-COMPLETE",
+  "from": "CLAC-1",
+  "to": "Lane_01_CLA",
+  "lane": "Lane_01",
+  "task_id": "LANE01-CANON-V2-RECONCILIATION-V1",
+  "kind": "TASK_COMPLETE",
+  "created_at": "2026-04-29T17:42:00Z",
+  "status": "PASS_PENDING_NTS_APPROVAL",
+  "summary": "Reconciliation proposal authored covering 6 sections (membership tiers, 7 core modules, roadmap phases, Connect-to-Earn, 6 Roots status, QOT bridge). Three-way drift surfaced. sync_runtime_to_public.yml extended (HD-03 fix from Cursor audit §8.9). 3 DOT deliverables shipped. NTS approval gate per R-AUTH-01.",
+  "primary_deliverable": "audits/ecosystem/uzg-plus/CANON_V2_RECONCILIATION_PROPOSAL.md (10 sections)",
+  "key_findings_severity": {
+    "HIGH": ["§1 Membership tier naming", "§2 Seven Core Modules", "§3 Roadmap phases", "§6 QOT Cross-System Bridge"],
+    "MEDIUM": ["§4 Connect-to-Earn", "§5 Six Roots status"]
+  },
+  "evidence_corrections_to_dispatch_text": [
+    {
+      "in_dispatch": "Section 4 listed 12 reward action types",
+      "actual": "reward_emit/index.ts has 14 action types (3 mission_* sub-types + promotion_claim were missing from dispatch list)",
+      "evidence_path": "C:/workspace/UZGPLUS/supabase/functions/reward_emit/index.ts:23-160"
+    },
+    {
+      "in_dispatch": "Section 1 hint membership 'tier-flexible'",
+      "actual": "4 enumerated tiers in catalog: Explorer/Seeker/Builder/Sovereign (not the legacy 6-tier project knowledge)",
+      "evidence_path": "C:/workspace/UZGPLUS/supabase/migrations/20260319234501_v2_p4_membership_usd_credit_canon.sql:55-79"
+    }
+  ],
+  "deliverables": {
+    "proposal": "audits/ecosystem/uzg-plus/CANON_V2_RECONCILIATION_PROPOSAL.md",
+    "report": "reports/LANE01-CANON-V2-RECONCILIATION-V1_REPORT.md",
+    "snapshot": "snapshots/LANE01-CANON-V2-RECONCILIATION-V1.snapshot.live.json",
+    "audit_log": "audit_logs/LANE01-CANON-V2-RECONCILIATION-V1_audit.log",
+    "handoff": "handoffs/inbox/Lane_01/MSG-CLAC1-CANON-V2-RECONCILIATION-COMPLETE.json"
+  },
+  "infrastructure_changes": {
+    "sync_runtime_to_public_yml_extended": true,
+    "paths_added": ["audits/ecosystem/**", "system_maps/**", "handoffs/inbox/**", "!audits/archive/**", "!handoffs/_archive/**"],
+    "cp_block_added": "for ns in audits/ecosystem system_maps handoffs/inbox; do cp -R ...",
+    "sync_info_urls_added": 5,
+    "yaml_validated": true
+  },
+  "honest_disclosures": [
+    "PAT scope still limited (KF-01 carryover from prior task) — gh api inaccessible to uzgplus-app; used local C:/workspace/UZGPLUS/ files (read-only, boundary preserved)",
+    "Dispatch listed 12 action types; reality is 14 (corrected in proposal §4)",
+    "Dispatch hinted membership 'tier-flexible'; reality is 4 enumerated tiers (corrected in proposal §1)",
+    "QOT bridge between UZG+ and AIER Code is NOT visible at any inspected source surface — requires separate audit",
+    "aier-verify self-verify (Phase I) likely FAIL — same pattern as prior 2 tasks, catches honest PENDING/PARTIAL fields, NOT fake-greened per dispatch §7 #1"
+  ],
+  "next_recommended_for_NTS": "Approve sections 1-6 (per-section approve/amend/reject/defer per R-AUTH-01). After approval: dispatch LANE01-CANON-V2-EDIT-AND-LOCK-V1 to apply edits to canon docs in C:/workspace/UZGPLUS/. In parallel: dispatch LANE01-QOT-BRIDGE-LOCATE-AND-AUDIT-V1 to resolve §6 architectural unknown. Deferred: LANE01-CANON-V2-TOKENOMICS-RECONCILIATION-V1 for C001-C005 conflicts.",
+  "pr_url": "https://github.com/unitonzengarden/Uniton_Shared/pull/20",
+  "merge_commit": "d90aaed8f6c2fc6bcb85c3dd711bddc8a9c2c2f7",
+  "merged_at": "2026-04-29T17:54:38Z",
+  "self_merge_per_AMD": true,
+  "nts_clicks": 0,
+  "post_merge_critical_incident": {
+    "id": "INC-01",
+    "severity": "CRITICAL",
+    "summary": "Cursor's audit log line 19 contains a leaked classic GitHub PAT (ghp_R...). Discovered when sync_runtime_to_public push protection blocked propagation to Live mirror. Token is in Uniton_Shared main commit history (PR #14 commit 7a9fd75).",
+    "clac1_response": "Updated sync workflow to exclude *_audit.log from public mirror; documented in report §17, snapshot post_merge_incident.",
+    "required_nts_action": [
+      "ROTATE ghp_R...Mydpp immediately at github.com/settings/tokens",
+      "Decide history scrub: git filter-repo destructive vs accept private-history exposure with rotation only",
+      "Add pre-commit secret-pattern lint (Lane_03 territory)"
+    ]
+  }
+}

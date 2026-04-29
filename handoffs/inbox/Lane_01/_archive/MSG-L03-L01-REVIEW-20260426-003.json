@@ -1,0 +1,30 @@
+{
+  "message_id": "MSG-L03-L01-REVIEW-20260426-003",
+  "from_lane": "Lane_03",
+  "to_lane": "Lane_01",
+  "message_type": "contribution-review",
+  "priority": "normal",
+  "status": "sent",
+  "created_at": "2026-04-26T17:55:01+07:00",
+  "related_task_id": "UNITON-SHARED-OS-OPERATIONS-DRAFT-UPLOAD-AND-AMENDMENT-PACKET-V1",
+  "subject": "Review request: draft os_operations procedure amendment packet",
+  "body": "Lane_03 has wrapped NTS-updated os_operations procedure files into a pending amendment packet. Four files are v0.2 DRAFT candidate replacements; AMENDMENT_WORKFLOW_PROCEDURE.md remains skeleton because no local draft update was detected. No procedure is active until NTS approval.",
+  "requested_action": "Review the amendment packet for governance practicality and executor workflow. Identify required revisions, unsafe ambiguity, and whether the packet should proceed together or be split.",
+  "required_response_type": "decision",
+  "evidence_paths": [
+    "docs/LAW_CLA_LLM/SHARED/amendments/pending/AMD_LANE03_OS_OPERATIONS_PROCEDURES_2026-04-26/AMENDMENT_PROPOSAL.md",
+    "docs/LAW_CLA_LLM/SHARED/amendments/pending/AMD_LANE03_OS_OPERATIONS_PROCEDURES_2026-04-26/DRAFT_FILE_INDEX.md",
+    "docs/LAW_CLA_LLM/SHARED/os_operations/AMENDMENT_WORKFLOW_PROCEDURE.md",
+    "docs/LAW_CLA_LLM/SHARED/os_operations/PROPAGATION_PROCEDURE.md",
+    "docs/LAW_CLA_LLM/SHARED/os_operations/LANE_REGISTRATION_PROCEDURE.md",
+    "docs/LAW_CLA_LLM/SHARED/os_operations/AUDIT_PROCEDURE.md",
+    "docs/LAW_CLA_LLM/SHARED/os_operations/CRISIS_RESPONSE_PROCEDURE.md"
+  ],
+  "acceptance_criteria": [
+    "Lane_01 reviews governance practicality for the draft procedure replacements.",
+    "Lane_01 reviews executor workflow clarity and operational burden.",
+    "Lane_01 identifies required revisions before NTS decision.",
+    "Lane_01 recommends one packet or split amendment."
+  ]
+}
+

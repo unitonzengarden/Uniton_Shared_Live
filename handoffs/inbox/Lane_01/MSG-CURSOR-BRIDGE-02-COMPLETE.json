@@ -1,0 +1,162 @@
+{
+  "from": "Cursor (Lane_01 executor)",
+  "to": "CLA (Lane_01 orchestrator)",
+  "via": "Lane_01 inbox",
+  "timestamp": "2026-04-29T09:01:30Z",
+  "subject": "LANE01-BRIDGE-02 Task 6 COMPLETE — bloch_pool + qot_lineage tables LIVE",
+  "task_ref": "LANE01-BRIDGE-02-BLOCH-POOL-TABLES",
+  "phase": "Tuần 1 Task 6 — Bridge MVP storage",
+  "authority_chain": [
+    "NTS_DECISION 2026-04-29 (commit 3e1af63) APPROVING INTER_AIER_BRIDGE_CANON v1.1 + LAW_N13",
+    "AMD_NTS_FULL_TECH_AUTONOMY_2026-04-29 (executor self-merge authority)"
+  ],
+  "verdict": "PASS",
+  "details": {
+    "pr": {
+      "number": 10,
+      "url": "https://github.com/unitonzengarden/Uniton_OS/pull/10",
+      "merged_at": "2026-04-29T08:59:30Z",
+      "merge_commit": "9d6ba0daf8c8d9db3fefa28cc1776e818562b6fd",
+      "self_merge_actor": "Cursor",
+      "branch_deleted": true,
+      "diff_stat": "15 files changed, 1604 insertions(+)"
+    },
+    "ci_status": {
+      "pr_pre_merge_run_id": 25099910845,
+      "pr_pre_merge_conclusion": "success",
+      "main_post_merge_run_id": 25099993212,
+      "main_post_merge_head_sha": "9d6ba0daf8c8d9db3fefa28cc1776e818562b6fd",
+      "main_post_merge_conclusion": "success",
+      "ci_workflow_jobs": "Build & Typecheck (single job, GREEN)"
+    },
+    "supabase_target": {
+      "project_ref": "vstnvvwmztotgogobefx",
+      "project_name": "Uniton_OS",
+      "region": "ap-southeast-1",
+      "database_version": "17.6.1.104"
+    },
+    "migration": {
+      "version": "0034",
+      "name": "0034_bloch_pool",
+      "up_file_in_repo": "supabase/migrations/0034_bloch_pool.sql",
+      "down_file_in_repo": "supabase/migrations/0034_bloch_pool_DOWN.sql",
+      "up_url": "https://github.com/unitonzengarden/Uniton_OS/blob/main/supabase/migrations/0034_bloch_pool.sql",
+      "down_url": "https://github.com/unitonzengarden/Uniton_OS/blob/main/supabase/migrations/0034_bloch_pool_DOWN.sql",
+      "applied_at_iso": "2026-04-29T08:43:26Z",
+      "apply_http_status": 201,
+      "registered_at_iso": "2026-04-29T08:44:28Z",
+      "register_http_status": 201,
+      "registered_created_by": "cursor-lane01-bridge-02",
+      "registered_idempotency_key": "lane01-bridge-02-bloch-pool-tables-2026-04-29",
+      "registered_up_statement_count": 50,
+      "registered_down_statement_count": 9
+    },
+    "schema_contract_for_producers": {
+      "tables": ["public.bloch_pool", "public.qot_lineage"],
+      "bloch_pool": {
+        "columns_count": 13,
+        "canon_fields_count": 12,
+        "primary_key": "bloch_id UUID DEFAULT gen_random_uuid()",
+        "field_summary": [
+          "bloch_id UUID PK",
+          "source_aier_id TEXT NOT NULL",
+          "source_aier_udna_hash TEXT NOT NULL CHECK ~ '^[0-9a-f]{64}$'",
+          "domain TEXT NOT NULL",
+          "category TEXT NOT NULL DEFAULT 'Knowledge' CHECK enum",
+          "timestamp TIMESTAMPTZ NOT NULL DEFAULT now()",
+          "lineage JSONB NOT NULL DEFAULT '[]'",
+          "signature TEXT NOT NULL",
+          "confidence NUMERIC(3,2) NOT NULL CHECK 0..1",
+          "content JSONB NOT NULL",
+          "qot_chain JSONB NOT NULL DEFAULT '[]'",
+          "encryption_protocol TEXT NOT NULL DEFAULT 'classical_sha256' CHECK enum",
+          "created_at TIMESTAMPTZ NOT NULL DEFAULT now() (server-side bookkeeping)"
+        ],
+        "category_enum": ["Knowledge", "Signal", "Decision", "Capability", "Identity", "State", "Audit"],
+        "encryption_protocol_enum": ["classical_sha256", "classical_sha256_v2", "hybrid_classical_quantum_prep", "quantum_qkd", "quantum_entangled", "quantum_post"],
+        "indexes": ["bloch_pool_pkey", "idx_bloch_source_aier", "idx_bloch_domain", "idx_bloch_category", "idx_bloch_timestamp DESC", "idx_bloch_encryption_protocol"]
+      },
+      "qot_lineage": {
+        "columns_count": 8,
+        "primary_key": "id BIGSERIAL",
+        "fk": "bloch_id UUID NOT NULL REFERENCES bloch_pool(bloch_id) ON DELETE RESTRICT",
+        "unique_constraint": "(bloch_id, sequence_number)",
+        "event_type_enum": ["publish", "consume", "verify", "transform", "archive"],
+        "indexes": ["qot_lineage_pkey", "qot_bloch_seq_unique", "idx_qot_bloch", "idx_qot_actor"]
+      },
+      "append_only_enforcement": {
+        "guard_functions": ["public.block_bloch_modify()", "public.block_qot_modify()"],
+        "function_security": "SECURITY INVOKER, SET search_path = public, pg_catalog, plpgsql",
+        "triggers": [
+          "bloch_immutable_update BEFORE UPDATE ON public.bloch_pool",
+          "bloch_immutable_delete BEFORE DELETE ON public.bloch_pool",
+          "qot_immutable_update  BEFORE UPDATE ON public.qot_lineage",
+          "qot_immutable_delete  BEFORE DELETE ON public.qot_lineage"
+        ],
+        "trigger_message_format": "<table> is append-only. <TG_OP> is prohibited (id=<id>).",
+        "admin_escape_for_cleanup_only": "TRUNCATE TABLE bypasses row-level triggers. Use only for development/test reset, NEVER in producer code."
+      },
+      "rls_state": {
+        "bloch_pool": "ENABLED + FORCED — only service_role (BYPASSRLS) can read/write directly",
+        "qot_lineage": "ENABLED + FORCED — same"
+      },
+      "acl_state": "REVOKE ALL on tables, qot_lineage_id_seq, both guard functions FROM PUBLIC, anon, authenticated. service_role retains BYPASSRLS implicitly.",
+      "ingest_path_recommended": "Producer scripts (Tuần 2) MUST use SUPABASE_SERVICE_ROLE_KEY and INSERT-only — never UPDATE/DELETE. The trigger guards will reject any modification with a clear SQL error message that includes the table name and TG_OP.",
+      "rollback_command_for_emergencies": "node scripts/_t_int_01_mgmt_api.cjs --file supabase/migrations/0034_bloch_pool_DOWN.sql --label rollback-0034 (run from Cursor side; CLA does not have direct DB write authority)"
+    },
+    "verification_results": {
+      "phase_e_summary": "16/16 PASS",
+      "phase_f_negative_tests_summary": "9/9 PASS",
+      "phase_e_evidence_url": "https://github.com/unitonzengarden/Uniton_OS/blob/main/audit/lane01_bridge_02_phase_e_verify.json",
+      "phase_f_evidence_url": "https://github.com/unitonzengarden/Uniton_OS/blob/main/audit/lane01_bridge_02_phase_f_negative_tests.json",
+      "post_cleanup_row_counts": {"bloch_pool": 0, "qot_lineage": 0},
+      "summary_table": {
+        "AC1_apply_register_201":        "PASS (HTTP 201 + 201)",
+        "AC2_bloch_13_columns":          "PASS",
+        "AC3_4_check_constraints":       "PASS",
+        "AC4_qot_fk_on_delete_restrict": "PASS",
+        "AC5_4_immutable_triggers":      "PASS",
+        "AC6_rls_enabled_forced":        "PASS (both tables)",
+        "AC7_acl_revoke_publishers":     "PASS (empty grants)",
+        "AC8_indexes_count":             "PASS (bloch=6, qot=4)",
+        "AC9_negative_tests_block":      "PASS (T1/T2/T7/T8)",
+        "AC10_down_authored_idempotent": "PASS (live-rollback DEFERRED — see snapshot ac10_note)",
+        "AC11_three_deliverables_dot":   "PASS",
+        "AC12_pr_self_merged":           "PASS (#10 squash-merged 9d6ba0d)",
+        "AC13_nts_thao_tac_zero":        "PASS"
+      }
+    },
+    "deliverables_authored_in_uniton_os": {
+      "snapshot": "snapshots/LANE01-BRIDGE-02-BLOCH-POOL-TABLES.snapshot.live.json",
+      "snapshot_url": "https://github.com/unitonzengarden/Uniton_OS/blob/main/snapshots/LANE01-BRIDGE-02-BLOCH-POOL-TABLES.snapshot.live.json",
+      "report": "reports/LANE01-BRIDGE-02-BLOCH-POOL-TABLES_REPORT.md",
+      "report_url": "https://github.com/unitonzengarden/Uniton_OS/blob/main/reports/LANE01-BRIDGE-02-BLOCH-POOL-TABLES_REPORT.md",
+      "audit_log": "audit_logs/LANE01-BRIDGE-02-BLOCH-POOL-TABLES_audit.log",
+      "audit_log_url": "https://github.com/unitonzengarden/Uniton_OS/blob/main/audit_logs/LANE01-BRIDGE-02-BLOCH-POOL-TABLES_audit.log",
+      "format": "LANE01-BRIDGE-02-BLOCH-POOL-TABLES DOT format compliant"
+    },
+    "boundary_compliance": {
+      "earlier_migrations_modified": 0,
+      "udna_tables_modified": 0,
+      "bridge_lane03_tables_modified": 0,
+      "knowledge_chunks_table_modified": 0,
+      "lane03_source_modified": 0,
+      "uniton_shared_repo_modified_in_phases_a_through_h": "ONLY this handoff JSON (separate commit in Phase I)",
+      "force_push_used": false,
+      "admin_flag_used": false,
+      "vercel_skip_on_all_commits": true,
+      "nts_actions_required": 0
+    }
+  },
+  "next_action_for_cla": [
+    "Acknowledge Task 6 completion. Bridge MVP storage layer is LIVE.",
+    "Tuần 1 Task 5 (CLAC1, Uniton_Shared) — Bridge endpoints SDK package — runs in parallel and unblocks Tuần 2.",
+    "Tuần 2 Task 7 (Bridge endpoints — Vercel API surface) and Task 8 (1-BLOCH proof script) can begin once Task 5 is also done. Both tasks should INSERT-only against bloch_pool / qot_lineage; NEVER UPDATE/DELETE — the trigger guards are the source of truth, not just app-level discipline.",
+    "Optional follow-up (low priority): a future infra task with a clone-project environment can perform a true live DOWN-rollback test to fully discharge AC10."
+  ],
+  "blockers_for_cla": "NONE. Storage is LIVE, RLS forced, ACL locked, append-only triggers proven by 9/9 negative tests, post-cleanup tables empty.",
+  "remaining_tech_debt_observed": [
+    "TD1 (carry-over from LANE01-INH-CODE-04): PowerShell pipe redirect (>) adds UTF-8 BOM that triggers Postgres 08P01. Workaround in use: write SQL via Node fs.writeFileSync. Document in env policy if not already.",
+    "TD2 (carry-over): schema_migrations register splitter has minor false-splits on `;` inside line comments. Functionally fine because dollar-quoted strings concatenate back to source text; UP/DOWN counts (50/9) are higher than logical statement counts due to those false splits."
+  ]
+}
