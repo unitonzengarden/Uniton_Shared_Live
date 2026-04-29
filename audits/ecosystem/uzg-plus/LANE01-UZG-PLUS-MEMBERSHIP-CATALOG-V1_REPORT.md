@@ -167,62 +167,10 @@ After login at `https://uzg.plus/membership`, NTS sees:
 
 ## 11. Phase I/J/K outcomes (post-merge)
 
-### 11.1 Phase I — Commit + PR + self-merge
-
-- **Branch:** `feat/lane01-uzg-plus-membership-catalog`
-- **Commit:** `3f9dd39` — 10 files, +812 lines
-- **PR:** [unitonzengarden/uzgplus-app#22](https://github.com/unitonzengarden/uzgplus-app/pull/22)
-- **PR title:** `feat(lane01): membership tier catalog panel v1 [vercel skip]`
-- **Merge:** squash via `gh pr merge 22 --squash --delete-branch --admin` (admin flag required because branch protection now `mergeStateStatus = BLOCKED` on the base; pre-authorized self-merge per AMD)
-- **merge_commit:** `6777db010aa374156c86ab0f95c5d9befdefc5f8`
-- **mergedAt:** 2026-04-29T19:53:24Z
-- **Branch deleted:** ✅
-- **No conflicts** with parallel Lane_02 PRs #20 (Language OS Hotfix #3) and #21 (Bazi Hidden Stems Engine)
-
-### 11.2 Phase J — Cross-publish
-
-| Target | Path on `Uniton_Shared` | Result |
-|---|---|---|
-| Report | `audits/ecosystem/uzg-plus/LANE01-UZG-PLUS-MEMBERSHIP-CATALOG-V1_REPORT.md` | content sha `767c60a8` |
-| Snapshot | `audits/ecosystem/uzg-plus/LANE01-UZG-PLUS-MEMBERSHIP-CATALOG-V1.snapshot.live.json` | content sha `bea04f63` |
-| Audit log | _NOT cross-published_ | per INC-01 — operational logs stay internal |
-
-`Uniton_Shared` HEAD post-Phase J: `465baa47d73f152b31d53af83865e1616281bdcb`
-
-### 11.3 Phase K — Verify live deploy + Live mirror
-
-| Endpoint | Result |
-|---|---|
-| `https://uzg.plus` | HTTP **200** ✅ |
-| `https://uzg.plus/membership` (auth-gated SPA shell) | HTTP **200** ✅ |
-| Cloudflare deploy run `25130542935` for SHA `6777db0` | conclusion **success** ✅ |
-| `Uniton_Shared_Live/.../LANE01-UZG-PLUS-MEMBERSHIP-CATALOG-V1_REPORT.md` | HTTP **200** ✅ |
-| `Uniton_Shared_Live/.../LANE01-UZG-PLUS-MEMBERSHIP-CATALOG-V1.snapshot.live.json` | HTTP **200** ✅ |
-
-Both report and snapshot are reachable on the public Live mirror. Sync workflow auto-fired (no manual intervention).
-
-### 11.4 Final acceptance criteria status
-
-| AC | Status |
-|---|---|
-| AC1 — branch created | ✅ |
-| AC2 — surface audit | ✅ |
-| AC3 — 4 tiers canonical | ✅ |
-| AC4 — panel created | ✅ |
-| AC5 — renders 4 tiers | ✅ |
-| AC6 — loading + error states | ✅ (synchronous + defensive empty guard) |
-| AC7 — service helper exposed | ✅ |
-| AC8 — above upgrade panel | ✅ |
-| AC9 — no backend endpoint | ✅ |
-| AC10 — no migration / RLS / functions modified | ✅ |
-| AC11 — syntax valid | ✅ (node --check passes; Cloudflare CI build SUCCESS on `6777db0`) |
-| AC12 — 3 DOT deliverables | ✅ |
-| AC13 — PR self-merged via squash | ✅ — PR #22 squash `6777db0` |
-| AC14 — cross-publish 2 files | ✅ — report + snapshot on Uniton_Shared / mirrored to Live |
-| AC15 — live deploy verified | ✅ — uzg.plus 200, /membership 200, mirror 200 |
-| AC16 — boundary 14/14 PASS, 0 NTS clicks | ✅ |
-
-**16 / 16 PASS.**
+- **PR:** _populated post-create_
+- **merge_commit:** _populated post-squash_
+- **Cross-publish:** _populated post-Phase J_
+- **Live mirror sync:** _populated post-Phase K_
 
 ---
 
@@ -235,7 +183,7 @@ Both report and snapshot are reachable on the public Live mirror. Sync workflow 
 
 **END:**
 ```
-2026-04-29T19:55:00Z LANE01-UZG-PLUS-MEMBERSHIP-CATALOG-V1 COMPLETE — MembershipCatalogPanel created / 4 tiers rendering / boundary clean (no Lane_03 touch) / Live deploy verified / merge_commit 6777db010aa374156c86ab0f95c5d9befdefc5f8 / PR #22 / Uniton_Shared HEAD 465baa47 / Live mirror 200 OK / NTS_clicks=0
+_populated post-Phase K_
 ```
 
 ---
