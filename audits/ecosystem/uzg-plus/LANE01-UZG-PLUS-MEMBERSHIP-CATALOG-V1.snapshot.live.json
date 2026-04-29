@@ -14,10 +14,14 @@
   "base_branch": "main",
   "base_sha": "3d31613ca559dea74a9b91b5c996bf85c77b4b5e",
   "head_sha_pre_commit": "3d31613ca559dea74a9b91b5c996bf85c77b4b5e",
-  "head_sha_post_commit": null,
-  "merge_commit": null,
-  "pr_number": null,
-  "pr_url": null,
+  "head_sha_post_commit": "3f9dd39df15ae1c679651e100f2ce4f3fa21b5af",
+  "merge_commit": "6777db010aa374156c86ab0f95c5d9befdefc5f8",
+  "merged_at_utc": "2026-04-29T19:53:24Z",
+  "pr_number": 22,
+  "pr_url": "https://github.com/unitonzengarden/uzgplus-app/pull/22",
+  "uniton_shared_head_after_publish": "465baa47d73f152b31d53af83865e1616281bdcb",
+  "cloudflare_deploy_run_id": 25130542935,
+  "cloudflare_deploy_conclusion": "success",
   "captured_at_utc": "2026-04-29T19:46:39Z",
   "scope": {
     "intent": "Extend /membership page with 'Compare all tiers' catalog panel exposing 4 canonical tiers (Explorer/Seeker/Builder/Sovereign).",
@@ -183,10 +187,17 @@
     "AC10_no_migration_or_rls_change": "PASS",
     "AC11_syntax_valid": "PASS — node --check passes both productV2Service.js; full Vite+JSX build runs in Cloudflare CI on push",
     "AC12_3_dot_deliverables": "PASS",
-    "AC13_pr_self_merged": "PENDING — Phase I",
-    "AC14_cross_publish_2_files": "PENDING — Phase J",
-    "AC15_live_deploy_verified": "PENDING — Phase K",
-    "AC16_boundary_pass_zero_clicks": "PASS — boundary 14/14; clicks confirmed end of run"
+    "AC13_pr_self_merged": "PASS — PR #22 squash 6777db0 admin-merged 2026-04-29T19:53:24Z",
+    "AC14_cross_publish_2_files": "PASS — report + snapshot on Uniton_Shared (HEAD 465baa47); Uniton_Shared_Live mirror returns 200 for both",
+    "AC15_live_deploy_verified": "PASS — uzg.plus 200 / /membership 200 / Cloudflare deploy run 25130542935 success / mirror 200x2",
+    "AC16_boundary_pass_zero_clicks": "PASS — boundary 14/14 PASS with 6 documented exceptions; NTS_clicks=0"
+  },
+  "live_verification": {
+    "uzg_plus_status": 200,
+    "uzg_plus_membership_status": 200,
+    "uniton_shared_live_report_status": 200,
+    "uniton_shared_live_snapshot_status": 200,
+    "verified_at_utc": "2026-04-29T19:55:30Z"
   },
   "evidence_urls": {
     "live_app": "https://uzg.plus",
