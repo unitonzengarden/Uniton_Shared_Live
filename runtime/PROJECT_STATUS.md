@@ -10,7 +10,7 @@
 ## §0. Header
 
 - **Generator:** `aier-state-update v1.0` invoked via `scripts/runtime/generate_project_status.py v1.1`
-- **Source commit:** `9c6fd2b4d983fd71a122a2f488827afc14db75f9` (short: `9c6fd2b`)
+- **Source commit:** `52fc0db1543abd0d9a439def25fcde577e7ab010` (short: `52fc0db`)
 - **Auto-generated:** `true` (do not hand-edit)
 - **Authority:** repo-backed automation per LAW_N8 §L8.2 explicitly enabled CI mode (state-mirror auto-regenerate scope only)
 
@@ -68,11 +68,11 @@
 
 | SHA | Author | Subject |
 |---|---|---|
+| `52fc0db` | unitonzengarden | docs(runtime): refresh AIER context packet and health state after mirror verify [vercel skip] |
+| `ab2b208` | Uniton Zen | feat(LANE01): Live Ledger Foundation Option B — 4 namespaces + backfill state (#16) |
+| `895e041` | AIER State Bot | [auto-status] regen runtime+network surfaces from 9c6fd2b [vercel skip] |
 | `9c6fd2b` | unitonzengarden | docs(runtime): verify Uniton_Shared_Live context health sync [vercel skip] |
 | `03fb5d3` | AIER State Bot | [auto-status] regen runtime+network surfaces from 53a0a6a [vercel skip] |
-| `53a0a6a` | CLAC Executor | LANE01-LIVE-LEDGER-TRIGGER-FIX: 3 deliverables + handoff |
-| `c752d15` | AIER State Bot | [auto-status] regen runtime+network surfaces from 584bef2 [vercel skip] |
-| `584bef2` | Uniton Zen | fix(LANE01): sync workflow self-healing via workflow_run trigger (#15) |
 
 ## §7. Latest 5 DONE Tasks (from MASTER_CHECKLIST)
 
