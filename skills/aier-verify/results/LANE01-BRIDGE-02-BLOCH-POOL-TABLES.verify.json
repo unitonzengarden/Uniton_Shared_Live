@@ -1,0 +1,76 @@
+{
+  "task_id": "LANE01-BRIDGE-02-BLOCH-POOL-TABLES",
+  "skill_id": "aier-verify",
+  "skill_version": "v2.0",
+  "verdict": "FAIL",
+  "verified_at": "2026-04-29T15:51:32.766Z",
+  "checks": {
+    "report_exists": {
+      "pass": false,
+      "evidence": "reports/LANE01-BRIDGE-02-BLOCH-POOL-TABLES_REPORT.md"
+    },
+    "report_section_count": {
+      "pass": false,
+      "actual": 0,
+      "expected": ">=8",
+      "note": "report file unreadable or missing"
+    },
+    "snapshot_exists": {
+      "pass": false,
+      "evidence": "snapshots/LANE01-BRIDGE-02-BLOCH-POOL-TABLES.snapshot.live.json"
+    },
+    "snapshot_required_fields": {
+      "pass": false,
+      "missing": [
+        "snapshot_file_itself"
+      ],
+      "note": "snapshot file missing"
+    },
+    "audit_log_exists": {
+      "pass": false,
+      "evidence": "audit_logs/LANE01-BRIDGE-02-BLOCH-POOL-TABLES_audit.log"
+    },
+    "audit_log_phase_count": {
+      "pass": false,
+      "actual": 0,
+      "expected": ">=3",
+      "note": "audit_log unreadable or missing"
+    },
+    "deliverable_naming_dot": {
+      "pass": true,
+      "violations": []
+    },
+    "ac_count_match": {
+      "pass": false,
+      "actual": 0,
+      "expected": ">=8",
+      "note": "snapshot has none of ac_status, acceptance_criteria_status, acceptance_criteria_pass, acceptance_status as an object",
+      "field_used": null
+    },
+    "boundary_count_match": {
+      "pass": false,
+      "actual": 0,
+      "expected": ">=8",
+      "note": "snapshot has none of boundary_check, boundary_constraints_honored, boundary_verified, boundary_summary as an object",
+      "field_used": null
+    },
+    "boundary_self_attestation_warning": {
+      "warn": false,
+      "reason": "no snapshot to inspect"
+    }
+  },
+  "summary": {
+    "total_checks": 10,
+    "passed": 1,
+    "failed": 8,
+    "warnings": 0
+  },
+  "verdict_rationale": "FAIL — 8 check(s) failed: report_exists, report_section_count, snapshot_exists, snapshot_required_fields, audit_log_exists, audit_log_phase_count, ac_count_match, boundary_count_match",
+  "inputs_resolved": {
+    "report_path": "reports/LANE01-BRIDGE-02-BLOCH-POOL-TABLES_REPORT.md",
+    "snapshot_path": "snapshots/LANE01-BRIDGE-02-BLOCH-POOL-TABLES.snapshot.live.json",
+    "audit_log_path": "audit_logs/LANE01-BRIDGE-02-BLOCH-POOL-TABLES_audit.log",
+    "expected_ac_count": null,
+    "expected_boundary_count": null
+  }
+}

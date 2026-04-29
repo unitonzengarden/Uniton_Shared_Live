@@ -1,0 +1,102 @@
+{
+  "task_id": "LANE01-AIER-CODE-REALITY-AUDIT-V1",
+  "skill_id": "aier-verify",
+  "skill_version": "v2.0",
+  "verdict": "FAIL",
+  "verified_at": "2026-04-29T15:52:00.866Z",
+  "checks": {
+    "report_exists": {
+      "pass": true,
+      "evidence": "reports/LANE01-AIER-CODE-REALITY-AUDIT-V1_REPORT.md"
+    },
+    "report_section_count": {
+      "pass": true,
+      "actual": 17,
+      "expected": ">=8",
+      "note": "meets full LAW_N5 §L5.4 expectation (>=14)"
+    },
+    "snapshot_exists": {
+      "pass": true,
+      "evidence": "snapshots/LANE01-AIER-CODE-REALITY-AUDIT-V1.snapshot.live.json"
+    },
+    "snapshot_required_fields": {
+      "pass": true,
+      "missing": [],
+      "present_fields": [
+        "task_id",
+        "executor",
+        "model",
+        "lane",
+        "self_approve_authority",
+        "started_at",
+        "branch",
+        "conflict_of_interest_flagged",
+        "items_authored_by_executor_being_audited",
+        "audit_scope",
+        "matrix_summary",
+        "verdict"
+      ]
+    },
+    "audit_log_exists": {
+      "pass": true,
+      "evidence": "audit_logs/LANE01-AIER-CODE-REALITY-AUDIT-V1_audit.log"
+    },
+    "audit_log_phase_count": {
+      "pass": true,
+      "actual": 6,
+      "total_phase_markers": 26,
+      "expected": ">=3 distinct phases"
+    },
+    "deliverable_naming_dot": {
+      "pass": true,
+      "violations": []
+    },
+    "ac_count_match": {
+      "pass": false,
+      "actual": 18,
+      "expected": ">=8",
+      "field_used": "ac_status",
+      "non_pass_count": 1,
+      "non_pass_values": [
+        {
+          "key": "AC18_self_merge_sync_verified",
+          "value": "PENDING"
+        }
+      ]
+    },
+    "boundary_count_match": {
+      "pass": false,
+      "actual": 14,
+      "expected": ">=8",
+      "field_used": "boundary_check",
+      "non_pass_count": 1,
+      "non_pass_values": [
+        {
+          "key": "self_merge_per_AMD",
+          "value": "PENDING (Phase F)"
+        }
+      ]
+    },
+    "boundary_self_attestation_warning": {
+      "warn": true,
+      "reason": "soft-fail tokens detected; boundary self-attestation flagged for review",
+      "concerns": [
+        "top-level verdict=\"PARTIALLY_ENFORCED\" — non-PASS finding"
+      ]
+    }
+  },
+  "summary": {
+    "total_checks": 10,
+    "passed": 7,
+    "failed": 2,
+    "warnings": 1
+  },
+  "verdict_rationale": "FAIL — 2 check(s) failed: ac_count_match, boundary_count_match",
+  "inputs_resolved": {
+    "report_path": "reports/LANE01-AIER-CODE-REALITY-AUDIT-V1_REPORT.md",
+    "snapshot_path": "snapshots/LANE01-AIER-CODE-REALITY-AUDIT-V1.snapshot.live.json",
+    "audit_log_path": "audit_logs/LANE01-AIER-CODE-REALITY-AUDIT-V1_audit.log",
+    "expected_ac_count": null,
+    "expected_boundary_count": null
+  }
+}

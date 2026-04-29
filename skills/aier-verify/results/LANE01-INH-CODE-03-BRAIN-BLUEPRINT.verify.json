@@ -1,0 +1,89 @@
+{
+  "task_id": "LANE01-INH-CODE-03-BRAIN-BLUEPRINT",
+  "skill_id": "aier-verify",
+  "skill_version": "v2.0",
+  "verdict": "FAIL",
+  "verified_at": "2026-04-29T15:51:33.093Z",
+  "checks": {
+    "report_exists": {
+      "pass": true,
+      "evidence": "reports/LANE01-INH-CODE-03-BRAIN-BLUEPRINT_REPORT.md"
+    },
+    "report_section_count": {
+      "pass": false,
+      "actual": 7,
+      "expected": ">=8",
+      "note": "meets relaxed threshold (>=8); LAW_N5 ideal is >=14"
+    },
+    "snapshot_exists": {
+      "pass": true,
+      "evidence": "snapshots/LANE01-INH-CODE-03-BRAIN-BLUEPRINT.snapshot.live.json"
+    },
+    "snapshot_required_fields": {
+      "pass": true,
+      "missing": [],
+      "present_fields": [
+        "task_id",
+        "executor",
+        "model",
+        "lane",
+        "self_approve_authority",
+        "purpose",
+        "started_at",
+        "head_pre_flight",
+        "branch",
+        "phases",
+        "key_design_decisions",
+        "boundary_check"
+      ]
+    },
+    "audit_log_exists": {
+      "pass": true,
+      "evidence": "audit_logs/LANE01-INH-CODE-03-BRAIN-BLUEPRINT_audit.log"
+    },
+    "audit_log_phase_count": {
+      "pass": true,
+      "actual": 4,
+      "total_phase_markers": 32,
+      "expected": ">=3 distinct phases"
+    },
+    "deliverable_naming_dot": {
+      "pass": true,
+      "violations": []
+    },
+    "ac_count_match": {
+      "pass": true,
+      "actual": 12,
+      "expected": ">=8",
+      "field_used": "acceptance_criteria_pass",
+      "non_pass_count": 0,
+      "non_pass_values": []
+    },
+    "boundary_count_match": {
+      "pass": true,
+      "actual": 10,
+      "expected": ">=8",
+      "field_used": "boundary_check",
+      "non_pass_count": 0,
+      "non_pass_values": []
+    },
+    "boundary_self_attestation_warning": {
+      "warn": false,
+      "reason": "no soft-fail tokens detected; boundary still self-attested per dispatch §11 disclosure"
+    }
+  },
+  "summary": {
+    "total_checks": 10,
+    "passed": 8,
+    "failed": 1,
+    "warnings": 0
+  },
+  "verdict_rationale": "FAIL — 1 check(s) failed: report_section_count",
+  "inputs_resolved": {
+    "report_path": "reports/LANE01-INH-CODE-03-BRAIN-BLUEPRINT_REPORT.md",
+    "snapshot_path": "snapshots/LANE01-INH-CODE-03-BRAIN-BLUEPRINT.snapshot.live.json",
+    "audit_log_path": "audit_logs/LANE01-INH-CODE-03-BRAIN-BLUEPRINT_audit.log",
+    "expected_ac_count": null,
+    "expected_boundary_count": null
+  }
+}

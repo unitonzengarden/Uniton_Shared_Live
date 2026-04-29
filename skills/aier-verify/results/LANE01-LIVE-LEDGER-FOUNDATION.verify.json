@@ -1,0 +1,89 @@
+{
+  "task_id": "LANE01-LIVE-LEDGER-FOUNDATION",
+  "skill_id": "aier-verify",
+  "skill_version": "v2.0",
+  "verdict": "PASS",
+  "verified_at": "2026-04-29T15:52:00.780Z",
+  "checks": {
+    "report_exists": {
+      "pass": true,
+      "evidence": "reports/LANE01-LIVE-LEDGER-FOUNDATION_REPORT.md"
+    },
+    "report_section_count": {
+      "pass": true,
+      "actual": 9,
+      "expected": ">=8",
+      "note": "meets relaxed threshold (>=8); LAW_N5 ideal is >=14"
+    },
+    "snapshot_exists": {
+      "pass": true,
+      "evidence": "snapshots/LANE01-LIVE-LEDGER-FOUNDATION.snapshot.live.json"
+    },
+    "snapshot_required_fields": {
+      "pass": true,
+      "missing": [],
+      "present_fields": [
+        "task_id",
+        "executor",
+        "model",
+        "lane",
+        "self_approve_authority",
+        "purpose",
+        "started_at",
+        "head_pre_flight",
+        "branch",
+        "pr",
+        "merge_commit",
+        "phases_completed"
+      ]
+    },
+    "audit_log_exists": {
+      "pass": true,
+      "evidence": "audit_logs/LANE01-LIVE-LEDGER-FOUNDATION_audit.log"
+    },
+    "audit_log_phase_count": {
+      "pass": true,
+      "actual": 12,
+      "total_phase_markers": 43,
+      "expected": ">=3 distinct phases"
+    },
+    "deliverable_naming_dot": {
+      "pass": true,
+      "violations": []
+    },
+    "ac_count_match": {
+      "pass": true,
+      "actual": 18,
+      "expected": ">=8",
+      "field_used": "acceptance_criteria_status",
+      "non_pass_count": 0,
+      "non_pass_values": []
+    },
+    "boundary_count_match": {
+      "pass": true,
+      "actual": 12,
+      "expected": ">=8",
+      "field_used": "boundary_check",
+      "non_pass_count": 0,
+      "non_pass_values": []
+    },
+    "boundary_self_attestation_warning": {
+      "warn": false,
+      "reason": "no soft-fail tokens detected; boundary still self-attested per dispatch §11 disclosure"
+    }
+  },
+  "summary": {
+    "total_checks": 10,
+    "passed": 9,
+    "failed": 0,
+    "warnings": 0
+  },
+  "verdict_rationale": "PASS — all 10 checks passed with no warnings",
+  "inputs_resolved": {
+    "report_path": "reports/LANE01-LIVE-LEDGER-FOUNDATION_REPORT.md",
+    "snapshot_path": "snapshots/LANE01-LIVE-LEDGER-FOUNDATION.snapshot.live.json",
+    "audit_log_path": "audit_logs/LANE01-LIVE-LEDGER-FOUNDATION_audit.log",
+    "expected_ac_count": null,
+    "expected_boundary_count": null
+  }
+}

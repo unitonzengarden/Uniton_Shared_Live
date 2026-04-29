@@ -1,9 +1,9 @@
 # Uniton_Shared_Live — Sync Info
 
 **Source repo**: unitonzengarden/Uniton_Shared (private)
-**Last sync**: 2026-04-29T15:39:38Z
-**Source commit**: 0ee8b36b87f6f9b9de47f51812dd635ab9981c72
-**Triggered by**: workflow_run
+**Last sync**: 2026-04-29T16:04:59Z
+**Source commit**: f264bf24aa3a8d934c2fffce2ef3dcea61336edc
+**Triggered by**: push
 
 ## Purpose
 
@@ -60,3 +60,8 @@ Canon, laws, skills, lab, rules remain private in Uniton_Shared.
 - https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/aier-status/aier-code/heartbeat.live.json
 - https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/aier-status/aier-code/brain-pointer.live.md
 - (tasks/completed/<YYYY-MM-DD>/<TASK-ID>.live.json — date-rooted; see tasks/INDEX.live.md when present)
+
+## aier-verify skill outputs (LANE01-SKILL-AIER-VERIFY-EXECUTABLE-V1)
+
+- https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/skills/aier-verify/EXECUTION_LOG.live.md
+- https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/skills/aier-verify/results/<TASK-ID>.verify.json

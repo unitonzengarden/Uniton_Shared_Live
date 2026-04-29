@@ -1,0 +1,99 @@
+{
+  "task_id": "LANE01-INH-CODE-04-BUILD-L1-INGEST",
+  "skill_id": "aier-verify",
+  "skill_version": "v2.0",
+  "verdict": "FAIL",
+  "verified_at": "2026-04-29T15:51:33.166Z",
+  "checks": {
+    "report_exists": {
+      "pass": true,
+      "evidence": "reports/LANE01-INH-CODE-04-BUILD-L1-INGEST_REPORT.md"
+    },
+    "report_section_count": {
+      "pass": true,
+      "actual": 9,
+      "expected": ">=8",
+      "note": "meets relaxed threshold (>=8); LAW_N5 ideal is >=14"
+    },
+    "snapshot_exists": {
+      "pass": true,
+      "evidence": "snapshots/LANE01-INH-CODE-04-BUILD-L1-INGEST.snapshot.live.json"
+    },
+    "snapshot_required_fields": {
+      "pass": true,
+      "missing": [],
+      "present_fields": [
+        "task_id",
+        "phase_role",
+        "executor",
+        "model",
+        "lane",
+        "self_approve_authority",
+        "purpose",
+        "started_at",
+        "head_pre_flight",
+        "branch",
+        "depends_on",
+        "phases"
+      ]
+    },
+    "audit_log_exists": {
+      "pass": true,
+      "evidence": "audit_logs/LANE01-INH-CODE-04-BUILD-L1-INGEST_audit.log"
+    },
+    "audit_log_phase_count": {
+      "pass": true,
+      "actual": 6,
+      "total_phase_markers": 27,
+      "expected": ">=3 distinct phases"
+    },
+    "deliverable_naming_dot": {
+      "pass": true,
+      "violations": []
+    },
+    "ac_count_match": {
+      "pass": false,
+      "actual": 8,
+      "expected": ">=8",
+      "field_used": "acceptance_criteria_status",
+      "non_pass_count": 1,
+      "non_pass_values": [
+        {
+          "key": "AC_B7_PR_self_merged",
+          "value": "PENDING (Phase G open PR + self-merge)"
+        }
+      ]
+    },
+    "boundary_count_match": {
+      "pass": false,
+      "actual": 10,
+      "expected": ">=8",
+      "field_used": "boundary_check",
+      "non_pass_count": 1,
+      "non_pass_values": [
+        {
+          "key": "self_merge_per_AMD_authority",
+          "value": "PENDING (after PR opens)"
+        }
+      ]
+    },
+    "boundary_self_attestation_warning": {
+      "warn": false,
+      "reason": "no soft-fail tokens detected; boundary still self-attested per dispatch §11 disclosure"
+    }
+  },
+  "summary": {
+    "total_checks": 10,
+    "passed": 7,
+    "failed": 2,
+    "warnings": 0
+  },
+  "verdict_rationale": "FAIL — 2 check(s) failed: ac_count_match, boundary_count_match",
+  "inputs_resolved": {
+    "report_path": "reports/LANE01-INH-CODE-04-BUILD-L1-INGEST_REPORT.md",
+    "snapshot_path": "snapshots/LANE01-INH-CODE-04-BUILD-L1-INGEST.snapshot.live.json",
+    "audit_log_path": "audit_logs/LANE01-INH-CODE-04-BUILD-L1-INGEST_audit.log",
+    "expected_ac_count": null,
+    "expected_boundary_count": null
+  }
+}
