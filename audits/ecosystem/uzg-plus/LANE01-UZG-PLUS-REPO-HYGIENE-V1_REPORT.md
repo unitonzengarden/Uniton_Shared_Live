@@ -36,9 +36,9 @@ This task is the smallest, highest-visibility quick win from the V1 priority mat
 | F | Validate `package.json` (JSON OK) and `vite.config.js` (`node --check` OK) | ✅ |
 | G | `gh api repos/... -X PATCH` — homepage + description | ✅ |
 | H | Author 3 DOT deliverables (this report + snapshot + audit log) | ✅ |
-| I | Commit + PR + self-merge | (next) |
-| J | Cross-publish 2 files (report + snapshot) to Uniton_Shared via gh api | (next) |
-| K | Verify live deploy + Live mirror sync | (next) |
+| I | Commit `3ea6579` + PR #18 + squash-merge `7978b883` | ✅ |
+| J | Cross-publish 2 files (report + snapshot) to Uniton_Shared via gh api | ✅ |
+| K | Verify live deploy + Live mirror sync | ✅ |
 
 ---
 
@@ -162,10 +162,10 @@ This file targeted Vercel — but Vercel deployment for this repo is dead (audit
 | AC8 — `vite.config.js` parseable post-changes | ✅ | `node --check vite.config.js` exits 0 |
 | AC9 — `deploy.yml` workflow intact (Cloudflare deploy unchanged) | ✅ | File present, byte-identical to base |
 | AC10 — 3 DOT deliverables authored | ✅ | this file + `.snapshot.live.json` + `_audit.log` |
-| AC11 — PR self-merged via squash | ⏳ Phase I |
-| AC12 — Cross-publish 2 files (report + snapshot, NO audit log) | ⏳ Phase J |
-| AC13 — Live deploy `uzg.plus` still 200 OK post-push | ⏳ Phase K (after Cloudflare auto-deploy) |
-| AC14 — Live mirror sync verified (1 URL fetch 200 OK) | ⏳ Phase K |
+| AC11 — PR self-merged via squash | ✅ | PR #18 squash → `7978b8838548d3794089371336681ee7023ef670` (2026-04-29T19:04:27Z) |
+| AC12 — Cross-publish 2 files (report + snapshot, NO audit log) | ✅ | REPORT blob `fe0d910d`, snapshot blob `295d6c3b`; audit log retained locally per INC-01 |
+| AC13 — Live deploy `uzg.plus` still 200 OK post-push | ✅ | `curl -I https://uzg.plus` → HTTP/1.1 200 OK; Cloudflare run 25128328726 success (1m12s) |
+| AC14 — Live mirror sync verified | ✅ | Both files 200 OK on `Uniton_Shared_Live/audits/ecosystem/uzg-plus/` |
 | AC15 — Boundary 12/12 PASS (with documented exceptions) | ✅ | §4 |
 | AC16 — NTS clicks = 0 | ✅ | full autonomy via `.env.local` |
 
@@ -204,19 +204,24 @@ Immediate:
 
 ---
 
-## §9 Sign-off (pending Phase I/J/K)
+## §9 Sign-off
 
 ```
-2026-04-29T<HH:MM>Z LANE01-UZG-PLUS-REPO-HYGIENE-V1 COMPLETE
+2026-04-29T19:06Z LANE01-UZG-PLUS-REPO-HYGIENE-V1 COMPLETE
    README replaced ✓
    package.json homepage + description added ✓
    cloudways-deploy.yml removed ✓
    vercel.json removed ✓
-   GitHub metadata PATCHed ✓
-   build verification (syntax) PASS ✓
-   PR <num> squash-merged → <SHA>
-   2 files cross-published (report + snapshot)
-   Live deploy 200 OK post-push
-   Live mirror 200 OK
+   GitHub metadata PATCHed (homepage = https://uzg.plus, description canonical) ✓
+   build verification (syntax) PASS — package.json + vite.config.js ✓
+   PR #18 squash-merged → 7978b8838548d3794089371336681ee7023ef670
+   uzgplus-app HEAD = 7978b88 (post-squash)
+   Cloudflare deploy run 25128328726 success (1m12s)
+   uzg.plus LIVE post-push: HTTP/1.1 200 OK ✓
+   2 files cross-published to Uniton_Shared (report + snapshot; audit log NOT published per INC-01)
+       REPORT   blob fe0d910d  commit 18477c0e
+       snapshot blob 295d6c3b  commit f7f2aa96
+   Live mirror Uniton_Shared_Live: both files 200 OK ✓
    NTS_clicks = 0 ✓
+   No GH_TOKEN logged in commits / audit log / report (post INC-01) ✓
 ```
