@@ -10,7 +10,7 @@
 ## §0. Header
 
 - **Generator:** `aier-state-update v1.0` invoked via `scripts/runtime/generate_project_status.py v1.1`
-- **Source commit:** `f264bf24aa3a8d934c2fffce2ef3dcea61336edc` (short: `f264bf2`)
+- **Source commit:** `819e07e7df6b54f1a7260cb801a41e1502b168ed` (short: `819e07e`)
 - **Auto-generated:** `true` (do not hand-edit)
 - **Authority:** repo-backed automation per LAW_N8 §L8.2 explicitly enabled CI mode (state-mirror auto-regenerate scope only)
 
@@ -68,11 +68,11 @@
 
 | SHA | Author | Subject |
 |---|---|---|
+| `819e07e` | CLAC Executor | LANE01-SKILL-AIER-VERIFY-EXECUTABLE-V1: Phase J post-merge updates [vercel skip] |
+| `94d88bd` | AIER State Bot | [auto-status] regen runtime+network surfaces from f264bf2 [vercel skip] |
 | `f264bf2` | Uniton Zen | feat(LANE01): aier-verify skill executable + CI integration [vercel skip] (#18) |
 | `0ee8b36` | AIER State Bot | [auto-status] regen runtime+network surfaces from 624a0e6 [vercel skip] |
 | `624a0e6` | Uniton Zen | audit(LANE01): AIER Code reality audit — verdict PARTIALLY_ENFORCED (#17) |
-| `c580932` | AIER Code Heartbeat | AIER Code heartbeat 2026-04-29T15:20:20Z [vercel skip] |
-| `47774d0` | AIER State Bot | [auto-status] regen runtime+network surfaces from 92bb293 [vercel skip] |
 
 ## §7. Latest 5 DONE Tasks (from MASTER_CHECKLIST)
 
