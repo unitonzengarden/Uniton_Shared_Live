@@ -1,0 +1,12 @@
+{
+  "project_slug": "uzg-plus",
+  "github_repo": "unitonzengarden/uzgplus-app",
+  "polled_at": "2026-04-29T17:09:48.922Z",
+  "poll_status": "ERROR",
+  "error_step": "repo_meta",
+  "error_status": 404,
+  "error_message": "Not Found",
+  "note": "Placeholder emitted because the upstream repo is not reachable from the polling PAT (404/403). When access is granted, this file will be replaced by real data on the next poll.",
+  "count": 0,
+  "commits": []
+}

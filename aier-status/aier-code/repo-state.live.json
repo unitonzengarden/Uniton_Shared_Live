@@ -1,0 +1,22 @@
+{
+  "project_slug": "aier-code",
+  "github_repo": "unitonzengarden/Uniton_Shared",
+  "last_polled_at": "2026-04-29T17:09:44.192Z",
+  "poll_status": "OK",
+  "poll_token_source": "gh-cli-keyring",
+  "default_branch": "main",
+  "is_private": true,
+  "stars_count": 0,
+  "head_sha": "bdba937192bab97edaa65266d8c7dbf9158f4352",
+  "head_message": "docs(github): report Uniton_Shared branch protection apply [vercel skip]",
+  "head_author": "unitonzengarden",
+  "head_committed_at": "2026-04-29T16:41:22Z",
+  "open_prs_count": 0,
+  "open_issues_count": 0,
+  "recent_commits_count_24h": 89,
+  "recent_workflow_runs_count_24h": 20,
+  "last_workflow_run_status": "skipped",
+  "last_workflow_run_name": "Sync Runtime to Public",
+  "last_workflow_run_at": "2026-04-29T17:06:10Z",
+  "api_rate_limit_remaining": "4798"
+}

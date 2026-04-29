@@ -1,0 +1,10 @@
+{
+  "project_slug": "aifi-life",
+  "github_repo": "unitonzengarden/AIFI_LIFE",
+  "last_polled_at": "2026-04-29T17:09:49.329Z",
+  "poll_status": "ERROR",
+  "poll_token_source": "gh-cli-keyring",
+  "error_step": "repo_meta",
+  "error_status": 404,
+  "error_message": "Not Found"
+}

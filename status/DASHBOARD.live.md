@@ -3,7 +3,7 @@
 > **Auto-generated** by `scripts/generate_dashboard.cjs` reading from `tasks/` + `ledger/` + `status/` + `aier-status/` namespaces.
 > Refresh-allowed; do NOT hand-edit (changes will be overwritten on next regen).
 
-**Last generated:** 2026-04-29T16:12:07Z
+**Last generated:** 2026-04-29T17:10:08Z
 **Schema:** [`docs/architecture/LIVE_LEDGER_SCHEMA_v1.md`](../docs/architecture/LIVE_LEDGER_SCHEMA_v1.md)
 
 ---
@@ -85,6 +85,30 @@ _Full list: [`status/BLOCKERS.live.md`](BLOCKERS.live.md)_
 ---
 
 _Full plan: [`status/NEXT_ACTIONS.live.md`](NEXT_ACTIONS.live.md)_
+
+## Ecosystem Status (5 repos)
+
+> Auto-emitted from `aier-status/<slug>/repo-state.live.json` by [`scripts/ecosystem_state_poller.cjs`](../scripts/ecosystem_state_poller.cjs) (LANE01-AIER-CODE-UZG-PLUS-RUNTIME-NAMESPACE-V1, 2026-04-29).
+> Polled every 15 minutes via `.github/workflows/ecosystem_state_poll.yml`.
+
+**Aggregate:** OK=1 ERROR=4 (of 5)
+
+| Project | Poll | HEAD | Open PRs | Open Issues | Last CI | Polled at |
+|---|---|---|---|---|---|---|
+| `aier-code` | **OK** | `bdba937` | 0 | 0 | skipped | 2026-04-29T17:09:44.192Z |
+| `aier-ops` | **ERROR** | — | — | — | — | 2026-04-29T17:09:48.528Z |
+| `uzg-plus` | **ERROR** | — | — | — | — | 2026-04-29T17:09:48.922Z |
+| `aifi-life` | **ERROR** | — | — | — | — | 2026-04-29T17:09:49.329Z |
+| `aier-life-super` | **ERROR** | — | — | — | — | 2026-04-29T17:09:49.725Z |
+
+**Errors (per-repo, honest disclosure):**
+
+- `aier-ops` (`Not Found`)
+- `uzg-plus` (`Not Found`)
+- `aifi-life` (`Not Found`)
+- `aier-life-super` (`Not Found`)
+
+_Live state JSON paths under [`aier-status/<slug>/`](../aier-status/)._
 
 ## Skill Verification Status (last 10 tasks)
 

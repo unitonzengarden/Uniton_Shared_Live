@@ -1,0 +1,16 @@
+{
+  "project_slug": "aier-code",
+  "github_repo": "unitonzengarden/Uniton_Shared",
+  "polled_at": "2026-04-29T17:09:44.192Z",
+  "name": "Uniton_Shared",
+  "full_name": "unitonzengarden/Uniton_Shared",
+  "private": true,
+  "default_branch": "main",
+  "description": "Governance-as-Code source of truth for Uniton Future / AIER Code laws, canon, reports, snapshots, skills, and shared governance artifacts.",
+  "stars": 0,
+  "forks": 0,
+  "open_issues_total": 0,
+  "pushed_at": "2026-04-29T16:42:08Z",
+  "updated_at": "2026-04-29T16:42:12Z",
+  "html_url": "https://github.com/unitonzengarden/Uniton_Shared"
+}

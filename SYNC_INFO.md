@@ -1,8 +1,8 @@
 # Uniton_Shared_Live — Sync Info
 
 **Source repo**: unitonzengarden/Uniton_Shared (private)
-**Last sync**: 2026-04-29T17:12:14Z
-**Source commit**: dfdcd2b143efb22c6f810d8aee6112d089125366
+**Last sync**: 2026-04-29T17:12:36Z
+**Source commit**: a958c26bc034a015c6b2ffa6263070236bdd8347
 **Triggered by**: push
 
 ## Purpose
@@ -59,6 +59,16 @@ Canon, laws, skills, lab, rules remain private in Uniton_Shared.
 - https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/aier-status/aier-code/state.live.json
 - https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/aier-status/aier-code/heartbeat.live.json
 - https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/aier-status/aier-code/brain-pointer.live.md
+
+## Ecosystem state poll (LANE01-AIER-CODE-UZG-PLUS-RUNTIME-NAMESPACE-V1)
+
+- https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/aier-status/aier-ops/repo-state.live.json
+- https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/aier-status/uzg-plus/repo-state.live.json
+- https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/aier-status/uzg-plus/recent-commits.live.json
+- https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/aier-status/uzg-plus/open-prs.live.json
+- https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/aier-status/uzg-plus/ci-status.live.json
+- https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/aier-status/aifi-life/repo-state.live.json
+- https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/aier-status/aier-life-super/repo-state.live.json
 - (tasks/completed/<YYYY-MM-DD>/<TASK-ID>.live.json — date-rooted; see tasks/INDEX.live.md when present)
 
 ## aier-verify skill outputs (LANE01-SKILL-AIER-VERIFY-EXECUTABLE-V1)
