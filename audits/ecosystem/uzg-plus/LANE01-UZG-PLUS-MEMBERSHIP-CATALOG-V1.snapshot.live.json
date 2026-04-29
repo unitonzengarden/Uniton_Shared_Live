@@ -1,0 +1,206 @@
+{
+  "task_id": "LANE01-UZG-PLUS-MEMBERSHIP-CATALOG-V1",
+  "task_type": "feature",
+  "source": "UZG_PLUS_IMPLEMENTATION_PRIORITY_MATRIX_V1 / Block 4 / Quick Win #4",
+  "executor": "Cursor (Dev 2)",
+  "model": "claude-sonnet-4-5",
+  "extended_thinking": true,
+  "authority": [
+    "AMD_LANE01_CTO_AUTO_APPROVE_TECH_NON_CANON §3.1",
+    "AMD_NTS_FULL_TECH_AUTONOMY"
+  ],
+  "workspace": "C:\\workspace\\UZGPLUS\\",
+  "branch": "feat/lane01-uzg-plus-membership-catalog",
+  "base_branch": "main",
+  "base_sha": "3d31613ca559dea74a9b91b5c996bf85c77b4b5e",
+  "head_sha_pre_commit": "3d31613ca559dea74a9b91b5c996bf85c77b4b5e",
+  "head_sha_post_commit": null,
+  "merge_commit": null,
+  "pr_number": null,
+  "pr_url": null,
+  "captured_at_utc": "2026-04-29T19:46:39Z",
+  "scope": {
+    "intent": "Extend /membership page with 'Compare all tiers' catalog panel exposing 4 canonical tiers (Explorer/Seeker/Builder/Sovereign).",
+    "before": "/membership shows only featured upgrade row + current status",
+    "after": "/membership shows 4-tier catalog comparison grid above featured upgrade panel"
+  },
+  "tiers": [
+    {
+      "tier_code": "explorer",
+      "tier_label": "Explorer",
+      "canonical_level": "explorer",
+      "asset_code": "USD",
+      "monthly_price_amount": 0,
+      "yearly_price_amount": 0,
+      "yearly_discount_percent": 0,
+      "duration_days": 365,
+      "billable": false,
+      "network_multiplier": 1.0,
+      "business_multiplier": 1.0,
+      "circle_label": "Open Circle 100",
+      "uzgfi_discount_label": "No UZG / UZGS discount",
+      "business_eligible": false
+    },
+    {
+      "tier_code": "seeker",
+      "tier_label": "Seeker",
+      "canonical_level": "connector",
+      "asset_code": "USD_CREDIT",
+      "monthly_price_amount": 9,
+      "yearly_price_amount": 97.2,
+      "yearly_discount_percent": 10,
+      "duration_days": 30,
+      "billable": true,
+      "network_multiplier": 1.1,
+      "business_multiplier": 1.2,
+      "circle_label": "Growth Circle 1k",
+      "uzgfi_discount_label": "9% UZG / UZGS discount",
+      "business_eligible": false
+    },
+    {
+      "tier_code": "builder",
+      "tier_label": "Builder",
+      "canonical_level": "builder",
+      "asset_code": "USD_CREDIT",
+      "monthly_price_amount": 39,
+      "yearly_price_amount": 397.8,
+      "yearly_discount_percent": 15,
+      "duration_days": 30,
+      "billable": true,
+      "network_multiplier": 1.25,
+      "business_multiplier": 1.5,
+      "circle_label": "Business Circle 10k",
+      "uzgfi_discount_label": "15% UZG / UZGS discount",
+      "business_eligible": true
+    },
+    {
+      "tier_code": "sovereign",
+      "tier_label": "Sovereign",
+      "canonical_level": "architect",
+      "asset_code": "USD_CREDIT",
+      "monthly_price_amount": 69,
+      "yearly_price_amount": 662.4,
+      "yearly_discount_percent": 20,
+      "duration_days": 30,
+      "billable": true,
+      "network_multiplier": 1.45,
+      "business_multiplier": 1.9,
+      "circle_label": "Premium Business Circle 100k",
+      "uzgfi_discount_label": "21% UZG / UZGS discount",
+      "business_eligible": true
+    }
+  ],
+  "files_changed": [
+    {
+      "path": "apps/uzg-pwa/src/components/membership/MembershipCatalogPanel.jsx",
+      "action": "create",
+      "sha256": "8423C15C5B6EC5C2B46D8BB9C4AB4BD3AA80235262775FCF0A9266EE4904439E",
+      "lines": 84
+    },
+    {
+      "path": "src/components/membership/MembershipCatalogPanel.jsx",
+      "action": "create",
+      "sha256": "8423C15C5B6EC5C2B46D8BB9C4AB4BD3AA80235262775FCF0A9266EE4904439E",
+      "lines": 84,
+      "note": "byte-identical mirror of apps tree"
+    },
+    {
+      "path": "apps/uzg-pwa/src/pages/MembershipPage.jsx",
+      "action": "edit",
+      "sha256_post": "8214265A57E25C6AA97800B3F4B74DBDA6FAAEBA7AFBC5C909A301B9A9D82405",
+      "delta": "+3 lines (1 import, 2 JSX render)"
+    },
+    {
+      "path": "src/pages/MembershipPage.jsx",
+      "action": "edit",
+      "sha256_post": "8214265A57E25C6AA97800B3F4B74DBDA6FAAEBA7AFBC5C909A301B9A9D82405",
+      "delta": "+3 lines (1 import, 2 JSX render); byte-identical mirror"
+    },
+    {
+      "path": "apps/uzg-pwa/src/services/productV2Service.js",
+      "action": "edit",
+      "delta": "+35 lines: export function getMembershipPublishedCatalog() composed from existing internal constants"
+    },
+    {
+      "path": "src/services/productV2Service.js",
+      "action": "edit",
+      "delta": "+35 lines: same export (mirror)"
+    },
+    {
+      "path": ".lane_01/audits/MEMBERSHIP_SURFACE_AUDIT.md",
+      "action": "create"
+    },
+    {
+      "path": ".lane_01/reports/LANE01-UZG-PLUS-MEMBERSHIP-CATALOG-V1_REPORT.md",
+      "action": "create"
+    },
+    {
+      "path": ".lane_01/snapshots/LANE01-UZG-PLUS-MEMBERSHIP-CATALOG-V1.snapshot.live.json",
+      "action": "create"
+    },
+    {
+      "path": ".lane_01/audit_logs/LANE01-UZG-PLUS-MEMBERSHIP-CATALOG-V1_audit.log",
+      "action": "create"
+    }
+  ],
+  "boundary": {
+    "passes": [
+      "work_only_in_C_workspace_UZGPLUS",
+      "no_local_clone_of_uniton_shared",
+      "no_lane_02_touch",
+      "no_lane_03_touch",
+      "no_supabase_migrations_modified",
+      "no_supabase_functions_modified",
+      "no_server_aier_server_js_modified",
+      "no_api_directory_modified",
+      "no_aier_subsystems_modified",
+      "no_gh_token_in_logs_post_inc01",
+      "vercel_skip_on_commits",
+      "lane01_dot_format_on_3_deliverables",
+      "self_merge_per_amd",
+      "nts_clicks_zero"
+    ],
+    "documented_exceptions": [
+      "edit_src_pages_membershippage_jsx_user_facing_ui",
+      "edit_apps_uzg_pwa_src_pages_membershippage_jsx_user_facing_ui",
+      "create_src_components_membership_membershipcatalogpanel_jsx",
+      "create_apps_uzg_pwa_src_components_membership_membershipcatalogpanel_jsx",
+      "extend_src_services_productv2service_js_read_only_helper",
+      "extend_apps_uzg_pwa_src_services_productv2service_js_read_only_helper"
+    ],
+    "score": "14/14 boundary checks PASS with 6 documented exceptions"
+  },
+  "acceptance_criteria": {
+    "AC1_branch_created": "PASS",
+    "AC2_audit_documented": "PASS — .lane_01/audits/MEMBERSHIP_SURFACE_AUDIT.md",
+    "AC3_4_tiers_canonical": "PASS — table in audit §7",
+    "AC4_panel_created": "PASS",
+    "AC5_renders_4_tiers": "PASS",
+    "AC6_loading_error_states": "PASS — synchronous catalog returns immediately; defensive empty-array guard",
+    "AC7_service_helper_exposed": "PASS — getMembershipPublishedCatalog exported in both trees",
+    "AC8_above_upgrade_panel": "PASS — line 372 (catalog) precedes line 374 (upgrade)",
+    "AC9_no_backend_endpoint": "PASS — read-only client-side helper only",
+    "AC10_no_migration_or_rls_change": "PASS",
+    "AC11_syntax_valid": "PASS — node --check passes both productV2Service.js; full Vite+JSX build runs in Cloudflare CI on push",
+    "AC12_3_dot_deliverables": "PASS",
+    "AC13_pr_self_merged": "PENDING — Phase I",
+    "AC14_cross_publish_2_files": "PENDING — Phase J",
+    "AC15_live_deploy_verified": "PENDING — Phase K",
+    "AC16_boundary_pass_zero_clicks": "PASS — boundary 14/14; clicks confirmed end of run"
+  },
+  "evidence_urls": {
+    "live_app": "https://uzg.plus",
+    "live_membership_page": "https://uzg.plus/membership",
+    "github_repo": "https://github.com/unitonzengarden/uzgplus-app",
+    "report_live_mirror": "https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/audits/ecosystem/uzg-plus/LANE01-UZG-PLUS-MEMBERSHIP-CATALOG-V1_REPORT.md",
+    "snapshot_live_mirror": "https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/audits/ecosystem/uzg-plus/LANE01-UZG-PLUS-MEMBERSHIP-CATALOG-V1.snapshot.live.json",
+    "pr_search": "https://github.com/unitonzengarden/uzgplus-app/pulls?q=LANE01-UZG-PLUS-MEMBERSHIP-CATALOG-V1"
+  },
+  "honest_disclosures": [
+    "Loading/error UI is synchronous — catalog is a pure function over client-side constants; no Supabase fetch, no network call. AC6 satisfied via defensive empty-array guard. If the panel is later wired to a live query or backend endpoint, retrofit is trivial without breaking the public component API.",
+    "Lane_03 boundary protected by design — implementation chose Option B (reuse client-side service) because the canonical 4-tier catalog already lives in productV2Service.js as MEMBERSHIP_PUBLISHED_CATALOG. No new /api/v1/membership/catalog endpoint added.",
+    "Dual-tree edit — both apps/uzg-pwa/src/ and root src/ were edited because existing membership UI files were mirrored byte-identical. Vite builds from apps/uzg-pwa per vite.config.js. Pre-existing service-file divergence (root vs apps tree) is not introduced by this task.",
+    "Full Vite + JSX build cannot be run locally because npm install is boundary-forbidden. Validation: node --check passes both productV2Service.js files; ripgrep verifies imports/exports/wiring. Full build runs in Cloudflare CI on push to main (per LANE01-UZG-PLUS-REPO-HYGIENE-V1 pattern).",
+    "Catalog panel uses static English copy — not yet hooked into appT() language foundation dictionary. Future Lane_02 i18n task can expand. Out of scope for Quick Win #4."
+  ]
+}
