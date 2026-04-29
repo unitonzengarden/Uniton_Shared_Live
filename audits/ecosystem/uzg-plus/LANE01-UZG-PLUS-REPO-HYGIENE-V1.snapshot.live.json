@@ -1,0 +1,67 @@
+{
+  "dot_format": "LANE01-SNAPSHOT-V1",
+  "task_id": "LANE01-UZG-PLUS-REPO-HYGIENE-V1",
+  "captured_by": "LANE01-UZG-PLUS-REPO-HYGIENE-V1",
+  "captured_at_utc": "2026-04-29T18:57:00Z",
+  "scope": "uzg-plus",
+  "executor": "Cursor / claude-sonnet-4-5",
+  "authority": "AMD_LANE01_CTO_AUTO_APPROVE_TECH_NON_CANON + AMD_NTS_FULL_TECH_AUTONOMY (Quick Win #5 boundary exception)",
+  "source": "UZG_PLUS_IMPLEMENTATION_PRIORITY_MATRIX_V1 Block 4 #5",
+  "repo": "unitonzengarden/uzgplus-app",
+  "repo_head_at_start": "5da7f23d2a5606cdc8f4a9cf91a882c79f723715",
+  "branch": "feat/lane01-uzg-plus-repo-hygiene",
+  "changes": {
+    "files_modified": [
+      { "path": "README.md", "change": "replaced", "lines_before": 17, "lines_after_approx": 120, "notes": "Vite template scaffold replaced with UZG+ description; whitepaper §1.2 verbatim; 7 modules; 4 catalog tiers; lane architecture; canonical Cloudflare deploy note" },
+      { "path": "package.json", "change": "fields_added", "fields_added": ["homepage", "description"], "notes": "homepage was absent; both fields now match GitHub repo metadata" }
+    ],
+    "files_deleted": [
+      { "path": ".github/workflows/cloudways-deploy.yml", "reason": "deprecated, only printed notice on workflow_dispatch", "trigger_was": "workflow_dispatch only" },
+      { "path": "vercel.json", "reason": "legacy; uzgplus-app.vercel.app is 404; Cloudflare is canonical deploy target" }
+    ],
+    "github_repo_metadata_patched": {
+      "before": {
+        "homepage": "https://uzgplus-app.vercel.app",
+        "description": "UZG+ product application frontend and product modules for onboarding, dashboard, and app workflows."
+      },
+      "after": {
+        "homepage": "https://uzg.plus",
+        "description": "UZG+ — Human Value Origin Layer. Mobile-first super-app combining identity, social, value, community business, AI guidance, and governance. Live at uzg.plus."
+      }
+    }
+  },
+  "verification": {
+    "package_json_valid_json": true,
+    "vite_config_node_check_exit": 0,
+    "deploy_yml_intact": true,
+    "vercel_json_present": false,
+    "cloudways_deploy_yml_present": false,
+    "github_homepage_after": "https://uzg.plus"
+  },
+  "boundary_check": {
+    "lane01_only": true,
+    "lane02_untouched": true,
+    "no_npm_install": true,
+    "no_supabase_mutation": true,
+    "no_vercel_deploy": true,
+    "no_token_in_logs": true,
+    "vercel_skip_on_commits": true,
+    "self_merge": "pending",
+    "nts_clicks": 0,
+    "documented_exceptions_count": 5,
+    "result": "PASS (12 standard + 5 documented exceptions)"
+  },
+  "honest_disclosure": [
+    "package.json had no homepage field originally; this task adds it (audit phrasing referred to GitHub repo metadata)",
+    "vite.config.js verified syntactically (node --check exit 0); module resolution requires npm install which is forbidden by boundary",
+    "vercel.json deletion does not roll back any live deploy because Vercel side is dead (404)",
+    "cloudways-deploy.yml only ran on workflow_dispatch and printed a deprecation notice",
+    "GitHub repo description ~200 chars, within 350-char GitHub limit"
+  ],
+  "evidence_urls_pending_phase_K": [
+    "https://uzg.plus",
+    "https://github.com/unitonzengarden/uzgplus-app",
+    "https://github.com/unitonzengarden/uzgplus-app#readme",
+    "https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/audits/ecosystem/uzg-plus/LANE01-UZG-PLUS-REPO-HYGIENE-V1_REPORT.md"
+  ]
+}
