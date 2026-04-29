@@ -1,0 +1,123 @@
+{
+  "task_id": "LANE01-LAW-LANE-3-PUBLISH-AND-QOT-BRIDGE-AUDIT-V1",
+  "skill_id": "aier-verify",
+  "skill_version": "v2.0",
+  "verdict": "FAIL",
+  "verified_at": "2026-04-29T19:09:33.927Z",
+  "checks": {
+    "report_exists": {
+      "pass": true,
+      "evidence": "reports/LANE01-LAW-LANE-3-PUBLISH-AND-QOT-BRIDGE-AUDIT-V1_REPORT.md"
+    },
+    "report_section_count": {
+      "pass": true,
+      "actual": 13,
+      "expected": ">=8",
+      "note": "meets relaxed threshold (>=8); LAW_N5 ideal is >=14"
+    },
+    "snapshot_exists": {
+      "pass": true,
+      "evidence": "snapshots/LANE01-LAW-LANE-3-PUBLISH-AND-QOT-BRIDGE-AUDIT-V1.snapshot.live.json"
+    },
+    "snapshot_required_fields": {
+      "pass": true,
+      "missing": [],
+      "present_fields": [
+        "task_id",
+        "executor",
+        "model",
+        "lane",
+        "self_approve_authority",
+        "purpose",
+        "started_at",
+        "head_pre_flight",
+        "branch",
+        "pr",
+        "merge_commit",
+        "phases_completed"
+      ]
+    },
+    "audit_log_exists": {
+      "pass": true,
+      "evidence": "audit_logs/LANE01-LAW-LANE-3-PUBLISH-AND-QOT-BRIDGE-AUDIT-V1_audit.log"
+    },
+    "audit_log_phase_count": {
+      "pass": true,
+      "actual": 6,
+      "total_phase_markers": 21,
+      "expected": ">=3 distinct phases"
+    },
+    "deliverable_naming_dot": {
+      "pass": true,
+      "violations": []
+    },
+    "ac_count_match": {
+      "pass": false,
+      "actual": 16,
+      "expected": ">=8",
+      "field_used": "ac_status",
+      "non_pass_count": 6,
+      "non_pass_values": [
+        {
+          "key": "AC2_law_lane3_published",
+          "value": "BLOCKED — source content not in conversation/repo/memory/git/worktrees. Awaiting user paste. See work_item_a_status."
+        },
+        {
+          "key": "AC3_law_index_master_updated",
+          "value": "BLOCKED — depends on AC2"
+        },
+        {
+          "key": "AC11_pr_self_merged",
+          "value": "PENDING (Phase F)"
+        },
+        {
+          "key": "AC12_live_mirror_sync_verified_2_urls",
+          "value": "PENDING (Phase G post-merge)"
+        },
+        {
+          "key": "AC13_aier_verify_self_check",
+          "value": "PENDING (Phase H post-merge)"
+        },
+        {
+          "key": "AC16_nts_clicks_zero",
+          "value": "PENDING (target — admin merge override is the documented self-merge mechanism, not a click)"
+        }
+      ]
+    },
+    "boundary_count_match": {
+      "pass": false,
+      "actual": 11,
+      "expected": ">=8",
+      "field_used": "boundary_check",
+      "non_pass_count": 2,
+      "non_pass_values": [
+        {
+          "key": "no_modify_lane_01_lane_02_in_uzgplus",
+          "value": "n/a — read-only access, no writes"
+        },
+        {
+          "key": "self_merge_per_AMD",
+          "value": "PENDING (Phase F)"
+        }
+      ]
+    },
+    "boundary_self_attestation_warning": {
+      "warn": false,
+      "reason": "no soft-fail tokens detected; boundary still self-attested per dispatch §11 disclosure"
+    }
+  },
+  "summary": {
+    "total_checks": 10,
+    "passed": 7,
+    "failed": 2,
+    "warnings": 0
+  },
+  "verdict_rationale": "FAIL — 2 check(s) failed: ac_count_match, boundary_count_match",
+  "inputs_resolved": {
+    "report_path": "reports/LANE01-LAW-LANE-3-PUBLISH-AND-QOT-BRIDGE-AUDIT-V1_REPORT.md",
+    "snapshot_path": "snapshots/LANE01-LAW-LANE-3-PUBLISH-AND-QOT-BRIDGE-AUDIT-V1.snapshot.live.json",
+    "audit_log_path": "audit_logs/LANE01-LAW-LANE-3-PUBLISH-AND-QOT-BRIDGE-AUDIT-V1_audit.log",
+    "expected_ac_count": null,
+    "expected_boundary_count": null
+  }
+}

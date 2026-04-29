@@ -158,26 +158,47 @@
 
 ---
 
-## §6 AIER Bridge & QOT Cross-System
+## §6 QOT — Naming Collision (Audit Verdict 2026-04-29)
 
-**Audit finding:** Cursor §8 disclosure 7 reports that the QOT cross-system bridge between UZG+ `qot_nodes` and AIER Code `qot_lineage` **is not visible at the source-code surface in `uzgplus-app`**. The MVP `qot_nodes` table exists but its bridge to the AIER Code provenance layer is unaccounted for.
+**Status:** `BRIDGE_TBD` → **`NAMING_COLLISION_NO_BRIDGE_NEEDED`** (resolved)
 
-**Three candidate locations for the bridge:**
+**Predecessor audit:** [`LANE01-LAW-LANE-3-PUBLISH-AND-QOT-BRIDGE-AUDIT-V1`](https://github.com/unitonzengarden/Uniton_Shared/commit/f08348f3) — full deliverable at [`audits/ecosystem/uzg-plus/QOT_BRIDGE_LOCATE_AUDIT_V1.md`](QOT_BRIDGE_LOCATE_AUDIT_V1.md).
 
-| # | Location | Rationale | How to verify |
-|---|---|---|---|
-| 1 | **AIER Code repo (`Uniton_Shared/services/`)** | Plausible if the bridge is a write-from-AIER-Code-side service that pushes lineage records to UZG+ via API | grep `Uniton_Shared` for `qot_bridge`, `qot_lineage_push`, `uzgplus_api_qot` (none currently visible) |
-| 2 | **AIER Ops repo (`Uniton_OS`)** | Plausible if the bridge is operationally owned (Lane_03 territory) | gh api `unitonzengarden/Uniton_OS` (currently inaccessible from PAT — KF-01 from prior task) |
-| 3 | **Standalone microservice (TBD)** | Plausible if the bridge runs as an Edge Function or external worker outside both repos | Requires NTS to disclose deployment surface |
+**Verdict:** `bridge_present = NO`.
 
-**Recommended canon update + follow-up dispatch:**
+**3-candidate sweep result:**
 
-> Add a **canon section "QOT Cross-System Bridge — TBD"** acknowledging:
-> - UZG+ `qot_nodes` (MVP) and AIER Code `qot_lineage` are independent provenance layers today.
-> - A canonical bridge between them is **declared intent**, not yet **observable implementation**.
-> - The bridge is a P0 architectural item: without it, "truth/provenance" claims that span UZG+ and AIER Code are unsupported by the runtime.
+| Candidate | Surface | Result |
+|---|---|---|
+| 1 | `Uniton_Shared/services/` | directory does not exist; only doc references (15 files, all artefacts) |
+| 2 | `Uniton_OS` | `qot_lineage` exists (28 hits) but FK is `bloch_id → bloch_pool` — BLOCH event log per `LANE01-BRIDGE-02 Task 6`, **not** a UZG+ bridge. Comment: `'QOT (Quantum Object Trail) lineage — append-only event log per BLOCH'` |
+| 3 | Standalone microservice | 0 hits across 5 repos for `qot_bridge_service`, `qot_sync_service`, `uzgplus_qot_sync`, `qot_publisher`. Edge Function inventories cover wallet + reward + embedding workers only |
+
+**Schema comparison:**
+
+| Aspect | UZG+ `qot_nodes` | AIER Code `qot_lineage` |
+|---|---|---|
+| Entity | content node | event |
+| Domain | UZG+ user-facing content provenance (posts / profiles / circles) | AIER Code internal BLOCH event log |
+| Shape | tree (self-FK `parent_node_id` / `root_node_id`) | sequence (FK `bloch_id` → `bloch_pool`) |
+| Primary key | `uuid` | `bigserial` |
+| Cross-key | `qot_id` (text unique) | `bloch_id` (uuid FK to `bloch_pool`) |
+| Versioning | `lineage_depth`, `propagation_count` | `sequence_number` |
+
+**Conclusion:** UZG+ `qot_nodes` and AIER Code `qot_lineage` are **two separate concepts that share a name prefix only** ("Quantum Object Trail"). They are **not** halves of the same system. There is no current connector and **no canonical bridge is needed**.
+
+**Canon update (recommended):**
+
+> **QOT — Quantum Object Trail (canonical disambiguation):**
 >
-> **Recommended next dispatch:** `LANE01-QOT-BRIDGE-LOCATE-AND-AUDIT-V1` — read-only audit explicitly targeting the QOT bridge across the three candidate locations. Output: bridge_present (yes/no/partial) + location + schema match between `qot_nodes` and `qot_lineage`. Honest disclosure if absent.
+> 1. **UZG+ QOT** (`public.qot_nodes` in `uzgplus-app` Supabase) — user-facing provenance trail for content (posts, comments, reactions). Tree-structured. `uuid` PK. Locked by `v2_p7_qot_system_lock`.
+> 2. **AIER Code QOT** (`public.qot_lineage` in `Uniton_OS` Supabase) — internal BLOCH event log per `LANE01-BRIDGE-02 Task 6`. Sequential per `bloch_id`. `bigserial` PK with FK to `bloch_pool`.
+>
+> These are **independent concepts in different domains**. **No bridge is needed or planned.** The naming collision is acknowledged; whether to rename one or both is a future canon decision (NTS-only per `R-AUTH-01`).
+
+**Action:** drop bridge from canon. Reconciliation §6 closed as **RESOLVED — NO BRIDGE**.
+
+> **Note on Lane_03 charter.** The `qot_lineage` work in `Uniton_OS` was Lane_03's `LANE01-BRIDGE-02 Task 6` deliverable — a BLOCH event log, not a UZG+ ↔ AIER Code bridge. Lane_03's charter (per `LAW-NTS-LANE-3_v1.md`, published 2026-04-29) explicitly does NOT include a UZG+ ↔ AIER Code bridge. If NTS later decides to build one, it would be scoped as a separate dispatch (e.g. `LANE01-BRIDGE-UZGPLUS-TO-AIERCODE-V1` with three architecture options outlined in QOT_BRIDGE_LOCATE_AUDIT_V1 §9) — not Lane_03 territory.
 
 ---
 
@@ -206,7 +227,7 @@ The existing `UNITON_MASTER_CANON.md` (March 2026) already documents 5 conflicts
 | §3 Roadmap phases | **HIGH** (4 sources, 3 counts) | Project knowledge "6 phases" | Adopt dual roadmap (3 strategic + 8 build); retire 6-phase list |
 | §4 Connect-to-Earn | **MEDIUM** (semantic match, name not in repo) | Phrase usage | Define umbrella term in canon, reference 14 action types |
 | §5 Six Roots status | **MEDIUM** (2/6 have flagged gaps) | Implementation status of Roots | Add §6.1 status matrix; tag Quantum Social NO_USER_SURFACE; tag QOT BRIDGE_TBD |
-| §6 QOT Bridge | **HIGH** (architectural unknown) | Provenance claim | Acknowledge TBD; dispatch separate locate-and-audit task |
+| §6 QOT — Naming Collision | **RESOLVED** (audit verdict 2026-04-29: bridge_present = NO) | Provenance claim | Drop bridge from canon; disambiguate `qot_nodes` (UZG+) vs `qot_lineage` (AIER Code) — two separate concepts sharing a name prefix only |
 
 ---
 
