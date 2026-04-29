@@ -1,0 +1,56 @@
+{
+  "dot_format": "LANE01-SNAPSHOT-V1",
+  "task_id": "LANE01-UZG-PLUS-IMPLEMENTATION-PRIORITY-MATRIX-V1",
+  "captured_by": "LANE01-UZG-PLUS-IMPLEMENTATION-PRIORITY-MATRIX-V1",
+  "captured_at_utc": "2026-04-29T18:23:00Z",
+  "scope": "uzg-plus",
+  "executor": "Cursor / claude-sonnet-4-5",
+  "authority": "AMD_LANE01_CTO_AUTO_APPROVE_TECH_NON_CANON + AMD_NTS_FULL_TECH_AUTONOMY",
+  "repo": "unitonzengarden/uzgplus-app",
+  "repo_head_at_matrix": "faf92b413e2bc58039ed210ab2549ee182e71d50",
+  "pr_number": 16,
+  "pr_url": "https://github.com/unitonzengarden/uzgplus-app/pull/16",
+  "merge_commit": "47a45b69eaa9cf9656a038a03bbc1466069116f2",
+  "merged_at": "2026-04-29T18:23:44Z",
+  "live_probe": {
+    "routes_probed": 46,
+    "probe_time_utc": "2026-04-29T17:50:00Z",
+    "probe_file": ".lane_01/audits/PROBE_LIVE_ROUTES.txt"
+  },
+  "matrix_summary": {
+    "live_features": 45,
+    "wip_features": 12,
+    "missing_features": 6,
+    "total_classified": 63,
+    "domain_coverage_pct": 70,
+    "quick_wins_proposed": 5,
+    "quick_wins_total_dev_days": 13
+  },
+  "quick_wins": [
+    { "rank": 1, "title": "Quantum Social user dashboard", "days": 4, "new_route": "/social-brain", "task_id": "LANE01-UZG-PLUS-SOCIAL-BRAIN-USER-V1" },
+    { "rank": 2, "title": "Connect-to-Earn unified dashboard", "days": 3, "new_route": "/earn", "task_id": "LANE01-UZG-PLUS-CONNECT-TO-EARN-DASHBOARD-V1" },
+    { "rank": 3, "title": "QOT user trail", "days": 3, "new_route": "/qot/me", "task_id": "LANE01-UZG-PLUS-QOT-USER-TRAIL-V1" },
+    { "rank": 4, "title": "Membership tier catalog browse", "days": 2, "new_route": null, "task_id": "LANE01-UZG-PLUS-MEMBERSHIP-CATALOG-V1" },
+    { "rank": 5, "title": "Repo hygiene round", "days": 1, "new_route": null, "task_id": "LANE01-UZG-PLUS-REPO-HYGIENE-V1" }
+  ],
+  "cross_published": {
+    "uniton_shared_paths": [
+      "audits/ecosystem/uzg-plus/LANE01-UZG-PLUS-IMPLEMENTATION-PRIORITY-MATRIX-V1_REPORT.md",
+      "audits/ecosystem/uzg-plus/LANE01-UZG-PLUS-IMPLEMENTATION-PRIORITY-MATRIX-V1.snapshot.live.json",
+      "audits/ecosystem/uzg-plus/LANE01-UZG-PLUS-IMPLEMENTATION-PRIORITY-MATRIX-V1_audit.log",
+      "system_maps/UZG_PLUS_IMPLEMENTATION_PRIORITY_MATRIX_V1.md"
+    ]
+  },
+  "boundary_check": {
+    "only_lane01_touched": true,
+    "lane02_untouched": true,
+    "no_npm_install": true,
+    "no_supabase_mutation": true,
+    "no_vercel_deploy": true,
+    "vercel_skip_on_commits": true,
+    "self_merge": true,
+    "nts_clicks": 0,
+    "result": "12/12 PASS"
+  },
+  "honest_disclosure_items": 5
+}
