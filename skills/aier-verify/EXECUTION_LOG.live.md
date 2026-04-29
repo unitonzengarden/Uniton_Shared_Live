@@ -328,3 +328,12 @@
 - Run duration: 12ms
 - Verified at (ISO): 2026-04-29T19:09:33.936Z
 
+## RUN-20260429-193753
+- Triggered by: phase-i-self-verify
+- Input task_id: LANE01-LAW-LANE-3-PUBLISH-V1-1-AND-QOT-CANON-UPDATE-V1
+- Verdict: FAIL
+- Failed checks: ac_count_match, boundary_count_match
+- Result file: skills/aier-verify/results/LANE01-LAW-LANE-3-PUBLISH-V1-1-AND-QOT-CANON-UPDATE-V1.verify.json
+- Run duration: 12ms
+- Verified at (ISO): 2026-04-29T19:37:53.450Z
+
