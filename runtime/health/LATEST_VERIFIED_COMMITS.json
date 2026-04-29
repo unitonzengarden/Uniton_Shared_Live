@@ -1,27 +1,32 @@
 {
   "schema_version": "LATEST_VERIFIED_COMMITS_V1",
-  "generated_at": "2026-04-29T17:49:06.1377711+07:00",
+  "generated_at": "2026-04-29T21:22:30.3082355+07:00",
   "source_repo": "unitonzengarden/Uniton_Shared",
-  "source_commit": "32701083b367e1a8d595f3b4d53cba10d7a2f1b8",
+  "source_commit": "895e0415b5e4d608a835a31e9dcf6b5f5c1c7c7a",
   "verification_method": [
     "git rev-parse HEAD",
     "git rev-parse origin/main",
-    "gh repo view --json nameWithOwner,description,repositoryTopics,isArchived,isPrivate,defaultBranchRef,pushedAt,url",
-    "gh api repos/<owner>/<repo>/commits/<branch>"
+    "gh repo view --json nameWithOwner,defaultBranchRef,isArchived,isPrivate,pushedAt,repositoryTopics",
+    "gh api repos/<owner>/<repo>/commits/<branch>",
+    "gh pr list --state open",
+    "gh run list --limit 1",
+    "gh api repos/<owner>/<repo>/branches/<branch>/protection"
   ],
   "repos": [
     {
       "repo": "unitonzengarden/Uniton_Shared",
       "role": "GOVERNANCE / BRAIN",
       "default_branch": "main",
-      "latest_verified_commit": "32701083b367e1a8d595f3b4d53cba10d7a2f1b8",
-      "pushed_at": "2026-04-29T10:34:09Z",
+      "latest_verified_commit": "895e0415b5e4d608a835a31e9dcf6b5f5c1c7c7a",
+      "pushed_at": "2026-04-29T14:11:47Z",
       "archived": false,
+      "private": true,
       "workflow_latest": {
-        "name": "Lane Guardrails",
+        "name": "Sync Runtime to Public",
         "status": "completed",
         "conclusion": "success",
-        "head_sha": "32701083b367e1a8d595f3b4d53cba10d7a2f1b8"
+        "event": "workflow_run",
+        "head_sha": "895e0415b5e4d608a835a31e9dcf6b5f5c1c7c7a"
       },
       "branch_protection_read": "NO_CLASSIC_PROTECTION_OR_INACCESSIBLE",
       "open_pr_count": 0
@@ -30,9 +35,10 @@
       "repo": "unitonzengarden/Uniton_Shared_Live",
       "role": "MIRROR / PUBLIC STATE",
       "default_branch": "main",
-      "latest_verified_commit": "7785581aa5de637bcf7504597a20231a3f28b0ab",
-      "pushed_at": "2026-04-28T19:33:50Z",
+      "latest_verified_commit": "8c254ef2adc3d0572ec78954f522c1f71c19fe12",
+      "pushed_at": "2026-04-29T14:12:01Z",
       "archived": false,
+      "private": false,
       "workflow_latest": {
         "name": "UNKNOWN_OR_NONE",
         "status": "UNKNOWN_OR_NONE",
@@ -46,14 +52,16 @@
       "repo": "unitonzengarden/Uniton_OS",
       "role": "RUNTIME / EXECUTION",
       "default_branch": "main",
-      "latest_verified_commit": "ddaa4f29f10acf29b75145a66affd30613207ec7",
-      "pushed_at": "2026-04-29T10:35:19Z",
+      "latest_verified_commit": "da381919836a4da517da9700799fccb1e336e8d4",
+      "pushed_at": "2026-04-29T11:41:52Z",
       "archived": false,
+      "private": true,
       "workflow_latest": {
         "name": "CI",
         "status": "completed",
         "conclusion": "success",
-        "head_sha": "ddaa4f29f10acf29b75145a66affd30613207ec7"
+        "event": "push",
+        "head_sha": "da381919836a4da517da9700799fccb1e336e8d4"
       },
       "branch_protection_read": "NO_CLASSIC_PROTECTION_OR_INACCESSIBLE",
       "open_pr_count": 3
@@ -62,14 +70,16 @@
       "repo": "unitonzengarden/uzgplus-app",
       "role": "PRODUCT / UZG+",
       "default_branch": "main",
-      "latest_verified_commit": "0c7edee8e1396f64f47e22225fc57aba451f20b5",
-      "pushed_at": "2026-04-29T10:48:29Z",
+      "latest_verified_commit": "57ba05c6d85d3887cc82641823719e14b217e942",
+      "pushed_at": "2026-04-29T14:23:59Z",
       "archived": false,
+      "private": true,
       "workflow_latest": {
         "name": "Deploy to Cloudflare Pages (Stable)",
         "status": "in_progress",
         "conclusion": "",
-        "head_sha": "0c7edee8e1396f64f47e22225fc57aba451f20b5"
+        "event": "push",
+        "head_sha": "57ba05c6d85d3887cc82641823719e14b217e942"
       },
       "branch_protection_read": "PROTECTED_OR_RULE_PRESENT",
       "open_pr_count": 0
@@ -81,6 +91,7 @@
       "latest_verified_commit": "2690235e00117b5f829a0231a1b34c3d9d0c36db",
       "pushed_at": "2026-04-19T17:08:23Z",
       "archived": false,
+      "private": true,
       "workflow_latest": {
         "name": "UNKNOWN_OR_NONE",
         "status": "UNKNOWN_OR_NONE",
@@ -97,6 +108,7 @@
       "latest_verified_commit": "73960cdb4738334791cb6e58ad0fd898b85b1c8a",
       "pushed_at": "2026-04-15T13:27:40Z",
       "archived": false,
+      "private": true,
       "workflow_latest": {
         "name": "UNKNOWN_OR_NONE",
         "status": "UNKNOWN_OR_NONE",
@@ -113,6 +125,7 @@
       "latest_verified_commit": "7ded30f4301b29efa2a03d6ed4959a913aed1349",
       "pushed_at": "2026-04-24T16:42:36Z",
       "archived": true,
+      "private": true,
       "workflow_latest": {
         "name": "UNKNOWN_OR_NONE",
         "status": "UNKNOWN_OR_NONE",
@@ -125,9 +138,15 @@
   ],
   "mirror_sync_info": {
     "repo": "unitonzengarden/Uniton_Shared_Live",
-    "last_sync": "2026-04-28T19:33:49Z",
-    "source_commit": "9798af2cd11dd204cf1898472db94b0cf8d29520",
-    "triggered_by": "push",
-    "packet_spine_synced": false
+    "status": "VERIFIED / SYNCED",
+    "latest_sync_run_id": 25113988449,
+    "latest_sync_run_conclusion": "success",
+    "last_sync": "2026-04-29T14:12:00Z",
+    "source_commit": "895e0415b5e4d608a835a31e9dcf6b5f5c1c7c7a",
+    "mirror_commit": "8c254ef2adc3d0572ec78954f522c1f71c19fe12",
+    "triggered_by": "workflow_run",
+    "packet_spine_synced": true,
+    "packet_spine_hash_parity_verified": true,
+    "private_exposure_check": "PASS"
   }
 }

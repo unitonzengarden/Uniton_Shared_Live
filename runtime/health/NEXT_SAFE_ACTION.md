@@ -1,47 +1,45 @@
 # Next Safe Action
 
-Generated at: 2026-04-29T17:49:06.1377711+07:00
+Generated at: 2026-04-29T21:22:30.3082355+07:00
 
-Source commit: `32701083b367e1a8d595f3b4d53cba10d7a2f1b8`
+Source commit: `895e0415b5e4d608a835a31e9dcf6b5f5c1c7c7a`
 
 ## Recommendation
 
 ```text
-LANE03-UNITON_SHARED_LIVE-SYNC-EXPANSION-V1
+LANE03-GITHUB-BRANCH-PROTECTION-PLAN-V1
 ```
 
 ## Reason
 
-The first real AIER context packet and ecosystem health spine now exist in `Uniton_Shared`, but `Uniton_Shared_Live` does not yet sync these files.
+The first real AIER context packet and ecosystem health spine now exist in `Uniton_Shared` and have been verified through `Uniton_Shared_Live` public mirror sync.
 
-AITAO can read older public mirror state files, but cannot fetch:
+Mirror state:
 
-- `runtime/AIER_CONTEXT_PACKET.md`
-- `runtime/AIER_CONTEXT_PACKET.json`
-- `runtime/health/ECOSYSTEM_HEALTH_STATE.md`
-- `runtime/health/ECOSYSTEM_HEALTH_STATE.json`
-- `runtime/health/LATEST_VERIFIED_COMMITS.json`
-- `runtime/health/BLOCKERS_AND_RISKS.md`
-- `runtime/health/NEXT_SAFE_ACTION.md`
+- Status: `VERIFIED / SYNCED`
+- Latest sync run: `25113988449`
+- Latest synced source commit: `895e0415b5e4d608a835a31e9dcf6b5f5c1c7c7a`
+- Latest mirror commit: `8c254ef2adc3d0572ec78954f522c1f71c19fe12`
+- `SYNC_INFO.md` last sync: `2026-04-29T14:12:00Z`
 
-until a separate scoped sync expansion task updates and verifies the mirror workflow.
+The next highest governance gap is branch protection planning under active LAW_GITHUB_01.
 
 ## Safe Scope For Next Task
 
-- Modify only `Uniton_Shared` sync workflow and evidence artifacts if explicitly authorized.
-- Add generated packet and health files to the mirror allowlist.
-- Verify raw fetch URLs after sync.
-- Preserve `Uniton_Shared` as source of truth.
+- Read LAW_GITHUB_01 branch protection policy.
+- Read REPO_REGISTRY and final repo roles.
+- Inspect current branch protection read-only.
+- Produce a branch protection plan only.
+- Do not enable branch protection unless a later apply task explicitly scopes it.
 - Produce REPORT_TEMPLATE_V2 report, JSON, snapshot, and audit log.
 
 ## Forbidden In Next Task Unless Explicitly Scoped
 
 - No GitHub settings change.
-- No branch protection change.
+- No branch protection apply/change.
 - No product repo write.
 - No `Uniton_OS` write.
 - No deployment.
 - No secret inspection.
 - No law activation or amendment.
 - No manual source-of-truth edits in `Uniton_Shared_Live`.
-

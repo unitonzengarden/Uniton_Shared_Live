@@ -1,10 +1,10 @@
 {
   "schema_version": "ECOSYSTEM_HEALTH_SPINE_V1",
-  "generated_at": "2026-04-29T17:49:06.1377711+07:00",
+  "generated_at": "2026-04-29T21:22:30.3082355+07:00",
   "source_repo": "unitonzengarden/Uniton_Shared",
-  "source_commit": "32701083b367e1a8d595f3b4d53cba10d7a2f1b8",
+  "source_commit": "895e0415b5e4d608a835a31e9dcf6b5f5c1c7c7a",
   "aggregate_verdict": "YELLOW",
-  "aggregate_reason": "No confirmed critical blocker, but branch protection, PR backlog, product evidence, mirror expansion, first packet validation, and secret review remain incomplete or future-scoped.",
+  "aggregate_reason": "Mirror availability is verified, but branch protection, PR backlog, product evidence, phase/gate reconciliation, and secret review remain incomplete or future-scoped.",
   "domains": [
     {
       "domain": "GitHub health",
@@ -19,13 +19,13 @@
           "summary": "Repo registry exists."
         },
         {
-          "path_or_url": "reports/LANE03-GITHUB-METADATA-HYGIENE-APPLY-V1_REPORT.md",
-          "summary": "Metadata hygiene applied with WARNING due _archive_chatbot archived read-only description block."
+          "path_or_url": "read-only gh inspection",
+          "summary": "Open PRs remain in Uniton_OS and aier-life-super-app; branch protection remains incomplete across ecosystem."
         }
       ],
-      "latest_commit_or_source": "32701083b367e1a8d595f3b4d53cba10d7a2f1b8 plus read-only gh inspection",
+      "latest_commit_or_source": "895e0415b5e4d608a835a31e9dcf6b5f5c1c7c7a plus read-only gh inspection",
       "blocker": "NONE",
-      "next_action": "LANE03-GITHUB-BRANCH-PROTECTION-PLAN-V1 after sync expansion."
+      "next_action": "LANE03-GITHUB-BRANCH-PROTECTION-PLAN-V1"
     },
     {
       "domain": "Governance health",
@@ -36,13 +36,13 @@
           "summary": "REPORT_TEMPLATE_V2 is mandatory."
         },
         {
-          "path_or_url": "runtime/PROJECT_STATUS.md",
-          "summary": "Project status reports 16 active law files and 23 pending AMD rows."
+          "path_or_url": "docs/LAW_CLA_LLM/SHARED/laws/LAW_GITHUB_01_REPO_GOVERNANCE.md",
+          "summary": "GitHub governance law is active."
         }
       ],
-      "latest_commit_or_source": "runtime/PROJECT_STATUS.md source commit 7af5683818291ef85559e2ef66b266a99e8a056f",
+      "latest_commit_or_source": "runtime/PROJECT_STATUS.md at 895e0415b5e4d608a835a31e9dcf6b5f5c1c7c7a",
       "blocker": "NONE",
-      "next_action": "Reconcile historical/pending governance evidence when scoped."
+      "next_action": "Reconcile historical/pending governance and phase gate evidence when scoped."
     },
     {
       "domain": "Runtime health",
@@ -53,13 +53,17 @@
           "summary": "Current state exists and identifies controlled execution/dry-run boundaries."
         },
         {
-          "path_or_url": "runtime/PROJECT_STATUS.md",
-          "summary": "QA aggregate health is 60/100; runtime status surfaces exist."
+          "path_or_url": "runtime/AIER_CONTEXT_PACKET.md",
+          "summary": "Context packet refreshed after mirror verification."
+        },
+        {
+          "path_or_url": "runtime/health/ECOSYSTEM_HEALTH_STATE.md",
+          "summary": "Health spine refreshed after mirror verification."
         }
       ],
-      "latest_commit_or_source": "runtime/PROJECT_STATUS.md source commit 7af5683818291ef85559e2ef66b266a99e8a056f",
+      "latest_commit_or_source": "895e0415b5e4d608a835a31e9dcf6b5f5c1c7c7a",
       "blocker": "NONE",
-      "next_action": "Validate and refresh packet/spine through future generator automation."
+      "next_action": "Keep packet/spine refreshed after governance-affecting commits."
     },
     {
       "domain": "Product health",
@@ -74,26 +78,30 @@
           "summary": "Product CI/README/PR evidence is incomplete; uzgplus-app workflow was in progress during inspection."
         }
       ],
-      "latest_commit_or_source": "uzgplus-app 0c7edee8e1396f64f47e22225fc57aba451f20b5; AIFI_LIFE 2690235e00117b5f829a0231a1b34c3d9d0c36db; aier-life-super-app 73960cdb4738334791cb6e58ad0fd898b85b1c8a",
+      "latest_commit_or_source": "uzgplus-app 57ba05c6d85d3887cc82641823719e14b217e942; AIFI_LIFE 2690235e00117b5f829a0231a1b34c3d9d0c36db; aier-life-super-app 73960cdb4738334791cb6e58ad0fd898b85b1c8a",
       "blocker": "NONE",
       "next_action": "Run product CI/README/PR review tasks only when explicitly scoped."
     },
     {
       "domain": "Mirror health",
-      "status": "YELLOW",
+      "status": "GREEN",
       "evidence": [
         {
           "path_or_url": ".github/workflows/sync_runtime_to_public.yml",
-          "summary": "Current workflow syncs runtime/checklist/action/project/notification/network files only."
+          "summary": "Workflow includes AIER context/health files."
         },
         {
-          "path_or_url": "Uniton_Shared_Live/SYNC_INFO.md via gh api",
-          "summary": "Last mirror sync was 2026-04-28T19:33:49Z from source commit 9798af2cd11dd204cf1898472db94b0cf8d29520."
+          "path_or_url": "reports/LANE03-UNITON_SHARED_LIVE-SYNC-VERIFY-V1_REPORT.md",
+          "summary": "All 7 mirror files were present, raw URLs were readable, hashes matched, and private exposure check passed."
+        },
+        {
+          "path_or_url": "Uniton_Shared_Live/SYNC_INFO.md via raw URL",
+          "summary": "Latest sync reports source commit 895e0415b5e4d608a835a31e9dcf6b5f5c1c7c7a."
         }
       ],
-      "latest_commit_or_source": "Uniton_Shared_Live 7785581aa5de637bcf7504597a20231a3f28b0ab",
+      "latest_commit_or_source": "Uniton_Shared_Live 8c254ef2adc3d0572ec78954f522c1f71c19fe12; SYNC_INFO source commit 895e0415b5e4d608a835a31e9dcf6b5f5c1c7c7a",
       "blocker": "NONE",
-      "next_action": "LANE03-UNITON_SHARED_LIVE-SYNC-EXPANSION-V1"
+      "next_action": "Monitor mirror sync after future runtime state commits."
     },
     {
       "domain": "Lane health",
@@ -101,14 +109,14 @@
       "evidence": [
         {
           "path_or_url": "network/LANE_REGISTRY.md",
-          "summary": "Lane_01, Lane_02, and Lane_03 are active; no pending lanes."
+          "summary": "Lane registry exists."
         },
         {
           "path_or_url": "network/ACTIVITY_FEED.md",
-          "summary": "Activity feed exists but includes unknown task identity rows."
+          "summary": "Activity feed exists and continues to be regenerated."
         }
       ],
-      "latest_commit_or_source": "network/LANE_REGISTRY.md source commit 7af5683818291ef85559e2ef66b266a99e8a056f",
+      "latest_commit_or_source": "895e0415b5e4d608a835a31e9dcf6b5f5c1c7c7a",
       "blocker": "NONE",
       "next_action": "Keep lane registry/activity feed aligned and resolve unknown identity rows when scoped."
     },
@@ -117,15 +125,15 @@
       "status": "GREEN",
       "evidence": [
         {
-          "path_or_url": "reports/LANE03-REPORT-SYSTEM-LAW-N5-APPLY-V1_REPORT.md",
-          "summary": "LAW_N5 V2 enforcement applied."
+          "path_or_url": "reports/LANE03-UNITON_SHARED_LIVE-SYNC-VERIFY-V1_REPORT.md",
+          "summary": "Mirror verification passed using REPORT_TEMPLATE_V2."
         },
         {
-          "path_or_url": "reports/LANE03-AIER-CONTEXT-PACKET-AND-HEALTH-SPINE-SPEC-V1_REPORT.md",
-          "summary": "Previous packet/spine spec task used REPORT_TEMPLATE_V2."
+          "path_or_url": "reports/LANE03-REPORT-SYSTEM-LAW-N5-APPLY-V1_REPORT.md",
+          "summary": "LAW_N5 V2 enforcement applied."
         }
       ],
-      "latest_commit_or_source": "reports/LANE03-AIER-CONTEXT-PACKET-AND-HEALTH-SPINE-SPEC-V1_REPORT.md",
+      "latest_commit_or_source": "reports/LANE03-UNITON_SHARED_LIVE-SYNC-VERIFY-V1_REPORT.md",
       "blocker": "NONE",
       "next_action": "Add report validator automation in a future scoped task if desired."
     },
@@ -148,43 +156,30 @@
     }
   ],
   "blockers": [],
-  "risks": [
+  "risks_and_evidence_gaps": [
     "BRANCH_PROTECTION_PLAN_REQUIRED",
     "PR_BACKLOG_REVIEW_REQUIRED",
-    "MIRROR_EXPANSION_REQUIRED",
-    "MIRROR_SYNC_STALE_FOR_PACKET",
     "SECRET_REVIEW_REQUIRED",
     "PRODUCT_CI_README_EVIDENCE_GAP",
     "PHASE_GATE_RECONCILIATION_REQUIRED"
   ],
-  "next_safe_action": {
-    "task_id": "LANE03-UNITON_SHARED_LIVE-SYNC-EXPANSION-V1",
-    "reason": "Generated packet and health spine exist in Uniton_Shared but are not yet mirrored for AITAO raw fetch."
-  },
-  "source_files": [
-    "docs/LAW_CLA_LLM/SHARED/runtime/AIER_CONTEXT_PACKET_SPEC_V1.md",
-    "docs/LAW_CLA_LLM/SHARED/runtime/ECOSYSTEM_HEALTH_SPINE_SPEC_V1.md",
-    "docs/LAW_CLA_LLM/SHARED/runtime/UNITON_SHARED_LIVE_SYNC_EXPANSION_PLAN_V1.md",
-    "docs/LAW_CLA_LLM/SHARED/laws/LAW_GITHUB_01_REPO_GOVERNANCE.md",
-    "docs/LAW_CLA_LLM/SHARED/laws/LAW_N5_TASK_PROMPT.md",
-    "docs/LAW_CLA_LLM/SHARED/github/REPO_REGISTRY.md",
-    "runtime/current_state.md",
-    "runtime/checklist/MASTER_CHECKLIST.md",
-    "runtime/PROJECT_STATUS.md",
-    "runtime/ACTION_REQUIRED_BOARD.md",
-    "network/LANE_REGISTRY.md",
-    "network/ACTIVITY_FEED.md",
-    "notifications/NOTIFICATION_LEDGER.md",
-    "reports/LANE03-AIER-CONTEXT-PACKET-AND-HEALTH-SPINE-SPEC-V1_REPORT.md",
-    "reports/LANE03-GITHUB-METADATA-HYGIENE-APPLY-V1_REPORT.md",
-    "reports/LANE03-LAW_GITHUB_01-NTS-APPROVAL-AND-APPLY-V1_REPORT.md",
-    "reports/LANE03-REPORT-SYSTEM-LAW-N5-APPLY-V1_REPORT.md",
-    ".github/workflows/sync_runtime_to_public.yml"
+  "resolved_or_verified": [
+    {
+      "id": "MIRROR_VERIFIED",
+      "status": "VERIFIED",
+      "evidence": "Sync Runtime to Public run 25113988449 succeeded for source commit 895e0415b5e4d608a835a31e9dcf6b5f5c1c7c7a; prior verify report confirmed file presence, raw URL readability, hash parity, and no private exposure."
+    }
   ],
-  "generation_warnings": [
-    "Unknowns are marked as evidence gaps.",
-    "No GitHub settings were changed.",
-    "No mirror workflow was modified.",
-    "No other repos were touched."
+  "next_safe_action": "LANE03-GITHUB-BRANCH-PROTECTION-PLAN-V1",
+  "source_files": [
+    "runtime/AIER_CONTEXT_PACKET.md",
+    "runtime/AIER_CONTEXT_PACKET.json",
+    "runtime/health/LATEST_VERIFIED_COMMITS.json",
+    "runtime/health/BLOCKERS_AND_RISKS.md",
+    "runtime/health/NEXT_SAFE_ACTION.md",
+    "reports/LANE03-UNITON_SHARED_LIVE-SYNC-VERIFY-V1_REPORT.md",
+    "snapshots/LANE03-UNITON_SHARED_LIVE-SYNC-VERIFY-V1.snapshot.json",
+    "docs/LAW_CLA_LLM/SHARED/laws/LAW_GITHUB_01_REPO_GOVERNANCE.md",
+    "docs/LAW_CLA_LLM/SHARED/laws/LAW_N5_TASK_PROMPT.md"
   ]
 }
