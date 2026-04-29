@@ -10,7 +10,7 @@
 ## §0. Header
 
 - **Generator:** `aier-state-update v1.0` invoked via `scripts/runtime/generate_project_status.py v1.1`
-- **Source commit:** `92bb2938cab5d5d8fa219d8447cc74f46cd5ce0e` (short: `92bb293`)
+- **Source commit:** `624a0e6d8bc7feedd3452a925fe6c1363eeffb04` (short: `624a0e6`)
 - **Auto-generated:** `true` (do not hand-edit)
 - **Authority:** repo-backed automation per LAW_N8 §L8.2 explicitly enabled CI mode (state-mirror auto-regenerate scope only)
 
@@ -68,11 +68,11 @@
 
 | SHA | Author | Subject |
 |---|---|---|
+| `624a0e6` | Uniton Zen | audit(LANE01): AIER Code reality audit — verdict PARTIALLY_ENFORCED (#17) |
+| `c580932` | AIER Code Heartbeat | AIER Code heartbeat 2026-04-29T15:20:20Z [vercel skip] |
+| `47774d0` | AIER State Bot | [auto-status] regen runtime+network surfaces from 92bb293 [vercel skip] |
 | `92bb293` | unitonzengarden | docs(github): plan branch protection rollout [vercel skip] |
 | `0f9f268` | CLAC Executor | handoff(LANE01-UI-FIX-P1): UI fix P1 complete — NFT 1791->139, 0 warnings, ready for PRECHECK |
-| `86b2094` | AIER State Bot | [auto-status] regen runtime+network surfaces from 52fc0db [vercel skip] |
-| `5147ab8` | CLAC Executor | LANE01-LIVE-LEDGER-FOUNDATION: 3 deliverables + handoff |
-| `52fc0db` | unitonzengarden | docs(runtime): refresh AIER context packet and health state after mirror verify [vercel skip] |
 
 ## §7. Latest 5 DONE Tasks (from MASTER_CHECKLIST)
 
