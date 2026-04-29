@@ -1,0 +1,83 @@
+{
+  "scope": "uzg-plus",
+  "snapshot_kind": "state.live",
+  "captured_at_utc": "2026-04-29T17:00:00Z",
+  "captured_by": "LANE01-UZG-PLUS-AUDIT-AND-SYSTEM-MAP-V1",
+  "executor": "Cursor / claude-sonnet-4-5",
+  "repo_head": {
+    "full_name": "unitonzengarden/uzgplus-app",
+    "branch_at_audit": "main",
+    "head_sha_at_audit": "4b93ee754c997bd6577df190181885268e8d5eb3",
+    "head_message_at_audit": "docs(lane02): LANE02-UZG-LANG-CANON-LIBRARY-V1 ship report + snapshot + audit log [vercel skip]",
+    "head_committed_at": "2026-04-29T15:10:27Z",
+    "audit_branch": "feat/lane01-uzg-plus-audit-and-system-map"
+  },
+  "live_url": {
+    "canonical": "https://uzg.plus",
+    "status": 200,
+    "host": "Cloudflare",
+    "runtime_shell": "product-v2-pages-shell",
+    "runtime_worker": "product-v2-pages-worker",
+    "tls": "https",
+    "headers_present": ["x-uzg-runtime", "Server: cloudflare", "CF-RAY", "Report-To"],
+    "headers_absent": ["Strict-Transport-Security", "Content-Security-Policy", "X-Frame-Options"]
+  },
+  "stale_url": {
+    "url": "https://uzgplus-app.vercel.app",
+    "status": 404,
+    "vercel_error": "DEPLOYMENT_NOT_FOUND",
+    "note": "still set as repo homepage field"
+  },
+  "active_workflows": [
+    {"name": "Deploy to Cloudflare Pages (Stable)", "file": ".github/workflows/deploy.yml", "trigger": "push:main", "status": "active"},
+    {"name": "Deprecated Legacy Deploy", "file": ".github/workflows/cloudways-deploy.yml", "trigger": "workflow_dispatch", "status": "deprecated"}
+  ],
+  "endpoint_probes": {
+    "/": 200,
+    "/login": 200,
+    "/dashboard": 200,
+    "/enta": 200,
+    "/manifest.json": 200,
+    "/icons/icon-64.png": 200,
+    "/api/v1/auth/context": 401,
+    "/aier/status": "200 (SPA fallback, NOT Express endpoint)",
+    "/aier/health": "200 (SPA fallback, NOT Express endpoint)"
+  },
+  "asset_baseline_from_index_html": {
+    "main": "/assets/index-DmwlynPD.js",
+    "preloads": [
+      "/assets/react-vendor-C-oi7XAY.js",
+      "/assets/vendor-B4CftUe7.js",
+      "/assets/supabase-vendor-Bac37aeE.js"
+    ],
+    "stylesheet": "/assets/index-BcGAD_Zf.css"
+  },
+  "supabase": {
+    "uzg_plus_project_ref_declared_in_config": "kkhhpecofolmrodyeslp",
+    "live_uzg_plus_query": "NOT_PERFORMED (keys not in supplied env)",
+    "env_supplied_project_ref": "vstnvvwmztotgogobefx",
+    "env_supplied_project_actual_purpose": "AIER Code / Uniton_OS governance DB (33 tables, 11 RPCs)",
+    "openapi_evidence": ".lane_01/audits/supabase_openapi_uniton_os_dump.json"
+  },
+  "lane_separation": {
+    "lane_01_audit_namespace": ".lane_01/",
+    "lane_02_active_namespace": ".lane_02/",
+    "lane_02_recent_deliverables": [
+      "LANE02-UZG-LANG-AUDIT-V1",
+      "LANE02-UZG-LANG-HOTFIX-1-V1",
+      "LANE02-UZG-LANG-HOTFIX-2-V1",
+      "LANE02-UZG-LANG-CANON-LIBRARY-V1",
+      "LANE02-UZG-TAO-T-BAZI-001-V1",
+      "LANE02-UZG-TAO-T-BAZI-002-V1"
+    ],
+    "boundary_respected_by_lane_01": true
+  },
+  "summary": {
+    "audits_authored": 6,
+    "system_map_views": 4,
+    "deliverables_dot_count": 3,
+    "files_to_cross_publish": 6,
+    "honest_disclosure_items": 8,
+    "boundary_pass": "12/12 pending Phase K-M"
+  }
+}
