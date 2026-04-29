@@ -1,0 +1,42 @@
+{
+  "last_check": "2026-04-29T12:52:16Z",
+  "status": "alive",
+  "conditions": [
+    {
+      "condition": "UDNA",
+      "pass": true,
+      "message": "UDNA reference present at SHARED/identity/AIER_CODE_IDENTITY.md"
+    },
+    {
+      "condition": "History",
+      "pass": true,
+      "message": "History ledger active at docs/LAW_CLA_LLM/SHARED/amendments/AMENDMENTS_LOG.md"
+    },
+    {
+      "condition": "Ethics",
+      "pass": true,
+      "message": "Ethics lock valid at docs/LAW_CLA_LLM/SHARED/laws/REDLINES.md"
+    },
+    {
+      "condition": "Governance",
+      "pass": true,
+      "message": "13 laws active in docs/LAW_CLA_LLM/SHARED/laws"
+    },
+    {
+      "condition": "Role",
+      "pass": true,
+      "message": "Role canon present at docs/LAW_CLA_LLM/CANON/03_AIER_CODE_BOUNDARY_CANON.md"
+    },
+    {
+      "condition": "Continuity",
+      "pass": true,
+      "message": "Continuity OK (6538s since last)"
+    },
+    {
+      "condition": "Communication",
+      "pass": true,
+      "message": "Communication channels open (handoffs + notifications)"
+    }
+  ],
+  "aier_id": "AIER Code"
+}

@@ -1,0 +1,72 @@
+{
+  "udna": {
+    "id": "aier-code-genesis",
+    "aier_name": "AIER Code",
+    "genesis_hash": "aa8aea32179ff8fe9d77db93b697447b2f4ac9b26c3853dac2c4c981ca81dc94",
+    "genesis_timestamp": "2026-04-21T00:00:00+00:00",
+    "sponsor_id": "NTS",
+    "mission": "Phát triển hệ sinh thái công nghệ Uniton Future + sinh AIER Apps + AIER System (Dev, QA, Security, Guardian)",
+    "role": "AIER Core — production tool + công cụ sản xuất AIER Apps + góp phần build AIER Core khác",
+    "specialization": "Code/Dev/QA/Security/System/Guardian"
+  },
+  "brain": {
+    "l1": {
+      "status": "LIVE",
+      "table": "public.aier_code_knowledge_chunks",
+      "chunks_total": 410,
+      "by_category": {
+        "canon": 300,
+        "laws": 66,
+        "skills": 30,
+        "glossary": 11,
+        "redlines": 3
+      },
+      "embedding_model": "text-embedding-3-small",
+      "embedding_dimension": 1536,
+      "rpc": "public.search_aier_code_chunks(query_embedding, match_threshold, match_count)",
+      "ingested_via": "LANE01-INH-CODE-04 PR #10 (commit 2fd0cc1)"
+    },
+    "l2": {
+      "status": "PLANNED Tuần 2",
+      "design_ref": "docs/architecture/BRAIN_BLUEPRINT_AIER_CODE.md §2 + §3.2",
+      "table_target": "public.aier_code_episodic_events",
+      "fold_decision": "Decision Memory folded into L2 with event_type='decision' (Q4 NTS approval A)"
+    },
+    "l3": {
+      "status": "PLANNED Tuần 2",
+      "design_ref": "docs/architecture/BRAIN_BLUEPRINT_AIER_CODE.md §2 + §3.3",
+      "table_target": "public.aier_code_semantic_facts",
+      "write_authority": "NTS-approved INSERT only (gated by nts_decision_ref column per blueprint §3.3)"
+    },
+    "l4": {
+      "status": "PLANNED Tuần 2",
+      "design_ref": "docs/architecture/BRAIN_BLUEPRINT_AIER_CODE.md §2 + §3.4",
+      "table_target": "public.aier_code_procedural_tags",
+      "fk_target": "links to aier_code_knowledge_chunks.chunk_id with priority"
+    },
+    "l0_interface": {
+      "status": "DEFERRED Phase 2 (Q3 NTS approval A)",
+      "reason": "Query classifier needs LLM-tuned routing; Phase 1 callers query layers directly without orchestration"
+    }
+  },
+  "migrations_applied_in_uniton_os": [
+    "0032_aier_code_udna (LANE01-INH-CODE-01, Cursor PR #5)",
+    "0033_aier_code_knowledge_chunks (LANE01-INH-CODE-04 Phase A, Cursor PR #9)",
+    "0034_bloch_pool_tables (LANE01-BRIDGE-02, Cursor PR #10)"
+  ],
+  "first_bloch": {
+    "bloch_id": "8f187d2b-686f-42e7-9032-d68b124118fa",
+    "domain": "governance.naming",
+    "encryption_protocol": "classical_sha256",
+    "produced_via": "LANE01-BRIDGE-04-FIRST-BLOCH-PROOF (Cursor PR #12, merge 44786983)"
+  },
+  "heartbeat_pointer": "aier-status/aier-code/heartbeat.live.json",
+  "blueprint_pointer": "aier-status/aier-code/brain-pointer.live.md",
+  "tuần_1_milestone": {
+    "tasks_complete": "8/8",
+    "completed_at": "2026-04-29T(per LANE01-BRIDGE-04 handoff subject)",
+    "marks_phase_1_inheritance_done": true
+  },
+  "last_updated": "2026-04-29T(this commit)",
+  "data_source": "Live query via SUPABASE_SERVICE_ROLE_KEY against aier_code_udna + aier_code_knowledge_chunks during LANE01-LIVE-LEDGER-FOUNDATION execution"
+}

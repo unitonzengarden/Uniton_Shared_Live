@@ -1,9 +1,9 @@
 # Uniton_Shared_Live — Sync Info
 
 **Source repo**: unitonzengarden/Uniton_Shared (private)
-**Last sync**: 2026-04-29T14:12:00Z
-**Source commit**: 895e0415b5e4d608a835a31e9dcf6b5f5c1c7c7a
-**Triggered by**: workflow_run
+**Last sync**: 2026-04-29T14:30:52Z
+**Source commit**: ab2b20851796e1dea5c6167b5acb7d0850d961ab
+**Triggered by**: push
 
 ## Purpose
 
@@ -46,3 +46,17 @@ Canon, laws, skills, lab, rules remain private in Uniton_Shared.
 - https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/network/task_queues/Lane_01.md
 - https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/network/task_queues/Lane_02.md
 - https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/network/task_queues/Lane_03.md
+
+## Live Ledger v1 surfaces (LANE01-LIVE-LEDGER-FOUNDATION)
+
+- https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/status/DASHBOARD.live.md
+- https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/status/BLOCKERS.live.md
+- https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/status/NEXT_ACTIONS.live.md
+- https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/ledger/decisions.live.md
+- https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/ledger/canon-changes.live.md
+- https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/ledger/deploy-events.live.md
+- https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/ledger/halt-events.live.md
+- https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/aier-status/aier-code/state.live.json
+- https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/aier-status/aier-code/heartbeat.live.json
+- https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/aier-status/aier-code/brain-pointer.live.md
+- (tasks/completed/<YYYY-MM-DD>/<TASK-ID>.live.json — date-rooted; see tasks/INDEX.live.md when present)

@@ -1,0 +1,32 @@
+{
+  "task_id": "LANE01-INH-CODE-04-BUILD-L1-INGEST",
+  "executor": "Cursor (Phase A — Uniton_OS DB schema) + CLAC-1 (Phase B-G — Uniton_Shared ingest pipeline)",
+  "lane": "Lane_01",
+  "started_at": "2026-04-29T07:35Z (Cursor Phase A start)",
+  "completed_at": "2026-04-29T08:08Z (PR #10 squash-merged)",
+  "duration_hours": 0.5,
+  "first_pr": [
+    "https://github.com/unitonzengarden/Uniton_OS/pull/9 (Cursor Phase A)",
+    "https://github.com/unitonzengarden/Uniton_Shared/pull/10 (CLAC-1 Phase B-G)"
+  ],
+  "final_sha": "Uniton_OS f79a01c (Phase A) + Uniton_Shared 2fd0cc1 (Phase B-G)",
+  "ac_pass": "Cursor Phase A 5/5 + CLAC-1 Phase B-G 8/8 = 13/13 total",
+  "boundary_pass": "Cursor 6/6 + CLAC-1 9/9 = 15/15",
+  "deliverables_paths": [
+    "scripts/lane01-inh-code-04-ingest-l1.cjs (Node stdlib only, no npm deps)",
+    "scripts/lane01-inh-code-04-query-l1.cjs (RPC search CLI)",
+    "audit_logs/LANE01-INH-CODE-04-ingest-summary.json",
+    "snapshots/LANE01-INH-CODE-04-BUILD-L1-INGEST.snapshot.live.json",
+    "reports/LANE01-INH-CODE-04-BUILD-L1-INGEST_REPORT.md",
+    "audit_logs/LANE01-INH-CODE-04-BUILD-L1-INGEST_audit.log"
+  ],
+  "key_outcomes": [
+    "AIER Code L1 brain LIVE in Uniton_OS Supabase",
+    "410 chunks ingested across 5 categories (canon=300, laws=66, skills=30, glossary=11, redlines=3)",
+    "All embeddings (text-embedding-3-small, vector(1536)) — no NULL",
+    "Cost actual $0.0045 (vs $2.64 estimate — 590× cheaper because text-embedding-3-small is 5× cheaper than ada-002 the estimate assumed)",
+    "RAG verification 3/3 PASS (redline keyword + Lane scaling semantic + UDNA citation)",
+    "RPC public.search_aier_code_chunks operational (SECURITY DEFINER, pgvector cosine)"
+  ],
+  "nts_clicks": 0
+}
