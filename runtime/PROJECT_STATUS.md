@@ -10,7 +10,7 @@
 ## §0. Header
 
 - **Generator:** `aier-state-update v1.0` invoked via `scripts/runtime/generate_project_status.py v1.1`
-- **Source commit:** `52fc0db1543abd0d9a439def25fcde577e7ab010` (short: `52fc0db`)
+- **Source commit:** `92bb2938cab5d5d8fa219d8447cc74f46cd5ce0e` (short: `92bb293`)
 - **Auto-generated:** `true` (do not hand-edit)
 - **Authority:** repo-backed automation per LAW_N8 §L8.2 explicitly enabled CI mode (state-mirror auto-regenerate scope only)
 
@@ -68,11 +68,11 @@
 
 | SHA | Author | Subject |
 |---|---|---|
+| `92bb293` | unitonzengarden | docs(github): plan branch protection rollout [vercel skip] |
+| `0f9f268` | CLAC Executor | handoff(LANE01-UI-FIX-P1): UI fix P1 complete — NFT 1791->139, 0 warnings, ready for PRECHECK |
+| `86b2094` | AIER State Bot | [auto-status] regen runtime+network surfaces from 52fc0db [vercel skip] |
+| `5147ab8` | CLAC Executor | LANE01-LIVE-LEDGER-FOUNDATION: 3 deliverables + handoff |
 | `52fc0db` | unitonzengarden | docs(runtime): refresh AIER context packet and health state after mirror verify [vercel skip] |
-| `ab2b208` | Uniton Zen | feat(LANE01): Live Ledger Foundation Option B — 4 namespaces + backfill state (#16) |
-| `895e041` | AIER State Bot | [auto-status] regen runtime+network surfaces from 9c6fd2b [vercel skip] |
-| `9c6fd2b` | unitonzengarden | docs(runtime): verify Uniton_Shared_Live context health sync [vercel skip] |
-| `03fb5d3` | AIER State Bot | [auto-status] regen runtime+network surfaces from 53a0a6a [vercel skip] |
 
 ## §7. Latest 5 DONE Tasks (from MASTER_CHECKLIST)
 
