@@ -10,7 +10,7 @@
 ## §0. Header
 
 - **Generator:** `aier-state-update v1.0` invoked via `scripts/runtime/generate_project_status.py v1.1`
-- **Source commit:** `d82cd571ba3253fca33ff5e8bcb03a66a36e875e` (short: `d82cd57`)
+- **Source commit:** `584bef25d0403c7008bfa20597a7fb3dfc88b9e9` (short: `584bef2`)
 - **Auto-generated:** `true` (do not hand-edit)
 - **Authority:** repo-backed automation per LAW_N8 §L8.2 explicitly enabled CI mode (state-mirror auto-regenerate scope only)
 
@@ -68,11 +68,11 @@
 
 | SHA | Author | Subject |
 |---|---|---|
-| `d82cd57` | Uniton Zen | audit(LANE01): Uniton_Shared_Live legacy inventory + Live Ledger gap analysis (#14) |
-| `383ed93` | AIER Code Heartbeat | AIER Code heartbeat 2026-04-29T11:03:18Z [vercel skip] |
-| `7026a1a` | AIER State Bot | [auto-status] regen runtime+network surfaces from 53636a4 [vercel skip] |
-| `53636a4` | unitonzengarden | docs(runtime): generate AIER context packet and health spine [vercel skip] |
-| `3270108` | CLAC Executor | LANE01-BRIDGE-04 handoff: First BLOCH end-to-end proof live (Task 8) [vercel skip] |
+| `584bef2` | Uniton Zen | fix(LANE01): sync workflow self-healing via workflow_run trigger (#15) |
+| `560bd70` | AIER Code Heartbeat | AIER Code heartbeat 2026-04-29T12:52:16Z [vercel skip] |
+| `ed458de` | AIER State Bot | [auto-status] regen runtime+network surfaces from 040d329 [vercel skip] |
+| `040d329` | unitonzengarden | docs(runtime): expand Uniton_Shared_Live context health sync [vercel skip] |
+| `eb576ef` | CLAC Executor | chore(lane_01-handoff): LANE01-UI-AUDIT-V1 COMPLETE -> CLA inbox [vercel skip] |
 
 ## §7. Latest 5 DONE Tasks (from MASTER_CHECKLIST)
 
