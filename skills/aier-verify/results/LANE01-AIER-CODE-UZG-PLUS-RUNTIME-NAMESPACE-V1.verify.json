@@ -1,0 +1,135 @@
+{
+  "task_id": "LANE01-AIER-CODE-UZG-PLUS-RUNTIME-NAMESPACE-V1",
+  "skill_id": "aier-verify",
+  "skill_version": "v2.0",
+  "verdict": "FAIL",
+  "verified_at": "2026-04-29T17:12:53.429Z",
+  "checks": {
+    "report_exists": {
+      "pass": true,
+      "evidence": "reports/LANE01-AIER-CODE-UZG-PLUS-RUNTIME-NAMESPACE-V1_REPORT.md"
+    },
+    "report_section_count": {
+      "pass": true,
+      "actual": 16,
+      "expected": ">=8",
+      "note": "meets full LAW_N5 §L5.4 expectation (>=14)"
+    },
+    "snapshot_exists": {
+      "pass": true,
+      "evidence": "snapshots/LANE01-AIER-CODE-UZG-PLUS-RUNTIME-NAMESPACE-V1.snapshot.live.json"
+    },
+    "snapshot_required_fields": {
+      "pass": true,
+      "missing": [],
+      "present_fields": [
+        "task_id",
+        "executor",
+        "model",
+        "lane",
+        "self_approve_authority",
+        "purpose",
+        "started_at",
+        "head_pre_flight",
+        "branch",
+        "pr",
+        "merge_commit",
+        "phases_completed"
+      ]
+    },
+    "audit_log_exists": {
+      "pass": true,
+      "evidence": "audit_logs/LANE01-AIER-CODE-UZG-PLUS-RUNTIME-NAMESPACE-V1_audit.log"
+    },
+    "audit_log_phase_count": {
+      "pass": true,
+      "actual": 9,
+      "total_phase_markers": 46,
+      "expected": ">=3 distinct phases"
+    },
+    "deliverable_naming_dot": {
+      "pass": true,
+      "violations": []
+    },
+    "ac_count_match": {
+      "pass": false,
+      "actual": 18,
+      "expected": ">=8",
+      "field_used": "ac_status",
+      "non_pass_count": 7,
+      "non_pass_values": [
+        {
+          "key": "AC5_uzg_plus_head_sha_real",
+          "value": "BLOCKED by KF-01 — uzg-plus repo not reachable from current PAT, so head_sha cannot be populated. The poller architectur"
+        },
+        {
+          "key": "AC8_repo_secret_set_via_gh_secret_set",
+          "value": "BLOCKED by KF-02 — PAT lacks actions:secrets:write. Mitigated by workflow's GITHUB_TOKEN fallback (functionally equivale"
+        },
+        {
+          "key": "AC9_workflow_dispatch_first_run_success",
+          "value": "PENDING (Phase K — to be triggered post-merge)"
+        },
+        {
+          "key": "AC12_live_mirror_sync_uzg_plus_fetch_200",
+          "value": "PENDING (Phase K — post-merge fetch)"
+        },
+        {
+          "key": "AC13_aier_verify_self_verify_pass",
+          "value": "PENDING (Phase L)"
+        },
+        {
+          "key": "AC15_pr_self_merged_squash",
+          "value": "PENDING (Phase J)"
+        },
+        {
+          "key": "AC16_nts_clicks_zero",
+          "value": "PENDING (target)"
+        }
+      ]
+    },
+    "boundary_count_match": {
+      "pass": false,
+      "actual": 12,
+      "expected": ">=8",
+      "field_used": "boundary_check",
+      "non_pass_count": 4,
+      "non_pass_values": [
+        {
+          "key": "no_modify_cursor_uzg_plus_workspace",
+          "value": "n/a — different repo, can't access"
+        },
+        {
+          "key": "no_modify_uniton_os_local",
+          "value": "n/a — different repo, can't access"
+        },
+        {
+          "key": "self_merge_per_AMD",
+          "value": "PENDING (Phase J)"
+        },
+        {
+          "key": "repo_secret_via_gh_secret_set",
+          "value": "BLOCKED by PAT scope (KF-02); workflow uses GITHUB_TOKEN fallback"
+        }
+      ]
+    },
+    "boundary_self_attestation_warning": {
+      "warn": false,
+      "reason": "no soft-fail tokens detected; boundary still self-attested per dispatch §11 disclosure"
+    }
+  },
+  "summary": {
+    "total_checks": 10,
+    "passed": 7,
+    "failed": 2,
+    "warnings": 0
+  },
+  "verdict_rationale": "FAIL — 2 check(s) failed: ac_count_match, boundary_count_match",
+  "inputs_resolved": {
+    "report_path": "reports/LANE01-AIER-CODE-UZG-PLUS-RUNTIME-NAMESPACE-V1_REPORT.md",
+    "snapshot_path": "snapshots/LANE01-AIER-CODE-UZG-PLUS-RUNTIME-NAMESPACE-V1.snapshot.live.json",
+    "audit_log_path": "audit_logs/LANE01-AIER-CODE-UZG-PLUS-RUNTIME-NAMESPACE-V1_audit.log",
+    "expected_ac_count": null,
+    "expected_boundary_count": null
+  }
+}

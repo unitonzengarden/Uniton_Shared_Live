@@ -3,7 +3,7 @@
 > **Auto-generated** by `scripts/generate_dashboard.cjs` reading from `tasks/` + `ledger/` + `status/` + `aier-status/` namespaces.
 > Refresh-allowed; do NOT hand-edit (changes will be overwritten on next regen).
 
-**Last generated:** 2026-04-29T17:10:08Z
+**Last generated:** 2026-04-29T17:14:28Z
 **Schema:** [`docs/architecture/LIVE_LEDGER_SCHEMA_v1.md`](../docs/architecture/LIVE_LEDGER_SCHEMA_v1.md)
 
 ---
@@ -119,6 +119,7 @@ _Live state JSON paths under [`aier-status/<slug>/`](../aier-status/)._
 
 | Task ID | Verdict | Failed checks | Verified at | Result file |
 |---|---|---|---|---|
+| `LANE01-AIER-CODE-UZG-PLUS-RUNTIME-NAMESPACE-V1` | **FAIL** | ac_count_match, boundary_count_match | 2026-04-29T17:12:53.429Z | [`LANE01-AIER-CODE-UZG-PLUS-RUNTIME-NAMESPACE-V1.verify.json`](../docs/LAW_CLA_LLM/SHARED/skills/aier-verify/results/LANE01-AIER-CODE-UZG-PLUS-RUNTIME-NAMESPACE-V1.verify.json) |
 | `LANE01-SKILL-AIER-VERIFY-EXECUTABLE-V1` | **FAIL** | ac_count_match, boundary_count_match | 2026-04-29T16:11:20.841Z | [`LANE01-SKILL-AIER-VERIFY-EXECUTABLE-V1.verify.json`](../docs/LAW_CLA_LLM/SHARED/skills/aier-verify/results/LANE01-SKILL-AIER-VERIFY-EXECUTABLE-V1.verify.json) |
 | `LANE01-LIVE-LEDGER-FOUNDATION` | **PASS** | none | 2026-04-29T15:52:00.780Z | [`LANE01-LIVE-LEDGER-FOUNDATION.verify.json`](../docs/LAW_CLA_LLM/SHARED/skills/aier-verify/results/LANE01-LIVE-LEDGER-FOUNDATION.verify.json) |
 | `LANE01-INH-CODE-03-BRAIN-BLUEPRINT` | **FAIL** | report_section_count | 2026-04-29T15:51:33.093Z | [`LANE01-INH-CODE-03-BRAIN-BLUEPRINT.verify.json`](../docs/LAW_CLA_LLM/SHARED/skills/aier-verify/results/LANE01-INH-CODE-03-BRAIN-BLUEPRINT.verify.json) |
@@ -128,7 +129,6 @@ _Live state JSON paths under [`aier-status/<slug>/`](../aier-status/)._
 | `LANE01-INH-CODE-01-UDNA` | **FAIL** | report_exists, report_section_count, snapshot_exists, snapshot_required_fields, audit_log_exists, audit_log_phase_count, ac_count_match, boundary_count_match | 2026-04-29T15:51:32.960Z | [`LANE01-INH-CODE-01-UDNA.verify.json`](../docs/LAW_CLA_LLM/SHARED/skills/aier-verify/results/LANE01-INH-CODE-01-UDNA.verify.json) |
 | `LANE01-BRIDGE-03-BLOCH-ENDPOINTS` | **FAIL** | report_exists, report_section_count, snapshot_exists, snapshot_required_fields, audit_log_exists, audit_log_phase_count, ac_count_match, boundary_count_match | 2026-04-29T15:51:32.693Z | [`LANE01-BRIDGE-03-BLOCH-ENDPOINTS.verify.json`](../docs/LAW_CLA_LLM/SHARED/skills/aier-verify/results/LANE01-BRIDGE-03-BLOCH-ENDPOINTS.verify.json) |
 | `LANE01-BRIDGE-02-BLOCH-POOL-TABLES` | **FAIL** | report_exists, report_section_count, snapshot_exists, snapshot_required_fields, audit_log_exists, audit_log_phase_count, ac_count_match, boundary_count_match | 2026-04-29T15:51:32.766Z | [`LANE01-BRIDGE-02-BLOCH-POOL-TABLES.verify.json`](../docs/LAW_CLA_LLM/SHARED/skills/aier-verify/results/LANE01-BRIDGE-02-BLOCH-POOL-TABLES.verify.json) |
-| `LANE01-BRIDGE-01-BLOCH-SCHEMA-SPEC` | **FAIL** | ac_count_match | 2026-04-29T15:51:32.832Z | [`LANE01-BRIDGE-01-BLOCH-SCHEMA-SPEC.verify.json`](../docs/LAW_CLA_LLM/SHARED/skills/aier-verify/results/LANE01-BRIDGE-01-BLOCH-SCHEMA-SPEC.verify.json) |
 
 _Execution log: [`docs/LAW_CLA_LLM/SHARED/skills/aier-verify/EXECUTION_LOG.live.md`](../docs/LAW_CLA_LLM/SHARED/skills/aier-verify/EXECUTION_LOG.live.md)_
 
