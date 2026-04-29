@@ -10,7 +10,7 @@
 ## §0. Header
 
 - **Generator:** `aier-state-update v1.0` invoked via `scripts/runtime/generate_project_status.py v1.1`
-- **Source commit:** `cfc5eac1d6848395be83b19ee6a567668ab5fc44` (short: `cfc5eac`)
+- **Source commit:** `d82cd571ba3253fca33ff5e8bcb03a66a36e875e` (short: `d82cd57`)
 - **Auto-generated:** `true` (do not hand-edit)
 - **Authority:** repo-backed automation per LAW_N8 §L8.2 explicitly enabled CI mode (state-mirror auto-regenerate scope only)
 
@@ -38,10 +38,13 @@
 
 ## §4. Active LAWs
 
-- **Count:** 13 files in `docs/LAW_CLA_LLM/SHARED/laws/`
+- **Count:** 16 files in `docs/LAW_CLA_LLM/SHARED/laws/`
+  - `LAW_GITHUB_01_REPO_GOVERNANCE.md`
   - `LAW_N10_CAPABILITY_MATRIX.md`
   - `LAW_N11_BACKEND_BRIDGE.md`
   - `LAW_N12_REPO_RUNTIME_STANDARD.md`
+  - `LAW_N13_MULTI_REPO_AND_HANDOFFS.md`
+  - `LAW_N14_INTER_AIER_BRIDGE_STANDARD_v1_1.md`
   - `LAW_N1_IDENTITY.md`
   - `LAW_N2_DISCUSSION.md`
   - `LAW_N4_ROADMAP.md`
@@ -55,8 +58,8 @@
 
 ## §5. Active AMDs (AMENDMENTS_LOG counts)
 
-- **Total rows:** 31
-- **PENDING:** 22
+- **Total rows:** 32
+- **PENDING:** 23
 - **APPROVED (non-pending):** 9
 - **Lane self-approve (under AMD_LANE01_CTO_AUTO_APPROVE_TECH_NON_CANON §3.1):** 18
 - **Authoritative source:** `docs/LAW_CLA_LLM/SHARED/amendments/AMENDMENTS_LOG.md`
@@ -65,21 +68,21 @@
 
 | SHA | Author | Subject |
 |---|---|---|
-| `cfc5eac` | unitonzengarden | record(lane03): capture NTS approval for LAW_N13 amendment [vercel skip] |
-| `d0dd86e` | AIER State Bot | [auto-status] regen runtime+network surfaces from acd227e [vercel skip] |
-| `acd227e` | unitonzengarden | amend(lane03): prepare LAW_N13 AIER Life integration packet [vercel skip] |
-| `ac5498c` | AIER State Bot | [auto-status] regen runtime+network surfaces from e88f489 [vercel skip] |
-| `e88f489` | unitonzengarden | review(lane03): validate full LAW_N13 candidate for amendment prep [vercel skip] |
+| `d82cd57` | Uniton Zen | audit(LANE01): Uniton_Shared_Live legacy inventory + Live Ledger gap analysis (#14) |
+| `383ed93` | AIER Code Heartbeat | AIER Code heartbeat 2026-04-29T11:03:18Z [vercel skip] |
+| `7026a1a` | AIER State Bot | [auto-status] regen runtime+network surfaces from 53636a4 [vercel skip] |
+| `53636a4` | unitonzengarden | docs(runtime): generate AIER context packet and health spine [vercel skip] |
+| `3270108` | CLAC Executor | LANE01-BRIDGE-04 handoff: First BLOCH end-to-end proof live (Task 8) [vercel skip] |
 
 ## §7. Latest 5 DONE Tasks (from MASTER_CHECKLIST)
 
 | Task ID | Completed | Commit |
 |---|---|---|
+| LANE03-AIER-LIFE-INTEGRATION-AMENDMENT-APPLY-V1 | 2026-04-29 | (this commit) |
 | LANE03-AIER-LIFE-INTEGRATION-AMENDMENT-PREP-V1 | 2026-04-29 | (this commit) |
 | LANE03-W3-LAW-N13-INTEGRATION-HARDEN-V1 | 2026-04-28 | (this commit) |
 | LANE01-V1-CONTINUE-FINISH-V1 | 2026-04-29 | (this commit) |
 | LANE01-W5-UNITON-FUTURE-HANDOFF-V1 | 2026-04-29 | `524aad3` (rebased over Lane_02 push) |
-| LANE01-W5-V1-RELEASE-COMMIT-V1 | 2026-04-29 | `7a02007` (apply) + `a122cd0` (annotated tag objec |
 
 ## §8. Pending NTS Decisions
 
