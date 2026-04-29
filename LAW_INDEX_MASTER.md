@@ -49,15 +49,16 @@ Path: `docs/LAW_CLA_LLM/SHARED/laws/`
 | `BOOT_MINIMUM.md` | ALL | Boot-minimum context |
 | `LAW_GITHUB_01_REPO_GOVERNANCE.md` | ALL | GitHub repo governance |
 
-## NHÓM 4 — LAW-NTS-LANE-* (Lane-specific LAWs, currently 1 file)
+## NHÓM 4 — LAW-NTS-LANE-* (Lane-specific LAWs, currently 2 files)
 
 Path: `laws/` (root-level — separate from `docs/LAW_CLA_LLM/SHARED/laws/`)
 
 | File | Scope | Date | Notes |
 |---|---|---|---|
 | `LAW-NTS-LANE-3_v1.md` | Lane_03 (AITAO / Codex) | 2026-04-29 | Backend Engineering Lane operating law v1.1 |
+| `LAW-NTS-LANE-4_v1.md` | Lane_04 (Gemini + Copilot) | 2026-04-29 | Social + Real User Testing Lane operating law v1.0 (effective 2026-04-30) |
 
-> **Phantom-prefix materialisation note:** the `LAW-NTS-LANE-*` prefix was identified as a "phantom prefix" in `LANE01-AIER-CODE-REALITY-AUDIT-V1` (2026-04-29) — i.e. it was cited in dispatches but had no actual files in repo. This entry materialises the first such file. Future Lane-specific LAWs (`LAW-NTS-LANE-1-*` if NTS authors one for Lane_01, etc.) will land here under the same convention.
+> **Phantom-prefix materialisation update 2026-04-29:** the `LAW-NTS-LANE-*` prefix phantom count: **2 of 10 materialised** (Lane_03 v1.1 + Lane_04 v1.0). Remaining 8 phantoms (Lane_01, Lane_02, Lane_05+, etc.) await CLA1 authoring on demand. The prefix is now confirmed canonical-intended (not aspirational).
 
 ---
 
