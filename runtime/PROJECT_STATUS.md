@@ -10,7 +10,7 @@
 ## §0. Header
 
 - **Generator:** `aier-state-update v1.0` invoked via `scripts/runtime/generate_project_status.py v1.1`
-- **Source commit:** `624a0e6d8bc7feedd3452a925fe6c1363eeffb04` (short: `624a0e6`)
+- **Source commit:** `f264bf24aa3a8d934c2fffce2ef3dcea61336edc` (short: `f264bf2`)
 - **Auto-generated:** `true` (do not hand-edit)
 - **Authority:** repo-backed automation per LAW_N8 §L8.2 explicitly enabled CI mode (state-mirror auto-regenerate scope only)
 
@@ -34,7 +34,7 @@
   - `aier-dispatch` — ACTIVE v1.0 (owner: Lane_01)
   - `aier-handoff-route` — ACTIVE v1.0 (owner: Lane_01)
   - `aier-state-update` — ACTIVE v1.0 (owner: Lane_01)
-  - `aier-verify` — ACTIVE v1.0 (owner: Lane_01)
+  - `aier-verify` — ACTIVE v2.0 (owner: Lane_01)
 
 ## §4. Active LAWs
 
@@ -68,11 +68,11 @@
 
 | SHA | Author | Subject |
 |---|---|---|
+| `f264bf2` | Uniton Zen | feat(LANE01): aier-verify skill executable + CI integration [vercel skip] (#18) |
+| `0ee8b36` | AIER State Bot | [auto-status] regen runtime+network surfaces from 624a0e6 [vercel skip] |
 | `624a0e6` | Uniton Zen | audit(LANE01): AIER Code reality audit — verdict PARTIALLY_ENFORCED (#17) |
 | `c580932` | AIER Code Heartbeat | AIER Code heartbeat 2026-04-29T15:20:20Z [vercel skip] |
 | `47774d0` | AIER State Bot | [auto-status] regen runtime+network surfaces from 92bb293 [vercel skip] |
-| `92bb293` | unitonzengarden | docs(github): plan branch protection rollout [vercel skip] |
-| `0f9f268` | CLAC Executor | handoff(LANE01-UI-FIX-P1): UI fix P1 complete — NFT 1791->139, 0 warnings, ready for PRECHECK |
 
 ## §7. Latest 5 DONE Tasks (from MASTER_CHECKLIST)
 
