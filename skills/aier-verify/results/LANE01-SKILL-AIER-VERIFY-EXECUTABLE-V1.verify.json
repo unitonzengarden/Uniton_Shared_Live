@@ -1,0 +1,102 @@
+{
+  "task_id": "LANE01-SKILL-AIER-VERIFY-EXECUTABLE-V1",
+  "skill_id": "aier-verify",
+  "skill_version": "v2.0",
+  "verdict": "FAIL",
+  "verified_at": "2026-04-29T16:11:20.841Z",
+  "checks": {
+    "report_exists": {
+      "pass": true,
+      "evidence": "reports/LANE01-SKILL-AIER-VERIFY-EXECUTABLE-V1_REPORT.md"
+    },
+    "report_section_count": {
+      "pass": true,
+      "actual": 14,
+      "expected": ">=8",
+      "note": "meets full LAW_N5 §L5.4 expectation (>=14)"
+    },
+    "snapshot_exists": {
+      "pass": true,
+      "evidence": "snapshots/LANE01-SKILL-AIER-VERIFY-EXECUTABLE-V1.snapshot.live.json"
+    },
+    "snapshot_required_fields": {
+      "pass": true,
+      "missing": [],
+      "present_fields": [
+        "task_id",
+        "executor",
+        "model",
+        "lane",
+        "self_approve_authority",
+        "purpose",
+        "started_at",
+        "head_pre_flight",
+        "branch",
+        "pr",
+        "merge_commit",
+        "merged_at"
+      ]
+    },
+    "audit_log_exists": {
+      "pass": true,
+      "evidence": "audit_logs/LANE01-SKILL-AIER-VERIFY-EXECUTABLE-V1_audit.log"
+    },
+    "audit_log_phase_count": {
+      "pass": true,
+      "actual": 10,
+      "total_phase_markers": 63,
+      "expected": ">=3 distinct phases"
+    },
+    "deliverable_naming_dot": {
+      "pass": true,
+      "violations": []
+    },
+    "ac_count_match": {
+      "pass": false,
+      "actual": 20,
+      "expected": ">=8",
+      "field_used": "ac_status",
+      "non_pass_count": 1,
+      "non_pass_values": [
+        {
+          "key": "AC14_5_evidence_urls_200",
+          "value": "PARTIAL (4/5 anonymous + 5/5 with NTS auth) — URL #1 EXECUTION_LOG 200/12162B, URL #2 LIVE-LEDGER result 200/2403B, URL "
+        }
+      ]
+    },
+    "boundary_count_match": {
+      "pass": false,
+      "actual": 17,
+      "expected": ">=8",
+      "field_used": "boundary_check",
+      "non_pass_count": 1,
+      "non_pass_values": [
+        {
+          "key": "audit_script_lives_in_audit_only",
+          "value": "n/a — no audit script created in this task"
+        }
+      ]
+    },
+    "boundary_self_attestation_warning": {
+      "warn": true,
+      "reason": "soft-fail tokens detected; boundary self-attestation flagged for review",
+      "concerns": [
+        "ac_status.AC14_5_evidence_urls_200 contains soft-fail token: PARTIAL (4/5 anonymous + 5/5 with NTS auth) — URL #1 EXECUTION_LOG 200/12162B, U"
+      ]
+    }
+  },
+  "summary": {
+    "total_checks": 10,
+    "passed": 7,
+    "failed": 2,
+    "warnings": 1
+  },
+  "verdict_rationale": "FAIL — 2 check(s) failed: ac_count_match, boundary_count_match",
+  "inputs_resolved": {
+    "report_path": "reports/LANE01-SKILL-AIER-VERIFY-EXECUTABLE-V1_REPORT.md",
+    "snapshot_path": "snapshots/LANE01-SKILL-AIER-VERIFY-EXECUTABLE-V1.snapshot.live.json",
+    "audit_log_path": "audit_logs/LANE01-SKILL-AIER-VERIFY-EXECUTABLE-V1_audit.log",
+    "expected_ac_count": null,
+    "expected_boundary_count": null
+  }
+}

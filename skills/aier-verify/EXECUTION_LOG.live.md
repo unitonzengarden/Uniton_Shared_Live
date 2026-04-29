@@ -292,3 +292,12 @@
 - Run duration: 4ms
 - Verified at (ISO): 2026-04-29T15:52:00.868Z
 
+## RUN-20260429-161120
+- Triggered by: phase-j-self-verify
+- Input task_id: LANE01-SKILL-AIER-VERIFY-EXECUTABLE-V1
+- Verdict: FAIL
+- Failed checks: ac_count_match, boundary_count_match
+- Result file: skills/aier-verify/results/LANE01-SKILL-AIER-VERIFY-EXECUTABLE-V1.verify.json
+- Run duration: 5ms
+- Verified at (ISO): 2026-04-29T16:11:20.843Z
+
