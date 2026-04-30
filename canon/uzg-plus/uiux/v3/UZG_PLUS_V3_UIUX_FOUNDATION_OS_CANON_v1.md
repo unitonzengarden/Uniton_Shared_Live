@@ -1,11 +1,12 @@
 # UZG+ V3 PWA OS — FOUNDATION ARCHITECTURE CANON
 
 **Document ID:** `UZG_PLUS_V3_UIUX_FOUNDATION_OS_CANON_v1`
-**Version:** v1.0
+**Version:** v1.1
 **Created:** 2026-04-30
+**Last amended:** 2026-04-30
 **Authority:** Tier 3 (Master OS architecture — overrides all module canons on shell behavior)
 **Author:** CLA Lane_01 per NTS verbatim spec 2026-04-30
-**Status:** DRAFT — pending NTS approval
+**Status:** 🔒 LOCKED v1.1 (additive amendment over v1.0)
 
 ---
 
@@ -697,6 +698,176 @@ Mini apps có thể trigger main shell actions:
 | Version | Date | Change |
 |---|---|---|
 | v1.0 | 2026-04-30 | Initial — authored per NTS verbatim spec for OS architecture |
+
+---
+
+## §A1 v1.1 Amendment — Foundation Pattern Locked (2026-04-30)
+
+Locks final Foundation OS pattern after NTS-approved Mockup #1 review. CANON. Overrides any conflicting v1.0 interpretations.
+
+**Approver:** NTS verbatim 2026-04-30
+**Authority:** R-AUTH-01 + AMD_NTS_FULL_TECH_AUTONOMY
+
+### §A1.1 Reaction icon row — 8 icons fixed
+
+Every social-feed surface (HOME Value Stream, CHAT thread, Circle wall, ENTA Resonance) displays exactly 8 reaction icons in single horizontal row, `justify-content: space-between`.
+
+Order (left → right, fixed):
+
+1. Comment — grey stroke
+2. Share — grey stroke
+3. Hỏa — flame outline, active `#E24B4A`, idle `#9099B0`
+4. Mộc — sprout outline, active `#1D9E75`, idle `#9099B0`
+5. Kim — concentric circles, active `#888780`, idle `#9099B0`
+6. Thủy — droplet outline, active `#185FA5`, idle `#9099B0`
+7. Thổ — block + horizontal divide, active `#BA7517`, idle `#9099B0`
+8. QOT — quantum dot + dashed orbit, color `#4A6FFF`, no number (badge only)
+
+REDLINE: Adding/removing/reordering requires NTS approval + canon amendment.
+
+### §A1.2 Reaction icon style — fully transparent
+
+Each reaction button:
+- `background: transparent !important` on all states
+- `border: none !important`
+- `border-radius: 0`
+- `padding: 4px 0`
+- Content: SVG 15×15 + 5px gap + number text only
+
+Hover: color shift to `#4A6FFF` over 150ms ease-out, NO background fill.
+Active: `transform: scale(0.94)`, NO background fill.
+
+REDLINE: NO pill, NO border, NO background fill on reaction icons. Color shift only on hover.
+
+### §A1.3 Reaction sizing + typography
+
+- Icon: 15×15px, viewBox 0 0 16 16, stroke-width 1.3-1.4
+- Number: DM Sans 500, 11px
+- Number color: `#9099B0` idle / `#4A6FFF` hover
+- Gap icon-to-number: 5px
+
+### §A1.4 Number format — compact
+
+`Intl.NumberFormat('en', { notation: 'compact', maximumFractionDigits: 1 })`:
+
+| Range | Display |
+|---|---|
+| 0-999 | `0`-`999` literal |
+| 1k-999k | `1k`, `12k`, `301k` |
+| 1M+ | `1M`, `2.5M` |
+| 1B+ | `1B`, `1.2B` |
+
+VI locale MAY override (`tr` for triệu) per LANG_OS resolver. Document choice in implementation.
+
+REDLINE: NEVER display raw 4+ digit numbers in reaction row.
+
+### §A1.5 Feed style — X.com pattern
+
+Layout:
+- Avatar 38×38 circle left, content column right, 10px gap
+- Author line: name (DM Sans 600, `#1A1F2E`) + @handle (DM Sans 400, `#9099B0`) + `·` + relative time (DM Sans 400, `#9099B0`), 5px gap between elements
+- Body: DM Sans 400, 14.5px, `#1A1F2E`, line-height 1.45
+- Media preview: full-width, `border-radius: 16px`, max 200px image / 168px video
+- Reaction row directly below media, 12px margin-top, no separator
+
+Post-to-post separator: `border-bottom: 0.5px solid rgba(160, 175, 200, 0.22)`. No padding/margin between posts.
+
+REDLINE:
+- NO card boxed wrapper
+- NO border viền around posts
+- NO box-shadow elevation
+- NO nested chrome on repost/quote
+
+### §A1.6 Quantum aesthetic — light touch
+
+ENTA = Entanglement (rối lượng tử). Visual language reflects quantum-physical metaphor at low intensity.
+
+Required:
+1. Background base: `#FBFCFE`
+2. Particle field: 8-15 micro-dots, `fill: #4A6FFF`, `opacity: 0.22`, radius 0.4-0.6px, `pointer-events: none`
+3. Radial glows: 2-3 large gradients, `opacity: 0.06-0.10` peak. Quantum Blue `#4A6FFF` + AIER Purple `#A066E8` reference (MAY drift to other ramps when ENTA dominant changes)
+4. Backdrop-blur: Top bar + Bottom nav + Drawer + Action sheet use `rgba(251, 252, 254, 0.94)` + `backdrop-filter: blur(14-18px)`
+5. Avatar gradient: `linear-gradient(135deg, <element-light> 0%, <element-dark> 100%)`
+6. Concentric dashed orbits: ENTA Wheel + QOT icon use `stroke-dasharray`
+7. Floating button shadow: `box-shadow: 0 6px 20px rgba(74, 111, 255, 0.32)`
+
+REDLINE:
+- NO neon glow outlines
+- NO animated particles or "data streaming" effects
+- NO holographic gradients (mesh/iridescent/chromatic)
+- NO matrix/wireframe/sci-fi overlays
+- NO pulse animation on always-visible chrome
+- NO glow-on-hover for cards/buttons/feed items
+
+Aesthetic must read "premium / canonical / governed". NEVER "video game / crypto / synthwave".
+
+### §A1.7 ENTA framing — Entanglement
+
+User-facing labels:
+- Short: `ENTA` (Syne 800, all-caps, primary)
+- Long sublabel: `Entanglement` (DM Sans 500, sentence case, `#9099B0`)
+
+Pairing appears:
+- ENTA Wheel center inner circle: `ENTA` main + `Entanglement` sublabel + dominant elements line
+- Top bar module sublabel when ENTA active: `Entanglement`
+- ENTA section headers in marketing surface
+
+VI locale: `Entanglement (rối lượng tử)`.
+
+REDLINE: NEVER use "Identity Wheel" or "Identity Spine" as user-facing label. Internal docs MAY use those terms; user-facing UI uses ENTA + Entanglement only.
+
+### §A1.8 U-Reward pill — tinted style
+
+Top bar right pill:
+- `background: rgba(74, 111, 255, 0.07)`
+- `border: 0.5px solid rgba(74, 111, 255, 0.22)`
+- `padding: 5px 11px 5px 8px`
+- `border-radius: 14px`
+- Content: dashed-orbit dot icon (12×12, `#4A6FFF`) + 6px gap + `U <balance>` in Syne 800, 11px, `#243870`
+
+REDLINE: NOT solid quantum-blue pill. NOT white pill. Tinted only.
+
+### §A1.9 Bottom Nav center — "U+" gradient
+
+Center position (3rd of 5):
+- 44×44 square
+- `background: linear-gradient(135deg, #4A6FFF 0%, #3B5BAA 100%)`
+- `border-radius: 12px`
+- `box-shadow: 0 4px 14px rgba(74, 111, 255, 0.25)`
+- Content: `U+` text in Syne 800, 15px, white, `letter-spacing: -0.04em`
+- NO label below (icon-only anchor)
+
+REDLINE: NOT decorative ring logo. NOT plain `+` (would conflict with Floating + button). MUST be `U+` lettermark on gradient square.
+
+### §A1.10 Reserved — long-press reaction wheel (v1.2)
+
+Long-press (300ms threshold) on any 5 Ngũ Hành icon triggers radial reaction wheel for fine-grained selection within element family. Full mechanics deferred to v1.2 amendment after Mockup #2. v1.1 reserves trigger gesture only.
+
+### §A1.11 Reference assets
+
+Mockup #1 final design rendered as Visualize artifact 2026-04-30 chat session:
+- Title: `uzg_plus_v3_foundation_locked_clean_final`
+- 4 iteration rounds: v1 → v2 → v3 → v3 final clean
+- NTS approval: verbatim "Ok, chốt save" 2026-04-30
+
+Implementation MUST follow this pattern. Deviation requires CLA approval. Static HTML/CSS extract reserved for v1.2 if needed.
+
+### §A1.12 Amendment summary
+
+| # | Decision | Section |
+|---|---|---|
+| 1 | 8 reaction icons row | §A1.1 |
+| 2 | Order Comment-Share-5Hành-QOT | §A1.1 |
+| 3 | Transparent button (no pill) | §A1.2 |
+| 4 | Hover = color shift only | §A1.2 |
+| 5 | Compact number format | §A1.4 |
+| 6 | X.com feed pattern | §A1.5 |
+| 7 | Quantum aesthetic light touch | §A1.6 |
+| 8 | ENTA = Entanglement framing | §A1.7 |
+| 9 | U-Reward pill tinted | §A1.8 |
+| 10 | Bottom Nav center "U+" gradient | §A1.9 |
+
+End of v1.1 amendment.
 
 ---
 

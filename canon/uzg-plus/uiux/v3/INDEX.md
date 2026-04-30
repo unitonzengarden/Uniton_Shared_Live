@@ -57,6 +57,7 @@ When two T4 specs disagree → escalate to T3. When T3 disagrees with NTS verbat
 ## Canon amendment record
 
 - **2026-04-30:** Initial promotion — all 15 files locked at v1.0.
+- **2026-04-30 (later same day):** Foundation OS Canon amended v1.0 → v1.1. Locks Mockup #1 design pattern (8 reaction icons, transparent style, X.com feed pattern, quantum aesthetic guardrails, ENTA = Entanglement, U-Reward pill style, Bottom Nav center). 12-row summary in §A1.12. Audit: `LANE01-UZG-PLUS-V3-FOUNDATION-CANON-AMEND-V1-1`. NTS approval verbatim 2026-04-30.
 - **Pending NTS approval:** LANG_OS canon amendment to add 2 new domains (`plus`, `ureward`) — proposal in `UZG_PLUS_V3_LANGUAGE_OS_MAPPING_v1.md` §1.
 
 ---
