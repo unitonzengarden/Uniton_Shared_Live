@@ -1,0 +1,1369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>UZG+ V3 — Mockup #6.5 — Theme Showcase · 5 Ngũ Hành</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+:root {
+  /* Universal */
+  --uniton-quantum: #4A6FFF;
+  --uniton-bg: #090D1A;
+  --bg-canvas: #FBFCFE;
+  --bg-card: #FFFFFF;
+  --text-primary: #1A1F2E;
+  --text-secondary: #5F5E5A;
+  --text-tertiary: #9099B0;
+  --divider: rgba(160, 175, 200, 0.22);
+  --aifi-gold-light: #E8C77B;
+  --aifi-gold-dark: #8A6520;
+}
+
+/* ============================================ */
+/* THEME 1 — KIM (Metal) — Light Silver         */
+/* ============================================ */
+.theme-kim {
+  --t-primary: #6E7178;
+  --t-primary-light: #A9ADB5;
+  --t-primary-dark: #444448;
+  --t-tint: rgba(110, 113, 120, 0.07);
+  --t-glow: rgba(169, 173, 181, 0.35);
+  --t-bg-radial-1: rgba(169, 173, 181, 0.10);
+  --t-bg-radial-2: rgba(110, 113, 120, 0.06);
+  --t-canvas: #FAFBFC;
+  --t-particle: #888780;
+  --t-element-name: 'KIM';
+  --t-element-en: 'Metal';
+  --t-element-attribute: 'Tòng cách · Sắc bén';
+}
+
+/* ============================================ */
+/* THEME 2 — THỦY (Water) — Deep Blue           */
+/* ============================================ */
+.theme-thuy {
+  --t-primary: #185FA5;
+  --t-primary-light: #5B92D4;
+  --t-primary-dark: #0C447C;
+  --t-tint: rgba(24, 95, 165, 0.07);
+  --t-glow: rgba(91, 146, 212, 0.40);
+  --t-bg-radial-1: rgba(24, 95, 165, 0.12);
+  --t-bg-radial-2: rgba(12, 68, 124, 0.06);
+  --t-canvas: #F7FAFD;
+  --t-particle: #185FA5;
+  --t-element-name: 'THỦY';
+  --t-element-en: 'Water';
+  --t-element-attribute: 'Nhuận hạ · Trí tuệ';
+}
+
+/* ============================================ */
+/* THEME 3 — MỘC (Wood) — Green                 */
+/* ============================================ */
+.theme-moc {
+  --t-primary: #1D9E75;
+  --t-primary-light: #6FCBA9;
+  --t-primary-dark: #0F6E56;
+  --t-tint: rgba(29, 158, 117, 0.07);
+  --t-glow: rgba(111, 203, 169, 0.40);
+  --t-bg-radial-1: rgba(29, 158, 117, 0.10);
+  --t-bg-radial-2: rgba(15, 110, 86, 0.06);
+  --t-canvas: #F7FCFA;
+  --t-particle: #1D9E75;
+  --t-element-name: 'MỘC';
+  --t-element-en: 'Wood';
+  --t-element-attribute: 'Khúc trực · Nhân từ';
+}
+
+/* ============================================ */
+/* THEME 4 — HỎA (Fire) — Warm Red              */
+/* ============================================ */
+.theme-hoa {
+  --t-primary: #E24B4A;
+  --t-primary-light: #F19594;
+  --t-primary-dark: #A32D2D;
+  --t-tint: rgba(226, 75, 74, 0.07);
+  --t-glow: rgba(241, 149, 148, 0.40);
+  --t-bg-radial-1: rgba(226, 75, 74, 0.10);
+  --t-bg-radial-2: rgba(163, 45, 45, 0.06);
+  --t-canvas: #FDF8F8;
+  --t-particle: #E24B4A;
+  --t-element-name: 'HỎA';
+  --t-element-en: 'Fire';
+  --t-element-attribute: 'Viêm thượng · Lễ';
+}
+
+/* ============================================ */
+/* THEME 5 — THỔ (Earth) — Gold                 */
+/* ============================================ */
+.theme-tho {
+  --t-primary: #BA7517;
+  --t-primary-light: #EBA961;
+  --t-primary-dark: #854F0B;
+  --t-tint: rgba(186, 117, 23, 0.07);
+  --t-glow: rgba(235, 169, 97, 0.40);
+  --t-bg-radial-1: rgba(186, 117, 23, 0.10);
+  --t-bg-radial-2: rgba(133, 79, 11, 0.06);
+  --t-canvas: #FCFAF7;
+  --t-particle: #BA7517;
+  --t-element-name: 'THỔ';
+  --t-element-en: 'Earth';
+  --t-element-attribute: 'Giá sắt · Tín';
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; -webkit-font-smoothing: antialiased; }
+html, body { background: var(--uniton-bg); font-family: 'DM Sans', system-ui, sans-serif; color: var(--text-primary); min-height: 100vh; }
+
+body {
+  background:
+    radial-gradient(ellipse at 12% 8%, rgba(74, 111, 255, 0.10) 0%, transparent 38%),
+    radial-gradient(ellipse at 88% 92%, rgba(117, 53, 204, 0.06) 0%, transparent 42%),
+    var(--uniton-bg);
+  padding: 32px 16px 64px;
+}
+
+/* === Page Header === */
+.page-header { max-width: 1640px; margin: 0 auto 28px; padding: 0 4px; }
+.page-eyebrow {
+  font-family: 'Syne', sans-serif; font-weight: 700; font-size: 11px;
+  letter-spacing: 0.18em; color: #5B7FD4; text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.page-title { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 24px; color: #FFFFFF; letter-spacing: -0.01em; }
+.page-sub { font-size: 13px; color: rgba(255,255,255,0.55); margin-top: 6px; max-width: 880px; line-height: 1.5; }
+
+/* Theme principles strip */
+.principles-strip {
+  max-width: 1640px; margin: 16px auto 0; padding: 16px 22px;
+  background: rgba(255,255,255,0.04); border: 0.5px solid rgba(255,255,255,0.08);
+  border-radius: 14px;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px;
+  font-family: 'DM Sans', sans-serif; font-size: 12px; color: rgba(255,255,255,0.7);
+  line-height: 1.55;
+}
+.principles-strip strong {
+  display: block; font-family: 'Syne', sans-serif; font-weight: 700; font-size: 11px;
+  color: #5B7FD4; letter-spacing: 0.12em; text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.principles-strip b { color: rgba(255,255,255,0.95); font-weight: 600; }
+@media (max-width: 1100px) { .principles-strip { grid-template-columns: 1fr; gap: 14px; } }
+
+/* === 5 Phones row === */
+.phones-row {
+  max-width: 1900px; margin: 28px auto 0;
+  display: grid; grid-template-columns: repeat(5, 340px); gap: 20px;
+  justify-content: center;
+}
+@media (max-width: 1900px) { .phones-row { grid-template-columns: repeat(3, 340px); } }
+@media (max-width: 1120px) { .phones-row { grid-template-columns: repeat(2, 340px); } }
+@media (max-width: 740px)  { .phones-row { grid-template-columns: 340px; } }
+
+.phone-wrap { display: flex; flex-direction: column; align-items: center; }
+
+/* Theme name label above phone */
+.theme-eyebrow {
+  font-family: 'Syne', sans-serif; font-weight: 700; font-size: 10px;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--t-primary-light); margin-bottom: 4px;
+}
+.theme-name {
+  font-family: 'Syne', sans-serif; font-weight: 800; font-size: 22px;
+  letter-spacing: -0.01em; color: var(--t-primary-light);
+  display: flex; align-items: center; gap: 10px; margin-bottom: 4px;
+}
+.theme-swatch {
+  width: 18px; height: 18px; border-radius: 5px;
+  background: linear-gradient(135deg, var(--t-primary-light), var(--t-primary-dark));
+  border: 0.5px solid rgba(255,255,255,0.15);
+}
+.theme-attribute {
+  font-family: 'DM Sans', sans-serif; font-style: italic; font-size: 11px;
+  color: rgba(255,255,255,0.55); margin-bottom: 14px;
+}
+
+/* === Phone === */
+.phone {
+  width: 340px; height: 700px; border-radius: 32px;
+  position: relative; overflow: hidden;
+  background: var(--t-canvas);
+  box-shadow: 0 16px 60px rgba(0,0,0,0.45), 0 0 0 1px rgba(255,255,255,0.05);
+}
+.phone-canvas {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(circle at 18% 14%, var(--t-bg-radial-1) 0%, transparent 50%),
+    radial-gradient(circle at 82% 86%, var(--t-bg-radial-2) 0%, transparent 50%),
+    var(--t-canvas);
+  overflow: hidden;
+}
+
+/* Particles per theme */
+.particles { position: absolute; inset: 0; pointer-events: none; opacity: 0.7; }
+
+/* Status bar */
+.status-bar {
+  position: absolute; top: 0; left: 0; right: 0; height: 30px;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 7px 20px 0; font-size: 11px; font-weight: 600; color: var(--text-primary);
+  z-index: 50;
+}
+.status-icons svg { width: 12px; height: 12px; }
+
+/* Top bar */
+.top-bar {
+  position: absolute; top: 30px; left: 0; right: 0; height: 52px; z-index: 40;
+  background: rgba(255, 255, 255, 0.65); backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 0.5px solid var(--divider);
+  display: flex; align-items: center; padding: 0 13px; gap: 9px;
+}
+.top-avatar {
+  width: 28px; height: 28px; border-radius: 50%; flex-shrink: 0;
+  background: linear-gradient(135deg, var(--t-primary-light), var(--t-primary-dark));
+  display: flex; align-items: center; justify-content: center;
+  color: #FFFFFF; font-family: 'Syne', sans-serif; font-weight: 800; font-size: 10px;
+}
+.top-title {
+  font-family: 'Syne', sans-serif; font-weight: 700; font-size: 15px;
+  color: var(--text-primary); flex: 1; letter-spacing: -0.01em;
+}
+.top-icon-btn {
+  width: 28px; height: 28px; display: flex; align-items: center; justify-content: center;
+  border-radius: 7px; cursor: pointer;
+}
+.top-icon-btn svg { width: 15px; height: 15px; stroke: var(--text-tertiary); fill: none; stroke-width: 1.5; }
+
+/* U pill themed */
+.u-pill {
+  display: inline-flex; align-items: center; gap: 5px;
+  padding: 4px 10px 4px 7px; border-radius: 13px;
+  background: var(--t-tint);
+  border: 0.5px solid var(--t-primary-light);
+  font-family: 'Syne', sans-serif; font-weight: 800; font-size: 10px;
+  color: var(--t-primary-dark); letter-spacing: 0.02em; margin-left: 4px;
+}
+.u-pill-icon { width: 11px; height: 11px; flex-shrink: 0; }
+
+/* Scroll area */
+.scroll-area {
+  position: absolute; top: 82px; bottom: 70px; left: 0; right: 0;
+  overflow-y: auto; padding: 12px 14px 18px;
+}
+.scroll-area::-webkit-scrollbar { width: 0; }
+
+/* Bottom nav themed */
+.bottom-nav {
+  position: absolute; bottom: 0; left: 0; right: 0; height: 70px; z-index: 40;
+  background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-top: 0.5px solid var(--divider);
+  display: flex; align-items: center; justify-content: space-around;
+  padding: 7px 10px 12px;
+}
+.nav-item {
+  display: flex; flex-direction: column; align-items: center; gap: 2px;
+  flex: 1; cursor: pointer;
+}
+.nav-item svg { width: 17px; height: 17px; stroke: var(--text-tertiary); fill: none; stroke-width: 1.5; }
+.nav-item.active svg { stroke: var(--t-primary); }
+.nav-item-label {
+  font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 9px;
+  color: var(--text-tertiary); letter-spacing: 0.04em; text-transform: uppercase;
+}
+.nav-item.active .nav-item-label { color: var(--t-primary); font-weight: 600; }
+.nav-center {
+  width: 40px; height: 40px; border-radius: 11px;
+  background: linear-gradient(135deg, var(--t-primary-light), var(--t-primary-dark));
+  box-shadow: 0 4px 14px var(--t-glow);
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Syne', sans-serif; font-weight: 800; font-size: 14px;
+  color: #FFFFFF; letter-spacing: -0.04em; cursor: pointer;
+  margin-top: -10px; position: relative;
+}
+.nav-center.active::after {
+  content: ''; position: absolute; inset: -3px; border-radius: 13px;
+  border: 1.5px solid var(--t-primary-light); opacity: 0.5;
+}
+
+/* FAB themed */
+.fab {
+  position: absolute; bottom: 86px; right: 16px;
+  width: 44px; height: 44px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--t-primary-light), var(--t-primary-dark));
+  box-shadow: 0 6px 20px var(--t-glow);
+  display: flex; align-items: center; justify-content: center;
+  z-index: 35; cursor: pointer;
+}
+.fab svg { width: 18px; height: 18px; stroke: #FFFFFF; fill: none; stroke-width: 2.2; }
+
+/* Search bar themed */
+.search-bar {
+  display: flex; align-items: center; gap: 9px;
+  padding: 8px 12px; margin-bottom: 12px;
+  background: rgba(255, 255, 255, 0.65);
+  border: 0.5px solid var(--divider);
+  border-radius: 12px;
+}
+.search-bar svg { width: 13px; height: 13px; stroke: var(--text-tertiary); fill: none; stroke-width: 1.7; }
+.search-bar-text {
+  flex: 1; font-family: 'DM Sans', sans-serif; font-size: 12.5px;
+  color: var(--text-tertiary);
+}
+
+/* Section header */
+.section-row {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 8px 4px 10px; margin-top: 4px;
+}
+.section-title {
+  font-family: 'Syne', sans-serif; font-weight: 700; font-size: 11px;
+  color: var(--text-primary); letter-spacing: 0.1em; text-transform: uppercase;
+}
+.section-action {
+  font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 10.5px;
+  color: var(--t-primary); cursor: pointer;
+}
+
+/* Featured note themed */
+.featured-note {
+  margin: 4px 4px 8px;
+  padding: 8px 11px;
+  background: var(--t-tint);
+  border: 0.5px solid var(--t-primary-light);
+  border-radius: 10px;
+  font-family: 'DM Sans', sans-serif; font-style: italic; font-size: 10.5px;
+  color: var(--t-primary-dark); line-height: 1.4;
+}
+
+/* App grid */
+.app-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 6px 2px; margin-bottom: 4px;
+}
+.app-tile {
+  display: flex; flex-direction: column; align-items: center; gap: 5px;
+  padding: 6px 3px 8px; cursor: pointer; position: relative;
+  border-radius: 10px;
+}
+.app-icon {
+  width: 48px; height: 48px; border-radius: 14px; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  position: relative;
+  box-shadow: 0 2px 8px rgba(36, 56, 112, 0.10);
+}
+.app-icon svg { width: 22px; height: 22px; stroke: #FFFFFF; fill: none; stroke-width: 1.8; }
+
+/* App icon backgrounds — universal (NOT themed, identity preserved) */
+.app-icon.ureward    { background: linear-gradient(135deg, #5B7FD4, #4A6FFF); }
+.app-icon.tao        { background: linear-gradient(135deg, #A079DD, #4D1E8A); }
+.app-icon.booking    { background: linear-gradient(135deg, #6FCBA9, #0F6E56); }
+.app-icon.membership { background: linear-gradient(135deg, #E8C77B, #8A6520); }
+.app-icon.market     { background: linear-gradient(135deg, #E24B4A, #A32D2D); }
+.app-icon.retreat    { background: linear-gradient(135deg, #1D9E75, #0F6E56); }
+.app-icon.tickets    { background: linear-gradient(135deg, #5B92D4, #0C447C); }
+.app-icon.circles    { background: linear-gradient(135deg, #A079DD, #7535CC); }
+.app-icon.aier       { background: linear-gradient(135deg, #7535CC, #4D1E8A); position: relative; }
+.app-icon.aier::after {
+  content: ''; position: absolute; inset: -2px; border-radius: 16px;
+  border: 0.8px dashed rgba(117, 53, 204, 0.45);
+}
+.app-icon.stats      { background: linear-gradient(135deg, #A9ADB5, #6E7178); }
+.app-icon.governance { background: linear-gradient(135deg, #BA7517, #854F0B); }
+.app-icon.business   { background: linear-gradient(135deg, #5B7FD4, #243870); }
+
+.app-label {
+  font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 10px;
+  color: var(--text-secondary); text-align: center; line-height: 1.2;
+  max-width: 60px; overflow: hidden; text-overflow: ellipsis;
+}
+.app-badge {
+  position: absolute; top: -3px; right: -3px;
+  min-width: 16px; height: 16px; padding: 0 4px; border-radius: 8px;
+  background: var(--t-primary); color: #FFFFFF;
+  font-family: 'Syne', sans-serif; font-weight: 800; font-size: 9px;
+  display: flex; align-items: center; justify-content: center;
+  border: 1.5px solid var(--t-canvas);
+}
+.featured-reason {
+  font-family: 'DM Sans', sans-serif; font-style: italic; font-weight: 400;
+  font-size: 9px; color: var(--text-tertiary); margin-top: 1px;
+  text-align: center; line-height: 1.3; max-width: 70px;
+}
+
+/* Theme info card at top of scroll */
+.theme-active-card {
+  background: linear-gradient(180deg, var(--t-tint), transparent);
+  border: 0.5px solid var(--t-primary-light);
+  border-radius: 12px; padding: 10px 12px; margin-bottom: 14px;
+  display: flex; align-items: center; gap: 10px;
+}
+.theme-active-orb {
+  width: 28px; height: 28px; border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, var(--t-primary-light), var(--t-primary-dark));
+  box-shadow: 0 0 12px var(--t-glow);
+  flex-shrink: 0;
+}
+.theme-active-info { flex: 1; min-width: 0; }
+.theme-active-title {
+  font-family: 'Syne', sans-serif; font-weight: 800; font-size: 12px;
+  color: var(--t-primary-dark); letter-spacing: 0.04em;
+}
+.theme-active-sub {
+  font-family: 'DM Sans', sans-serif; font-size: 10.5px; color: var(--text-secondary);
+  margin-top: 1px; line-height: 1.3;
+}
+.theme-active-toggle {
+  font-family: 'Syne', sans-serif; font-weight: 700; font-size: 9px;
+  color: var(--t-primary-dark); padding: 3px 7px;
+  background: rgba(255,255,255,0.5); border-radius: 6px;
+  letter-spacing: 0.06em;
+}
+
+/* Notes annotation */
+.note-strip {
+  margin: 10px auto 0; max-width: 280px;
+  padding: 6px 10px; background: var(--t-tint);
+  border: 0.5px dashed var(--t-primary-light);
+  border-radius: 8px;
+  font-family: 'DM Sans', sans-serif; font-size: 9px; color: var(--t-primary-dark);
+  text-align: center; line-height: 1.4;
+}
+
+/* Footer note */
+.footer-note {
+  max-width: 1640px; margin: 32px auto 0; padding: 18px 22px;
+  background: rgba(255,255,255,0.04); border: 0.5px solid rgba(255,255,255,0.08);
+  border-radius: 14px;
+}
+.footer-title {
+  font-family: 'Syne', sans-serif; font-weight: 700; font-size: 12px;
+  color: #5B7FD4; letter-spacing: 0.14em; text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.footer-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px;
+  font-family: 'DM Sans', sans-serif; font-size: 12px; color: rgba(255,255,255,0.7);
+  line-height: 1.55;
+}
+.footer-grid b { color: rgba(255,255,255,0.95); font-weight: 600; }
+@media (max-width: 900px) { .footer-grid { grid-template-columns: 1fr; } }
+
+/* Settings preview footer (per-theme) */
+.theme-settings-preview {
+  max-width: 1640px; margin: 28px auto 0; padding: 20px 22px;
+  background: rgba(255,255,255,0.04); border: 0.5px solid rgba(255,255,255,0.08);
+  border-radius: 14px;
+}
+.theme-settings-title {
+  font-family: 'Syne', sans-serif; font-weight: 700; font-size: 12px;
+  color: #5B7FD4; letter-spacing: 0.14em; text-transform: uppercase;
+  margin-bottom: 14px;
+}
+.theme-pickers {
+  display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px;
+}
+@media (max-width: 1100px) { .theme-pickers { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 700px)  { .theme-pickers { grid-template-columns: repeat(2, 1fr); } }
+
+.theme-card {
+  padding: 14px; border-radius: 12px;
+  background: rgba(255,255,255,0.05);
+  border: 0.5px solid rgba(255,255,255,0.10);
+}
+.theme-card.active {
+  border: 1.5px solid var(--card-color);
+  background: linear-gradient(180deg, var(--card-bg-tint), rgba(255,255,255,0.03));
+}
+.theme-card-head {
+  display: flex; align-items: center; gap: 10px; margin-bottom: 10px;
+}
+.theme-card-orb {
+  width: 32px; height: 32px; border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, var(--card-color-light), var(--card-color-dark));
+  flex-shrink: 0;
+  box-shadow: 0 0 16px var(--card-glow);
+}
+.theme-card-name {
+  font-family: 'Syne', sans-serif; font-weight: 800; font-size: 14px;
+  color: #FFFFFF; letter-spacing: 0.04em;
+}
+.theme-card-en {
+  font-family: 'DM Sans', sans-serif; font-size: 11px; color: rgba(255,255,255,0.55);
+  margin-top: 1px;
+}
+.theme-card-attr {
+  font-family: 'DM Sans', sans-serif; font-style: italic; font-size: 11px;
+  color: rgba(255,255,255,0.65); margin-bottom: 8px; line-height: 1.4;
+}
+.theme-card-status {
+  font-family: 'Syne', sans-serif; font-weight: 700; font-size: 9px;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  padding: 3px 8px; border-radius: 5px; display: inline-block;
+}
+.theme-card-status.auto {
+  background: rgba(74,111,255,0.20); color: #5B7FD4;
+}
+.theme-card-status.manual {
+  background: rgba(255,255,255,0.10); color: rgba(255,255,255,0.55);
+}
+
+</style>
+</head>
+<body>
+
+<!-- ============================================ -->
+<!-- PAGE HEADER                                  -->
+<!-- ============================================ -->
+<div class="page-header">
+  <div class="page-eyebrow">UZG+ V3 PWA OS · Phase 2 Mockup #6.5</div>
+  <div class="page-title">THEME SHOWCASE — 5 Ngũ Hành Themes</div>
+  <div class="page-sub">Same PLUS Hub screen rendered in 5 element themes (Kim · Thủy · Mộc · Hỏa · Thổ). User experiences ENTA dominant theme by default; can override in Settings. Theme colors apply to: nav center, FAB, accents, gradients, particles, U pill, focus rings — but NOT to app icons (identity preserved).</div>
+
+  <div class="principles-strip">
+    <div>
+      <strong>Principle 1 · Auto + Override</strong>
+      Theme defaults to user's <b>ENTA dominant element</b> (e.g. Hỏa-Mộc → Hỏa theme). User can override anytime in <b>Settings · Theme</b>. ENTA recalc updates default but respects manual override.
+    </div>
+    <div>
+      <strong>Principle 2 · Full Immersive</strong>
+      Theme touches all chrome: <b>nav center gradient · FAB · top bar avatar · U pill · radial backgrounds · particles · accent links · focus rings</b>. App icon colors stay universal (preserve identity recognition).
+    </div>
+    <div>
+      <strong>Principle 3 · 5 Fixed Shades</strong>
+      Each element has 1 fixed shade per V2 precedent: <b>Kim = Light Silver · Thủy = Deep Blue · Mộc = Green · Hỏa = Warm Red · Thổ = Earth Gold</b>. No Light/Dark toggle — theme = identity, not preference.
+    </div>
+  </div>
+</div>
+
+<!-- ============================================ -->
+<!-- 5 PHONES SIDE BY SIDE                        -->
+<!-- ============================================ -->
+<div class="phones-row">
+
+<!-- =================== PHONE 1 — KIM =================== -->
+<div class="phone-wrap theme-kim">
+  <div class="theme-eyebrow">Theme · Element</div>
+  <div class="theme-name">
+    <span class="theme-swatch"></span>
+    KIM
+  </div>
+  <div class="theme-attribute">Tòng cách · Sắc bén · Nghĩa</div>
+
+  <div class="phone">
+    <div class="phone-canvas">
+
+      <div class="particles">
+        <svg viewBox="0 0 340 700" preserveAspectRatio="none" style="width:100%;height:100%">
+          <circle cx="40" cy="120" r="0.5" fill="var(--t-particle)" opacity="0.30"/>
+          <circle cx="280" cy="180" r="0.6" fill="var(--t-particle)" opacity="0.30"/>
+          <circle cx="80" cy="320" r="0.4" fill="var(--t-particle)" opacity="0.30"/>
+          <circle cx="260" cy="400" r="0.5" fill="var(--t-particle)" opacity="0.30"/>
+          <circle cx="120" cy="540" r="0.5" fill="var(--t-particle)" opacity="0.25"/>
+          <circle cx="300" cy="600" r="0.4" fill="var(--t-particle)" opacity="0.30"/>
+        </svg>
+      </div>
+
+      <div class="status-bar">
+        <span>9:41</span>
+        <div class="status-icons">
+          <svg viewBox="0 0 16 16" fill="none"><path d="M2 12h12M2 8h12M2 4h12" stroke="currentColor" stroke-width="1.4"/></svg>
+        </div>
+      </div>
+
+      <div class="top-bar">
+        <div class="top-avatar">N</div>
+        <div class="top-title">UZG+ Apps</div>
+        <div class="top-icon-btn"><svg viewBox="0 0 16 16"><circle cx="7" cy="7" r="5"/><path d="M11 11l3 3"/></svg></div>
+        <div class="u-pill">
+          <svg class="u-pill-icon" viewBox="0 0 12 12">
+            <circle cx="6" cy="6" r="2" fill="var(--t-primary)"/>
+            <circle cx="6" cy="6" r="5" fill="none" stroke="var(--t-primary)" stroke-width="0.6" stroke-dasharray="1.2 1.2" opacity="0.6"/>
+          </svg>
+          U 1,250
+        </div>
+      </div>
+
+      <div class="scroll-area">
+
+        <!-- Theme active card -->
+        <div class="theme-active-card">
+          <div class="theme-active-orb"></div>
+          <div class="theme-active-info">
+            <div class="theme-active-title">KIM theme · auto</div>
+            <div class="theme-active-sub">Manual override · Settings → Theme</div>
+          </div>
+          <div class="theme-active-toggle">AUTO</div>
+        </div>
+
+        <div class="search-bar">
+          <svg viewBox="0 0 16 16"><circle cx="7" cy="7" r="5"/><path d="M11 11l3 3"/></svg>
+          <div class="search-bar-text">Search apps...</div>
+        </div>
+
+        <div class="section-row">
+          <div class="section-title">Pinned</div>
+          <div class="section-action">Edit</div>
+        </div>
+        <div class="app-grid">
+          <div class="app-tile">
+            <div class="app-icon ureward">
+              <svg viewBox="0 0 24 24"><path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z"/></svg>
+              <div class="app-badge">3</div>
+            </div>
+            <div class="app-label">U-Reward</div>
+          </div>
+          <div class="app-tile">
+            <div class="app-icon tao">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4" stroke-dasharray="2 2"/></svg>
+            </div>
+            <div class="app-label">TAO</div>
+          </div>
+          <div class="app-tile">
+            <div class="app-icon booking">
+              <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
+            </div>
+            <div class="app-label">Booking</div>
+          </div>
+          <div class="app-tile">
+            <div class="app-icon membership">
+              <svg viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.5 4.5L18 22l-6-4-6 4 1.5-8.5L2 9h7z"/></svg>
+            </div>
+            <div class="app-label">Membership</div>
+          </div>
+        </div>
+
+        <div class="section-row" style="margin-top: 6px;">
+          <div class="section-title">Featured</div>
+          <div class="section-action">Why?</div>
+        </div>
+        <div class="featured-note">
+          KIM dominant · need clarity, precision · sharp focus apps suggested.
+        </div>
+        <div class="app-grid">
+          <div class="app-tile">
+            <div class="app-icon stats">
+              <svg viewBox="0 0 24 24"><path d="M3 19h18M6 15v4M10 11v8M14 7v12M18 13v6"/></svg>
+            </div>
+            <div class="app-label">Stats</div>
+            <div class="featured-reason">Kim clarity</div>
+          </div>
+          <div class="app-tile">
+            <div class="app-icon market">
+              <svg viewBox="0 0 24 24"><path d="M3 7h18l-1.5 11a2 2 0 01-2 2h-11a2 2 0 01-2-2L3 7z"/><path d="M8 7V5a4 4 0 018 0v2"/></svg>
+            </div>
+            <div class="app-label">Marketplace</div>
+            <div class="featured-reason">New picks</div>
+          </div>
+          <div class="app-tile">
+            <div class="app-icon retreat">
+              <svg viewBox="0 0 24 24"><path d="M12 2C8 8 8 12 12 18c4-6 4-10 0-16z"/></svg>
+            </div>
+            <div class="app-label">Retreat</div>
+            <div class="featured-reason">Solitude</div>
+          </div>
+          <div class="app-tile">
+            <div class="app-icon circles">
+              <svg viewBox="0 0 24 24"><circle cx="9" cy="12" r="6"/><circle cx="15" cy="12" r="6"/></svg>
+            </div>
+            <div class="app-label">Circles</div>
+            <div class="featured-reason">Wisdom</div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="fab"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></div>
+
+      <div class="bottom-nav">
+        <div class="nav-item"><svg viewBox="0 0 24 24"><path d="M3 12L12 4l9 8M5 11v8h14v-8"/></svg><div class="nav-item-label">Home</div></div>
+        <div class="nav-item"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 01-1 4 8.5 8.5 0 01-7.5 4.5 8.4 8.4 0 01-4-1L3 21l2-5a8.4 8.4 0 01-1-4 8.5 8.5 0 014.5-7.5 8.4 8.4 0 014-1A8.5 8.5 0 0121 11.5z"/></svg><div class="nav-item-label">Chat</div></div>
+        <div class="nav-center active">U+</div>
+        <div class="nav-item"><svg viewBox="0 0 24 24"><path d="M21 12V7H5a2 2 0 010-4h14v4M3 5v14a2 2 0 002 2h16v-5M21 12h-5a2 2 0 000 4h5z"/></svg><div class="nav-item-label">Wallet</div></div>
+        <div class="nav-item"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4" stroke-dasharray="2 2"/></svg><div class="nav-item-label">Enta</div></div>
+      </div>
+
+    </div>
+  </div>
+  <div class="note-strip">Cool silver chrome · sharp · neutral background</div>
+</div>
+
+<!-- =================== PHONE 2 — THỦY =================== -->
+<div class="phone-wrap theme-thuy">
+  <div class="theme-eyebrow">Theme · Element</div>
+  <div class="theme-name">
+    <span class="theme-swatch"></span>
+    THỦY
+  </div>
+  <div class="theme-attribute">Nhuận hạ · Trí tuệ</div>
+
+  <div class="phone">
+    <div class="phone-canvas">
+
+      <div class="particles">
+        <svg viewBox="0 0 340 700" preserveAspectRatio="none" style="width:100%;height:100%">
+          <circle cx="40" cy="120" r="0.5" fill="var(--t-particle)" opacity="0.30"/>
+          <circle cx="280" cy="180" r="0.6" fill="var(--t-particle)" opacity="0.30"/>
+          <circle cx="80" cy="320" r="0.4" fill="var(--t-particle)" opacity="0.30"/>
+          <circle cx="260" cy="400" r="0.5" fill="var(--t-particle)" opacity="0.30"/>
+          <circle cx="120" cy="540" r="0.5" fill="var(--t-particle)" opacity="0.25"/>
+          <circle cx="300" cy="600" r="0.4" fill="var(--t-particle)" opacity="0.30"/>
+        </svg>
+      </div>
+
+      <div class="status-bar">
+        <span>9:41</span>
+        <div class="status-icons">
+          <svg viewBox="0 0 16 16" fill="none"><path d="M2 12h12M2 8h12M2 4h12" stroke="currentColor" stroke-width="1.4"/></svg>
+        </div>
+      </div>
+
+      <div class="top-bar">
+        <div class="top-avatar">N</div>
+        <div class="top-title">UZG+ Apps</div>
+        <div class="top-icon-btn"><svg viewBox="0 0 16 16"><circle cx="7" cy="7" r="5"/><path d="M11 11l3 3"/></svg></div>
+        <div class="u-pill">
+          <svg class="u-pill-icon" viewBox="0 0 12 12">
+            <circle cx="6" cy="6" r="2" fill="var(--t-primary)"/>
+            <circle cx="6" cy="6" r="5" fill="none" stroke="var(--t-primary)" stroke-width="0.6" stroke-dasharray="1.2 1.2" opacity="0.6"/>
+          </svg>
+          U 1,250
+        </div>
+      </div>
+
+      <div class="scroll-area">
+
+        <div class="theme-active-card">
+          <div class="theme-active-orb"></div>
+          <div class="theme-active-info">
+            <div class="theme-active-title">THỦY theme · auto</div>
+            <div class="theme-active-sub">Calm depth · trí tuệ · linh hoạt</div>
+          </div>
+          <div class="theme-active-toggle">AUTO</div>
+        </div>
+
+        <div class="search-bar">
+          <svg viewBox="0 0 16 16"><circle cx="7" cy="7" r="5"/><path d="M11 11l3 3"/></svg>
+          <div class="search-bar-text">Search apps...</div>
+        </div>
+
+        <div class="section-row">
+          <div class="section-title">Pinned</div>
+          <div class="section-action">Edit</div>
+        </div>
+        <div class="app-grid">
+          <div class="app-tile">
+            <div class="app-icon ureward">
+              <svg viewBox="0 0 24 24"><path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z"/></svg>
+              <div class="app-badge">3</div>
+            </div>
+            <div class="app-label">U-Reward</div>
+          </div>
+          <div class="app-tile">
+            <div class="app-icon tao">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4" stroke-dasharray="2 2"/></svg>
+            </div>
+            <div class="app-label">TAO</div>
+          </div>
+          <div class="app-tile">
+            <div class="app-icon booking">
+              <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
+            </div>
+            <div class="app-label">Booking</div>
+          </div>
+          <div class="app-tile">
+            <div class="app-icon membership">
+              <svg viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.5 4.5L18 22l-6-4-6 4 1.5-8.5L2 9h7z"/></svg>
+            </div>
+            <div class="app-label">Membership</div>
+          </div>
+        </div>
+
+        <div class="section-row" style="margin-top: 6px;">
+          <div class="section-title">Featured</div>
+          <div class="section-action">Why?</div>
+        </div>
+        <div class="featured-note">
+          THỦY dominant · flow + reflection · contemplative content suggested.
+        </div>
+        <div class="app-grid">
+          <div class="app-tile">
+            <div class="app-icon retreat">
+              <svg viewBox="0 0 24 24"><path d="M12 2C8 8 8 12 12 18c4-6 4-10 0-16z"/></svg>
+            </div>
+            <div class="app-label">Retreat</div>
+            <div class="featured-reason">Reflection</div>
+          </div>
+          <div class="app-tile">
+            <div class="app-icon tickets">
+              <svg viewBox="0 0 24 24"><path d="M3 8a2 2 0 012-2h14a2 2 0 012 2v3a2 2 0 100 4v3a2 2 0 01-2 2H5a2 2 0 01-2-2v-3a2 2 0 100-4V8z"/></svg>
+            </div>
+            <div class="app-label">Events</div>
+            <div class="featured-reason">Thủy gathering</div>
+          </div>
+          <div class="app-tile">
+            <div class="app-icon circles">
+              <svg viewBox="0 0 24 24"><circle cx="9" cy="12" r="6"/><circle cx="15" cy="12" r="6"/></svg>
+            </div>
+            <div class="app-label">Circles</div>
+            <div class="featured-reason">Deep listen</div>
+          </div>
+          <div class="app-tile">
+            <div class="app-icon market">
+              <svg viewBox="0 0 24 24"><path d="M3 7h18l-1.5 11a2 2 0 01-2 2h-11a2 2 0 01-2-2L3 7z"/><path d="M8 7V5a4 4 0 018 0v2"/></svg>
+            </div>
+            <div class="app-label">Marketplace</div>
+            <div class="featured-reason">New picks</div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="fab"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></div>
+
+      <div class="bottom-nav">
+        <div class="nav-item"><svg viewBox="0 0 24 24"><path d="M3 12L12 4l9 8M5 11v8h14v-8"/></svg><div class="nav-item-label">Home</div></div>
+        <div class="nav-item"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 01-1 4 8.5 8.5 0 01-7.5 4.5 8.4 8.4 0 01-4-1L3 21l2-5a8.4 8.4 0 01-1-4 8.5 8.5 0 014.5-7.5 8.4 8.4 0 014-1A8.5 8.5 0 0121 11.5z"/></svg><div class="nav-item-label">Chat</div></div>
+        <div class="nav-center active">U+</div>
+        <div class="nav-item"><svg viewBox="0 0 24 24"><path d="M21 12V7H5a2 2 0 010-4h14v4M3 5v14a2 2 0 002 2h16v-5M21 12h-5a2 2 0 000 4h5z"/></svg><div class="nav-item-label">Wallet</div></div>
+        <div class="nav-item"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4" stroke-dasharray="2 2"/></svg><div class="nav-item-label">Enta</div></div>
+      </div>
+
+    </div>
+  </div>
+  <div class="note-strip">Deep blue chrome · cool wash · contemplative</div>
+</div>
+
+<!-- =================== PHONE 3 — MỘC =================== -->
+<div class="phone-wrap theme-moc">
+  <div class="theme-eyebrow">Theme · Element</div>
+  <div class="theme-name">
+    <span class="theme-swatch"></span>
+    MỘC
+  </div>
+  <div class="theme-attribute">Khúc trực · Nhân từ</div>
+
+  <div class="phone">
+    <div class="phone-canvas">
+
+      <div class="particles">
+        <svg viewBox="0 0 340 700" preserveAspectRatio="none" style="width:100%;height:100%">
+          <circle cx="40" cy="120" r="0.5" fill="var(--t-particle)" opacity="0.30"/>
+          <circle cx="280" cy="180" r="0.6" fill="var(--t-particle)" opacity="0.30"/>
+          <circle cx="80" cy="320" r="0.4" fill="var(--t-particle)" opacity="0.30"/>
+          <circle cx="260" cy="400" r="0.5" fill="var(--t-particle)" opacity="0.30"/>
+          <circle cx="120" cy="540" r="0.5" fill="var(--t-particle)" opacity="0.25"/>
+          <circle cx="300" cy="600" r="0.4" fill="var(--t-particle)" opacity="0.30"/>
+        </svg>
+      </div>
+
+      <div class="status-bar">
+        <span>9:41</span>
+        <div class="status-icons">
+          <svg viewBox="0 0 16 16" fill="none"><path d="M2 12h12M2 8h12M2 4h12" stroke="currentColor" stroke-width="1.4"/></svg>
+        </div>
+      </div>
+
+      <div class="top-bar">
+        <div class="top-avatar">N</div>
+        <div class="top-title">UZG+ Apps</div>
+        <div class="top-icon-btn"><svg viewBox="0 0 16 16"><circle cx="7" cy="7" r="5"/><path d="M11 11l3 3"/></svg></div>
+        <div class="u-pill">
+          <svg class="u-pill-icon" viewBox="0 0 12 12">
+            <circle cx="6" cy="6" r="2" fill="var(--t-primary)"/>
+            <circle cx="6" cy="6" r="5" fill="none" stroke="var(--t-primary)" stroke-width="0.6" stroke-dasharray="1.2 1.2" opacity="0.6"/>
+          </svg>
+          U 1,250
+        </div>
+      </div>
+
+      <div class="scroll-area">
+
+        <div class="theme-active-card">
+          <div class="theme-active-orb"></div>
+          <div class="theme-active-info">
+            <div class="theme-active-title">MỘC theme · auto</div>
+            <div class="theme-active-sub">Growing energy · sáng tạo · phát triển</div>
+          </div>
+          <div class="theme-active-toggle">AUTO</div>
+        </div>
+
+        <div class="search-bar">
+          <svg viewBox="0 0 16 16"><circle cx="7" cy="7" r="5"/><path d="M11 11l3 3"/></svg>
+          <div class="search-bar-text">Search apps...</div>
+        </div>
+
+        <div class="section-row">
+          <div class="section-title">Pinned</div>
+          <div class="section-action">Edit</div>
+        </div>
+        <div class="app-grid">
+          <div class="app-tile">
+            <div class="app-icon ureward">
+              <svg viewBox="0 0 24 24"><path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z"/></svg>
+              <div class="app-badge">3</div>
+            </div>
+            <div class="app-label">U-Reward</div>
+          </div>
+          <div class="app-tile">
+            <div class="app-icon tao">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4" stroke-dasharray="2 2"/></svg>
+            </div>
+            <div class="app-label">TAO</div>
+          </div>
+          <div class="app-tile">
+            <div class="app-icon booking">
+              <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
+            </div>
+            <div class="app-label">Booking</div>
+          </div>
+          <div class="app-tile">
+            <div class="app-icon membership">
+              <svg viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.5 4.5L18 22l-6-4-6 4 1.5-8.5L2 9h7z"/></svg>
+            </div>
+            <div class="app-label">Membership</div>
+          </div>
+        </div>
+
+        <div class="section-row" style="margin-top: 6px;">
+          <div class="section-title">Featured</div>
+          <div class="section-action">Why?</div>
+        </div>
+        <div class="featured-note">
+          MỘC dominant · growth + creation · expansive content suggested.
+        </div>
+        <div class="app-grid">
+          <div class="app-tile">
+            <div class="app-icon retreat">
+              <svg viewBox="0 0 24 24"><path d="M12 2C8 8 8 12 12 18c4-6 4-10 0-16z"/></svg>
+            </div>
+            <div class="app-label">Forest Retreat</div>
+            <div class="featured-reason">Mộc field</div>
+          </div>
+          <div class="app-tile">
+            <div class="app-icon circles">
+              <svg viewBox="0 0 24 24"><circle cx="9" cy="12" r="6"/><circle cx="15" cy="12" r="6"/></svg>
+            </div>
+            <div class="app-label">Circles</div>
+            <div class="featured-reason">Garden Bay</div>
+          </div>
+          <div class="app-tile">
+            <div class="app-icon market">
+              <svg viewBox="0 0 24 24"><path d="M3 7h18l-1.5 11a2 2 0 01-2 2h-11a2 2 0 01-2-2L3 7z"/><path d="M8 7V5a4 4 0 018 0v2"/></svg>
+            </div>
+            <div class="app-label">Marketplace</div>
+            <div class="featured-reason">Plant goods</div>
+          </div>
+          <div class="app-tile">
+            <div class="app-icon tickets">
+              <svg viewBox="0 0 24 24"><path d="M3 8a2 2 0 012-2h14a2 2 0 012 2v3a2 2 0 100 4v3a2 2 0 01-2 2H5a2 2 0 01-2-2v-3a2 2 0 100-4V8z"/></svg>
+            </div>
+            <div class="app-label">Workshops</div>
+            <div class="featured-reason">Creation</div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="fab"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></div>
+
+      <div class="bottom-nav">
+        <div class="nav-item"><svg viewBox="0 0 24 24"><path d="M3 12L12 4l9 8M5 11v8h14v-8"/></svg><div class="nav-item-label">Home</div></div>
+        <div class="nav-item"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 01-1 4 8.5 8.5 0 01-7.5 4.5 8.4 8.4 0 01-4-1L3 21l2-5a8.4 8.4 0 01-1-4 8.5 8.5 0 014.5-7.5 8.4 8.4 0 014-1A8.5 8.5 0 0121 11.5z"/></svg><div class="nav-item-label">Chat</div></div>
+        <div class="nav-center active">U+</div>
+        <div class="nav-item"><svg viewBox="0 0 24 24"><path d="M21 12V7H5a2 2 0 010-4h14v4M3 5v14a2 2 0 002 2h16v-5M21 12h-5a2 2 0 000 4h5z"/></svg><div class="nav-item-label">Wallet</div></div>
+        <div class="nav-item"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4" stroke-dasharray="2 2"/></svg><div class="nav-item-label">Enta</div></div>
+      </div>
+
+    </div>
+  </div>
+  <div class="note-strip">Green chrome · alive growth · soft warm bg</div>
+</div>
+
+<!-- =================== PHONE 4 — HỎA =================== -->
+<div class="phone-wrap theme-hoa">
+  <div class="theme-eyebrow">Theme · Element</div>
+  <div class="theme-name">
+    <span class="theme-swatch"></span>
+    HỎA
+  </div>
+  <div class="theme-attribute">Viêm thượng · Lễ</div>
+
+  <div class="phone">
+    <div class="phone-canvas">
+
+      <div class="particles">
+        <svg viewBox="0 0 340 700" preserveAspectRatio="none" style="width:100%;height:100%">
+          <circle cx="40" cy="120" r="0.5" fill="var(--t-particle)" opacity="0.30"/>
+          <circle cx="280" cy="180" r="0.6" fill="var(--t-particle)" opacity="0.30"/>
+          <circle cx="80" cy="320" r="0.4" fill="var(--t-particle)" opacity="0.30"/>
+          <circle cx="260" cy="400" r="0.5" fill="var(--t-particle)" opacity="0.30"/>
+          <circle cx="120" cy="540" r="0.5" fill="var(--t-particle)" opacity="0.25"/>
+          <circle cx="300" cy="600" r="0.4" fill="var(--t-particle)" opacity="0.30"/>
+        </svg>
+      </div>
+
+      <div class="status-bar">
+        <span>9:41</span>
+        <div class="status-icons">
+          <svg viewBox="0 0 16 16" fill="none"><path d="M2 12h12M2 8h12M2 4h12" stroke="currentColor" stroke-width="1.4"/></svg>
+        </div>
+      </div>
+
+      <div class="top-bar">
+        <div class="top-avatar">N</div>
+        <div class="top-title">UZG+ Apps</div>
+        <div class="top-icon-btn"><svg viewBox="0 0 16 16"><circle cx="7" cy="7" r="5"/><path d="M11 11l3 3"/></svg></div>
+        <div class="u-pill">
+          <svg class="u-pill-icon" viewBox="0 0 12 12">
+            <circle cx="6" cy="6" r="2" fill="var(--t-primary)"/>
+            <circle cx="6" cy="6" r="5" fill="none" stroke="var(--t-primary)" stroke-width="0.6" stroke-dasharray="1.2 1.2" opacity="0.6"/>
+          </svg>
+          U 1,250
+        </div>
+      </div>
+
+      <div class="scroll-area">
+
+        <div class="theme-active-card">
+          <div class="theme-active-orb"></div>
+          <div class="theme-active-info">
+            <div class="theme-active-title">HỎA theme · auto</div>
+            <div class="theme-active-sub">Passion · năng động · lãnh đạo</div>
+          </div>
+          <div class="theme-active-toggle">AUTO</div>
+        </div>
+
+        <div class="search-bar">
+          <svg viewBox="0 0 16 16"><circle cx="7" cy="7" r="5"/><path d="M11 11l3 3"/></svg>
+          <div class="search-bar-text">Search apps...</div>
+        </div>
+
+        <div class="section-row">
+          <div class="section-title">Pinned</div>
+          <div class="section-action">Edit</div>
+        </div>
+        <div class="app-grid">
+          <div class="app-tile">
+            <div class="app-icon ureward">
+              <svg viewBox="0 0 24 24"><path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z"/></svg>
+              <div class="app-badge">3</div>
+            </div>
+            <div class="app-label">U-Reward</div>
+          </div>
+          <div class="app-tile">
+            <div class="app-icon tao">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4" stroke-dasharray="2 2"/></svg>
+            </div>
+            <div class="app-label">TAO</div>
+          </div>
+          <div class="app-tile">
+            <div class="app-icon booking">
+              <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
+            </div>
+            <div class="app-label">Booking</div>
+          </div>
+          <div class="app-tile">
+            <div class="app-icon membership">
+              <svg viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.5 4.5L18 22l-6-4-6 4 1.5-8.5L2 9h7z"/></svg>
+            </div>
+            <div class="app-label">Membership</div>
+          </div>
+        </div>
+
+        <div class="section-row" style="margin-top: 6px;">
+          <div class="section-title">Featured</div>
+          <div class="section-action">Why?</div>
+        </div>
+        <div class="featured-note">
+          HỎA dominant · need cooling Thủy · meditative balance suggested.
+        </div>
+        <div class="app-grid">
+          <div class="app-tile">
+            <div class="app-icon retreat">
+              <svg viewBox="0 0 24 24"><path d="M12 2C8 8 8 12 12 18c4-6 4-10 0-16z"/></svg>
+            </div>
+            <div class="app-label">Mộc Retreat</div>
+            <div class="featured-reason">Grounds Yang</div>
+          </div>
+          <div class="app-tile">
+            <div class="app-icon tickets">
+              <svg viewBox="0 0 24 24"><path d="M3 8a2 2 0 012-2h14a2 2 0 012 2v3a2 2 0 100 4v3a2 2 0 01-2 2H5a2 2 0 01-2-2v-3a2 2 0 100-4V8z"/></svg>
+            </div>
+            <div class="app-label">Thủy Event</div>
+            <div class="featured-reason">Cools Hỏa</div>
+          </div>
+          <div class="app-tile">
+            <div class="app-icon market">
+              <svg viewBox="0 0 24 24"><path d="M3 7h18l-1.5 11a2 2 0 01-2 2h-11a2 2 0 01-2-2L3 7z"/><path d="M8 7V5a4 4 0 018 0v2"/></svg>
+            </div>
+            <div class="app-label">Marketplace</div>
+            <div class="featured-reason">New picks</div>
+          </div>
+          <div class="app-tile">
+            <div class="app-icon circles">
+              <svg viewBox="0 0 24 24"><circle cx="9" cy="12" r="6"/><circle cx="15" cy="12" r="6"/></svg>
+            </div>
+            <div class="app-label">Circles</div>
+            <div class="featured-reason">Sunrise Med</div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="fab"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></div>
+
+      <div class="bottom-nav">
+        <div class="nav-item"><svg viewBox="0 0 24 24"><path d="M3 12L12 4l9 8M5 11v8h14v-8"/></svg><div class="nav-item-label">Home</div></div>
+        <div class="nav-item"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 01-1 4 8.5 8.5 0 01-7.5 4.5 8.4 8.4 0 01-4-1L3 21l2-5a8.4 8.4 0 01-1-4 8.5 8.5 0 014.5-7.5 8.4 8.4 0 014-1A8.5 8.5 0 0121 11.5z"/></svg><div class="nav-item-label">Chat</div></div>
+        <div class="nav-center active">U+</div>
+        <div class="nav-item"><svg viewBox="0 0 24 24"><path d="M21 12V7H5a2 2 0 010-4h14v4M3 5v14a2 2 0 002 2h16v-5M21 12h-5a2 2 0 000 4h5z"/></svg><div class="nav-item-label">Wallet</div></div>
+        <div class="nav-item"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4" stroke-dasharray="2 2"/></svg><div class="nav-item-label">Enta</div></div>
+      </div>
+
+    </div>
+  </div>
+  <div class="note-strip">Warm red chrome · viêm thượng · soft warm bg</div>
+</div>
+
+<!-- =================== PHONE 5 — THỔ =================== -->
+<div class="phone-wrap theme-tho">
+  <div class="theme-eyebrow">Theme · Element</div>
+  <div class="theme-name">
+    <span class="theme-swatch"></span>
+    THỔ
+  </div>
+  <div class="theme-attribute">Giá sắt · Tín · Bao dung</div>
+
+  <div class="phone">
+    <div class="phone-canvas">
+
+      <div class="particles">
+        <svg viewBox="0 0 340 700" preserveAspectRatio="none" style="width:100%;height:100%">
+          <circle cx="40" cy="120" r="0.5" fill="var(--t-particle)" opacity="0.30"/>
+          <circle cx="280" cy="180" r="0.6" fill="var(--t-particle)" opacity="0.30"/>
+          <circle cx="80" cy="320" r="0.4" fill="var(--t-particle)" opacity="0.30"/>
+          <circle cx="260" cy="400" r="0.5" fill="var(--t-particle)" opacity="0.30"/>
+          <circle cx="120" cy="540" r="0.5" fill="var(--t-particle)" opacity="0.25"/>
+          <circle cx="300" cy="600" r="0.4" fill="var(--t-particle)" opacity="0.30"/>
+        </svg>
+      </div>
+
+      <div class="status-bar">
+        <span>9:41</span>
+        <div class="status-icons">
+          <svg viewBox="0 0 16 16" fill="none"><path d="M2 12h12M2 8h12M2 4h12" stroke="currentColor" stroke-width="1.4"/></svg>
+        </div>
+      </div>
+
+      <div class="top-bar">
+        <div class="top-avatar">N</div>
+        <div class="top-title">UZG+ Apps</div>
+        <div class="top-icon-btn"><svg viewBox="0 0 16 16"><circle cx="7" cy="7" r="5"/><path d="M11 11l3 3"/></svg></div>
+        <div class="u-pill">
+          <svg class="u-pill-icon" viewBox="0 0 12 12">
+            <circle cx="6" cy="6" r="2" fill="var(--t-primary)"/>
+            <circle cx="6" cy="6" r="5" fill="none" stroke="var(--t-primary)" stroke-width="0.6" stroke-dasharray="1.2 1.2" opacity="0.6"/>
+          </svg>
+          U 1,250
+        </div>
+      </div>
+
+      <div class="scroll-area">
+
+        <div class="theme-active-card">
+          <div class="theme-active-orb"></div>
+          <div class="theme-active-info">
+            <div class="theme-active-title">THỔ theme · auto</div>
+            <div class="theme-active-sub">Stable ground · ổn định · tin cậy</div>
+          </div>
+          <div class="theme-active-toggle">AUTO</div>
+        </div>
+
+        <div class="search-bar">
+          <svg viewBox="0 0 16 16"><circle cx="7" cy="7" r="5"/><path d="M11 11l3 3"/></svg>
+          <div class="search-bar-text">Search apps...</div>
+        </div>
+
+        <div class="section-row">
+          <div class="section-title">Pinned</div>
+          <div class="section-action">Edit</div>
+        </div>
+        <div class="app-grid">
+          <div class="app-tile">
+            <div class="app-icon ureward">
+              <svg viewBox="0 0 24 24"><path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z"/></svg>
+              <div class="app-badge">3</div>
+            </div>
+            <div class="app-label">U-Reward</div>
+          </div>
+          <div class="app-tile">
+            <div class="app-icon tao">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4" stroke-dasharray="2 2"/></svg>
+            </div>
+            <div class="app-label">TAO</div>
+          </div>
+          <div class="app-tile">
+            <div class="app-icon booking">
+              <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
+            </div>
+            <div class="app-label">Booking</div>
+          </div>
+          <div class="app-tile">
+            <div class="app-icon membership">
+              <svg viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.5 4.5L18 22l-6-4-6 4 1.5-8.5L2 9h7z"/></svg>
+            </div>
+            <div class="app-label">Membership</div>
+          </div>
+        </div>
+
+        <div class="section-row" style="margin-top: 6px;">
+          <div class="section-title">Featured</div>
+          <div class="section-action">Why?</div>
+        </div>
+        <div class="featured-note">
+          THỔ dominant · stability + community · grounded paths suggested.
+        </div>
+        <div class="app-grid">
+          <div class="app-tile">
+            <div class="app-icon governance">
+              <svg viewBox="0 0 24 24"><path d="M3 21h18M6 21V8l6-5 6 5v13M10 21v-7h4v7"/></svg>
+            </div>
+            <div class="app-label">Governance</div>
+            <div class="featured-reason">Stewardship</div>
+          </div>
+          <div class="app-tile">
+            <div class="app-icon circles">
+              <svg viewBox="0 0 24 24"><circle cx="9" cy="12" r="6"/><circle cx="15" cy="12" r="6"/></svg>
+            </div>
+            <div class="app-label">Garden Bay</div>
+            <div class="featured-reason">Thổ field</div>
+          </div>
+          <div class="app-tile">
+            <div class="app-icon market">
+              <svg viewBox="0 0 24 24"><path d="M3 7h18l-1.5 11a2 2 0 01-2 2h-11a2 2 0 01-2-2L3 7z"/><path d="M8 7V5a4 4 0 018 0v2"/></svg>
+            </div>
+            <div class="app-label">Marketplace</div>
+            <div class="featured-reason">Local goods</div>
+          </div>
+          <div class="app-tile">
+            <div class="app-icon retreat">
+              <svg viewBox="0 0 24 24"><path d="M12 2C8 8 8 12 12 18c4-6 4-10 0-16z"/></svg>
+            </div>
+            <div class="app-label">Retreat</div>
+            <div class="featured-reason">Mountain</div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="fab"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></div>
+
+      <div class="bottom-nav">
+        <div class="nav-item"><svg viewBox="0 0 24 24"><path d="M3 12L12 4l9 8M5 11v8h14v-8"/></svg><div class="nav-item-label">Home</div></div>
+        <div class="nav-item"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 01-1 4 8.5 8.5 0 01-7.5 4.5 8.4 8.4 0 01-4-1L3 21l2-5a8.4 8.4 0 01-1-4 8.5 8.5 0 014.5-7.5 8.4 8.4 0 014-1A8.5 8.5 0 0121 11.5z"/></svg><div class="nav-item-label">Chat</div></div>
+        <div class="nav-center active">U+</div>
+        <div class="nav-item"><svg viewBox="0 0 24 24"><path d="M21 12V7H5a2 2 0 010-4h14v4M3 5v14a2 2 0 002 2h16v-5M21 12h-5a2 2 0 000 4h5z"/></svg><div class="nav-item-label">Wallet</div></div>
+        <div class="nav-item"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4" stroke-dasharray="2 2"/></svg><div class="nav-item-label">Enta</div></div>
+      </div>
+
+    </div>
+  </div>
+  <div class="note-strip">Earth gold chrome · giá sắt · warm grounded bg</div>
+</div>
+
+</div>
+
+<!-- ============================================ -->
+<!-- THEME SETTINGS PREVIEW                       -->
+<!-- ============================================ -->
+<div class="theme-settings-preview">
+  <div class="theme-settings-title">Settings · Theme picker preview · 5 themes selectable</div>
+  <div class="theme-pickers">
+    <div class="theme-card" style="--card-color:#A9ADB5; --card-color-light:#D6D9DE; --card-color-dark:#6E7178; --card-glow: rgba(169,173,181,0.40); --card-bg-tint: rgba(169,173,181,0.08);">
+      <div class="theme-card-head">
+        <div class="theme-card-orb"></div>
+        <div>
+          <div class="theme-card-name">KIM</div>
+          <div class="theme-card-en">Metal · Light Silver</div>
+        </div>
+      </div>
+      <div class="theme-card-attr">Tòng cách · sắc bén · Nghĩa</div>
+      <div class="theme-card-status manual">Manual</div>
+    </div>
+
+    <div class="theme-card" style="--card-color:#185FA5; --card-color-light:#5B92D4; --card-color-dark:#0C447C; --card-glow: rgba(91,146,212,0.40); --card-bg-tint: rgba(24,95,165,0.08);">
+      <div class="theme-card-head">
+        <div class="theme-card-orb"></div>
+        <div>
+          <div class="theme-card-name">THỦY</div>
+          <div class="theme-card-en">Water · Deep Blue</div>
+        </div>
+      </div>
+      <div class="theme-card-attr">Nhuận hạ · trí tuệ · linh hoạt</div>
+      <div class="theme-card-status manual">Manual</div>
+    </div>
+
+    <div class="theme-card" style="--card-color:#1D9E75; --card-color-light:#6FCBA9; --card-color-dark:#0F6E56; --card-glow: rgba(111,203,169,0.40); --card-bg-tint: rgba(29,158,117,0.08);">
+      <div class="theme-card-head">
+        <div class="theme-card-orb"></div>
+        <div>
+          <div class="theme-card-name">MỘC</div>
+          <div class="theme-card-en">Wood · Green</div>
+        </div>
+      </div>
+      <div class="theme-card-attr">Khúc trực · nhân từ · phát triển</div>
+      <div class="theme-card-status manual">Manual</div>
+    </div>
+
+    <div class="theme-card active" style="--card-color:#E24B4A; --card-color-light:#F19594; --card-color-dark:#A32D2D; --card-glow: rgba(241,149,148,0.40); --card-bg-tint: rgba(226,75,74,0.10);">
+      <div class="theme-card-head">
+        <div class="theme-card-orb"></div>
+        <div>
+          <div class="theme-card-name">HỎA</div>
+          <div class="theme-card-en">Fire · Warm Red</div>
+        </div>
+      </div>
+      <div class="theme-card-attr">Viêm thượng · Lễ · năng động</div>
+      <div class="theme-card-status auto">Auto · ENTA dominant</div>
+    </div>
+
+    <div class="theme-card" style="--card-color:#BA7517; --card-color-light:#EBA961; --card-color-dark:#854F0B; --card-glow: rgba(235,169,97,0.40); --card-bg-tint: rgba(186,117,23,0.08);">
+      <div class="theme-card-head">
+        <div class="theme-card-orb"></div>
+        <div>
+          <div class="theme-card-name">THỔ</div>
+          <div class="theme-card-en">Earth · Gold</div>
+        </div>
+      </div>
+      <div class="theme-card-attr">Giá sắt · Tín · bao dung</div>
+      <div class="theme-card-status manual">Manual</div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================ -->
+<!-- FOOTNOTE                                     -->
+<!-- ============================================ -->
+<div class="footer-note">
+  <div class="footer-title">Mockup #6.5 — Theme Architecture · Decisions to confirm</div>
+  <div class="footer-grid">
+    <div>
+      <b>D1 · Implementation</b><br>
+      Single CSS variable contract: <code>--t-primary / --t-primary-light / --t-primary-dark / --t-tint / --t-glow / --t-bg-radial-1 / --t-bg-radial-2 / --t-canvas / --t-particle</code>. HTML root attribute <code>data-theme="kim|thuy|moc|hoa|tho"</code> swaps the entire palette. Zero per-component theme logic.
+    </div>
+    <div>
+      <b>D2 · What changes / what does NOT</b><br>
+      <b>Changes:</b> nav center · FAB · top avatar · U pill · accents · radial bg · particles · focus rings · element-specific section tints.<br>
+      <b>NOT changes:</b> app icons (universal identity) · Ngũ Hành element colors (data integrity) · semantic colors (success/danger).
+    </div>
+    <div>
+      <b>D3 · Settings flow</b><br>
+      Default = ENTA dominant element auto-resolved from birth data. User can override in Settings → Theme picker (5 cards above). Override marked persistent. Future ENTA recalc respects override flag — does NOT auto-revert.
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

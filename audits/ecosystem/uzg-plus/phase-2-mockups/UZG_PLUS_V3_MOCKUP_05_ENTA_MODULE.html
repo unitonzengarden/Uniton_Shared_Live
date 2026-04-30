@@ -1,0 +1,1703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>UZG+ V3 — Mockup #5 — ENTA Module</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+:root {
+  /* L1 Uniton Future */
+  --uniton-quantum: #4A6FFF;
+  --uniton-bg: #090D1A;
+  /* L2 UZG+ Cobalt */
+  --uzg-blue: #3B5BAA;
+  --uzg-blue-light: #5B7FD4;
+  --uzg-blue-dark: #243870;
+  --uzg-blue-tint: #EEF2FB;
+  /* Surfaces */
+  --bg-canvas: #FBFCFE;
+  --bg-card: #FFFFFF;
+  --text-primary: #1A1F2E;
+  --text-secondary: #5F5E5A;
+  --text-tertiary: #9099B0;
+  --divider: rgba(160, 175, 200, 0.22);
+  --divider-strong: rgba(160, 175, 200, 0.45);
+  /* Ngũ Hành — NAM TAO chuẩn */
+  --hoa: #E24B4A;       /* Hỏa - Fire - red */
+  --hoa-light: #F19594;
+  --hoa-dark: #A32D2D;
+  --tho: #BA7517;       /* Thổ - Earth - amber */
+  --tho-light: #EBA961;
+  --tho-dark: #854F0B;
+  --kim: #A9ADB5;       /* Kim - Metal - silver */
+  --kim-light: #D6D9DE;
+  --kim-dark: #6E7178;
+  --thuy: #185FA5;      /* Thủy - Water - deep blue */
+  --thuy-light: #5B92D4;
+  --thuy-dark: #0C447C;
+  --moc: #1D9E75;       /* Mộc - Wood - green */
+  --moc-light: #6FCBA9;
+  --moc-dark: #0F6E56;
+  /* Semantic */
+  --success: #1D9E75;
+  --warning: #BA7517;
+  --danger: #E24B4A;
+  --info: #4A6FFF;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; -webkit-font-smoothing: antialiased; }
+html, body { background: var(--uniton-bg); font-family: 'DM Sans', system-ui, sans-serif; color: var(--text-primary); min-height: 100vh; }
+
+body {
+  background:
+    radial-gradient(ellipse at 12% 8%, rgba(74, 111, 255, 0.10) 0%, transparent 38%),
+    radial-gradient(ellipse at 88% 92%, rgba(117, 53, 204, 0.06) 0%, transparent 42%),
+    var(--uniton-bg);
+  padding: 32px 16px 64px;
+}
+
+/* === Page Header === */
+.page-header { max-width: 1280px; margin: 0 auto 28px; padding: 0 4px; }
+.page-eyebrow {
+  font-family: 'Syne', sans-serif; font-weight: 700; font-size: 11px;
+  letter-spacing: 0.18em; color: var(--uzg-blue-light); text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.page-title { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 24px; color: #FFFFFF; letter-spacing: -0.01em; }
+.page-sub { font-size: 13px; color: rgba(255,255,255,0.55); margin-top: 6px; max-width: 720px; line-height: 1.5; }
+
+/* Pentagon legend strip */
+.pentagon-legend {
+  max-width: 1280px; margin: 16px auto 0; padding: 14px 18px;
+  background: rgba(255,255,255,0.04); border: 0.5px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+  display: flex; align-items: center; gap: 18px; flex-wrap: wrap;
+  font-family: 'DM Sans', sans-serif; font-size: 11.5px; color: rgba(255,255,255,0.7);
+}
+.pentagon-legend strong {
+  font-family: 'Syne', sans-serif; font-weight: 700; color: var(--uzg-blue-light);
+  letter-spacing: 0.1em; text-transform: uppercase; font-size: 10.5px;
+}
+.legend-item { display: inline-flex; align-items: center; gap: 6px; }
+.legend-dot { width: 10px; height: 10px; border-radius: 50%; }
+.legend-arrow { color: rgba(255,255,255,0.35); margin: 0 2px; }
+
+/* === Screens grid === */
+.screens-row { max-width: 1640px; margin: 26px auto 0; display: grid; grid-template-columns: repeat(4, 380px); gap: 28px; justify-content: center; }
+@media (max-width: 1700px) { .screens-row { grid-template-columns: repeat(2, 380px); } }
+@media (max-width: 820px)  { .screens-row { grid-template-columns: 380px; } }
+
+.screen-wrap { display: flex; flex-direction: column; align-items: center; }
+.screen-label {
+  font-family: 'Syne', sans-serif; font-weight: 700; font-size: 11px;
+  letter-spacing: 0.16em; color: var(--uzg-blue-light); text-transform: uppercase;
+  margin-bottom: 4px;
+}
+.screen-name { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 14px; color: #FFFFFF; margin-bottom: 14px; }
+
+/* === Phone frame === */
+.phone {
+  width: 380px; height: 780px; background: var(--bg-canvas);
+  border-radius: 36px; position: relative; overflow: hidden;
+  box-shadow: 0 16px 60px rgba(0,0,0,0.45), 0 0 0 1px rgba(255,255,255,0.05);
+}
+.phone-canvas {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(circle at 18% 14%, rgba(74,111,255,0.07) 0%, transparent 45%),
+    radial-gradient(circle at 82% 86%, rgba(117,53,204,0.06) 0%, transparent 48%),
+    var(--bg-canvas);
+  overflow: hidden;
+}
+
+/* Quantum particles */
+.particles { position: absolute; inset: 0; pointer-events: none; opacity: 0.7; }
+.particles svg { width: 100%; height: 100%; }
+
+/* === Status bar === */
+.status-bar {
+  position: absolute; top: 0; left: 0; right: 0; height: 32px;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 8px 22px 0; font-size: 11px; font-weight: 600; color: var(--text-primary);
+  z-index: 50;
+}
+.status-icons { display: flex; align-items: center; gap: 4px; }
+.status-icons svg { width: 13px; height: 13px; }
+
+/* === Top Bar === */
+.top-bar {
+  position: absolute; top: 32px; left: 0; right: 0; height: 56px; z-index: 40;
+  background: rgba(251, 252, 254, 0.72); backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 0.5px solid var(--divider);
+  display: flex; align-items: center; padding: 0 14px; gap: 10px;
+}
+.top-avatar {
+  width: 30px; height: 30px; border-radius: 50%; flex-shrink: 0;
+  background: linear-gradient(135deg, #5B7FD4, #243870);
+  display: flex; align-items: center; justify-content: center;
+  color: #FFFFFF; font-family: 'Syne', sans-serif; font-weight: 800; font-size: 11px;
+}
+.top-title { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 16px; color: var(--text-primary); flex: 1; letter-spacing: -0.01em; }
+.top-icons { display: flex; align-items: center; gap: 6px; }
+.top-icon-btn {
+  width: 30px; height: 30px; display: flex; align-items: center; justify-content: center;
+  border-radius: 8px; background: transparent; cursor: pointer;
+}
+.top-icon-btn svg { width: 16px; height: 16px; stroke: var(--text-tertiary); fill: none; stroke-width: 1.5; }
+
+.u-pill {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 5px 11px 5px 8px; border-radius: 14px;
+  background: rgba(74, 111, 255, 0.07);
+  border: 0.5px solid rgba(74, 111, 255, 0.22);
+  font-family: 'Syne', sans-serif; font-weight: 800; font-size: 11px;
+  color: #243870; letter-spacing: 0.02em;
+}
+.u-pill-icon { width: 12px; height: 12px; flex-shrink: 0; }
+
+.back-btn {
+  width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;
+  border-radius: 8px; cursor: pointer; flex-shrink: 0;
+}
+.back-btn svg { width: 18px; height: 18px; stroke: var(--text-primary); fill: none; stroke-width: 1.6; }
+
+/* === Main scroll area === */
+.scroll-area {
+  position: absolute; top: 88px; bottom: 76px; left: 0; right: 0;
+  overflow-y: auto; padding: 12px 16px 24px;
+}
+.scroll-area::-webkit-scrollbar { width: 0; }
+
+/* === Bottom nav === */
+.bottom-nav {
+  position: absolute; bottom: 0; left: 0; right: 0; height: 76px; z-index: 40;
+  background: rgba(251, 252, 254, 0.85); backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-top: 0.5px solid var(--divider);
+  display: flex; align-items: center; justify-content: space-around;
+  padding: 8px 12px 14px;
+}
+.nav-item {
+  display: flex; flex-direction: column; align-items: center; gap: 3px;
+  flex: 1; cursor: pointer;
+}
+.nav-item svg { width: 18px; height: 18px; stroke: var(--text-tertiary); fill: none; stroke-width: 1.5; }
+.nav-item.active svg { stroke: var(--uzg-blue); }
+.nav-item-label {
+  font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 9.5px;
+  color: var(--text-tertiary); letter-spacing: 0.04em; text-transform: uppercase;
+}
+.nav-item.active .nav-item-label { color: var(--uzg-blue); font-weight: 600; }
+.nav-center {
+  width: 44px; height: 44px; border-radius: 12px;
+  background: linear-gradient(135deg, #4A6FFF, #3B5BAA);
+  box-shadow: 0 4px 14px rgba(74, 111, 255, 0.25);
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Syne', sans-serif; font-weight: 800; font-size: 15px;
+  color: #FFFFFF; letter-spacing: -0.04em; cursor: pointer;
+  margin-top: -10px;
+}
+.fab {
+  position: absolute; bottom: 92px; right: 18px;
+  width: 48px; height: 48px; border-radius: 50%;
+  background: linear-gradient(135deg, #4A6FFF, #3B5BAA);
+  box-shadow: 0 6px 20px rgba(74, 111, 255, 0.32);
+  display: flex; align-items: center; justify-content: center;
+  z-index: 35; cursor: pointer;
+}
+.fab svg { width: 20px; height: 20px; stroke: #FFFFFF; fill: none; stroke-width: 2.2; }
+
+/* ============================================ */
+/* ENTA PENTAGON WHEEL — HERO                   */
+/* ============================================ */
+
+.wheel-stage {
+  position: relative; padding: 4px 0 8px;
+  display: flex; flex-direction: column; align-items: center;
+}
+
+.pentagon-wheel {
+  width: 280px; height: 280px; position: relative;
+  display: flex; align-items: center; justify-content: center;
+}
+
+/* Identity strip below wheel */
+.identity-strip {
+  margin-top: 14px; text-align: center; padding: 0 12px;
+}
+.identity-name {
+  font-family: 'Syne', sans-serif; font-weight: 800; font-size: 18px;
+  color: var(--text-primary); letter-spacing: -0.01em;
+}
+.identity-handle {
+  font-family: 'DM Sans', sans-serif; font-weight: 400; font-size: 12px;
+  color: var(--text-tertiary); margin-top: 2px;
+}
+.identity-element-row {
+  margin-top: 10px;
+  font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 13px;
+  color: var(--text-secondary);
+}
+.identity-element-row .dom-hoa { color: var(--hoa-dark); font-weight: 600; }
+.identity-element-row .dom-moc { color: var(--moc-dark); font-weight: 600; }
+.identity-divider-dot {
+  display: inline-block; width: 3px; height: 3px; border-radius: 50%;
+  background: var(--text-tertiary); margin: 0 7px; vertical-align: middle;
+}
+.phase-pill {
+  display: inline-flex; align-items: center; gap: 6px; margin-top: 10px;
+  padding: 5px 12px 5px 10px;
+  background: rgba(74, 111, 255, 0.07);
+  border: 0.5px solid rgba(74, 111, 255, 0.22);
+  border-radius: 14px;
+}
+.phase-pill-dot {
+  width: 6px; height: 6px; border-radius: 50%; background: var(--uzg-blue);
+  animation: phasePulse 3s ease-in-out infinite;
+}
+@keyframes phasePulse {
+  0%, 100% { opacity: 0.5; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.3); }
+}
+.phase-pill-text {
+  font-family: 'Syne', sans-serif; font-weight: 700; font-size: 11px;
+  color: var(--uzg-blue-dark); letter-spacing: 0.06em; text-transform: uppercase;
+}
+
+/* === Tab navigation === */
+.tab-row {
+  display: flex; gap: 4px; margin: 16px 0 14px; padding: 3px;
+  background: rgba(160, 175, 200, 0.12); border-radius: 10px;
+}
+.tab {
+  flex: 1; padding: 7px 0; text-align: center; cursor: pointer;
+  font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 12px;
+  color: var(--text-tertiary); border-radius: 8px;
+  transition: background 180ms, color 180ms;
+}
+.tab.active {
+  background: #FFFFFF; color: var(--text-primary); font-weight: 600;
+  box-shadow: 0 1px 3px rgba(36, 56, 112, 0.06);
+}
+
+/* === Section header === */
+.section-head {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 10px 4px 8px; margin-top: 6px;
+}
+.section-title {
+  font-family: 'DM Sans', sans-serif; font-weight: 600; font-size: 12px;
+  color: var(--text-secondary); letter-spacing: 0.06em; text-transform: uppercase;
+}
+.section-link {
+  font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 11px;
+  color: var(--uzg-blue); cursor: pointer;
+}
+
+/* ============================================ */
+/* SCREEN A — IDENTITY TAB                      */
+/* Element status rows                          */
+/* ============================================ */
+
+.element-row {
+  display: flex; align-items: center; gap: 10px; padding: 11px 4px;
+  border-bottom: 0.5px solid var(--divider);
+}
+.element-row:last-child { border-bottom: none; }
+.element-icon {
+  width: 32px; height: 32px; border-radius: 50%; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Syne', sans-serif; font-weight: 800; font-size: 11px;
+  color: #FFFFFF;
+}
+.element-icon.hoa  { background: linear-gradient(135deg, var(--hoa-light), var(--hoa-dark)); }
+.element-icon.tho  { background: linear-gradient(135deg, var(--tho-light), var(--tho-dark)); }
+.element-icon.kim  { background: linear-gradient(135deg, var(--kim-light), var(--kim-dark)); }
+.element-icon.thuy { background: linear-gradient(135deg, var(--thuy-light), var(--thuy-dark)); }
+.element-icon.moc  { background: linear-gradient(135deg, var(--moc-light), var(--moc-dark)); }
+
+.element-info { flex: 1; min-width: 0; }
+.element-name-row { display: flex; align-items: baseline; gap: 7px; }
+.element-name { font-family: 'DM Sans', sans-serif; font-weight: 600; font-size: 13.5px; color: var(--text-primary); }
+.element-status {
+  font-family: 'Syne', sans-serif; font-weight: 700; font-size: 9px;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  padding: 2px 6px; border-radius: 5px;
+}
+.element-status.deficient { color: var(--hoa-dark); background: rgba(226,75,74,0.10); }
+.element-status.balanced  { color: var(--moc-dark); background: rgba(29,158,117,0.10); }
+.element-status.strong    { color: var(--uzg-blue-dark); background: rgba(74,111,255,0.10); }
+.element-status.excess    { color: var(--tho-dark); background: rgba(186,117,23,0.10); }
+
+.element-bar-row {
+  display: flex; align-items: center; gap: 8px; margin-top: 4px;
+}
+.element-bar {
+  flex: 1; height: 4px; background: rgba(160,175,200,0.18); border-radius: 2px; overflow: hidden;
+}
+.element-bar-fill {
+  height: 100%; border-radius: 2px;
+}
+.element-bar-fill.hoa  { background: linear-gradient(90deg, var(--hoa-light), var(--hoa)); }
+.element-bar-fill.tho  { background: linear-gradient(90deg, var(--tho-light), var(--tho)); }
+.element-bar-fill.kim  { background: linear-gradient(90deg, var(--kim-light), var(--kim)); }
+.element-bar-fill.thuy { background: linear-gradient(90deg, var(--thuy-light), var(--thuy)); }
+.element-bar-fill.moc  { background: linear-gradient(90deg, var(--moc-light), var(--moc)); }
+.element-pct {
+  font-family: 'Syne', sans-serif; font-weight: 700; font-size: 12px;
+  color: var(--text-primary); letter-spacing: -0.01em; min-width: 32px; text-align: right;
+}
+
+/* Polarity block */
+.polarity-block {
+  margin-top: 6px; padding: 14px;
+  background: #FFFFFF; border: 0.5px solid var(--divider);
+  border-radius: 14px;
+}
+.polarity-label-row {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 10px;
+}
+.polarity-text { font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 12px; color: var(--text-secondary); }
+.polarity-text b { color: var(--text-primary); font-weight: 600; }
+.polarity-bar {
+  height: 6px; border-radius: 3px; overflow: hidden; display: flex;
+}
+.polarity-yang { background: linear-gradient(90deg, var(--hoa), var(--hoa-dark)); }
+.polarity-yin  { background: linear-gradient(90deg, var(--thuy-dark), var(--thuy)); }
+.polarity-note {
+  font-family: 'DM Sans', sans-serif; font-style: italic; font-size: 11px;
+  color: var(--text-tertiary); margin-top: 8px; line-height: 1.4;
+}
+
+/* Suggested balance card */
+.suggest-card {
+  background: linear-gradient(180deg, rgba(74,111,255,0.04), rgba(74,111,255,0.01));
+  border: 0.5px solid rgba(74,111,255,0.18);
+  border-radius: 14px; padding: 12px 14px; margin-bottom: 8px;
+  display: flex; align-items: center; gap: 11px; cursor: pointer;
+}
+.suggest-icon {
+  width: 32px; height: 32px; border-radius: 10px;
+  background: rgba(74,111,255,0.10);
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.suggest-icon svg { width: 15px; height: 15px; stroke: var(--uzg-blue); fill: none; stroke-width: 1.7; }
+.suggest-info { flex: 1; min-width: 0; }
+.suggest-title { font-family: 'DM Sans', sans-serif; font-weight: 600; font-size: 13px; color: var(--text-primary); }
+.suggest-sub { font-family: 'DM Sans', sans-serif; font-weight: 400; font-size: 11px; color: var(--text-tertiary); margin-top: 2px; }
+.suggest-arrow svg { width: 14px; height: 14px; stroke: var(--text-tertiary); fill: none; stroke-width: 1.5; }
+
+/* ============================================ */
+/* SCREEN B — RESONANCE TAB                     */
+/* ============================================ */
+
+.resonance-summary {
+  display: flex; align-items: stretch; gap: 8px; margin: 4px 0 14px;
+}
+.res-stat {
+  flex: 1; background: #FFFFFF; border: 0.5px solid var(--divider);
+  border-radius: 14px; padding: 12px 10px; text-align: center;
+}
+.res-stat-num {
+  font-family: 'Syne', sans-serif; font-weight: 800; font-size: 22px;
+  color: var(--text-primary); letter-spacing: -0.02em; line-height: 1;
+}
+.res-stat-label {
+  font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 10.5px;
+  color: var(--text-tertiary); letter-spacing: 0.04em; text-transform: uppercase;
+  margin-top: 6px;
+}
+
+/* Trust level pills */
+.trust-pills {
+  display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px;
+}
+.trust-pill {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 4px 10px 4px 8px; border-radius: 10px;
+  background: rgba(160,175,200,0.10); border: 0.5px solid var(--divider);
+  font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 11px;
+  color: var(--text-secondary); cursor: pointer;
+}
+.trust-pill .trust-dot { width: 6px; height: 6px; border-radius: 50%; }
+.trust-pill .trust-dot.trusted { background: var(--moc); }
+.trust-pill .trust-dot.circle  { background: var(--uzg-blue); }
+.trust-pill .trust-dot.resonance { background: var(--tho); }
+.trust-pill .trust-dot.open    { background: var(--text-tertiary); }
+.trust-pill .trust-count {
+  font-family: 'Syne', sans-serif; font-weight: 700; font-size: 10.5px;
+  color: var(--text-primary);
+}
+
+/* Connection card */
+.conn-card {
+  display: flex; align-items: center; gap: 11px; padding: 11px 4px;
+  border-bottom: 0.5px solid var(--divider); cursor: pointer;
+}
+.conn-card:last-child { border-bottom: none; }
+
+.mini-pentagon {
+  width: 42px; height: 42px; flex-shrink: 0; position: relative;
+}
+.mini-pentagon-inner {
+  position: absolute; inset: 6px; border-radius: 50%;
+  background: linear-gradient(135deg, #5B7FD4, #243870);
+  display: flex; align-items: center; justify-content: center;
+  color: #FFFFFF; font-family: 'Syne', sans-serif; font-weight: 800; font-size: 10px;
+}
+
+.conn-info { flex: 1; min-width: 0; }
+.conn-name-row { display: flex; align-items: center; gap: 6px; }
+.conn-name { font-family: 'DM Sans', sans-serif; font-weight: 600; font-size: 13.5px; color: var(--text-primary); }
+.conn-handle { font-family: 'DM Sans', sans-serif; font-weight: 400; font-size: 11px; color: var(--text-tertiary); }
+.conn-elements { font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 11px; color: var(--text-secondary); margin-top: 2px; }
+.conn-reason { font-family: 'DM Sans', sans-serif; font-style: italic; font-size: 10.5px; color: var(--text-tertiary); margin-top: 2px; line-height: 1.35; }
+
+.resonance-score {
+  text-align: right; flex-shrink: 0;
+}
+.resonance-score-num {
+  font-family: 'Syne', sans-serif; font-weight: 800; font-size: 16px;
+  color: var(--moc-dark); letter-spacing: -0.02em;
+}
+.resonance-score-label {
+  font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 9.5px;
+  color: var(--text-tertiary); text-transform: uppercase; letter-spacing: 0.06em; margin-top: 1px;
+}
+
+/* ============================================ */
+/* SCREEN C — CIRCLES TAB                       */
+/* ============================================ */
+
+.circle-card {
+  background: #FFFFFF; border: 0.5px solid var(--divider);
+  border-radius: 14px; padding: 12px 14px; margin-bottom: 10px; cursor: pointer;
+}
+.circle-card-head {
+  display: flex; align-items: center; gap: 11px; margin-bottom: 8px;
+}
+.circle-icon {
+  width: 38px; height: 38px; border-radius: 11px; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Syne', sans-serif; font-weight: 800; font-size: 12px;
+  color: #FFFFFF;
+}
+.circle-icon.moc { background: linear-gradient(135deg, var(--moc-light), var(--moc-dark)); }
+.circle-icon.tho { background: linear-gradient(135deg, var(--tho-light), var(--tho-dark)); }
+.circle-icon.kim { background: linear-gradient(135deg, var(--kim-light), var(--kim-dark)); }
+.circle-icon.thuy { background: linear-gradient(135deg, var(--thuy-light), var(--thuy-dark)); }
+.circle-icon.hoa { background: linear-gradient(135deg, var(--hoa-light), var(--hoa-dark)); }
+
+.circle-name-block { flex: 1; min-width: 0; }
+.circle-name { font-family: 'DM Sans', sans-serif; font-weight: 600; font-size: 14px; color: var(--text-primary); }
+.circle-meta { font-family: 'DM Sans', sans-serif; font-weight: 400; font-size: 11px; color: var(--text-tertiary); margin-top: 2px; }
+
+.role-badge {
+  font-family: 'Syne', sans-serif; font-weight: 700; font-size: 9px;
+  padding: 2px 7px; border-radius: 5px; letter-spacing: 0.08em; text-transform: uppercase;
+}
+.role-badge.founder { color: var(--tho-dark); background: rgba(186,117,23,0.10); }
+.role-badge.member  { color: var(--text-secondary); background: rgba(160,175,200,0.15); }
+.role-badge.mod     { color: var(--uzg-blue-dark); background: rgba(74,111,255,0.10); }
+
+.circle-resonance-row {
+  display: flex; align-items: center; gap: 8px; margin-top: 4px;
+  font-family: 'DM Sans', sans-serif; font-size: 11px; color: var(--text-secondary);
+}
+.circle-resonance-bar {
+  flex: 1; height: 4px; background: rgba(160,175,200,0.18); border-radius: 2px; overflow: hidden;
+}
+.circle-resonance-fill {
+  height: 100%; border-radius: 2px;
+  background: linear-gradient(90deg, var(--moc-light), var(--moc));
+}
+.circle-resonance-pct { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 11px; color: var(--moc-dark); min-width: 30px; text-align: right; }
+
+/* Suggested circle variant */
+.circle-card.suggested {
+  background: linear-gradient(180deg, rgba(74,111,255,0.04), rgba(74,111,255,0.01));
+  border: 0.5px solid rgba(74,111,255,0.18);
+}
+.circle-suggest-reason {
+  font-family: 'DM Sans', sans-serif; font-style: italic; font-size: 11px;
+  color: var(--uzg-blue-dark); margin-top: 6px; line-height: 1.4;
+}
+.circle-join-row {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-top: 10px; padding-top: 10px;
+  border-top: 0.5px solid rgba(74,111,255,0.12);
+}
+.join-meta { font-family: 'DM Sans', sans-serif; font-size: 10.5px; color: var(--text-tertiary); }
+.join-btn {
+  font-family: 'Syne', sans-serif; font-weight: 700; font-size: 10.5px;
+  color: #FFFFFF; padding: 6px 14px;
+  background: linear-gradient(135deg, #4A6FFF, #3B5BAA);
+  border-radius: 8px; cursor: pointer; letter-spacing: 0.06em;
+  box-shadow: 0 2px 6px rgba(74,111,255,0.25);
+}
+
+/* ============================================ */
+/* SCREEN D — JOURNEY TAB                       */
+/* ============================================ */
+
+.journey-now-card {
+  background: linear-gradient(135deg, rgba(74,111,255,0.10), rgba(117,53,204,0.06));
+  border: 0.5px solid rgba(74,111,255,0.25);
+  border-radius: 14px; padding: 14px; margin-bottom: 14px;
+  position: relative;
+}
+.journey-now-label {
+  font-family: 'Syne', sans-serif; font-weight: 700; font-size: 10px;
+  color: var(--uzg-blue-dark); letter-spacing: 0.14em; text-transform: uppercase;
+  margin-bottom: 4px;
+}
+.journey-now-phase {
+  font-family: 'Syne', sans-serif; font-weight: 800; font-size: 22px;
+  color: var(--text-primary); letter-spacing: -0.02em;
+}
+.journey-now-desc {
+  font-family: 'DM Sans', sans-serif; font-size: 12px; color: var(--text-secondary);
+  margin-top: 6px; line-height: 1.45;
+}
+.journey-now-meta {
+  display: flex; gap: 10px; margin-top: 10px;
+  font-family: 'DM Sans', sans-serif; font-size: 11px; color: var(--text-tertiary);
+}
+.journey-now-meta span b { color: var(--text-primary); font-family: 'Syne', sans-serif; font-weight: 700; }
+
+/* Timeline */
+.timeline {
+  position: relative; padding-left: 24px;
+}
+.timeline::before {
+  content: ''; position: absolute; left: 7px; top: 8px; bottom: 8px;
+  width: 1px; background: linear-gradient(180deg, var(--uzg-blue), transparent);
+  opacity: 0.35;
+}
+.timeline-item {
+  position: relative; padding-bottom: 16px;
+}
+.timeline-item:last-child { padding-bottom: 4px; }
+.timeline-dot {
+  position: absolute; left: -22px; top: 4px;
+  width: 12px; height: 12px; border-radius: 50%;
+  background: #FFFFFF; border: 1.5px solid var(--uzg-blue);
+}
+.timeline-item.past .timeline-dot { border-color: var(--text-tertiary); }
+.timeline-period {
+  font-family: 'Syne', sans-serif; font-weight: 700; font-size: 10px;
+  color: var(--text-tertiary); letter-spacing: 0.1em; text-transform: uppercase;
+}
+.timeline-phase {
+  font-family: 'DM Sans', sans-serif; font-weight: 600; font-size: 13.5px;
+  color: var(--text-primary); margin-top: 1px;
+}
+.timeline-shift {
+  font-family: 'DM Sans', sans-serif; font-size: 11px; color: var(--text-secondary);
+  margin-top: 4px; line-height: 1.4;
+}
+.timeline-shift .arr { color: var(--uzg-blue); font-weight: 600; margin: 0 3px; }
+.timeline-event {
+  display: inline-block; margin-top: 4px;
+  font-family: 'DM Sans', sans-serif; font-size: 10.5px; color: var(--text-tertiary);
+  font-style: italic;
+}
+
+/* Contribution stats */
+.contrib-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px;
+  margin-top: 6px;
+}
+.contrib-stat {
+  background: #FFFFFF; border: 0.5px solid var(--divider);
+  border-radius: 12px; padding: 10px 12px;
+}
+.contrib-stat-label {
+  font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 10.5px;
+  color: var(--text-tertiary); letter-spacing: 0.04em; text-transform: uppercase;
+}
+.contrib-stat-value {
+  font-family: 'Syne', sans-serif; font-weight: 800; font-size: 18px;
+  color: var(--text-primary); letter-spacing: -0.02em; margin-top: 4px;
+}
+.contrib-stat-sub {
+  font-family: 'DM Sans', sans-serif; font-size: 10.5px; color: var(--text-tertiary); margin-top: 2px;
+}
+
+/* Notes annotation */
+.note-strip {
+  margin: 10px auto 0; max-width: 280px;
+  padding: 6px 10px; background: rgba(74, 111, 255, 0.05);
+  border: 0.5px dashed rgba(74, 111, 255, 0.20);
+  border-radius: 8px;
+  font-family: 'DM Sans', sans-serif; font-size: 9.5px; color: var(--uzg-blue-dark);
+  text-align: center; line-height: 1.4;
+}
+
+/* Footer note */
+.footer-note {
+  max-width: 1280px; margin: 32px auto 0; padding: 18px 22px;
+  background: rgba(255,255,255,0.04); border: 0.5px solid rgba(255,255,255,0.08);
+  border-radius: 14px;
+}
+.footer-title {
+  font-family: 'Syne', sans-serif; font-weight: 700; font-size: 12px;
+  color: var(--uzg-blue-light); letter-spacing: 0.14em; text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.footer-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;
+  font-family: 'DM Sans', sans-serif; font-size: 12px; color: rgba(255,255,255,0.7);
+  line-height: 1.55;
+}
+.footer-grid b { color: rgba(255,255,255,0.95); font-weight: 600; }
+@media (max-width: 900px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
+
+/* === Wheel rotation animation === */
+@keyframes wheelBreathe {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.015); }
+}
+.pentagon-wheel svg.breathing {
+  animation: wheelBreathe 4s ease-in-out infinite;
+  transform-origin: center;
+}
+
+</style>
+</head>
+<body>
+
+<!-- ============================================ -->
+<!-- PAGE HEADER                                  -->
+<!-- ============================================ -->
+<div class="page-header">
+  <div class="page-eyebrow">UZG+ V3 PWA OS · Phase 2 Mockup #5</div>
+  <div class="page-title">ENTA MODULE — Identity Spine · Pentagon Wheel</div>
+  <div class="page-sub">Energy Identity Layer hero. Pentagon 5 cánh, Hỏa cố định 12h (Nam phương), thuận kim đồng hồ theo vòng tương sinh chuẩn NAM TAO. Nền tảng đào tạo AIER TAO về Tử Vi · Phong Thủy · Bát Tự.</div>
+
+  <div class="pentagon-legend">
+    <strong>Pentagon NAM TAO · Tương Sinh thuận kim đồng hồ</strong>
+    <div class="legend-item"><span class="legend-dot" style="background:var(--hoa)"></span>Hỏa <span style="opacity:0.55;font-size:10px;margin-left:3px">12h</span></div>
+    <span class="legend-arrow">→</span>
+    <div class="legend-item"><span class="legend-dot" style="background:var(--tho)"></span>Thổ <span style="opacity:0.55;font-size:10px;margin-left:3px">2:24h</span></div>
+    <span class="legend-arrow">→</span>
+    <div class="legend-item"><span class="legend-dot" style="background:var(--kim)"></span>Kim <span style="opacity:0.55;font-size:10px;margin-left:3px">4:48h</span></div>
+    <span class="legend-arrow">→</span>
+    <div class="legend-item"><span class="legend-dot" style="background:var(--thuy)"></span>Thủy <span style="opacity:0.55;font-size:10px;margin-left:3px">7:12h</span></div>
+    <span class="legend-arrow">→</span>
+    <div class="legend-item"><span class="legend-dot" style="background:var(--moc)"></span>Mộc <span style="opacity:0.55;font-size:10px;margin-left:3px">9:36h</span></div>
+    <span class="legend-arrow">→</span>
+    <div class="legend-item"><span class="legend-dot" style="background:var(--hoa)"></span>Hỏa</div>
+  </div>
+</div>
+
+<div class="screens-row">
+
+<!-- ============================================ -->
+<!-- SCREEN A — IDENTITY TAB (default)            -->
+<!-- ============================================ -->
+<div class="screen-wrap">
+  <div class="screen-label">Screen A · Default</div>
+  <div class="screen-name">ENTA Hero · Identity Tab</div>
+
+  <div class="phone">
+    <div class="phone-canvas">
+
+      <div class="particles">
+        <svg viewBox="0 0 380 780" preserveAspectRatio="none">
+          <circle cx="42" cy="120" r="0.5" fill="#4A6FFF" opacity="0.22"/>
+          <circle cx="320" cy="180" r="0.6" fill="#4A6FFF" opacity="0.22"/>
+          <circle cx="80" cy="340" r="0.4" fill="#4A6FFF" opacity="0.22"/>
+          <circle cx="290" cy="420" r="0.5" fill="#4A6FFF" opacity="0.22"/>
+          <circle cx="120" cy="560" r="0.5" fill="#7535CC" opacity="0.18"/>
+          <circle cx="340" cy="640" r="0.4" fill="#4A6FFF" opacity="0.22"/>
+          <circle cx="60" cy="700" r="0.5" fill="#4A6FFF" opacity="0.22"/>
+          <circle cx="200" cy="80" r="0.4" fill="#4A6FFF" opacity="0.22"/>
+          <circle cx="240" cy="280" r="0.5" fill="#4A6FFF" opacity="0.22"/>
+        </svg>
+      </div>
+
+      <div class="status-bar">
+        <span>9:41</span>
+        <div class="status-icons">
+          <svg viewBox="0 0 16 16" fill="none"><path d="M2 12h12M2 8h12M2 4h12" stroke="currentColor" stroke-width="1.4"/></svg>
+          <svg viewBox="0 0 16 16" fill="none"><path d="M2 8h12v4H2z" stroke="currentColor" stroke-width="1.4"/></svg>
+        </div>
+      </div>
+
+      <!-- Top Bar -->
+      <div class="top-bar">
+        <div class="top-avatar">N</div>
+        <div class="top-title">ENTA <span style="font-family:'DM Sans',sans-serif; font-weight:500; font-size:11px; color:var(--text-tertiary); letter-spacing:0; text-transform:none;">Entanglement</span></div>
+        <div class="top-icons">
+          <div class="top-icon-btn" title="Edit profile">
+            <svg viewBox="0 0 16 16"><path d="M11 2l3 3-9 9H2v-3l9-9z"/></svg>
+          </div>
+          <div class="top-icon-btn" title="Settings">
+            <svg viewBox="0 0 16 16"><circle cx="8" cy="8" r="2"/><path d="M8 1v2M8 13v2M1 8h2M13 8h2"/></svg>
+          </div>
+        </div>
+        <div class="u-pill" style="margin-left: 4px;">
+          <svg class="u-pill-icon" viewBox="0 0 12 12">
+            <circle cx="6" cy="6" r="2" fill="#4A6FFF"/>
+            <circle cx="6" cy="6" r="5" fill="none" stroke="#4A6FFF" stroke-width="0.6" stroke-dasharray="1.2 1.2" opacity="0.6"/>
+          </svg>
+          U 1,250
+        </div>
+      </div>
+
+      <!-- Scroll -->
+      <div class="scroll-area">
+
+        <!-- ENTA Pentagon Wheel HERO -->
+        <div class="wheel-stage">
+          <div class="pentagon-wheel">
+            <svg viewBox="-50 -45 380 350" class="breathing" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <!-- Gradient defs per element -->
+                <radialGradient id="grad-hoa" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%" stop-color="#F19594" stop-opacity="0.9"/>
+                  <stop offset="100%" stop-color="#A32D2D" stop-opacity="0.95"/>
+                </radialGradient>
+                <radialGradient id="grad-tho" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%" stop-color="#EBA961" stop-opacity="0.9"/>
+                  <stop offset="100%" stop-color="#854F0B" stop-opacity="0.95"/>
+                </radialGradient>
+                <radialGradient id="grad-kim" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%" stop-color="#D6D9DE" stop-opacity="0.9"/>
+                  <stop offset="100%" stop-color="#6E7178" stop-opacity="0.95"/>
+                </radialGradient>
+                <radialGradient id="grad-thuy" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%" stop-color="#5B92D4" stop-opacity="0.9"/>
+                  <stop offset="100%" stop-color="#0C447C" stop-opacity="0.95"/>
+                </radialGradient>
+                <radialGradient id="grad-moc" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%" stop-color="#6FCBA9" stop-opacity="0.9"/>
+                  <stop offset="100%" stop-color="#0F6E56" stop-opacity="0.95"/>
+                </radialGradient>
+                <radialGradient id="grad-center" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%" stop-color="#5B7FD4"/>
+                  <stop offset="100%" stop-color="#243870"/>
+                </radialGradient>
+              </defs>
+
+              <!-- Marker defs for arrows -->
+              <defs>
+                <marker id="arrow-green" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+                  <path d="M 0 0 L 10 5 L 0 10 z" fill="#1D9E75" opacity="0.85"/>
+                </marker>
+                <marker id="arrow-red" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse">
+                  <path d="M 0 0 L 10 5 L 0 10 z" fill="#E24B4A" opacity="0.85"/>
+                </marker>
+              </defs>
+
+              <!-- Outer dashed quantum orbit -->
+              <circle cx="140" cy="140" r="135" fill="none" stroke="#4A6FFF" stroke-width="0.5" stroke-dasharray="1.5 2.5" opacity="0.20"/>
+
+              <!-- TƯƠNG SINH outer arcs (xanh lá) — clockwise: Hỏa → Thổ → Kim → Thủy → Mộc → Hỏa -->
+              <!-- Arc radius 122, gap 14° on each side for labels -->
+              <g fill="none" stroke="#1D9E75" stroke-width="1.6" stroke-linecap="round" opacity="0.85">
+                <!-- Hỏa(0°) → Thổ(72°): arc from 14° to 58° -->
+                <path d="M 169.5 21.6 A 122 122 0 0 1 243.5 75.3" marker-end="url(#arrow-green)"/>
+                <!-- Thổ(72°) → Kim(144°): arc from 86° to 130° -->
+                <path d="M 261.7 131.5 A 122 122 0 0 1 233.5 218.4" marker-end="url(#arrow-green)"/>
+                <!-- Kim(144°) → Thủy(216°): arc from 158° to 202° -->
+                <path d="M 185.7 253.1 A 122 122 0 0 1 94.3 253.1" marker-end="url(#arrow-green)"/>
+                <!-- Thủy(216°) → Mộc(288°): arc from 230° to 274° -->
+                <path d="M 46.5 218.4 A 122 122 0 0 1 18.3 131.5" marker-end="url(#arrow-green)"/>
+                <!-- Mộc(288°) → Hỏa(360°): arc from 302° to 346° -->
+                <path d="M 36.5 75.3 A 122 122 0 0 1 110.5 21.6" marker-end="url(#arrow-green)"/>
+              </g>
+
+              <!-- Pentagon shell outline (faint, edges between elements) -->
+              <!-- Edge vertices: Hỏa-Thổ(36°), Thổ-Kim(108°), Kim-Thủy(180°), Thủy-Mộc(252°), Mộc-Hỏa(324°) -->
+              <polygon points="204.7,51.0 244.6,174.0 140.0,250.0 35.4,174.0 75.3,51.0"
+                       fill="rgba(74,111,255,0.02)"
+                       stroke="rgba(74,111,255,0.10)"
+                       stroke-width="0.6"/>
+
+              <!-- 5 element petals — each spans between 2 EDGE vertices -->
+              <!-- Petal HỎA: edge Mộc-Hỏa(324°) → edge Hỏa-Thổ(36°), centered at 0° (top) -->
+              <path d="M 140 140 L 75.3 51.0 A 110 110 0 0 1 204.7 51.0 Z" fill="url(#grad-hoa)" opacity="0.78" stroke="#FFFFFF" stroke-width="1.2"/>
+              <!-- Petal THỔ: edge Hỏa-Thổ(36°) → edge Thổ-Kim(108°), centered at 72° -->
+              <path d="M 140 140 L 204.7 51.0 A 110 110 0 0 1 244.6 174.0 Z" fill="url(#grad-tho)" opacity="0.55" stroke="#FFFFFF" stroke-width="1.2"/>
+              <!-- Petal KIM: edge Thổ-Kim(108°) → edge Kim-Thủy(180°), centered at 144° -->
+              <path d="M 140 140 L 244.6 174.0 A 110 110 0 0 1 140.0 250.0 Z" fill="url(#grad-kim)" opacity="0.62" stroke="#FFFFFF" stroke-width="1.2"/>
+              <!-- Petal THỦY: edge Kim-Thủy(180°) → edge Thủy-Mộc(252°), centered at 216° -->
+              <path d="M 140 140 L 140.0 250.0 A 110 110 0 0 1 35.4 174.0 Z" fill="url(#grad-thuy)" opacity="0.65" stroke="#FFFFFF" stroke-width="1.2"/>
+              <!-- Petal MỘC: edge Thủy-Mộc(252°) → edge Mộc-Hỏa(324°), centered at 288° -->
+              <path d="M 140 140 L 35.4 174.0 A 110 110 0 0 1 75.3 51.0 Z" fill="url(#grad-moc)" opacity="0.70" stroke="#FFFFFF" stroke-width="1.2"/>
+
+              <!-- Inner radial dividers (between petals, along edge angles) -->
+              <g stroke="#FFFFFF" stroke-width="1.2" opacity="0.75">
+                <line x1="140" y1="140" x2="204.7" y2="51.0"/>
+                <line x1="140" y1="140" x2="244.6" y2="174.0"/>
+                <line x1="140" y1="140" x2="140.0" y2="250.0"/>
+                <line x1="140" y1="140" x2="35.4" y2="174.0"/>
+                <line x1="140" y1="140" x2="75.3" y2="51.0"/>
+              </g>
+
+              <!-- TƯƠNG KHẮC inner pentagram (đỏ) — connects element CENTERS, skipping 1 -->
+              <!-- Hỏa khắc Kim · Kim khắc Mộc · Mộc khắc Thổ · Thổ khắc Thủy · Thủy khắc Hỏa -->
+              <!-- Element center pts at radius 95: -->
+              <!-- Hỏa(0°)=(140, 45) · Thổ(72°)=(230.4, 110.6) · Kim(144°)=(195.8, 216.9) · Thủy(216°)=(84.2, 216.9) · Mộc(288°)=(49.6, 110.6) -->
+              <g fill="none" stroke="#E24B4A" stroke-width="1.0" opacity="0.55" stroke-linecap="round">
+                <line x1="140" y1="45" x2="195.8" y2="216.9" marker-end="url(#arrow-red)"/>
+                <line x1="195.8" y1="216.9" x2="49.6" y2="110.6" marker-end="url(#arrow-red)"/>
+                <line x1="49.6" y1="110.6" x2="230.4" y2="110.6" marker-end="url(#arrow-red)"/>
+                <line x1="230.4" y1="110.6" x2="84.2" y2="216.9" marker-end="url(#arrow-red)"/>
+                <line x1="84.2" y1="216.9" x2="140" y2="45" marker-end="url(#arrow-red)"/>
+              </g>
+
+              <!-- Center avatar circle -->
+              <circle cx="140" cy="140" r="32" fill="url(#grad-center)" stroke="#FFFFFF" stroke-width="2.5"/>
+              <text x="140" y="146" text-anchor="middle"
+                    font-family="Syne" font-weight="800" font-size="19" fill="#FFFFFF"
+                    letter-spacing="0.5">N</text>
+
+              <!-- 5 colored DOTS at element centers (outside, r=148) -->
+              <!-- Hỏa@0°=(140,-8) · Thổ@72°=(280.8,94.3) · Kim@144°=(227,259.7) · Thủy@216°=(53,259.7) · Mộc@288°=(-0.8,94.3) -->
+              <circle cx="140" cy="-8" r="5" fill="#E24B4A"/>
+              <circle cx="265.5" cy="99.2" r="5" fill="#BA7517"/>
+              <circle cx="217.6" cy="246.8" r="5" fill="#A9ADB5" stroke="#6E7178" stroke-width="0.8"/>
+              <circle cx="62.4" cy="246.8" r="5" fill="#185FA5"/>
+              <circle cx="14.5" cy="99.2" r="5" fill="#1D9E75"/>
+
+              <!-- Element labels (positioned at petal centers, outside dots) -->
+              <!-- HỎA top-center -->
+              <g>
+                <text x="140" y="-22" text-anchor="middle" font-family="Syne" font-weight="800" font-size="12" fill="#A32D2D" letter-spacing="0.08em">HỎA</text>
+                <text x="140" y="-33" text-anchor="middle" font-family="Syne" font-weight="700" font-size="10" fill="#A32D2D">35%</text>
+              </g>
+              <!-- THỔ right (72°) -->
+              <g>
+                <text x="287" y="103" text-anchor="start" font-family="Syne" font-weight="800" font-size="12" fill="#854F0B" letter-spacing="0.08em">THỔ</text>
+                <text x="287" y="91" text-anchor="start" font-family="Syne" font-weight="700" font-size="10" fill="#854F0B">7%</text>
+              </g>
+              <!-- KIM bottom-right (144°) -->
+              <g>
+                <text x="232" y="277" text-anchor="middle" font-family="Syne" font-weight="800" font-size="12" fill="#6E7178" letter-spacing="0.08em">KIM</text>
+                <text x="232" y="289" text-anchor="middle" font-family="Syne" font-weight="700" font-size="10" fill="#6E7178">12%</text>
+              </g>
+              <!-- THỦY bottom-left (216°) -->
+              <g>
+                <text x="48" y="277" text-anchor="middle" font-family="Syne" font-weight="800" font-size="12" fill="#0C447C" letter-spacing="0.08em">THỦY</text>
+                <text x="48" y="289" text-anchor="middle" font-family="Syne" font-weight="700" font-size="10" fill="#0C447C">18%</text>
+              </g>
+              <!-- MỘC left (288°) -->
+              <g>
+                <text x="-7" y="103" text-anchor="end" font-family="Syne" font-weight="800" font-size="12" fill="#0F6E56" letter-spacing="0.08em">MỘC</text>
+                <text x="-7" y="91" text-anchor="end" font-family="Syne" font-weight="700" font-size="10" fill="#0F6E56">28%</text>
+              </g>
+
+              <!-- Tương Sinh / Tương Khắc legend labels -->
+              <g>
+                <text x="140" y="100" text-anchor="middle" font-family="DM Sans" font-style="italic" font-weight="500" font-size="8" fill="#1D9E75" opacity="0.75">tương sinh</text>
+                <text x="140" y="186" text-anchor="middle" font-family="DM Sans" font-style="italic" font-weight="500" font-size="8" fill="#E24B4A" opacity="0.75">tương khắc</text>
+              </g>
+
+              <!-- Certainty badge top-right -->
+              <g transform="translate(255, 30)">
+                <circle r="9" fill="#FFFFFF" stroke="#1D9E75" stroke-width="1.2"/>
+                <path d="M -3 0 L -1 2 L 3 -2" stroke="#1D9E75" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+              </g>
+            </svg>
+          </div>
+
+          <!-- Identity strip below wheel -->
+          <div class="identity-strip">
+            <div class="identity-name">Nam Tiên Sinh</div>
+            <div class="identity-handle">@nts · ENTA verified ✓</div>
+            <div class="identity-element-row">
+              <span class="dom-hoa">Hỏa</span>–<span class="dom-moc">Mộc</span> dominant
+              <span class="identity-divider-dot"></span>
+              Dương Nam
+            </div>
+            <div class="phase-pill">
+              <div class="phase-pill-dot"></div>
+              <div class="phase-pill-text">Phase · Building · Q2 2026</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4 Tabs -->
+        <div class="tab-row">
+          <div class="tab active">Identity</div>
+          <div class="tab">Resonance</div>
+          <div class="tab">Circles</div>
+          <div class="tab">Journey</div>
+        </div>
+
+        <!-- ENTA Map -->
+        <div class="section-head">
+          <div class="section-title">ENTA Map · 5 elements</div>
+        </div>
+        <div>
+          <div class="element-row">
+            <div class="element-icon hoa">H</div>
+            <div class="element-info">
+              <div class="element-name-row">
+                <div class="element-name">Hỏa · Fire</div>
+                <div class="element-status excess">Excess</div>
+              </div>
+              <div class="element-bar-row">
+                <div class="element-bar"><div class="element-bar-fill hoa" style="width: 70%"></div></div>
+                <div class="element-pct">35%</div>
+              </div>
+            </div>
+          </div>
+          <div class="element-row">
+            <div class="element-icon moc">M</div>
+            <div class="element-info">
+              <div class="element-name-row">
+                <div class="element-name">Mộc · Wood</div>
+                <div class="element-status strong">Strong</div>
+              </div>
+              <div class="element-bar-row">
+                <div class="element-bar"><div class="element-bar-fill moc" style="width: 56%"></div></div>
+                <div class="element-pct">28%</div>
+              </div>
+            </div>
+          </div>
+          <div class="element-row">
+            <div class="element-icon thuy">T</div>
+            <div class="element-info">
+              <div class="element-name-row">
+                <div class="element-name">Thủy · Water</div>
+                <div class="element-status balanced">Balanced</div>
+              </div>
+              <div class="element-bar-row">
+                <div class="element-bar"><div class="element-bar-fill thuy" style="width: 36%"></div></div>
+                <div class="element-pct">18%</div>
+              </div>
+            </div>
+          </div>
+          <div class="element-row">
+            <div class="element-icon kim">K</div>
+            <div class="element-info">
+              <div class="element-name-row">
+                <div class="element-name">Kim · Metal</div>
+                <div class="element-status deficient">Deficient</div>
+              </div>
+              <div class="element-bar-row">
+                <div class="element-bar"><div class="element-bar-fill kim" style="width: 24%"></div></div>
+                <div class="element-pct">12%</div>
+              </div>
+            </div>
+          </div>
+          <div class="element-row">
+            <div class="element-icon tho">T</div>
+            <div class="element-info">
+              <div class="element-name-row">
+                <div class="element-name">Thổ · Earth</div>
+                <div class="element-status deficient">Deficient</div>
+              </div>
+              <div class="element-bar-row">
+                <div class="element-bar"><div class="element-bar-fill tho" style="width: 14%"></div></div>
+                <div class="element-pct">7%</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Polarity -->
+        <div class="section-head">
+          <div class="section-title">Polarity Balance</div>
+        </div>
+        <div class="polarity-block">
+          <div class="polarity-label-row">
+            <div class="polarity-text">Yang <b>65%</b></div>
+            <div class="polarity-text">Yin <b>35%</b></div>
+          </div>
+          <div class="polarity-bar">
+            <div class="polarity-yang" style="width: 65%"></div>
+            <div class="polarity-yin"  style="width: 35%"></div>
+          </div>
+          <div class="polarity-note">Strong Yang lean — consider Yin practices for grounding.</div>
+        </div>
+
+        <!-- Suggested actions -->
+        <div class="section-head">
+          <div class="section-title">Suggested balance · auto</div>
+        </div>
+        <div>
+          <div class="suggest-card">
+            <div class="suggest-icon">
+              <svg viewBox="0 0 16 16"><circle cx="8" cy="8" r="6"/><circle cx="8" cy="8" r="2.5"/></svg>
+            </div>
+            <div class="suggest-info">
+              <div class="suggest-title">Connect with 3 Thủy-dominant users</div>
+              <div class="suggest-sub">Balances your Hỏa excess · Resonance suggested</div>
+            </div>
+            <div class="suggest-arrow"><svg viewBox="0 0 16 16"><path d="M5 4l5 4-5 4"/></svg></div>
+          </div>
+          <div class="suggest-card">
+            <div class="suggest-icon">
+              <svg viewBox="0 0 16 16"><path d="M3 13c0-3 2-5 5-5s5 2 5 5M8 8a3 3 0 100-6 3 3 0 000 6z"/></svg>
+            </div>
+            <div class="suggest-info">
+              <div class="suggest-title">Join Mộc Circle for grounding</div>
+              <div class="suggest-sub">Forest Garden · 47 members · 78% fit</div>
+            </div>
+            <div class="suggest-arrow"><svg viewBox="0 0 16 16"><path d="M5 4l5 4-5 4"/></svg></div>
+          </div>
+        </div>
+
+        <div style="height: 16px;"></div>
+      </div>
+
+      <!-- Floating + (PHẦN 3) -->
+      <div class="fab" title="Edit ENTA / Add Connection">
+        <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
+      </div>
+
+      <!-- Bottom Nav — ENTA active -->
+      <div class="bottom-nav">
+        <div class="nav-item">
+          <svg viewBox="0 0 24 24"><path d="M3 12L12 4l9 8M5 11v8h14v-8"/></svg>
+          <div class="nav-item-label">Home</div>
+        </div>
+        <div class="nav-item">
+          <svg viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 01-1 4 8.5 8.5 0 01-7.5 4.5 8.4 8.4 0 01-4-1L3 21l2-5a8.4 8.4 0 01-1-4 8.5 8.5 0 014.5-7.5 8.4 8.4 0 014-1A8.5 8.5 0 0121 11.5z"/></svg>
+          <div class="nav-item-label">Chat</div>
+        </div>
+        <div class="nav-center">U+</div>
+        <div class="nav-item">
+          <svg viewBox="0 0 24 24"><path d="M21 12V7H5a2 2 0 010-4h14v4M3 5v14a2 2 0 002 2h16v-5M21 12h-5a2 2 0 000 4h5z"/></svg>
+          <div class="nav-item-label">Wallet</div>
+        </div>
+        <div class="nav-item active">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4" stroke-dasharray="2 2"/><circle cx="12" cy="12" r="1.5" fill="currentColor"/></svg>
+          <div class="nav-item-label">Enta</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="note-strip">Pentagon NAM TAO · Hỏa 12h · clockwise tương sinh · Hỏa-Mộc dominant · Yang lean</div>
+</div>
+
+<!-- ============================================ -->
+<!-- SCREEN B — RESONANCE TAB                     -->
+<!-- ============================================ -->
+<div class="screen-wrap">
+  <div class="screen-label">Screen B · Tab 2</div>
+  <div class="screen-name">Resonance Field</div>
+
+  <div class="phone">
+    <div class="phone-canvas">
+
+      <div class="particles">
+        <svg viewBox="0 0 380 780" preserveAspectRatio="none">
+          <circle cx="42" cy="120" r="0.5" fill="#4A6FFF" opacity="0.22"/>
+          <circle cx="320" cy="180" r="0.6" fill="#4A6FFF" opacity="0.22"/>
+          <circle cx="80" cy="340" r="0.4" fill="#4A6FFF" opacity="0.22"/>
+          <circle cx="290" cy="420" r="0.5" fill="#4A6FFF" opacity="0.22"/>
+          <circle cx="60" cy="700" r="0.5" fill="#4A6FFF" opacity="0.22"/>
+        </svg>
+      </div>
+
+      <div class="status-bar">
+        <span>9:41</span>
+        <div class="status-icons">
+          <svg viewBox="0 0 16 16" fill="none"><path d="M2 12h12M2 8h12M2 4h12" stroke="currentColor" stroke-width="1.4"/></svg>
+          <svg viewBox="0 0 16 16" fill="none"><path d="M2 8h12v4H2z" stroke="currentColor" stroke-width="1.4"/></svg>
+        </div>
+      </div>
+
+      <!-- Top Bar -->
+      <div class="top-bar">
+        <div class="top-avatar">N</div>
+        <div class="top-title">ENTA</div>
+        <div class="top-icons">
+          <div class="top-icon-btn"><svg viewBox="0 0 16 16"><path d="M11 2l3 3-9 9H2v-3l9-9z"/></svg></div>
+        </div>
+        <div class="u-pill">
+          <svg class="u-pill-icon" viewBox="0 0 12 12">
+            <circle cx="6" cy="6" r="2" fill="#4A6FFF"/>
+            <circle cx="6" cy="6" r="5" fill="none" stroke="#4A6FFF" stroke-width="0.6" stroke-dasharray="1.2 1.2" opacity="0.6"/>
+          </svg>
+          U 1,250
+        </div>
+      </div>
+
+      <div class="scroll-area">
+
+        <!-- Mini wheel reminder + identity compact -->
+        <div style="display: flex; align-items: center; gap: 12px; padding: 8px 4px 12px;">
+          <svg width="56" height="56" viewBox="0 0 280 280">
+            <polygon points="204.7,51.0 244.6,174.0 140.0,250.0 35.4,174.0 75.3,51.0"
+                     fill="rgba(74,111,255,0.05)" stroke="rgba(74,111,255,0.20)" stroke-width="1.2"/>
+            <!-- Hỏa centered at top: edge Mộc-Hỏa(324°) → edge Hỏa-Thổ(36°) -->
+            <path d="M 140 140 L 75.3 51.0 A 110 110 0 0 1 204.7 51.0 Z" fill="url(#g2hoa)" opacity="0.78"/>
+            <path d="M 140 140 L 204.7 51.0 A 110 110 0 0 1 244.6 174.0 Z" fill="url(#g2tho)" opacity="0.55"/>
+            <path d="M 140 140 L 244.6 174.0 A 110 110 0 0 1 140.0 250.0 Z" fill="url(#g2kim)" opacity="0.62"/>
+            <path d="M 140 140 L 140.0 250.0 A 110 110 0 0 1 35.4 174.0 Z" fill="url(#g2thuy)" opacity="0.68"/>
+            <path d="M 140 140 L 35.4 174.0 A 110 110 0 0 1 75.3 51.0 Z" fill="url(#g2moc)" opacity="0.74"/>
+            <circle cx="140" cy="140" r="34" fill="#243870" stroke="#FFFFFF" stroke-width="3"/>
+            <text x="140" y="148" text-anchor="middle" font-family="Syne" font-weight="800" font-size="22" fill="#FFFFFF">N</text>
+            <defs>
+              <radialGradient id="g2hoa"><stop offset="0%" stop-color="#F19594"/><stop offset="100%" stop-color="#A32D2D"/></radialGradient>
+              <radialGradient id="g2tho"><stop offset="0%" stop-color="#EBA961"/><stop offset="100%" stop-color="#854F0B"/></radialGradient>
+              <radialGradient id="g2kim"><stop offset="0%" stop-color="#D6D9DE"/><stop offset="100%" stop-color="#6E7178"/></radialGradient>
+              <radialGradient id="g2thuy"><stop offset="0%" stop-color="#5B92D4"/><stop offset="100%" stop-color="#0C447C"/></radialGradient>
+              <radialGradient id="g2moc"><stop offset="0%" stop-color="#6FCBA9"/><stop offset="100%" stop-color="#0F6E56"/></radialGradient>
+            </defs>
+          </svg>
+          <div style="flex: 1; min-width: 0;">
+            <div class="identity-name" style="font-size: 16px;">Nam Tiên Sinh</div>
+            <div class="identity-element-row" style="margin-top: 4px;">
+              <span class="dom-hoa">Hỏa</span>–<span class="dom-moc">Mộc</span> · Dương Nam
+            </div>
+          </div>
+        </div>
+
+        <!-- 4 Tabs -->
+        <div class="tab-row">
+          <div class="tab">Identity</div>
+          <div class="tab active">Resonance</div>
+          <div class="tab">Circles</div>
+          <div class="tab">Journey</div>
+        </div>
+
+        <!-- Resonance summary stats -->
+        <div class="resonance-summary">
+          <div class="res-stat">
+            <div class="res-stat-num">47</div>
+            <div class="res-stat-label">Connected</div>
+          </div>
+          <div class="res-stat">
+            <div class="res-stat-num">73<span style="font-size:14px;color:var(--text-tertiary);font-weight:500">%</span></div>
+            <div class="res-stat-label">Avg fit</div>
+          </div>
+          <div class="res-stat">
+            <div class="res-stat-num">5</div>
+            <div class="res-stat-label">Trusted</div>
+          </div>
+        </div>
+
+        <!-- Trust level pills -->
+        <div class="trust-pills">
+          <div class="trust-pill"><span class="trust-dot trusted"></span>Trusted <span class="trust-count">5</span></div>
+          <div class="trust-pill"><span class="trust-dot circle"></span>Circle <span class="trust-count">12</span></div>
+          <div class="trust-pill"><span class="trust-dot resonance"></span>Resonance <span class="trust-count">20</span></div>
+          <div class="trust-pill"><span class="trust-dot open"></span>Open <span class="trust-count">10</span></div>
+        </div>
+
+        <!-- Top Resonance -->
+        <div class="section-head" style="padding-left: 4px;">
+          <div class="section-title">Top resonance</div>
+          <div class="section-link">Sort</div>
+        </div>
+        <div>
+          <div class="conn-card">
+            <div class="mini-pentagon">
+              <svg width="42" height="42" viewBox="0 0 42 42">
+                <polygon points="21,4 38,16 32,36 10,36 4,16" fill="rgba(74,111,255,0.06)" stroke="rgba(74,111,255,0.25)" stroke-width="0.8"/>
+                <path d="M 21 21 L 21 4 A 17 17 0 0 1 38 16 Z" fill="rgba(213,90,76,0.6)"/>
+                <path d="M 21 21 L 4 16 A 17 17 0 0 1 21 4 Z" fill="rgba(29,158,117,0.7)"/>
+              </svg>
+              <div class="mini-pentagon-inner" style="background: linear-gradient(135deg, #6FCBA9, #0F6E56);">E</div>
+            </div>
+            <div class="conn-info">
+              <div class="conn-name-row">
+                <div class="conn-name">Elsa</div>
+                <div class="conn-handle">@elsa</div>
+              </div>
+              <div class="conn-elements"><span style="color:var(--moc-dark);font-weight:600">Mộc</span>–<span style="color:var(--thuy-dark);font-weight:600">Thủy</span> dominant</div>
+              <div class="conn-reason">"Strengthens your Kim deficiency · balances Hỏa"</div>
+            </div>
+            <div class="resonance-score">
+              <div class="resonance-score-num">83%</div>
+              <div class="resonance-score-label">Resonance</div>
+            </div>
+          </div>
+          <div class="conn-card">
+            <div class="mini-pentagon">
+              <svg width="42" height="42" viewBox="0 0 42 42">
+                <polygon points="21,4 38,16 32,36 10,36 4,16" fill="rgba(74,111,255,0.06)" stroke="rgba(74,111,255,0.25)" stroke-width="0.8"/>
+                <path d="M 21 21 L 4 16 A 17 17 0 0 1 21 4 Z" fill="rgba(110,113,120,0.7)"/>
+                <path d="M 21 21 L 32 36 A 17 17 0 0 1 10 36 Z" fill="rgba(91,146,212,0.6)"/>
+              </svg>
+              <div class="mini-pentagon-inner" style="background: linear-gradient(135deg, #5B92D4, #0C447C);">M</div>
+            </div>
+            <div class="conn-info">
+              <div class="conn-name-row">
+                <div class="conn-name">Marcus</div>
+                <div class="conn-handle">@marcus</div>
+              </div>
+              <div class="conn-elements"><span style="color:var(--kim-dark);font-weight:600">Kim</span>–<span style="color:var(--thuy-dark);font-weight:600">Thủy</span> dominant</div>
+              <div class="conn-reason">"Cools your Hỏa · adds clarity to decisions"</div>
+            </div>
+            <div class="resonance-score">
+              <div class="resonance-score-num">78%</div>
+              <div class="resonance-score-label">Resonance</div>
+            </div>
+          </div>
+          <div class="conn-card">
+            <div class="mini-pentagon">
+              <svg width="42" height="42" viewBox="0 0 42 42">
+                <polygon points="21,4 38,16 32,36 10,36 4,16" fill="rgba(74,111,255,0.06)" stroke="rgba(74,111,255,0.25)" stroke-width="0.8"/>
+                <path d="M 21 21 L 21 4 A 17 17 0 0 1 38 16 Z" fill="rgba(235,169,97,0.7)"/>
+                <path d="M 21 21 L 4 16 A 17 17 0 0 1 21 4 Z" fill="rgba(111,203,169,0.7)"/>
+              </svg>
+              <div class="mini-pentagon-inner" style="background: linear-gradient(135deg, #EBA961, #854F0B);">S</div>
+            </div>
+            <div class="conn-info">
+              <div class="conn-name-row">
+                <div class="conn-name">Sarah</div>
+                <div class="conn-handle">@sarah</div>
+              </div>
+              <div class="conn-elements"><span style="color:var(--moc-dark);font-weight:600">Mộc</span>–<span style="color:var(--tho-dark);font-weight:600">Thổ</span> dominant</div>
+              <div class="conn-reason">"Mutual Mộc growth · grounds your Yang"</div>
+            </div>
+            <div class="resonance-score">
+              <div class="resonance-score-num">71%</div>
+              <div class="resonance-score-label">Resonance</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Suggested new -->
+        <div class="section-head" style="padding-left: 4px;">
+          <div class="section-title">Suggested new resonance</div>
+        </div>
+        <div>
+          <div class="conn-card">
+            <div class="mini-pentagon">
+              <svg width="42" height="42" viewBox="0 0 42 42">
+                <polygon points="21,4 38,16 32,36 10,36 4,16" fill="rgba(74,111,255,0.06)" stroke="rgba(74,111,255,0.25)" stroke-width="0.8"/>
+                <path d="M 21 21 L 4 16 A 17 17 0 0 1 21 4 Z" fill="rgba(110,113,120,0.7)"/>
+              </svg>
+              <div class="mini-pentagon-inner" style="background: linear-gradient(135deg, #D6D9DE, #6E7178); color: #2C2C2A;">L</div>
+            </div>
+            <div class="conn-info">
+              <div class="conn-name-row">
+                <div class="conn-name">Lê Hà</div>
+                <div class="conn-handle">@leha</div>
+              </div>
+              <div class="conn-elements"><span style="color:var(--kim-dark);font-weight:600">Kim</span> dominant · 52%</div>
+              <div class="conn-reason">"Fills your Kim deficiency directly"</div>
+            </div>
+            <div class="resonance-score">
+              <div class="resonance-score-num" style="color:var(--uzg-blue-dark)">+86%</div>
+              <div class="resonance-score-label">Predicted</div>
+            </div>
+          </div>
+        </div>
+
+        <div style="height: 16px;"></div>
+      </div>
+
+      <div class="fab" title="Add connection">
+        <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
+      </div>
+
+      <div class="bottom-nav">
+        <div class="nav-item"><svg viewBox="0 0 24 24"><path d="M3 12L12 4l9 8M5 11v8h14v-8"/></svg><div class="nav-item-label">Home</div></div>
+        <div class="nav-item"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 01-1 4 8.5 8.5 0 01-7.5 4.5 8.4 8.4 0 01-4-1L3 21l2-5a8.4 8.4 0 01-1-4 8.5 8.5 0 014.5-7.5 8.4 8.4 0 014-1A8.5 8.5 0 0121 11.5z"/></svg><div class="nav-item-label">Chat</div></div>
+        <div class="nav-center">U+</div>
+        <div class="nav-item"><svg viewBox="0 0 24 24"><path d="M21 12V7H5a2 2 0 010-4h14v4M3 5v14a2 2 0 002 2h16v-5M21 12h-5a2 2 0 000 4h5z"/></svg><div class="nav-item-label">Wallet</div></div>
+        <div class="nav-item active"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4" stroke-dasharray="2 2"/><circle cx="12" cy="12" r="1.5" fill="currentColor"/></svg><div class="nav-item-label">Enta</div></div>
+      </div>
+
+    </div>
+  </div>
+  <div class="note-strip">Connections · 4 trust levels · resonance % · cross-element balance suggestion</div>
+</div>
+
+<!-- ============================================ -->
+<!-- SCREEN C — CIRCLES TAB                       -->
+<!-- ============================================ -->
+<div class="screen-wrap">
+  <div class="screen-label">Screen C · Tab 3</div>
+  <div class="screen-name">Circles · Member + Suggested</div>
+
+  <div class="phone">
+    <div class="phone-canvas">
+
+      <div class="particles">
+        <svg viewBox="0 0 380 780" preserveAspectRatio="none">
+          <circle cx="42" cy="120" r="0.5" fill="#4A6FFF" opacity="0.22"/>
+          <circle cx="320" cy="180" r="0.6" fill="#4A6FFF" opacity="0.22"/>
+          <circle cx="80" cy="340" r="0.4" fill="#4A6FFF" opacity="0.22"/>
+          <circle cx="290" cy="420" r="0.5" fill="#4A6FFF" opacity="0.22"/>
+          <circle cx="60" cy="700" r="0.5" fill="#4A6FFF" opacity="0.22"/>
+        </svg>
+      </div>
+
+      <div class="status-bar">
+        <span>9:41</span>
+        <div class="status-icons">
+          <svg viewBox="0 0 16 16" fill="none"><path d="M2 12h12M2 8h12M2 4h12" stroke="currentColor" stroke-width="1.4"/></svg>
+          <svg viewBox="0 0 16 16" fill="none"><path d="M2 8h12v4H2z" stroke="currentColor" stroke-width="1.4"/></svg>
+        </div>
+      </div>
+
+      <div class="top-bar">
+        <div class="top-avatar">N</div>
+        <div class="top-title">ENTA</div>
+        <div class="top-icons">
+          <div class="top-icon-btn"><svg viewBox="0 0 16 16"><path d="M11 2l3 3-9 9H2v-3l9-9z"/></svg></div>
+        </div>
+        <div class="u-pill">
+          <svg class="u-pill-icon" viewBox="0 0 12 12">
+            <circle cx="6" cy="6" r="2" fill="#4A6FFF"/>
+            <circle cx="6" cy="6" r="5" fill="none" stroke="#4A6FFF" stroke-width="0.6" stroke-dasharray="1.2 1.2" opacity="0.6"/>
+          </svg>
+          U 1,250
+        </div>
+      </div>
+
+      <div class="scroll-area">
+
+        <!-- Compact identity -->
+        <div style="display: flex; align-items: center; gap: 12px; padding: 8px 4px 12px;">
+          <svg width="56" height="56" viewBox="0 0 280 280">
+            <polygon points="204.7,51.0 244.6,174.0 140.0,250.0 35.4,174.0 75.3,51.0"
+                     fill="rgba(74,111,255,0.05)" stroke="rgba(74,111,255,0.20)" stroke-width="1.2"/>
+            <!-- Hỏa centered at top: edge Mộc-Hỏa(324°) → edge Hỏa-Thổ(36°) -->
+            <path d="M 140 140 L 75.3 51.0 A 110 110 0 0 1 204.7 51.0 Z" fill="url(#g3hoa)" opacity="0.78"/>
+            <path d="M 140 140 L 204.7 51.0 A 110 110 0 0 1 244.6 174.0 Z" fill="url(#g3tho)" opacity="0.55"/>
+            <path d="M 140 140 L 244.6 174.0 A 110 110 0 0 1 140.0 250.0 Z" fill="url(#g3kim)" opacity="0.62"/>
+            <path d="M 140 140 L 140.0 250.0 A 110 110 0 0 1 35.4 174.0 Z" fill="url(#g3thuy)" opacity="0.68"/>
+            <path d="M 140 140 L 35.4 174.0 A 110 110 0 0 1 75.3 51.0 Z" fill="url(#g3moc)" opacity="0.74"/>
+            <circle cx="140" cy="140" r="34" fill="#243870" stroke="#FFFFFF" stroke-width="3"/>
+            <text x="140" y="148" text-anchor="middle" font-family="Syne" font-weight="800" font-size="22" fill="#FFFFFF">N</text>
+            <defs>
+              <radialGradient id="g3hoa"><stop offset="0%" stop-color="#F19594"/><stop offset="100%" stop-color="#A32D2D"/></radialGradient>
+              <radialGradient id="g3tho"><stop offset="0%" stop-color="#EBA961"/><stop offset="100%" stop-color="#854F0B"/></radialGradient>
+              <radialGradient id="g3kim"><stop offset="0%" stop-color="#D6D9DE"/><stop offset="100%" stop-color="#6E7178"/></radialGradient>
+              <radialGradient id="g3thuy"><stop offset="0%" stop-color="#5B92D4"/><stop offset="100%" stop-color="#0C447C"/></radialGradient>
+              <radialGradient id="g3moc"><stop offset="0%" stop-color="#6FCBA9"/><stop offset="100%" stop-color="#0F6E56"/></radialGradient>
+            </defs>
+          </svg>
+          <div style="flex: 1; min-width: 0;">
+            <div class="identity-name" style="font-size: 16px;">Nam Tiên Sinh</div>
+            <div class="identity-element-row" style="margin-top: 4px;">
+              <span class="dom-hoa">Hỏa</span>–<span class="dom-moc">Mộc</span> · Dương Nam
+            </div>
+          </div>
+        </div>
+
+        <div class="tab-row">
+          <div class="tab">Identity</div>
+          <div class="tab">Resonance</div>
+          <div class="tab active">Circles</div>
+          <div class="tab">Journey</div>
+        </div>
+
+        <!-- Member of -->
+        <div class="section-head" style="padding-left: 4px;">
+          <div class="section-title">Member of · 3 circles</div>
+        </div>
+
+        <div class="circle-card">
+          <div class="circle-card-head">
+            <div class="circle-icon moc">F</div>
+            <div class="circle-name-block">
+              <div class="circle-name">Forest Circle</div>
+              <div class="circle-meta">Mộc–Thủy field · 47 members · Public</div>
+            </div>
+            <div class="role-badge member">Member</div>
+          </div>
+          <div class="circle-resonance-row">
+            <span style="font-family:'DM Sans';font-weight:500;font-size:10.5px;color:var(--text-tertiary)">Fit</span>
+            <div class="circle-resonance-bar"><div class="circle-resonance-fill" style="width: 76%"></div></div>
+            <div class="circle-resonance-pct">76%</div>
+          </div>
+        </div>
+
+        <div class="circle-card">
+          <div class="circle-card-head">
+            <div class="circle-icon tho">G</div>
+            <div class="circle-name-block">
+              <div class="circle-name">Garden Bay</div>
+              <div class="circle-meta">Thổ field · 23 members · Private</div>
+            </div>
+            <div class="role-badge founder">Founder</div>
+          </div>
+          <div class="circle-resonance-row">
+            <span style="font-family:'DM Sans';font-weight:500;font-size:10.5px;color:var(--text-tertiary)">Fit</span>
+            <div class="circle-resonance-bar"><div class="circle-resonance-fill" style="width: 92%"></div></div>
+            <div class="circle-resonance-pct">92%</div>
+          </div>
+        </div>
+
+        <div class="circle-card">
+          <div class="circle-card-head">
+            <div class="circle-icon kim">W</div>
+            <div class="circle-name-block">
+              <div class="circle-name">Wisdom Council</div>
+              <div class="circle-meta">Kim field · 8 members · Invitation</div>
+            </div>
+            <div class="role-badge mod">Mod</div>
+          </div>
+          <div class="circle-resonance-row">
+            <span style="font-family:'DM Sans';font-weight:500;font-size:10.5px;color:var(--text-tertiary)">Fit</span>
+            <div class="circle-resonance-bar"><div class="circle-resonance-fill" style="width: 65%"></div></div>
+            <div class="circle-resonance-pct">65%</div>
+          </div>
+        </div>
+
+        <!-- Suggested -->
+        <div class="section-head" style="padding-left: 4px;">
+          <div class="section-title">Suggested · auto-curated</div>
+        </div>
+
+        <div class="circle-card suggested">
+          <div class="circle-card-head">
+            <div class="circle-icon thuy">S</div>
+            <div class="circle-name-block">
+              <div class="circle-name">Sunrise Meditation</div>
+              <div class="circle-meta">Thủy field · 47 members · Public</div>
+            </div>
+          </div>
+          <div class="circle-suggest-reason">"Cools your Hỏa excess · grounds Yang lean"</div>
+          <div class="circle-join-row">
+            <div class="join-meta">7:00 AM · Daily</div>
+            <div class="join-btn">JOIN</div>
+          </div>
+        </div>
+
+        <div class="circle-card suggested">
+          <div class="circle-card-head">
+            <div class="circle-icon kim">I</div>
+            <div class="circle-name-block">
+              <div class="circle-name">Iron Path</div>
+              <div class="circle-meta">Kim field · 12 members · Invitation only</div>
+            </div>
+          </div>
+          <div class="circle-suggest-reason">"Strengthens your Kim deficiency directly"</div>
+          <div class="circle-join-row">
+            <div class="join-meta">Builder tier · governed</div>
+            <div class="join-btn">REQUEST</div>
+          </div>
+        </div>
+
+        <div style="height: 16px;"></div>
+      </div>
+
+      <div class="fab"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></div>
+
+      <div class="bottom-nav">
+        <div class="nav-item"><svg viewBox="0 0 24 24"><path d="M3 12L12 4l9 8M5 11v8h14v-8"/></svg><div class="nav-item-label">Home</div></div>
+        <div class="nav-item"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 01-1 4 8.5 8.5 0 01-7.5 4.5 8.4 8.4 0 01-4-1L3 21l2-5a8.4 8.4 0 01-1-4 8.5 8.5 0 014.5-7.5 8.4 8.4 0 014-1A8.5 8.5 0 0121 11.5z"/></svg><div class="nav-item-label">Chat</div></div>
+        <div class="nav-center">U+</div>
+        <div class="nav-item"><svg viewBox="0 0 24 24"><path d="M21 12V7H5a2 2 0 010-4h14v4M3 5v14a2 2 0 002 2h16v-5M21 12h-5a2 2 0 000 4h5z"/></svg><div class="nav-item-label">Wallet</div></div>
+        <div class="nav-item active"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4" stroke-dasharray="2 2"/><circle cx="12" cy="12" r="1.5" fill="currentColor"/></svg><div class="nav-item-label">Enta</div></div>
+      </div>
+
+    </div>
+  </div>
+  <div class="note-strip">Member of 3 · Roles inline · Fit % per circle · element-balanced suggestions</div>
+</div>
+
+<!-- ============================================ -->
+<!-- SCREEN D — JOURNEY TAB                       -->
+<!-- ============================================ -->
+<div class="screen-wrap">
+  <div class="screen-label">Screen D · Tab 4</div>
+  <div class="screen-name">Journey · Energy Timeline</div>
+
+  <div class="phone">
+    <div class="phone-canvas">
+
+      <div class="particles">
+        <svg viewBox="0 0 380 780" preserveAspectRatio="none">
+          <circle cx="42" cy="120" r="0.5" fill="#4A6FFF" opacity="0.22"/>
+          <circle cx="320" cy="180" r="0.6" fill="#4A6FFF" opacity="0.22"/>
+          <circle cx="80" cy="340" r="0.4" fill="#4A6FFF" opacity="0.22"/>
+          <circle cx="290" cy="420" r="0.5" fill="#4A6FFF" opacity="0.22"/>
+          <circle cx="60" cy="700" r="0.5" fill="#4A6FFF" opacity="0.22"/>
+        </svg>
+      </div>
+
+      <div class="status-bar">
+        <span>9:41</span>
+        <div class="status-icons">
+          <svg viewBox="0 0 16 16" fill="none"><path d="M2 12h12M2 8h12M2 4h12" stroke="currentColor" stroke-width="1.4"/></svg>
+          <svg viewBox="0 0 16 16" fill="none"><path d="M2 8h12v4H2z" stroke="currentColor" stroke-width="1.4"/></svg>
+        </div>
+      </div>
+
+      <div class="top-bar">
+        <div class="top-avatar">N</div>
+        <div class="top-title">ENTA</div>
+        <div class="top-icons">
+          <div class="top-icon-btn"><svg viewBox="0 0 16 16"><path d="M11 2l3 3-9 9H2v-3l9-9z"/></svg></div>
+        </div>
+        <div class="u-pill">
+          <svg class="u-pill-icon" viewBox="0 0 12 12">
+            <circle cx="6" cy="6" r="2" fill="#4A6FFF"/>
+            <circle cx="6" cy="6" r="5" fill="none" stroke="#4A6FFF" stroke-width="0.6" stroke-dasharray="1.2 1.2" opacity="0.6"/>
+          </svg>
+          U 1,250
+        </div>
+      </div>
+
+      <div class="scroll-area">
+
+        <!-- Compact identity -->
+        <div style="display: flex; align-items: center; gap: 12px; padding: 8px 4px 12px;">
+          <svg width="56" height="56" viewBox="0 0 280 280">
+            <polygon points="204.7,51.0 244.6,174.0 140.0,250.0 35.4,174.0 75.3,51.0"
+                     fill="rgba(74,111,255,0.05)" stroke="rgba(74,111,255,0.20)" stroke-width="1.2"/>
+            <!-- Hỏa centered at top: edge Mộc-Hỏa(324°) → edge Hỏa-Thổ(36°) -->
+            <path d="M 140 140 L 75.3 51.0 A 110 110 0 0 1 204.7 51.0 Z" fill="url(#g4hoa)" opacity="0.78"/>
+            <path d="M 140 140 L 204.7 51.0 A 110 110 0 0 1 244.6 174.0 Z" fill="url(#g4tho)" opacity="0.55"/>
+            <path d="M 140 140 L 244.6 174.0 A 110 110 0 0 1 140.0 250.0 Z" fill="url(#g4kim)" opacity="0.62"/>
+            <path d="M 140 140 L 140.0 250.0 A 110 110 0 0 1 35.4 174.0 Z" fill="url(#g4thuy)" opacity="0.68"/>
+            <path d="M 140 140 L 35.4 174.0 A 110 110 0 0 1 75.3 51.0 Z" fill="url(#g4moc)" opacity="0.74"/>
+            <circle cx="140" cy="140" r="34" fill="#243870" stroke="#FFFFFF" stroke-width="3"/>
+            <text x="140" y="148" text-anchor="middle" font-family="Syne" font-weight="800" font-size="22" fill="#FFFFFF">N</text>
+            <defs>
+              <radialGradient id="g4hoa"><stop offset="0%" stop-color="#F19594"/><stop offset="100%" stop-color="#A32D2D"/></radialGradient>
+              <radialGradient id="g4tho"><stop offset="0%" stop-color="#EBA961"/><stop offset="100%" stop-color="#854F0B"/></radialGradient>
+              <radialGradient id="g4kim"><stop offset="0%" stop-color="#D6D9DE"/><stop offset="100%" stop-color="#6E7178"/></radialGradient>
+              <radialGradient id="g4thuy"><stop offset="0%" stop-color="#5B92D4"/><stop offset="100%" stop-color="#0C447C"/></radialGradient>
+              <radialGradient id="g4moc"><stop offset="0%" stop-color="#6FCBA9"/><stop offset="100%" stop-color="#0F6E56"/></radialGradient>
+            </defs>
+          </svg>
+          <div style="flex: 1; min-width: 0;">
+            <div class="identity-name" style="font-size: 16px;">Nam Tiên Sinh</div>
+            <div class="identity-element-row" style="margin-top: 4px;">
+              <span class="dom-hoa">Hỏa</span>–<span class="dom-moc">Mộc</span> · Dương Nam
+            </div>
+          </div>
+        </div>
+
+        <div class="tab-row">
+          <div class="tab">Identity</div>
+          <div class="tab">Resonance</div>
+          <div class="tab">Circles</div>
+          <div class="tab active">Journey</div>
+        </div>
+
+        <!-- Now phase card -->
+        <div class="journey-now-card">
+          <div class="journey-now-label">Now · Q2 2026</div>
+          <div class="journey-now-phase">Building Phase</div>
+          <div class="journey-now-desc">Hỏa expansion period. Natural cycle: Mộc sinh Hỏa flows strong. Watch for burnout — balance with Thủy practice.</div>
+          <div class="journey-now-meta">
+            <span><b>156d</b> · in phase</span>
+            <span style="opacity:0.6">·</span>
+            <span><b>47</b> · contributions</span>
+          </div>
+        </div>
+
+        <!-- Timeline -->
+        <div class="section-head" style="padding-left: 4px;">
+          <div class="section-title">Energy timeline · 12 months</div>
+        </div>
+
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-dot" style="background: var(--uzg-blue); border-color: var(--uzg-blue);"></div>
+            <div class="timeline-period">Q2 2026 · Now</div>
+            <div class="timeline-phase">Building Phase</div>
+            <div class="timeline-shift">Hỏa <span class="arr">→</span> rose 30% to 35% · Mộc steady at 28%</div>
+            <div class="timeline-event">Joined Forest Circle · Founded Garden Bay</div>
+          </div>
+          <div class="timeline-item past">
+            <div class="timeline-dot"></div>
+            <div class="timeline-period">Q1 2026</div>
+            <div class="timeline-phase">Founding Phase</div>
+            <div class="timeline-shift">Initial Bazi reveal · ENTA root locked</div>
+            <div class="timeline-event">Onboarded · First QOT-traced post</div>
+          </div>
+          <div class="timeline-item past">
+            <div class="timeline-dot"></div>
+            <div class="timeline-period">Q4 2025</div>
+            <div class="timeline-phase">Renewing Phase</div>
+            <div class="timeline-shift">Pre-ENTA · balanced field</div>
+            <div class="timeline-event">3-day Mộc retreat · Mai Châu</div>
+          </div>
+          <div class="timeline-item past">
+            <div class="timeline-dot"></div>
+            <div class="timeline-period">Q3 2025</div>
+            <div class="timeline-phase">Resting Phase</div>
+            <div class="timeline-shift">Pre-ENTA · low activity period</div>
+          </div>
+        </div>
+
+        <!-- Contribution stats -->
+        <div class="section-head" style="padding-left: 4px;">
+          <div class="section-title">Contribution · QOT-traceable</div>
+        </div>
+
+        <div class="contrib-grid">
+          <div class="contrib-stat">
+            <div class="contrib-stat-label">Posts</div>
+            <div class="contrib-stat-value">82</div>
+            <div class="contrib-stat-sub">Hỏa themed: 41 · Mộc: 28</div>
+          </div>
+          <div class="contrib-stat">
+            <div class="contrib-stat-label">Reactions</div>
+            <div class="contrib-stat-value">416</div>
+            <div class="contrib-stat-sub">Most given: Mộc 🌿</div>
+          </div>
+          <div class="contrib-stat">
+            <div class="contrib-stat-label">U Earned</div>
+            <div class="contrib-stat-value">1,250</div>
+            <div class="contrib-stat-sub">≈ 12.5 UZG converted</div>
+          </div>
+          <div class="contrib-stat">
+            <div class="contrib-stat-label">QOT trail</div>
+            <div class="contrib-stat-value">47</div>
+            <div class="contrib-stat-sub">Verified contributions</div>
+          </div>
+        </div>
+
+        <div style="height: 16px;"></div>
+      </div>
+
+      <div class="fab"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></div>
+
+      <div class="bottom-nav">
+        <div class="nav-item"><svg viewBox="0 0 24 24"><path d="M3 12L12 4l9 8M5 11v8h14v-8"/></svg><div class="nav-item-label">Home</div></div>
+        <div class="nav-item"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 01-1 4 8.5 8.5 0 01-7.5 4.5 8.4 8.4 0 01-4-1L3 21l2-5a8.4 8.4 0 01-1-4 8.5 8.5 0 014.5-7.5 8.4 8.4 0 014-1A8.5 8.5 0 0121 11.5z"/></svg><div class="nav-item-label">Chat</div></div>
+        <div class="nav-center">U+</div>
+        <div class="nav-item"><svg viewBox="0 0 24 24"><path d="M21 12V7H5a2 2 0 010-4h14v4M3 5v14a2 2 0 002 2h16v-5M21 12h-5a2 2 0 000 4h5z"/></svg><div class="nav-item-label">Wallet</div></div>
+        <div class="nav-item active"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4" stroke-dasharray="2 2"/><circle cx="12" cy="12" r="1.5" fill="currentColor"/></svg><div class="nav-item-label">Enta</div></div>
+      </div>
+
+    </div>
+  </div>
+  <div class="note-strip">Now phase card · Energy timeline 12mo · QOT-traceable contribution stats · element-themed</div>
+</div>
+
+</div>
+
+<!-- ============================================ -->
+<!-- FOOTNOTE                                     -->
+<!-- ============================================ -->
+<div class="footer-note">
+  <div class="footer-title">Mockup #5 — Decisions surfaced for NTS review</div>
+  <div class="footer-grid">
+    <div>
+      <b>D1 · Pentagon NAM TAO chuẩn</b><br>
+      Hỏa cố định 12h (Nam, viêm thượng). Clockwise tương sinh: Hỏa → Thổ → Kim → Thủy → Mộc → Hỏa. Sequence này khóa cho toàn hệ ENTA + AIER TAO + Tử Vi + Phong Thủy + Bát Tự đào tạo.
+    </div>
+    <div>
+      <b>D2 · Pentagon visualization</b><br>
+      5 cánh shape thực sự (không phải pie chart tròn). Each petal là tam giác từ tâm tới 2 đỉnh kế nhau. Opacity per element = visualizing percentage. Tương sinh arrows xanh lá overlay subtle.
+    </div>
+    <div>
+      <b>D3 · Identity strip</b><br>
+      "Hỏa-Mộc dominant · Dương Nam" + Phase pill ("Building · Q2 2026") thay vì job title/company kiểu LinkedIn. Element nhuộm color highlight tiếng Việt.
+    </div>
+    <div>
+      <b>D4 · 4 Tabs</b><br>
+      Identity (default · ENTA Map + Polarity + Suggestions) / Resonance (connections + trust levels) / Circles (member of + suggested) / Journey (timeline + contribution). Wheel scroll up khi switch tab, identity strip persistent.
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

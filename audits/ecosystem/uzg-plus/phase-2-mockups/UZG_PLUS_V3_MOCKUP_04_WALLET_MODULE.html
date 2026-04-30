@@ -1,0 +1,1489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>UZG+ V3 — Mockup #4 — WALLET Module</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+:root {
+  /* === Theme system — Hỏa (auto from ENTA dominant Hỏa-Mộc) === */
+  --t-primary: #E24B4A;
+  --t-primary-light: #F19594;
+  --t-primary-dark: #A32D2D;
+  --t-tint: rgba(226, 75, 74, 0.07);
+  --t-glow-soft: rgba(226, 75, 74, 0.25);
+  --t-glow-strong: rgba(226, 75, 74, 0.32);
+  --t-particle: #E24B4A;
+  --t-bg-radial-1: rgba(226, 75, 74, 0.10);
+  --t-bg-radial-2: rgba(186, 117, 23, 0.06);
+
+  /* L1 Uniton Future */
+  --uniton-quantum: #4A6FFF;
+  --uniton-bg: #090D1A;
+  /* L2 UZG+ Cobalt */
+  --uzg-blue: #3B5BAA;
+  --uzg-blue-light: #5B7FD4;
+  --uzg-blue-dark: #243870;
+  --uzg-blue-tint: #EEF2FB;
+  /* Surfaces */
+  --bg-canvas: #FBFCFE;
+  --bg-card: #FFFFFF;
+  --text-primary: #1A1F2E;
+  --text-secondary: #5F5E5A;
+  --text-tertiary: #9099B0;
+  --divider: rgba(160, 175, 200, 0.22);
+  --divider-strong: rgba(160, 175, 200, 0.45);
+  /* Ngũ Hành */
+  --hoa: #4A6FFF;
+  --moc: #1D9E75;
+  --kim: #888780;
+  --thuy: #185FA5;
+  --tho: #BA7517;
+  /* Semantic */
+  --success: #1D9E75;
+  --warning: #BA7517;
+  --danger: #4A6FFF;
+  --info: #4A6FFF;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; -webkit-font-smoothing: antialiased; }
+html, body { background: var(--uniton-bg); font-family: 'DM Sans', system-ui, sans-serif; color: var(--text-primary); min-height: 100vh; }
+
+body {
+  background:
+    radial-gradient(ellipse at 12% 8%, var(--t-bg-radial-1) 0%, transparent 38%),
+    radial-gradient(ellipse at 88% 92%, var(--t-bg-radial-2) 0%, transparent 42%),
+    var(--uniton-bg);
+  padding: 32px 16px 64px;
+}
+
+/* === Page Header === */
+.page-header { max-width: 1280px; margin: 0 auto 28px; padding: 0 4px; }
+.page-eyebrow {
+  font-family: 'Syne', sans-serif; font-weight: 700; font-size: 11px;
+  letter-spacing: 0.18em; color: var(--uzg-blue-light); text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.page-title { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 24px; color: #FFFFFF; letter-spacing: -0.01em; }
+.page-sub { font-size: 13px; color: rgba(255,255,255,0.55); margin-top: 6px; max-width: 720px; line-height: 1.5; }
+
+/* === Screens grid === */
+.screens-row { max-width: 1640px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 380px); gap: 28px; justify-content: center; }
+@media (max-width: 1700px) { .screens-row { grid-template-columns: repeat(2, 380px); } }
+@media (max-width: 820px)  { .screens-row { grid-template-columns: 380px; } }
+
+.screen-wrap { display: flex; flex-direction: column; align-items: center; }
+.screen-label {
+  font-family: 'Syne', sans-serif; font-weight: 700; font-size: 11px;
+  letter-spacing: 0.16em; color: var(--uzg-blue-light); text-transform: uppercase;
+  margin-bottom: 4px;
+}
+.screen-name { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 14px; color: #FFFFFF; margin-bottom: 14px; }
+
+/* === Phone frame (390 × 844) === */
+.phone {
+  width: 380px; height: 780px; background: var(--bg-canvas);
+  border-radius: 36px; position: relative; overflow: hidden;
+  box-shadow: 0 16px 60px rgba(0,0,0,0.45), 0 0 0 1px rgba(255,255,255,0.05);
+}
+.phone-canvas {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(circle at 18% 14%, var(--t-bg-radial-1) 0%, transparent 45%),
+    radial-gradient(circle at 82% 86%, var(--t-bg-radial-2) 0%, transparent 48%),
+    var(--bg-canvas);
+  overflow: hidden;
+}
+
+/* Quantum particles */
+.particles { position: absolute; inset: 0; pointer-events: none; opacity: 0.7; }
+.particles svg { width: 100%; height: 100%; }
+
+/* === Status bar === */
+.status-bar {
+  position: absolute; top: 0; left: 0; right: 0; height: 32px;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 8px 22px 0; font-size: 11px; font-weight: 600; color: var(--text-primary);
+  z-index: 50;
+}
+.status-icons { display: flex; align-items: center; gap: 4px; }
+.status-icons svg { width: 13px; height: 13px; }
+
+/* === Top Bar === */
+.top-bar {
+  position: absolute; top: 32px; left: 0; right: 0; height: 56px; z-index: 40;
+  background: rgba(251, 252, 254, 0.72); backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 0.5px solid var(--divider);
+  display: flex; align-items: center; padding: 0 14px; gap: 10px;
+}
+.top-avatar {
+  width: 30px; height: 30px; border-radius: 50%; flex-shrink: 0;
+  background: linear-gradient(135deg, var(--t-primary-light), var(--t-primary-dark));
+  display: flex; align-items: center; justify-content: center;
+  color: #FFFFFF; font-family: 'Syne', sans-serif; font-weight: 800; font-size: 11px;
+}
+.top-title { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 16px; color: var(--text-primary); flex: 1; letter-spacing: -0.01em; }
+.top-icons { display: flex; align-items: center; gap: 6px; }
+.top-icon-btn {
+  width: 30px; height: 30px; display: flex; align-items: center; justify-content: center;
+  border-radius: 8px; background: transparent; cursor: pointer;
+}
+.top-icon-btn svg { width: 16px; height: 16px; stroke: var(--text-tertiary); fill: none; stroke-width: 1.5; }
+.top-icon-btn:hover svg { stroke: var(--uniton-quantum); }
+
+/* U-Reward pill (PHẦN 4) */
+.u-pill {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 5px 11px 5px 8px; border-radius: 14px;
+  background: var(--t-tint);
+  border: 0.5px solid var(--t-primary-light);
+  font-family: 'Syne', sans-serif; font-weight: 800; font-size: 11px;
+  color: var(--t-primary-dark); letter-spacing: 0.02em;
+}
+.u-pill-icon {
+  width: 12px; height: 12px; flex-shrink: 0;
+}
+
+/* Back btn */
+.back-btn {
+  width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;
+  border-radius: 8px; cursor: pointer; flex-shrink: 0;
+}
+.back-btn svg { width: 18px; height: 18px; stroke: var(--text-primary); fill: none; stroke-width: 1.6; }
+
+/* === Main scroll area === */
+.scroll-area {
+  position: absolute; top: 88px; bottom: 76px; left: 0; right: 0;
+  overflow-y: auto; padding: 16px 16px 24px;
+}
+.scroll-area::-webkit-scrollbar { width: 0; }
+
+/* === Bottom nav === */
+.bottom-nav {
+  position: absolute; bottom: 0; left: 0; right: 0; height: 76px; z-index: 40;
+  background: rgba(251, 252, 254, 0.85); backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-top: 0.5px solid var(--divider);
+  display: flex; align-items: center; justify-content: space-around;
+  padding: 8px 12px 14px;
+}
+.nav-item {
+  display: flex; flex-direction: column; align-items: center; gap: 3px;
+  flex: 1; cursor: pointer;
+}
+.nav-item svg { width: 18px; height: 18px; stroke: var(--text-tertiary); fill: none; stroke-width: 1.5; }
+.nav-item.active svg { stroke: var(--uzg-blue); }
+.nav-item-label {
+  font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 9.5px;
+  color: var(--text-tertiary); letter-spacing: 0.04em; text-transform: uppercase;
+}
+.nav-item.active .nav-item-label { color: var(--uzg-blue); font-weight: 600; }
+
+/* Center "U+" lettermark */
+.nav-center {
+  width: 44px; height: 44px; border-radius: 12px;
+  background: linear-gradient(135deg, var(--t-primary), var(--t-primary-dark));
+  box-shadow: 0 4px 14px var(--t-glow-soft);
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Syne', sans-serif; font-weight: 800; font-size: 15px;
+  color: #FFFFFF; letter-spacing: -0.04em; cursor: pointer;
+  margin-top: -10px;
+}
+
+/* Floating + button (PHẦN 3) */
+.fab {
+  position: absolute; bottom: 92px; right: 18px;
+  width: 48px; height: 48px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--t-primary), var(--t-primary-dark));
+  box-shadow: 0 6px 20px var(--t-glow-strong);
+  display: flex; align-items: center; justify-content: center;
+  z-index: 35; cursor: pointer;
+}
+.fab svg { width: 20px; height: 20px; stroke: #FFFFFF; fill: none; stroke-width: 2.2; }
+
+/* ============================================ */
+/* SCREEN A — WALLET OVERVIEW                   */
+/* ============================================ */
+
+/* Total Value hero */
+.total-hero {
+  margin: 4px 0 18px; padding: 6px 4px 14px;
+  text-align: left;
+}
+.total-label {
+  font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 12px;
+  color: var(--text-tertiary); letter-spacing: 0.04em; text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.total-value {
+  font-family: 'Syne', sans-serif; font-weight: 800; font-size: 34px;
+  color: var(--text-primary); letter-spacing: -0.02em; line-height: 1;
+}
+.total-equiv {
+  font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 13px;
+  color: var(--text-secondary); margin-top: 6px;
+}
+.total-meta {
+  display: flex; align-items: center; gap: 6px; margin-top: 10px;
+  font-family: 'DM Sans', sans-serif; font-size: 11px; color: var(--text-tertiary);
+}
+.dot-pulse {
+  width: 6px; height: 6px; border-radius: 50%; background: var(--success);
+  box-shadow: 0 0 0 0 rgba(29, 158, 117, 0.4);
+}
+
+/* Tab selector */
+.tab-row {
+  display: flex; gap: 4px; margin: 4px 0 14px; padding: 3px;
+  background: rgba(160, 175, 200, 0.12); border-radius: 10px;
+}
+.tab {
+  flex: 1; padding: 7px 0; text-align: center; cursor: pointer;
+  font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 12px;
+  color: var(--text-tertiary); border-radius: 8px;
+  transition: background 180ms, color 180ms;
+}
+.tab.active {
+  background: #FFFFFF; color: var(--text-primary); font-weight: 600;
+  box-shadow: 0 1px 3px rgba(36, 56, 112, 0.06);
+}
+
+/* Section header */
+.section-head {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 10px 4px 8px; margin-top: 4px;
+}
+.section-title {
+  font-family: 'DM Sans', sans-serif; font-weight: 600; font-size: 12px;
+  color: var(--text-secondary); letter-spacing: 0.06em; text-transform: uppercase;
+}
+.section-link {
+  font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 11px;
+  color: var(--uzg-blue); cursor: pointer;
+}
+
+/* Asset row */
+.asset-row {
+  display: flex; align-items: center; gap: 12px; padding: 12px 4px;
+  border-bottom: 0.5px solid var(--divider); cursor: pointer;
+}
+.asset-row:last-child { border-bottom: none; }
+.asset-icon {
+  width: 36px; height: 36px; border-radius: 50%; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Syne', sans-serif; font-weight: 800; font-size: 12px;
+  color: #FFFFFF; letter-spacing: 0.02em;
+}
+.asset-icon.usdc { background: linear-gradient(135deg, #5B7FD4, #185FA5); }
+.asset-icon.vndc { background: linear-gradient(135deg, #E2606A, #3B5BAA); }
+.asset-icon.aedc { background: linear-gradient(135deg, #88C597, #1D9E75); }
+.asset-icon.u    { background: linear-gradient(135deg, #4A6FFF, #243870); position: relative; }
+.asset-icon.u::after {
+  content: ''; position: absolute; inset: -3px; border-radius: 50%;
+  border: 0.8px dashed rgba(74,111,255,0.35);
+}
+.asset-icon.uzg  { background: linear-gradient(135deg, #5B7FD4, #3B5BAA); }
+.asset-info { flex: 1; min-width: 0; }
+.asset-name { font-family: 'DM Sans', sans-serif; font-weight: 600; font-size: 14px; color: var(--text-primary); }
+.asset-ticker { font-family: 'DM Sans', sans-serif; font-weight: 400; font-size: 11.5px; color: var(--text-tertiary); margin-top: 1px; }
+.asset-balance-col { text-align: right; flex-shrink: 0; }
+.asset-balance { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 14.5px; color: var(--text-primary); letter-spacing: -0.01em; }
+.asset-equiv { font-family: 'DM Sans', sans-serif; font-weight: 400; font-size: 11px; color: var(--text-tertiary); margin-top: 1px; }
+
+/* Quick actions */
+.quick-actions {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px;
+  margin: 18px 0 14px;
+}
+.qa-tile {
+  display: flex; flex-direction: column; align-items: center; gap: 6px;
+  padding: 12px 4px 10px; background: #FFFFFF;
+  border: 0.5px solid var(--divider); border-radius: 14px; cursor: pointer;
+}
+.qa-icon {
+  width: 32px; height: 32px; border-radius: 10px;
+  background: rgba(74, 111, 255, 0.08);
+  display: flex; align-items: center; justify-content: center;
+}
+.qa-icon svg { width: 16px; height: 16px; stroke: var(--uzg-blue); fill: none; stroke-width: 1.7; }
+.qa-label {
+  font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 10.5px;
+  color: var(--text-secondary); letter-spacing: 0.02em;
+}
+
+/* Activity list */
+.activity-row {
+  display: flex; align-items: center; gap: 10px; padding: 10px 4px;
+  border-bottom: 0.5px solid var(--divider);
+}
+.activity-row:last-child { border-bottom: none; }
+.act-icon {
+  width: 30px; height: 30px; border-radius: 8px; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+}
+.act-icon svg { width: 13px; height: 13px; fill: none; stroke-width: 1.7; }
+.act-icon.in  { background: rgba(29, 158, 117, 0.10); }
+.act-icon.in svg { stroke: var(--moc); }
+.act-icon.out { background: rgba(95, 94, 90, 0.10); }
+.act-icon.out svg { stroke: var(--text-secondary); }
+.act-icon.conv { background: rgba(74, 111, 255, 0.10); }
+.act-icon.conv svg { stroke: var(--uzg-blue); }
+.act-info { flex: 1; min-width: 0; }
+.act-title { font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 13px; color: var(--text-primary); }
+.act-sub { font-family: 'DM Sans', sans-serif; font-weight: 400; font-size: 11px; color: var(--text-tertiary); margin-top: 1px; }
+.act-amt-col { text-align: right; flex-shrink: 0; }
+.act-amt { font-family: 'DM Sans', sans-serif; font-weight: 600; font-size: 13px; }
+.act-amt.in { color: var(--moc); }
+.act-amt.out { color: var(--text-primary); }
+.act-amt.conv { color: var(--text-primary); }
+.act-time { font-family: 'DM Sans', sans-serif; font-weight: 400; font-size: 10.5px; color: var(--text-tertiary); margin-top: 1px; }
+
+/* QOT verified badge */
+.qot-mini {
+  display: inline-flex; align-items: center; gap: 3px;
+  font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 10px;
+  color: var(--text-tertiary); margin-left: 5px;
+}
+.qot-mini-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--uniton-quantum); }
+
+/* ============================================ */
+/* SCREEN B — ASSET DETAIL (USDc)               */
+/* ============================================ */
+
+.detail-balance-block {
+  padding: 18px 4px 14px; text-align: left;
+}
+.detail-asset-meta {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 6px 10px 6px 8px; background: rgba(74, 111, 255, 0.07);
+  border-radius: 12px; margin-bottom: 12px;
+}
+.detail-asset-icon-mini {
+  width: 22px; height: 22px; border-radius: 50%;
+  background: linear-gradient(135deg, #5B7FD4, #185FA5);
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Syne', sans-serif; font-weight: 800; font-size: 9px; color: #FFFFFF;
+}
+.detail-asset-name {
+  font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 12px;
+  color: var(--text-primary);
+}
+.detail-balance-large {
+  font-family: 'Syne', sans-serif; font-weight: 800; font-size: 36px;
+  color: var(--text-primary); letter-spacing: -0.02em; line-height: 1;
+}
+.detail-equiv-row {
+  display: flex; align-items: baseline; gap: 8px; margin-top: 10px;
+}
+.detail-equiv-val {
+  font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 14px;
+  color: var(--text-secondary);
+}
+.detail-equiv-label {
+  font-family: 'DM Sans', sans-serif; font-weight: 400; font-size: 11px;
+  color: var(--text-tertiary);
+}
+
+/* Quick actions row (3 buttons) */
+.detail-actions {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px;
+  margin: 16px 0 18px;
+}
+.detail-action {
+  display: flex; flex-direction: column; align-items: center; gap: 7px;
+  padding: 14px 0 12px;
+  background: linear-gradient(180deg, rgba(74,111,255,0.05), rgba(74,111,255,0.02));
+  border: 0.5px solid rgba(74,111,255,0.18);
+  border-radius: 14px; cursor: pointer;
+}
+.detail-action-icon {
+  width: 30px; height: 30px; border-radius: 50%;
+  background: rgba(74, 111, 255, 0.12);
+  display: flex; align-items: center; justify-content: center;
+}
+.detail-action-icon svg { width: 15px; height: 15px; stroke: var(--uzg-blue); fill: none; stroke-width: 1.8; }
+.detail-action-label {
+  font-family: 'DM Sans', sans-serif; font-weight: 600; font-size: 12px;
+  color: var(--uzg-blue-dark);
+}
+
+/* Trust block */
+.trust-block {
+  background: rgba(255, 255, 255, 0.6);
+  border: 0.5px solid var(--divider);
+  border-radius: 14px; padding: 12px 14px; margin: 8px 0 16px;
+  display: flex; align-items: center; gap: 10px;
+}
+.trust-icon-circle {
+  width: 28px; height: 28px; border-radius: 50%;
+  background: rgba(29, 158, 117, 0.12);
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  position: relative;
+}
+.trust-icon-circle::after {
+  content: ''; position: absolute; inset: -3px; border-radius: 50%;
+  border: 0.8px dashed rgba(74,111,255,0.35);
+}
+.trust-icon-circle svg { width: 13px; height: 13px; stroke: var(--moc); fill: none; stroke-width: 2; }
+.trust-info { flex: 1; min-width: 0; }
+.trust-title { font-family: 'DM Sans', sans-serif; font-weight: 600; font-size: 12px; color: var(--text-primary); }
+.trust-sub { font-family: 'DM Sans', sans-serif; font-weight: 400; font-size: 10.5px; color: var(--text-tertiary); margin-top: 2px; }
+
+/* ============================================ */
+/* SCREEN C — CONVERT FLOW                      */
+/* ============================================ */
+
+.convert-card {
+  background: #FFFFFF; border: 0.5px solid var(--divider);
+  border-radius: 16px; padding: 14px 14px 12px; margin-bottom: 8px;
+  position: relative;
+}
+.convert-card-label {
+  font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 11px;
+  color: var(--text-tertiary); letter-spacing: 0.06em; text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.convert-card-asset {
+  display: flex; align-items: center; gap: 10px; cursor: pointer;
+  padding: 4px 0;
+}
+.convert-card-asset .chevron { margin-left: auto; }
+.convert-card-asset .chevron svg { width: 14px; height: 14px; stroke: var(--text-tertiary); fill: none; stroke-width: 1.5; }
+.convert-input-row {
+  display: flex; align-items: baseline; gap: 6px; margin-top: 10px;
+  border-top: 0.5px solid var(--divider); padding-top: 10px;
+}
+.convert-amount {
+  flex: 1; font-family: 'Syne', sans-serif; font-weight: 700; font-size: 28px;
+  color: var(--text-primary); letter-spacing: -0.02em; line-height: 1;
+  border: none; outline: none; background: transparent; min-width: 0;
+}
+.convert-currency {
+  font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 14px;
+  color: var(--text-tertiary);
+}
+.convert-available {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-top: 8px;
+  font-family: 'DM Sans', sans-serif; font-size: 11px; color: var(--text-tertiary);
+}
+.max-btn {
+  font-family: 'Syne', sans-serif; font-weight: 700; font-size: 10px;
+  color: var(--uzg-blue); padding: 3px 8px; border-radius: 6px;
+  background: rgba(74, 111, 255, 0.08); cursor: pointer; letter-spacing: 0.06em;
+}
+
+/* Swap divider */
+.swap-divider {
+  display: flex; align-items: center; justify-content: center;
+  margin: -6px 0; position: relative; z-index: 2;
+}
+.swap-btn {
+  width: 36px; height: 36px; border-radius: 50%;
+  background: #FFFFFF; border: 0.5px solid var(--divider-strong);
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; box-shadow: 0 1px 3px rgba(36, 56, 112, 0.08);
+}
+.swap-btn svg { width: 14px; height: 14px; stroke: var(--uzg-blue); fill: none; stroke-width: 1.8; }
+
+/* Rate display */
+.rate-block {
+  background: rgba(74, 111, 255, 0.04);
+  border: 0.5px solid rgba(74, 111, 255, 0.12);
+  border-radius: 12px; padding: 10px 12px; margin: 12px 0;
+}
+.rate-row {
+  display: flex; align-items: center; justify-content: space-between;
+  font-family: 'DM Sans', sans-serif; font-size: 12px;
+}
+.rate-label { color: var(--text-secondary); font-weight: 500; }
+.rate-value { color: var(--text-primary); font-weight: 600; font-family: 'Syne', sans-serif; }
+.rate-source {
+  margin-top: 6px; font-family: 'DM Sans', sans-serif; font-size: 10.5px;
+  color: var(--text-tertiary); display: flex; align-items: center; gap: 5px;
+}
+.live-dot {
+  width: 5px; height: 5px; border-radius: 50%; background: var(--moc);
+  animation: livePulse 2s ease-in-out infinite;
+}
+@keyframes livePulse {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.3); }
+}
+
+/* Fee summary */
+.fee-summary {
+  padding: 10px 4px; margin: 8px 0 14px;
+}
+.fee-row {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 6px 0;
+  font-family: 'DM Sans', sans-serif; font-size: 12px;
+}
+.fee-row.total {
+  border-top: 0.5px solid var(--divider); padding-top: 10px; margin-top: 4px;
+}
+.fee-label { color: var(--text-secondary); }
+.fee-label.total { color: var(--text-primary); font-weight: 600; }
+.fee-value { color: var(--text-primary); font-weight: 500; font-family: 'Syne', sans-serif; }
+.fee-value.total { font-size: 14px; font-weight: 700; }
+
+/* Confirm button */
+.confirm-btn {
+  width: 100%; padding: 14px 0;
+  background: linear-gradient(135deg, var(--t-primary), var(--t-primary-dark));
+  border: none; border-radius: 14px; cursor: pointer;
+  font-family: 'Syne', sans-serif; font-weight: 700; font-size: 13px;
+  color: #FFFFFF; letter-spacing: 0.04em;
+  box-shadow: 0 6px 20px var(--t-glow-strong);
+}
+
+/* ============================================ */
+/* SCREEN D — SEND FLOW (Recipient picker step) */
+/* ============================================ */
+
+.send-step-pill {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 4px 10px; background: rgba(74,111,255,0.08); border-radius: 10px;
+  font-family: 'DM Sans', sans-serif; font-weight: 600; font-size: 10.5px;
+  color: var(--uzg-blue-dark); letter-spacing: 0.04em; text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+/* Recipient + amount card */
+.send-summary-card {
+  background: #FFFFFF; border: 0.5px solid var(--divider);
+  border-radius: 16px; padding: 14px; margin-bottom: 14px;
+}
+.send-recipient-row {
+  display: flex; align-items: center; gap: 11px; padding-bottom: 12px;
+  border-bottom: 0.5px solid var(--divider);
+}
+.recipient-avatar {
+  width: 38px; height: 38px; border-radius: 50%; flex-shrink: 0;
+  background: linear-gradient(135deg, #88C597, #1D9E75);
+  display: flex; align-items: center; justify-content: center;
+  color: #FFFFFF; font-family: 'Syne', sans-serif; font-weight: 800; font-size: 12px;
+}
+.recipient-info { flex: 1; min-width: 0; }
+.recipient-name { font-family: 'DM Sans', sans-serif; font-weight: 600; font-size: 14px; color: var(--text-primary); }
+.recipient-handle { font-family: 'DM Sans', sans-serif; font-weight: 400; font-size: 11.5px; color: var(--text-tertiary); margin-top: 1px; display: flex; align-items: center; gap: 4px; }
+.connection-tag {
+  font-family: 'Syne', sans-serif; font-weight: 700; font-size: 9px;
+  color: var(--moc); background: rgba(29,158,117,0.10);
+  padding: 2px 6px; border-radius: 5px; letter-spacing: 0.08em; text-transform: uppercase;
+}
+
+/* Amount input block */
+.send-amount-block {
+  padding: 14px 0 4px;
+  text-align: center;
+}
+.send-amount-input-row {
+  display: flex; align-items: baseline; justify-content: center; gap: 8px;
+}
+.send-amount {
+  font-family: 'Syne', sans-serif; font-weight: 800; font-size: 38px;
+  color: var(--text-primary); letter-spacing: -0.02em; line-height: 1;
+  border: none; outline: none; background: transparent;
+  width: auto; max-width: 200px; text-align: center;
+}
+.send-amount-currency {
+  font-family: 'DM Sans', sans-serif; font-weight: 600; font-size: 16px;
+  color: var(--text-tertiary);
+}
+.send-amount-equiv {
+  font-family: 'DM Sans', sans-serif; font-weight: 400; font-size: 12px;
+  color: var(--text-tertiary); margin-top: 8px;
+}
+.send-asset-pill {
+  display: inline-flex; align-items: center; gap: 6px; margin-top: 14px;
+  padding: 5px 10px 5px 6px; background: rgba(74,111,255,0.07);
+  border: 0.5px solid rgba(74,111,255,0.18); border-radius: 12px; cursor: pointer;
+}
+.send-asset-pill .mini-icon {
+  width: 18px; height: 18px; border-radius: 50%;
+  background: linear-gradient(135deg, #5B7FD4, #185FA5);
+  display: flex; align-items: center; justify-content: center;
+  color: #FFFFFF; font-family: 'Syne', sans-serif; font-weight: 800; font-size: 8px;
+}
+.send-asset-pill .pill-label {
+  font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 12px;
+  color: var(--text-primary);
+}
+.send-asset-pill svg { width: 12px; height: 12px; stroke: var(--text-tertiary); fill: none; stroke-width: 1.5; }
+
+/* Optional message + QOT context */
+.optional-block {
+  background: #FFFFFF; border: 0.5px solid var(--divider);
+  border-radius: 14px; padding: 12px 14px; margin-bottom: 12px;
+}
+.optional-label {
+  display: flex; align-items: center; justify-content: space-between;
+  font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 11px;
+  color: var(--text-tertiary); letter-spacing: 0.05em; text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.optional-label .optional-tag {
+  font-family: 'DM Sans', sans-serif; font-weight: 400; font-size: 10px;
+  color: var(--text-tertiary); text-transform: none; letter-spacing: 0;
+}
+.optional-input {
+  width: 100%; border: none; outline: none; background: transparent;
+  font-family: 'DM Sans', sans-serif; font-size: 13px; color: var(--text-primary);
+  padding: 4px 0; resize: none;
+}
+
+/* QOT context toggle */
+.qot-toggle-row {
+  display: flex; align-items: center; gap: 10px; margin-top: 10px;
+  padding-top: 10px; border-top: 0.5px solid var(--divider);
+}
+.qot-toggle-icon {
+  width: 22px; height: 22px; border-radius: 50%;
+  background: radial-gradient(circle at center, var(--uniton-quantum) 0%, transparent 70%);
+  position: relative; flex-shrink: 0;
+}
+.qot-toggle-icon::after {
+  content: ''; position: absolute; inset: 1px; border-radius: 50%;
+  border: 0.8px dashed rgba(74,111,255,0.55);
+}
+.qot-toggle-info { flex: 1; min-width: 0; }
+.qot-toggle-title { font-family: 'DM Sans', sans-serif; font-weight: 600; font-size: 12px; color: var(--text-primary); }
+.qot-toggle-sub { font-family: 'DM Sans', sans-serif; font-weight: 400; font-size: 10.5px; color: var(--text-tertiary); margin-top: 1px; }
+.toggle-switch {
+  width: 36px; height: 20px; border-radius: 11px;
+  background: var(--uzg-blue); position: relative; cursor: pointer; flex-shrink: 0;
+}
+.toggle-switch::after {
+  content: ''; position: absolute; top: 2px; right: 2px;
+  width: 16px; height: 16px; border-radius: 50%; background: #FFFFFF;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+}
+
+/* Notes annotation */
+.note-strip {
+  margin: 10px auto 0; max-width: 280px;
+  padding: 6px 10px; background: rgba(74, 111, 255, 0.05);
+  border: 0.5px dashed rgba(74, 111, 255, 0.20);
+  border-radius: 8px;
+  font-family: 'DM Sans', sans-serif; font-size: 9.5px; color: var(--uzg-blue-dark);
+  text-align: center; line-height: 1.4;
+}
+
+/* ============================================ */
+/* Footnote                                     */
+/* ============================================ */
+
+.footer-note {
+  max-width: 1280px; margin: 32px auto 0; padding: 18px 22px;
+  background: rgba(255,255,255,0.04); border: 0.5px solid rgba(255,255,255,0.08);
+  border-radius: 14px;
+}
+.footer-title {
+  font-family: 'Syne', sans-serif; font-weight: 700; font-size: 12px;
+  color: var(--uzg-blue-light); letter-spacing: 0.14em; text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.footer-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;
+  font-family: 'DM Sans', sans-serif; font-size: 12px; color: rgba(255,255,255,0.7);
+  line-height: 1.55;
+}
+.footer-grid b { color: rgba(255,255,255,0.95); font-weight: 600; }
+@media (max-width: 900px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
+
+
+.theme-banner {
+  max-width: 1280px; margin: 0 auto 16px; padding: 10px 16px;
+  background: linear-gradient(90deg, rgba(226,75,74,0.12), rgba(186,117,23,0.08));
+  border: 0.5px solid rgba(226,75,74,0.30);
+  border-radius: 12px;
+  display: flex; align-items: center; gap: 12px;
+  font-family: 'DM Sans', sans-serif; font-size: 12px; color: rgba(255,255,255,0.85);
+}
+.theme-banner-orb {
+  width: 22px; height: 22px; border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #F19594, #A32D2D);
+  box-shadow: 0 0 12px rgba(241,149,148,0.55);
+  flex-shrink: 0;
+}
+.theme-banner b { color: #F19594; font-family: 'Syne', sans-serif; font-weight: 700; letter-spacing: 0.04em; }
+.theme-banner-meta {
+  margin-left: auto; font-family: 'Syne', sans-serif; font-weight: 700;
+  font-size: 10px; letter-spacing: 0.1em; color: rgba(255,255,255,0.55);
+  padding: 3px 9px; background: rgba(255,255,255,0.06); border-radius: 6px;
+}
+</style>
+</head>
+<body data-theme="hoa">
+
+<!-- ============================================ -->
+<!-- PAGE HEADER                                  -->
+<!-- ============================================ -->
+
+<div class="theme-banner">
+  <div class="theme-banner-orb"></div>
+  <div>Active theme: <b>HỎA</b> · Fire · Warm Red — auto from ENTA dominant Hỏa-Mộc · viêm thượng · Lễ</div>
+  <div class="theme-banner-meta">Auto · ENTA</div>
+</div>
+
+<div class="page-header">
+  <div class="page-eyebrow">UZG+ V3 PWA OS · Phase 2 Mockup #4</div>
+  <div class="page-title">WALLET MODULE — Value Flow Engine</div>
+  <div class="page-sub">Wallet shell, asset detail, conversion panel, and send flow. Binance balance UI clarity stripped of trading mechanics — Convert (not Trade), Use (not Sell). 4 currency layers separated: U / UZG / Credit (USDc, VNDc, AEDc) / AIFI hidden by default.</div>
+</div>
+
+<!-- ============================================ -->
+<!-- 4 SCREENS                                    -->
+<!-- ============================================ -->
+<div class="screens-row">
+
+<!-- ============================================ -->
+<!-- SCREEN A — WALLET OVERVIEW                   -->
+<!-- ============================================ -->
+<div class="screen-wrap">
+  <div class="screen-label">Screen A</div>
+  <div class="screen-name">Wallet Overview</div>
+
+  <div class="phone">
+    <div class="phone-canvas">
+
+      <!-- Particles -->
+      <div class="particles">
+        <svg viewBox="0 0 380 780" preserveAspectRatio="none">
+          <circle cx="42" cy="120" r="0.5" fill="var(--t-particle)" opacity="0.28"/>
+          <circle cx="320" cy="180" r="0.6" fill="var(--t-particle)" opacity="0.28"/>
+          <circle cx="80" cy="340" r="0.4" fill="var(--t-particle)" opacity="0.28"/>
+          <circle cx="290" cy="420" r="0.5" fill="var(--t-particle)" opacity="0.28"/>
+          <circle cx="120" cy="560" r="0.5" fill="#BA7517" opacity="0.18"/>
+          <circle cx="340" cy="640" r="0.4" fill="var(--t-particle)" opacity="0.28"/>
+          <circle cx="60" cy="700" r="0.5" fill="var(--t-particle)" opacity="0.28"/>
+          <circle cx="200" cy="80" r="0.4" fill="var(--t-particle)" opacity="0.28"/>
+          <circle cx="240" cy="280" r="0.5" fill="var(--t-particle)" opacity="0.28"/>
+          <circle cx="160" cy="480" r="0.5" fill="#BA7517" opacity="0.18"/>
+        </svg>
+      </div>
+
+      <!-- Status bar -->
+      <div class="status-bar">
+        <span>9:41</span>
+        <div class="status-icons">
+          <svg viewBox="0 0 16 16" fill="none"><path d="M2 12h12M2 8h12M2 4h12" stroke="currentColor" stroke-width="1.4"/></svg>
+          <svg viewBox="0 0 16 16" fill="none"><path d="M2 8h12v4H2z" stroke="currentColor" stroke-width="1.4"/></svg>
+        </div>
+      </div>
+
+      <!-- Top Bar (Foundation §3.2) -->
+      <div class="top-bar">
+        <div class="top-avatar">N</div>
+        <div class="top-title">Wallet</div>
+        <div class="top-icons">
+          <div class="top-icon-btn" title="Stats">
+            <svg viewBox="0 0 16 16"><path d="M2 13h12M4 10v3M7 6v7M10 8v5M13 4v9"/></svg>
+          </div>
+          <div class="top-icon-btn" title="Settings">
+            <svg viewBox="0 0 16 16"><circle cx="8" cy="8" r="2"/><path d="M8 1v2M8 13v2M1 8h2M13 8h2M3.5 3.5l1.4 1.4M11.1 11.1l1.4 1.4M3.5 12.5l1.4-1.4M11.1 4.9l1.4-1.4"/></svg>
+          </div>
+        </div>
+        <div class="u-pill" style="margin-left: 4px;">
+          <svg class="u-pill-icon" viewBox="0 0 12 12">
+            <circle cx="6" cy="6" r="2" fill="#4A6FFF"/>
+            <circle cx="6" cy="6" r="5" fill="none" stroke="#4A6FFF" stroke-width="0.6" stroke-dasharray="1.2 1.2" opacity="0.6"/>
+          </svg>
+          U 1,250
+        </div>
+      </div>
+
+      <!-- Scroll -->
+      <div class="scroll-area">
+
+        <!-- Total Value hero -->
+        <div class="total-hero">
+          <div class="total-label">Total value</div>
+          <div class="total-value">$1,847.50</div>
+          <div class="total-equiv">≈ ₫45,267,500 VNDc</div>
+          <div class="total-meta">
+            <span class="dot-pulse"></span>
+            <span>Updated 2 min ago · 4 assets · QOT verified</span>
+          </div>
+        </div>
+
+        <!-- Tab selector -->
+        <div class="tab-row">
+          <div class="tab active">Overview</div>
+          <div class="tab">Credit</div>
+          <div class="tab">U + UZG</div>
+          <div class="tab">History</div>
+        </div>
+
+        <!-- Credit section -->
+        <div class="section-head">
+          <div class="section-title">Credit · Monetary</div>
+          <div class="section-link">View all</div>
+        </div>
+        <div>
+          <div class="asset-row">
+            <div class="asset-icon usdc">$</div>
+            <div class="asset-info">
+              <div class="asset-name">USD Credit</div>
+              <div class="asset-ticker">USDc</div>
+            </div>
+            <div class="asset-balance-col">
+              <div class="asset-balance">$120.50</div>
+              <div class="asset-equiv">≈ ₫2,946,225</div>
+            </div>
+          </div>
+          <div class="asset-row">
+            <div class="asset-icon vndc">₫</div>
+            <div class="asset-info">
+              <div class="asset-name">VND Credit</div>
+              <div class="asset-ticker">VNDc</div>
+            </div>
+            <div class="asset-balance-col">
+              <div class="asset-balance">₫2,800,000</div>
+              <div class="asset-equiv">≈ $114.29</div>
+            </div>
+          </div>
+          <div class="asset-row">
+            <div class="asset-icon aedc">د</div>
+            <div class="asset-info">
+              <div class="asset-name">AED Credit</div>
+              <div class="asset-ticker">AEDc</div>
+            </div>
+            <div class="asset-balance-col">
+              <div class="asset-balance">د.إ 300</div>
+              <div class="asset-equiv">≈ $81.74</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- U + UZG section -->
+        <div class="section-head">
+          <div class="section-title">Utility · U + UZG</div>
+          <div class="section-link">Earn</div>
+        </div>
+        <div>
+          <div class="asset-row">
+            <div class="asset-icon u">U</div>
+            <div class="asset-info">
+              <div class="asset-name">Contribution Energy</div>
+              <div class="asset-ticker">U · earned signal</div>
+            </div>
+            <div class="asset-balance-col">
+              <div class="asset-balance">1,250</div>
+              <div class="asset-equiv">≈ 12.5 UZG</div>
+            </div>
+          </div>
+          <div class="asset-row">
+            <div class="asset-icon uzg">U+</div>
+            <div class="asset-info">
+              <div class="asset-name">UZG Utility</div>
+              <div class="asset-ticker">UZG · service token</div>
+            </div>
+            <div class="asset-balance-col">
+              <div class="asset-balance">450</div>
+              <div class="asset-equiv">≈ $45.00</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick actions -->
+        <div class="section-head">
+          <div class="section-title">Quick actions</div>
+        </div>
+        <div class="quick-actions">
+          <div class="qa-tile">
+            <div class="qa-icon"><svg viewBox="0 0 16 16"><path d="M3 6h10M11 4l2 2-2 2M13 10H3M5 8l-2 2 2 2"/></svg></div>
+            <div class="qa-label">Convert</div>
+          </div>
+          <div class="qa-tile">
+            <div class="qa-icon"><svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></div>
+            <div class="qa-label">Send</div>
+          </div>
+          <div class="qa-tile">
+            <div class="qa-icon"><svg viewBox="0 0 16 16"><path d="M8 3v10M4 9l4 4 4-4"/></svg></div>
+            <div class="qa-label">Receive</div>
+          </div>
+          <div class="qa-tile">
+            <div class="qa-icon"><svg viewBox="0 0 16 16"><path d="M8 3v10M3 8h10"/></svg></div>
+            <div class="qa-label">Add</div>
+          </div>
+        </div>
+
+        <!-- Recent activity -->
+        <div class="section-head">
+          <div class="section-title">Recent activity</div>
+          <div class="section-link">All</div>
+        </div>
+        <div>
+          <div class="activity-row">
+            <div class="act-icon in"><svg viewBox="0 0 16 16"><path d="M8 13V3M4 7l4-4 4 4"/></svg></div>
+            <div class="act-info">
+              <div class="act-title">Earned U from post<span class="qot-mini"><span class="qot-mini-dot"></span>QOT</span></div>
+              <div class="act-sub">From Mộc reaction · 12 trail nodes</div>
+            </div>
+            <div class="act-amt-col">
+              <div class="act-amt in">+5 U</div>
+              <div class="act-time">2h ago</div>
+            </div>
+          </div>
+          <div class="activity-row">
+            <div class="act-icon out"><svg viewBox="0 0 16 16"><path d="M8 3v10M4 9l4 4 4-4"/></svg></div>
+            <div class="act-info">
+              <div class="act-title">Retreat booking</div>
+              <div class="act-sub">Mai Châu wellness · 3 nights</div>
+            </div>
+            <div class="act-amt-col">
+              <div class="act-amt out">−$10.00</div>
+              <div class="act-time">Yesterday</div>
+            </div>
+          </div>
+          <div class="activity-row">
+            <div class="act-icon conv"><svg viewBox="0 0 16 16"><path d="M3 6h10M11 4l2 2-2 2M13 10H3M5 8l-2 2 2 2"/></svg></div>
+            <div class="act-info">
+              <div class="act-title">Converted 100 U → 1 UZG</div>
+              <div class="act-sub">Rate 100:1 · fee 0%</div>
+            </div>
+            <div class="act-amt-col">
+              <div class="act-amt conv">+1 UZG</div>
+              <div class="act-time">2d ago</div>
+            </div>
+          </div>
+          <div class="activity-row">
+            <div class="act-icon in"><svg viewBox="0 0 16 16"><path d="M8 13V3M4 7l4-4 4 4"/></svg></div>
+            <div class="act-info">
+              <div class="act-title">Deposit USDc</div>
+              <div class="act-sub">Bank transfer · Verified</div>
+            </div>
+            <div class="act-amt-col">
+              <div class="act-amt in">+$50.00</div>
+              <div class="act-time">3d ago</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Floating + (PHẦN 3) -->
+      <div class="fab" title="New transaction">
+        <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
+      </div>
+
+      <!-- Bottom Nav (PHẦN 1) — WALLET active -->
+      <div class="bottom-nav">
+        <div class="nav-item">
+          <svg viewBox="0 0 24 24"><path d="M3 12L12 4l9 8M5 11v8h14v-8"/></svg>
+          <div class="nav-item-label">Home</div>
+        </div>
+        <div class="nav-item">
+          <svg viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 01-1 4 8.5 8.5 0 01-7.5 4.5 8.4 8.4 0 01-4-1L3 21l2-5a8.4 8.4 0 01-1-4 8.5 8.5 0 014.5-7.5 8.4 8.4 0 014-1A8.5 8.5 0 0121 11.5z"/></svg>
+          <div class="nav-item-label">Chat</div>
+        </div>
+        <div class="nav-center">U+</div>
+        <div class="nav-item active">
+          <svg viewBox="0 0 24 24"><path d="M21 12V7H5a2 2 0 010-4h14v4M3 5v14a2 2 0 002 2h16v-5M21 12h-5a2 2 0 000 4h5z"/></svg>
+          <div class="nav-item-label">Wallet</div>
+        </div>
+        <div class="nav-item">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4" stroke-dasharray="2 2"/><circle cx="12" cy="12" r="1.5" fill="currentColor"/></svg>
+          <div class="nav-item-label">Enta</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="note-strip">Foundation 4 phần fixed · 4 currencies separated · Total Value hero · §A1 redlines honored</div>
+</div>
+
+<!-- ============================================ -->
+<!-- SCREEN B — ASSET DETAIL (USDc)               -->
+<!-- ============================================ -->
+<div class="screen-wrap">
+  <div class="screen-label">Screen B</div>
+  <div class="screen-name">Asset Detail · USDc</div>
+
+  <div class="phone">
+    <div class="phone-canvas">
+
+      <div class="particles">
+        <svg viewBox="0 0 380 780" preserveAspectRatio="none">
+          <circle cx="42" cy="120" r="0.5" fill="var(--t-particle)" opacity="0.28"/>
+          <circle cx="320" cy="180" r="0.6" fill="var(--t-particle)" opacity="0.28"/>
+          <circle cx="80" cy="340" r="0.4" fill="var(--t-particle)" opacity="0.28"/>
+          <circle cx="290" cy="420" r="0.5" fill="var(--t-particle)" opacity="0.28"/>
+          <circle cx="60" cy="700" r="0.5" fill="var(--t-particle)" opacity="0.28"/>
+          <circle cx="200" cy="80" r="0.4" fill="var(--t-particle)" opacity="0.28"/>
+        </svg>
+      </div>
+
+      <div class="status-bar">
+        <span>9:41</span>
+        <div class="status-icons">
+          <svg viewBox="0 0 16 16" fill="none"><path d="M2 12h12M2 8h12M2 4h12" stroke="currentColor" stroke-width="1.4"/></svg>
+          <svg viewBox="0 0 16 16" fill="none"><path d="M2 8h12v4H2z" stroke="currentColor" stroke-width="1.4"/></svg>
+        </div>
+      </div>
+
+      <!-- Top Bar (back + asset title) -->
+      <div class="top-bar">
+        <div class="back-btn">
+          <svg viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg>
+        </div>
+        <div class="top-title">USD Credit</div>
+        <div class="top-icons">
+          <div class="top-icon-btn"><svg viewBox="0 0 16 16"><circle cx="8" cy="8" r="2"/><path d="M8 1v2M8 13v2M1 8h2M13 8h2M3.5 3.5l1.4 1.4M11.1 11.1l1.4 1.4M3.5 12.5l1.4-1.4M11.1 4.9l1.4-1.4"/></svg></div>
+        </div>
+      </div>
+
+      <div class="scroll-area">
+
+        <!-- Asset header chip -->
+        <div class="detail-balance-block">
+          <div class="detail-asset-meta">
+            <div class="detail-asset-icon-mini">$</div>
+            <div class="detail-asset-name">USDc · Credit · Monetary</div>
+          </div>
+          <div class="detail-balance-large">$120.50</div>
+          <div class="detail-equiv-row">
+            <div class="detail-equiv-val">≈ ₫2,946,225</div>
+            <div class="detail-equiv-label">VNDc</div>
+          </div>
+        </div>
+
+        <!-- 3 Quick actions -->
+        <div class="detail-actions">
+          <div class="detail-action">
+            <div class="detail-action-icon"><svg viewBox="0 0 16 16"><path d="M8 3v10M3 8h10"/></svg></div>
+            <div class="detail-action-label">Add</div>
+          </div>
+          <div class="detail-action">
+            <div class="detail-action-icon"><svg viewBox="0 0 16 16"><path d="M3 6h10M11 4l2 2-2 2M13 10H3M5 8l-2 2 2 2"/></svg></div>
+            <div class="detail-action-label">Convert</div>
+          </div>
+          <div class="detail-action">
+            <div class="detail-action-icon"><svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></div>
+            <div class="detail-action-label">Send</div>
+          </div>
+        </div>
+
+        <!-- Trust + provenance block -->
+        <div class="trust-block">
+          <div class="trust-icon-circle">
+            <svg viewBox="0 0 16 16"><path d="M3 8l3 3 7-7"/></svg>
+          </div>
+          <div class="trust-info">
+            <div class="trust-title">Verified · QOT trace open</div>
+            <div class="trust-sub">Source: ECB · Updated 2026-04-30 10:24</div>
+          </div>
+        </div>
+
+        <!-- Recent transactions (filtered to USDc) -->
+        <div class="section-head" style="padding-left: 4px;">
+          <div class="section-title">Recent USDc activity</div>
+          <div class="section-link">View all</div>
+        </div>
+        <div>
+          <div class="activity-row">
+            <div class="act-icon out"><svg viewBox="0 0 16 16"><path d="M8 3v10M4 9l4 4 4-4"/></svg></div>
+            <div class="act-info">
+              <div class="act-title">Retreat booking</div>
+              <div class="act-sub">Mai Châu wellness · 3 nights</div>
+            </div>
+            <div class="act-amt-col">
+              <div class="act-amt out">−$10.00</div>
+              <div class="act-time">Yesterday</div>
+            </div>
+          </div>
+          <div class="activity-row">
+            <div class="act-icon in"><svg viewBox="0 0 16 16"><path d="M8 13V3M4 7l4-4 4 4"/></svg></div>
+            <div class="act-info">
+              <div class="act-title">Bank deposit</div>
+              <div class="act-sub">VietcomBank · Ref TX78231</div>
+            </div>
+            <div class="act-amt-col">
+              <div class="act-amt in">+$50.00</div>
+              <div class="act-time">3d ago</div>
+            </div>
+          </div>
+          <div class="activity-row">
+            <div class="act-icon conv"><svg viewBox="0 0 16 16"><path d="M3 6h10M11 4l2 2-2 2M13 10H3M5 8l-2 2 2 2"/></svg></div>
+            <div class="act-info">
+              <div class="act-title">Convert to VNDc</div>
+              <div class="act-sub">Rate 1:24,500 · ECB live</div>
+            </div>
+            <div class="act-amt-col">
+              <div class="act-amt out">−$5.00</div>
+              <div class="act-time">1w ago</div>
+            </div>
+          </div>
+          <div class="activity-row">
+            <div class="act-icon in"><svg viewBox="0 0 16 16"><path d="M8 13V3M4 7l4-4 4 4"/></svg></div>
+            <div class="act-info">
+              <div class="act-title">Refund · Marketplace</div>
+              <div class="act-sub">Cancelled session #4421</div>
+            </div>
+            <div class="act-amt-col">
+              <div class="act-amt in">+$25.00</div>
+              <div class="act-time">2w ago</div>
+            </div>
+          </div>
+        </div>
+
+        <div style="height: 12px;"></div>
+
+      </div>
+
+      <div class="fab" title="New transaction">
+        <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
+      </div>
+
+      <div class="bottom-nav">
+        <div class="nav-item">
+          <svg viewBox="0 0 24 24"><path d="M3 12L12 4l9 8M5 11v8h14v-8"/></svg>
+          <div class="nav-item-label">Home</div>
+        </div>
+        <div class="nav-item">
+          <svg viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 01-1 4 8.5 8.5 0 01-7.5 4.5 8.4 8.4 0 01-4-1L3 21l2-5a8.4 8.4 0 01-1-4 8.5 8.5 0 014.5-7.5 8.4 8.4 0 014-1A8.5 8.5 0 0121 11.5z"/></svg>
+          <div class="nav-item-label">Chat</div>
+        </div>
+        <div class="nav-center">U+</div>
+        <div class="nav-item active">
+          <svg viewBox="0 0 24 24"><path d="M21 12V7H5a2 2 0 010-4h14v4M3 5v14a2 2 0 002 2h16v-5M21 12h-5a2 2 0 000 4h5z"/></svg>
+          <div class="nav-item-label">Wallet</div>
+        </div>
+        <div class="nav-item">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4" stroke-dasharray="2 2"/><circle cx="12" cy="12" r="1.5" fill="currentColor"/></svg>
+          <div class="nav-item-label">Enta</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="note-strip">NO price chart · NO 24h % · NO market cap · Trust source + QOT verified instead</div>
+</div>
+
+<!-- ============================================ -->
+<!-- SCREEN C — CONVERT FLOW                      -->
+<!-- ============================================ -->
+<div class="screen-wrap">
+  <div class="screen-label">Screen C</div>
+  <div class="screen-name">Convert · USDc → VNDc</div>
+
+  <div class="phone">
+    <div class="phone-canvas">
+
+      <div class="particles">
+        <svg viewBox="0 0 380 780" preserveAspectRatio="none">
+          <circle cx="42" cy="120" r="0.5" fill="var(--t-particle)" opacity="0.28"/>
+          <circle cx="320" cy="180" r="0.6" fill="var(--t-particle)" opacity="0.28"/>
+          <circle cx="80" cy="340" r="0.4" fill="var(--t-particle)" opacity="0.28"/>
+          <circle cx="290" cy="420" r="0.5" fill="var(--t-particle)" opacity="0.28"/>
+          <circle cx="60" cy="700" r="0.5" fill="var(--t-particle)" opacity="0.28"/>
+        </svg>
+      </div>
+
+      <div class="status-bar">
+        <span>9:41</span>
+        <div class="status-icons">
+          <svg viewBox="0 0 16 16" fill="none"><path d="M2 12h12M2 8h12M2 4h12" stroke="currentColor" stroke-width="1.4"/></svg>
+          <svg viewBox="0 0 16 16" fill="none"><path d="M2 8h12v4H2z" stroke="currentColor" stroke-width="1.4"/></svg>
+        </div>
+      </div>
+
+      <!-- Top Bar -->
+      <div class="top-bar">
+        <div class="back-btn">
+          <svg viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg>
+        </div>
+        <div class="top-title">Convert</div>
+        <div class="top-icons">
+          <div class="top-icon-btn"><svg viewBox="0 0 16 16"><circle cx="8" cy="8" r="2"/><path d="M8 1v2M8 13v2M1 8h2M13 8h2"/></svg></div>
+        </div>
+      </div>
+
+      <div class="scroll-area">
+
+        <!-- FROM card -->
+        <div class="convert-card">
+          <div class="convert-card-label">From</div>
+          <div class="convert-card-asset">
+            <div class="asset-icon usdc" style="width: 32px; height: 32px; font-size: 11px;">$</div>
+            <div>
+              <div class="asset-name">USD Credit</div>
+              <div class="asset-ticker">USDc · Credit</div>
+            </div>
+            <div class="chevron">
+              <svg viewBox="0 0 16 16"><path d="M5 4l4 4-4 4M9 4l4 4-4 4"/></svg>
+            </div>
+          </div>
+          <div class="convert-input-row">
+            <input class="convert-amount" value="10" />
+            <div class="convert-currency">USDc</div>
+          </div>
+          <div class="convert-available">
+            <span>Available: $120.50</span>
+            <div class="max-btn">MAX</div>
+          </div>
+        </div>
+
+        <!-- Swap divider -->
+        <div class="swap-divider">
+          <div class="swap-btn">
+            <svg viewBox="0 0 16 16"><path d="M5 3v8M2 8l3 3 3-3M11 13V5M14 8l-3-3-3 3"/></svg>
+          </div>
+        </div>
+
+        <!-- TO card -->
+        <div class="convert-card">
+          <div class="convert-card-label">To</div>
+          <div class="convert-card-asset">
+            <div class="asset-icon vndc" style="width: 32px; height: 32px; font-size: 11px;">₫</div>
+            <div>
+              <div class="asset-name">VND Credit</div>
+              <div class="asset-ticker">VNDc · Credit</div>
+            </div>
+            <div class="chevron">
+              <svg viewBox="0 0 16 16"><path d="M5 4l4 4-4 4M9 4l4 4-4 4"/></svg>
+            </div>
+          </div>
+          <div class="convert-input-row">
+            <div class="convert-amount" style="color: var(--text-secondary);">245,000</div>
+            <div class="convert-currency">VNDc</div>
+          </div>
+          <div class="convert-available">
+            <span>You will receive · ₫243,775 after fee</span>
+          </div>
+        </div>
+
+        <!-- Rate block -->
+        <div class="rate-block">
+          <div class="rate-row">
+            <div class="rate-label">Exchange rate</div>
+            <div class="rate-value">1 USDc = ₫24,500</div>
+          </div>
+          <div class="rate-source">
+            <span class="live-dot"></span>
+            <span>Source ECB · 2026-04-30 10:24 · live · QOT trace</span>
+          </div>
+        </div>
+
+        <!-- Fee summary -->
+        <div class="fee-summary">
+          <div class="fee-row">
+            <div class="fee-label">Conversion fee · 0.5%</div>
+            <div class="fee-value">₫1,225</div>
+          </div>
+          <div class="fee-row">
+            <div class="fee-label">Settlement</div>
+            <div class="fee-value">Instant</div>
+          </div>
+          <div class="fee-row total">
+            <div class="fee-label total">You receive</div>
+            <div class="fee-value total">₫243,775</div>
+          </div>
+        </div>
+
+        <!-- Confirm button -->
+        <button class="confirm-btn">CONFIRM CONVERT</button>
+
+        <div style="height: 16px;"></div>
+
+      </div>
+
+      <!-- NO bottom nav in flow overlay (per Foundation §3.1 exception for full-screen flows) -->
+      <div class="bottom-nav">
+        <div class="nav-item">
+          <svg viewBox="0 0 24 24"><path d="M3 12L12 4l9 8M5 11v8h14v-8"/></svg>
+          <div class="nav-item-label">Home</div>
+        </div>
+        <div class="nav-item">
+          <svg viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 01-1 4 8.5 8.5 0 01-7.5 4.5 8.4 8.4 0 01-4-1L3 21l2-5a8.4 8.4 0 01-1-4 8.5 8.5 0 014.5-7.5 8.4 8.4 0 014-1A8.5 8.5 0 0121 11.5z"/></svg>
+          <div class="nav-item-label">Chat</div>
+        </div>
+        <div class="nav-center">U+</div>
+        <div class="nav-item active">
+          <svg viewBox="0 0 24 24"><path d="M21 12V7H5a2 2 0 010-4h14v4M3 5v14a2 2 0 002 2h16v-5M21 12h-5a2 2 0 000 4h5z"/></svg>
+          <div class="nav-item-label">Wallet</div>
+        </div>
+        <div class="nav-item">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4" stroke-dasharray="2 2"/><circle cx="12" cy="12" r="1.5" fill="currentColor"/></svg>
+          <div class="nav-item-label">Enta</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="note-strip">Conversion · 1-way only · published rate · transparent fee · NO order book NO speculation</div>
+</div>
+
+<!-- ============================================ -->
+<!-- SCREEN D — SEND FLOW                         -->
+<!-- ============================================ -->
+<div class="screen-wrap">
+  <div class="screen-label">Screen D</div>
+  <div class="screen-name">Send · Preview step</div>
+
+  <div class="phone">
+    <div class="phone-canvas">
+
+      <div class="particles">
+        <svg viewBox="0 0 380 780" preserveAspectRatio="none">
+          <circle cx="42" cy="120" r="0.5" fill="var(--t-particle)" opacity="0.28"/>
+          <circle cx="320" cy="180" r="0.6" fill="var(--t-particle)" opacity="0.28"/>
+          <circle cx="80" cy="340" r="0.4" fill="var(--t-particle)" opacity="0.28"/>
+          <circle cx="290" cy="420" r="0.5" fill="var(--t-particle)" opacity="0.28"/>
+          <circle cx="60" cy="700" r="0.5" fill="var(--t-particle)" opacity="0.28"/>
+        </svg>
+      </div>
+
+      <div class="status-bar">
+        <span>9:41</span>
+        <div class="status-icons">
+          <svg viewBox="0 0 16 16" fill="none"><path d="M2 12h12M2 8h12M2 4h12" stroke="currentColor" stroke-width="1.4"/></svg>
+          <svg viewBox="0 0 16 16" fill="none"><path d="M2 8h12v4H2z" stroke="currentColor" stroke-width="1.4"/></svg>
+        </div>
+      </div>
+
+      <!-- Top Bar -->
+      <div class="top-bar">
+        <div class="back-btn">
+          <svg viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg>
+        </div>
+        <div class="top-title">Send</div>
+        <div class="top-icons">
+          <div class="top-icon-btn"><svg viewBox="0 0 16 16"><circle cx="8" cy="8" r="1.5"/><circle cx="3" cy="8" r="1.5"/><circle cx="13" cy="8" r="1.5"/></svg></div>
+        </div>
+      </div>
+
+      <div class="scroll-area">
+
+        <!-- Step pill -->
+        <div class="send-step-pill">
+          <span style="opacity:0.6">Step 4 of 4 ·</span>
+          <span>Preview</span>
+        </div>
+
+        <!-- Recipient + amount summary card -->
+        <div class="send-summary-card">
+          <div class="send-recipient-row">
+            <div class="recipient-avatar">M</div>
+            <div class="recipient-info">
+              <div class="recipient-name">Minh Hà</div>
+              <div class="recipient-handle">@minhha · <span class="connection-tag">Trusted</span></div>
+            </div>
+          </div>
+
+          <div class="send-amount-block">
+            <div class="send-amount-input-row">
+              <div class="send-amount">25.00</div>
+              <div class="send-amount-currency">USDc</div>
+            </div>
+            <div class="send-amount-equiv">≈ ₫612,500 VNDc</div>
+            <div class="send-asset-pill">
+              <div class="mini-icon">$</div>
+              <div class="pill-label">USD Credit</div>
+              <svg viewBox="0 0 16 16"><path d="M4 6l4 4 4-4"/></svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- Optional message + QOT context -->
+        <div class="optional-block">
+          <div class="optional-label">
+            <span>Message</span>
+            <span class="optional-tag">Optional · 200 chars max</span>
+          </div>
+          <textarea class="optional-input" rows="2">Cảm ơn em vì đã hỗ trợ session retreat tuần trước nhé.</textarea>
+
+          <div class="qot-toggle-row">
+            <div class="qot-toggle-icon"></div>
+            <div class="qot-toggle-info">
+              <div class="qot-toggle-title">Attach QOT context</div>
+              <div class="qot-toggle-sub">Provenance: Own · adds traceable lineage</div>
+            </div>
+            <div class="toggle-switch"></div>
+          </div>
+        </div>
+
+        <!-- Fee summary -->
+        <div class="fee-summary">
+          <div class="fee-row">
+            <div class="fee-label">Network fee</div>
+            <div class="fee-value">$0.00</div>
+          </div>
+          <div class="fee-row">
+            <div class="fee-label">Settlement</div>
+            <div class="fee-value">Instant</div>
+          </div>
+          <div class="fee-row total">
+            <div class="fee-label total">Total deducted</div>
+            <div class="fee-value total">$25.00</div>
+          </div>
+        </div>
+
+        <!-- Confirm -->
+        <button class="confirm-btn">CONFIRM SEND</button>
+
+        <div style="height: 16px;"></div>
+
+      </div>
+
+      <div class="bottom-nav">
+        <div class="nav-item">
+          <svg viewBox="0 0 24 24"><path d="M3 12L12 4l9 8M5 11v8h14v-8"/></svg>
+          <div class="nav-item-label">Home</div>
+        </div>
+        <div class="nav-item">
+          <svg viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 01-1 4 8.5 8.5 0 01-7.5 4.5 8.4 8.4 0 01-4-1L3 21l2-5a8.4 8.4 0 01-1-4 8.5 8.5 0 014.5-7.5 8.4 8.4 0 014-1A8.5 8.5 0 0121 11.5z"/></svg>
+          <div class="nav-item-label">Chat</div>
+        </div>
+        <div class="nav-center">U+</div>
+        <div class="nav-item active">
+          <svg viewBox="0 0 24 24"><path d="M21 12V7H5a2 2 0 010-4h14v4M3 5v14a2 2 0 002 2h16v-5M21 12h-5a2 2 0 000 4h5z"/></svg>
+          <div class="nav-item-label">Wallet</div>
+        </div>
+        <div class="nav-item">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4" stroke-dasharray="2 2"/><circle cx="12" cy="12" r="1.5" fill="currentColor"/></svg>
+          <div class="nav-item-label">Enta</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="note-strip">Recipient Trusted Connect · QOT context default ON · message optional · atomic confirm</div>
+</div>
+
+</div>
+
+<!-- ============================================ -->
+<!-- FOOTNOTE                                     -->
+<!-- ============================================ -->
+<div class="footer-note">
+  <div class="footer-title">Mockup #4 — Decisions surfaced for NTS review</div>
+  <div class="footer-grid">
+    <div>
+      <b>D1 · Total Value display</b><br>
+      USDc base + VNDc equivalent shown together. User-preferred currency selectable in Settings. NO daily change %, NO portfolio chart.
+    </div>
+    <div>
+      <b>D2 · Asset Detail</b><br>
+      Trust + provenance block replaces price chart. Verified state + ECB source + QOT trace. 3 quick actions: Add / Convert / Send. Recent activity filtered to that asset.
+    </div>
+    <div>
+      <b>D3 · Convert UI</b><br>
+      Two stacked cards (From / To) + swap button between. Live rate with pulse dot. Fee transparent in summary. Receive amount net of fee shown twice (preview + total).
+    </div>
+    <div>
+      <b>D4 · Send flow</b><br>
+      4-step lifecycle (Recipient → Amount → Message → Preview). Preview shown. Connection tier badge inline. QOT context attach default ON for Trusted+ recipients.
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

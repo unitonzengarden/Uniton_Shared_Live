@@ -1,0 +1,1587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>UZG+ V3 — Mockup #8 — TAO Mini App · Bazi · Tử Vi · Phong Thủy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:wght@400;500;600&family=Noto+Serif:wght@400;700&display=swap" rel="stylesheet" />
+<style>
+:root {
+  /* Theme — Hỏa */
+  --t-primary: #E24B4A;
+  --t-primary-light: #F19594;
+  --t-primary-dark: #A32D2D;
+  --t-tint: rgba(226, 75, 74, 0.07);
+  --t-glow-soft: rgba(226, 75, 74, 0.25);
+  --t-glow-strong: rgba(226, 75, 74, 0.32);
+  --t-particle: #E24B4A;
+  --t-bg-radial-1: rgba(226, 75, 74, 0.10);
+  --t-bg-radial-2: rgba(186, 117, 23, 0.06);
+
+  --uniton-quantum: #4A6FFF;
+  --uniton-bg: #090D1A;
+  --uzg-blue: #3B5BAA;
+  --uzg-blue-light: #5B7FD4;
+  --uzg-blue-dark: #243870;
+  --aier-purple: #7535CC;
+  --aier-purple-light: #A079DD;
+  --aier-purple-dark: #4D1E8A;
+
+  --bg-canvas: #FBFCFE;
+  --bg-card: #FFFFFF;
+  --text-primary: #1A1F2E;
+  --text-secondary: #5F5E5A;
+  --text-tertiary: #9099B0;
+  --divider: rgba(160, 175, 200, 0.22);
+  --divider-strong: rgba(160, 175, 200, 0.45);
+
+  /* Ngũ Hành */
+  --hoa: #E24B4A;
+  --hoa-dark: #A32D2D;
+  --tho: #BA7517;
+  --tho-dark: #854F0B;
+  --kim: #A9ADB5;
+  --kim-dark: #6E7178;
+  --thuy: #185FA5;
+  --thuy-dark: #0C447C;
+  --moc: #1D9E75;
+  --moc-dark: #0F6E56;
+
+  --aifi-gold: #C4933A;
+  --aifi-gold-light: #E8C77B;
+  --aifi-gold-dark: #8A6520;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; -webkit-font-smoothing: antialiased; }
+html, body { background: var(--uniton-bg); font-family: 'DM Sans', system-ui, sans-serif; color: var(--text-primary); min-height: 100vh; }
+
+body {
+  background:
+    radial-gradient(ellipse at 12% 8%, var(--t-bg-radial-1) 0%, transparent 38%),
+    radial-gradient(ellipse at 88% 92%, var(--t-bg-radial-2) 0%, transparent 42%),
+    var(--uniton-bg);
+  padding: 32px 16px 64px;
+}
+
+.theme-banner {
+  max-width: 1280px; margin: 0 auto 16px; padding: 10px 16px;
+  background: linear-gradient(90deg, rgba(226,75,74,0.12), rgba(186,117,23,0.08));
+  border: 0.5px solid rgba(226,75,74,0.30); border-radius: 12px;
+  display: flex; align-items: center; gap: 12px;
+  font-family: 'DM Sans', sans-serif; font-size: 12px; color: rgba(255,255,255,0.85);
+}
+.theme-banner-orb {
+  width: 22px; height: 22px; border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #F19594, #A32D2D);
+  box-shadow: 0 0 12px rgba(241,149,148,0.55);
+  flex-shrink: 0;
+}
+.theme-banner b { color: #F19594; font-family: 'Syne', sans-serif; font-weight: 700; letter-spacing: 0.04em; }
+.theme-banner-meta {
+  margin-left: auto; font-family: 'Syne', sans-serif; font-weight: 700;
+  font-size: 10px; letter-spacing: 0.1em; color: rgba(255,255,255,0.55);
+  padding: 3px 9px; background: rgba(255,255,255,0.06); border-radius: 6px;
+}
+
+.page-header { max-width: 1280px; margin: 0 auto 28px; padding: 0 4px; }
+.page-eyebrow {
+  font-family: 'Syne', sans-serif; font-weight: 700; font-size: 11px;
+  letter-spacing: 0.18em; color: var(--uzg-blue-light); text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.page-title { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 24px; color: #FFFFFF; letter-spacing: -0.01em; }
+.page-sub { font-size: 13px; color: rgba(255,255,255,0.55); margin-top: 6px; max-width: 760px; line-height: 1.5; }
+
+/* Redlines strip */
+.redlines-strip {
+  max-width: 1280px; margin: 16px auto 0; padding: 12px 18px;
+  background: rgba(255,255,255,0.04); border: 0.5px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+  display: flex; align-items: center; gap: 14px; flex-wrap: wrap;
+  font-family: 'DM Sans', sans-serif; font-size: 11.5px; color: rgba(255,255,255,0.7);
+}
+.redlines-label {
+  font-family: 'Syne', sans-serif; font-weight: 700; font-size: 10px;
+  letter-spacing: 0.14em; color: var(--uzg-blue-light); text-transform: uppercase;
+}
+.redline-item {
+  display: inline-flex; align-items: center; gap: 5px;
+  padding: 3px 10px; border-radius: 14px;
+  background: rgba(226,75,74,0.10); border: 0.5px solid rgba(226,75,74,0.30);
+  color: rgba(255,255,255,0.85);
+}
+.redline-item::before { content: '✕'; color: var(--t-primary-light); font-weight: 700; font-size: 10px; }
+
+/* Screens grid */
+.screens-row {
+  max-width: 1640px; margin: 28px auto 0;
+  display: grid; grid-template-columns: repeat(4, 380px); gap: 28px;
+  justify-content: center;
+}
+@media (max-width: 1700px) { .screens-row { grid-template-columns: repeat(2, 380px); } }
+@media (max-width: 820px)  { .screens-row { grid-template-columns: 380px; } }
+
+.screen-wrap { display: flex; flex-direction: column; align-items: center; }
+.screen-label {
+  font-family: 'Syne', sans-serif; font-weight: 700; font-size: 11px;
+  letter-spacing: 0.16em; color: var(--t-primary-light); text-transform: uppercase;
+  margin-bottom: 4px;
+}
+.screen-name { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 14px; color: #FFFFFF; margin-bottom: 14px; }
+
+.phone {
+  width: 380px; height: 780px;
+  border-radius: 36px; position: relative; overflow: hidden;
+  background: linear-gradient(180deg, #FFFFFF 0%, #F5F8FE 100%);
+  box-shadow: 0 16px 60px rgba(0,0,0,0.45), 0 0 0 1px rgba(255,255,255,0.05);
+}
+.phone-canvas { position: absolute; inset: 0; overflow: hidden; }
+
+/* Status bar */
+.status-bar {
+  position: absolute; top: 0; left: 0; right: 0; height: 32px;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 8px 22px 0; font-size: 11px; font-weight: 600; color: var(--text-primary); z-index: 50;
+}
+.status-icons svg { width: 13px; height: 13px; }
+
+/* Mini app top bar */
+.miniapp-topbar {
+  position: absolute; top: 32px; left: 0; right: 0; height: 56px;
+  display: flex; align-items: center; gap: 11px; padding: 12px 14px; z-index: 40;
+  border-bottom: 0.5px solid var(--divider);
+  background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(14px);
+}
+.miniapp-close {
+  width: 32px; height: 32px; border-radius: 50%;
+  background: rgba(160,175,200,0.12);
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; flex-shrink: 0;
+}
+.miniapp-close svg { width: 14px; height: 14px; stroke: var(--text-primary); fill: none; stroke-width: 2; }
+.miniapp-title-block { flex: 1; min-width: 0; }
+.miniapp-name {
+  font-family: 'Syne', sans-serif; font-weight: 800; font-size: 15px;
+  color: var(--text-primary); letter-spacing: -0.005em;
+  display: flex; align-items: center; gap: 6px;
+}
+.miniapp-tag {
+  font-family: 'DM Sans', sans-serif; font-weight: 400; font-size: 10.5px;
+  color: var(--text-tertiary); margin-top: 1px;
+}
+.miniapp-action {
+  width: 32px; height: 32px; border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; flex-shrink: 0;
+}
+.miniapp-action svg { width: 15px; height: 15px; stroke: var(--text-tertiary); fill: none; stroke-width: 1.6; }
+
+.governed-badge {
+  display: inline-flex; align-items: center; gap: 3px;
+  padding: 2px 7px; border-radius: 5px;
+  background: rgba(74, 111, 255, 0.10);
+  font-family: 'Syne', sans-serif; font-weight: 700; font-size: 8.5px;
+  color: var(--uzg-blue-dark); letter-spacing: 0.08em;
+}
+
+/* U pill (TAO does NOT hide pill) */
+.u-pill-mini {
+  display: inline-flex; align-items: center; gap: 4px;
+  padding: 3px 8px; border-radius: 10px;
+  background: var(--t-tint); border: 0.5px solid var(--t-primary-light);
+  font-family: 'Syne', sans-serif; font-weight: 800; font-size: 10px;
+  color: var(--t-primary-dark);
+  position: absolute; top: 44px; right: 14px; z-index: 41;
+}
+
+/* Cultural framing strip — MANDATORY header per canon */
+.cultural-framing {
+  position: absolute; top: 88px; left: 0; right: 0; padding: 12px 16px;
+  background: linear-gradient(180deg, rgba(186,117,23,0.06), rgba(74,111,255,0.04));
+  border-bottom: 0.5px solid var(--divider);
+  font-family: 'DM Sans', sans-serif; font-style: italic; font-size: 11px;
+  color: var(--text-secondary); line-height: 1.45;
+  z-index: 30;
+}
+.cultural-framing strong {
+  font-family: 'Syne', sans-serif; font-weight: 700; font-style: normal;
+  color: var(--uzg-blue-dark); letter-spacing: 0.04em;
+}
+
+/* Tab strip */
+.tao-tabs {
+  position: absolute; top: 162px; left: 0; right: 0;
+  display: flex; padding: 8px 14px; gap: 4px;
+  background: var(--bg-canvas); z-index: 30;
+  border-bottom: 0.5px solid var(--divider);
+}
+.tao-tab {
+  flex: 1; padding: 10px 0; text-align: center; cursor: pointer;
+  font-family: 'Syne', sans-serif; font-weight: 700; font-size: 11px;
+  letter-spacing: 0.06em; color: var(--text-tertiary);
+  border-radius: 10px;
+  display: flex; flex-direction: column; align-items: center; gap: 2px;
+  transition: all 180ms;
+}
+.tao-tab.active {
+  background: linear-gradient(135deg, rgba(74,111,255,0.06), rgba(117,53,204,0.06));
+  border: 0.5px solid rgba(74,111,255,0.20);
+  color: var(--uzg-blue-dark);
+}
+.tao-tab .tab-glyph {
+  font-family: 'Noto Serif', serif; font-weight: 700; font-size: 13px;
+  color: var(--text-tertiary);
+}
+.tao-tab.active .tab-glyph { color: var(--uzg-blue-dark); }
+
+/* Main scroll */
+.main-area {
+  position: absolute; top: 215px; bottom: 0; left: 0; right: 0;
+  overflow-y: auto;
+  padding: 14px 16px 24px;
+  background: var(--bg-canvas);
+}
+.main-area::-webkit-scrollbar { width: 0; }
+
+/* ========================================== */
+/* SCREEN A — TAO OVERVIEW                    */
+/* ========================================== */
+
+.day-master-card {
+  background: linear-gradient(135deg, rgba(29,158,117,0.10), rgba(15,110,86,0.05));
+  border: 0.5px solid var(--moc);
+  border-radius: 16px; padding: 14px 16px; margin-bottom: 14px;
+  position: relative; overflow: hidden;
+}
+.day-master-card::before {
+  content: ''; position: absolute; top: -30px; right: -30px;
+  width: 120px; height: 120px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(111,203,169,0.20) 0%, transparent 70%);
+}
+.dm-eyebrow {
+  font-family: 'Syne', sans-serif; font-weight: 700; font-size: 10px;
+  letter-spacing: 0.14em; color: var(--moc-dark); text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.dm-row {
+  display: flex; align-items: center; gap: 12px; margin-bottom: 10px;
+  position: relative; z-index: 2;
+}
+.dm-glyph {
+  width: 50px; height: 50px; border-radius: 14px; flex-shrink: 0;
+  background: linear-gradient(135deg, #6FCBA9, var(--moc-dark));
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Noto Serif', serif; font-weight: 700; font-size: 26px;
+  color: #FFFFFF;
+  box-shadow: 0 4px 14px rgba(29,158,117,0.30);
+}
+.dm-info { flex: 1; min-width: 0; }
+.dm-title {
+  font-family: 'Syne', sans-serif; font-weight: 800; font-size: 15px;
+  color: var(--text-primary); letter-spacing: -0.01em;
+}
+.dm-detail {
+  font-family: 'DM Sans', sans-serif; font-size: 11.5px; color: var(--text-secondary);
+  margin-top: 2px; line-height: 1.4;
+}
+.dm-detail b { color: var(--moc-dark); font-weight: 700; }
+
+.dm-element-bars {
+  display: flex; gap: 5px; margin-top: 10px;
+  position: relative; z-index: 2;
+}
+.dm-bar {
+  flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px;
+}
+.dm-bar-track {
+  width: 100%; height: 4px; background: rgba(160,175,200,0.20);
+  border-radius: 2px; overflow: hidden;
+}
+.dm-bar-fill { height: 100%; border-radius: 2px; }
+.dm-bar.hoa  .dm-bar-fill { background: var(--hoa); }
+.dm-bar.tho  .dm-bar-fill { background: var(--tho); }
+.dm-bar.kim  .dm-bar-fill { background: var(--kim); }
+.dm-bar.thuy .dm-bar-fill { background: var(--thuy); }
+.dm-bar.moc  .dm-bar-fill { background: var(--moc); }
+.dm-bar-label {
+  font-family: 'Syne', sans-serif; font-weight: 700; font-size: 9px;
+  letter-spacing: 0.04em;
+}
+.dm-bar.hoa  .dm-bar-label { color: var(--hoa-dark); }
+.dm-bar.tho  .dm-bar-label { color: var(--tho-dark); }
+.dm-bar.kim  .dm-bar-label { color: var(--kim-dark); }
+.dm-bar.thuy .dm-bar-label { color: var(--thuy-dark); }
+.dm-bar.moc  .dm-bar-label { color: var(--moc-dark); }
+.dm-bar-pct {
+  font-family: 'DM Sans', sans-serif; font-size: 9px; color: var(--text-tertiary);
+}
+
+/* Bazi mini chart preview */
+.bazi-preview-card {
+  background: #FFFFFF; border: 0.5px solid var(--divider);
+  border-radius: 14px; padding: 14px; margin-bottom: 14px;
+}
+.bazi-preview-head {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 10px;
+}
+.bazi-preview-title {
+  font-family: 'Syne', sans-serif; font-weight: 800; font-size: 13px;
+  color: var(--text-primary); letter-spacing: -0.005em;
+}
+.bazi-preview-cta {
+  font-family: 'Syne', sans-serif; font-weight: 700; font-size: 10.5px;
+  color: var(--t-primary-dark); letter-spacing: 0.06em;
+  display: inline-flex; align-items: center; gap: 4px;
+}
+.bazi-preview-cta svg { width: 11px; height: 11px; stroke: var(--t-primary-dark); fill: none; stroke-width: 1.8; }
+
+.bazi-pillars-mini {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px;
+}
+.bazi-pillar-mini {
+  background: rgba(160,175,200,0.06);
+  border: 0.5px solid var(--divider);
+  border-radius: 10px; padding: 8px 4px;
+  text-align: center;
+}
+.bazi-pillar-mini.day {
+  background: linear-gradient(180deg, rgba(29,158,117,0.10), rgba(29,158,117,0.04));
+  border-color: var(--moc);
+  border-width: 1.5px;
+}
+.bp-label {
+  font-family: 'DM Sans', sans-serif; font-size: 9px; color: var(--text-tertiary);
+  text-transform: uppercase; letter-spacing: 0.06em;
+  margin-bottom: 4px;
+}
+.bp-can {
+  font-family: 'Noto Serif', serif; font-weight: 700; font-size: 17px;
+  color: var(--text-primary); line-height: 1;
+}
+.bp-can.moc  { color: var(--moc-dark); }
+.bp-can.thuy { color: var(--thuy-dark); }
+.bp-can.kim  { color: var(--kim-dark); }
+.bp-can.hoa  { color: var(--hoa-dark); }
+.bp-can.tho  { color: var(--tho-dark); }
+.bp-chi {
+  font-family: 'Noto Serif', serif; font-weight: 400; font-size: 13px;
+  color: var(--text-secondary); margin-top: 4px;
+}
+.bp-yin-yang {
+  display: inline-block; padding: 1px 5px; margin-top: 4px;
+  background: rgba(160,175,200,0.20);
+  font-family: 'DM Sans', sans-serif; font-size: 8px; color: var(--text-tertiary);
+  border-radius: 3px; letter-spacing: 0.04em;
+}
+.bp-yin-yang.dương { background: rgba(226,75,74,0.10); color: var(--hoa-dark); }
+.bp-yin-yang.âm    { background: rgba(24,95,165,0.10); color: var(--thuy-dark); }
+
+/* Lịch Vạn Niên card */
+.vannien-card {
+  background: linear-gradient(180deg, rgba(74,111,255,0.05), rgba(117,53,204,0.04));
+  border: 0.5px solid rgba(74,111,255,0.20);
+  border-radius: 14px; padding: 12px 14px; margin-bottom: 14px;
+}
+.vannien-head {
+  display: flex; align-items: center; gap: 10px; margin-bottom: 8px;
+}
+.vannien-icon {
+  width: 32px; height: 32px; border-radius: 10px; flex-shrink: 0;
+  background: linear-gradient(135deg, var(--uzg-blue-light), var(--uzg-blue-dark));
+  display: flex; align-items: center; justify-content: center;
+}
+.vannien-icon svg { width: 16px; height: 16px; stroke: #FFFFFF; fill: none; stroke-width: 1.7; }
+.vannien-title {
+  font-family: 'Syne', sans-serif; font-weight: 800; font-size: 13px;
+  color: var(--text-primary); letter-spacing: -0.005em;
+}
+.vannien-sub {
+  font-family: 'DM Sans', sans-serif; font-size: 11px; color: var(--text-secondary);
+  margin-top: 1px;
+}
+.vannien-row {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 5px 0;
+  border-top: 0.5px solid rgba(74,111,255,0.10);
+  font-family: 'DM Sans', sans-serif; font-size: 11.5px;
+}
+.vannien-key { color: var(--text-secondary); }
+.vannien-val { color: var(--text-primary); font-weight: 600; font-family: 'Syne', sans-serif; font-size: 11px; letter-spacing: 0.02em; }
+.vannien-val.moc { color: var(--moc-dark); }
+
+/* Quick actions */
+.quick-actions-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px;
+  margin-bottom: 4px;
+}
+.quick-action {
+  background: #FFFFFF; border: 0.5px solid var(--divider);
+  border-radius: 12px; padding: 10px 8px; cursor: pointer;
+  display: flex; flex-direction: column; align-items: center; gap: 6px;
+}
+.quick-action-icon {
+  width: 36px; height: 36px; border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+}
+.quick-action-icon svg { width: 18px; height: 18px; stroke: #FFFFFF; fill: none; stroke-width: 1.7; }
+.quick-action-icon.aier      { background: linear-gradient(135deg, var(--aier-purple-light), var(--aier-purple-dark)); }
+.quick-action-icon.calendar  { background: linear-gradient(135deg, var(--uzg-blue-light), var(--uzg-blue-dark)); }
+.quick-action-icon.compat    { background: linear-gradient(135deg, var(--t-primary-light), var(--t-primary-dark)); }
+
+.quick-action-label {
+  font-family: 'DM Sans', sans-serif; font-weight: 600; font-size: 11px;
+  color: var(--text-primary); text-align: center; line-height: 1.2;
+}
+.quick-action-sub {
+  font-family: 'DM Sans', sans-serif; font-size: 9.5px; color: var(--text-tertiary);
+  text-align: center;
+}
+
+/* ========================================== */
+/* SCREEN B — BAZI 4 PILLARS CHART            */
+/* ========================================== */
+
+.chart-header-card {
+  background: linear-gradient(135deg, rgba(29,158,117,0.08), rgba(74,111,255,0.04));
+  border: 0.5px solid var(--moc);
+  border-radius: 14px; padding: 12px 14px; margin-bottom: 14px;
+}
+.chart-header-row {
+  display: flex; align-items: center; gap: 10px;
+}
+.chart-header-glyph {
+  width: 38px; height: 38px; border-radius: 10px; flex-shrink: 0;
+  background: linear-gradient(135deg, #6FCBA9, var(--moc-dark));
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Noto Serif', serif; font-weight: 700; font-size: 19px;
+  color: #FFFFFF;
+}
+.chart-header-info { flex: 1; min-width: 0; }
+.chart-header-title {
+  font-family: 'Syne', sans-serif; font-weight: 800; font-size: 13px;
+  color: var(--text-primary); letter-spacing: -0.005em;
+}
+.chart-header-sub {
+  font-family: 'DM Sans', sans-serif; font-size: 11px; color: var(--text-secondary);
+  margin-top: 2px;
+}
+.tier-badge {
+  font-family: 'Syne', sans-serif; font-weight: 700; font-size: 9px;
+  letter-spacing: 0.1em; padding: 3px 7px; border-radius: 5px;
+  background: rgba(196,147,58,0.15); color: var(--aifi-gold-dark);
+  flex-shrink: 0;
+}
+
+/* 4 Pillars full chart */
+.pillars-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px;
+  margin-bottom: 14px;
+}
+.pillar {
+  background: #FFFFFF; border: 0.5px solid var(--divider);
+  border-radius: 12px; padding: 10px 6px;
+  text-align: center;
+}
+.pillar.day {
+  background: linear-gradient(180deg, rgba(29,158,117,0.10), rgba(29,158,117,0.04));
+  border-color: var(--moc); border-width: 1.5px;
+  position: relative;
+}
+.pillar.day::after {
+  content: 'Day Master';
+  position: absolute; top: -7px; left: 50%; transform: translateX(-50%);
+  background: var(--moc); color: #FFFFFF;
+  font-family: 'Syne', sans-serif; font-weight: 700; font-size: 8px;
+  padding: 2px 7px; border-radius: 5px; letter-spacing: 0.08em;
+  white-space: nowrap;
+}
+.pillar-label {
+  font-family: 'DM Sans', sans-serif; font-size: 9.5px; color: var(--text-tertiary);
+  text-transform: uppercase; letter-spacing: 0.08em;
+  margin-bottom: 6px;
+}
+.pillar-can {
+  font-family: 'Noto Serif', serif; font-weight: 700; font-size: 22px;
+  line-height: 1; margin-bottom: 4px;
+}
+.pillar-can.moc  { color: var(--moc-dark); }
+.pillar-can.thuy { color: var(--thuy-dark); }
+.pillar-can.kim  { color: var(--kim-dark); }
+.pillar-can.hoa  { color: var(--hoa-dark); }
+.pillar-can.tho  { color: var(--tho-dark); }
+.pillar-can-py {
+  font-family: 'DM Sans', sans-serif; font-size: 9px; color: var(--text-tertiary);
+  margin-bottom: 8px;
+}
+.pillar-divider {
+  width: 30%; height: 0.5px; background: var(--divider-strong);
+  margin: 6px auto 8px;
+}
+.pillar-chi {
+  font-family: 'Noto Serif', serif; font-weight: 600; font-size: 17px;
+  color: var(--text-primary); margin-bottom: 2px;
+}
+.pillar-chi-py {
+  font-family: 'DM Sans', sans-serif; font-size: 9px; color: var(--text-tertiary);
+  margin-bottom: 6px;
+}
+.pillar-element {
+  display: inline-block; padding: 1px 6px; border-radius: 4px;
+  font-family: 'Syne', sans-serif; font-weight: 700; font-size: 8.5px;
+  letter-spacing: 0.04em;
+}
+.pillar-element.moc  { background: rgba(29,158,117,0.10); color: var(--moc-dark); }
+.pillar-element.thuy { background: rgba(24,95,165,0.10); color: var(--thuy-dark); }
+.pillar-element.kim  { background: rgba(110,113,120,0.10); color: var(--kim-dark); }
+.pillar-element.hoa  { background: rgba(226,75,74,0.10); color: var(--hoa-dark); }
+.pillar-element.tho  { background: rgba(186,117,23,0.10); color: var(--tho-dark); }
+
+/* Hidden stems row */
+.hidden-stems-card {
+  background: rgba(160,175,200,0.06);
+  border: 0.5px solid var(--divider);
+  border-radius: 12px; padding: 12px 14px; margin-bottom: 14px;
+}
+.hidden-stems-label {
+  font-family: 'Syne', sans-serif; font-weight: 700; font-size: 10px;
+  color: var(--text-secondary); letter-spacing: 0.10em; text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.hidden-stems-row {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px;
+}
+.hidden-stems-cell {
+  text-align: center; padding: 4px 2px;
+}
+.hidden-stems-cell-label {
+  font-family: 'DM Sans', sans-serif; font-size: 9px; color: var(--text-tertiary);
+  margin-bottom: 3px;
+}
+.hidden-stems-cell-vals {
+  font-family: 'Noto Serif', serif; font-size: 11px; color: var(--text-primary);
+  display: flex; justify-content: center; gap: 4px;
+}
+
+/* Element distribution */
+.element-dist-card {
+  background: #FFFFFF; border: 0.5px solid var(--divider);
+  border-radius: 12px; padding: 12px 14px; margin-bottom: 14px;
+}
+.element-dist-head {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-bottom: 10px;
+}
+.element-dist-title {
+  font-family: 'Syne', sans-serif; font-weight: 700; font-size: 12px;
+  color: var(--text-primary); letter-spacing: 0.04em;
+}
+.element-dist-balance {
+  font-family: 'DM Sans', sans-serif; font-size: 10.5px; color: var(--moc-dark);
+  font-weight: 600;
+}
+.element-dist-bars {
+  display: flex; flex-direction: column; gap: 6px;
+}
+.edist-row {
+  display: flex; align-items: center; gap: 8px;
+  font-family: 'DM Sans', sans-serif; font-size: 11px;
+}
+.edist-label {
+  width: 36px; font-family: 'Syne', sans-serif; font-weight: 700; font-size: 10px;
+  letter-spacing: 0.04em;
+}
+.edist-track {
+  flex: 1; height: 6px; background: rgba(160,175,200,0.18);
+  border-radius: 3px; overflow: hidden;
+}
+.edist-fill { height: 100%; border-radius: 3px; }
+.edist-pct {
+  width: 36px; text-align: right; color: var(--text-secondary); font-weight: 600;
+}
+
+/* Useful god + advisor block (locked) */
+.locked-feature {
+  background: linear-gradient(180deg, rgba(196,147,58,0.06), rgba(196,147,58,0.02));
+  border: 0.5px dashed rgba(196,147,58,0.40);
+  border-radius: 12px; padding: 12px 14px;
+  display: flex; align-items: center; gap: 10px; cursor: pointer;
+}
+.locked-icon {
+  width: 32px; height: 32px; border-radius: 50%;
+  background: var(--aifi-gold-dark);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.locked-icon svg { width: 13px; height: 13px; stroke: #FFFFFF; fill: none; stroke-width: 2.2; }
+.locked-info { flex: 1; min-width: 0; }
+.locked-title {
+  font-family: 'Syne', sans-serif; font-weight: 700; font-size: 12px;
+  color: var(--text-primary); letter-spacing: -0.005em;
+}
+.locked-sub {
+  font-family: 'DM Sans', sans-serif; font-size: 10.5px; color: var(--text-secondary);
+  margin-top: 2px; line-height: 1.35;
+}
+.locked-cta {
+  font-family: 'Syne', sans-serif; font-weight: 700; font-size: 9.5px;
+  color: var(--aifi-gold-dark); letter-spacing: 0.08em;
+}
+
+/* ========================================== */
+/* SCREEN C — TỬ VI 12-PALACE                */
+/* ========================================== */
+
+.tuvi-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px;
+  background: var(--bg-canvas);
+  margin-bottom: 14px;
+}
+.cung {
+  aspect-ratio: 1 / 1.05;
+  background: #FFFFFF; border: 0.5px solid var(--divider);
+  border-radius: 8px; padding: 6px 4px 4px;
+  display: flex; flex-direction: column;
+  position: relative;
+  font-size: 8px;
+}
+.cung.menh {
+  background: linear-gradient(180deg, rgba(29,158,117,0.12), rgba(29,158,117,0.04));
+  border: 1.5px solid var(--moc);
+}
+.cung.than {
+  background: linear-gradient(180deg, rgba(74,111,255,0.10), rgba(74,111,255,0.03));
+  border: 1px solid var(--uzg-blue);
+}
+.cung.center {
+  background: linear-gradient(135deg, rgba(74,111,255,0.06), rgba(117,53,204,0.04));
+  display: flex; align-items: center; justify-content: center;
+  text-align: center; padding: 6px;
+}
+
+.cung-name {
+  font-family: 'Noto Serif', serif; font-weight: 700; font-size: 10px;
+  color: var(--text-primary); line-height: 1.1;
+  text-align: center; margin-bottom: 2px;
+}
+.cung.menh .cung-name { color: var(--moc-dark); }
+.cung.than .cung-name { color: var(--uzg-blue-dark); }
+.cung-position {
+  font-family: 'DM Sans', sans-serif; font-size: 7.5px; color: var(--text-tertiary);
+  text-align: center; margin-bottom: 3px;
+  letter-spacing: 0.04em;
+}
+.cung-stars {
+  flex: 1; display: flex; flex-direction: column; gap: 1px;
+  font-family: 'Noto Serif', serif; font-size: 9px;
+  color: var(--text-secondary); line-height: 1.2;
+  overflow: hidden;
+}
+.star.major { font-weight: 700; color: var(--text-primary); }
+.star.major.moc  { color: var(--moc-dark); }
+.star.major.thuy { color: var(--thuy-dark); }
+.star.major.kim  { color: var(--kim-dark); }
+.star.major.hoa  { color: var(--hoa-dark); }
+.star.major.tho  { color: var(--tho-dark); }
+
+.cung-tag {
+  position: absolute; top: 3px; right: 3px;
+  font-family: 'Syne', sans-serif; font-weight: 700; font-size: 6.5px;
+  padding: 1px 4px; border-radius: 3px; letter-spacing: 0.04em;
+  background: var(--moc); color: #FFFFFF;
+}
+.cung.than .cung-tag { background: var(--uzg-blue); }
+
+.center-block-title {
+  font-family: 'Syne', sans-serif; font-weight: 800; font-size: 11px;
+  color: var(--uzg-blue-dark); letter-spacing: 0.04em;
+  margin-bottom: 4px;
+}
+.center-block-sub {
+  font-family: 'DM Sans', sans-serif; font-size: 8.5px; color: var(--text-secondary);
+  line-height: 1.3;
+}
+.center-block-meta {
+  font-family: 'DM Sans', sans-serif; font-size: 8px; color: var(--text-tertiary);
+  margin-top: 4px;
+}
+
+/* ========================================== */
+/* SCREEN D — PHONG THỦY CỬU CUNG             */
+/* ========================================== */
+
+.cuucung-card {
+  background: #FFFFFF; border: 0.5px solid var(--divider);
+  border-radius: 14px; padding: 12px;
+  margin-bottom: 14px;
+}
+.cuucung-head {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-bottom: 10px; padding: 0 4px;
+}
+.cuucung-title {
+  font-family: 'Syne', sans-serif; font-weight: 800; font-size: 13px;
+  color: var(--text-primary);
+}
+.cuucung-sub {
+  font-family: 'DM Sans', sans-serif; font-size: 10.5px; color: var(--text-secondary);
+}
+
+.cuucung-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px;
+  aspect-ratio: 1;
+}
+.cuu-cell {
+  background: rgba(160,175,200,0.04);
+  border: 0.5px solid var(--divider);
+  border-radius: 8px; padding: 6px 4px;
+  position: relative;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  text-align: center;
+  aspect-ratio: 1;
+}
+.cuu-direction {
+  font-family: 'Syne', sans-serif; font-weight: 700; font-size: 8.5px;
+  color: var(--text-tertiary); letter-spacing: 0.10em; text-transform: uppercase;
+  margin-bottom: 2px;
+}
+.cuu-num {
+  font-family: 'Noto Serif', serif; font-weight: 700; font-size: 22px;
+  line-height: 1;
+}
+.cuu-name {
+  font-family: 'DM Sans', sans-serif; font-weight: 600; font-size: 9px;
+  color: var(--text-secondary); margin-top: 3px;
+}
+
+/* Element-tinted cells */
+.cuu-cell[data-tinh="1"] { background: linear-gradient(180deg, rgba(24,95,165,0.10), rgba(24,95,165,0.04)); border-color: var(--thuy); }
+.cuu-cell[data-tinh="1"] .cuu-num { color: var(--thuy-dark); }
+.cuu-cell[data-tinh="2"], .cuu-cell[data-tinh="5"], .cuu-cell[data-tinh="8"] { background: linear-gradient(180deg, rgba(186,117,23,0.10), rgba(186,117,23,0.04)); border-color: var(--tho); }
+.cuu-cell[data-tinh="2"] .cuu-num, .cuu-cell[data-tinh="5"] .cuu-num, .cuu-cell[data-tinh="8"] .cuu-num { color: var(--tho-dark); }
+.cuu-cell[data-tinh="3"], .cuu-cell[data-tinh="4"] { background: linear-gradient(180deg, rgba(29,158,117,0.10), rgba(29,158,117,0.04)); border-color: var(--moc); }
+.cuu-cell[data-tinh="3"] .cuu-num, .cuu-cell[data-tinh="4"] .cuu-num { color: var(--moc-dark); }
+.cuu-cell[data-tinh="6"], .cuu-cell[data-tinh="7"] { background: linear-gradient(180deg, rgba(110,113,120,0.10), rgba(110,113,120,0.04)); border-color: var(--kim); }
+.cuu-cell[data-tinh="6"] .cuu-num, .cuu-cell[data-tinh="7"] .cuu-num { color: var(--kim-dark); }
+.cuu-cell[data-tinh="9"] { background: linear-gradient(180deg, rgba(226,75,74,0.10), rgba(226,75,74,0.04)); border-color: var(--hoa); }
+.cuu-cell[data-tinh="9"] .cuu-num { color: var(--hoa-dark); }
+
+.cuu-center-cell {
+  background: linear-gradient(135deg, rgba(74,111,255,0.06), rgba(117,53,204,0.04));
+  border: 1.5px solid rgba(74,111,255,0.30);
+}
+
+/* Bát Trạch user info */
+.battrach-card {
+  background: linear-gradient(180deg, rgba(186,117,23,0.06), rgba(186,117,23,0.02));
+  border: 0.5px solid rgba(186,117,23,0.30);
+  border-radius: 12px; padding: 12px 14px;
+  margin-bottom: 14px;
+}
+.battrach-row { display: flex; align-items: center; gap: 10px; }
+.battrach-icon {
+  width: 36px; height: 36px; border-radius: 10px; flex-shrink: 0;
+  background: linear-gradient(135deg, var(--aifi-gold-light), var(--aifi-gold-dark));
+  display: flex; align-items: center; justify-content: center;
+}
+.battrach-icon svg { width: 17px; height: 17px; stroke: #FFFFFF; fill: none; stroke-width: 1.7; }
+.battrach-info { flex: 1; min-width: 0; }
+.battrach-title {
+  font-family: 'Syne', sans-serif; font-weight: 800; font-size: 12px;
+  color: var(--text-primary); letter-spacing: -0.005em;
+}
+.battrach-sub {
+  font-family: 'DM Sans', sans-serif; font-size: 10.5px; color: var(--text-secondary);
+  margin-top: 2px; line-height: 1.4;
+}
+.battrach-sub b { color: var(--tho-dark); font-weight: 700; }
+
+.cuucung-legend {
+  margin-top: 10px;
+  padding: 8px 10px;
+  background: rgba(74,111,255,0.04);
+  border: 0.5px solid rgba(74,111,255,0.18);
+  border-radius: 8px;
+  font-family: 'DM Sans', sans-serif; font-style: italic; font-size: 10px;
+  color: var(--uzg-blue-dark); line-height: 1.4;
+}
+
+/* Note strip */
+.note-strip {
+  margin: 10px auto 0; max-width: 280px;
+  padding: 6px 10px; background: var(--t-tint);
+  border: 0.5px dashed var(--t-primary-light);
+  border-radius: 8px;
+  font-family: 'DM Sans', sans-serif; font-size: 9.5px; color: var(--t-primary-dark);
+  text-align: center; line-height: 1.4;
+}
+
+/* Footer note */
+.footer-note {
+  max-width: 1280px; margin: 32px auto 0; padding: 18px 22px;
+  background: rgba(255,255,255,0.04); border: 0.5px solid rgba(255,255,255,0.08);
+  border-radius: 14px;
+}
+.footer-title {
+  font-family: 'Syne', sans-serif; font-weight: 700; font-size: 12px;
+  color: var(--uzg-blue-light); letter-spacing: 0.14em; text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.footer-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;
+  font-family: 'DM Sans', sans-serif; font-size: 12px; color: rgba(255,255,255,0.7);
+  line-height: 1.55;
+}
+.footer-grid b { color: rgba(255,255,255,0.95); font-weight: 600; }
+@media (max-width: 900px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
+
+</style>
+</head>
+<body data-theme="hoa">
+
+<div class="theme-banner">
+  <div class="theme-banner-orb"></div>
+  <div>Active theme: <b>HỎA</b> · Fire · Warm Red — auto from ENTA dominant Hỏa-Mộc</div>
+  <div class="theme-banner-meta">Auto · ENTA</div>
+</div>
+
+<div class="page-header">
+  <div class="page-eyebrow">UZG+ V3 PWA OS · Phase 2 Mockup #8</div>
+  <div class="page-title">TAO MINI APP — Bazi · Tử Vi · Phong Thủy theo NAM TAO</div>
+  <div class="page-sub">Wisdom module: tri thức cấu trúc Á Đông cổ truyền dưới góc nhìn educational + advisory. KHÔNG fortune-telling. Cultural framing mandatory header. Identity precedes interpretation — chart cần ENTA birth data validated. AIER Tao = governed advisor (NOT thầy-phán).</div>
+</div>
+
+<div class="redlines-strip">
+  <span class="redlines-label">5 Redlines tuyệt đối</span>
+  <span class="redline-item">Fear-UX</span>
+  <span class="redline-item">Mysticism-shock</span>
+  <span class="redline-item">Thầy-phán framing</span>
+  <span class="redline-item">Destiny-discrimination</span>
+  <span class="redline-item">Fear-prescription</span>
+</div>
+
+<div class="screens-row">
+
+<!-- ============================================ -->
+<!-- SCREEN A — TAO OVERVIEW                      -->
+<!-- ============================================ -->
+<div class="screen-wrap">
+  <div class="screen-label">Screen A · Default</div>
+  <div class="screen-name">TAO Overview</div>
+
+  <div class="phone">
+    <div class="phone-canvas">
+
+      <div class="status-bar">
+        <span>9:41</span>
+        <div class="status-icons">
+          <svg viewBox="0 0 16 16" fill="none"><path d="M2 12h12M2 8h12M2 4h12" stroke="currentColor" stroke-width="1.4"/></svg>
+          <svg viewBox="0 0 16 16" fill="none"><path d="M2 8h12v4H2z" stroke="currentColor" stroke-width="1.4"/></svg>
+        </div>
+      </div>
+
+      <!-- Mini app top bar -->
+      <div class="miniapp-topbar">
+        <div class="miniapp-close">
+          <svg viewBox="0 0 16 16"><path d="M4 4l8 8M12 4l-8 8"/></svg>
+        </div>
+        <div class="miniapp-title-block">
+          <div class="miniapp-name">TAO <span class="governed-badge">Educational</span></div>
+          <div class="miniapp-tag">Wisdom · NAM TAO foundations</div>
+        </div>
+        <div class="miniapp-action" title="Search"><svg viewBox="0 0 16 16"><circle cx="7" cy="7" r="5"/><path d="M11 11l3 3"/></svg></div>
+        <div class="miniapp-action" title="Settings"><svg viewBox="0 0 16 16"><circle cx="8" cy="8" r="2"/><path d="M8 1v2M8 13v2M1 8h2M13 8h2"/></svg></div>
+      </div>
+
+      <!-- Cultural framing mandatory -->
+      <div class="cultural-framing">
+        <strong>Tri thức cấu trúc Á Đông</strong> — UZG+ trình bày để bạn tự hiểu cấu trúc của mình + môi trường sống. KHÔNG phải fortune-telling.
+      </div>
+
+      <!-- Tab strip -->
+      <div class="tao-tabs">
+        <div class="tao-tab active">
+          <span class="tab-glyph">⚊⚋⚊⚋</span>
+          <span>Bazi</span>
+        </div>
+        <div class="tao-tab">
+          <span class="tab-glyph">✦</span>
+          <span>Tử Vi</span>
+        </div>
+        <div class="tao-tab">
+          <span class="tab-glyph">☷☱☵</span>
+          <span>Phong Thủy</span>
+        </div>
+      </div>
+
+      <!-- Main area -->
+      <div class="main-area">
+
+        <!-- Day Master card (Bazi summary) -->
+        <div class="day-master-card">
+          <div class="dm-eyebrow">Day Master · Bản mệnh</div>
+          <div class="dm-row">
+            <div class="dm-glyph">甲</div>
+            <div class="dm-info">
+              <div class="dm-title">Mộc Dương · Giáp Mộc</div>
+              <div class="dm-detail">
+                <b>Khúc trực · Nhân từ</b> · sáng tạo, phát triển, lãnh đạo bằng tầm nhìn dài hạn.
+              </div>
+            </div>
+          </div>
+          <div class="dm-element-bars">
+            <div class="dm-bar moc">
+              <div class="dm-bar-track"><div class="dm-bar-fill" style="width: 100%"></div></div>
+              <div class="dm-bar-label">MỘC</div>
+              <div class="dm-bar-pct">35%</div>
+            </div>
+            <div class="dm-bar hoa">
+              <div class="dm-bar-track"><div class="dm-bar-fill" style="width: 80%"></div></div>
+              <div class="dm-bar-label">HỎA</div>
+              <div class="dm-bar-pct">28%</div>
+            </div>
+            <div class="dm-bar thuy">
+              <div class="dm-bar-track"><div class="dm-bar-fill" style="width: 50%"></div></div>
+              <div class="dm-bar-label">THỦY</div>
+              <div class="dm-bar-pct">18%</div>
+            </div>
+            <div class="dm-bar kim">
+              <div class="dm-bar-track"><div class="dm-bar-fill" style="width: 35%"></div></div>
+              <div class="dm-bar-label">KIM</div>
+              <div class="dm-bar-pct">12%</div>
+            </div>
+            <div class="dm-bar tho">
+              <div class="dm-bar-track"><div class="dm-bar-fill" style="width: 20%"></div></div>
+              <div class="dm-bar-label">THỔ</div>
+              <div class="dm-bar-pct">7%</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bazi mini chart preview -->
+        <div class="bazi-preview-card">
+          <div class="bazi-preview-head">
+            <div class="bazi-preview-title">Tứ Trụ · 4 Pillars preview</div>
+            <div class="bazi-preview-cta">
+              VIEW FULL
+              <svg viewBox="0 0 16 16"><path d="M5 4l4 4-4 4"/></svg>
+            </div>
+          </div>
+          <div class="bazi-pillars-mini">
+            <div class="bazi-pillar-mini">
+              <div class="bp-label">Year</div>
+              <div class="bp-can thuy">壬</div>
+              <div class="bp-chi">寅</div>
+              <div class="bp-yin-yang dương">DƯƠNG</div>
+            </div>
+            <div class="bazi-pillar-mini">
+              <div class="bp-label">Month</div>
+              <div class="bp-can hoa">丙</div>
+              <div class="bp-chi">午</div>
+              <div class="bp-yin-yang dương">DƯƠNG</div>
+            </div>
+            <div class="bazi-pillar-mini day">
+              <div class="bp-label">Day</div>
+              <div class="bp-can moc">甲</div>
+              <div class="bp-chi">戌</div>
+              <div class="bp-yin-yang dương">DƯƠNG</div>
+            </div>
+            <div class="bazi-pillar-mini">
+              <div class="bp-label">Hour</div>
+              <div class="bp-can kim">庚</div>
+              <div class="bp-chi">午</div>
+              <div class="bp-yin-yang dương">DƯƠNG</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Lịch Vạn Niên -->
+        <div class="vannien-card">
+          <div class="vannien-head">
+            <div class="vannien-icon">
+              <svg viewBox="0 0 16 16"><rect x="2" y="3" width="12" height="11" rx="1.5"/><path d="M2 6h12M5 1v3M11 1v3"/></svg>
+            </div>
+            <div>
+              <div class="vannien-title">Lịch Vạn Niên · Hôm nay</div>
+              <div class="vannien-sub">Thứ Năm · 30 tháng 4 · 2026</div>
+            </div>
+          </div>
+          <div class="vannien-row">
+            <span class="vannien-key">Ngày Can-Chi</span>
+            <span class="vannien-val">Bính Thìn · Hỏa-Thổ</span>
+          </div>
+          <div class="vannien-row">
+            <span class="vannien-key">Phi Tinh chủ</span>
+            <span class="vannien-val moc">Sao Tứ Lục · Mộc</span>
+          </div>
+          <div class="vannien-row">
+            <span class="vannien-key">Theo Bazi của bạn</span>
+            <span class="vannien-val moc">Hợp Mộc · ngày tốt</span>
+          </div>
+        </div>
+
+        <!-- Quick actions -->
+        <div style="font-family: 'Syne', sans-serif; font-weight: 700; font-size: 11px; color: var(--text-primary); letter-spacing: 0.10em; text-transform: uppercase; padding: 4px 4px 10px;">Quick actions</div>
+        <div class="quick-actions-grid">
+          <div class="quick-action">
+            <div class="quick-action-icon aier">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="9" cy="10" r="1.2" fill="#FFFFFF" stroke="none"/><circle cx="15" cy="10" r="1.2" fill="#FFFFFF" stroke="none"/><path d="M9 15c1 1 4 1 6 0"/></svg>
+            </div>
+            <div class="quick-action-label">AIER Tao</div>
+            <div class="quick-action-sub">Advisor</div>
+          </div>
+          <div class="quick-action">
+            <div class="quick-action-icon calendar">
+              <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
+            </div>
+            <div class="quick-action-label">Calendar</div>
+            <div class="quick-action-sub">Vạn Niên</div>
+          </div>
+          <div class="quick-action">
+            <div class="quick-action-icon compat">
+              <svg viewBox="0 0 24 24"><circle cx="9" cy="12" r="6"/><circle cx="15" cy="12" r="6"/></svg>
+            </div>
+            <div class="quick-action-label">Compatibility</div>
+            <div class="quick-action-sub">Premium</div>
+          </div>
+        </div>
+
+        <div style="height: 16px;"></div>
+      </div>
+
+    </div>
+    <div class="u-pill-mini">⚡ U 1,260</div>
+  </div>
+  <div class="note-strip">Cultural framing mandatory · 3-tab Bazi/Tử Vi/Phong Thủy · Day Master + element bars · Vạn Niên daily · Quick actions</div>
+</div>
+
+<!-- ============================================ -->
+<!-- SCREEN B — BAZI 4 PILLARS CHART              -->
+<!-- ============================================ -->
+<div class="screen-wrap">
+  <div class="screen-label">Screen B · Bazi tab</div>
+  <div class="screen-name">Tứ Trụ · 4 Pillars Full</div>
+
+  <div class="phone">
+    <div class="phone-canvas">
+
+      <div class="status-bar">
+        <span>9:41</span>
+        <div class="status-icons">
+          <svg viewBox="0 0 16 16" fill="none"><path d="M2 12h12M2 8h12M2 4h12" stroke="currentColor" stroke-width="1.4"/></svg>
+          <svg viewBox="0 0 16 16" fill="none"><path d="M2 8h12v4H2z" stroke="currentColor" stroke-width="1.4"/></svg>
+        </div>
+      </div>
+
+      <div class="miniapp-topbar">
+        <div class="miniapp-close">
+          <svg viewBox="0 0 16 16"><path d="M4 4l8 8M12 4l-8 8"/></svg>
+        </div>
+        <div class="miniapp-title-block">
+          <div class="miniapp-name">TAO · Bazi <span class="governed-badge">Member</span></div>
+          <div class="miniapp-tag">Tứ Trụ · Day Master Analysis</div>
+        </div>
+        <div class="miniapp-action"><svg viewBox="0 0 16 16"><circle cx="8" cy="8" r="2"/><path d="M8 1v2M8 13v2M1 8h2M13 8h2"/></svg></div>
+      </div>
+
+      <div class="cultural-framing">
+        <strong>Bazi (Tứ Trụ)</strong> — 4 cột Can-Chi từ ngày sinh. Mỗi cột là 1 lát cắt thời gian: năm, tháng, ngày, giờ.
+      </div>
+
+      <div class="tao-tabs">
+        <div class="tao-tab active"><span class="tab-glyph">⚊⚋⚊⚋</span><span>Bazi</span></div>
+        <div class="tao-tab"><span class="tab-glyph">✦</span><span>Tử Vi</span></div>
+        <div class="tao-tab"><span class="tab-glyph">☷☱☵</span><span>Phong Thủy</span></div>
+      </div>
+
+      <div class="main-area">
+
+        <!-- Chart header -->
+        <div class="chart-header-card">
+          <div class="chart-header-row">
+            <div class="chart-header-glyph">甲</div>
+            <div class="chart-header-info">
+              <div class="chart-header-title">Day Master · Giáp Mộc Dương</div>
+              <div class="chart-header-sub">Khúc trực · Nhân từ · Cây lớn vươn cao</div>
+            </div>
+            <div class="tier-badge">MEMBER</div>
+          </div>
+        </div>
+
+        <!-- 4 Pillars Full -->
+        <div class="pillars-grid">
+          <div class="pillar">
+            <div class="pillar-label">Năm · Year</div>
+            <div class="pillar-can thuy">壬</div>
+            <div class="pillar-can-py">Nhâm</div>
+            <div class="pillar-divider"></div>
+            <div class="pillar-chi">寅</div>
+            <div class="pillar-chi-py">Dần</div>
+            <div class="pillar-element thuy">THỦY DƯƠNG</div>
+          </div>
+          <div class="pillar">
+            <div class="pillar-label">Tháng · Month</div>
+            <div class="pillar-can hoa">丙</div>
+            <div class="pillar-can-py">Bính</div>
+            <div class="pillar-divider"></div>
+            <div class="pillar-chi">午</div>
+            <div class="pillar-chi-py">Ngọ</div>
+            <div class="pillar-element hoa">HỎA DƯƠNG</div>
+          </div>
+          <div class="pillar day">
+            <div class="pillar-label">Ngày · Day</div>
+            <div class="pillar-can moc">甲</div>
+            <div class="pillar-can-py">Giáp</div>
+            <div class="pillar-divider"></div>
+            <div class="pillar-chi">戌</div>
+            <div class="pillar-chi-py">Tuất</div>
+            <div class="pillar-element moc">MỘC DƯƠNG</div>
+          </div>
+          <div class="pillar">
+            <div class="pillar-label">Giờ · Hour</div>
+            <div class="pillar-can kim">庚</div>
+            <div class="pillar-can-py">Canh</div>
+            <div class="pillar-divider"></div>
+            <div class="pillar-chi">午</div>
+            <div class="pillar-chi-py">Ngọ</div>
+            <div class="pillar-element kim">KIM DƯƠNG</div>
+          </div>
+        </div>
+
+        <!-- Hidden stems -->
+        <div class="hidden-stems-card">
+          <div class="hidden-stems-label">Tàng Can · Hidden Stems trong Địa Chi</div>
+          <div class="hidden-stems-row">
+            <div class="hidden-stems-cell">
+              <div class="hidden-stems-cell-label">寅 Dần</div>
+              <div class="hidden-stems-cell-vals">甲 · 丙 · 戊</div>
+            </div>
+            <div class="hidden-stems-cell">
+              <div class="hidden-stems-cell-label">午 Ngọ</div>
+              <div class="hidden-stems-cell-vals">丁 · 己</div>
+            </div>
+            <div class="hidden-stems-cell">
+              <div class="hidden-stems-cell-label">戌 Tuất</div>
+              <div class="hidden-stems-cell-vals">戊 · 辛 · 丁</div>
+            </div>
+            <div class="hidden-stems-cell">
+              <div class="hidden-stems-cell-label">午 Ngọ</div>
+              <div class="hidden-stems-cell-vals">丁 · 己</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Element distribution -->
+        <div class="element-dist-card">
+          <div class="element-dist-head">
+            <div class="element-dist-title">Phân bố ngũ hành</div>
+            <div class="element-dist-balance">Cân bằng · Mộc Hỏa vượng</div>
+          </div>
+          <div class="element-dist-bars">
+            <div class="edist-row">
+              <span class="edist-label" style="color: var(--moc-dark);">MỘC</span>
+              <div class="edist-track"><div class="edist-fill" style="width: 35%; background: var(--moc);"></div></div>
+              <span class="edist-pct">35%</span>
+            </div>
+            <div class="edist-row">
+              <span class="edist-label" style="color: var(--hoa-dark);">HỎA</span>
+              <div class="edist-track"><div class="edist-fill" style="width: 28%; background: var(--hoa);"></div></div>
+              <span class="edist-pct">28%</span>
+            </div>
+            <div class="edist-row">
+              <span class="edist-label" style="color: var(--thuy-dark);">THỦY</span>
+              <div class="edist-track"><div class="edist-fill" style="width: 18%; background: var(--thuy);"></div></div>
+              <span class="edist-pct">18%</span>
+            </div>
+            <div class="edist-row">
+              <span class="edist-label" style="color: var(--kim-dark);">KIM</span>
+              <div class="edist-track"><div class="edist-fill" style="width: 12%; background: var(--kim);"></div></div>
+              <span class="edist-pct">12%</span>
+            </div>
+            <div class="edist-row">
+              <span class="edist-label" style="color: var(--tho-dark);">THỔ</span>
+              <div class="edist-track"><div class="edist-fill" style="width: 7%; background: var(--tho);"></div></div>
+              <span class="edist-pct">7%</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Locked premium -->
+        <div class="locked-feature">
+          <div class="locked-icon">
+            <svg viewBox="0 0 16 16"><rect x="3" y="6" width="10" height="8" rx="1"/><path d="M5 6V4a3 3 0 016 0v2"/></svg>
+          </div>
+          <div class="locked-info">
+            <div class="locked-title">Useful God · Dụng Thần</div>
+            <div class="locked-sub">Phân tích thần dụng phù trợ Day Master · Luck Pillars timeline</div>
+          </div>
+          <div class="locked-cta">PREMIUM →</div>
+        </div>
+
+        <div style="height: 16px;"></div>
+      </div>
+
+    </div>
+    <div class="u-pill-mini">⚡ U 1,260</div>
+  </div>
+  <div class="note-strip">Tứ Trụ visual · 4 cột Can-Chi · Day Master highlighted · Tàng Can · element distribution · Premium Useful God</div>
+</div>
+
+<!-- ============================================ -->
+<!-- SCREEN C — TỬ VI 12-PALACE                   -->
+<!-- ============================================ -->
+<div class="screen-wrap">
+  <div class="screen-label">Screen C · Tử Vi tab</div>
+  <div class="screen-name">12 Cung · Tử Vi Đẩu Số</div>
+
+  <div class="phone">
+    <div class="phone-canvas">
+
+      <div class="status-bar">
+        <span>9:41</span>
+        <div class="status-icons">
+          <svg viewBox="0 0 16 16" fill="none"><path d="M2 12h12M2 8h12M2 4h12" stroke="currentColor" stroke-width="1.4"/></svg>
+          <svg viewBox="0 0 16 16" fill="none"><path d="M2 8h12v4H2z" stroke="currentColor" stroke-width="1.4"/></svg>
+        </div>
+      </div>
+
+      <div class="miniapp-topbar">
+        <div class="miniapp-close">
+          <svg viewBox="0 0 16 16"><path d="M4 4l8 8M12 4l-8 8"/></svg>
+        </div>
+        <div class="miniapp-title-block">
+          <div class="miniapp-name">TAO · Tử Vi <span class="governed-badge">Member</span></div>
+          <div class="miniapp-tag">12 Palace Chart · Đẩu Số</div>
+        </div>
+        <div class="miniapp-action"><svg viewBox="0 0 16 16"><circle cx="8" cy="8" r="2"/><path d="M8 1v2M8 13v2M1 8h2M13 8h2"/></svg></div>
+      </div>
+
+      <div class="cultural-framing">
+        <strong>Tử Vi Đẩu Số</strong> — 12 cung định vị phương diện cuộc sống. Cung Mệnh = trục chính cấu trúc bản thân.
+      </div>
+
+      <div class="tao-tabs">
+        <div class="tao-tab"><span class="tab-glyph">⚊⚋⚊⚋</span><span>Bazi</span></div>
+        <div class="tao-tab active"><span class="tab-glyph">✦</span><span>Tử Vi</span></div>
+        <div class="tao-tab"><span class="tab-glyph">☷☱☵</span><span>Phong Thủy</span></div>
+      </div>
+
+      <div class="main-area">
+
+        <!-- 12-Palace grid (4 columns × 4 rows = 16, with center 2x2 spanning) -->
+        <div class="tuvi-grid">
+
+          <!-- Row 1 -->
+          <div class="cung">
+            <div class="cung-position">Tỵ</div>
+            <div class="cung-name">Tài Bạch</div>
+            <div class="cung-stars">
+              <span class="star major thuy">Thiên Phủ</span>
+              <span class="star">Tả Phụ</span>
+            </div>
+          </div>
+          <div class="cung">
+            <div class="cung-position">Ngọ</div>
+            <div class="cung-name">Tử Tức</div>
+            <div class="cung-stars">
+              <span class="star major hoa">Thái Dương</span>
+              <span class="star">Văn Khúc</span>
+            </div>
+          </div>
+          <div class="cung">
+            <div class="cung-position">Mùi</div>
+            <div class="cung-name">Phu Thê</div>
+            <div class="cung-stars">
+              <span class="star major moc">Thiên Cơ</span>
+            </div>
+          </div>
+          <div class="cung">
+            <div class="cung-position">Thân</div>
+            <div class="cung-name">Huynh Đệ</div>
+            <div class="cung-stars">
+              <span class="star major kim">Tử Vi</span>
+              <span class="star">Hữu Bật</span>
+            </div>
+          </div>
+
+          <!-- Row 2 -->
+          <div class="cung">
+            <div class="cung-position">Thìn</div>
+            <div class="cung-name">Tật Ách</div>
+            <div class="cung-stars">
+              <span class="star major tho">Thái Âm</span>
+            </div>
+          </div>
+          <!-- Center 2x2 -->
+          <div class="cung center" style="grid-column: span 2; grid-row: span 2; aspect-ratio: 2/2.1;">
+            <div>
+              <div class="center-block-title">NAM TIÊN SINH</div>
+              <div class="center-block-sub">Mộc Dương · Giáp<br>Day Master</div>
+              <div class="center-block-meta">12/12/1990 · 22:00<br>HCMC, VN</div>
+              <div class="center-block-meta" style="margin-top: 6px; font-style: italic; color: var(--moc-dark);">Cung Mệnh: Dậu</div>
+            </div>
+          </div>
+          <div class="cung">
+            <div class="cung-position">Dậu</div>
+            <div class="cung-tag">MỆNH</div>
+            <div class="cung-name menh">Mệnh</div>
+            <div class="cung-stars">
+              <span class="star major moc">Tham Lang</span>
+              <span class="star">Hóa Lộc</span>
+              <span class="star">Thiên Khôi</span>
+            </div>
+          </div>
+
+          <!-- Row 3 -->
+          <div class="cung menh" style="display: none;"></div>
+          <div class="cung">
+            <div class="cung-position">Mão</div>
+            <div class="cung-name">Thiên Di</div>
+            <div class="cung-stars">
+              <span class="star major thuy">Phá Quân</span>
+            </div>
+          </div>
+          <div class="cung than">
+            <div class="cung-position">Tuất</div>
+            <div class="cung-tag">THÂN</div>
+            <div class="cung-name than">Phụ Mẫu</div>
+            <div class="cung-stars">
+              <span class="star major hoa">Liêm Trinh</span>
+              <span class="star">Hóa Quyền</span>
+            </div>
+          </div>
+
+          <!-- Row 4 -->
+          <div class="cung">
+            <div class="cung-position">Dần</div>
+            <div class="cung-name">Nô Bộc</div>
+            <div class="cung-stars">
+              <span class="star major kim">Vũ Khúc</span>
+            </div>
+          </div>
+          <div class="cung">
+            <div class="cung-position">Sửu</div>
+            <div class="cung-name">Quan Lộc</div>
+            <div class="cung-stars">
+              <span class="star major tho">Thiên Tướng</span>
+              <span class="star">Văn Xương</span>
+            </div>
+          </div>
+          <div class="cung">
+            <div class="cung-position">Tý</div>
+            <div class="cung-name">Điền Trạch</div>
+            <div class="cung-stars">
+              <span class="star major thuy">Thất Sát</span>
+              <span class="star">Lộc Tồn</span>
+            </div>
+          </div>
+          <div class="cung">
+            <div class="cung-position">Hợi</div>
+            <div class="cung-name">Phúc Đức</div>
+            <div class="cung-stars">
+              <span class="star major moc">Thiên Đồng</span>
+              <span class="star">Thiên Hỷ</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Locked premium -->
+        <div class="locked-feature">
+          <div class="locked-icon">
+            <svg viewBox="0 0 16 16"><rect x="3" y="6" width="10" height="8" rx="1"/><path d="M5 6V4a3 3 0 016 0v2"/></svg>
+          </div>
+          <div class="locked-info">
+            <div class="locked-title">Cung Mệnh Reading · 12-cung deep dive</div>
+            <div class="locked-sub">Annual readings · Tam phương tứ chính · Đại Hạn · Lưu Niên</div>
+          </div>
+          <div class="locked-cta">PREMIUM →</div>
+        </div>
+
+        <div style="height: 16px;"></div>
+      </div>
+
+    </div>
+    <div class="u-pill-mini">⚡ U 1,260</div>
+  </div>
+  <div class="note-strip">12 Cung visual square · Mệnh highlighted Mộc · Thân highlighted Cobalt · major stars color-coded · Premium reading</div>
+</div>
+
+<!-- ============================================ -->
+<!-- SCREEN D — PHONG THỦY CỬU CUNG               -->
+<!-- ============================================ -->
+<div class="screen-wrap">
+  <div class="screen-label">Screen D · Phong Thủy</div>
+  <div class="screen-name">Cửu Cung Phi Tinh</div>
+
+  <div class="phone">
+    <div class="phone-canvas">
+
+      <div class="status-bar">
+        <span>9:41</span>
+        <div class="status-icons">
+          <svg viewBox="0 0 16 16" fill="none"><path d="M2 12h12M2 8h12M2 4h12" stroke="currentColor" stroke-width="1.4"/></svg>
+          <svg viewBox="0 0 16 16" fill="none"><path d="M2 8h12v4H2z" stroke="currentColor" stroke-width="1.4"/></svg>
+        </div>
+      </div>
+
+      <div class="miniapp-topbar">
+        <div class="miniapp-close">
+          <svg viewBox="0 0 16 16"><path d="M4 4l8 8M12 4l-8 8"/></svg>
+        </div>
+        <div class="miniapp-title-block">
+          <div class="miniapp-name">TAO · Phong Thủy <span class="governed-badge">Premium</span></div>
+          <div class="miniapp-tag">Cửu Cung Phi Tinh · Bát Trạch</div>
+        </div>
+        <div class="miniapp-action"><svg viewBox="0 0 16 16"><circle cx="8" cy="8" r="2"/><path d="M8 1v2M8 13v2M1 8h2M13 8h2"/></svg></div>
+      </div>
+
+      <div class="cultural-framing">
+        <strong>Phong Thủy</strong> — năng lượng môi trường + hướng đặt phù hợp cấu trúc của bạn. Educational reference, KHÔNG fear-based.
+      </div>
+
+      <div class="tao-tabs">
+        <div class="tao-tab"><span class="tab-glyph">⚊⚋⚊⚋</span><span>Bazi</span></div>
+        <div class="tao-tab"><span class="tab-glyph">✦</span><span>Tử Vi</span></div>
+        <div class="tao-tab active"><span class="tab-glyph">☷☱☵</span><span>Phong Thủy</span></div>
+      </div>
+
+      <div class="main-area">
+
+        <!-- Bát Trạch user info -->
+        <div class="battrach-card">
+          <div class="battrach-row">
+            <div class="battrach-icon">
+              <svg viewBox="0 0 16 16"><path d="M8 2v4M8 10v4M2 8h4M10 8h4"/><circle cx="8" cy="8" r="6"/></svg>
+            </div>
+            <div class="battrach-info">
+              <div class="battrach-title">Cung Mệnh: <b>Đông Tứ Mệnh</b> · Tốn</div>
+              <div class="battrach-sub">Hợp 4 hướng: <b>Đông · Đông Nam · Nam · Bắc</b> · Mộc-Thủy field</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cửu Cung Phi Tinh -->
+        <div class="cuucung-card">
+          <div class="cuucung-head">
+            <div>
+              <div class="cuucung-title">Cửu Cung Phi Tinh</div>
+              <div class="cuucung-sub">Năm 2026 · Bính Ngọ</div>
+            </div>
+            <div class="bazi-preview-cta">
+              YEAR ▾
+            </div>
+          </div>
+          <div class="cuucung-grid">
+            <!-- Tây Bắc -->
+            <div class="cuu-cell" data-tinh="6">
+              <div class="cuu-direction">TB · Càn</div>
+              <div class="cuu-num">6</div>
+              <div class="cuu-name">Lục Bạch · Kim</div>
+            </div>
+            <!-- Bắc -->
+            <div class="cuu-cell" data-tinh="2">
+              <div class="cuu-direction">BẮC · Khảm</div>
+              <div class="cuu-num">2</div>
+              <div class="cuu-name">Nhị Hắc · Thổ</div>
+            </div>
+            <!-- Đông Bắc -->
+            <div class="cuu-cell" data-tinh="4">
+              <div class="cuu-direction">ĐB · Cấn</div>
+              <div class="cuu-num">4</div>
+              <div class="cuu-name">Tứ Lục · Mộc</div>
+            </div>
+            <!-- Tây -->
+            <div class="cuu-cell" data-tinh="7">
+              <div class="cuu-direction">TÂY · Đoài</div>
+              <div class="cuu-num">7</div>
+              <div class="cuu-name">Thất Xích · Kim</div>
+            </div>
+            <!-- Trung Cung -->
+            <div class="cuu-cell cuu-center-cell" data-tinh="9">
+              <div class="cuu-direction">TRUNG</div>
+              <div class="cuu-num">9</div>
+              <div class="cuu-name">Cửu Tử · Hỏa</div>
+            </div>
+            <!-- Đông -->
+            <div class="cuu-cell" data-tinh="5">
+              <div class="cuu-direction">ĐÔNG · Chấn</div>
+              <div class="cuu-num">5</div>
+              <div class="cuu-name">Ngũ Hoàng · Thổ</div>
+            </div>
+            <!-- Tây Nam -->
+            <div class="cuu-cell" data-tinh="1">
+              <div class="cuu-direction">TN · Khôn</div>
+              <div class="cuu-num">1</div>
+              <div class="cuu-name">Nhất Bạch · Thủy</div>
+            </div>
+            <!-- Nam -->
+            <div class="cuu-cell" data-tinh="8">
+              <div class="cuu-direction">NAM · Ly</div>
+              <div class="cuu-num">8</div>
+              <div class="cuu-name">Bát Bạch · Thổ</div>
+            </div>
+            <!-- Đông Nam -->
+            <div class="cuu-cell" data-tinh="3">
+              <div class="cuu-direction">ĐN · Tốn</div>
+              <div class="cuu-num">3</div>
+              <div class="cuu-name">Tam Bích · Mộc</div>
+            </div>
+          </div>
+
+          <div class="cuucung-legend">
+            Số = sao Cửu Tử bay vào cung trong năm. Màu = ngũ hành sao. Theo Bazi Mộc của bạn: Đông Nam (3 Mộc) + Đông Bắc (4 Mộc) là phương hướng hỗ trợ năm 2026.
+          </div>
+        </div>
+
+        <!-- Locked AIER Phong Thủy -->
+        <div class="locked-feature">
+          <div class="locked-icon">
+            <svg viewBox="0 0 16 16"><rect x="3" y="6" width="10" height="8" rx="1"/><path d="M5 6V4a3 3 0 016 0v2"/></svg>
+          </div>
+          <div class="locked-info">
+            <div class="locked-title">Residence Mapping · AIER Phong Thủy chat</div>
+            <div class="locked-sub">Map nhà của bạn · phân tích cấu trúc · advisory tone</div>
+          </div>
+          <div class="locked-cta">PREMIUM →</div>
+        </div>
+
+        <div style="height: 16px;"></div>
+      </div>
+
+    </div>
+    <div class="u-pill-mini">⚡ U 1,260</div>
+  </div>
+  <div class="note-strip">Bát Trạch user · Cửu Cung 9 hướng + Trung · element-tinted cells · advisory legend · NO fear-prescription</div>
+</div>
+
+</div>
+
+<!-- ============================================ -->
+<!-- FOOTNOTE                                     -->
+<!-- ============================================ -->
+<div class="footer-note">
+  <div class="footer-title">Mockup #8 — Decisions surfaced for NTS review</div>
+  <div class="footer-grid">
+    <div>
+      <b>D1 · Cultural framing mandatory</b><br>
+      Top of every TAO screen: "Tri thức cấu trúc Á Đông... KHÔNG phải fortune-telling." This blocks user misinterpretation. 5 redlines visible at page header. AIER Tao = governed advisor (NOT thầy-phán).
+    </div>
+    <div>
+      <b>D2 · Bazi 4 Pillars visual</b><br>
+      4 vertical pillars with Can (Heavenly Stem) on top + Chi (Earthly Branch) bottom. Day Master highlighted với Mộc green border + "Day Master" tag. Hidden Stems (Tàng Can) revealed under chart. Element distribution bars 5 ngũ hành.
+    </div>
+    <div>
+      <b>D3 · Tử Vi 12-Palace square</b><br>
+      4×4 grid với 2×2 center for personal info. 12 cung với position (Tý-Hợi) + name (Mệnh, Tài Bạch...) + major stars color-coded by element. Cung Mệnh Mộc bordered green, Cung Thân Cobalt bordered. Annual readings Premium-locked.
+    </div>
+    <div>
+      <b>D4 · Phong Thủy Cửu Cung</b><br>
+      3×3 compass grid với 9 directions (TB/B/ĐB/T/Trung/Đ/TN/N/ĐN). Sao Cửu Tử numbered 1-9 element-tinted. Bát Trạch Đông Tứ Mệnh shown above. Educational legend, NO "đại hung" / "tam sát" fear language. Advisory only.
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

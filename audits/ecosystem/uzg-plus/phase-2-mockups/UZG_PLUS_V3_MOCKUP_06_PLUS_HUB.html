@@ -1,0 +1,1369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>UZG+ V3 — Mockup #6 — PLUS Hub Springboard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+:root {
+  --uniton-quantum: #4A6FFF;
+  --uniton-bg: #090D1A;
+  --uzg-blue: #3B5BAA;
+  --uzg-blue-light: #5B7FD4;
+  --uzg-blue-dark: #243870;
+  --uzg-blue-tint: #EEF2FB;
+  --aier-purple: #7535CC;
+  --aier-purple-light: #A079DD;
+  --aier-purple-dark: #4D1E8A;
+  --aifi-gold: #C4933A;
+  --aifi-gold-light: #E8C77B;
+  --aifi-gold-dark: #8A6520;
+  --bg-canvas: #FBFCFE;
+  --bg-card: #FFFFFF;
+  --text-primary: #1A1F2E;
+  --text-secondary: #5F5E5A;
+  --text-tertiary: #9099B0;
+  --divider: rgba(160, 175, 200, 0.22);
+  --divider-strong: rgba(160, 175, 200, 0.45);
+  --hoa: #E24B4A;
+  --hoa-dark: #A32D2D;
+  --tho: #BA7517;
+  --tho-dark: #854F0B;
+  --kim: #A9ADB5;
+  --kim-dark: #6E7178;
+  --thuy: #185FA5;
+  --thuy-dark: #0C447C;
+  --moc: #1D9E75;
+  --moc-dark: #0F6E56;
+  --success: #1D9E75;
+  --warning: #BA7517;
+  --danger: #E24B4A;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; -webkit-font-smoothing: antialiased; }
+html, body { background: var(--uniton-bg); font-family: 'DM Sans', system-ui, sans-serif; color: var(--text-primary); min-height: 100vh; }
+
+body {
+  background:
+    radial-gradient(ellipse at 12% 8%, rgba(74, 111, 255, 0.10) 0%, transparent 38%),
+    radial-gradient(ellipse at 88% 92%, rgba(117, 53, 204, 0.06) 0%, transparent 42%),
+    var(--uniton-bg);
+  padding: 32px 16px 64px;
+}
+
+/* === Page Header === */
+.page-header { max-width: 1280px; margin: 0 auto 28px; padding: 0 4px; }
+.page-eyebrow {
+  font-family: 'Syne', sans-serif; font-weight: 700; font-size: 11px;
+  letter-spacing: 0.18em; color: var(--uzg-blue-light); text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.page-title { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 24px; color: #FFFFFF; letter-spacing: -0.01em; }
+.page-sub { font-size: 13px; color: rgba(255,255,255,0.55); margin-top: 6px; max-width: 720px; line-height: 1.5; }
+
+/* === Screens grid === */
+.screens-row { max-width: 1640px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 380px); gap: 28px; justify-content: center; }
+@media (max-width: 1700px) { .screens-row { grid-template-columns: repeat(2, 380px); } }
+@media (max-width: 820px)  { .screens-row { grid-template-columns: 380px; } }
+
+.screen-wrap { display: flex; flex-direction: column; align-items: center; }
+.screen-label {
+  font-family: 'Syne', sans-serif; font-weight: 700; font-size: 11px;
+  letter-spacing: 0.16em; color: var(--uzg-blue-light); text-transform: uppercase;
+  margin-bottom: 4px;
+}
+.screen-name { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 14px; color: #FFFFFF; margin-bottom: 14px; }
+
+/* === Phone frame === */
+.phone {
+  width: 380px; height: 780px; background: var(--bg-canvas);
+  border-radius: 36px; position: relative; overflow: hidden;
+  box-shadow: 0 16px 60px rgba(0,0,0,0.45), 0 0 0 1px rgba(255,255,255,0.05);
+}
+.phone-canvas {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(circle at 18% 14%, rgba(74,111,255,0.07) 0%, transparent 45%),
+    radial-gradient(circle at 82% 86%, rgba(117,53,204,0.06) 0%, transparent 48%),
+    var(--bg-canvas);
+  overflow: hidden;
+}
+
+/* Quantum particles */
+.particles { position: absolute; inset: 0; pointer-events: none; opacity: 0.7; }
+.particles svg { width: 100%; height: 100%; }
+
+/* === Status bar === */
+.status-bar {
+  position: absolute; top: 0; left: 0; right: 0; height: 32px;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 8px 22px 0; font-size: 11px; font-weight: 600; color: var(--text-primary);
+  z-index: 50;
+}
+.status-icons { display: flex; align-items: center; gap: 4px; }
+.status-icons svg { width: 13px; height: 13px; }
+
+/* === Top Bar === */
+.top-bar {
+  position: absolute; top: 32px; left: 0; right: 0; height: 56px; z-index: 40;
+  background: rgba(251, 252, 254, 0.72); backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 0.5px solid var(--divider);
+  display: flex; align-items: center; padding: 0 14px; gap: 10px;
+}
+.top-avatar {
+  width: 30px; height: 30px; border-radius: 50%; flex-shrink: 0;
+  background: linear-gradient(135deg, #5B7FD4, #243870);
+  display: flex; align-items: center; justify-content: center;
+  color: #FFFFFF; font-family: 'Syne', sans-serif; font-weight: 800; font-size: 11px;
+}
+.top-title { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 16px; color: var(--text-primary); flex: 1; letter-spacing: -0.01em; }
+.top-icons { display: flex; align-items: center; gap: 6px; }
+.top-icon-btn {
+  width: 30px; height: 30px; display: flex; align-items: center; justify-content: center;
+  border-radius: 8px; background: transparent; cursor: pointer;
+}
+.top-icon-btn svg { width: 16px; height: 16px; stroke: var(--text-tertiary); fill: none; stroke-width: 1.5; }
+
+.u-pill {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 5px 11px 5px 8px; border-radius: 14px;
+  background: rgba(74, 111, 255, 0.07);
+  border: 0.5px solid rgba(74, 111, 255, 0.22);
+  font-family: 'Syne', sans-serif; font-weight: 800; font-size: 11px;
+  color: #243870; letter-spacing: 0.02em;
+}
+.u-pill-icon { width: 12px; height: 12px; flex-shrink: 0; }
+
+/* === Main scroll area === */
+.scroll-area {
+  position: absolute; top: 88px; bottom: 76px; left: 0; right: 0;
+  overflow-y: auto; padding: 12px 16px 24px;
+}
+.scroll-area::-webkit-scrollbar { width: 0; }
+
+/* === Bottom nav === */
+.bottom-nav {
+  position: absolute; bottom: 0; left: 0; right: 0; height: 76px; z-index: 40;
+  background: rgba(251, 252, 254, 0.85); backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-top: 0.5px solid var(--divider);
+  display: flex; align-items: center; justify-content: space-around;
+  padding: 8px 12px 14px;
+}
+.nav-item {
+  display: flex; flex-direction: column; align-items: center; gap: 3px;
+  flex: 1; cursor: pointer;
+}
+.nav-item svg { width: 18px; height: 18px; stroke: var(--text-tertiary); fill: none; stroke-width: 1.5; }
+.nav-item.active svg { stroke: var(--uzg-blue); }
+.nav-item-label {
+  font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 9.5px;
+  color: var(--text-tertiary); letter-spacing: 0.04em; text-transform: uppercase;
+}
+.nav-item.active .nav-item-label { color: var(--uzg-blue); font-weight: 600; }
+.nav-center {
+  width: 44px; height: 44px; border-radius: 12px;
+  background: linear-gradient(135deg, #4A6FFF, #3B5BAA);
+  box-shadow: 0 4px 14px rgba(74, 111, 255, 0.25);
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Syne', sans-serif; font-weight: 800; font-size: 15px;
+  color: #FFFFFF; letter-spacing: -0.04em; cursor: pointer;
+  margin-top: -10px;
+  position: relative;
+}
+.nav-center.active::after {
+  content: ''; position: absolute; inset: -3px; border-radius: 14px;
+  border: 1.5px solid rgba(74, 111, 255, 0.45);
+}
+.fab {
+  position: absolute; bottom: 92px; right: 18px;
+  width: 48px; height: 48px; border-radius: 50%;
+  background: linear-gradient(135deg, #4A6FFF, #3B5BAA);
+  box-shadow: 0 6px 20px rgba(74, 111, 255, 0.32);
+  display: flex; align-items: center; justify-content: center;
+  z-index: 35; cursor: pointer;
+}
+.fab svg { width: 20px; height: 20px; stroke: #FFFFFF; fill: none; stroke-width: 2.2; }
+
+/* ============================================ */
+/* SEARCH BAR (sticky)                          */
+/* ============================================ */
+
+.search-bar {
+  display: flex; align-items: center; gap: 10px;
+  padding: 9px 14px; margin-bottom: 14px;
+  background: rgba(255, 255, 255, 0.65);
+  border: 0.5px solid var(--divider);
+  border-radius: 14px; cursor: text;
+  backdrop-filter: blur(8px);
+}
+.search-bar svg { width: 14px; height: 14px; stroke: var(--text-tertiary); fill: none; stroke-width: 1.7; flex-shrink: 0; }
+.search-bar-text {
+  flex: 1; font-family: 'DM Sans', sans-serif; font-size: 13.5px;
+  color: var(--text-tertiary); border: none; outline: none; background: transparent;
+}
+.search-cmd-hint {
+  font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 10px;
+  color: var(--text-tertiary);
+  padding: 2px 6px; background: rgba(160,175,200,0.12); border-radius: 5px;
+  letter-spacing: 0.04em;
+}
+
+/* === Section header === */
+.section-row {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 10px 4px 12px; margin-top: 4px;
+}
+.section-title {
+  font-family: 'Syne', sans-serif; font-weight: 700; font-size: 12px;
+  color: var(--text-primary); letter-spacing: 0.1em; text-transform: uppercase;
+}
+.section-action {
+  display: inline-flex; align-items: center; gap: 4px;
+  font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 11.5px;
+  color: var(--uzg-blue); cursor: pointer;
+}
+.section-action svg { width: 12px; height: 12px; stroke: var(--uzg-blue); fill: none; stroke-width: 1.7; }
+
+/* ============================================ */
+/* APP GRID + APP ICONS                         */
+/* ============================================ */
+
+.app-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 8px 4px; margin-bottom: 4px;
+}
+
+.app-tile {
+  display: flex; flex-direction: column; align-items: center; gap: 6px;
+  padding: 8px 4px 10px; cursor: pointer; position: relative;
+  border-radius: 12px; transition: background 180ms;
+}
+.app-tile:hover { background: rgba(74,111,255,0.04); }
+
+.app-icon {
+  width: 56px; height: 56px; border-radius: 16px; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  position: relative;
+  box-shadow: 0 2px 8px rgba(36, 56, 112, 0.10);
+}
+.app-icon svg { width: 26px; height: 26px; }
+.app-icon-glyph {
+  font-family: 'Syne', sans-serif; font-weight: 800; font-size: 18px;
+  color: #FFFFFF; letter-spacing: 0;
+}
+
+/* App icon backgrounds — semantic per category */
+.app-icon.ureward    { background: linear-gradient(135deg, #5B7FD4, #4A6FFF); }
+.app-icon.tao        { background: linear-gradient(135deg, var(--aier-purple-light), var(--aier-purple-dark)); }
+.app-icon.booking    { background: linear-gradient(135deg, #6FCBA9, var(--moc-dark)); }
+.app-icon.membership { background: linear-gradient(135deg, var(--aifi-gold-light), var(--aifi-gold-dark)); }
+.app-icon.market     { background: linear-gradient(135deg, var(--hoa), var(--hoa-dark)); }
+.app-icon.retreat    { background: linear-gradient(135deg, var(--moc), var(--moc-dark)); }
+.app-icon.tickets    { background: linear-gradient(135deg, #5B92D4, var(--thuy-dark)); }
+.app-icon.circles    { background: linear-gradient(135deg, var(--aier-purple-light), var(--aier-purple)); }
+.app-icon.aier       { background: linear-gradient(135deg, var(--aier-purple), var(--aier-purple-dark)); position: relative; }
+.app-icon.aier::after {
+  content: ''; position: absolute; inset: -2px; border-radius: 18px;
+  border: 0.8px dashed rgba(117, 53, 204, 0.45);
+}
+.app-icon.stats      { background: linear-gradient(135deg, var(--kim), var(--kim-dark)); }
+.app-icon.governance { background: linear-gradient(135deg, var(--tho), var(--tho-dark)); }
+.app-icon.business   { background: linear-gradient(135deg, var(--uzg-blue-light), var(--uzg-blue-dark)); }
+.app-icon.library    { background: linear-gradient(135deg, #88C597, #2C7050); }
+.app-icon.forum      { background: linear-gradient(135deg, var(--text-tertiary), var(--text-secondary)); }
+.app-icon.udna       { background: linear-gradient(135deg, var(--aifi-gold), #B58524); }
+
+/* App icon SVG colors */
+.app-icon svg { stroke: #FFFFFF; fill: none; stroke-width: 1.8; }
+
+/* App label */
+.app-label {
+  font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 11px;
+  color: var(--text-secondary); text-align: center; line-height: 1.2;
+  max-width: 64px; overflow: hidden; text-overflow: ellipsis;
+}
+
+/* App badge (count) */
+.app-badge {
+  position: absolute; top: -3px; right: -3px;
+  min-width: 18px; height: 18px; padding: 0 5px; border-radius: 9px;
+  background: var(--hoa); color: #FFFFFF;
+  font-family: 'Syne', sans-serif; font-weight: 800; font-size: 10px;
+  display: flex; align-items: center; justify-content: center;
+  border: 1.5px solid var(--bg-canvas);
+  letter-spacing: 0;
+}
+.app-badge.dot {
+  min-width: 10px; height: 10px; padding: 0; border-radius: 50%;
+  border: 1.5px solid var(--bg-canvas);
+}
+
+/* Tier locked overlay */
+.app-icon.locked { opacity: 0.55; }
+.app-icon.locked::before {
+  content: ''; position: absolute; inset: 0; border-radius: 16px;
+  background: rgba(26, 31, 46, 0.35);
+}
+.lock-icon {
+  position: absolute; bottom: -2px; right: -2px;
+  width: 18px; height: 18px; border-radius: 50%;
+  background: var(--aifi-gold-dark);
+  display: flex; align-items: center; justify-content: center;
+  border: 1.5px solid var(--bg-canvas);
+}
+.lock-icon svg { width: 9px; height: 9px; stroke: #FFFFFF; stroke-width: 2.2; }
+
+/* ENTA-aware reason chip (small caption under Featured app) */
+.featured-reason {
+  font-family: 'DM Sans', sans-serif; font-style: italic; font-weight: 400;
+  font-size: 9.5px; color: var(--text-tertiary); margin-top: 1px;
+  text-align: center; line-height: 1.3; max-width: 76px;
+}
+
+/* Featured "Why?" header note strip */
+.featured-note {
+  margin: 4px 4px 10px;
+  padding: 8px 12px;
+  background: linear-gradient(180deg, rgba(74,111,255,0.05), rgba(117,53,204,0.04));
+  border: 0.5px solid rgba(74, 111, 255, 0.18);
+  border-radius: 10px;
+  font-family: 'DM Sans', sans-serif; font-style: italic; font-size: 11px;
+  color: var(--uzg-blue-dark); line-height: 1.45;
+}
+
+/* Category filter pills */
+.filter-pills {
+  display: flex; gap: 6px; padding: 4px 0 12px; overflow-x: auto;
+}
+.filter-pills::-webkit-scrollbar { height: 0; }
+.filter-pill {
+  flex-shrink: 0; padding: 5px 11px;
+  background: rgba(160,175,200,0.10); border: 0.5px solid var(--divider);
+  border-radius: 10px;
+  font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 11px;
+  color: var(--text-secondary); cursor: pointer; white-space: nowrap;
+}
+.filter-pill.active {
+  background: var(--uzg-blue); color: #FFFFFF; font-weight: 600;
+  border-color: var(--uzg-blue);
+}
+
+/* ============================================ */
+/* SCREEN B — SEARCH ACTIVE                     */
+/* ============================================ */
+
+.search-bar.active {
+  background: #FFFFFF;
+  border: 1px solid var(--uzg-blue);
+  box-shadow: 0 0 0 3px rgba(74, 111, 255, 0.10);
+}
+.search-bar.active .search-bar-text {
+  color: var(--text-primary); font-weight: 500;
+}
+.search-cancel-btn {
+  font-family: 'DM Sans', sans-serif; font-weight: 600; font-size: 12px;
+  color: var(--uzg-blue); cursor: pointer; padding: 4px 6px;
+}
+
+.search-results-list {
+  margin-top: 4px;
+}
+.search-result-row {
+  display: flex; align-items: center; gap: 12px;
+  padding: 12px 8px; cursor: pointer;
+  border-bottom: 0.5px solid var(--divider);
+  border-radius: 10px;
+}
+.search-result-row:hover { background: rgba(74,111,255,0.04); }
+.search-result-row .app-icon { width: 42px; height: 42px; border-radius: 12px; }
+.search-result-row .app-icon svg { width: 20px; height: 20px; }
+.search-result-row .app-icon-glyph { font-size: 14px; }
+.search-result-info { flex: 1; min-width: 0; }
+.search-result-name { font-family: 'DM Sans', sans-serif; font-weight: 600; font-size: 13.5px; color: var(--text-primary); }
+.search-result-name mark {
+  background: rgba(74,111,255,0.18); color: var(--uzg-blue-dark);
+  font-weight: 700; padding: 0 2px; border-radius: 3px;
+}
+.search-result-cat {
+  font-family: 'DM Sans', sans-serif; font-weight: 400; font-size: 11px;
+  color: var(--text-tertiary); margin-top: 2px;
+}
+.search-result-arrow svg { width: 14px; height: 14px; stroke: var(--text-tertiary); fill: none; stroke-width: 1.5; }
+
+.search-section-label {
+  font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 11px;
+  color: var(--text-tertiary); letter-spacing: 0.05em; text-transform: uppercase;
+  padding: 12px 8px 6px;
+}
+
+.search-recent-row {
+  display: flex; align-items: center; gap: 10px;
+  padding: 8px 8px; cursor: pointer; border-radius: 10px;
+}
+.search-recent-row:hover { background: rgba(74,111,255,0.04); }
+.search-recent-icon {
+  width: 28px; height: 28px; border-radius: 8px;
+  background: rgba(160,175,200,0.12);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.search-recent-icon svg { width: 13px; height: 13px; stroke: var(--text-tertiary); fill: none; stroke-width: 1.7; }
+.search-recent-text { font-family: 'DM Sans', sans-serif; font-size: 13px; color: var(--text-primary); flex: 1; }
+.search-recent-clear {
+  font-family: 'DM Sans', sans-serif; font-size: 11px; color: var(--text-tertiary);
+  padding: 4px 8px; cursor: pointer;
+}
+
+/* ============================================ */
+/* SCREEN C — EDIT MODE                         */
+/* ============================================ */
+
+.edit-banner {
+  background: linear-gradient(180deg, rgba(74,111,255,0.08), rgba(74,111,255,0.03));
+  border: 0.5px solid rgba(74,111,255,0.22);
+  border-radius: 12px; padding: 10px 14px; margin-bottom: 14px;
+  display: flex; align-items: center; gap: 10px;
+}
+.edit-banner svg { width: 14px; height: 14px; stroke: var(--uzg-blue); fill: none; stroke-width: 1.7; flex-shrink: 0; }
+.edit-banner-text {
+  flex: 1; font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 12px;
+  color: var(--uzg-blue-dark); line-height: 1.4;
+}
+.edit-banner-done {
+  font-family: 'Syne', sans-serif; font-weight: 700; font-size: 11px;
+  color: #FFFFFF; padding: 5px 12px;
+  background: var(--uzg-blue); border-radius: 8px; cursor: pointer;
+  letter-spacing: 0.06em;
+}
+
+/* Jiggle animation */
+@keyframes jiggle {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-1.2deg); }
+  75% { transform: rotate(1.2deg); }
+}
+.app-tile.jiggling {
+  animation: jiggle 0.45s ease-in-out infinite;
+  position: relative;
+}
+.app-tile.jiggling:nth-child(2n)  { animation-delay: -0.15s; }
+.app-tile.jiggling:nth-child(3n)  { animation-delay: -0.30s; }
+.app-tile.jiggling:nth-child(4n)  { animation-delay: -0.05s; }
+
+/* Unpin X badge (in edit mode) */
+.unpin-x {
+  position: absolute; top: 2px; left: 2px;
+  width: 20px; height: 20px; border-radius: 50%;
+  background: var(--text-primary); color: #FFFFFF;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'DM Sans', sans-serif; font-weight: 600; font-size: 12px;
+  border: 1.5px solid var(--bg-canvas); z-index: 5;
+  cursor: pointer;
+}
+
+/* Drag handle hint */
+.drag-handle {
+  position: absolute; bottom: 28px; right: 4px;
+  display: flex; flex-direction: column; gap: 2px;
+}
+.drag-handle div {
+  width: 3px; height: 3px; border-radius: 50%;
+  background: var(--text-tertiary); opacity: 0.6;
+}
+
+/* Empty pinned slot */
+.app-tile.empty-slot {
+  cursor: pointer;
+}
+.app-tile.empty-slot .app-icon {
+  background: rgba(160,175,200,0.10);
+  border: 1.2px dashed rgba(160,175,200,0.45);
+  box-shadow: none;
+}
+.app-tile.empty-slot .app-icon svg { stroke: var(--text-tertiary); }
+.app-tile.empty-slot .app-label { color: var(--text-tertiary); font-style: italic; }
+
+/* ============================================ */
+/* SCREEN D — MINI APP ENTRY                    */
+/* ============================================ */
+
+/* Backdrop = previous PLUS hub state dimmed */
+.minihub-backdrop {
+  position: absolute; inset: 0; z-index: 1;
+  filter: blur(4px); opacity: 0.35;
+  pointer-events: none;
+}
+
+/* Mini app full-screen takeover */
+.miniapp-shell {
+  position: absolute; top: 32px; bottom: 0; left: 0; right: 0;
+  z-index: 20;
+  background: linear-gradient(180deg, #FFFFFF 0%, #F5F8FE 100%);
+  border-radius: 24px 24px 0 0;
+  box-shadow: 0 -8px 30px rgba(36, 56, 112, 0.18);
+  overflow: hidden;
+  display: flex; flex-direction: column;
+  animation: slideUp 320ms cubic-bezier(0.32, 0.72, 0, 1);
+}
+@keyframes slideUp {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+
+/* Mini app top bar (replaces Foundation Top Bar) */
+.miniapp-topbar {
+  display: flex; align-items: center; gap: 12px;
+  padding: 14px 16px 12px;
+  border-bottom: 0.5px solid var(--divider);
+}
+.miniapp-close {
+  width: 32px; height: 32px; border-radius: 50%;
+  background: rgba(160,175,200,0.12);
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+}
+.miniapp-close svg { width: 14px; height: 14px; stroke: var(--text-primary); fill: none; stroke-width: 2; }
+.miniapp-title-block { flex: 1; min-width: 0; }
+.miniapp-name {
+  font-family: 'Syne', sans-serif; font-weight: 800; font-size: 15px;
+  color: var(--text-primary); letter-spacing: -0.005em;
+}
+.miniapp-tag {
+  font-family: 'DM Sans', sans-serif; font-weight: 400; font-size: 10.5px;
+  color: var(--text-tertiary); margin-top: 1px;
+}
+.miniapp-action-icon {
+  width: 32px; height: 32px; border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+}
+.miniapp-action-icon svg { width: 14px; height: 14px; stroke: var(--text-tertiary); fill: none; stroke-width: 1.7; }
+
+/* Mini app content placeholder (U-Reward example) */
+.miniapp-content {
+  flex: 1; padding: 16px; overflow-y: auto;
+}
+
+.ureward-hero {
+  background: linear-gradient(135deg, #4A6FFF 0%, #3B5BAA 100%);
+  border-radius: 18px; padding: 18px 16px;
+  color: #FFFFFF; position: relative; overflow: hidden;
+  margin-bottom: 14px;
+}
+.ureward-hero::before {
+  content: ''; position: absolute; top: -30px; right: -30px;
+  width: 140px; height: 140px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,255,255,0.18) 0%, transparent 70%);
+}
+.ureward-hero-label {
+  font-family: 'Syne', sans-serif; font-weight: 700; font-size: 10px;
+  letter-spacing: 0.18em; text-transform: uppercase; opacity: 0.7;
+  margin-bottom: 6px;
+}
+.ureward-hero-balance {
+  font-family: 'Syne', sans-serif; font-weight: 800; font-size: 36px;
+  letter-spacing: -0.02em; line-height: 1;
+}
+.ureward-hero-sub {
+  font-family: 'DM Sans', sans-serif; font-size: 12px;
+  margin-top: 6px; opacity: 0.8;
+}
+.ureward-streak {
+  display: inline-flex; align-items: center; gap: 5px;
+  margin-top: 12px; padding: 4px 10px;
+  background: rgba(255,255,255,0.15); border-radius: 10px;
+  font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 11px;
+  position: relative; z-index: 2;
+}
+
+.ureward-actions {
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px;
+}
+.ureward-action {
+  background: #FFFFFF; border: 0.5px solid var(--divider);
+  border-radius: 14px; padding: 14px 12px; cursor: pointer;
+  display: flex; flex-direction: column; gap: 6px;
+}
+.ureward-action-icon {
+  width: 32px; height: 32px; border-radius: 10px;
+  background: rgba(74,111,255,0.10);
+  display: flex; align-items: center; justify-content: center;
+}
+.ureward-action-icon svg { width: 16px; height: 16px; stroke: var(--uzg-blue); fill: none; stroke-width: 1.7; }
+.ureward-action-title {
+  font-family: 'DM Sans', sans-serif; font-weight: 600; font-size: 13px;
+  color: var(--text-primary); margin-top: 2px;
+}
+.ureward-action-sub {
+  font-family: 'DM Sans', sans-serif; font-weight: 400; font-size: 11px;
+  color: var(--text-tertiary); line-height: 1.35;
+}
+.ureward-action-reward {
+  font-family: 'Syne', sans-serif; font-weight: 700; font-size: 11px;
+  color: var(--moc-dark);
+  display: inline-flex; align-items: center; gap: 4px;
+  padding: 3px 8px; background: rgba(29,158,117,0.10); border-radius: 8px;
+  margin-top: 4px; align-self: flex-start;
+  letter-spacing: 0.04em;
+}
+
+/* Notes annotation */
+.note-strip {
+  margin: 10px auto 0; max-width: 280px;
+  padding: 6px 10px; background: rgba(74, 111, 255, 0.05);
+  border: 0.5px dashed rgba(74, 111, 255, 0.20);
+  border-radius: 8px;
+  font-family: 'DM Sans', sans-serif; font-size: 9.5px; color: var(--uzg-blue-dark);
+  text-align: center; line-height: 1.4;
+}
+
+/* Footer note */
+.footer-note {
+  max-width: 1280px; margin: 32px auto 0; padding: 18px 22px;
+  background: rgba(255,255,255,0.04); border: 0.5px solid rgba(255,255,255,0.08);
+  border-radius: 14px;
+}
+.footer-title {
+  font-family: 'Syne', sans-serif; font-weight: 700; font-size: 12px;
+  color: var(--uzg-blue-light); letter-spacing: 0.14em; text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.footer-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;
+  font-family: 'DM Sans', sans-serif; font-size: 12px; color: rgba(255,255,255,0.7);
+  line-height: 1.55;
+}
+.footer-grid b { color: rgba(255,255,255,0.95); font-weight: 600; }
+@media (max-width: 900px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
+
+</style>
+</head>
+<body>
+
+<!-- ============================================ -->
+<!-- PAGE HEADER                                  -->
+<!-- ============================================ -->
+<div class="page-header">
+  <div class="page-eyebrow">UZG+ V3 PWA OS · Phase 2 Mockup #6</div>
+  <div class="page-title">PLUS HUB — Springboard Launcher · Mini Apps</div>
+  <div class="page-sub">iOS/Android home screen pattern, NOT hamburger menu. UZG+ logo center bottom nav = entry. 3 sections: Pinned (user 8) / Featured (ENTA-aware) / All Apps. Mini apps full-screen takeover (slide up 320ms) — UI/UX riêng nhưng tuân Design System.</div>
+</div>
+
+<div class="screens-row">
+
+<!-- ============================================ -->
+<!-- SCREEN A — HUB DEFAULT                       -->
+<!-- ============================================ -->
+<div class="screen-wrap">
+  <div class="screen-label">Screen A · Default</div>
+  <div class="screen-name">Hub · 3 sections</div>
+
+  <div class="phone">
+    <div class="phone-canvas">
+
+      <div class="particles">
+        <svg viewBox="0 0 380 780" preserveAspectRatio="none">
+          <circle cx="42" cy="120" r="0.5" fill="#4A6FFF" opacity="0.22"/>
+          <circle cx="320" cy="180" r="0.6" fill="#4A6FFF" opacity="0.22"/>
+          <circle cx="80" cy="340" r="0.4" fill="#4A6FFF" opacity="0.22"/>
+          <circle cx="290" cy="420" r="0.5" fill="#4A6FFF" opacity="0.22"/>
+          <circle cx="120" cy="560" r="0.5" fill="#7535CC" opacity="0.18"/>
+          <circle cx="340" cy="640" r="0.4" fill="#4A6FFF" opacity="0.22"/>
+          <circle cx="60" cy="700" r="0.5" fill="#4A6FFF" opacity="0.22"/>
+          <circle cx="200" cy="80" r="0.4" fill="#4A6FFF" opacity="0.22"/>
+          <circle cx="240" cy="280" r="0.5" fill="#4A6FFF" opacity="0.22"/>
+        </svg>
+      </div>
+
+      <div class="status-bar">
+        <span>9:41</span>
+        <div class="status-icons">
+          <svg viewBox="0 0 16 16" fill="none"><path d="M2 12h12M2 8h12M2 4h12" stroke="currentColor" stroke-width="1.4"/></svg>
+          <svg viewBox="0 0 16 16" fill="none"><path d="M2 8h12v4H2z" stroke="currentColor" stroke-width="1.4"/></svg>
+        </div>
+      </div>
+
+      <!-- Top Bar -->
+      <div class="top-bar">
+        <div class="top-avatar">N</div>
+        <div class="top-title">UZG+ Apps</div>
+        <div class="top-icons">
+          <div class="top-icon-btn"><svg viewBox="0 0 16 16"><circle cx="7" cy="7" r="5"/><path d="M11 11l3 3"/></svg></div>
+          <div class="top-icon-btn"><svg viewBox="0 0 16 16"><circle cx="8" cy="8" r="2"/><path d="M8 1v2M8 13v2M1 8h2M13 8h2"/></svg></div>
+        </div>
+        <div class="u-pill" style="margin-left: 4px;">
+          <svg class="u-pill-icon" viewBox="0 0 12 12">
+            <circle cx="6" cy="6" r="2" fill="#4A6FFF"/>
+            <circle cx="6" cy="6" r="5" fill="none" stroke="#4A6FFF" stroke-width="0.6" stroke-dasharray="1.2 1.2" opacity="0.6"/>
+          </svg>
+          U 1,250
+        </div>
+      </div>
+
+      <!-- Scroll -->
+      <div class="scroll-area">
+
+        <!-- Search bar (sticky placeholder) -->
+        <div class="search-bar">
+          <svg viewBox="0 0 16 16"><circle cx="7" cy="7" r="5"/><path d="M11 11l3 3"/></svg>
+          <div class="search-bar-text">Search apps, features...</div>
+          <div class="search-cmd-hint">⌘K</div>
+        </div>
+
+        <!-- Pinned Section -->
+        <div class="section-row">
+          <div class="section-title">Pinned · 8 of 8</div>
+          <div class="section-action">
+            <svg viewBox="0 0 16 16"><path d="M11 2l3 3-9 9H2v-3l9-9z"/></svg>
+            Edit
+          </div>
+        </div>
+        <div class="app-grid">
+          <div class="app-tile">
+            <div class="app-icon ureward">
+              <svg viewBox="0 0 24 24"><path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z"/></svg>
+              <div class="app-badge">3</div>
+            </div>
+            <div class="app-label">U-Reward</div>
+          </div>
+          <div class="app-tile">
+            <div class="app-icon tao">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4" stroke-dasharray="2 2"/><circle cx="12" cy="12" r="1.5" fill="#FFFFFF" stroke="none"/></svg>
+            </div>
+            <div class="app-label">TAO</div>
+          </div>
+          <div class="app-tile">
+            <div class="app-icon booking">
+              <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
+            </div>
+            <div class="app-label">Booking</div>
+          </div>
+          <div class="app-tile">
+            <div class="app-icon membership">
+              <svg viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.5 4.5L18 22l-6-4-6 4 1.5-8.5L2 9h7z"/></svg>
+            </div>
+            <div class="app-label">Membership</div>
+          </div>
+          <div class="app-tile">
+            <div class="app-icon market">
+              <svg viewBox="0 0 24 24"><path d="M3 7h18l-1.5 11a2 2 0 01-2 2h-11a2 2 0 01-2-2L3 7z"/><path d="M8 7V5a4 4 0 018 0v2"/></svg>
+              <div class="app-badge dot"></div>
+            </div>
+            <div class="app-label">Marketplace</div>
+          </div>
+          <div class="app-tile">
+            <div class="app-icon retreat">
+              <svg viewBox="0 0 24 24"><path d="M12 2C8 8 8 12 12 18c4-6 4-10 0-16zM5 18c2 2 5 3 7 3s5-1 7-3"/></svg>
+            </div>
+            <div class="app-label">Retreat</div>
+          </div>
+          <div class="app-tile">
+            <div class="app-icon circles">
+              <svg viewBox="0 0 24 24"><circle cx="9" cy="12" r="6"/><circle cx="15" cy="12" r="6"/></svg>
+            </div>
+            <div class="app-label">Circles</div>
+          </div>
+          <div class="app-tile">
+            <div class="app-icon aier">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="9" cy="10" r="1.2" fill="#FFFFFF" stroke="none"/><circle cx="15" cy="10" r="1.2" fill="#FFFFFF" stroke="none"/><path d="M9 15c1 1 4 1 6 0"/></svg>
+            </div>
+            <div class="app-label">AIER Hub</div>
+          </div>
+        </div>
+
+        <!-- Featured Section -->
+        <div class="section-row" style="margin-top: 14px;">
+          <div class="section-title">Featured · ENTA-aware</div>
+          <div class="section-action">
+            <svg viewBox="0 0 16 16"><circle cx="8" cy="8" r="6"/><path d="M8 4v4M8 11v0.5"/></svg>
+            Why?
+          </div>
+        </div>
+        <div class="featured-note">
+          Curated for your <b>Hỏa-Mộc</b> profile · cools your Hỏa, grounds your Yang lean.
+        </div>
+        <div class="app-grid">
+          <div class="app-tile">
+            <div class="app-icon retreat">
+              <svg viewBox="0 0 24 24"><path d="M12 2C8 8 8 12 12 18c4-6 4-10 0-16zM5 18c2 2 5 3 7 3s5-1 7-3"/></svg>
+            </div>
+            <div class="app-label">Mộc Retreat</div>
+            <div class="featured-reason">Grounds Yang</div>
+          </div>
+          <div class="app-tile">
+            <div class="app-icon tickets">
+              <svg viewBox="0 0 24 24"><path d="M3 8a2 2 0 012-2h14a2 2 0 012 2v3a2 2 0 100 4v3a2 2 0 01-2 2H5a2 2 0 01-2-2v-3a2 2 0 100-4V8z"/></svg>
+            </div>
+            <div class="app-label">Thủy Event</div>
+            <div class="featured-reason">Cools Hỏa</div>
+          </div>
+          <div class="app-tile">
+            <div class="app-icon market">
+              <svg viewBox="0 0 24 24"><path d="M3 7h18l-1.5 11a2 2 0 01-2 2h-11a2 2 0 01-2-2L3 7z"/><path d="M8 7V5a4 4 0 018 0v2"/></svg>
+            </div>
+            <div class="app-label">Marketplace</div>
+            <div class="featured-reason">New picks</div>
+          </div>
+          <div class="app-tile">
+            <div class="app-icon udna">
+              <svg viewBox="0 0 24 24"><path d="M5 5c0 6 14 8 14 14M19 5c0 6-14 8-14 14"/></svg>
+            </div>
+            <div class="app-label">UDNA</div>
+            <div class="featured-reason">AIFI ecosystem</div>
+          </div>
+        </div>
+
+        <!-- All Apps Section -->
+        <div class="section-row" style="margin-top: 14px;">
+          <div class="section-title">All apps · 14</div>
+          <div class="section-action">
+            <svg viewBox="0 0 16 16"><path d="M3 5h10M3 8h10M3 11h10"/></svg>
+            A–Z
+          </div>
+        </div>
+        <div class="filter-pills">
+          <div class="filter-pill active">All</div>
+          <div class="filter-pill">Identity</div>
+          <div class="filter-pill">Economic</div>
+          <div class="filter-pill">Social</div>
+          <div class="filter-pill">Personal</div>
+          <div class="filter-pill">Governance</div>
+        </div>
+        <div class="app-grid">
+          <div class="app-tile">
+            <div class="app-icon stats">
+              <svg viewBox="0 0 24 24"><path d="M3 19h18M6 15v4M10 11v8M14 7v12M18 13v6"/></svg>
+            </div>
+            <div class="app-label">Stats</div>
+          </div>
+          <div class="app-tile">
+            <div class="app-icon governance">
+              <svg viewBox="0 0 24 24"><path d="M3 21h18M6 21V8l6-5 6 5v13M10 21v-7h4v7"/></svg>
+              <div class="lock-icon">
+                <svg viewBox="0 0 12 12"><rect x="3" y="5" width="6" height="5" rx="1"/><path d="M4 5V3a2 2 0 014 0v2"/></svg>
+              </div>
+            </div>
+            <div class="app-label">Governance</div>
+          </div>
+          <div class="app-tile">
+            <div class="app-icon business">
+              <svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="1"/><path d="M9 7V5a2 2 0 012-2h2a2 2 0 012 2v2"/></svg>
+            </div>
+            <div class="app-label">Business</div>
+          </div>
+          <div class="app-tile">
+            <div class="app-icon library">
+              <svg viewBox="0 0 24 24"><path d="M4 4h6v16H4zM14 4h6v16h-6z"/></svg>
+            </div>
+            <div class="app-label">Library</div>
+          </div>
+          <div class="app-tile">
+            <div class="app-icon forum">
+              <svg viewBox="0 0 24 24"><path d="M21 11a8 8 0 01-1 4 8.5 8.5 0 01-7.5 4.5 8.4 8.4 0 01-4-1L3 21l2-5a8.4 8.4 0 01-1-4 8.5 8.5 0 014.5-7.5A8.4 8.4 0 0112.5 3 8.5 8.5 0 0121 11.5z"/></svg>
+            </div>
+            <div class="app-label">Forum</div>
+          </div>
+          <div class="app-tile">
+            <div class="app-icon udna">
+              <svg viewBox="0 0 24 24"><path d="M5 5c0 6 14 8 14 14M19 5c0 6-14 8-14 14"/></svg>
+            </div>
+            <div class="app-label">UDNA</div>
+          </div>
+        </div>
+
+        <div style="height: 16px;"></div>
+      </div>
+
+      <!-- Floating + (Customize Hub) -->
+      <div class="fab" title="Customize Hub">
+        <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
+      </div>
+
+      <!-- Bottom Nav — UZG+ center active -->
+      <div class="bottom-nav">
+        <div class="nav-item">
+          <svg viewBox="0 0 24 24"><path d="M3 12L12 4l9 8M5 11v8h14v-8"/></svg>
+          <div class="nav-item-label">Home</div>
+        </div>
+        <div class="nav-item">
+          <svg viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 01-1 4 8.5 8.5 0 01-7.5 4.5 8.4 8.4 0 01-4-1L3 21l2-5a8.4 8.4 0 01-1-4 8.5 8.5 0 014.5-7.5 8.4 8.4 0 014-1A8.5 8.5 0 0121 11.5z"/></svg>
+          <div class="nav-item-label">Chat</div>
+        </div>
+        <div class="nav-center active">U+</div>
+        <div class="nav-item">
+          <svg viewBox="0 0 24 24"><path d="M21 12V7H5a2 2 0 010-4h14v4M3 5v14a2 2 0 002 2h16v-5M21 12h-5a2 2 0 000 4h5z"/></svg>
+          <div class="nav-item-label">Wallet</div>
+        </div>
+        <div class="nav-item">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4" stroke-dasharray="2 2"/><circle cx="12" cy="12" r="1.5" fill="currentColor"/></svg>
+          <div class="nav-item-label">Enta</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="note-strip">3 sections · Pinned 8 · Featured ENTA-aware · All Apps 14 · Locked apps tier-gated</div>
+</div>
+
+<!-- ============================================ -->
+<!-- SCREEN B — SEARCH ACTIVE                     -->
+<!-- ============================================ -->
+<div class="screen-wrap">
+  <div class="screen-label">Screen B · Search</div>
+  <div class="screen-name">Search · Live filter</div>
+
+  <div class="phone">
+    <div class="phone-canvas">
+
+      <div class="particles">
+        <svg viewBox="0 0 380 780" preserveAspectRatio="none">
+          <circle cx="42" cy="120" r="0.5" fill="#4A6FFF" opacity="0.22"/>
+          <circle cx="320" cy="180" r="0.6" fill="#4A6FFF" opacity="0.22"/>
+          <circle cx="80" cy="340" r="0.4" fill="#4A6FFF" opacity="0.22"/>
+          <circle cx="290" cy="420" r="0.5" fill="#4A6FFF" opacity="0.22"/>
+          <circle cx="60" cy="700" r="0.5" fill="#4A6FFF" opacity="0.22"/>
+        </svg>
+      </div>
+
+      <div class="status-bar">
+        <span>9:41</span>
+        <div class="status-icons">
+          <svg viewBox="0 0 16 16" fill="none"><path d="M2 12h12M2 8h12M2 4h12" stroke="currentColor" stroke-width="1.4"/></svg>
+          <svg viewBox="0 0 16 16" fill="none"><path d="M2 8h12v4H2z" stroke="currentColor" stroke-width="1.4"/></svg>
+        </div>
+      </div>
+
+      <!-- Top Bar -->
+      <div class="top-bar">
+        <div class="top-avatar">N</div>
+        <div class="top-title">UZG+ Apps</div>
+        <div class="top-icons">
+          <div class="top-icon-btn"><svg viewBox="0 0 16 16"><circle cx="8" cy="8" r="2"/><path d="M8 1v2M8 13v2M1 8h2M13 8h2"/></svg></div>
+        </div>
+        <div class="u-pill" style="margin-left: 4px;">
+          <svg class="u-pill-icon" viewBox="0 0 12 12">
+            <circle cx="6" cy="6" r="2" fill="#4A6FFF"/>
+            <circle cx="6" cy="6" r="5" fill="none" stroke="#4A6FFF" stroke-width="0.6" stroke-dasharray="1.2 1.2" opacity="0.6"/>
+          </svg>
+          U 1,250
+        </div>
+      </div>
+
+      <div class="scroll-area">
+
+        <!-- Active search bar -->
+        <div style="display: flex; gap: 10px; align-items: center; margin-bottom: 14px;">
+          <div class="search-bar active" style="margin-bottom: 0;">
+            <svg viewBox="0 0 16 16"><circle cx="7" cy="7" r="5"/><path d="M11 11l3 3"/></svg>
+            <input class="search-bar-text" value="ret" autofocus>
+          </div>
+          <div class="search-cancel-btn">Cancel</div>
+        </div>
+
+        <!-- Search results -->
+        <div class="search-section-label">2 results matching "ret"</div>
+        <div class="search-results-list">
+          <div class="search-result-row">
+            <div class="app-icon retreat">
+              <svg viewBox="0 0 24 24"><path d="M12 2C8 8 8 12 12 18c4-6 4-10 0-16zM5 18c2 2 5 3 7 3s5-1 7-3"/></svg>
+            </div>
+            <div class="search-result-info">
+              <div class="search-result-name"><mark>Ret</mark>reat</div>
+              <div class="search-result-cat">Personal · Wellness</div>
+            </div>
+            <div class="search-result-arrow"><svg viewBox="0 0 16 16"><path d="M5 4l4 4-4 4"/></svg></div>
+          </div>
+          <div class="search-result-row">
+            <div class="app-icon ureward">
+              <svg viewBox="0 0 24 24"><path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z"/></svg>
+            </div>
+            <div class="search-result-info">
+              <div class="search-result-name">U-Rewa<mark>r</mark>d</div>
+              <div class="search-result-cat">Economic · Earn engine</div>
+            </div>
+            <div class="search-result-arrow"><svg viewBox="0 0 16 16"><path d="M5 4l4 4-4 4"/></svg></div>
+          </div>
+        </div>
+
+        <!-- Recent searches -->
+        <div style="display: flex; align-items: center; justify-content: space-between; padding: 16px 0 4px;">
+          <div class="search-section-label" style="padding: 0;">Recent searches</div>
+          <div class="search-recent-clear">Clear</div>
+        </div>
+        <div>
+          <div class="search-recent-row">
+            <div class="search-recent-icon">
+              <svg viewBox="0 0 16 16"><circle cx="8" cy="8" r="6"/><path d="M8 5v3l2 1"/></svg>
+            </div>
+            <div class="search-recent-text">tao bazi</div>
+            <svg viewBox="0 0 16 16" style="width: 12px; height: 12px; stroke: var(--text-tertiary); fill: none; stroke-width: 1.5;"><path d="M5 4l4 4-4 4"/></svg>
+          </div>
+          <div class="search-recent-row">
+            <div class="search-recent-icon">
+              <svg viewBox="0 0 16 16"><circle cx="8" cy="8" r="6"/><path d="M8 5v3l2 1"/></svg>
+            </div>
+            <div class="search-recent-text">marketplace</div>
+            <svg viewBox="0 0 16 16" style="width: 12px; height: 12px; stroke: var(--text-tertiary); fill: none; stroke-width: 1.5;"><path d="M5 4l4 4-4 4"/></svg>
+          </div>
+          <div class="search-recent-row">
+            <div class="search-recent-icon">
+              <svg viewBox="0 0 16 16"><circle cx="8" cy="8" r="6"/><path d="M8 5v3l2 1"/></svg>
+            </div>
+            <div class="search-recent-text">circles meditation</div>
+            <svg viewBox="0 0 16 16" style="width: 12px; height: 12px; stroke: var(--text-tertiary); fill: none; stroke-width: 1.5;"><path d="M5 4l4 4-4 4"/></svg>
+          </div>
+        </div>
+
+        <!-- Quick suggestions -->
+        <div class="search-section-label" style="margin-top: 12px;">Try</div>
+        <div style="display: flex; flex-wrap: wrap; gap: 6px; padding: 0 8px;">
+          <div class="filter-pill">Booking</div>
+          <div class="filter-pill">Stats</div>
+          <div class="filter-pill">Library</div>
+          <div class="filter-pill">Different keywords</div>
+        </div>
+
+        <div style="height: 16px;"></div>
+      </div>
+
+      <div class="bottom-nav">
+        <div class="nav-item"><svg viewBox="0 0 24 24"><path d="M3 12L12 4l9 8M5 11v8h14v-8"/></svg><div class="nav-item-label">Home</div></div>
+        <div class="nav-item"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 01-1 4 8.5 8.5 0 01-7.5 4.5 8.4 8.4 0 01-4-1L3 21l2-5a8.4 8.4 0 01-1-4 8.5 8.5 0 014.5-7.5 8.4 8.4 0 014-1A8.5 8.5 0 0121 11.5z"/></svg><div class="nav-item-label">Chat</div></div>
+        <div class="nav-center active">U+</div>
+        <div class="nav-item"><svg viewBox="0 0 24 24"><path d="M21 12V7H5a2 2 0 010-4h14v4M3 5v14a2 2 0 002 2h16v-5M21 12h-5a2 2 0 000 4h5z"/></svg><div class="nav-item-label">Wallet</div></div>
+        <div class="nav-item"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4" stroke-dasharray="2 2"/><circle cx="12" cy="12" r="1.5" fill="currentColor"/></svg><div class="nav-item-label">Enta</div></div>
+      </div>
+
+    </div>
+  </div>
+  <div class="note-strip">Live filter as you type · highlighted match · recent + suggested · ⌘K shortcut</div>
+</div>
+
+<!-- ============================================ -->
+<!-- SCREEN C — EDIT MODE                         -->
+<!-- ============================================ -->
+<div class="screen-wrap">
+  <div class="screen-label">Screen C · Edit</div>
+  <div class="screen-name">Customize · Reorder Pinned</div>
+
+  <div class="phone">
+    <div class="phone-canvas">
+
+      <div class="particles">
+        <svg viewBox="0 0 380 780" preserveAspectRatio="none">
+          <circle cx="42" cy="120" r="0.5" fill="#4A6FFF" opacity="0.22"/>
+          <circle cx="320" cy="180" r="0.6" fill="#4A6FFF" opacity="0.22"/>
+          <circle cx="80" cy="340" r="0.4" fill="#4A6FFF" opacity="0.22"/>
+          <circle cx="290" cy="420" r="0.5" fill="#4A6FFF" opacity="0.22"/>
+          <circle cx="60" cy="700" r="0.5" fill="#4A6FFF" opacity="0.22"/>
+        </svg>
+      </div>
+
+      <div class="status-bar">
+        <span>9:41</span>
+        <div class="status-icons">
+          <svg viewBox="0 0 16 16" fill="none"><path d="M2 12h12M2 8h12M2 4h12" stroke="currentColor" stroke-width="1.4"/></svg>
+          <svg viewBox="0 0 16 16" fill="none"><path d="M2 8h12v4H2z" stroke="currentColor" stroke-width="1.4"/></svg>
+        </div>
+      </div>
+
+      <div class="top-bar">
+        <div class="top-avatar">N</div>
+        <div class="top-title">Customize</div>
+        <div class="u-pill" style="margin-left: 4px;">
+          <svg class="u-pill-icon" viewBox="0 0 12 12">
+            <circle cx="6" cy="6" r="2" fill="#4A6FFF"/>
+            <circle cx="6" cy="6" r="5" fill="none" stroke="#4A6FFF" stroke-width="0.6" stroke-dasharray="1.2 1.2" opacity="0.6"/>
+          </svg>
+          U 1,250
+        </div>
+      </div>
+
+      <div class="scroll-area">
+
+        <!-- Edit banner -->
+        <div class="edit-banner">
+          <svg viewBox="0 0 16 16"><circle cx="8" cy="8" r="6"/><path d="M8 5v3M8 11v0.5"/></svg>
+          <div class="edit-banner-text">Drag to reorder · tap × to unpin · max 8 pinned</div>
+          <div class="edit-banner-done">DONE</div>
+        </div>
+
+        <!-- Pinned in edit mode -->
+        <div class="section-row">
+          <div class="section-title">Pinned · 7 of 8</div>
+        </div>
+        <div class="app-grid">
+          <div class="app-tile jiggling">
+            <div class="unpin-x">×</div>
+            <div class="app-icon ureward">
+              <svg viewBox="0 0 24 24"><path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z"/></svg>
+            </div>
+            <div class="app-label">U-Reward</div>
+            <div class="drag-handle"><div></div><div></div><div></div></div>
+          </div>
+          <div class="app-tile jiggling">
+            <div class="unpin-x">×</div>
+            <div class="app-icon tao">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4" stroke-dasharray="2 2"/><circle cx="12" cy="12" r="1.5" fill="#FFFFFF" stroke="none"/></svg>
+            </div>
+            <div class="app-label">TAO</div>
+            <div class="drag-handle"><div></div><div></div><div></div></div>
+          </div>
+          <div class="app-tile jiggling">
+            <div class="unpin-x">×</div>
+            <div class="app-icon booking">
+              <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
+            </div>
+            <div class="app-label">Booking</div>
+            <div class="drag-handle"><div></div><div></div><div></div></div>
+          </div>
+          <div class="app-tile jiggling">
+            <div class="unpin-x">×</div>
+            <div class="app-icon membership">
+              <svg viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.5 4.5L18 22l-6-4-6 4 1.5-8.5L2 9h7z"/></svg>
+            </div>
+            <div class="app-label">Membership</div>
+            <div class="drag-handle"><div></div><div></div><div></div></div>
+          </div>
+          <div class="app-tile jiggling">
+            <div class="unpin-x">×</div>
+            <div class="app-icon market">
+              <svg viewBox="0 0 24 24"><path d="M3 7h18l-1.5 11a2 2 0 01-2 2h-11a2 2 0 01-2-2L3 7z"/><path d="M8 7V5a4 4 0 018 0v2"/></svg>
+            </div>
+            <div class="app-label">Marketplace</div>
+            <div class="drag-handle"><div></div><div></div><div></div></div>
+          </div>
+          <div class="app-tile jiggling">
+            <div class="unpin-x">×</div>
+            <div class="app-icon retreat">
+              <svg viewBox="0 0 24 24"><path d="M12 2C8 8 8 12 12 18c4-6 4-10 0-16zM5 18c2 2 5 3 7 3s5-1 7-3"/></svg>
+            </div>
+            <div class="app-label">Retreat</div>
+            <div class="drag-handle"><div></div><div></div><div></div></div>
+          </div>
+          <div class="app-tile jiggling">
+            <div class="unpin-x">×</div>
+            <div class="app-icon circles">
+              <svg viewBox="0 0 24 24"><circle cx="9" cy="12" r="6"/><circle cx="15" cy="12" r="6"/></svg>
+            </div>
+            <div class="app-label">Circles</div>
+            <div class="drag-handle"><div></div><div></div><div></div></div>
+          </div>
+          <!-- Empty pinned slot -->
+          <div class="app-tile empty-slot">
+            <div class="app-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" stroke-width="1.6"/></svg>
+            </div>
+            <div class="app-label">Add app</div>
+          </div>
+        </div>
+
+        <!-- Available to pin -->
+        <div class="section-row" style="margin-top: 14px;">
+          <div class="section-title">Available · tap to pin</div>
+        </div>
+        <div class="app-grid">
+          <div class="app-tile">
+            <div class="app-icon aier">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="9" cy="10" r="1.2" fill="#FFFFFF" stroke="none"/><circle cx="15" cy="10" r="1.2" fill="#FFFFFF" stroke="none"/><path d="M9 15c1 1 4 1 6 0"/></svg>
+            </div>
+            <div class="app-label">AIER Hub</div>
+          </div>
+          <div class="app-tile">
+            <div class="app-icon stats">
+              <svg viewBox="0 0 24 24"><path d="M3 19h18M6 15v4M10 11v8M14 7v12M18 13v6"/></svg>
+            </div>
+            <div class="app-label">Stats</div>
+          </div>
+          <div class="app-tile">
+            <div class="app-icon tickets">
+              <svg viewBox="0 0 24 24"><path d="M3 8a2 2 0 012-2h14a2 2 0 012 2v3a2 2 0 100 4v3a2 2 0 01-2 2H5a2 2 0 01-2-2v-3a2 2 0 100-4V8z"/></svg>
+            </div>
+            <div class="app-label">Tickets</div>
+          </div>
+          <div class="app-tile">
+            <div class="app-icon library">
+              <svg viewBox="0 0 24 24"><path d="M4 4h6v16H4zM14 4h6v16h-6z"/></svg>
+            </div>
+            <div class="app-label">Library</div>
+          </div>
+          <div class="app-tile">
+            <div class="app-icon business">
+              <svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="1"/><path d="M9 7V5a2 2 0 012-2h2a2 2 0 012 2v2"/></svg>
+            </div>
+            <div class="app-label">Business</div>
+          </div>
+          <div class="app-tile">
+            <div class="app-icon udna">
+              <svg viewBox="0 0 24 24"><path d="M5 5c0 6 14 8 14 14M19 5c0 6-14 8-14 14"/></svg>
+            </div>
+            <div class="app-label">UDNA</div>
+          </div>
+        </div>
+
+        <div style="height: 16px;"></div>
+      </div>
+
+      <div class="bottom-nav">
+        <div class="nav-item"><svg viewBox="0 0 24 24"><path d="M3 12L12 4l9 8M5 11v8h14v-8"/></svg><div class="nav-item-label">Home</div></div>
+        <div class="nav-item"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 01-1 4 8.5 8.5 0 01-7.5 4.5 8.4 8.4 0 01-4-1L3 21l2-5a8.4 8.4 0 01-1-4 8.5 8.5 0 014.5-7.5 8.4 8.4 0 014-1A8.5 8.5 0 0121 11.5z"/></svg><div class="nav-item-label">Chat</div></div>
+        <div class="nav-center active">U+</div>
+        <div class="nav-item"><svg viewBox="0 0 24 24"><path d="M21 12V7H5a2 2 0 010-4h14v4M3 5v14a2 2 0 002 2h16v-5M21 12h-5a2 2 0 000 4h5z"/></svg><div class="nav-item-label">Wallet</div></div>
+        <div class="nav-item"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4" stroke-dasharray="2 2"/><circle cx="12" cy="12" r="1.5" fill="currentColor"/></svg><div class="nav-item-label">Enta</div></div>
+      </div>
+
+    </div>
+  </div>
+  <div class="note-strip">Edit mode · jiggle 0.5° loop · drag to reorder · × to unpin · DONE exits · empty slot tap to add</div>
+</div>
+
+<!-- ============================================ -->
+<!-- SCREEN D — MINI APP ENTRY                    -->
+<!-- ============================================ -->
+<div class="screen-wrap">
+  <div class="screen-label">Screen D · Mini App</div>
+  <div class="screen-name">U-Reward · Full-screen takeover</div>
+
+  <div class="phone">
+    <div class="phone-canvas">
+
+      <!-- Backdrop = previous Hub state, dimmed + blurred -->
+      <div class="minihub-backdrop">
+        <div class="status-bar">
+          <span>9:41</span>
+          <div class="status-icons">
+            <svg viewBox="0 0 16 16" fill="none"><path d="M2 12h12M2 8h12M2 4h12" stroke="currentColor" stroke-width="1.4"/></svg>
+          </div>
+        </div>
+        <div class="top-bar" style="opacity: 0.6;">
+          <div class="top-avatar">N</div>
+          <div class="top-title">UZG+ Apps</div>
+        </div>
+        <div style="position: absolute; top: 110px; left: 16px; right: 16px;">
+          <div style="font-family: 'Syne', sans-serif; font-weight: 700; font-size: 12px; color: var(--text-primary); letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.5; margin-bottom: 12px;">Pinned</div>
+          <div class="app-grid">
+            <div class="app-tile"><div class="app-icon ureward" style="opacity: 0.5;"></div></div>
+            <div class="app-tile"><div class="app-icon tao" style="opacity: 0.5;"></div></div>
+            <div class="app-tile"><div class="app-icon booking" style="opacity: 0.5;"></div></div>
+            <div class="app-tile"><div class="app-icon membership" style="opacity: 0.5;"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mini app full-screen takeover -->
+      <div class="miniapp-shell">
+
+        <!-- Mini app top bar -->
+        <div class="miniapp-topbar">
+          <div class="miniapp-close">
+            <svg viewBox="0 0 16 16"><path d="M4 4l8 8M12 4l-8 8"/></svg>
+          </div>
+          <div class="miniapp-title-block">
+            <div class="miniapp-name">U-Reward</div>
+            <div class="miniapp-tag">Connect-to-Earn engine · governed</div>
+          </div>
+          <div class="miniapp-action-icon">
+            <svg viewBox="0 0 16 16"><circle cx="8" cy="8" r="1.4"/><circle cx="3" cy="8" r="1.4"/><circle cx="13" cy="8" r="1.4"/></svg>
+          </div>
+        </div>
+
+        <!-- Mini app content -->
+        <div class="miniapp-content">
+
+          <!-- Hero balance -->
+          <div class="ureward-hero">
+            <div class="ureward-hero-label">Your U Balance</div>
+            <div class="ureward-hero-balance">1,250 U</div>
+            <div class="ureward-hero-sub">≈ 12.5 UZG · earned this month: +312 U</div>
+            <div class="ureward-streak">
+              <svg viewBox="0 0 16 16" style="width: 12px; height: 12px; fill: #FFC04A; stroke: none;"><path d="M8 1c-1 3-3 4-3 7 0 2 1 4 3 4s3-2 3-4c0-2-1-3-3-7z"/></svg>
+              <span>5-day streak · keep going</span>
+            </div>
+          </div>
+
+          <!-- Action grid -->
+          <div class="section-row">
+            <div class="section-title">Earn · 4 ways</div>
+            <div class="section-action">
+              <svg viewBox="0 0 16 16"><circle cx="8" cy="8" r="6"/><path d="M8 5v3l2 1"/></svg>
+              History
+            </div>
+          </div>
+          <div class="ureward-actions">
+            <div class="ureward-action">
+              <div class="ureward-action-icon">
+                <svg viewBox="0 0 16 16"><path d="M8 1l2 5h5l-4 3 1.5 5L8 11l-4.5 3L5 9 1 6h5z"/></svg>
+              </div>
+              <div class="ureward-action-title">Daily Tap</div>
+              <div class="ureward-action-sub">Tap once a day for U signal</div>
+              <div class="ureward-action-reward">+5 U</div>
+            </div>
+            <div class="ureward-action">
+              <div class="ureward-action-icon">
+                <svg viewBox="0 0 16 16"><circle cx="8" cy="8" r="6"/><path d="M8 5v3M8 11v0.5"/></svg>
+              </div>
+              <div class="ureward-action-title">Quiz</div>
+              <div class="ureward-action-sub">3 questions · NAM TAO basics</div>
+              <div class="ureward-action-reward">+15 U</div>
+            </div>
+            <div class="ureward-action">
+              <div class="ureward-action-icon">
+                <svg viewBox="0 0 16 16"><rect x="2" y="3" width="12" height="11" rx="1.5"/><path d="M5 7h6M5 10h4"/></svg>
+              </div>
+              <div class="ureward-action-title">Task</div>
+              <div class="ureward-action-sub">Post in your dominant element</div>
+              <div class="ureward-action-reward">+25 U</div>
+            </div>
+            <div class="ureward-action">
+              <div class="ureward-action-icon">
+                <svg viewBox="0 0 16 16"><path d="M2 12V6l6-4 6 4v6M5 14V9h6v5"/></svg>
+              </div>
+              <div class="ureward-action-title">Campaign</div>
+              <div class="ureward-action-sub">Mộc Retreat reflection</div>
+              <div class="ureward-action-reward">+80 U</div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+  <div class="note-strip">Slide up 320ms · Mini app takeover · 4 fixed parts hidden · Close X to return PLUS Hub</div>
+</div>
+
+</div>
+
+<!-- ============================================ -->
+<!-- FOOTNOTE                                     -->
+<!-- ============================================ -->
+<div class="footer-note">
+  <div class="footer-title">Mockup #6 — Decisions surfaced for NTS review</div>
+  <div class="footer-grid">
+    <div>
+      <b>D1 · Hub springboard</b><br>
+      iOS-style 4-column grid, NOT hamburger menu. 3 sections (Pinned 8 / Featured ENTA-aware / All Apps 14). UZG+ logo center bottom nav active state với glowing ring.
+    </div>
+    <div>
+      <b>D2 · App icon system</b><br>
+      56×56 rounded squares, color-coded gradients per category. Badges (count + dot variants). Locked overlay với gold lock icon for tier-gated apps. AIER icon dashed orbit signature (governed).
+    </div>
+    <div>
+      <b>D3 · Featured ENTA-aware</b><br>
+      Curated based on Hỏa-Mộc dominant + Yang lean. "Why?" button reveals reasoning. Per-app caption shows balancing logic ("Cools Hỏa", "Grounds Yang").
+    </div>
+    <div>
+      <b>D4 · Mini app takeover</b><br>
+      Slide up 320ms cubic-bezier. 4 fixed parts hidden (Bottom Nav / Top Bar / Floating + / U-Reward pill). Mini app top bar = X close + name + tag + actions. Close returns PLUS Hub.
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UZG+ V3 Mockup #1 — Foundation OS (LOCKED v1.1)</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; }
+body {
+  margin: 0; padding: 24px;
+  font-family: 'DM Sans', sans-serif;
+  background: #F0F1F5;
+  display: flex; flex-direction: column; align-items: center; gap: 18px;
+}
+.header {
+  text-align: center; max-width: 600px;
+}
+.header h1 {
+  font-family: 'Syne', sans-serif; font-weight: 800; font-size: 22px;
+  color: #1A1F2E; margin: 0 0 6px;
+}
+.header p {
+  font-size: 13px; color: #5F5E5A; margin: 4px 0; line-height: 1.5;
+}
+.lock-badge {
+  display: inline-block; padding: 4px 10px;
+  background: rgba(74, 111, 255, 0.08); color: #243870;
+  border-radius: 12px; font-family: 'Syne', sans-serif; font-weight: 700;
+  font-size: 11px; letter-spacing: 0.05em;
+}
+.device-frame {
+  background: #E5E7ED; border-radius: 24px; padding: 16px;
+  display: inline-block;
+}
+.device {
+  width: 375px; height: 740px; background: #FBFCFE;
+  border-radius: 18px; overflow: hidden; position: relative;
+}
+.statusbar { height: 32px; background: rgba(251,252,254,0.85); backdrop-filter: blur(8px); display: flex; align-items: center; justify-content: space-between; padding: 0 18px; font-family: Syne, sans-serif; font-weight: 700; font-size: 11px; color: #1A1F2E; position: relative; z-index: 5; }
+.topbar { height: 56px; background: rgba(251,252,254,0.94); backdrop-filter: blur(14px); display: flex; align-items: center; padding: 0 14px; gap: 10px; position: relative; z-index: 5; }
+.avatar-btn { width: 36px; height: 36px; border-radius: 50%; background: linear-gradient(135deg, #4A6FFF, #3B5BAA); border: none; padding: 0; cursor: pointer; display: flex; align-items: center; justify-content: center; font-family: Syne, sans-serif; font-weight: 800; font-size: 13px; color: white; flex-shrink: 0; }
+.tb-title { flex: 1; text-align: center; }
+.tb-title-main { font-family: Syne, sans-serif; font-weight: 700; font-size: 16px; color: #1A1F2E; line-height: 1.1; letter-spacing: -0.012em; }
+.tb-title-sub { font-size: 9px; color: #9099B0; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; margin-top: 2px; }
+.upill { background: rgba(74,111,255,0.07); border: 0.5px solid rgba(74,111,255,0.22); padding: 5px 11px 5px 8px; border-radius: 14px; display: flex; align-items: center; gap: 6px; flex-shrink: 0; }
+.upill-text { font-family: Syne, sans-serif; font-weight: 800; font-size: 11px; color: #243870; letter-spacing: 0.02em; }
+.module-content { position: absolute; top: 88px; bottom: 72px; left: 0; right: 0; overflow-y: auto; }
+.module-content::-webkit-scrollbar { width: 0; }
+.module-shell { display: none; }
+.module-shell.active { display: block; }
+
+/* Reaction icons — LOCKED PATTERN */
+.rxn { display: inline-flex; align-items: center; gap: 5px; background: transparent !important; border: none !important; padding: 4px 0; cursor: pointer; color: #9099B0; transition: color 150ms ease-out; border-radius: 0 !important; }
+.rxn:hover { color: #4A6FFF; }
+.rxn:active { transform: scale(0.94); }
+.rxn-num { font-size: 11px; font-weight: 500; color: #9099B0; transition: color 150ms ease-out; }
+.rxn:hover .rxn-num { color: #4A6FFF; }
+
+/* Bottom Nav */
+.bottomnav { position: absolute; bottom: 0; left: 0; right: 0; height: 72px; background: rgba(251,252,254,0.94); backdrop-filter: blur(18px); border-top: 0.5px solid rgba(160, 175, 200, 0.22); display: flex; align-items: center; padding: 0 4px 10px; }
+.nav-btn { flex: 1; height: 56px; background: transparent; border: none; padding: 0; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; color: #9099B0; transition: color 150ms ease-out; }
+.nav-btn.active { color: #4A6FFF; }
+.nav-btn span { font-size: 9px; font-weight: 600; letter-spacing: 0.04em; }
+.nav-center-icon { width: 44px; height: 44px; border-radius: 12px; background: linear-gradient(135deg, #4A6FFF, #3B5BAA); display: flex; align-items: center; justify-content: center; font-family: Syne, sans-serif; font-weight: 800; font-size: 15px; color: white; letter-spacing: -0.04em; box-shadow: 0 4px 14px rgba(74, 111, 255, 0.25); }
+
+.fab { position: absolute; right: 16px; bottom: 88px; width: 52px; height: 52px; border-radius: 50%; background: linear-gradient(135deg, #4A6FFF, #3B5BAA); border: none; padding: 0; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 20px rgba(74, 111, 255, 0.32); z-index: 10; }
+
+.spec-block { max-width: 600px; padding: 14px 18px; background: white; border-radius: 12px; border: 0.5px solid rgba(160, 175, 200, 0.3); }
+.spec-block h3 { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 13px; color: #1A1F2E; margin: 0 0 6px; letter-spacing: -0.01em; }
+.spec-block p { font-size: 12px; color: #5F5E5A; line-height: 1.6; margin: 0 0 6px; }
+.spec-block code { background: rgba(74, 111, 255, 0.08); padding: 1px 5px; border-radius: 3px; font-size: 11px; color: #243870; font-family: monospace; }
+</style>
+</head>
+<body>
+
+<div class="header">
+<h1>UZG+ V3 Mockup #1 — Foundation OS</h1>
+<p><span class="lock-badge">🔒 LOCKED v1.1 · 2026-04-30</span></p>
+<p>4 phần cố định + 5 module shells. Tap nav icons to switch modules. Tap avatar for drawer. Tap + for context action.</p>
+</div>
+
+<div class="device-frame">
+<div class="device">
+
+<svg width="375" height="740" viewBox="0 0 375 740" xmlns="http://www.w3.org/2000/svg" style="position: absolute; top: 0; left: 0; pointer-events: none; opacity: 0.5;">
+<defs>
+<radialGradient id="qf-glow-1" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#4A6FFF" stop-opacity="0.10"/><stop offset="100%" stop-color="#4A6FFF" stop-opacity="0"/></radialGradient>
+<radialGradient id="qf-glow-2" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#A066E8" stop-opacity="0.06"/><stop offset="100%" stop-color="#A066E8" stop-opacity="0"/></radialGradient>
+</defs>
+<circle cx="320" cy="100" r="220" fill="url(#qf-glow-1)"/>
+<circle cx="40" cy="600" r="200" fill="url(#qf-glow-2)"/>
+<g fill="#4A6FFF" opacity="0.22">
+<circle cx="80" cy="220" r="0.6"/><circle cx="280" cy="280" r="0.5"/><circle cx="160" cy="380" r="0.6"/><circle cx="320" cy="450" r="0.4"/><circle cx="60" cy="480" r="0.5"/><circle cx="240" cy="560" r="0.6"/><circle cx="180" cy="660" r="0.4"/><circle cx="340" cy="200" r="0.4"/>
+</g>
+</svg>
+
+<div class="statusbar"><span>9:41</span><span style="font-size: 10px;">5G ▮</span></div>
+
+<div class="topbar">
+<button class="avatar-btn">N</button>
+<div class="tb-title">
+<div class="tb-title-main" id="m-title">Home</div>
+<div class="tb-title-sub" id="m-sub">Quantum Social</div>
+</div>
+<button class="upill">
+<svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="2" fill="#4A6FFF"/><circle cx="6" cy="6" r="4.5" stroke="#4A6FFF" stroke-width="0.5" stroke-dasharray="1.2 1.2" opacity="0.6"/></svg>
+<span class="upill-text">U 1,250</span>
+</button>
+</div>
+
+<div class="module-content">
+
+<div class="module-shell active" id="shell-home">
+<div style="padding: 16px 16px 14px; display: flex; gap: 10px; border-bottom: 0.5px solid rgba(160, 175, 200, 0.22);">
+<div style="width: 38px; height: 38px; border-radius: 50%; background: linear-gradient(135deg, #5DCAA5, #1D9E75); display: flex; align-items: center; justify-content: center; font-family: Syne, sans-serif; font-weight: 800; font-size: 13px; color: white; flex-shrink: 0;">M</div>
+<div style="flex: 1;">
+<div style="display: flex; align-items: center; gap: 5px; margin-bottom: 4px;">
+<span style="font-size: 14px; font-weight: 600; color: #1A1F2E;">Minh Anh</span>
+<span style="font-size: 13px; color: #9099B0;">@minhanh · 2h</span>
+</div>
+<div style="font-size: 14.5px; color: #1A1F2E; line-height: 1.45; margin-bottom: 12px;">Vừa hoàn thành retreat 7 ngày ở Đà Lạt. Mộc trong tôi nở ra ↗</div>
+<div style="border-radius: 16px; overflow: hidden; margin-bottom: 12px; height: 188px; background: linear-gradient(135deg, #1D9E75, #5DCAA5 50%, #97C459); position: relative;">
+<svg width="100%" height="100%" viewBox="0 0 343 188" preserveAspectRatio="xMidYMid slice">
+<g opacity="0.4"><circle cx="50" cy="40" r="22" fill="#FFFFFF" opacity="0.15"/><circle cx="290" cy="60" r="15" fill="#FFFFFF" opacity="0.2"/><path d="M 0 140 Q 80 100 160 130 T 343 110 L 343 188 L 0 188 Z" fill="#0F6E56" opacity="0.5"/></g>
+</svg>
+</div>
+<div style="display: flex; align-items: center; justify-content: space-between;">
+<button class="rxn"><svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M3 7.5C3 5.01 5.01 3 7.5 3H8.5C10.98 3 13 5.01 13 7.5C13 9.98 10.98 12 8.5 12H6L3.5 14V12.4C3.18 11.7 3 10.9 3 10V7.5Z" stroke="currentColor" stroke-width="1.3"/></svg><span class="rxn-num">12</span></button>
+<button class="rxn"><svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M5.5 8.5L10.5 5.5M5.5 7.5L10.5 10.5" stroke="currentColor" stroke-width="1.3"/><circle cx="11.5" cy="3.5" r="1.5" stroke="currentColor" stroke-width="1.3"/><circle cx="4.5" cy="8" r="1.5" stroke="currentColor" stroke-width="1.3"/><circle cx="11.5" cy="12.5" r="1.5" stroke="currentColor" stroke-width="1.3"/></svg><span class="rxn-num">8</span></button>
+<button class="rxn"><svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M8 2C8 2 4 5 4 9C4 11.5 5.79 13.5 8 13.5C10.21 13.5 12 11.5 12 9C12 7 10 6 10 4C10 4 8 5 8 2Z" stroke="#E24B4A" stroke-width="1.3"/></svg><span class="rxn-num">301k</span></button>
+<button class="rxn"><svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M8 14V6M8 6L4 9M8 6L12 9M5 4C5 4 8 2 11 4M3 7C3 7 5 5 8 5" stroke="#1D9E75" stroke-width="1.4" stroke-linecap="round"/></svg><span class="rxn-num">101</span></button>
+<button class="rxn"><svg width="15" height="15" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="5.5" stroke="#888780" stroke-width="1.3"/><circle cx="8" cy="8" r="2" stroke="#888780" stroke-width="1.1"/></svg><span class="rxn-num">200k</span></button>
+<button class="rxn"><svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M8 2C8 2 3.5 7 3.5 10.5C3.5 12.99 5.51 14.5 8 14.5C10.49 14.5 12.5 12.99 12.5 10.5C12.5 7 8 2 8 2Z" stroke="#185FA5" stroke-width="1.3"/></svg><span class="rxn-num">500k</span></button>
+<button class="rxn"><svg width="15" height="15" viewBox="0 0 16 16" fill="none"><rect x="3" y="6" width="10" height="7" stroke="#BA7517" stroke-width="1.3" rx="0.5"/><path d="M3 9H13" stroke="#BA7517" stroke-width="1.1"/></svg><span class="rxn-num">39k</span></button>
+<button class="rxn"><svg width="15" height="15" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="2" fill="#4A6FFF"/><circle cx="8" cy="8" r="5.5" stroke="#4A6FFF" stroke-width="0.9" stroke-dasharray="1.4 1.4"/></svg></button>
+</div>
+</div>
+</div>
+<div style="padding: 24px 16px; color: #9099B0; font-size: 13px; text-align: center;">— additional posts in feed —</div>
+</div>
+
+<div class="module-shell" id="shell-chat" style="padding: 24px; color: #9099B0; text-align: center; font-size: 13px;">CHAT module · see Mockup #3</div>
+<div class="module-shell" id="shell-plus" style="padding: 24px; color: #9099B0; text-align: center; font-size: 13px;">PLUS Hub springboard · see Mockup #6</div>
+<div class="module-shell" id="shell-wallet" style="padding: 24px; color: #9099B0; text-align: center; font-size: 13px;">WALLET module · see Mockup #4</div>
+<div class="module-shell" id="shell-enta" style="padding: 24px; color: #9099B0; text-align: center; font-size: 13px;">ENTA Wheel · see Mockup #5</div>
+
+</div>
+
+<button class="fab"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M11 4V18M4 11H18" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round"/></svg></button>
+
+<div class="bottomnav">
+<button class="nav-btn active" data-shell="home"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M3 12L12 4L21 12V20C21 20.55 20.55 21 20 21H15V14H9V21H4C3.44 21 3 20.55 3 20V12Z" stroke="currentColor" stroke-width="1.6"/></svg><span>Home</span></button>
+<button class="nav-btn" data-shell="chat"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M21 11.5C21 16.19 16.97 20 12 20C10.73 20 9.52 19.75 8.42 19.31L3 20L4.39 16.08C3.51 14.76 3 13.18 3 11.5C3 6.81 7.03 3 12 3C16.97 3 21 6.81 21 11.5Z" stroke="currentColor" stroke-width="1.6"/></svg><span>Chat</span></button>
+<button class="nav-btn" data-shell="plus" style="display: flex;"><div class="nav-center-icon">U+</div></button>
+<button class="nav-btn" data-shell="wallet"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M3 8C3 6.9 3.9 6 5 6H19C20.1 6 21 6.9 21 8V17C21 18.1 20.1 19 19 19H5C3.9 19 3 18.1 3 17V8Z" stroke="currentColor" stroke-width="1.6"/><circle cx="16" cy="12.5" r="1" fill="currentColor"/></svg><span>Wallet</span></button>
+<button class="nav-btn" data-shell="enta"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.4"/></svg><span>ENTA</span></button>
+</div>
+
+</div>
+</div>
+
+<div class="spec-block">
+<h3>v1.1 LOCKED DECISIONS (12)</h3>
+<p>1. <strong>8 reaction icons</strong> row: Comment / Share / Hỏa / Mộc / Kim / Thủy / Thổ / QOT (fixed order)</p>
+<p>2. <strong>Reaction style:</strong> <code>background: transparent !important</code>, <code>border: none</code>, <code>border-radius: 0</code>. Hover = color shift to <code>#4A6FFF</code> only. NO pill, NO fill.</p>
+<p>3. <strong>Number format:</strong> Compact via Intl.NumberFormat (<code>200k</code>, <code>500k</code>, <code>39k</code>). NEVER raw 4+ digits.</p>
+<p>4. <strong>Feed style:</strong> X.com pattern. Avatar 38×38 left, content right, 10px gap. Author line: name + @handle + · + time. NO card chrome, NO border, just <code>border-bottom: 0.5px solid rgba(160,175,200,0.22)</code> divider.</p>
+<p>5. <strong>Quantum aesthetic light touch:</strong> Background <code>#FBFCFE</code> + 8-15 micro-particles + 2-3 radial glows + backdrop-blur on chrome. NO neon, NO holographic, NO sci-fi.</p>
+<p>6. <strong>ENTA = Entanglement</strong> framing. Short "ENTA" + sublabel "Entanglement". VI: "rối lượng tử".</p>
+<p>7. <strong>U-Reward pill:</strong> Tinted <code>rgba(74,111,255,0.07)</code>, dashed-orbit icon, NOT solid pill.</p>
+<p>8. <strong>Bottom Nav center:</strong> "U+" lettermark on quantum gradient square 44×44, <code>border-radius: 12px</code>, soft shadow.</p>
+<p>9. <strong>Avatar:</strong> Circle with <code>linear-gradient(135deg, &lt;light&gt;, &lt;dark&gt;)</code>, NOT solid color.</p>
+<p>10. <strong>Top bar / Bottom nav:</strong> <code>backdrop-filter: blur(14-18px)</code> with translucent background.</p>
+<p>11. <strong>Floating + button:</strong> 52×52 circle, quantum gradient, <code>box-shadow: 0 6px 20px rgba(74,111,255,0.32)</code>.</p>
+<p>12. <strong>Long-press reaction wheel</strong> reserved for v1.2 (300ms threshold, see Mockup #2).</p>
+</div>
+
+<script>
+const shells = document.querySelectorAll('.module-shell');
+const navBtns = document.querySelectorAll('.nav-btn');
+const titles = {
+  home: { title: 'Home', sub: 'Quantum Social' },
+  chat: { title: 'Chat', sub: 'Inbox' },
+  plus: { title: 'UZG+', sub: 'App Hub' },
+  wallet: { title: 'Wallet', sub: 'Total Value' },
+  enta: { title: 'ENTA', sub: 'Entanglement' }
+};
+navBtns.forEach(btn => btn.addEventListener('click', () => {
+  const target = btn.getAttribute('data-shell');
+  shells.forEach(s => s.classList.toggle('active', s.id === 'shell-' + target));
+  navBtns.forEach(b => b.classList.toggle('active', b === btn));
+  document.getElementById('m-title').textContent = titles[target].title;
+  document.getElementById('m-sub').textContent = titles[target].sub;
+}));
+</script>
+
+</body>
+</html>
