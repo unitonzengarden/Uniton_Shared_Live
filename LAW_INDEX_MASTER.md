@@ -49,17 +49,18 @@ Path: `docs/LAW_CLA_LLM/SHARED/laws/`
 | `BOOT_MINIMUM.md` | ALL | Boot-minimum context |
 | `LAW_GITHUB_01_REPO_GOVERNANCE.md` | ALL | GitHub repo governance |
 
-## NHÓM 4 — LAW-NTS-LANE-* (Lane-specific LAWs, currently 3 files)
+## NHÓM 4 — LAW-NTS-LANE-* (Lane-specific LAWs, currently 4 files)
 
 Path: `laws/` (root-level — separate from `docs/LAW_CLA_LLM/SHARED/laws/`)
 
 | File | Scope | Date | Notes |
 |---|---|---|---|
 | `LAW-NTS-LANE-1_v1.md` | Lane_01 (CLA1 / CLAC1 / Cursor — Vultr 24/7) | 2026-04-30 | CTO Orchestrator Lane operating law v1.0 — DUAL workspace + DUAL executor pattern |
+| `LAW-NTS-LANE-2_v1.md` | Lane_02 (CLA2 / CLAC2 — Local Desktop) | 2026-04-30 | TAO + Bazi + Language OS + UI/UX Lane operating law v1.0 — SINGLE workspace + SINGLE executor pattern |
 | `LAW-NTS-LANE-3_v1.md` | Lane_03 (AITAO / Codex) | 2026-04-29 | Backend Engineering Lane operating law v1.1 |
 | `LAW-NTS-LANE-4_v1.md` | Lane_04 (Gemini + Copilot) | 2026-04-29 | Social + Real User Testing Lane operating law v1.0 (effective 2026-04-30) |
 
-> **Phantom-prefix materialisation update 2026-04-30:** the `LAW-NTS-LANE-*` prefix phantom count: **3 of 10 materialised** (Lane_01 v1.0 + Lane_03 v1.1 + Lane_04 v1.0). Remaining 7 phantoms (Lane_02, Lane_05+, etc.) await CLA1 authoring on demand. The prefix is now firmly canonical-intended (not aspirational); Lane_01 master file consolidates 10 NHÓM 2 detail files into Lane operating doc per 4-Lane Architecture clean-up.
+> **Phantom-prefix materialisation update 2026-04-30:** the `LAW-NTS-LANE-*` prefix phantom count: **4 of 10 materialised** (Lane_01 v1.0 + Lane_02 v1.0 + Lane_03 v1.1 + Lane_04 v1.0). 4-Lane Architecture LAW set now COMPLETE (4/4 active Lanes have operating LAW LIVE). Remaining 6 phantoms reserved for future Lane_05+ as ecosystem expands. The prefix is firmly canonical-intended; each Lane master consolidates Lane-specific LAW detail files (Lane_01 master consolidates 10 NHÓM 2 detail files; Lane_02 master inherits LAW-NTS-LANE-2-* phantom prefix for future TAO/Bazi/Language detail specs).
 
 ---
 
