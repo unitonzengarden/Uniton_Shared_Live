@@ -10,7 +10,7 @@
 ## §0. Header
 
 - **Generator:** `aier-state-update v1.0` invoked via `scripts/runtime/generate_project_status.py v1.1`
-- **Source commit:** `ca0f0586845e86fce65d3ba8d6884c58ae02dc15` (short: `ca0f058`)
+- **Source commit:** `1f59c7818e5ccd3eed02597fb3d265abd326a877` (short: `1f59c78`)
 - **Auto-generated:** `true` (do not hand-edit)
 - **Authority:** repo-backed automation per LAW_N8 §L8.2 explicitly enabled CI mode (state-mirror auto-regenerate scope only)
 
@@ -68,11 +68,11 @@
 
 | SHA | Author | Subject |
 |---|---|---|
-| `ca0f058` | unitonzengarden | docs(lane03): publish backend runtime state spine |
-| `f96a04c` | Ecosystem Poller Bot | poll: ecosystem state update [vercel skip] |
-| `d96da85` | AIER Code Heartbeat | AIER Code heartbeat 2026-04-30T15:13:35Z [vercel skip] |
-| `f56f37b` | Uniton Zen | fix(canon): apply v1.1 INDEX fix (NTS-staged) [vercel skip] (#44) |
-| `276da3a` | Ecosystem Poller Bot | poll: ecosystem state update [vercel skip] |
+| `1f59c78` | unitonzengarden | docs(lane03): lock batch c ledger and rpc decision |
+| `a89435d` | Ecosystem Poller Bot | poll: ecosystem state update [vercel skip] |
+| `4f77902` | AIER Code Heartbeat | AIER Code heartbeat 2026-04-30T18:13:44Z [vercel skip] |
+| `4af6ce8` | Uniton Zen | fix(s1): relocate 3 DOT deliverables UP to audits/ecosystem/uzg-plus/ root per R-DELIVERABLE-01 [ver |
+| `470ffc8` | Uniton Zen | docs(sprints): append live mirror 200 OK stamp to S1 audit_log [vercel skip] (#47) |
 
 ## §7. Latest 5 DONE Tasks (from MASTER_CHECKLIST)
 
