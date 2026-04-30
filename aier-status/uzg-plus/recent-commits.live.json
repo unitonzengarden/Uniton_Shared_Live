@@ -1,9 +1,23 @@
 {
   "project_slug": "uzg-plus",
   "github_repo": "unitonzengarden/uzgplus-app",
-  "polled_at": "2026-04-30T19:56:39.651Z",
+  "polled_at": "2026-04-30T21:05:30.178Z",
   "count": 30,
   "commits": [
+    {
+      "sha": "62255a636dd056559500b897fb088e440a9e1bbb",
+      "message": "fix(v3-deploy): explicit /v3/* worker handler — _redirects ignored in advanced mode (#57)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-04-30T20:19:40Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/62255a636dd056559500b897fb088e440a9e1bbb"
+    },
+    {
+      "sha": "a7cde87c1aa01b030c003ebb0952966660788310",
+      "message": "feat(v3-deploy): path-based V3 deployment at uzg.plus/v3 + wire S2+S3 components (#56)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-04-30T20:09:04Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/a7cde87c1aa01b030c003ebb0952966660788310"
+    },
     {
       "sha": "870c3d95f2228796882a150e33294b6c69cdfb7a",
       "message": "docs(lane02): T-TAO-031-035-V1 ship report + migration verification + e2e flow + 4 screenshots [vercel skip]",
@@ -199,20 +213,6 @@
       "author": "Uniton Zen",
       "committed_at": "2026-04-30T11:04:50Z",
       "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/e47f5ec6a910775fe222cdd62586c7261bfb8b66"
-    },
-    {
-      "sha": "94fd1c8808893e4b4a23c0f964d38b46fae999d7",
-      "message": "docs(canon): add V3 PWA OS canon reference mirror [vercel skip] (#38)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-04-30T10:45:07Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/94fd1c8808893e4b4a23c0f964d38b46fae999d7"
-    },
-    {
-      "sha": "bf4b48f3914e46f7c75da15297c8f199aeb895ec",
-      "message": "docs(lane02): LANE02-UZG-TAO-T-BAZI-018-V1 ship report + snapshot + audit log + screenshots [vercel skip]",
-      "author": "unitonzengarden",
-      "committed_at": "2026-04-30T10:01:55Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/bf4b48f3914e46f7c75da15297c8f199aeb895ec"
     }
   ]
 }
