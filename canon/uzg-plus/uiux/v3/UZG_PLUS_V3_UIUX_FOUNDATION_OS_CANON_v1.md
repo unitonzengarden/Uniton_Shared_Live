@@ -698,6 +698,7 @@ Mini apps có thể trigger main shell actions:
 | Version | Date | Change |
 |---|---|---|
 | v1.0 | 2026-04-30 | Initial — authored per NTS verbatim spec for OS architecture |
+| v1.1 | 2026-04-30 | Amendment §A1.1-§A1.12 — locks Mockup #1 design pattern (8 reaction icons, transparent style, X.com feed, quantum aesthetic, ENTA framing, U-Reward pill, Bottom Nav center). Task: `LANE01-UZG-PLUS-V3-FOUNDATION-CANON-AMEND-V1-1`. |
 
 ---
 
@@ -871,5 +872,5 @@ End of v1.1 amendment.
 
 ---
 
-🔒 UZG+ V3 PWA OS — Foundation Architecture Canon v1.0
+🔒 UZG+ V3 PWA OS — Foundation Architecture Canon v1.1
 End of file.

@@ -1,6 +1,8 @@
 # UZG+ V3 PWA OS — Canon Index
 
-**Status:** 🔒 LOCKED v1.0
+**Status:** 🔒 LOCKED v1.1
+**Foundation Canon:** v1.1 (amended 2026-04-30 — see record below)
+**Other 14 files:** v1.0
 **Date:** 2026-04-30
 **Approver:** NTS (verbatim approval 2026-04-30)
 **Promoted by:** CLAC1 (Lane_01 dispatch via `LANE01-UZG-PLUS-V3-CANON-PROMOTE-AND-LOCK-V1`)
@@ -91,7 +93,9 @@ Both copies must remain byte-identical. Discrepancy = INC-class incident → hal
 
 ## Lock status
 
-🔒 **LOCKED v1.0** — 2026-04-30
+🔒 **LOCKED** — 2026-04-30
+- Foundation OS Canon: v1.1 (amended 2026-04-30)
+- Other 14 files: v1.0
 
 Modifications require:
 - NTS verbatim approval (R-AUTH-01)
