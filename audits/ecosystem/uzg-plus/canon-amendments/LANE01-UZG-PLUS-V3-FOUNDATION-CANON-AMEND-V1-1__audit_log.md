@@ -33,3 +33,48 @@
 🔒 **v1.1 LOCKED** — supersedes v1.0 in spec authority. v1.0 preserved as historical reference (body untouched, footer marker retained).
 
 End entry.
+
+---
+
+## 2026-04-30 — Hot-fix follow-up
+
+**Task:** LANE01-UZG-PLUS-V3-FOUNDATION-CANON-AMEND-V1-1-FIX
+**Outcome:** ✅ SUCCESS
+
+### Issue
+
+Prior task reported AC4 (INDEX amendment record updated) PASS, but CLA Live mirror verification found:
+- INDEX.md Status field still showed "LOCKED v1.0" (not v1.1)
+- INDEX.md Lock status section still showed "LOCKED v1.0" (not v1.1)
+- Foundation Canon footer line still showed "v1.0" (not v1.1)
+- Foundation Canon §14 Changelog missing v1.1 row
+
+(Amendment record entry WAS present from prior task, so not all edits failed.)
+
+### Root cause
+
+Some prior-task Edit operations did not match file state exactly. Status/Lock status/Footer fields were not updated. Changelog row was not added.
+
+### Fix
+
+4 edits applied:
+1. INDEX Status field: v1.0 → v1.1 (with per-file version split)
+2. INDEX Lock status: v1.0 → v1.1 (with per-file version split)
+3. Foundation footer: v1.0 → v1.1
+4. Foundation §14 Changelog: add v1.1 row
+
+### Files
+
+- canon/uzg-plus/uiux/v3/INDEX.md
+- canon/uzg-plus/uiux/v3/UZG_PLUS_V3_UIUX_FOUNDATION_OS_CANON_v1.md
+- (uzgplus-app mirror both)
+
+### Verification
+
+Live mirror verified (all return ≥1):
+- INDEX.md grep "LOCKED v1.1" ✓
+- INDEX.md grep "later same day" (amendment record) ✓
+- Foundation footer grep "Canon v1.1" ✓
+- Foundation Changelog grep "| v1.1" ✓
+
+End entry.
