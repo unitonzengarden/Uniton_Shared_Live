@@ -40,19 +40,19 @@ All 15 files + INDEX SHA-256 hashes matched across source + 2 destinations. See 
 
 ## Git operations
 
-### Uniton_Shared (PR_PRIMARY_PLACEHOLDER)
+### Uniton_Shared
 
 - **Branch:** `lane01/uzg-plus-v3-canon-promote-2026-04-30`
-- **Commit:** `COMMIT_SHA_PRIMARY_PLACEHOLDER` (squash merge SHA)
-- **PR:** PR_URL_PRIMARY_PLACEHOLDER
+- **Commit:** `2927d8db31624c47e1f92818f72f94d547929c79` (squash merge SHA)
+- **PR:** https://github.com/unitonzengarden/Uniton_Shared/pull/39
 - **Merged:** YES, via `gh pr merge --squash --delete-branch --admin`
-- **Live mirror:** STATUS_PRIMARY_PLACEHOLDER
+- **Live mirror:** ✅ HTTP 200 OK on INDEX.md + 3 sampled files (Foundation + REDLINES + LANGUAGE_OS_MAPPING)
 
-### uzgplus-app (PR_REFERENCE_PLACEHOLDER)
+### uzgplus-app
 
 - **Branch:** `lane01/uzg-plus-v3-canon-reference-2026-04-30`
-- **Commit:** `COMMIT_SHA_REFERENCE_PLACEHOLDER` (squash merge SHA)
-- **PR:** PR_URL_REFERENCE_PLACEHOLDER
+- **Commit:** `94fd1c8808893e4b4a23c0f964d38b46fae999d7` (squash merge SHA)
+- **PR:** https://github.com/unitonzengarden/uzgplus-app/pull/38
 - **Merged:** YES, via `gh pr merge --squash --delete-branch --admin`
 - **Note:** uzgplus-app is private; not mirrored to public Live (this repo doesn't have a Live counterpart).
 

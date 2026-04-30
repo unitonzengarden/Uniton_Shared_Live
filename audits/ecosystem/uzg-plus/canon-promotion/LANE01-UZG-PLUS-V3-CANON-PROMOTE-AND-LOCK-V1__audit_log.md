@@ -54,15 +54,19 @@ Note: UZGPLUS git fetch initially failed with 403 — git credential helper not 
 
 ### Repos updated
 
-- **Uniton_Shared @ COMMIT_SHA_PRIMARY_PLACEHOLDER** — PR PR_URL_PRIMARY_PLACEHOLDER squash-merged
-- **uzgplus-app @ COMMIT_SHA_REFERENCE_PLACEHOLDER** — PR PR_URL_REFERENCE_PLACEHOLDER squash-merged
-
-(Final SHAs filled in after Step 9-10 git workflow completes; this section updated by Step 12 finalize report.)
+- **Uniton_Shared @ `2927d8db31624c47e1f92818f72f94d547929c79`** — PR https://github.com/unitonzengarden/Uniton_Shared/pull/39 squash-merged
+- **uzgplus-app @ `94fd1c8808893e4b4a23c0f964d38b46fae999d7`** — PR https://github.com/unitonzengarden/uzgplus-app/pull/38 squash-merged
 
 ### Live mirror sync
 
-- Verified at TIMESTAMP_LIVE_VERIFY_PLACEHOLDER
-- 200 OK on INDEX.md and 3 sample files (Foundation + REDLINES + LANGUAGE_OS_MAPPING)
+- Verified at 2026-04-30T~08:30Z (post-merge)
+- HTTP 200 OK on:
+  - `canon/uzg-plus/uiux/v3/INDEX.md`
+  - `canon/uzg-plus/uiux/v3/UZG_PLUS_V3_UIUX_FOUNDATION_OS_CANON_v1.md`
+  - `canon/uzg-plus/uiux/v3/UZG_PLUS_V3_UIUX_REDLINES_MASTER_v1.md`
+  - `canon/uzg-plus/uiux/v3/UZG_PLUS_V3_LANGUAGE_OS_MAPPING_v1.md`
+  - `audits/ecosystem/uzg-plus/canon-promotion/LANE01-UZG-PLUS-V3-CANON-PROMOTE-AND-LOCK-V1__report_2026-04-30.md`
+  - `audits/ecosystem/uzg-plus/canon-promotion/LANE01-UZG-PLUS-V3-CANON-PROMOTE-AND-LOCK-V1__snapshot_2026-04-30.md`
 
 ### Lock status
 
