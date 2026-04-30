@@ -38,16 +38,16 @@ Amended Foundation OS Canon `v1.0 → v1.1`. 12 new sections appended (§A1.1–
 
 ### Uniton_Shared (primary canon)
 
-- Branch: `lane01/uzg-plus-v3-foundation-canon-amend-v1-1-2026-04-30`
-- Commit: `<filled at finalize>`
-- PR: `<filled at finalize>`
+- Branch: `lane01/uzg-plus-v3-foundation-canon-amend-v1-1-2026-04-30` (deleted after merge)
+- Commit (squash-merged): `b6c6c7c46896d04076f8f9485bca4ad16ce08f38`
+- PR: https://github.com/unitonzengarden/Uniton_Shared/pull/41
 - Merged: ✅ via `gh pr merge --squash --delete-branch --admin`
 
 ### uzgplus-app (reference mirror)
 
-- Branch: `lane01/uzg-plus-v3-foundation-canon-mirror-v1-1-2026-04-30`
-- Commit: `<filled at finalize>`
-- PR: `<filled at finalize>`
+- Branch: `lane01/uzg-plus-v3-foundation-canon-mirror-v1-1-2026-04-30` (deleted after merge)
+- Commit (squash-merged): `5fbdc2dab9a7f8459a98b4a38af5a321f7f0900f`
+- PR: https://github.com/unitonzengarden/uzgplus-app/pull/41
 - Merged: ✅ via `gh pr merge --squash --delete-branch --admin`
 
 ---
@@ -98,14 +98,23 @@ Body preservation hash (v1.0 §0–§14 slice): `f159bfc3e43d...3f2d` (identical
 
 ## 📎 LIVE MIRROR URLS
 
-1. **Foundation Canon v1.1:** `<filled at finalize>`
-2. **INDEX.md:** `<filled at finalize>`
-3. **Snapshot:** `<filled at finalize>`
-4. **Report:** `<filled at finalize>`
+All 4 URLs verified `HTTP 200` post-merge against `Uniton_Shared_Live` (auto-sync mirror):
+
+1. **Foundation Canon v1.1:** https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/canon/uzg-plus/uiux/v3/UZG_PLUS_V3_UIUX_FOUNDATION_OS_CANON_v1.md
+2. **INDEX.md:** https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/canon/uzg-plus/uiux/v3/INDEX.md
+3. **Snapshot:** https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/audits/ecosystem/uzg-plus/canon-amendments/LANE01-UZG-PLUS-V3-FOUNDATION-CANON-AMEND-V1-1__snapshot_2026-04-30.md
+4. **Report:** https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/audits/ecosystem/uzg-plus/canon-amendments/LANE01-UZG-PLUS-V3-FOUNDATION-CANON-AMEND-V1-1__report_2026-04-30.md
+
+Live-mirror Foundation Canon `§A1` token count: **23** (≥12 AC threshold).
+Live-mirror header verified: `**Version:** v1.1`, `**Last amended:** 2026-04-30`, `**Status:** 🔒 LOCKED v1.1`.
+
+GitHub PR URLs:
+- Uniton_Shared: https://github.com/unitonzengarden/Uniton_Shared/pull/41
+- uzgplus-app: https://github.com/unitonzengarden/uzgplus-app/pull/41
 
 ---
 
 **NTS-clicks:** 0
-**Time elapsed:** ~`<filled at finalize>` minutes
+**Time elapsed:** ~30 minutes
 
 End of report.
