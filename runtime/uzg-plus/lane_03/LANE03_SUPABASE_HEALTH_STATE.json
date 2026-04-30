@@ -1,0 +1,87 @@
+{
+  "schema_version": "LANE03_SUPABASE_HEALTH_STATE_V1",
+  "system": "uzg-plus",
+  "lane": "Lane_03",
+  "task_id": "LANE03-UZG-BACKEND-RUNTIME-STATE-SPINE-AUDIT-V1",
+  "generated_at": "2026-04-30T22:59:19+07:00",
+  "result": "WARNING",
+  "project": {
+    "name": "uzgplus-superapp-dev",
+    "ref": "kkhhpecofolmrodyeslp"
+  },
+  "safety": {
+    "read_only_catalog_refresh": true,
+    "supabase_mutated": false,
+    "sql_applied": false,
+    "migrations_applied": false
+  },
+  "live_catalog_summary": {
+    "captured_at_utc": "2026-04-30T15:59:31.255667+00:00",
+    "schemas": [
+      {"schema": "auth", "tables": 23, "rls_enabled_tables": 16, "views": 0},
+      {"schema": "private", "tables": 0, "rls_enabled_tables": 0, "views": 0},
+      {"schema": "public", "tables": 161, "rls_enabled_tables": 128, "views": 29},
+      {"schema": "realtime", "tables": 10, "rls_enabled_tables": 1, "views": 0},
+      {"schema": "storage", "tables": 8, "rls_enabled_tables": 8, "views": 0}
+    ],
+    "functions": [
+      {"schema": "private", "functions": 126, "security_definer": 50},
+      {"schema": "public", "functions": 260, "security_definer": 181}
+    ]
+  },
+  "rls_phase2": {
+    "status": "HEALTHY_WITH_WARNING_CLOSED",
+    "tables": [
+      {"table": "public.enta_circle_members", "rls_enabled": true, "policy_count": 2},
+      {"table": "public.enta_circles", "rls_enabled": true, "policy_count": 1},
+      {"table": "public.enta_connections", "rls_enabled": true, "policy_count": 2},
+      {"table": "public.enta_messages", "rls_enabled": true, "policy_count": 2}
+    ],
+    "last_authenticated_e2e": {
+      "result": "WARNING",
+      "no_42p17": true,
+      "no_helper_permission_error": true,
+      "target_advisor_policy_exists_rls_disabled": 0,
+      "target_advisor_rls_disabled_in_public": 0,
+      "evidence": "reports/LANE03-UZG-SUPABASE-RLS-PHASE-2-AUTHENTICATED-BROWSER-AND-API-E2E-WITH-TEST-SESSION-V1_REPORT.md"
+    }
+  },
+  "rpc_and_function_health": {
+    "u_reward_permission_403": "FIXED_BY_AUTHENTICATED_EXECUTE_GRANTS_ON_REQUIRED_PRIVATE_HELPERS",
+    "u_reward_performance": "OPEN_P1",
+    "u_reward_summary_median_ms": 3375,
+    "u_reward_history_median_ms": 2259,
+    "u_reward_soft_timeout_ms": 1800,
+    "u_reward_optimization_design": "COMPLETE_NOT_APPLIED",
+    "batch_c_privilege_warning": {
+      "public.rpc_sync_energy_daily_exec_public": true,
+      "public.rpc_sync_energy_daily_exec_anon": true,
+      "private_schema_usage_anon": false,
+      "private_schema_usage_authenticated": false,
+      "decision_required": true
+    }
+  },
+  "security_advisor_status": {
+    "state": "PARTIAL_BACKLOG_OPEN",
+    "last_known_total_security_warnings": 370,
+    "last_known_major_classes": {
+      "authenticated_security_definer_function_executable": 166,
+      "function_search_path_mutable": 91,
+      "anon_security_definer_function_executable": 58,
+      "rls_disabled_in_public": 30,
+      "security_definer_view": 22
+    },
+    "evidence": "reports/LANE03-UZG-SYSTEM-AUDIT-BACKEND-API-SUPABASE-REALTIME-V1_REPORT.md",
+    "refreshed_in_this_task": false,
+    "evidence_gap": "Advisor counts were not re-run in this spine task; live catalog was refreshed read-only."
+  },
+  "edge_functions": {
+    "local_config": {
+      "reward_emit_verify_jwt": false,
+      "wallet_convert_u_to_uzg_verify_jwt": false,
+      "wallet_spend_uzg_config_entry": "SOURCE_PRESENT_NO_CONFIG_BLOCK_IN_CURRENT_TOML"
+    },
+    "evidence": "supabase/config.toml and supabase/functions/* on uzgplus-app origin/main"
+  },
+  "overall": "YELLOW"
+}

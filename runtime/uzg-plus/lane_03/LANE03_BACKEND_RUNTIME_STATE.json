@@ -1,0 +1,153 @@
+{
+  "schema_version": "LANE03_BACKEND_RUNTIME_STATE_V1",
+  "system": "uzg-plus",
+  "lane": "Lane_03",
+  "task_id": "LANE03-UZG-BACKEND-RUNTIME-STATE-SPINE-AUDIT-V1",
+  "generated_at": "2026-04-30T22:59:19+07:00",
+  "result": "WARNING",
+  "state": "BACKEND_RUNTIME_SPINE_CREATED_WITH_EVIDENCE_GAPS",
+  "mode": "AUDIT_ONLY_STATE_PUBLISH",
+  "canonical_rules": {
+    "github_code_truth": "unitonzengarden/uzgplus-app",
+    "governance_source_truth": "unitonzengarden/Uniton_Shared",
+    "public_runtime_visibility": "unitonzengarden/Uniton_Shared_Live",
+    "uniton_shared_live_write_policy": "READ_ONLY_MIRROR"
+  },
+  "safety": {
+    "supabase_mutated": false,
+    "migrations_applied": false,
+    "deployment_performed": false,
+    "backend_code_changed": false,
+    "state_files_only": true
+  },
+  "repo_truth": {
+    "uniton_shared": {
+      "local_path": "D:/UZG/Projects-v2/Uniton_Shared",
+      "branch": "main",
+      "head_after_ff_pull": "f96a04ce67515e81e7744d493af230d49c5e8ff5",
+      "origin_main": "f96a04ce67515e81e7744d493af230d49c5e8ff5",
+      "status_before_writes": "CLEAN"
+    },
+    "uzgplus_app": {
+      "local_path": "D:/UZG/Projects/uzgplus-app",
+      "branch": "main",
+      "local_head": "2c55814facf69b3ab6171aee285d4320555427ce",
+      "origin_main_after_fetch": "241f771a306a696228160153e262ebb1cf51e554",
+      "divergence": {
+        "ahead": 1,
+        "behind": 96
+      },
+      "local_workspace_status": "DIRTY_BROAD_UNRELATED",
+      "evidence_rule": "Use origin/main for current code truth; use local Lane_03 reports as historical audit evidence."
+    },
+    "public_live_state": {
+      "context_packet_source_commit": "895e0415b5e4d608a835a31e9dcf6b5f5c1c7c7a",
+      "mirror_status": "VERIFIED_SYNCED_AT_PUBLIC_PACKET",
+      "ecosystem_health": "YELLOW",
+      "public_urls_read": [
+        "https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/runtime/AIER_CONTEXT_PACKET.json",
+        "https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/runtime/health/ECOSYSTEM_HEALTH_STATE.json",
+        "https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/runtime/health/LATEST_VERIFIED_COMMITS.json",
+        "https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/runtime/health/BLOCKERS_AND_RISKS.md",
+        "https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/network/task_queues/Lane_03.md"
+      ]
+    }
+  },
+  "backend_api_ownership_map": {
+    "primary_product_runtime": {
+      "owner": "Cloudflare Pages",
+      "evidence": ".github/workflows/deploy.yml in uzgplus-app origin/main deploys dist to Cloudflare Pages.",
+      "status": "ACTIVE"
+    },
+    "worker_api_facade": {
+      "owner": "Lane_03 design target / currently artifact-backed",
+      "evidence": "public/_worker.js and apps/uzg-pwa/public/_worker.js exist on origin/main.",
+      "status": "ACTIVE_BUT_DEPLOYMENT_SOURCE_AMBIGUOUS"
+    },
+    "express_aier_server": {
+      "owner": "AIER/system/admin/ops runtime",
+      "evidence": "server/aier_server.js exposes Express endpoints and uses Supabase clients; package.json start/aier:start point to it.",
+      "status": "TRANSITIONAL_ADMIN_RUNTIME"
+    },
+    "api_wisdom": {
+      "owner": "narrow AI wisdom endpoint",
+      "evidence": "api/wisdom.js exists on origin/main; origin/main no longer has vercel.json, so active deployment path is unclear.",
+      "status": "SOURCE_PRESENT_DEPLOYMENT_OWNERSHIP_UNCLEAR"
+    },
+    "supabase_edge_functions": {
+      "owner": "transactional wallet/reward boundary",
+      "functions": [
+        "reward_emit",
+        "wallet_convert_u_to_uzg",
+        "wallet_spend_uzg"
+      ],
+      "evidence": "supabase/config.toml and supabase/functions/* on origin/main.",
+      "status": "ACTIVE"
+    },
+    "direct_supabase_frontend": {
+      "owner": "allowed only by documented RLS/RPC/realtime contract",
+      "evidence": "apps/uzg-pwa/src/services and src/lib/supabaseClient.js use supabase-js, RPCs, functions.invoke, and channels.",
+      "status": "ACTIVE_WITH_CONTRACT_RISK"
+    }
+  },
+  "runtime_ownership_split": {
+    "status": "SPLIT_RUNTIME_WARNING",
+    "split_layers": [
+      "Cloudflare Pages static/runtime shell",
+      "Worker artifact API facade",
+      "Express AIER server",
+      "Supabase Edge Functions",
+      "Direct PostgREST/RPC/realtime from frontend",
+      "api/wisdom source endpoint with unclear active deployment path"
+    ],
+    "risk": "Route ownership and service boundaries are not clean enough for broad backend changes."
+  },
+  "module_health": {
+    "ENTA": "HEALTHY_WITH_RLS_PHASE2_WARNING_CLOSED",
+    "CHAT": "HEALTHY_BY_LAST_AUTHENTICATED_E2E",
+    "CIRCLES": "HEALTHY_BY_LAST_AUTHENTICATED_E2E",
+    "U_REWARD": "PARTIAL_PERFORMANCE_ISSUE",
+    "SUPABASE_SECURITY": "PARTIAL_BACKLOG_OPEN",
+    "MIGRATIONS": "APPLY_BLOCKED_DRIFT_OPEN",
+    "REALTIME": "DRIFT_CONFIRMED_DESIGN_REQUIRED"
+  },
+  "health_blockers_and_risks": [
+    {
+      "id": "MIGRATION_DRIFT_APPLY_BLOCKED",
+      "severity": "P1",
+      "status": "OPEN",
+      "summary": "38 valid local-only migrations, 0 remote-only, 35 legacy skipped filenames; broad supabase db push remains blocked."
+    },
+    {
+      "id": "U_REWARD_RPC_PERFORMANCE",
+      "severity": "P1",
+      "status": "OPEN",
+      "summary": "Summary/history RPCs exceed the 1800 ms soft timeout; optimization design exists but has not been applied."
+    },
+    {
+      "id": "REALTIME_PUBLICATION_DRIFT",
+      "severity": "P1",
+      "status": "OPEN",
+      "summary": "Frontend subscribes to more tables than are present in live supabase_realtime publication."
+    },
+    {
+      "id": "RUNTIME_OWNERSHIP_SPLIT",
+      "severity": "P1",
+      "status": "OPEN",
+      "summary": "Cloudflare Pages, Worker artifact, Express AIER, Edge Functions, direct Supabase, and api/wisdom source overlap."
+    },
+    {
+      "id": "SUPABASE_ADVISOR_BACKLOG",
+      "severity": "P2",
+      "status": "OPEN",
+      "summary": "Prior advisor audit found broad security/performance warnings outside fixed RLS Phase 2 target scope."
+    },
+    {
+      "id": "PRODUCT_LOCAL_REPO_BEHIND",
+      "severity": "EVIDENCE_GAP",
+      "status": "OPEN",
+      "summary": "Local uzgplus-app workspace is behind origin/main by 96 commits and dirty; current code evidence was read from origin/main where possible."
+    }
+  ],
+  "next_safe_action": "LANE03-UZG-MIGRATION-DRIFT-BATCH-C-LEDGER-AND-RPC-PRIVILEGE-OWNER-DECISION-V1"
+}

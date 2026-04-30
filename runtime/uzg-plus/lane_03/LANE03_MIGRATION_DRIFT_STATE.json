@@ -1,0 +1,77 @@
+{
+  "schema_version": "LANE03_MIGRATION_DRIFT_STATE_V1",
+  "system": "uzg-plus",
+  "lane": "Lane_03",
+  "task_id": "LANE03-UZG-BACKEND-RUNTIME-STATE-SPINE-AUDIT-V1",
+  "generated_at": "2026-04-30T22:59:19+07:00",
+  "result": "WARNING",
+  "state": "MIGRATION_DRIFT_APPLY_BLOCKED",
+  "safety": {
+    "supabase_db_push_run": false,
+    "migrations_applied": false,
+    "schema_migrations_modified": false,
+    "production_database_altered": false
+  },
+  "refreshed_inventory": {
+    "matched_migrations": 24,
+    "valid_local_only_migrations": 38,
+    "remote_only_migrations": 0,
+    "legacy_filename_skipped_migrations": 35,
+    "live_schema_migrations_count": 24,
+    "live_schema_migrations_max_version": "20260419114000"
+  },
+  "batch_state": {
+    "batch_b_hotfix_ledger": {
+      "status": "LEDGER_RECONCILED_WITH_WARNING",
+      "live_equivalent_confirmed": 6,
+      "manual_hotfix_confirmed": ["20260430013500"],
+      "surgical_apply_confirmed_external": ["20260430080156"],
+      "schema_history_repaired": false,
+      "reapply_blocked": true
+    },
+    "batch_c_body_diff": {
+      "status": "BODY_DIFF_COMPLETE_OWNER_LEDGER_NEXT",
+      "candidate_count": 8,
+      "live_equivalent_confirmed": 5,
+      "body_diff_do_not_apply": 2,
+      "needs_owner_decision": 1,
+      "approved_for_apply": 0,
+      "ledger_candidates": [
+        "20260320180501",
+        "20260412163000",
+        "20260412193000",
+        "20260417124500",
+        "20260418093000"
+      ],
+      "conditional_ledger_candidates": [
+        "20260407001501"
+      ],
+      "do_not_apply": [
+        "20260320154501",
+        "20260320161001"
+      ]
+    },
+    "batch_d_high_risk": {
+      "status": "BLOCKED_PENDING_NTS_APPROVAL",
+      "count": 24
+    },
+    "legacy_skipped": {
+      "status": "BLOCKED_PENDING_FILENAME_HISTORY_RECONCILIATION",
+      "count": 35
+    }
+  },
+  "blocked_actions": [
+    "supabase db push",
+    "production migration apply from drift backlog",
+    "manual schema_migrations repair",
+    "applying superseded Batch C migrations",
+    "Batch D apply without NTS approval"
+  ],
+  "source_evidence": [
+    "reports/LANE03-UZG-MIGRATION-DRIFT-SCHEMA-DIFF-AND-OWNER-REVIEW-V1_REPORT.md",
+    "reports/LANE03-UZG-MIGRATION-DRIFT-BATCH-B-HOTFIX-LEDGER-RECONCILIATION-V1.json",
+    "reports/LANE03-UZG-MIGRATION-DRIFT-BATCH-C-FUNCTION-RPC-PUBLICATION-BODY-DIFF-AND-DRY-RUN-DESIGN-V1.json",
+    "read-only supabase migration list --linked on 2026-04-30"
+  ],
+  "next_safe_action": "LANE03-UZG-MIGRATION-DRIFT-BATCH-C-LEDGER-AND-RPC-PRIVILEGE-OWNER-DECISION-V1"
+}

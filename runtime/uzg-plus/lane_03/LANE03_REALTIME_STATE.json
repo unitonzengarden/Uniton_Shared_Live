@@ -1,0 +1,63 @@
+{
+  "schema_version": "LANE03_REALTIME_STATE_V1",
+  "system": "uzg-plus",
+  "lane": "Lane_03",
+  "task_id": "LANE03-UZG-BACKEND-RUNTIME-STATE-SPINE-AUDIT-V1",
+  "generated_at": "2026-04-30T22:59:19+07:00",
+  "result": "WARNING",
+  "state": "REALTIME_DRIFT_CONFIRMED_DESIGN_REQUIRED",
+  "safety": {
+    "publication_changed": false,
+    "sql_applied": false,
+    "frontend_changed": false
+  },
+  "live_publication": {
+    "publication": "supabase_realtime",
+    "public_tables": [
+      "enta_connections",
+      "flow_reactions",
+      "follows"
+    ],
+    "captured_at_utc": "2026-04-30T15:59:31.255667+00:00"
+  },
+  "source_subscription_evidence": {
+    "origin_main_paths": [
+      "apps/uzg-pwa/src/services/realtimeCoreService.js",
+      "apps/uzg-pwa/src/services/productV2Service.js",
+      "apps/uzg-pwa/src/services/entaRealtimeService.js"
+    ],
+    "confirmed_published_and_subscribed": [
+      "enta_connections",
+      "flow_reactions",
+      "follows"
+    ],
+    "subscribed_or_expected_but_not_confirmed_in_publication": [
+      "wallet_ledger",
+      "wallet_assets",
+      "wallet_transactions",
+      "reward_events",
+      "reward_event_log",
+      "notifications",
+      "posts",
+      "community_posts",
+      "enta_posts",
+      "enta_messages",
+      "enta_presence",
+      "enta_typing_states",
+      "enta_conversation_members",
+      "enta_conversations"
+    ]
+  },
+  "impact": {
+    "read_paths": "LIKELY_NOT_BLOCKED",
+    "live_update_paths": "MAY_BE_STALE_OR_DEGRADED",
+    "user_visible_risk": "P1_DESIGN_REQUIRED_BEFORE_PUBLICATION_CHANGES"
+  },
+  "next_design_questions": [
+    "Which subscribed tables require live updates versus polling/fallback?",
+    "Which tables are safe to publish under current RLS and privacy rules?",
+    "Which frontend subscriptions should be removed or downgraded?",
+    "What browser smoke proves realtime behavior after any future apply?"
+  ],
+  "next_safe_action": "LANE03-UZG-REALTIME-PUBLICATION-AND-SUBSCRIPTION-DRIFT-DESIGN-V1"
+}

@@ -1,0 +1,16 @@
+2026-04-30T22:59:19+07:00 TASK START LANE03-UZG-BACKEND-RUNTIME-STATE-SPINE-AUDIT-V1
+2026-04-30T22:59:19+07:00 MODE AUDIT ONLY / STATE FILE PUBLISH ONLY
+2026-04-30T22:59:19+07:00 SAFETY no Supabase mutation, no migration apply, no deploy, no backend code fix
+2026-04-30T22:59:19+07:00 READ public live state URLs from Uniton_Shared_Live: AIER_CONTEXT_PACKET, ECOSYSTEM_HEALTH_STATE, LATEST_VERIFIED_COMMITS, BLOCKERS_AND_RISKS, Lane_03 queue
+2026-04-30T22:59:19+07:00 LOCATED Uniton_Shared at D:/UZG/Projects-v2/Uniton_Shared
+2026-04-30T22:59:19+07:00 GIT Uniton_Shared fetch and fast-forward pull completed to f96a04ce67515e81e7744d493af230d49c5e8ff5
+2026-04-30T22:59:19+07:00 GIT uzgplus-app fetch completed; origin/main 241f771a306a696228160153e262ebb1cf51e554; local head 2c55814facf69b3ab6171aee285d4320555427ce; divergence ahead 1 behind 96
+2026-04-30T22:59:19+07:00 READ Lane_03 prior system audit, canon rebuild, migration Batch B/C, RLS E2E, U-Reward permission/performance/design reports
+2026-04-30T22:59:19+07:00 READ origin/main package.json, deploy workflow, supabase/config.toml, API/service path inventory
+2026-04-30T22:59:19+07:00 SUPABASE read-only migration list refreshed: matched 24, valid local-only 38, remote-only 0, skipped invalid filename 35
+2026-04-30T22:59:19+07:00 SUPABASE read-only catalog refreshed: public tables 161, public RLS tables 128, public views 29, public functions 260, private functions 126
+2026-04-30T22:59:19+07:00 SUPABASE RLS Phase 2 target confirmed enabled on four ENTA tables with policies present
+2026-04-30T22:59:19+07:00 SUPABASE realtime publication confirmed: enta_connections, flow_reactions, follows
+2026-04-30T22:59:19+07:00 WROTE runtime/uzg-plus/lane_03 state spine files
+2026-04-30T22:59:19+07:00 WROTE report, json, snapshot, audit log
+2026-04-30T22:59:19+07:00 RESULT WARNING due evidence gaps: product local repo behind origin/main and advisors not re-run in this task

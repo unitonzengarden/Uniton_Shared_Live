@@ -1,0 +1,36 @@
+{
+  "schema_version": "LANE03_BACKEND_RUNTIME_STATE_SPINE_SNAPSHOT_V1",
+  "task_id": "LANE03-UZG-BACKEND-RUNTIME-STATE-SPINE-AUDIT-V1",
+  "system": "uzg-plus",
+  "lane": "Lane_03",
+  "generated_at": "2026-04-30T22:59:19+07:00",
+  "result": "WARNING",
+  "state": "BACKEND_RUNTIME_SPINE_CREATED_WITH_EVIDENCE_GAPS",
+  "uniton_shared_commit_basis": "f96a04ce67515e81e7744d493af230d49c5e8ff5",
+  "uzgplus_origin_main": "241f771a306a696228160153e262ebb1cf51e554",
+  "supabase": {
+    "project_ref": "kkhhpecofolmrodyeslp",
+    "public_tables": 161,
+    "public_rls_enabled_tables": 128,
+    "public_views": 29,
+    "public_functions": 260,
+    "public_security_definer_functions": 181,
+    "private_functions": 126,
+    "private_security_definer_functions": 50,
+    "migration_history_count": 24,
+    "migration_history_max_version": "20260419114000"
+  },
+  "migration_drift": {
+    "matched": 24,
+    "valid_local_only": 38,
+    "remote_only": 0,
+    "legacy_skipped": 35,
+    "state": "APPLY_BLOCKED"
+  },
+  "realtime": {
+    "publication": "supabase_realtime",
+    "public_tables": ["enta_connections", "flow_reactions", "follows"],
+    "state": "DRIFT_CONFIRMED_DESIGN_REQUIRED"
+  },
+  "next_safe_action": "LANE03-UZG-MIGRATION-DRIFT-BATCH-C-LEDGER-AND-RPC-PRIVILEGE-OWNER-DECISION-V1"
+}

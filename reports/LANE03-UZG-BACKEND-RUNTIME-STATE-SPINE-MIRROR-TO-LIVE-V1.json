@@ -1,0 +1,48 @@
+{
+  "task_id": "LANE03-UZG-BACKEND-RUNTIME-STATE-SPINE-MIRROR-TO-LIVE-V1",
+  "result": "PASS",
+  "mode": "MIRROR_TO_LIVE_PUBLIC_RAW_VISIBILITY",
+  "captured_at": "2026-05-01T00:25:49+07:00",
+  "source_repo": "D:/UZG/Projects-v2/Uniton_Shared",
+  "target_repo": "D:/UZG/Projects-v2/Uniton_Shared_Live",
+  "source_commit": "ca0f0586845e86fce65d3ba8d6884c58ae02dc15",
+  "target_head_before_mirror": "fa99c08d801b1524106b6bf59765688baf58fb91",
+  "mutations": {
+    "uniton_shared_source_repo": false,
+    "uzgplus_app": false,
+    "supabase": false,
+    "migrations": false,
+    "deploy": false,
+    "backend_code": false
+  },
+  "mirrored_runtime_files": [
+    "runtime/uzg-plus/lane_03/LANE03_BACKEND_RUNTIME_STATE.json",
+    "runtime/uzg-plus/lane_03/LANE03_SUPABASE_HEALTH_STATE.json",
+    "runtime/uzg-plus/lane_03/LANE03_MIGRATION_DRIFT_STATE.json",
+    "runtime/uzg-plus/lane_03/LANE03_REALTIME_STATE.json",
+    "runtime/uzg-plus/lane_03/LANE03_BACKEND_ROADMAP.json",
+    "runtime/uzg-plus/lane_03/LANE03_NEXT_SAFE_ACTION.md"
+  ],
+  "mirrored_evidence_files": [
+    "reports/LANE03-UZG-BACKEND-RUNTIME-STATE-SPINE-AUDIT-V1_REPORT.md",
+    "reports/LANE03-UZG-BACKEND-RUNTIME-STATE-SPINE-AUDIT-V1.json",
+    "snapshots/LANE03-UZG-BACKEND-RUNTIME-STATE-SPINE-AUDIT-V1.snapshot.json",
+    "audit_logs/LANE03-UZG-BACKEND-RUNTIME-STATE-SPINE-AUDIT-V1_audit.log"
+  ],
+  "validation": {
+    "source_commit_present": true,
+    "source_files_present_at_commit": true,
+    "hash_match_source_to_live": true,
+    "json_parse_check": "PASS",
+    "raw_url_verification": "RUN_AFTER_PUSH"
+  },
+  "raw_urls_to_verify": [
+    "https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/runtime/uzg-plus/lane_03/LANE03_BACKEND_RUNTIME_STATE.json",
+    "https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/runtime/uzg-plus/lane_03/LANE03_SUPABASE_HEALTH_STATE.json",
+    "https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/runtime/uzg-plus/lane_03/LANE03_MIGRATION_DRIFT_STATE.json",
+    "https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/runtime/uzg-plus/lane_03/LANE03_REALTIME_STATE.json",
+    "https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/runtime/uzg-plus/lane_03/LANE03_BACKEND_ROADMAP.json",
+    "https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/runtime/uzg-plus/lane_03/LANE03_NEXT_SAFE_ACTION.md"
+  ],
+  "next_safe_action": "LANE03-UZG-MIGRATION-DRIFT-BATCH-C-LEDGER-AND-RPC-PRIVILEGE-OWNER-DECISION-V1"
+}

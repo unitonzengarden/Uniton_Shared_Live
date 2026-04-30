@@ -1,0 +1,42 @@
+{
+  "task_id": "LANE03-UZG-BACKEND-RUNTIME-STATE-SPINE-AUDIT-V1",
+  "result": "WARNING",
+  "generated_at": "2026-04-30T22:59:19+07:00",
+  "mode": "AUDIT_ONLY_STATE_PUBLISH_ONLY",
+  "safety": {
+    "supabase_mutated": false,
+    "migrations_applied": false,
+    "deployment_performed": false,
+    "backend_code_changed": false
+  },
+  "state_files_created": [
+    "runtime/uzg-plus/lane_03/LANE03_BACKEND_RUNTIME_STATE.json",
+    "runtime/uzg-plus/lane_03/LANE03_SUPABASE_HEALTH_STATE.json",
+    "runtime/uzg-plus/lane_03/LANE03_MIGRATION_DRIFT_STATE.json",
+    "runtime/uzg-plus/lane_03/LANE03_REALTIME_STATE.json",
+    "runtime/uzg-plus/lane_03/LANE03_BACKEND_ROADMAP.json",
+    "runtime/uzg-plus/lane_03/LANE03_NEXT_SAFE_ACTION.md"
+  ],
+  "evidence_files_created": [
+    "reports/LANE03-UZG-BACKEND-RUNTIME-STATE-SPINE-AUDIT-V1_REPORT.md",
+    "reports/LANE03-UZG-BACKEND-RUNTIME-STATE-SPINE-AUDIT-V1.json",
+    "snapshots/LANE03-UZG-BACKEND-RUNTIME-STATE-SPINE-AUDIT-V1.snapshot.json",
+    "audit_logs/LANE03-UZG-BACKEND-RUNTIME-STATE-SPINE-AUDIT-V1_audit.log"
+  ],
+  "github_truth": {
+    "uniton_shared_head": "f96a04ce67515e81e7744d493af230d49c5e8ff5",
+    "uzgplus_origin_main": "241f771a306a696228160153e262ebb1cf51e554",
+    "uzgplus_local_head": "2c55814facf69b3ab6171aee285d4320555427ce",
+    "uzgplus_local_ahead": 1,
+    "uzgplus_local_behind": 96
+  },
+  "key_findings": {
+    "backend_runtime": "Hybrid runtime split across Cloudflare Pages, Worker artifacts, Express AIER, Edge Functions, direct Supabase, and api/wisdom source.",
+    "supabase": "RLS Phase 2 target remains enabled and healthy; broader security/function backlog remains partial.",
+    "migration_drift": "24 matched, 38 valid local-only, 0 remote-only, 35 legacy skipped; broad db push remains blocked.",
+    "realtime": "supabase_realtime has enta_connections, flow_reactions, follows; frontend expects additional realtime tables.",
+    "u_reward": "Permission issue fixed; summary/history performance remains P1 unresolved."
+  },
+  "result_reason": "Required state files are created and usable, but product local repo is behind origin/main and some facts remain evidence gaps.",
+  "next_safe_action": "LANE03-UZG-MIGRATION-DRIFT-BATCH-C-LEDGER-AND-RPC-PRIVILEGE-OWNER-DECISION-V1"
+}

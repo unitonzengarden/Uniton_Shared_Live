@@ -1,0 +1,80 @@
+{
+  "schema_version": "LANE03_BACKEND_ROADMAP_V1",
+  "system": "uzg-plus",
+  "lane": "Lane_03",
+  "task_id": "LANE03-UZG-BACKEND-RUNTIME-STATE-SPINE-AUDIT-V1",
+  "generated_at": "2026-04-30T22:59:19+07:00",
+  "result": "WARNING",
+  "roadmap_state": "ACTIVE_GOVERNED_BACKEND_STABILIZATION",
+  "phases": [
+    {
+      "phase": 1,
+      "name": "Canon Lock",
+      "status": "COMPLETE",
+      "evidence": "LANE03-UZG-SYSTEM-CANON-SPEC-REBUILD-V1"
+    },
+    {
+      "phase": 2,
+      "name": "Migration Drift Ledger Continuation",
+      "status": "NEXT_SAFE_ACTION",
+      "objective": "Finish Batch C ledger and RPC privilege owner decision before any migration apply.",
+      "task": "LANE03-UZG-MIGRATION-DRIFT-BATCH-C-LEDGER-AND-RPC-PRIVILEGE-OWNER-DECISION-V1"
+    },
+    {
+      "phase": 3,
+      "name": "Realtime Design",
+      "status": "READY_AFTER_OR_PARALLEL_IF_NTS_SCOPED",
+      "objective": "Resolve publication/subscription drift by design before any SQL or frontend changes.",
+      "task": "LANE03-UZG-REALTIME-PUBLICATION-AND-SUBSCRIPTION-DRIFT-DESIGN-V1"
+    },
+    {
+      "phase": 4,
+      "name": "U-Reward Performance Apply",
+      "status": "PENDING_CONDITIONAL_APPLY_TASK",
+      "objective": "Dry-run and conditionally apply approved summary/history RPC optimization.",
+      "task": "LANE03-UZG-U-REWARD-RPC-SUMMARY-HISTORY-OPTIMIZATION-DRY-RUN-AND-CONDITIONAL-APPLY-V1"
+    },
+    {
+      "phase": 5,
+      "name": "Migration Reconciliation",
+      "status": "IN_PROGRESS_APPLY_BLOCKED",
+      "objective": "Resolve Batch C, Batch D, skipped legacy filenames, and future schema-history reconciliation."
+    },
+    {
+      "phase": 6,
+      "name": "Security Advisor Triage",
+      "status": "PENDING",
+      "objective": "Classify broad Supabase security backlog into scoped safe tasks."
+    },
+    {
+      "phase": 7,
+      "name": "Runtime Ownership Cleanup",
+      "status": "PENDING",
+      "objective": "Resolve Cloudflare/Worker/Express/Edge/direct Supabase ownership split."
+    },
+    {
+      "phase": 8,
+      "name": "Service Layer Refactor",
+      "status": "PENDING_LANE01_PRIMARY",
+      "objective": "Split product service hub after backend contracts stabilize."
+    }
+  ],
+  "lane_ownership": {
+    "Lane_03": [
+      "Backend/API/Supabase/RLS/RPC/realtime governance",
+      "Migration drift authority",
+      "Runtime state spine maintenance"
+    ],
+    "Lane_01": [
+      "PWA UI/routes/service refactor after backend contract lock",
+      "Frontend warnings and browser validation"
+    ],
+    "Lane_02": [
+      "Product/domain semantics, U-Reward/Wallet/TAO acceptance, roadmap priority"
+    ],
+    "NTS": [
+      "Approval for production apply, schema_migrations repair, broad/high-risk migration actions"
+    ]
+  },
+  "next_safe_action": "LANE03-UZG-MIGRATION-DRIFT-BATCH-C-LEDGER-AND-RPC-PRIVILEGE-OWNER-DECISION-V1"
+}
