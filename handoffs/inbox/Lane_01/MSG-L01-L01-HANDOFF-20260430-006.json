@@ -1,0 +1,29 @@
+{
+  "message_id": "MSG-L01-L01-HANDOFF-20260430-006",
+  "from_lane": "Lane_01",
+  "to_lane": "Lane_01",
+  "message_type": "handoff-notice",
+  "priority": "normal",
+  "status": "sent",
+  "created_at": "2026-04-30T05:30:00Z",
+  "related_task_id": "LANE01-UZG-PLUS-PHASE2-MOCKUP-PRIORITY-BRIEF-V1",
+  "subject": "UZG+ V3 Phase 2 Mockup Priority Brief LIVE; ENTA + PLUS Hub Tier 4 canons identified as critical-path; Sprint 1 quick-wins ready to dispatch",
+  "body": "Authored audits/ecosystem/uzg-plus/UZG_PLUS_V3_PHASE2_MOCKUP_PRIORITY_BRIEF_v1.md (514 lines, 11 sections). Bridge document between Phase 1 (canon + audit) and Phase 2 (NTS+CLA mockups via Claude Artifacts). Synthesises Top 10 V3 priorities from Cursor UX Gap Analysis §9 against Phase 1 Dev1 canon (5 docs in canon/uzg-plus/uiux/). Coverage: 5 priorities COMPLETE (P2/P3/P4/P9/P10), 2 PARTIAL (P6/P8), 3 GAP (P1/P5/P7). Critical-path: ENTA Module + PLUS Hub Module Tier 4 canons unblock 5 of 10 priorities. Sprint sequencing: Sprint 1 (week 1-2) = 4 quick wins; Sprint 2 (week 3-4) = ENTA-dependent (P1/P8) + admin sketch; Sprint 3 (week 5-6) = PLUS Hub-dependent (P5/P7/P6). PR #32 squash-merged at e8d16bd; live mirror 200 OK on brief URL. AC-01..16 ALL PASS. Phase 2 mockup work blocked until ENTA Tier 4 canon authored.",
+  "requested_action": "1. CLA Lane_01 read brief + spot-check §3 priority matrix coverage. 2. Approve sprint sequencing OR propose revisions. 3. Begin authoring Tier 4 module canons in chat: ENTA Module canon first (during Sprint 1), PLUS Hub Module canon second (during Sprint 2). 4. Dispatch Sprint 1 quick wins per brief §6 order: P10 → P2 → P4 → P3. 5. Coordinate Cursor credentialed Playwright re-run (LANE01-UZG-PLUS-V2-AUTHENTICATED-SCREENSHOTS-V1 currently halted on credentials).",
+  "required_response_type": "ack",
+  "evidence_paths": [
+    "audits/ecosystem/uzg-plus/UZG_PLUS_V3_PHASE2_MOCKUP_PRIORITY_BRIEF_v1.md",
+    "audits/ecosystem/uzg-plus/LANE01-UZG-PLUS-PHASE2-MOCKUP-PRIORITY-BRIEF-V1.snapshot.live.json",
+    "audits/ecosystem/uzg-plus/LANE01-UZG-PLUS-PHASE2-MOCKUP-PRIORITY-BRIEF-V1_REPORT.md",
+    "audits/ecosystem/uzg-plus/LANE01-UZG-PLUS-PHASE2-MOCKUP-PRIORITY-BRIEF-V1_audit.log"
+  ],
+  "acceptance_criteria": [
+    "AC-01..AC-10 all PASS at PR-create time (brief 514 lines + 10 priorities mapped + per-priority refs + verdicts + sprint sequencing + dependency map + 8 Tier 4 canons + entry checklist + DOT deliverables in audits namespace + handoff schema-conformant)",
+    "AC-11 PASS — live mirror 200 OK on brief URL",
+    "AC-12 PASS — no canon modifications",
+    "AC-13 PASS — no audit modifications",
+    "AC-14 PASS — no uzgplus-app modifications",
+    "AC-15 PASS — [vercel skip] on all commits",
+    "AC-16 PASS — NTS clicks = 0"
+  ]
+}
