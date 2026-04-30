@@ -1,0 +1,65 @@
+{
+  "_format": "LANE01_SNAPSHOT_V1",
+  "_task": "LANE01-UZG-PLUS-V2-AUTHENTICATED-SCREENSHOTS-V2",
+  "supersedes": "LANE01-UZG-PLUS-V2-AUTHENTICATED-SCREENSHOTS-V1 (HALTED_AWAITING_CREDENTIALS)",
+  "authored_at": "2026-04-30T06:25:00Z",
+  "executor": "Cursor (Sonnet 4.6)",
+  "lane": "Lane_01",
+  "branch": "feat/LANE01-uzg-plus-v2-authenticated-screenshots-v2",
+  "pre_task_uniton_shared_sha": "9b0260b903066eef6148a38a874b41ba859cbdfb",
+  "pre_task_uzgplus_sha": "6d99b1881bf1039dfe360dab78fcf699a3ac336e",
+  "merge_sha": null,
+  "status": "RUNNING",
+  "scope": "Self-signup test account via Mailinator + Playwright capture pipeline (~100 screenshots) for UZG+ V2 production",
+  "predispatch_verify_results": {
+    "1_workspace_clean": "PASS",
+    "2_origin_synced": "PASS",
+    "3_gh_token_present": "PASS",
+    "4_playwright_installable": "PENDING (not installed; will install fresh per task §8 explicit permission)",
+    "5_uzg_plus_reachable": "PASS (HTTP/1.1 200 OK)",
+    "6_mailinator_reachable": "PASS (HTTP/1.1 200 OK; public inbox endpoint also 200 OK)"
+  },
+  "test_account_strategy": {
+    "primary_email": "audit-cursor-2026@mailinator.com",
+    "fallback_emails": [
+      "audit-uzg-cursor-2026@mailinator.com",
+      "uzg-test-2026-04-30@mailinator.com"
+    ],
+    "fallback_providers": [
+      "tempmail.com",
+      "guerrillamail.com",
+      "temp-mail.org"
+    ],
+    "rationale": "Mailinator public inbox accessible without API key; signup via Playwright headless; OTP polled via Playwright web scrape (not API to avoid rate limits)"
+  },
+  "deliverables_planned": {
+    "audit_doc": "audits/ecosystem/uzg-plus/uiux-audit/UZG_PLUS_V2_AUTHENTICATED_SCREENSHOTS_v1.md",
+    "screenshots_dir": "audits/ecosystem/uzg-plus/uiux-audit/screenshots-authenticated/ (target ≥100)",
+    "playwright_script": "scripts/audit/screenshot_v2.mjs (UPDATE — add signupViaMailinator, pollOtpFromMailinator, completeMinimalOnboarding, session persistence)",
+    "snapshot": "this file",
+    "report": "audits/ecosystem/uzg-plus/LANE01-UZG-PLUS-V2-AUTHENTICATED-SCREENSHOTS-V2_REPORT.md",
+    "audit_log": "audits/ecosystem/uzg-plus/LANE01-UZG-PLUS-V2-AUTHENTICATED-SCREENSHOTS-V2_audit.log",
+    "handoff": "handoffs/inbox/Lane_01/MSG-L01-L01-HANDOFF-20260430-008.json"
+  },
+  "ac_status": {
+    "AC-01_audit_doc_authored": "PENDING",
+    "AC-02_100_plus_screenshots": "PENDING",
+    "AC-03_6_roots_covered": "PENDING",
+    "AC-04_7_modules_covered": "PENDING",
+    "AC-05_top_10_priorities_covered": "PENDING",
+    "AC-06_auth_flow_captured": "PENDING",
+    "AC-07_ureward_wallet_captured": "PENDING",
+    "AC-08_naming_convention": "PENDING",
+    "AC-09_metadata_json": "PENDING",
+    "AC-10_playwright_script_updated": "PENDING",
+    "AC-11_DOT_deliverables": "PENDING",
+    "AC-12_handoff_schema_conformant": "PENDING",
+    "AC-13_live_mirror_e2e": "PENDING",
+    "AC-14_no_canon_modifications": "PENDING",
+    "AC-15_no_uzgplus_modifications": "PENDING",
+    "AC-16_vercel_skip_on_commits": "PENDING",
+    "AC-17_env_local_never_committed": "PENDING",
+    "AC-18_test_account_is_mailinator": "PENDING"
+  },
+  "method": "Self-signup via Mailinator → write credentials to .gitignored .env.local → Playwright capture pipeline 6 sections → audit doc + DOT deliverables + handoff"
+}
