@@ -1,9 +1,65 @@
 {
   "project_slug": "uzg-plus",
   "github_repo": "unitonzengarden/uzgplus-app",
-  "polled_at": "2026-04-30T18:15:39.008Z",
+  "polled_at": "2026-04-30T19:56:39.651Z",
   "count": 30,
   "commits": [
+    {
+      "sha": "870c3d95f2228796882a150e33294b6c69cdfb7a",
+      "message": "docs(lane02): T-TAO-031-035-V1 ship report + migration verification + e2e flow + 4 screenshots [vercel skip]",
+      "author": "unitonzengarden",
+      "committed_at": "2026-04-30T19:38:28Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/870c3d95f2228796882a150e33294b6c69cdfb7a"
+    },
+    {
+      "sha": "6eb418592c606914b57389ae4610c74df0efc9ad",
+      "message": "feat(lane02): LANE02-UZG-TAO-T-TAO-031-035-V1 — Tử Vi V2 Phase 4 real user flow (closes demo-only gap) (#55)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-04-30T19:30:50Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/6eb418592c606914b57389ae4610c74df0efc9ad"
+    },
+    {
+      "sha": "00720ee53e2762f337ef306d34f30887b155891c",
+      "message": "chore(lane01): add empty s1 vite preview stderr capture [vercel skip]",
+      "author": "LANE01-Cursor",
+      "committed_at": "2026-04-30T19:27:34Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/00720ee53e2762f337ef306d34f30887b155891c"
+    },
+    {
+      "sha": "fad8372ba277e14b08a38dfaec522cc82de6e5a4",
+      "message": "feat(s3): UZG+ V3 HOME interaction components (5 patterns) (#54)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-04-30T18:51:47Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/fad8372ba277e14b08a38dfaec522cc82de6e5a4"
+    },
+    {
+      "sha": "39925a209d54d89b594d1ba9618a877df56f8d25",
+      "message": "docs(lane02): T-TAO-025-030-V1 ship report + Hero Vu AIER context pack + safety report + 4 screenshots [vercel skip]",
+      "author": "unitonzengarden",
+      "committed_at": "2026-04-30T18:42:42Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/39925a209d54d89b594d1ba9618a877df56f8d25"
+    },
+    {
+      "sha": "b83926ae38d7b96254665c48c89367c4b5d42490",
+      "message": "feat(lane02): LANE02-UZG-TAO-T-TAO-025-030-V1 — Tử Vi V2 Phase 3 AIER Tao advisory chat (#51)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-04-30T18:35:33Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/b83926ae38d7b96254665c48c89367c4b5d42490"
+    },
+    {
+      "sha": "4087ad3487b2469e6bfd6c7268dfeec8113d5a02",
+      "message": "feat(s1): UZG+ V3 chrome refactor to --t-* tokens [vercel skip] (#53)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-04-30T18:35:03Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/4087ad3487b2469e6bfd6c7268dfeec8113d5a02"
+    },
+    {
+      "sha": "2205f671adc3589807ce8ab86cb677c26f0fe26c",
+      "message": "feat(s2): UZG+ V3 Foundation OS components (7 reusable shells) (#52)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-04-30T18:30:12Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/2205f671adc3589807ce8ab86cb677c26f0fe26c"
+    },
     {
       "sha": "6d56b9519b4a414a4fddf70aecc92c2c26f1c54d",
       "message": "docs(lane02): T-TAO-019-024-V1 ship report + Hero Vu interpretive JSON + 4 screenshots [vercel skip]",
@@ -157,62 +213,6 @@
       "author": "unitonzengarden",
       "committed_at": "2026-04-30T10:01:55Z",
       "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/bf4b48f3914e46f7c75da15297c8f199aeb895ec"
-    },
-    {
-      "sha": "2e6f89e3eb32b6cf6adaa36ae5e2fad1bfeba4be",
-      "message": "feat(lane02): LANE02-UZG-TAO-T-BAZI-018-V1 — Useful God Engine + Surface (Phase 2.1 Track 1) (#37)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-04-30T09:55:31Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/2e6f89e3eb32b6cf6adaa36ae5e2fad1bfeba4be"
-    },
-    {
-      "sha": "9a6487207abf13a18a0e081380b56d862561f573",
-      "message": "infra(lane02): LANE02-UZG-INFRA-SUPABASE-APPLY-V1 — Phase 1.3 migration applied + verified [vercel skip]",
-      "author": "unitonzengarden",
-      "committed_at": "2026-04-30T08:53:07Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/9a6487207abf13a18a0e081380b56d862561f573"
-    },
-    {
-      "sha": "13c693be01bbe166e8763829c332dafa1fdb9602",
-      "message": "docs(lane02): LANE02-UZG-TAO-T-BAZI-009-010-V1 ship report + snapshot + audit log + screenshots [vercel skip]",
-      "author": "unitonzengarden",
-      "committed_at": "2026-04-30T08:26:25Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/13c693be01bbe166e8763829c332dafa1fdb9602"
-    },
-    {
-      "sha": "2feeea722caa02fdc6dec1ff7b2f6af8995d961d",
-      "message": "feat(lane02): LANE02-UZG-TAO-T-BAZI-009-010-V1 — Phase 1.3 Schema + Storage (#36)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-04-30T08:19:52Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/2feeea722caa02fdc6dec1ff7b2f6af8995d961d"
-    },
-    {
-      "sha": "bb84466356f79bbfca420f28c43456c1defa637a",
-      "message": "infra(lane02): LANE02-UZG-INFRA-BRANCH-PROTECTION-V1 — branch protection deliverables [vercel skip]",
-      "author": "unitonzengarden",
-      "committed_at": "2026-04-30T07:32:43Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/bb84466356f79bbfca420f28c43456c1defa637a"
-    },
-    {
-      "sha": "ba0d716eaf200f5b761ed148ac97498d7c5c5a0d",
-      "message": "docs(lane02): LANE02-UZG-TAO-T-BAZI-013-V1 ship report + snapshot + audit log + screenshots [vercel skip]",
-      "author": "unitonzengarden",
-      "committed_at": "2026-04-30T06:49:57Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/ba0d716eaf200f5b761ed148ac97498d7c5c5a0d"
-    },
-    {
-      "sha": "b4f1bd4a9e3112bd6dd0ffb8ffdc303fb664c1c6",
-      "message": "ci(lane02): LANE02-UZG-TAO-T-BAZI-013-V1 — TAO Bazi CI Regression Pipeline (#34)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-04-30T06:42:27Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/b4f1bd4a9e3112bd6dd0ffb8ffdc303fb664c1c6"
-    },
-    {
-      "sha": "bcf9ae5e27fed53a6c1bac9366018e463a5404cb",
-      "message": "docs(lane02): LANE02-UZG-TAO-T-BAZI-017-V1 ship report + snapshot + audit log + screenshots [vercel skip]",
-      "author": "unitonzengarden",
-      "committed_at": "2026-04-30T05:34:02Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/bcf9ae5e27fed53a6c1bac9366018e463a5404cb"
     }
   ]
 }
