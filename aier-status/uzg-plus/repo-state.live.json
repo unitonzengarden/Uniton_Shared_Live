@@ -1,7 +1,7 @@
 {
   "project_slug": "uzg-plus",
   "github_repo": "unitonzengarden/uzgplus-app",
-  "last_polled_at": "2026-04-30T22:09:29.078Z",
+  "last_polled_at": "2026-04-30T23:10:18.883Z",
   "poll_status": "OK",
   "poll_token_source": "env:GH_TOKEN",
   "default_branch": "main",
@@ -18,5 +18,5 @@
   "last_workflow_run_status": "success",
   "last_workflow_run_name": "Deploy to Cloudflare Pages (Stable)",
   "last_workflow_run_at": "2026-04-30T20:19:44Z",
-  "api_rate_limit_remaining": "4824"
+  "api_rate_limit_remaining": "4822"
 }
