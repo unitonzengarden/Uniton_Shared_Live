@@ -10,7 +10,7 @@
 ## §0. Header
 
 - **Generator:** `aier-state-update v1.0` invoked via `scripts/runtime/generate_project_status.py v1.1`
-- **Source commit:** `819e07e7df6b54f1a7260cb801a41e1502b168ed` (short: `819e07e`)
+- **Source commit:** `b203cc13f4a88b77708e3936c0887cbf435a9f63` (short: `b203cc1`)
 - **Auto-generated:** `true` (do not hand-edit)
 - **Authority:** repo-backed automation per LAW_N8 §L8.2 explicitly enabled CI mode (state-mirror auto-regenerate scope only)
 
@@ -68,11 +68,11 @@
 
 | SHA | Author | Subject |
 |---|---|---|
-| `819e07e` | CLAC Executor | LANE01-SKILL-AIER-VERIFY-EXECUTABLE-V1: Phase J post-merge updates [vercel skip] |
-| `94d88bd` | AIER State Bot | [auto-status] regen runtime+network surfaces from f264bf2 [vercel skip] |
-| `f264bf2` | Uniton Zen | feat(LANE01): aier-verify skill executable + CI integration [vercel skip] (#18) |
-| `0ee8b36` | AIER State Bot | [auto-status] regen runtime+network surfaces from 624a0e6 [vercel skip] |
-| `624a0e6` | Uniton Zen | audit(LANE01): AIER Code reality audit — verdict PARTIALLY_ENFORCED (#17) |
+| `b203cc1` | Uniton Zen | feat(LANE01): triage + fix 6 workflow failures [vercel skip] (#24) |
+| `c3a1396` | CLAC Executor | LANE01-LAW-LANE-4-AUTHOR-AND-PUBLISH-V1: post-merge OBS-01 + self-verify [vercel skip] |
+| `96039a3` | Uniton Zen | sync(uzg-plus): LANE01 membership catalog closing state [vercel skip] |
+| `8b1358a` | Uniton Zen | sync(uzg-plus): LANE01 membership catalog closing state [vercel skip] |
+| `3baa140` | Uniton Zen | feat(LANE01): publish LAW Lane_04 v1.0 cho activation 2026-04-30 [vercel skip] (#23) |
 
 ## §7. Latest 5 DONE Tasks (from MASTER_CHECKLIST)
 
