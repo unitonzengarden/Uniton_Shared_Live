@@ -61,10 +61,12 @@ The following evidence files were copied into `Uniton_Shared_Live` and hash-veri
 - Supabase mutation check: PASS, no Supabase command was run that mutates state
 - Migration apply check: PASS, no migration command was run that applies changes
 - Deployment check: PASS, no deploy command was run
+- Raw public URL verification: PASS at `2026-05-01T00:27:36+07:00`
+- Raw verification commit: `a2f8e6ce16e0aa56522ae1a796535c624b5effd2`
 
 ## Raw URL Verification Targets
 
-Verify after push:
+Verified after push:
 
 - `https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/runtime/uzg-plus/lane_03/LANE03_BACKEND_RUNTIME_STATE.json`
 - `https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/runtime/uzg-plus/lane_03/LANE03_SUPABASE_HEALTH_STATE.json`

@@ -34,7 +34,9 @@
     "source_files_present_at_commit": true,
     "hash_match_source_to_live": true,
     "json_parse_check": "PASS",
-    "raw_url_verification": "RUN_AFTER_PUSH"
+    "raw_url_verification": "PASS",
+    "raw_url_verified_at": "2026-05-01T00:27:36+07:00",
+    "raw_url_verified_commit": "a2f8e6ce16e0aa56522ae1a796535c624b5effd2"
   },
   "raw_urls_to_verify": [
     "https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/runtime/uzg-plus/lane_03/LANE03_BACKEND_RUNTIME_STATE.json",
