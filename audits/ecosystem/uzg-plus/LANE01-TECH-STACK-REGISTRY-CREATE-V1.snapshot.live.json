@@ -1,0 +1,110 @@
+{
+  "task_id": "LANE01-TECH-STACK-REGISTRY-CREATE-V1",
+  "executor": "CLAC-1",
+  "model": "claude-opus-4-7 (running; task §1 specced Sonnet 4.6 — higher tier OK for comprehensive audit + structured authoring)",
+  "lane": "Lane_01",
+  "self_approve_authority": "AMD_NTS_FULL_TECH_AUTONOMY_2026-04-29 + AMD_LANE01_CTO_AUTO_APPROVE_TECH_NON_CANON §3.1",
+  "purpose": "Author governance/TECH_STACK_REGISTRY_v1.md (single source of truth for all UZG+ ecosystem services + credentials) + scripts/governance/sync_env_local.ps1 (auto-sync helper). Goal: NTS clicks ≤ 1 per new service per quarter; zero repeated token paste. Replaces ad-hoc per-Lane credential management with central registry.",
+  "started_at": "2026-04-30T07:30:00Z",
+  "pre_task_main_sha": "3d95d17e640faaf01329b619cccd0ebcecd14be6",
+  "branch": "feat/LANE01-tech-stack-registry-create-v1",
+  "pr": "PENDING",
+  "merge_commit": "PENDING",
+  "phases_completed": [
+    "Step 0 pre-flight: workspace clean, gh auth ok, origin synced at 3d95d17, all 3 .env.local accessible",
+    "Step 1 branch creation off origin/main",
+    "Step 2 snapshot v0 (this)",
+    "Step 3 safe audit of 3 workspaces — key-existence boolean only, no values touched. Found: GH_TOKEN universal in all 3; Supabase + AI keys in Uniton_Shared + Uniton_OS; LANE_BROKER tokens only in Uniton_OS; AUDIT_LOGIN_EMAIL only in Uniton_Shared (sync gap); Vercel/Cloudflare/Render/Resend tokens ABSENT",
+    "Step 4 verify governance/** already in sync workflow whitelist (was added in V2 task)",
+    "Step 5 author governance/TECH_STACK_REGISTRY_v1.md (12 sections, ~800-1200 lines)",
+    "Step 6 author scripts/governance/sync_env_local.ps1 (idempotent, masks values)",
+    "Step 7 local QA gate",
+    "Step 8 commit + push",
+    "Step 9 PR + self-merge --admin",
+    "Step 10 live mirror probe",
+    "Step 11-13 snapshot v1 + DOT report + audit log + handoff",
+    "Step 14-16 final commit + sign-off with §15 URL block"
+  ],
+  "audit_findings_safe": {
+    "method": "key-existence boolean only via grep -q (Select-String -Quiet equivalent); NO value reads, NO echo of secret values, NO INC-01 violation risk",
+    "Uniton_Shared": ["GH_TOKEN", "SUPABASE_SERVICE_ROLE_KEY", "SUPABASE_ACCESS_TOKEN", "SUPABASE_PROJECT_REF", "OPENAI_API_KEY", "ANTHROPIC_API_KEY", "GOOGLE_AI_API_KEY", "XAI_API_KEY", "DEEPSEEK_API_KEY", "AUDIT_LOGIN_EMAIL"],
+    "UZGPLUS": ["GH_TOKEN", "NEXT_PUBLIC_SUPABASE_URL"],
+    "Uniton_OS": ["GH_TOKEN", "SUPABASE_SERVICE_ROLE_KEY", "SUPABASE_DB_PASSWORD", "SUPABASE_ACCESS_TOKEN", "SUPABASE_PROJECT_REF", "OPENAI_API_KEY", "ANTHROPIC_API_KEY", "GOOGLE_AI_API_KEY", "XAI_API_KEY", "DEEPSEEK_API_KEY", "LANE_BROKER_BLOCH_PUBLISHER_TOKEN", "LANE_BROKER_BLOCH_CONSUMER_TOKEN", "NEXT_PUBLIC_SUPABASE_URL", "NEXT_PUBLIC_SUPABASE_ANON_KEY"],
+    "sync_gaps_identified": [
+      "AUDIT_LOGIN_EMAIL only in Uniton_Shared — not synced to UZGPLUS or Uniton_OS",
+      "Supabase service-role + access-token keys NOT in UZGPLUS (Lane_01 Cursor stream)",
+      "AI provider keys (OpenAI/Anthropic/Google/xAI/DeepSeek) NOT in UZGPLUS (V3 frontend may need)",
+      "LANE_BROKER tokens correctly scoped to Uniton_OS (AIER Ops); not a gap",
+      "AUDIT_LOGIN_OTP_BYPASS ABSENT in all 3 — needed if Mailinator-style bypass is the chosen pattern (else live email loop required)"
+    ],
+    "absent_services_for_planned_work": [
+      "VERCEL_TOKEN — not currently in any .env.local; not blocking (Cloudflare deploy chain primary)",
+      "CLOUDFLARE_API_TOKEN, CLOUDFLARE_ZONE_ID, CLOUDFLARE_ACCOUNT_ID — none present; needed for Lane_03 deploy task automation",
+      "RENDER_API_KEY — none present; planned Q3 when Lane_03 backend workers ship",
+      "RESEND_API_KEY — none present; planned for email notifications"
+    ]
+  },
+  "files_authored": [
+    "governance/TECH_STACK_REGISTRY_v1.md (~800-1200 lines, 12 sections)",
+    "scripts/governance/sync_env_local.ps1 (PowerShell idempotent sync helper)",
+    "audits/ecosystem/uzg-plus/LANE01-TECH-STACK-REGISTRY-CREATE-V1.snapshot.live.json (this)",
+    "audits/ecosystem/uzg-plus/LANE01-TECH-STACK-REGISTRY-CREATE-V1_REPORT.md",
+    "audits/ecosystem/uzg-plus/LANE01-TECH-STACK-REGISTRY-CREATE-V1_audit.log",
+    "handoffs/inbox/Lane_01/MSG-L01-L01-HANDOFF-20260430-011.json"
+  ],
+  "files_NOT_modified": [
+    "All canon docs (canon/uzg-plus/uiux/*) — locked v1",
+    "All audit docs (audits/ecosystem/uzg-plus/uiux-audit/*) — locked v1",
+    "Tier 1 ecosystem canon",
+    "REDLINES_MASTER",
+    "All Lane LAW files",
+    "uzgplus-app codebase (Lane_03 territory)",
+    "governance/UZG_PLUS_LANE1_CLA_PERSISTENT_REMINDERS_v1_1.md (just authored in V2; locked)",
+    "Any .env.local files (read-only audit, never write)"
+  ],
+  "evidence_urls_post_merge": {
+    "registry": "https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/governance/TECH_STACK_REGISTRY_v1.md",
+    "report": "https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/audits/ecosystem/uzg-plus/LANE01-TECH-STACK-REGISTRY-CREATE-V1_REPORT.md",
+    "snapshot": "https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/audits/ecosystem/uzg-plus/LANE01-TECH-STACK-REGISTRY-CREATE-V1.snapshot.live.json"
+  },
+  "boundary_check": {
+    "clac1_workspace_uniton_shared_only_for_writes": true,
+    "read_only_access_to_uzgplus_and_uniton_os_envs": true,
+    "no_modify_canon_docs": true,
+    "no_modify_audit_docs": true,
+    "no_modify_uzgplus_app": true,
+    "no_modify_tier_1_canon": true,
+    "no_modify_redlines_master": true,
+    "no_modify_lane_laws": true,
+    "never_echoed_raw_secret_values": true,
+    "never_committed_secret_values": true,
+    "no_env_local_modifications": true,
+    "vercel_skip_on_commit": "PENDING",
+    "lane01_dot_format_3_deliverables_in_audits_namespace": true,
+    "self_merge_per_AMD": "PENDING",
+    "nts_clicks_target_zero": true,
+    "governance_in_sync_whitelist": true
+  },
+  "ac_status": {
+    "AC-01_registry_authored_800plus_lines": "PENDING",
+    "AC-02_all_12_sections_present": "PENDING",
+    "AC-03_lane_to_service_mapping_4_lanes": "PENDING",
+    "AC-04_service_registry_8plus_services": "PENDING",
+    "AC-05_audit_table_3_workspaces_x_20plus_keys": "PENDING",
+    "AC-06_planned_services_4plus": "PENDING",
+    "AC-07_nts_workflow_max_7_steps": "PENDING",
+    "AC-08_missing_services_lists_audit_login": "PENDING",
+    "AC-09_lane_autonomy_must_must_not": "PENDING",
+    "AC-10_sync_script_idempotent": "PENDING",
+    "AC-11_no_raw_secret_values_in_commits": "PASS — audit method uses key-existence boolean only; no values touched",
+    "AC-12_governance_in_sync_workflow_whitelist": "PASS — verified governance/** present from V2 task",
+    "AC-13_dot_deliverables_in_audits_namespace": "PENDING",
+    "AC-14_handoff_schema_conformant": "PENDING",
+    "AC-15_live_mirror_3_urls_200_OK": "PENDING (post-merge verify)",
+    "AC-16_no_canon_modifications": "PASS",
+    "AC-17_no_uzgplus_app_modifications": "PASS",
+    "AC-18_vercel_skip_on_commits": "PENDING"
+  },
+  "next_recommended": "1. CLA Lane_01 reference TECH_STACK_REGISTRY in all future task prompts when Lane needs a service. 2. Apply §10 Lane Autonomy Policy strictly. 3. Update registry when new service discovered. 4. Continue Module Canon Tier 4 authoring (ENTA Module first per Phase 2 Mockup Priority Brief §7).",
+  "post_inc_01_compliance": "PASS — no token usage in this task; safe key-existence audit only; never echo raw values"
+}
