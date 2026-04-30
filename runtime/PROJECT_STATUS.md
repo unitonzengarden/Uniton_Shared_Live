@@ -10,7 +10,7 @@
 ## §0. Header
 
 - **Generator:** `aier-state-update v1.0` invoked via `scripts/runtime/generate_project_status.py v1.1`
-- **Source commit:** `1f59c7818e5ccd3eed02597fb3d265abd326a877` (short: `1f59c78`)
+- **Source commit:** `72b02bb502cc757ebb83e75f9a047d1b23e08f49` (short: `72b02bb`)
 - **Auto-generated:** `true` (do not hand-edit)
 - **Authority:** repo-backed automation per LAW_N8 §L8.2 explicitly enabled CI mode (state-mirror auto-regenerate scope only)
 
@@ -68,11 +68,11 @@
 
 | SHA | Author | Subject |
 |---|---|---|
-| `1f59c78` | unitonzengarden | docs(lane03): lock batch c ledger and rpc decision |
-| `a89435d` | Ecosystem Poller Bot | poll: ecosystem state update [vercel skip] |
-| `4f77902` | AIER Code Heartbeat | AIER Code heartbeat 2026-04-30T18:13:44Z [vercel skip] |
-| `4af6ce8` | Uniton Zen | fix(s1): relocate 3 DOT deliverables UP to audits/ecosystem/uzg-plus/ root per R-DELIVERABLE-01 [ver |
-| `470ffc8` | Uniton Zen | docs(sprints): append live mirror 200 OK stamp to S1 audit_log [vercel skip] (#47) |
+| `72b02bb` | unitonzengarden | docs(lane03): harden energy daily rpc privileges |
+| `9496fb7` | Uniton Zen | Lane01 S3: HOME interaction components deliverables (3 DOT root per KL-023) [vercel skip] (#51) |
+| `44b306f` | Uniton Zen | Lane01 S1: chrome refactor deliverables [vercel skip] (#50) |
+| `124c053` | Uniton Zen | Lane01 S2: Foundation components deliverables (3 DOT root per KL-023) [vercel skip] (#49) |
+| `f3c31d4` | AIER State Bot | [auto-status] regen runtime+network surfaces from 1f59c78 [vercel skip] |
 
 ## §7. Latest 5 DONE Tasks (from MASTER_CHECKLIST)
 
@@ -107,7 +107,7 @@ Latest scores from the 4-worker QA family (per `LANE01-W3-QA-LOOP-WIRE-V1`).
 
 | Worker | Latest Report | Health | Findings (C/W/I) |
 |---|---|---|---|
-| scan | `AIER-SCAN-2026-04-28-VERIFY-T3-5.json` | 90/100 | 1/0/0 |
+| scan | `AIER-SCAN-2026-04-27-001.json` | 82/100 | 0/6/0 |
 | canon | `AIER-CANON-QA-V1-FINAL-AUDIT.json` | 76/100 | 0/7/3 |
 | skill | `AIER-SKILL-QA-CAPABILITY-VERIFY.json` | 100/100 | 0/0/0 |
 | qa_loop | `POST-LANE01-W5-V1-FINAL-AUDIT-V1.json` | 60/100 | 10/12/3 |
