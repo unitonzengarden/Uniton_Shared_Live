@@ -65,6 +65,12 @@
 - ✅ `audits/ecosystem/uzg-plus/sprints/sprint-1/LANE01-UZG-V3-S1-DESIGN-TOKENS-2026-04-30-report.md`
 - ✅ `audits/ecosystem/uzg-plus/sprints/sprint-1/LANE01-UZG-V3-S1-DESIGN-TOKENS-2026-04-30-audit_log.md` (this file)
 
+### [2026-04-30 ~17:51Z UTC] Live mirror verification
+
+- 2 URLs verified via curl poll (10s interval, hit on poll 4 ~40s after merge):
+  - `audits/ecosystem/uzg-plus/sprints/sprint-1/LANE01-...-report.md`: **200** ✓
+  - `audits/ecosystem/uzg-plus/sprints/sprint-1/LANE01-...-snapshot.md`: **200** ✓
+
 ---
 
 End of audit log (append-only).
