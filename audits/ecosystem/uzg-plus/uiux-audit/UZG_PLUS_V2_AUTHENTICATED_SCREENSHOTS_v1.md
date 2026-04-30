@@ -93,7 +93,7 @@ Note: Mailinator is the *named* primary in the task spec; Cursor switched to mai
 
 The first version of the OTP regex (`\b\d{6}\b`) matched **CSS hex colour values** (`#111827`, `#475569`, `#334155`) in the HTML body of the OTP email — these became false positives that produced verify failures with the message "That code is no longer valid." Across three consecutive verify attempts, the false-positive OTP `111827` (rendered identically across runs because it is a CSS constant in the email template) was repeatedly submitted, with diminishing confusion as logs showed three different live emails being received but always producing the same regex match.
 
-Additionally, the actual OTP is **8 digits** (the `#otpCode` input has `maxlength=8`), not 6 as the heading text "Enter the six-digit code to continue" claims. This is a UX inconsistency (filed as G57; see §5).
+Additionally, the actual OTP is **8 digits** (the `#otpCode` input has `maxlength=8`; sample masked: `59****76`), not 6 as the heading text "Enter the six-digit code to continue" claims. This is a UX inconsistency (filed as G57; see §5).
 
 The fix landed in `screenshot_v2.mjs`: regex `code is[:\s]*([0-9]{6,10})` against the plaintext body only, with a fallback that matches any line consisting solely of 6-10 digits. Subsequent runs verified successfully on first attempt.
 
@@ -276,7 +276,7 @@ The original `UX_GAP_ANALYSIS_v1.md` documented G01-G53 from the public-side aud
 
 **Severity:** MEDIUM (UI copy / trust signal)
 **Evidence:** `1_login_step2_otp_entry_desktop_empty.png` (heading + input observed via `probe_otp_input.mjs`); the email body shown in `debug_mailtm_message.mjs` confirms 8-digit OTP.
-**Behaviour:** Heading "Enter the six-digit code to continue." appears next to a single-input field with `maxlength=8`. The Resend-delivered code is 8 digits (e.g. `59075076`), not 6. Users counting their typed digits against the heading copy will think the code is invalid and click Resend prematurely — wasting OTP cooldowns and possibly inviting frustration.
+**Behaviour:** Heading "Enter the six-digit code to continue." appears next to a single-input field with `maxlength=8`. The Resend-delivered code is 8 digits (sample masked: `59****76`), not 6. Users counting their typed digits against the heading copy will think the code is invalid and click Resend prematurely — wasting OTP cooldowns and possibly inviting frustration.
 **V3 recommendation:** Either downgrade Supabase OTP length to 6 digits, or update the heading copy to "Enter the 8-digit code to continue."
 
 (Two additional findings — silent-redirect denial of admin routes for non-admins, and stale-OTP error copy "That code is no longer valid" without instructing the user to wait for the latest email — were observed but are reflected as elaborations of pre-existing gaps in `UX_GAP_ANALYSIS_v1.md` and not numbered as new gaps here.)
