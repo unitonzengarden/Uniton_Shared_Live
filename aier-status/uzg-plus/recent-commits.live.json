@@ -1,9 +1,30 @@
 {
   "project_slug": "uzg-plus",
   "github_repo": "unitonzengarden/uzgplus-app",
-  "polled_at": "2026-04-30T13:06:27.940Z",
+  "polled_at": "2026-04-30T15:23:07.269Z",
   "count": 30,
   "commits": [
+    {
+      "sha": "020c2655a7119beec1f047e839ea60f8de8de5a2",
+      "message": "docs(lane02): LANE02-UZG-TAO-T-TAO-001-004-V1 ship report + snapshot + audit + NTS canonical chart [vercel skip]",
+      "author": "unitonzengarden",
+      "committed_at": "2026-04-30T14:35:25Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/020c2655a7119beec1f047e839ea60f8de8de5a2"
+    },
+    {
+      "sha": "7142e10c6a00eb04bf8c4fa3d689e93ac0531f94",
+      "message": "feat(lane02): T-TAO-001-004-V1 — Tử Vi V2 Phase 1.2 Engine Core (4 engines + NTS canonical anchor) (#45)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-04-30T14:29:57Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/7142e10c6a00eb04bf8c4fa3d689e93ac0531f94"
+    },
+    {
+      "sha": "ad7da56b853d902a49abbf554965ffc117199e88",
+      "message": "docs(canon): mirror v1.1 INDEX fix (#44)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-04-30T14:06:25Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/ad7da56b853d902a49abbf554965ffc117199e88"
+    },
     {
       "sha": "20cd69a129e6fc22da7605047aa58b612435ca7c",
       "message": "docs(lane02): LANE02-UZG-VANNIEN-T-VN-001-005-V1 ship report + snapshot + audit log + screenshots [vercel skip]",
@@ -192,27 +213,6 @@
       "author": "Uniton Zen",
       "committed_at": "2026-04-30T02:48:36Z",
       "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/e2cde814d7a136ee1188e5f104ae435f8d9c10ab"
-    },
-    {
-      "sha": "50d7ce6c3599e448836bd7442e75ee33c841a7ff",
-      "message": "docs(lane02): LANE02-UZG-TAO-T-BAZI-007-V1 ship report + snapshot + audit log [vercel skip]",
-      "author": "unitonzengarden",
-      "committed_at": "2026-04-30T02:41:13Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/50d7ce6c3599e448836bd7442e75ee33c841a7ff"
-    },
-    {
-      "sha": "53754f5762ab443528f873d826b9a19fd261702e",
-      "message": "feat(lane02): LANE02-UZG-TAO-T-BAZI-007-V1 — Bazi Twelve Stages Engine (Trường Sinh) (#28)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-04-30T02:39:21Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/53754f5762ab443528f873d826b9a19fd261702e"
-    },
-    {
-      "sha": "a42983906b0a9ffa59645241ef109d4faa2a8397",
-      "message": "docs(lane01): V2 Product Polish Sprint close -- update snapshots + sprint handoff [vercel skip]",
-      "author": "LANE01-Cursor",
-      "committed_at": "2026-04-30T02:22:37Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/a42983906b0a9ffa59645241ef109d4faa2a8397"
     }
   ]
 }
