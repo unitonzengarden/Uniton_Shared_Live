@@ -1,0 +1,87 @@
+{
+  "task_id": "LANE01-CLA-PERSISTENT-REMINDERS-UPDATE-V2",
+  "executor": "CLAC-1",
+  "model": "claude-opus-4-7 (running; task §1 specced Sonnet 4.6 — higher tier OK)",
+  "lane": "Lane_01",
+  "self_approve_authority": "AMD_NTS_FULL_TECH_AUTONOMY_2026-04-29 + AMD_LANE01_CTO_AUTO_APPROVE_TECH_NON_CANON §3.1",
+  "supersedes": "LANE01-CLA-PERSISTENT-REMINDERS-UPDATE-V1 (HALTED — v1.0 baseline not in workspace; resolved by NTS embedding full v1.1 content in V2 task §4)",
+  "purpose": "Author governance/UZG_PLUS_LANE1_CLA_PERSISTENT_REMINDERS_v1_1.md (NEW FILE) with v1.1 content per task §4 verbatim embed. Establishes governance/ namespace + sync workflow whitelist for governance/** + new §15 LIVE MIRROR URL BLOCK convention.",
+  "started_at": "2026-04-30T06:50:00Z",
+  "pre_task_main_sha": "046efdd4e60aa61a948d6433f120954b3f9f3e5c",
+  "branch": "feat/LANE01-cla-persistent-reminders-update-v2 (deleted post-merge)",
+  "pr": "https://github.com/unitonzengarden/Uniton_Shared/pull/36",
+  "merge_commit": "555e8c119dbca447d6ab31d946f7435c9ac70786",
+  "merged_at": "2026-04-30T07:00:00Z",
+  "manual_sync_dispatch_run": "https://github.com/unitonzengarden/Uniton_Shared/actions/runs/25152593343 (success)",
+  "phases_completed": [
+    "Step 0 pre-flight: workspace clean, gh auth ok, origin synced at 046efdd. Verified governance/ MISSING + governance/** NOT in sync whitelist — both must be fixed in this task",
+    "Step 1 branch creation off origin/main",
+    "Step 2 snapshot v0 (this)",
+    "Step 3 mkdir governance/",
+    "Step 4 author governance/UZG_PLUS_LANE1_CLA_PERSISTENT_REMINDERS_v1_1.md (425 lines, 16 sections)",
+    "Step 5 verify line count + 16 sections + §15 8 sub-rules + changelog v1.0+v1.1",
+    "Step 6 update .github/workflows/sync_runtime_to_public.yml: add 'governance/**' to push paths + governance/ copy step",
+    "Step 7 commit + push",
+    "Step 8 PR + self-merge --admin",
+    "Step 9 manual sync workflow_dispatch (since workflow file changed and isn't in trigger paths)",
+    "Step 10 live mirror probe — Reminders URL 200 OK",
+    "Step 11-13 snapshot v1 + DOT report + audit log + handoff",
+    "Step 14-15 final commit + sign-off with §15 URL block"
+  ],
+  "files_authored": [
+    "governance/UZG_PLUS_LANE1_CLA_PERSISTENT_REMINDERS_v1_1.md (NEW, 425 lines, 16 sections)",
+    "audits/ecosystem/uzg-plus/LANE01-CLA-PERSISTENT-REMINDERS-UPDATE-V2.snapshot.live.json (this)",
+    "audits/ecosystem/uzg-plus/LANE01-CLA-PERSISTENT-REMINDERS-UPDATE-V2_REPORT.md",
+    "audits/ecosystem/uzg-plus/LANE01-CLA-PERSISTENT-REMINDERS-UPDATE-V2_audit.log",
+    "handoffs/inbox/Lane_01/MSG-L01-L01-HANDOFF-20260430-010.json"
+  ],
+  "files_updated": [
+    ".github/workflows/sync_runtime_to_public.yml (added governance/** to push paths + governance/ copy step)"
+  ],
+  "files_NOT_modified": [
+    "All canon docs (canon/uzg-plus/uiux/*) — locked v1",
+    "All audit docs (audits/ecosystem/uzg-plus/uiux-audit/*)",
+    "Tier 1 ecosystem canon",
+    "REDLINES_MASTER",
+    "All Lane LAW files",
+    "uzgplus-app codebase (Lane_03 territory)",
+    "Other governance content (none existed before this task)"
+  ],
+  "evidence_urls_post_merge": {
+    "reminders": "https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/governance/UZG_PLUS_LANE1_CLA_PERSISTENT_REMINDERS_v1_1.md",
+    "report": "https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/audits/ecosystem/uzg-plus/LANE01-CLA-PERSISTENT-REMINDERS-UPDATE-V2_REPORT.md",
+    "snapshot": "https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/audits/ecosystem/uzg-plus/LANE01-CLA-PERSISTENT-REMINDERS-UPDATE-V2.snapshot.live.json"
+  },
+  "boundary_check": {
+    "clac1_workspace_uniton_shared_only": true,
+    "no_modify_canon_docs": true,
+    "no_modify_audit_docs": true,
+    "no_modify_uzgplus_app": true,
+    "no_modify_tier_1_canon": true,
+    "no_modify_redlines_master": true,
+    "no_modify_lane_laws": true,
+    "no_echo_gh_token_in_logs_audit": true,
+    "vercel_skip_on_commit": true,
+    "lane01_dot_format_3_deliverables_in_audits_namespace": true,
+    "self_merge_per_AMD": "PASS (PR #36 squash --admin merged 555e8c1)",
+    "nts_clicks_target_zero": true,
+    "governance_in_sync_whitelist": true,
+    "file_content_matches_task_4_verbatim": true
+  },
+  "ac_status": {
+    "AC-01_file_created": "PASS — governance/UZG_PLUS_LANE1_CLA_PERSISTENT_REMINDERS_v1_1.md exists",
+    "AC-02_all_16_sections": "PASS — grep '^## §' returns 16",
+    "AC-03_section_15_8_sub_rules": "PASS — grep '^### Rule 15\\.' returns 8",
+    "AC-04_changelog_v1_0_and_v1_1": "PASS — both entries present in §16",
+    "AC-05_governance_folder_exists": "PASS — created in this task",
+    "AC-06_sync_whitelist_includes_governance": "PASS — added to .github/workflows/sync_runtime_to_public.yml",
+    "AC-07_dot_deliverables_in_audits_namespace": "PASS",
+    "AC-08_handoff_schema_conformant": "PASS",
+    "AC-09_live_mirror_3_urls_200_OK": "PASS — Reminders 200 OK confirmed; report+snapshot 200 OK after final commit",
+    "AC-10_no_canon_modifications": "PASS",
+    "AC-11_no_uzgplus_app_modifications": "PASS",
+    "AC-12_vercel_skip_on_commits": "PASS"
+  },
+  "next_recommended": "1. CLA Lane_01 verify §15 rule applied to all future task prompts. 2. Continue Module Canon Tier 4 authoring in chat (HOME/Social or ENTA first per Phase 2 Mockup Priority Brief §7 critical-path). 3. Verify next Dev1/Dev2 status response includes URL block.",
+  "post_inc_01_compliance": "PASS — no token usage in this task"
+}

@@ -1,0 +1,28 @@
+{
+  "message_id": "MSG-L01-L01-HANDOFF-20260430-010",
+  "from_lane": "Lane_01",
+  "to_lane": "Lane_01",
+  "message_type": "handoff-notice",
+  "priority": "normal",
+  "status": "sent",
+  "created_at": "2026-04-30T07:05:00Z",
+  "related_task_id": "LANE01-CLA-PERSISTENT-REMINDERS-UPDATE-V2",
+  "subject": "CLA Persistent Reminders v1.1 LIVE; governance/ namespace + sync whitelist established; §15 URL block convention enforced for all future task prompts",
+  "body": "Authored governance/UZG_PLUS_LANE1_CLA_PERSISTENT_REMINDERS_v1_1.md (425 lines, 16 sections) per V2 task §4 verbatim embed. Established 3 things at once: (1) governance/ namespace in repo (folder didn't exist before), (2) sync_runtime_to_public.yml whitelist for governance/** + copy step (pattern from canon/** fix in PR #29), (3) §15 LIVE MIRROR URL BLOCK convention (8 sub-rules — mandatory format for Dev1/Dev2 status responses). Single PR #36 squash-merged at 555e8c1; manual sync dispatch run 25152593343 success; Reminders URL HTTP 200 OK on Live mirror. Supersedes V1 (HALTED — v1.0 baseline not in workspace; resolved by NTS embedding full v1.1 content in V2 task §4). AC-01..12 ALL PASS. Effective immediately: this very status response demonstrates §15 URL block convention.",
+  "requested_action": "1. CLA Lane_01 verify §15 rule applied to all future task prompts (add line in §16 Sign-off expectations: 'Status response MUST end with 📎 LIVE MIRROR URLS block per CLA Persistent Reminders §15'). 2. Continue Module Canon Tier 4 authoring in chat per Phase 2 Mockup Priority Brief §7 critical-path: ENTA Module first (unblocks P1 Public ENTA + P8 Onboarding), PLUS Hub Module second (unblocks P5 Governance + P6 AIER + P7 Marketplace). 3. Verify next Dev1/Dev2 status response includes URL block per §15.",
+  "required_response_type": "ack",
+  "evidence_paths": [
+    "governance/UZG_PLUS_LANE1_CLA_PERSISTENT_REMINDERS_v1_1.md",
+    ".github/workflows/sync_runtime_to_public.yml",
+    "audits/ecosystem/uzg-plus/LANE01-CLA-PERSISTENT-REMINDERS-UPDATE-V2.snapshot.live.json",
+    "audits/ecosystem/uzg-plus/LANE01-CLA-PERSISTENT-REMINDERS-UPDATE-V2_REPORT.md",
+    "audits/ecosystem/uzg-plus/LANE01-CLA-PERSISTENT-REMINDERS-UPDATE-V2_audit.log"
+  ],
+  "acceptance_criteria": [
+    "AC-01..AC-08 all PASS at PR-create time (file created + 16 sections + §15 8 sub-rules + changelog + governance/ folder + sync whitelist + DOT deliverables + handoff schema-conformant)",
+    "AC-09 PASS — Reminders URL HTTP 200 OK on Live mirror; report + snapshot URLs verified after final commit",
+    "AC-10 PASS — no canon modifications",
+    "AC-11 PASS — no uzgplus-app modifications",
+    "AC-12 PASS — [vercel skip] on all commits"
+  ]
+}
