@@ -10,7 +10,7 @@
 ## §0. Header
 
 - **Generator:** `aier-state-update v1.0` invoked via `scripts/runtime/generate_project_status.py v1.1`
-- **Source commit:** `c22677d2b101c94edb7d794da3eb9bf8a60a9501` (short: `c22677d`)
+- **Source commit:** `ca0f0586845e86fce65d3ba8d6884c58ae02dc15` (short: `ca0f058`)
 - **Auto-generated:** `true` (do not hand-edit)
 - **Authority:** repo-backed automation per LAW_N8 §L8.2 explicitly enabled CI mode (state-mirror auto-regenerate scope only)
 
@@ -68,11 +68,11 @@
 
 | SHA | Author | Subject |
 |---|---|---|
-| `c22677d` | CLAC Executor | docs(LANE01): finalise LAW-LANE-2-AUTHOR-V1 deliverables [vercel skip] |
-| `213eeab` | Uniton Zen | LANE01-LAW-LANE-2-AUTHOR-V1: Materialize Lane_02 LAW (#28) |
-| `2201453` | Uniton Zen | LANE01-MASTER-AUDIT-DELIVERABLES-RELOCATE-V1: Fix OBS-01 visibility (#27) |
-| `407b782` | Uniton Zen | LANE01-UZG-PLUS-V2-MASTER-AUDIT-PUBLISH-V1: Publish v1.2 state of truth (#26) |
-| `7fb0afd` | AIER State Bot | [auto-status] regen runtime+network surfaces from 1a93701 [vercel skip] |
+| `ca0f058` | unitonzengarden | docs(lane03): publish backend runtime state spine |
+| `f96a04c` | Ecosystem Poller Bot | poll: ecosystem state update [vercel skip] |
+| `d96da85` | AIER Code Heartbeat | AIER Code heartbeat 2026-04-30T15:13:35Z [vercel skip] |
+| `f56f37b` | Uniton Zen | fix(canon): apply v1.1 INDEX fix (NTS-staged) [vercel skip] (#44) |
+| `276da3a` | Ecosystem Poller Bot | poll: ecosystem state update [vercel skip] |
 
 ## §7. Latest 5 DONE Tasks (from MASTER_CHECKLIST)
 
