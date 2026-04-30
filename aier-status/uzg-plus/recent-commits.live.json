@@ -1,9 +1,37 @@
 {
   "project_slug": "uzg-plus",
   "github_repo": "unitonzengarden/uzgplus-app",
-  "polled_at": "2026-04-30T07:29:56.112Z",
+  "polled_at": "2026-04-30T09:36:22.218Z",
   "count": 30,
   "commits": [
+    {
+      "sha": "9a6487207abf13a18a0e081380b56d862561f573",
+      "message": "infra(lane02): LANE02-UZG-INFRA-SUPABASE-APPLY-V1 — Phase 1.3 migration applied + verified [vercel skip]",
+      "author": "unitonzengarden",
+      "committed_at": "2026-04-30T08:53:07Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/9a6487207abf13a18a0e081380b56d862561f573"
+    },
+    {
+      "sha": "13c693be01bbe166e8763829c332dafa1fdb9602",
+      "message": "docs(lane02): LANE02-UZG-TAO-T-BAZI-009-010-V1 ship report + snapshot + audit log + screenshots [vercel skip]",
+      "author": "unitonzengarden",
+      "committed_at": "2026-04-30T08:26:25Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/13c693be01bbe166e8763829c332dafa1fdb9602"
+    },
+    {
+      "sha": "2feeea722caa02fdc6dec1ff7b2f6af8995d961d",
+      "message": "feat(lane02): LANE02-UZG-TAO-T-BAZI-009-010-V1 — Phase 1.3 Schema + Storage (#36)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-04-30T08:19:52Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/2feeea722caa02fdc6dec1ff7b2f6af8995d961d"
+    },
+    {
+      "sha": "bb84466356f79bbfca420f28c43456c1defa637a",
+      "message": "infra(lane02): LANE02-UZG-INFRA-BRANCH-PROTECTION-V1 — branch protection deliverables [vercel skip]",
+      "author": "unitonzengarden",
+      "committed_at": "2026-04-30T07:32:43Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/bb84466356f79bbfca420f28c43456c1defa637a"
+    },
     {
       "sha": "ba0d716eaf200f5b761ed148ac97498d7c5c5a0d",
       "message": "docs(lane02): LANE02-UZG-TAO-T-BAZI-013-V1 ship report + snapshot + audit log + screenshots [vercel skip]",
@@ -185,34 +213,6 @@
       "author": "Uniton Zen",
       "committed_at": "2026-04-29T19:46:29Z",
       "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/05a1ea1e93aba166301d91f989b5db895f26ddf8"
-    },
-    {
-      "sha": "040322c608391908cb883a1842aeb9d44b745e51",
-      "message": "docs(lane02): LANE02-UZG-LANG-HOTFIX-3-V1-RESUME ship report + snapshot + audit log [vercel skip]",
-      "author": "unitonzengarden",
-      "committed_at": "2026-04-29T19:41:40Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/040322c608391908cb883a1842aeb9d44b745e51"
-    },
-    {
-      "sha": "3d31613ca559dea74a9b91b5c996bf85c77b4b5e",
-      "message": "fix(lane02): LANE02-UZG-LANG-HOTFIX-3-V1-RESUME — complete remaining Language OS Hotfix #3 fixes (#20)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-04-29T19:36:23Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/3d31613ca559dea74a9b91b5c996bf85c77b4b5e"
-    },
-    {
-      "sha": "700087941d938f72766091319acfc28febd5569a",
-      "message": "docs(lane01): LANE01-UZG-PLUS-REPO-HYGIENE-V1 closing state — Phase I/J/K results [vercel skip] (#19)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-04-29T19:08:31Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/700087941d938f72766091319acfc28febd5569a"
-    },
-    {
-      "sha": "7978b8838548d3794089371336681ee7023ef670",
-      "message": "feat(lane01): UZG+ repo hygiene round v1 [vercel skip] (#18)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-04-29T19:04:27Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/7978b8838548d3794089371336681ee7023ef670"
     }
   ]
 }
