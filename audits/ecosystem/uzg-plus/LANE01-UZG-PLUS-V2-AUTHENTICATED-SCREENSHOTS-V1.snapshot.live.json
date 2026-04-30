@@ -3,13 +3,17 @@
   "_task": "LANE01-UZG-PLUS-V2-AUTHENTICATED-SCREENSHOTS-V1",
   "authored_at": "2026-04-30T05:20:00Z",
   "halted_at": "2026-04-30T05:22:00Z",
+  "completed_at": "2026-04-30T05:35:00Z",
   "executor": "Cursor (Sonnet 4.6)",
   "lane": "Lane_01",
-  "branch": "feat/LANE01-uzg-plus-v2-authenticated-screenshots-v1",
+  "branch": "feat/LANE01-uzg-plus-v2-authenticated-screenshots-v1 (merged + deleted)",
   "pre_task_uniton_shared_sha": "2ef71e96b2898aef73beaa3e19bb0cedc8db8418",
   "pre_task_uzgplus_sha": "6d99b1881bf1039dfe360dab78fcf699a3ac336e",
-  "merge_sha": null,
+  "pr_number": 33,
+  "pr_url": "https://github.com/unitonzengarden/Uniton_Shared/pull/33",
+  "merge_sha": "96a6fe30f6bd5804b04e6f5c1df63664eccf7016",
   "status": "HALTED_AWAITING_CREDENTIALS",
+  "halt_state_delivered": true,
   "halt_reason": "AUDIT_LOGIN credentials not present in any inspected .env.local. Per task §4 Step A explicit HALT condition. Per R-NTS-LLM-02 cannot ask NTS directly. Escalating to CLA Lane_01 for resolution path.",
   "scope": "Authenticated screenshot capture for UZG+ V2 production at https://uzg.plus (~100 screenshots across 6 sections)",
   "credentials_check": {
@@ -80,7 +84,7 @@
     "AC-10_playwright_script_committed": "ALREADY_PRESENT (template from prior task at scripts/audit/screenshot_v2.mjs)",
     "AC-11_DOT_deliverables_present": "PASS (3 halt-state deliverables in audits/ecosystem/uzg-plus/)",
     "AC-12_handoff_schema_conformant": "PASS (halt-state escalation handoff)",
-    "AC-13_live_mirror_e2e": "PENDING (post-merge verification)",
+    "AC-13_live_mirror_e2e": "PASS_WITH_NOTE — snapshot 200 OK, report 200 OK; audit log 404 expected (sync_runtime_to_public.yml lines 49-50+155 explicitly strip *.log from public mirror — same behaviour as prior LANE01-UZG-PLUS-V2-USER-FLOW-AUDIT-V1_audit.log)",
     "AC-14_no_canon_modifications": "PASS (no modifications anywhere)",
     "AC-15_no_uzgplus_modifications": "PASS (boundary respected)",
     "AC-16_vercel_skip_on_commits": "PASS (will be applied)"
@@ -94,10 +98,10 @@
     "6_no_cursor_phase1_audit_modify": "PASS",
     "7_no_credentials_in_logs": "PASS (key existence only, values never read)",
     "8_no_otp_in_logs": "PASS (key not present, no value to leak)",
-    "9_vercel_skip_on_commits": "PENDING (will apply on commit)",
+    "9_vercel_skip_on_commits": "PASS (commit subject: 'halt(audit): ... [vercel skip]')",
     "10_DOT_in_audits_namespace": "PASS",
-    "11_self_merge_per_AMD": "PENDING (post-PR)",
-    "12_NTS_clicks_zero": "PASS (single dispatch acknowledged)"
+    "11_self_merge_per_AMD": "PASS (PR #33 squash-merged --admin at 96a6fe3)",
+    "12_NTS_clicks_zero": "PASS (single dispatch acknowledged; halt path executed without NTS interaction)"
   },
   "security_gate_checks": {
     "1_no_email_echoed": "PASS (key not present; nothing to mask)",
