@@ -1,9 +1,37 @@
 {
   "project_slug": "uzg-plus",
   "github_repo": "unitonzengarden/uzgplus-app",
-  "polled_at": "2026-04-30T16:57:21.054Z",
+  "polled_at": "2026-04-30T18:15:39.008Z",
   "count": 30,
   "commits": [
+    {
+      "sha": "6d56b9519b4a414a4fddf70aecc92c2c26f1c54d",
+      "message": "docs(lane02): T-TAO-019-024-V1 ship report + Hero Vu interpretive JSON + 4 screenshots [vercel skip]",
+      "author": "unitonzengarden",
+      "committed_at": "2026-04-30T17:48:56Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/6d56b9519b4a414a4fddf70aecc92c2c26f1c54d"
+    },
+    {
+      "sha": "c6d2070c277c55c45f0c5bb4552b6517b3e9a603",
+      "message": "feat(design-system): add V3 token infrastructure — 5 ngũ hành themes + 3-namespace architecture (#50)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-04-30T17:48:48Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/c6d2070c277c55c45f0c5bb4552b6517b3e9a603"
+    },
+    {
+      "sha": "2463f927d9df67a7202da885f54b6b8cdd53f2c4",
+      "message": "feat(lane02): LANE02-UZG-TAO-T-TAO-019-024-V1 — Tử Vi V2 Phase 2 Interpretive layer (Brightness + Cách cục + Reading) (#49)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-04-30T17:41:21Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/2463f927d9df67a7202da885f54b6b8cdd53f2c4"
+    },
+    {
+      "sha": "5a135d26e9fe87123b651c3bc1d75e074d36a291",
+      "message": "docs(lane02): LANE02-UZG-TAO-CANON-AMENDMENT-001-V1 ship report + snapshot + audit log [vercel skip]",
+      "author": "unitonzengarden",
+      "committed_at": "2026-04-30T16:58:01Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/5a135d26e9fe87123b651c3bc1d75e074d36a291"
+    },
     {
       "sha": "e8f44c212c197992a0f0e25699683087e0861fd3",
       "message": "docs(canon): TAO ziwei spec amendment 001 — §7.9 transcription errors (#48)",
@@ -185,34 +213,6 @@
       "author": "unitonzengarden",
       "committed_at": "2026-04-30T05:34:02Z",
       "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/bcf9ae5e27fed53a6c1bac9366018e463a5404cb"
-    },
-    {
-      "sha": "33645e6018c593d53edcc0b00373394cde2423af",
-      "message": "feat(lane02): LANE02-UZG-TAO-T-BAZI-017-V1 — Day Master Analysis Surface (Phase 1.5 COMPLETE) (#33)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-04-30T05:29:21Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/33645e6018c593d53edcc0b00373394cde2423af"
-    },
-    {
-      "sha": "9800a115843cd09a3e7897d6169fcad46ceb0779",
-      "message": "docs(lane02): LANE02-UZG-TAO-T-BAZI-016-V1 ship report + snapshot + audit log + screenshots [vercel skip]",
-      "author": "unitonzengarden",
-      "committed_at": "2026-04-30T05:20:17Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/9800a115843cd09a3e7897d6169fcad46ceb0779"
-    },
-    {
-      "sha": "73f16f03907d069814926021d4a4b6ce241a32e1",
-      "message": "feat(lane02): LANE02-UZG-TAO-T-BAZI-016-V1 — 4 Pillars Chart Surface (live) (#32)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-04-30T05:15:07Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/73f16f03907d069814926021d4a4b6ce241a32e1"
-    },
-    {
-      "sha": "a00ddd637ce726bcff82ea30d07e99cdc1d5c954",
-      "message": "docs(lane02): LANE02-UZG-TAO-T-BAZI-015-DEPLOY-LIVE-V1 — deliverables + QA screenshots [vercel skip]",
-      "author": "unitonzengarden",
-      "committed_at": "2026-04-30T04:40:02Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/a00ddd637ce726bcff82ea30d07e99cdc1d5c954"
     }
   ]
 }
