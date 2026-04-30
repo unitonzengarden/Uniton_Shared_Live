@@ -101,7 +101,7 @@ Modifications require:
 - NTS verbatim approval (R-AUTH-01)
 - Canon amendment record entry above
 - New version (v1.1, v2.0, etc.)
-- Audit log entry in `audits/ecosystem/uzg-plus/canon-promotion/`
+- Audit log entry in `audits/ecosystem/uzg-plus/canon-promotion/` or `canon-amendments/`
 - Re-replication to both repos (Uniton_Shared primary + uzgplus-app mirror) in lock-step
 
 ---
