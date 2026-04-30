@@ -1,0 +1,43 @@
+﻿# UZG+ V2 Chrome Hex Inventory
+# Captured: 2026-04-30T18:00:54Z
+# Branch: feat/lane01-s1-chrome-refactor
+# Pre-task UZGPLUS HEAD before branch: 5a135d26e9fe87123b651c3bc1d75e074d36a291
+# Pre-task UZGPLUS HEAD after CLAC1 PR #50 merge: 6d56b95 (sync at T+10min poll)
+
+## CRITICAL FINDING — Spec/Reality mismatch in §4.1
+
+Task §4.1 listed V2 hex search patterns assuming COBALT BLUE chrome:
+  #4A6FFF, #3B5BAA, #5B7FD4, #243870, rgba(74, 111, 255, *)
+
+Actual V2 codebase chrome uses GREEN palette:
+  --accent: #43c976 (declared at src/styles.css:9)
+  --accent-soft: rgba(67, 201, 118, 0.18) (declared at src/styles.css:10)
+
+Hit counts (verified via ripgrep / Grep tool):
+  BLUE patterns (§4.1 spec) in src/, apps/uzg-pwa/src/ outside design-system: 0
+    (Only matches in CLAC1's design-system/tokens/brand.ts and elements.ts which are NOT chrome)
+  GREEN chrome (V2 actual) in src/styles.css: 181 matches of #43c976 / rgba(67,201,118,*) / rgba(128,215,156,*) / rgba(50,120,70,*)
+  Components consuming var(--accent) / var(--accent-soft) in src/styles.css: 63 call sites
+  Total inline-CSS chrome hex hits in src/ subset (linear-gradient | radial-gradient | rgba box-shadow | fill="#"): 800+ hits in src/styles.css
+    Most hits are component-level surfaces (xpwa-*, home-x-*, ziwei-*, bazi-*) using diverse palettes — NOT all are "Foundation OS chrome" per §4.2
+
+## Refactor Strategy (per §4.2 surface categories)
+
+**KEY INSIGHT:** V2 already uses --accent / --accent-soft as the chrome theme variables.
+Many chrome surfaces (e.g. .home-x-compose-fab line 30808 uses background: var(--accent)).
+Therefore the cleanest refactor is to REBIND --accent and --accent-soft at :root to consume
+CLAC1 V3 tokens. This auto-migrates all dependent components without per-component changes.
+
+§4.2 surface categories — refactor mapping:
+  1. Bottom Nav center → V2 has tab-style nav (no center button); covered by --accent rebind for active state
+  2. FAB → .home-x-compose-fab uses var(--accent) (auto-migrated via rebind)
+  3. Top Avatar → V2 topbar avatars use var(--accent) (auto-migrated)
+  4. U-Reward pill → V2 uses var(--accent-soft) for U pill bg (auto-migrated)
+  5. Confirm buttons → V2 .btn-primary uses var(--accent) (auto-migrated)
+  6. Body bg radials → DIRECT refactor (lines 26-28 hardcoded rgba)
+  7. Particles → V2 has no particles; pre-existing surface
+  8. Active states → uses var(--accent) (auto-migrated)
+  9. Focus rings → DIRECT refactor (line 90 hardcoded rgba box-shadow)
+  10. Section action links → uses var(--accent) (auto-migrated)
+
+Plus: data-theme="hoa" injection in main.jsx (dual-tree)

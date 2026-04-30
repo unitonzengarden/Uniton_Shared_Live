@@ -1,0 +1,81 @@
+{
+  "outDir": "s1-after",
+  "baseUrl": "http://127.0.0.1:4173",
+  "viewport": {
+    "width": 380,
+    "height": 780
+  },
+  "capturedAt": "2026-04-30T18:19:00.870Z",
+  "results": [
+    {
+      "route": "home",
+      "path": "/",
+      "file": "home.png",
+      "httpStatus": 200,
+      "status": "ok"
+    },
+    {
+      "route": "flow",
+      "path": "/flow",
+      "file": "flow.png",
+      "httpStatus": 200,
+      "status": "ok"
+    },
+    {
+      "route": "chat-inbox",
+      "path": "/inbox",
+      "file": "chat-inbox.png",
+      "httpStatus": 200,
+      "status": "ok"
+    },
+    {
+      "route": "wallet",
+      "path": "/wallet",
+      "file": "wallet.png",
+      "httpStatus": 200,
+      "status": "ok"
+    },
+    {
+      "route": "enta",
+      "path": "/enta",
+      "file": "enta.png",
+      "httpStatus": 200,
+      "status": "ok"
+    },
+    {
+      "route": "plus",
+      "path": "/plus",
+      "file": "plus.png",
+      "httpStatus": 200,
+      "status": "ok"
+    },
+    {
+      "route": "membership",
+      "path": "/membership",
+      "file": "membership.png",
+      "httpStatus": 200,
+      "status": "ok"
+    },
+    {
+      "route": "login",
+      "path": "/login",
+      "file": "login.png",
+      "httpStatus": 200,
+      "status": "ok"
+    },
+    {
+      "route": "settings",
+      "path": "/settings",
+      "file": "settings.png",
+      "httpStatus": 200,
+      "status": "ok"
+    },
+    {
+      "route": "notifications",
+      "path": "/notifications",
+      "file": "notifications.png",
+      "httpStatus": 200,
+      "status": "ok"
+    }
+  ]
+}
