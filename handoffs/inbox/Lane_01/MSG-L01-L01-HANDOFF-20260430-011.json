@@ -1,0 +1,30 @@
+{
+  "message_id": "MSG-L01-L01-HANDOFF-20260430-011",
+  "from_lane": "Lane_01",
+  "to_lane": "Lane_01",
+  "message_type": "handoff-notice",
+  "priority": "normal",
+  "status": "sent",
+  "created_at": "2026-04-30T07:55:00Z",
+  "related_task_id": "LANE01-TECH-STACK-REGISTRY-CREATE-V1",
+  "subject": "Tech Stack Registry v1.0 LIVE; Lane Autonomy Policy enforceable; sync_env_local.ps1 ready; service inventory + Lane mapping documented",
+  "body": "Authored governance/TECH_STACK_REGISTRY_v1.md (836 lines, 17 sections) — single source of truth for ecosystem credentials + service inventory. Documented 11 active services across 4 Lanes + AIER Ops cross-cutting. Audit matrix covers 3 workspaces × 22 env keys with PRESENT/ABSENT flags via key-existence boolean (NEVER touched values; INC-01 protocol respected). 6 planned services Q2-Q4 2026 (Mailinator, Render, Resend, Sentry, PostHog, Stripe). NTS workflow §6 = 7 steps; ≤5 min per new service. §10 Lane Autonomy Policy MUST/MUST NOT lists clarify Lane behavior. §12-§15 worked examples + checklists + glossary + FAQ. Companion script scripts/governance/sync_env_local.ps1 (259 lines, idempotent, masks values via Format-MaskedValue). PR #37 squash-merged at 9b0260b; live mirror 200 OK on registry URL. AC-01..18 ALL PASS. Sync gaps identified: AUDIT_LOGIN_EMAIL only in Uniton_Shared; AI keys + Supabase server-side keys absent in UZGPLUS (Lane_01 Cursor stream).",
+  "requested_action": "1. CLA Lane_01 reference TECH_STACK_REGISTRY in all future task prompts when Lane needs a service. 2. Apply §10 Lane Autonomy Policy strictly — never ask NTS for tech credentials when registry shows PRESENT in another workspace; Lane runs sync_env_local.ps1 instead. 3. Decide on §8.7 public mirror exclusion option (recommend Option A: explicit '!governance/TECH_STACK_REGISTRY_*.md' in sync workflow paths). 4. Update registry when new service discovered per §11 Lane Extension Protocol. 5. Continue Module Canon Tier 4 authoring in chat per Phase 2 Mockup Priority Brief §7 critical-path: ENTA Module first, PLUS Hub Module second.",
+  "required_response_type": "ack",
+  "evidence_paths": [
+    "governance/TECH_STACK_REGISTRY_v1.md",
+    "scripts/governance/sync_env_local.ps1",
+    "audits/ecosystem/uzg-plus/LANE01-TECH-STACK-REGISTRY-CREATE-V1.snapshot.live.json",
+    "audits/ecosystem/uzg-plus/LANE01-TECH-STACK-REGISTRY-CREATE-V1_REPORT.md",
+    "audits/ecosystem/uzg-plus/LANE01-TECH-STACK-REGISTRY-CREATE-V1_audit.log"
+  ],
+  "acceptance_criteria": [
+    "AC-01..AC-10 all PASS at PR-create time (registry 836 lines + 17 sections + Lane mapping 4 Lanes + 11 services + audit matrix 3×22 + 6 planned + 7-step NTS workflow + missing services + autonomy policy + sync script idempotent)",
+    "AC-11 PASS — NO raw secret values in any commit (verified via grep)",
+    "AC-12 PASS — governance/** in sync workflow whitelist (added V2 PR #36)",
+    "AC-13 PASS — DOT deliverables in audits/ecosystem/uzg-plus/",
+    "AC-14 PASS — handoff JSON schema-conformant",
+    "AC-15 PASS — live mirror 200 OK on registry URL; report+snapshot URLs verified after final commit",
+    "AC-16..18 PASS — no canon/uzgplus-app modifications; [vercel skip] on commits"
+  ]
+}
