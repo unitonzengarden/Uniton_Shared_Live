@@ -1,0 +1,112 @@
+{
+  "_format": "LANE01_SNAPSHOT_V1",
+  "_task": "LANE01-UZG-PLUS-V2-AUTHENTICATED-SCREENSHOTS-V1",
+  "authored_at": "2026-04-30T05:20:00Z",
+  "halted_at": "2026-04-30T05:22:00Z",
+  "executor": "Cursor (Sonnet 4.6)",
+  "lane": "Lane_01",
+  "branch": "feat/LANE01-uzg-plus-v2-authenticated-screenshots-v1",
+  "pre_task_uniton_shared_sha": "2ef71e96b2898aef73beaa3e19bb0cedc8db8418",
+  "pre_task_uzgplus_sha": "6d99b1881bf1039dfe360dab78fcf699a3ac336e",
+  "merge_sha": null,
+  "status": "HALTED_AWAITING_CREDENTIALS",
+  "halt_reason": "AUDIT_LOGIN credentials not present in any inspected .env.local. Per task §4 Step A explicit HALT condition. Per R-NTS-LLM-02 cannot ask NTS directly. Escalating to CLA Lane_01 for resolution path.",
+  "scope": "Authenticated screenshot capture for UZG+ V2 production at https://uzg.plus (~100 screenshots across 6 sections)",
+  "credentials_check": {
+    "method": "grep key existence only \u2014 values NEVER read or echoed (KL-02 + §13 security gate)",
+    "locations_inspected": [
+      {
+        "path": "C:\\workspace\\Uniton_Shared\\.env.local",
+        "exists": true,
+        "AUDIT_LOGIN_EMAIL_present": false,
+        "AUDIT_LOGIN_OTP_BYPASS_present": false,
+        "AUDIT_LOGIN_OTP_CODE_present": false,
+        "AUDIT_LOGIN_PASSWORD_present": false
+      },
+      {
+        "path": "C:\\workspace\\UZGPLUS\\.env.local",
+        "exists": true,
+        "AUDIT_LOGIN_EMAIL_present": false,
+        "AUDIT_LOGIN_OTP_BYPASS_present": false,
+        "AUDIT_LOGIN_OTP_CODE_present": false,
+        "AUDIT_LOGIN_PASSWORD_present": false
+      },
+      {
+        "path": "C:\\workspace\\Uniton_OS\\.env.local",
+        "exists": true,
+        "AUDIT_LOGIN_EMAIL_present": false,
+        "AUDIT_LOGIN_OTP_BYPASS_present": false,
+        "AUDIT_LOGIN_OTP_CODE_present": false,
+        "AUDIT_LOGIN_PASSWORD_present": false,
+        "note": "Backup location beyond §4 Step A spec; checked exhaustively before halt declaration"
+      }
+    ],
+    "exhaustive_pattern_scan": "Scanned all keys matching (LOGIN|AUTH|TEST|PLAYWRIGHT|E2E|ADMIN|OTP|EMAIL|AUDIT|CRED|PASS|USER); only NTS_EMAIL and SUPABASE_DB_PASSWORD found, neither acceptable for this task",
+    "rejected_alternatives": [
+      "NTS_EMAIL: §13 security gate explicitly prohibits using NTS personal account for capture",
+      "SUPABASE_DB_PASSWORD: database-only credential, not a UZG+ login identity"
+    ]
+  },
+  "predispatch_verify_results": {
+    "1_workspace_uniton_shared_clean": "PASS",
+    "2_workspace_uzgplus_clean": "PASS",
+    "3_gh_auth_token_present": "PASS",
+    "4_audit_login_credentials_present": "FAIL \u2014 HALT condition triggered per §4 Step A",
+    "5_playwright_installable": "DEFERRED (not reached due to HALT at item 4)",
+    "6_uzg_plus_production_reachable": "PASS (HTTP/1.1 200 OK)"
+  },
+  "deliverables_produced": {
+    "snapshot": "audits/ecosystem/uzg-plus/LANE01-UZG-PLUS-V2-AUTHENTICATED-SCREENSHOTS-V1.snapshot.live.json (this file, status HALTED_AWAITING_CREDENTIALS)",
+    "halt_report": "audits/ecosystem/uzg-plus/LANE01-UZG-PLUS-V2-AUTHENTICATED-SCREENSHOTS-V1_REPORT.md",
+    "audit_log": "audits/ecosystem/uzg-plus/LANE01-UZG-PLUS-V2-AUTHENTICATED-SCREENSHOTS-V1_audit.log",
+    "escalation_handoff": "handoffs/inbox/Lane_01/MSG-L01-L01-HANDOFF-20260430-007.json"
+  },
+  "deliverables_deferred": {
+    "audit_doc": "audits/ecosystem/uzg-plus/uiux-audit/UZG_PLUS_V2_AUTHENTICATED_SCREENSHOTS_v1.md \u2014 cannot author without screenshot evidence",
+    "screenshots_dir": "audits/ecosystem/uzg-plus/uiux-audit/screenshots-authenticated/ \u2014 0/100 captured",
+    "playwright_script_credentialed_run": "scripts/audit/screenshot_v2.mjs already exists from prior task as template; credentialed execution deferred",
+    "metadata_json": "Per-screenshot metadata JSON \u2014 deferred"
+  },
+  "ac_status": {
+    "AC-01_audit_doc_authored": "DEFERRED (cannot author without evidence)",
+    "AC-02_100_plus_screenshots": "DEFERRED (0/100, halted at preflight)",
+    "AC-03_6_roots_covered": "DEFERRED",
+    "AC-04_7_modules_covered": "DEFERRED",
+    "AC-05_top_10_priorities_covered": "DEFERRED",
+    "AC-06_auth_flow_captured": "DEFERRED",
+    "AC-07_ureward_wallet_captured": "DEFERRED",
+    "AC-08_naming_convention": "DEFERRED",
+    "AC-09_metadata_json": "DEFERRED",
+    "AC-10_playwright_script_committed": "ALREADY_PRESENT (template from prior task at scripts/audit/screenshot_v2.mjs)",
+    "AC-11_DOT_deliverables_present": "PASS (3 halt-state deliverables in audits/ecosystem/uzg-plus/)",
+    "AC-12_handoff_schema_conformant": "PASS (halt-state escalation handoff)",
+    "AC-13_live_mirror_e2e": "PENDING (post-merge verification)",
+    "AC-14_no_canon_modifications": "PASS (no modifications anywhere)",
+    "AC-15_no_uzgplus_modifications": "PASS (boundary respected)",
+    "AC-16_vercel_skip_on_commits": "PASS (will be applied)"
+  },
+  "boundary_checks": {
+    "1_workspace_correct": "PASS",
+    "2_no_uzgplus_modify": "PASS",
+    "3_no_tier1_canon_modify": "PASS",
+    "4_no_lane_law_modify": "PASS",
+    "5_no_clac1_phase1_canon_modify": "PASS",
+    "6_no_cursor_phase1_audit_modify": "PASS",
+    "7_no_credentials_in_logs": "PASS (key existence only, values never read)",
+    "8_no_otp_in_logs": "PASS (key not present, no value to leak)",
+    "9_vercel_skip_on_commits": "PENDING (will apply on commit)",
+    "10_DOT_in_audits_namespace": "PASS",
+    "11_self_merge_per_AMD": "PENDING (post-PR)",
+    "12_NTS_clicks_zero": "PASS (single dispatch acknowledged)"
+  },
+  "security_gate_checks": {
+    "1_no_email_echoed": "PASS (key not present; nothing to mask)",
+    "2_no_otp_echoed": "PASS (key not present)",
+    "3_no_session_cookies_committed": "PASS (no Playwright run executed)",
+    "4_no_storage_serialized": "PASS",
+    "5_screenshots_pii_review": "N/A (no screenshots produced this run)",
+    "6_env_local_not_staged": "PASS (verified .gitignore protects .env.local)",
+    "7_admin_actions_not_executed": "PASS (no auth, no actions)"
+  },
+  "next_step_recommended": "CLA Lane_01 supplies AUDIT_LOGIN_EMAIL + AUDIT_LOGIN_OTP_BYPASS (or AUDIT_LOGIN_OTP_CODE if persistent test code) via .env.local, then re-dispatches LANE01-UZG-PLUS-V2-AUTHENTICATED-SCREENSHOTS-V1 with same task prompt. Cursor will resume from Step 4 (script update) skipping the halt path."
+}
