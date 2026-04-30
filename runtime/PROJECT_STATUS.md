@@ -10,7 +10,7 @@
 ## §0. Header
 
 - **Generator:** `aier-state-update v1.0` invoked via `scripts/runtime/generate_project_status.py v1.1`
-- **Source commit:** `1a937012a76ac615b1902cc7f484d5bb80b7a4de` (short: `1a93701`)
+- **Source commit:** `c22677d2b101c94edb7d794da3eb9bf8a60a9501` (short: `c22677d`)
 - **Auto-generated:** `true` (do not hand-edit)
 - **Authority:** repo-backed automation per LAW_N8 §L8.2 explicitly enabled CI mode (state-mirror auto-regenerate scope only)
 
@@ -68,11 +68,11 @@
 
 | SHA | Author | Subject |
 |---|---|---|
-| `1a93701` | CLAC Executor | docs(LANE01): finalise LAW-LANE-1-AUTHOR-V1 post-merge — AC-14/15/18 → PASS [vercel skip] |
-| `e649b1f` | AIER State Bot | [auto-status] regen runtime+network surfaces from dcd08f5 [vercel skip] |
-| `dcd08f5` | Uniton Zen | feat(LANE01): author LAW-NTS-LANE-1_v1 — materialise Lane_01 phantom [vercel skip] (#25) |
-| `5c59428` | Uniton Zen | chore: publish LANE01-V2-SPRINT deliverable: lane_01/snapshots/LANE01-SOCIAL-BRAIN-USER-V1.snapshot. |
-| `a565623` | Uniton Zen | chore: publish LANE01-V2-SPRINT deliverable: lane_01/reports/LANE01-SOCIAL-BRAIN-USER-V1_REPORT.md [ |
+| `c22677d` | CLAC Executor | docs(LANE01): finalise LAW-LANE-2-AUTHOR-V1 deliverables [vercel skip] |
+| `213eeab` | Uniton Zen | LANE01-LAW-LANE-2-AUTHOR-V1: Materialize Lane_02 LAW (#28) |
+| `2201453` | Uniton Zen | LANE01-MASTER-AUDIT-DELIVERABLES-RELOCATE-V1: Fix OBS-01 visibility (#27) |
+| `407b782` | Uniton Zen | LANE01-UZG-PLUS-V2-MASTER-AUDIT-PUBLISH-V1: Publish v1.2 state of truth (#26) |
+| `7fb0afd` | AIER State Bot | [auto-status] regen runtime+network surfaces from 1a93701 [vercel skip] |
 
 ## §7. Latest 5 DONE Tasks (from MASTER_CHECKLIST)
 
@@ -110,7 +110,7 @@ Latest scores from the 4-worker QA family (per `LANE01-W3-QA-LOOP-WIRE-V1`).
 | scan | `AIER-SCAN-2026-04-28-VERIFY-T3-5.json` | 90/100 | 1/0/0 |
 | canon | `AIER-CANON-QA-V1-FINAL-AUDIT.json` | 76/100 | 0/7/3 |
 | skill | `AIER-SKILL-QA-CAPABILITY-VERIFY.json` | 100/100 | 0/0/0 |
-| qa_loop | `V1-FINAL-COMPLETE.json` | 60/100 | 14/11/3 |
+| qa_loop | `POST-LANE01-W5-V1-FINAL-AUDIT-V1.json` | 60/100 | 10/12/3 |
 
 - **Aggregate health (weighted scan=30% + canon=40% + skill=30%):** `60/100`
 - **Source:** `scan_reports/`, `canon_qa_reports/`, `skill_qa_reports/`, `qa_loop_reports/` (per-worker schemas)
