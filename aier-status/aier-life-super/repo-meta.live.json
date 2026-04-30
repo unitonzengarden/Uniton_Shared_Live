@@ -1,12 +1,16 @@
 {
   "project_slug": "aier-life-super",
   "github_repo": "unitonzengarden/aier-life-super-app",
-  "polled_at": "2026-04-29T17:09:49.725Z",
-  "poll_status": "ERROR",
-  "error_step": "repo_meta",
-  "error_status": 404,
-  "error_message": "Not Found",
-  "note": "Placeholder emitted because the upstream repo is not reachable from the polling PAT (404/403). When access is granted, this file will be replaced by real data on the next poll.",
-  "count": 0,
-  "meta_fields": []
+  "polled_at": "2026-04-30T02:19:54.356Z",
+  "name": "aier-life-super-app",
+  "full_name": "unitonzengarden/aier-life-super-app",
+  "private": true,
+  "default_branch": "main",
+  "description": "AIER LIFE product application for AIER life super-app experiences and product workflows.",
+  "stars": 0,
+  "forks": 0,
+  "open_issues_total": 3,
+  "pushed_at": "2026-04-15T13:27:40Z",
+  "updated_at": "2026-04-29T10:11:05Z",
+  "html_url": "https://github.com/unitonzengarden/aier-life-super-app"
 }

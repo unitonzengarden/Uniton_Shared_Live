@@ -1,10 +1,22 @@
 {
   "project_slug": "aier-life-super",
   "github_repo": "unitonzengarden/aier-life-super-app",
-  "last_polled_at": "2026-04-29T17:09:49.725Z",
-  "poll_status": "ERROR",
-  "poll_token_source": "gh-cli-keyring",
-  "error_step": "repo_meta",
-  "error_status": 404,
-  "error_message": "Not Found"
+  "last_polled_at": "2026-04-30T02:19:54.356Z",
+  "poll_status": "OK",
+  "poll_token_source": "env:GH_TOKEN",
+  "default_branch": "main",
+  "is_private": true,
+  "stars_count": 0,
+  "head_sha": "73960cdb4738334791cb6e58ad0fd898b85b1c8a",
+  "head_message": "codex: add p1 production proof-of-life recovery bundle",
+  "head_author": "Nam Tien Sinh",
+  "head_committed_at": "2026-04-15T13:27:37Z",
+  "open_prs_count": 3,
+  "open_issues_count": 0,
+  "recent_commits_count_24h": 0,
+  "recent_workflow_runs_count_24h": 0,
+  "last_workflow_run_status": "n/a",
+  "last_workflow_run_name": null,
+  "last_workflow_run_at": null,
+  "api_rate_limit_remaining": "4633"
 }

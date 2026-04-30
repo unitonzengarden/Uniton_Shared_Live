@@ -1,10 +1,22 @@
 {
   "project_slug": "aier-ops",
   "github_repo": "unitonzengarden/Uniton_OS",
-  "last_polled_at": "2026-04-29T17:09:48.528Z",
-  "poll_status": "ERROR",
-  "poll_token_source": "gh-cli-keyring",
-  "error_step": "repo_meta",
-  "error_status": 404,
-  "error_message": "Not Found"
+  "last_polled_at": "2026-04-30T02:19:49.699Z",
+  "poll_status": "OK",
+  "poll_token_source": "env:GH_TOKEN",
+  "default_branch": "main",
+  "is_private": true,
+  "stars_count": 0,
+  "head_sha": "be4508ac972535452ca939a6599c6387001976b5",
+  "head_message": "fix(LANE01): P1 NFT bloat + dynamic spawn — dispatch NFT 1791->139 files [vercel skip] (#14)",
+  "head_author": "Uniton Zen",
+  "head_committed_at": "2026-04-29T14:48:09Z",
+  "open_prs_count": 3,
+  "open_issues_count": 0,
+  "recent_commits_count_24h": 13,
+  "recent_workflow_runs_count_24h": 20,
+  "last_workflow_run_status": "success",
+  "last_workflow_run_name": "CI",
+  "last_workflow_run_at": "2026-04-29T14:48:14Z",
+  "api_rate_limit_remaining": "4642"
 }

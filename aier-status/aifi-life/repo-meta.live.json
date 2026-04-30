@@ -1,12 +1,16 @@
 {
   "project_slug": "aifi-life",
   "github_repo": "unitonzengarden/AIFI_LIFE",
-  "polled_at": "2026-04-29T17:09:49.329Z",
-  "poll_status": "ERROR",
-  "error_step": "repo_meta",
-  "error_status": 404,
-  "error_message": "Not Found",
-  "note": "Placeholder emitted because the upstream repo is not reachable from the polling PAT (404/403). When access is granted, this file will be replaced by real data on the next poll.",
-  "count": 0,
-  "meta_fields": []
+  "polled_at": "2026-04-30T02:19:53.281Z",
+  "name": "AIFI_LIFE",
+  "full_name": "unitonzengarden/AIFI_LIFE",
+  "private": true,
+  "default_branch": "main",
+  "description": "AIFI LIFE product application for finance-domain product experiences and related app workflows.",
+  "stars": 0,
+  "forks": 0,
+  "open_issues_total": 0,
+  "pushed_at": "2026-04-19T17:08:23Z",
+  "updated_at": "2026-04-29T10:11:03Z",
+  "html_url": "https://github.com/unitonzengarden/AIFI_LIFE"
 }

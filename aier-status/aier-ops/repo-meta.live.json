@@ -1,12 +1,16 @@
 {
   "project_slug": "aier-ops",
   "github_repo": "unitonzengarden/Uniton_OS",
-  "polled_at": "2026-04-29T17:09:48.528Z",
-  "poll_status": "ERROR",
-  "error_step": "repo_meta",
-  "error_status": 404,
-  "error_message": "Not Found",
-  "note": "Placeholder emitted because the upstream repo is not reachable from the polling PAT (404/403). When access is granted, this file will be replaced by real data on the next poll.",
-  "count": 0,
-  "meta_fields": []
+  "polled_at": "2026-04-30T02:19:49.699Z",
+  "name": "Uniton_OS",
+  "full_name": "unitonzengarden/Uniton_OS",
+  "private": true,
+  "default_branch": "main",
+  "description": "Runtime and execution system for Uniton Future / AIER Code operator workflows, APIs, persistence, and execution-side tests.",
+  "stars": 0,
+  "forks": 0,
+  "open_issues_total": 3,
+  "pushed_at": "2026-04-29T14:48:14Z",
+  "updated_at": "2026-04-29T14:50:03Z",
+  "html_url": "https://github.com/unitonzengarden/Uniton_OS"
 }

@@ -1,12 +1,218 @@
 {
   "project_slug": "uzg-plus",
   "github_repo": "unitonzengarden/uzgplus-app",
-  "polled_at": "2026-04-29T17:09:48.922Z",
-  "poll_status": "ERROR",
-  "error_step": "repo_meta",
-  "error_status": 404,
-  "error_message": "Not Found",
-  "note": "Placeholder emitted because the upstream repo is not reachable from the polling PAT (404/403). When access is granted, this file will be replaced by real data on the next poll.",
-  "count": 0,
-  "commits": []
+  "polled_at": "2026-04-30T02:19:51.369Z",
+  "count": 30,
+  "commits": [
+    {
+      "sha": "a9f86ec6b9f9800b73f924448009bc51363f4333",
+      "message": "feat(lane01): V2 Product Polish Sprint -- /qot/me + /earn + /social-brain (#27)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-04-30T02:17:44Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/a9f86ec6b9f9800b73f924448009bc51363f4333"
+    },
+    {
+      "sha": "5753889dad51210731f13604050aa5900024e37b",
+      "message": "docs(lane02): LANE02-UZG-TAO-T-BAZI-005-V1 ship report + snapshot + audit log [vercel skip]",
+      "author": "unitonzengarden",
+      "committed_at": "2026-04-30T02:15:14Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/5753889dad51210731f13604050aa5900024e37b"
+    },
+    {
+      "sha": "2a959b4f5225174e0b2af2a59335988b8c37ecb2",
+      "message": "feat(lane02): LANE02-UZG-TAO-T-BAZI-005-V1 — Bazi Day Master Strength Engine (#26)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-04-30T02:12:43Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/2a959b4f5225174e0b2af2a59335988b8c37ecb2"
+    },
+    {
+      "sha": "c97739e58bb8324aa9f0d25f97110500ca3c4b91",
+      "message": "docs(lane02): LANE02-UZG-TAO-T-BAZI-006-V1 ship report + snapshot + audit log [vercel skip]",
+      "author": "unitonzengarden",
+      "committed_at": "2026-04-29T20:31:12Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/c97739e58bb8324aa9f0d25f97110500ca3c4b91"
+    },
+    {
+      "sha": "7edeeb31d8cda5b10b219795ab418b2207a339ef",
+      "message": "feat(lane02): LANE02-UZG-TAO-T-BAZI-006-V1 — Bazi Ten Gods Engine (Thập Thần) (#25)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-04-29T20:27:52Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/7edeeb31d8cda5b10b219795ab418b2207a339ef"
+    },
+    {
+      "sha": "3d18696c5416fa593865233ba85afd0717b03bc5",
+      "message": "docs(lane02): LANE02-UZG-TAO-T-BAZI-004-V1 ship report + snapshot + audit log [vercel skip]",
+      "author": "unitonzengarden",
+      "committed_at": "2026-04-29T20:21:40Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/3d18696c5416fa593865233ba85afd0717b03bc5"
+    },
+    {
+      "sha": "04ab426c51e7313a9a773de8d85c105794b34c04",
+      "message": "feat(lane02): LANE02-UZG-TAO-T-BAZI-004-V1 — Bazi Element Distribution Engine (#24)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-04-29T20:18:25Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/04ab426c51e7313a9a773de8d85c105794b34c04"
+    },
+    {
+      "sha": "b1c38854d5396c36653564ca5ba0736b35d7262d",
+      "message": "docs(lane01): LANE01-UZG-PLUS-MEMBERSHIP-CATALOG-V1 closing state - Phase I/J/K results [vercel skip] (#23)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-04-29T19:58:31Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/b1c38854d5396c36653564ca5ba0736b35d7262d"
+    },
+    {
+      "sha": "6777db010aa374156c86ab0f95c5d9befdefc5f8",
+      "message": "feat(lane01): membership tier catalog panel v1 [vercel skip] (#22)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-04-29T19:53:24Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/6777db010aa374156c86ab0f95c5d9befdefc5f8"
+    },
+    {
+      "sha": "93320fc167aad567cf30bca335739dd4cc470db0",
+      "message": "docs(lane02): LANE02-UZG-TAO-T-BAZI-003-V1 ship report + snapshot + audit log [vercel skip]",
+      "author": "unitonzengarden",
+      "committed_at": "2026-04-29T19:49:02Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/93320fc167aad567cf30bca335739dd4cc470db0"
+    },
+    {
+      "sha": "05a1ea1e93aba166301d91f989b5db895f26ddf8",
+      "message": "feat(lane02): LANE02-UZG-TAO-T-BAZI-003-V1 — Bazi Hidden Stems Engine (#21)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-04-29T19:46:29Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/05a1ea1e93aba166301d91f989b5db895f26ddf8"
+    },
+    {
+      "sha": "040322c608391908cb883a1842aeb9d44b745e51",
+      "message": "docs(lane02): LANE02-UZG-LANG-HOTFIX-3-V1-RESUME ship report + snapshot + audit log [vercel skip]",
+      "author": "unitonzengarden",
+      "committed_at": "2026-04-29T19:41:40Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/040322c608391908cb883a1842aeb9d44b745e51"
+    },
+    {
+      "sha": "3d31613ca559dea74a9b91b5c996bf85c77b4b5e",
+      "message": "fix(lane02): LANE02-UZG-LANG-HOTFIX-3-V1-RESUME — complete remaining Language OS Hotfix #3 fixes (#20)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-04-29T19:36:23Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/3d31613ca559dea74a9b91b5c996bf85c77b4b5e"
+    },
+    {
+      "sha": "700087941d938f72766091319acfc28febd5569a",
+      "message": "docs(lane01): LANE01-UZG-PLUS-REPO-HYGIENE-V1 closing state — Phase I/J/K results [vercel skip] (#19)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-04-29T19:08:31Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/700087941d938f72766091319acfc28febd5569a"
+    },
+    {
+      "sha": "7978b8838548d3794089371336681ee7023ef670",
+      "message": "feat(lane01): UZG+ repo hygiene round v1 [vercel skip] (#18)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-04-29T19:04:27Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/7978b8838548d3794089371336681ee7023ef670"
+    },
+    {
+      "sha": "5da7f23d2a5606cdc8f4a9cf91a882c79f723715",
+      "message": "docs(lane01): LANE01-UZG-PLUS-IMPLEMENTATION-PRIORITY-MATRIX-V1 DOT deliverables (report + snapshot + audit log) [vercel skip] (#17)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-04-29T18:27:04Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/5da7f23d2a5606cdc8f4a9cf91a882c79f723715"
+    },
+    {
+      "sha": "47a45b69eaa9cf9656a038a03bbc1466069116f2",
+      "message": "feat(lane01): UZG+ implementation priority matrix v1 + live routes probe [vercel skip] (#16)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-04-29T18:23:43Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/47a45b69eaa9cf9656a038a03bbc1466069116f2"
+    },
+    {
+      "sha": "faf92b413e2bc58039ed210ab2549ee182e71d50",
+      "message": "docs(lane01): LANE01-UZG-PLUS-AUDIT closing state — Phase K/L/M results + mirror disclosure [vercel skip] (#15)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-04-29T17:19:02Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/faf92b413e2bc58039ed210ab2549ee182e71d50"
+    },
+    {
+      "sha": "e4bd080cc1ac532d0d57610cd8bd027131f2a417",
+      "message": "feat(lane01): UZG+ audit + system map v1 [vercel skip] (#14)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-04-29T17:10:41Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/e4bd080cc1ac532d0d57610cd8bd027131f2a417"
+    },
+    {
+      "sha": "4b93ee754c997bd6577df190181885268e8d5eb3",
+      "message": "docs(lane02): LANE02-UZG-LANG-CANON-LIBRARY-V1 ship report + snapshot + audit log [vercel skip]",
+      "author": "unitonzengarden",
+      "committed_at": "2026-04-29T15:10:27Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/4b93ee754c997bd6577df190181885268e8d5eb3"
+    },
+    {
+      "sha": "dc9ec2241bfb2f1cd0517546d0d1f212d37c64c7",
+      "message": "docs(lane02): LANE02-UZG-LANG-CANON-LIBRARY-V1 — Language OS canon library lock (#13)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-04-29T15:04:15Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/dc9ec2241bfb2f1cd0517546d0d1f212d37c64c7"
+    },
+    {
+      "sha": "50ed5946540e5bcb05c821ba1764c826475b462d",
+      "message": "docs(lane02): LANE02-UZG-LANG-HOTFIX-2-V1 ship report + snapshot + audit log [vercel skip]",
+      "author": "unitonzengarden",
+      "committed_at": "2026-04-29T14:29:24Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/50ed5946540e5bcb05c821ba1764c826475b462d"
+    },
+    {
+      "sha": "57ba05c6d85d3887cc82641823719e14b217e942",
+      "message": "fix(lane02): LANE02-UZG-LANG-HOTFIX-2-V1 — Language OS Hotfix #2 (canon reconciliation + tooling) (#12)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-04-29T14:23:53Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/57ba05c6d85d3887cc82641823719e14b217e942"
+    },
+    {
+      "sha": "8d3032f3fe98e162e2ebcd41a07c7ffa39600565",
+      "message": "docs(lane02): LANE02-UZG-LANG-HOTFIX-1-V1 ship report + snapshot + audit log [vercel skip]",
+      "author": "unitonzengarden",
+      "committed_at": "2026-04-29T13:55:45Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/8d3032f3fe98e162e2ebcd41a07c7ffa39600565"
+    },
+    {
+      "sha": "d9cf950d3391893fb5cca1754c91138c6cf3d0f7",
+      "message": "fix(lane02): LANE02-UZG-LANG-HOTFIX-1-V1 — Language OS Hotfix #1 (sentinel + element + governance) (#11)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-04-29T13:51:18Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/d9cf950d3391893fb5cca1754c91138c6cf3d0f7"
+    },
+    {
+      "sha": "0c7edee8e1396f64f47e22225fc57aba451f20b5",
+      "message": "audit(lane02): LANE02-UZG-LANG-AUDIT-V1 — Language OS audit findings [vercel skip] (#10)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-04-29T10:48:25Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/0c7edee8e1396f64f47e22225fc57aba451f20b5"
+    },
+    {
+      "sha": "bfb5089a2922a38851bc040fb6e9ab5d84bb8656",
+      "message": "docs(lane02): LANE02-UZG-TAO-T-BAZI-002-V1 ship report + snapshot + audit log [vercel skip]",
+      "author": "unitonzengarden",
+      "committed_at": "2026-04-29T10:15:55Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/bfb5089a2922a38851bc040fb6e9ab5d84bb8656"
+    },
+    {
+      "sha": "b64d461d3d3d344ec21e127f3f85834a3935b25a",
+      "message": "feat(lane02): LANE02-UZG-TAO-T-BAZI-002-V1 — Bazi Day Master Engine (#9)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-04-29T10:13:13Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/b64d461d3d3d344ec21e127f3f85834a3935b25a"
+    },
+    {
+      "sha": "dbf37dd7b12e3a071fd83966106f537b738ceec3",
+      "message": "docs(lane02): LANE02-UZG-TAO-T-BAZI-001-V1 ship report + snapshot + audit log [vercel skip]",
+      "author": "unitonzengarden",
+      "committed_at": "2026-04-29T09:29:52Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/dbf37dd7b12e3a071fd83966106f537b738ceec3"
+    },
+    {
+      "sha": "97373723d3d1c0c15959a98c2efe88cd2cb4ba2d",
+      "message": "feat(lane02): LANE02-UZG-TAO-T-BAZI-001-V1 — Bazi Pillar Construction Engine (#8)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-04-29T09:25:03Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/97373723d3d1c0c15959a98c2efe88cd2cb4ba2d"
+    }
+  ]
 }

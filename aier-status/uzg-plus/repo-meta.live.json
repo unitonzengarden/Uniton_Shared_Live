@@ -1,12 +1,16 @@
 {
   "project_slug": "uzg-plus",
   "github_repo": "unitonzengarden/uzgplus-app",
-  "polled_at": "2026-04-29T17:09:48.922Z",
-  "poll_status": "ERROR",
-  "error_step": "repo_meta",
-  "error_status": 404,
-  "error_message": "Not Found",
-  "note": "Placeholder emitted because the upstream repo is not reachable from the polling PAT (404/403). When access is granted, this file will be replaced by real data on the next poll.",
-  "count": 0,
-  "meta_fields": []
+  "polled_at": "2026-04-30T02:19:51.369Z",
+  "name": "uzgplus-app",
+  "full_name": "unitonzengarden/uzgplus-app",
+  "private": true,
+  "default_branch": "main",
+  "description": "UZG+ — Human Value Origin Layer. Mobile-first super-app combining identity, social, value, community business, AI guidance, and governance. Live at uzg.plus.",
+  "stars": 0,
+  "forks": 0,
+  "open_issues_total": 0,
+  "pushed_at": "2026-04-30T02:17:48Z",
+  "updated_at": "2026-04-30T02:17:49Z",
+  "html_url": "https://github.com/unitonzengarden/uzgplus-app"
 }

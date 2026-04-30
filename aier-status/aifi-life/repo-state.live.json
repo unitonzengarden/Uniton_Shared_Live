@@ -1,10 +1,22 @@
 {
   "project_slug": "aifi-life",
   "github_repo": "unitonzengarden/AIFI_LIFE",
-  "last_polled_at": "2026-04-29T17:09:49.329Z",
-  "poll_status": "ERROR",
-  "poll_token_source": "gh-cli-keyring",
-  "error_step": "repo_meta",
-  "error_status": 404,
-  "error_message": "Not Found"
+  "last_polled_at": "2026-04-30T02:19:53.281Z",
+  "poll_status": "OK",
+  "poll_token_source": "env:GH_TOKEN",
+  "default_branch": "main",
+  "is_private": true,
+  "stars_count": 0,
+  "head_sha": "2690235e00117b5f829a0231a1b34c3d9d0c36db",
+  "head_message": "feat(chat): standalone /os/chat page + markdown + typing indicator + fix stale state (FIX_02)",
+  "head_author": "unitonzengarden",
+  "head_committed_at": "2026-04-19T16:37:45Z",
+  "open_prs_count": 0,
+  "open_issues_count": 0,
+  "recent_commits_count_24h": 0,
+  "recent_workflow_runs_count_24h": 0,
+  "last_workflow_run_status": "n/a",
+  "last_workflow_run_name": null,
+  "last_workflow_run_at": null,
+  "api_rate_limit_remaining": "4636"
 }
