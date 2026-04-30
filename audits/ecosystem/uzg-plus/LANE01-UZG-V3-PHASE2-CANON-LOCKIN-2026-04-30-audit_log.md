@@ -44,24 +44,29 @@
 - ✅ `git add canon/uzg-plus/v3/ audits/ecosystem/uzg-plus/`
 - ✅ `git commit` — message per §4.5 format
 - ✅ `git push origin lane01-phase2-canon-lockin-2026-04-30`
-- Commit SHA: `<filled post-commit>`
+- Commit SHA: `d4ed65d137b2849c7c7d2f55e60c51b9957a3712` (squash-merge SHA)
 
-### [2026-05-01 ~07:xx UTC] PR creation + self-merge
+### [2026-05-01 ~07:25Z UTC] PR creation + self-merge
 
-- ✅ `gh pr create` — PR #`<filled post-create>`
-- ✅ Pre-merge QA: `gh pr view --json files` — confirmed 16 files staged (13 payload + 3 deliverables)
-- ✅ `gh pr merge --squash --delete-branch --admin`
-- Merge SHA: `<filled post-merge>`
+- ✅ `gh pr create` — PR #45: https://github.com/unitonzengarden/Uniton_Shared/pull/45
+- ✅ Pre-merge QA: `gh pr view 45 --json files` — 16 files confirmed (no out-of-scope files)
+- ✅ `gh pr merge 45 --squash --delete-branch --admin` — PASS
+- Merge SHA: `d4ed65d137b2849c7c7d2f55e60c51b9957a3712`
 
-### [2026-05-01 ~07:xx UTC] Live mirror verification
+### [2026-05-01 ~07:30Z UTC] Live mirror verification
 
-- Sample 3 URLs (1 canon + 2 mockups) verified via `curl -I`
-- Results: `<filled post-verify>`
+- 5 URLs verified via `curl -o /dev/null -w "%{http_code}"`:
+  - `canon/uzg-plus/v3/UZG_PLUS_V3_UIUX_THEME_SYSTEM_CANON_v1.md`: **200** ✓
+  - `canon/uzg-plus/v3/UZG_PLUS_V3_UIUX_ENTA_CANON_AMENDMENT_001.md`: **200** ✓
+  - `canon/uzg-plus/v3/UZG_PLUS_V3_PHASE2_MOCKUP_LOCK_INDEX_v1.md`: **200** ✓
+  - `audits/.../phase-2-mockups/UZG_PLUS_V3_MOCKUP_05_ENTA_MODULE.html`: **200** ✓
+  - `audits/.../phase-2-mockups/UZG_PLUS_V3_MOCKUP_08_TAO_MINIAPP.html`: **200** ✓
 
-### [2026-05-01 ~07:xx UTC] Cleanup
+### [2026-05-01 ~07:30Z UTC] Cleanup
 
-- ✅ `rm -rf .staging/phase2-canon-lockin/`
-- ✅ `rm -rf .staging/phase2-mockups/`
+- ✅ `.staging/phase2-mockups/` removed
+- ⚠️ `.staging/phase2-canon-lockin/` locked (device busy — NTS process holding file handle). Non-blocking: all payload files already committed. Manual cleanup advised.
+- Secret scan: no `ghp_*` / `github_pat_` / `sk-ant-` patterns found in any committed file ✓
 
 ---
 
