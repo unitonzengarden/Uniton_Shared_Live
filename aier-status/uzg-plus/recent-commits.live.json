@@ -1,9 +1,51 @@
 {
   "project_slug": "uzg-plus",
   "github_repo": "unitonzengarden/uzgplus-app",
-  "polled_at": "2026-04-30T11:20:01.524Z",
+  "polled_at": "2026-04-30T13:06:27.940Z",
   "count": 30,
   "commits": [
+    {
+      "sha": "20cd69a129e6fc22da7605047aa58b612435ca7c",
+      "message": "docs(lane02): LANE02-UZG-VANNIEN-T-VN-001-005-V1 ship report + snapshot + audit log + screenshots [vercel skip]",
+      "author": "unitonzengarden",
+      "committed_at": "2026-04-30T13:03:50Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/20cd69a129e6fc22da7605047aa58b612435ca7c"
+    },
+    {
+      "sha": "fe78bbfee7270b95931a083c19b754a13d8125cd",
+      "message": "feat(lane02): T-VN-001-005-V1 — Lịch Vạn Niên Phase 1 MVP (3 engines + 2 surfaces + Bazi-aware) (#43)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-04-30T12:55:26Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/fe78bbfee7270b95931a083c19b754a13d8125cd"
+    },
+    {
+      "sha": "962a088147621a31b0957e5cbd98d5f6bac0c2cf",
+      "message": "docs(canon): mirror Foundation v1.1 INDEX + footer fix [vercel skip] (#42)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-04-30T12:47:48Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/962a088147621a31b0957e5cbd98d5f6bac0c2cf"
+    },
+    {
+      "sha": "5fbdc2dab9a7f8459a98b4a38af5a321f7f0900f",
+      "message": "docs(canon): mirror Foundation OS v1.1 [vercel skip] (#41)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-04-30T12:28:44Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/5fbdc2dab9a7f8459a98b4a38af5a321f7f0900f"
+    },
+    {
+      "sha": "8640c217d6bf6d69c33fcc4fb392001e5fa8d658",
+      "message": "docs(lane02): LANE02-UZG-TAO-T-PT-001-005-V1 ship report + snapshot + audit log + screenshots [vercel skip]",
+      "author": "unitonzengarden",
+      "committed_at": "2026-04-30T11:56:51Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/8640c217d6bf6d69c33fcc4fb392001e5fa8d658"
+    },
+    {
+      "sha": "a3a817bcd932f47d88dd9823d885c26498c1dd6d",
+      "message": "feat(lane02): T-PT-001-005-V1 — Phong Thủy V3 Basics (Cung Mệnh + Bát Trạch + 2 surfaces) (#40)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-04-30T11:49:48Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/a3a817bcd932f47d88dd9823d885c26498c1dd6d"
+    },
     {
       "sha": "2183f8be1aa5c125ffa0b1129015c2ed05d2ec88",
       "message": "docs(lane02): LANE02-UZG-TAO-T-BAZI-019-022-V1 ship report + snapshot + audit log + screenshots [vercel skip]",
@@ -171,48 +213,6 @@
       "author": "LANE01-Cursor",
       "committed_at": "2026-04-30T02:22:37Z",
       "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/a42983906b0a9ffa59645241ef109d4faa2a8397"
-    },
-    {
-      "sha": "a9f86ec6b9f9800b73f924448009bc51363f4333",
-      "message": "feat(lane01): V2 Product Polish Sprint -- /qot/me + /earn + /social-brain (#27)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-04-30T02:17:44Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/a9f86ec6b9f9800b73f924448009bc51363f4333"
-    },
-    {
-      "sha": "5753889dad51210731f13604050aa5900024e37b",
-      "message": "docs(lane02): LANE02-UZG-TAO-T-BAZI-005-V1 ship report + snapshot + audit log [vercel skip]",
-      "author": "unitonzengarden",
-      "committed_at": "2026-04-30T02:15:14Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/5753889dad51210731f13604050aa5900024e37b"
-    },
-    {
-      "sha": "2a959b4f5225174e0b2af2a59335988b8c37ecb2",
-      "message": "feat(lane02): LANE02-UZG-TAO-T-BAZI-005-V1 — Bazi Day Master Strength Engine (#26)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-04-30T02:12:43Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/2a959b4f5225174e0b2af2a59335988b8c37ecb2"
-    },
-    {
-      "sha": "c97739e58bb8324aa9f0d25f97110500ca3c4b91",
-      "message": "docs(lane02): LANE02-UZG-TAO-T-BAZI-006-V1 ship report + snapshot + audit log [vercel skip]",
-      "author": "unitonzengarden",
-      "committed_at": "2026-04-29T20:31:12Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/c97739e58bb8324aa9f0d25f97110500ca3c4b91"
-    },
-    {
-      "sha": "7edeeb31d8cda5b10b219795ab418b2207a339ef",
-      "message": "feat(lane02): LANE02-UZG-TAO-T-BAZI-006-V1 — Bazi Ten Gods Engine (Thập Thần) (#25)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-04-29T20:27:52Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/7edeeb31d8cda5b10b219795ab418b2207a339ef"
-    },
-    {
-      "sha": "3d18696c5416fa593865233ba85afd0717b03bc5",
-      "message": "docs(lane02): LANE02-UZG-TAO-T-BAZI-004-V1 ship report + snapshot + audit log [vercel skip]",
-      "author": "unitonzengarden",
-      "committed_at": "2026-04-29T20:21:40Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/3d18696c5416fa593865233ba85afd0717b03bc5"
     }
   ]
 }
