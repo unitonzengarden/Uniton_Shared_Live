@@ -1,0 +1,107 @@
+{
+  "schema_version": "LANE03_RPC_SYNC_ENERGY_DAILY_PRIVILEGE_HARDENING_STATE_V1",
+  "system": "uzg-plus",
+  "lane": "Lane_03",
+  "task_id": "LANE03-UZG-RPC-SYNC-ENERGY-DAILY-SERVICE-ROLE-PRIVILEGE-HARDENING-DESIGN-OR-APPLY-V1",
+  "generated_at": "2026-05-01T02:30:00+07:00",
+  "result": "PASS",
+  "mode": "DEPENDENCY_SCAN_THEN_SCOPED_PRIVILEGE_APPLY",
+  "source_state": {
+    "public_live_state_read": {
+      "LANE03_BACKEND_RUNTIME_STATE": "OK",
+      "LANE03_SUPABASE_HEALTH_STATE": "OK",
+      "LANE03_MIGRATION_DRIFT_STATE": "OK",
+      "LANE03_MIGRATION_BATCH_C_LEDGER": "MISSING_404_IN_UNITON_SHARED_LIVE",
+      "LANE03_RPC_PRIVILEGE_DECISION": "MISSING_404_IN_UNITON_SHARED_LIVE"
+    },
+    "authoritative_governance_state": "Uniton_Shared origin/main",
+    "locked_decision_source": "runtime/uzg-plus/lane_03/LANE03_RPC_PRIVILEGE_DECISION.json",
+    "locked_decision": "RESTRICT_TO_SERVICE_ROLE_ONLY"
+  },
+  "safety": {
+    "supabase_db_push_run": false,
+    "broad_migration_apply": false,
+    "schema_migrations_modified": false,
+    "frontend_code_changed": false,
+    "backend_code_changed": false,
+    "deployed": false,
+    "unrelated_permissions_changed": false
+  },
+  "target": {
+    "schema": "public",
+    "function": "rpc_sync_energy_daily",
+    "signature": "public.rpc_sync_energy_daily(uuid,date)"
+  },
+  "dependency_gate": {
+    "passed": true,
+    "browser_direct_target_call_found": false,
+    "browser_rpc_call_count_scanned": 23,
+    "browser_rpc_target_call_count": 0,
+    "server_runtime_owner": "Cloudflare Worker/API facade",
+    "server_paths": [
+      "public/_worker.js:10750",
+      "apps/uzg-pwa/public/_worker.js:10824"
+    ],
+    "server_call_mode": "invokeSupabaseRpc(..., { service: true }) using SUPABASE_SERVICE_ROLE_KEY",
+    "sql_function_callers_observed": [
+      "public.rpc_sync_daily_missions(uuid,date)"
+    ],
+    "sql_function_safety": "Target and nested caller are SECURITY DEFINER owned by postgres in live catalog."
+  },
+  "sql_applied": [
+    "REVOKE EXECUTE ON FUNCTION public.rpc_sync_energy_daily(uuid,date) FROM PUBLIC;",
+    "REVOKE EXECUTE ON FUNCTION public.rpc_sync_energy_daily(uuid,date) FROM anon;",
+    "REVOKE EXECUTE ON FUNCTION public.rpc_sync_energy_daily(uuid,date) FROM authenticated;",
+    "GRANT EXECUTE ON FUNCTION public.rpc_sync_energy_daily(uuid,date) TO service_role;"
+  ],
+  "apply_status": {
+    "applied": true,
+    "applied_at_utc": "2026-04-30T19:29:58Z",
+    "tool": "supabase db query --linked",
+    "transaction_used": true
+  },
+  "before_privileges": {
+    "captured_at_utc": "2026-04-30T19:29:11.884447Z",
+    "owner": "postgres",
+    "security_definer": true,
+    "volatility": "v",
+    "proacl": [
+      "=X/postgres",
+      "postgres=X/postgres",
+      "anon=X/postgres",
+      "authenticated=X/postgres",
+      "service_role=X/postgres"
+    ],
+    "anon_execute": true,
+    "authenticated_execute": true,
+    "service_role_execute": true
+  },
+  "after_privileges": {
+    "captured_at_utc": "2026-04-30T19:29:58.716007Z",
+    "owner": "postgres",
+    "security_definer": true,
+    "volatility": "v",
+    "proacl": [
+      "postgres=X/postgres",
+      "service_role=X/postgres"
+    ],
+    "anon_execute": false,
+    "authenticated_execute": false,
+    "service_role_execute": true
+  },
+  "verification": {
+    "grant_verification": "PASS",
+    "anon_execute_false": true,
+    "authenticated_execute_false": true,
+    "service_role_execute_true": true,
+    "unrelated_target_tables_changed": false,
+    "migration_history_changed": false
+  },
+  "related_risk_not_changed": {
+    "object": "public.rpc_sync_daily_missions(uuid,date)",
+    "status": "PUBLIC_ANON_AUTHENTICATED_EXECUTE_STILL_OBSERVED",
+    "reason_not_changed": "Out of scope; task targeted only public.rpc_sync_energy_daily(uuid,date).",
+    "followup_needed": true
+  },
+  "next_safe_action": "LANE03-UZG-RPC-SYNC-ENERGY-DAILY-HARDENING-MIRROR-TO-LIVE-V1"
+}

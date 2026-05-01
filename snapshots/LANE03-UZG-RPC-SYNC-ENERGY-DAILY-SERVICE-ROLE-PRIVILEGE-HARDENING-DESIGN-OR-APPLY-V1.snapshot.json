@@ -1,0 +1,30 @@
+{
+  "snapshot_id": "LANE03-UZG-RPC-SYNC-ENERGY-DAILY-SERVICE-ROLE-PRIVILEGE-HARDENING-DESIGN-OR-APPLY-V1",
+  "captured_at": "2026-05-01T02:30:00+07:00",
+  "system": "uzg-plus",
+  "lane": "Lane_03",
+  "result": "PASS",
+  "state": {
+    "target": "public.rpc_sync_energy_daily(uuid,date)",
+    "dependency_scan": "PASS_NO_BROWSER_DIRECT_TARGET_CALL",
+    "runtime_owner": "Cloudflare Worker/API facade",
+    "privilege_hardening": "APPLIED",
+    "final_privilege_state": "SERVICE_ROLE_ONLY",
+    "public_execute": false,
+    "anon_execute": false,
+    "authenticated_execute": false,
+    "service_role_execute": true
+  },
+  "safety": {
+    "supabase_db_push_run": false,
+    "migrations_applied": false,
+    "schema_migrations_modified": false,
+    "frontend_code_changed": false,
+    "backend_code_changed": false,
+    "deployed": false
+  },
+  "related_risk": {
+    "public.rpc_sync_daily_missions(uuid,date)": "PUBLIC_ANON_AUTHENTICATED_EXECUTE_STILL_OBSERVED_OUT_OF_SCOPE"
+  },
+  "next_safe_action": "LANE03-UZG-RPC-SYNC-ENERGY-DAILY-HARDENING-MIRROR-TO-LIVE-V1"
+}

@@ -1,0 +1,28 @@
+2026-05-01T02:30:00+07:00 TASK_START LANE03-UZG-RPC-SYNC-ENERGY-DAILY-SERVICE-ROLE-PRIVILEGE-HARDENING-DESIGN-OR-APPLY-V1
+2026-05-01T02:30:00+07:00 PUBLIC_READ LANE03_BACKEND_RUNTIME_STATE ok
+2026-05-01T02:30:00+07:00 PUBLIC_READ LANE03_SUPABASE_HEALTH_STATE ok
+2026-05-01T02:30:00+07:00 PUBLIC_READ LANE03_MIGRATION_DRIFT_STATE ok
+2026-05-01T02:30:00+07:00 PUBLIC_READ LANE03_MIGRATION_BATCH_C_LEDGER missing_404
+2026-05-01T02:30:00+07:00 PUBLIC_READ LANE03_RPC_PRIVILEGE_DECISION missing_404
+2026-05-01T02:30:00+07:00 GIT Uniton_Shared fast-forwarded to origin/main 9496fb73f119de0276a3b8017e6df10db1e9064c before writes
+2026-05-01T02:30:00+07:00 GIT uzgplus-app fetch_origin performed; origin/main fad8372ba277e14b08a38dfaec522cc82de6e5a4; pull skipped due dirty local workspace
+2026-05-01T02:30:00+07:00 SCAN browser paths src/** and apps/uzg-pwa/src/** no rpc_sync_energy_daily or sync_energy_daily matches
+2026-05-01T02:30:00+07:00 SCAN browser rpc lines=23 target_rpc_lines=0
+2026-05-01T02:30:00+07:00 SCAN server target calls public/_worker.js:10750 apps/uzg-pwa/public/_worker.js:10824
+2026-05-01T02:30:00+07:00 SCAN server call mode service=true Worker/API facade
+2026-05-01T02:30:00+07:00 LIVE_BEFORE target anon_execute=true authenticated_execute=true service_role_execute=true owner=postgres security_definer=true
+2026-05-01T02:30:00+07:00 APPLY begin scoped privilege hardening
+2026-05-01T02:30:00+07:00 SQL REVOKE EXECUTE ON FUNCTION public.rpc_sync_energy_daily(uuid,date) FROM PUBLIC
+2026-05-01T02:30:00+07:00 SQL REVOKE EXECUTE ON FUNCTION public.rpc_sync_energy_daily(uuid,date) FROM anon
+2026-05-01T02:30:00+07:00 SQL REVOKE EXECUTE ON FUNCTION public.rpc_sync_energy_daily(uuid,date) FROM authenticated
+2026-05-01T02:30:00+07:00 SQL GRANT EXECUTE ON FUNCTION public.rpc_sync_energy_daily(uuid,date) TO service_role
+2026-05-01T02:30:00+07:00 APPLY commit success
+2026-05-01T02:30:00+07:00 VERIFY target anon_execute=false authenticated_execute=false service_role_execute=true proacl=postgres,service_role
+2026-05-01T02:30:00+07:00 NOTE public.rpc_sync_daily_missions(uuid,date) still has PUBLIC/anon/authenticated execute; unchanged because out of scope
+2026-05-01T02:30:00+07:00 CREATED runtime/uzg-plus/lane_03/LANE03_RPC_SYNC_ENERGY_DAILY_PRIVILEGE_HARDENING_STATE.json
+2026-05-01T02:30:00+07:00 CREATED runtime/uzg-plus/lane_03/LANE03_RPC_SYNC_ENERGY_DAILY_DEPENDENCY_SCAN.json
+2026-05-01T02:30:00+07:00 CREATED reports/LANE03-UZG-RPC-SYNC-ENERGY-DAILY-SERVICE-ROLE-PRIVILEGE-HARDENING-DESIGN-OR-APPLY-V1_REPORT.md
+2026-05-01T02:30:00+07:00 CREATED reports/LANE03-UZG-RPC-SYNC-ENERGY-DAILY-SERVICE-ROLE-PRIVILEGE-HARDENING-DESIGN-OR-APPLY-V1.json
+2026-05-01T02:30:00+07:00 CREATED snapshots/LANE03-UZG-RPC-SYNC-ENERGY-DAILY-SERVICE-ROLE-PRIVILEGE-HARDENING-DESIGN-OR-APPLY-V1.snapshot.json
+2026-05-01T02:30:00+07:00 CREATED audit_logs/LANE03-UZG-RPC-SYNC-ENERGY-DAILY-SERVICE-ROLE-PRIVILEGE-HARDENING-DESIGN-OR-APPLY-V1_audit.log
+2026-05-01T02:30:00+07:00 RESULT PASS

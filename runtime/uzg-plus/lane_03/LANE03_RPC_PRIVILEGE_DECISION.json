@@ -1,0 +1,79 @@
+{
+  "schema_version": "LANE03_RPC_PRIVILEGE_DECISION_V1",
+  "system": "uzg-plus",
+  "lane": "Lane_03",
+  "task_id": "LANE03-UZG-MIGRATION-DRIFT-BATCH-C-LEDGER-AND-RPC-PRIVILEGE-OWNER-DECISION-V1",
+  "generated_at": "2026-05-01T01:25:31+07:00",
+  "result": "PASS",
+  "mode": "DECISION_ONLY_NO_SQL_APPLIED",
+  "target": {
+    "schema": "public",
+    "function": "rpc_sync_energy_daily",
+    "signature": "public.rpc_sync_energy_daily(uuid,date)",
+    "migration_version": "20260407001501",
+    "migration_file": "20260407001501_energy_daily_sync_rpc.sql",
+    "domain": "ENTA/Flow energy"
+  },
+  "current_risk_from_prior_evidence": {
+    "execute_public": true,
+    "execute_anon": true,
+    "execute_authenticated": true,
+    "execute_service_role": true,
+    "risk": "RPC body is live-equivalent, but EXECUTE exposure includes PUBLIC and anon; service boundary is not canonically locked."
+  },
+  "canonical_decision": {
+    "decision": "RESTRICT_TO_SERVICE_ROLE_ONLY",
+    "revoke_public_execute": true,
+    "revoke_anon_execute": true,
+    "revoke_authenticated_execute": true,
+    "grant_or_preserve_service_role_execute": true,
+    "apply_now": false,
+    "decision_only": true
+  },
+  "reasoning": {
+    "governance_canon": [
+      "RPC grants must be role-specific.",
+      "RPCs callable by anon must be intentionally public and safe.",
+      "SECURITY DEFINER functions must use minimal executable roles and REVOKE EXECUTE FROM PUBLIC unless intentionally public.",
+      "Direct private/helper behavior must not be exposed through broad public RPC access."
+    ],
+    "economic_constraint_model": [
+      "Energy daily sync is user-scoped state orchestration that may affect Flow, reward, or economy-adjacent progression state.",
+      "Economy-adjacent synchronization must be owned by a trusted server boundary, not arbitrary browser or anon execution.",
+      "The least-risk posture is service_role-only execution from Worker/API, Express/AIER, or Edge Function internals after explicit authorization."
+    ],
+    "runtime_ownership_model": [
+      "Service role is server-only and forbidden in browser exposure.",
+      "Browser direct Supabase calls are allowed only for explicit RLS/RPC/read contracts.",
+      "Wallet/reward/energy transactional or synchronization work belongs behind Worker/API or Edge Function boundaries, not public/anon callable RPCs."
+    ]
+  },
+  "future_sql_decision_not_applied": [
+    "REVOKE EXECUTE ON FUNCTION public.rpc_sync_energy_daily(uuid,date) FROM PUBLIC;",
+    "REVOKE EXECUTE ON FUNCTION public.rpc_sync_energy_daily(uuid,date) FROM anon;",
+    "REVOKE EXECUTE ON FUNCTION public.rpc_sync_energy_daily(uuid,date) FROM authenticated;",
+    "GRANT EXECUTE ON FUNCTION public.rpc_sync_energy_daily(uuid,date) TO service_role;"
+  ],
+  "required_future_validation_before_apply": [
+    "Confirm no frontend direct call depends on authenticated EXECUTE.",
+    "Confirm owning server runtime path for energy daily sync.",
+    "Run dry transaction with privilege assertions.",
+    "Verify anon cannot execute.",
+    "Verify authenticated cannot execute directly.",
+    "Verify service_role can execute from approved server boundary.",
+    "Run affected runtime smoke without exposing service credentials.",
+    "Create rollback SQL before applying."
+  ],
+  "owner_decision": {
+    "lane_03": "APPROVES_SERVICE_ROLE_ONLY_PRIVILEGE_POSTURE",
+    "lane_02": "ACK_REQUIRED_IF_ENERGY_PRODUCT_SEMANTICS_CHANGE",
+    "lane_01": "ACK_REQUIRED_ONLY_IF_FRONTEND_DIRECT_RPC_DEPENDENCY_EXISTS",
+    "nts": "REQUIRED_FOR_PRODUCTION_PRIVILEGE_CHANGE_IF_POLICY_REQUIRES_APPROVAL"
+  },
+  "blocked_actions": [
+    "Do not change rpc_sync_energy_daily privileges in this task.",
+    "Do not apply 20260407001501 as a migration.",
+    "Do not repair schema_migrations for 20260407001501 in this task."
+  ],
+  "next_safe_action": "LANE03-UZG-RPC-SYNC-ENERGY-DAILY-SERVICE-ROLE-PRIVILEGE-HARDENING-DESIGN-OR-APPLY-V1"
+}

@@ -1,0 +1,118 @@
+{
+  "schema_version": "LANE03_MIGRATION_BATCH_C_LEDGER_V1",
+  "system": "uzg-plus",
+  "lane": "Lane_03",
+  "task_id": "LANE03-UZG-MIGRATION-DRIFT-BATCH-C-LEDGER-AND-RPC-PRIVILEGE-OWNER-DECISION-V1",
+  "generated_at": "2026-05-01T01:25:31+07:00",
+  "result": "PASS",
+  "mode": "GOVERNANCE_LEDGER_DECISION_ONLY",
+  "source_state": {
+    "runtime_state_file": "runtime/uzg-plus/lane_03/LANE03_MIGRATION_DRIFT_STATE.json",
+    "body_diff_evidence": "reports/LANE03-UZG-MIGRATION-DRIFT-BATCH-C-FUNCTION-RPC-PUBLICATION-BODY-DIFF-AND-DRY-RUN-DESIGN-V1.json",
+    "batch_c_candidate_count": 8,
+    "live_equivalent_count": 5,
+    "do_not_apply_count": 2,
+    "rpc_privilege_decision_count": 1
+  },
+  "safety": {
+    "supabase_db_push_run": false,
+    "migrations_applied": false,
+    "database_mutated": false,
+    "schema_migrations_modified": false,
+    "supabase_permissions_changed": false,
+    "sql_applied": false
+  },
+  "live_equivalent_ledger_entries": [
+    {
+      "version": "20260320180501",
+      "file": "20260320180501_v2_p5_circle_wallet_payment_trace_receiver_fix.sql",
+      "domain": "Business/Wallet",
+      "live_equivalent": true,
+      "apply": false,
+      "reason": "already represented in production state",
+      "handling": "LEDGER_ONLY_DO_NOT_REAPPLY",
+      "evidence_summary": "Live public.rpc_create_payment_transaction includes the circle receiver fix and matching function metadata."
+    },
+    {
+      "version": "20260412163000",
+      "file": "20260412163000_u_reward_engine_unification_lock.sql",
+      "domain": "U-Reward",
+      "live_equivalent": true,
+      "apply": false,
+      "reason": "already represented in production state",
+      "handling": "LEDGER_ONLY_DO_NOT_REAPPLY",
+      "evidence_summary": "Target legacy reward public functions have the intended EXECUTE revokes in live state."
+    },
+    {
+      "version": "20260412193000",
+      "file": "20260412193000_u_reward_engine_consolidation_fix.sql",
+      "domain": "U-Reward",
+      "live_equivalent": true,
+      "apply": false,
+      "reason": "already represented in production state",
+      "handling": "LEDGER_ONLY_DO_NOT_REAPPLY",
+      "evidence_summary": "Blocking bodies and revokes match live; private helper exposure remains blocked by lack of private schema USAGE for public/anon/authenticated."
+    },
+    {
+      "version": "20260417124500",
+      "file": "20260417124500_wallet_global_credit_assert_rules_fix.sql",
+      "domain": "Wallet/UZGFi",
+      "live_equivalent": true,
+      "apply": false,
+      "reason": "already represented in production state",
+      "handling": "LEDGER_ONLY_DO_NOT_REAPPLY",
+      "evidence_summary": "Live private.wallet_assert_asset_rules body and metadata match; private schema USAGE blocks public/anon/authenticated direct access."
+    },
+    {
+      "version": "20260418093000",
+      "file": "20260418093000_social_realtime_publication_fix.sql",
+      "domain": "Cross-domain realtime",
+      "live_equivalent": true,
+      "apply": false,
+      "reason": "already represented in production state",
+      "handling": "LEDGER_ONLY_DO_NOT_REAPPLY",
+      "evidence_summary": "Live supabase_realtime publication contains public.follows, public.enta_connections, and public.flow_reactions."
+    }
+  ],
+  "do_not_apply_locks": [
+    {
+      "version": "20260320154501",
+      "file": "20260320154501_v2_p5_business_revenue_settlement_unblock.sql",
+      "domain": "Business",
+      "live_equivalent": false,
+      "apply": false,
+      "reason": "superseded / conflicting / not needed",
+      "lock_status": "DO_NOT_APPLY",
+      "evidence_summary": "Migration body lacks the later live circle receiver assignment in public.rpc_create_payment_transaction and would regress live behavior."
+    },
+    {
+      "version": "20260320161001",
+      "file": "20260320161001_v2_p5_circle_wallet_account_scope_fix.sql",
+      "domain": "Business/Wallet",
+      "live_equivalent": false,
+      "apply": false,
+      "reason": "superseded / conflicting / not needed",
+      "lock_status": "DO_NOT_APPLY",
+      "evidence_summary": "Migration body lacks later live circle-scoped ledger context and metadata/account-auth handling in private.wallet_get_or_create_account_for_subject."
+    }
+  ],
+  "conditional_rpc_item": {
+    "version": "20260407001501",
+    "file": "20260407001501_energy_daily_sync_rpc.sql",
+    "domain": "ENTA/Flow energy",
+    "object": "public.rpc_sync_energy_daily(uuid,date)",
+    "ledger_status": "PRIVILEGE_DECISION_LOCKED_NOT_APPLIED",
+    "apply": false,
+    "reason": "body is live-equivalent but current EXECUTE exposure requires separate privilege hardening task before final ledger closure",
+    "decision_file": "runtime/uzg-plus/lane_03/LANE03_RPC_PRIVILEGE_DECISION.json"
+  },
+  "blocked_actions": [
+    "supabase db push",
+    "applying Batch C migrations",
+    "manual schema_migrations repair",
+    "applying 20260320154501",
+    "applying 20260320161001",
+    "changing rpc_sync_energy_daily privileges in this task"
+  ],
+  "next_safe_action": "LANE03-UZG-RPC-SYNC-ENERGY-DAILY-SERVICE-ROLE-PRIVILEGE-HARDENING-DESIGN-OR-APPLY-V1"
+}

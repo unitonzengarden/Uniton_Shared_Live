@@ -1,0 +1,98 @@
+{
+  "schema_version": "LANE03_RPC_SYNC_ENERGY_DAILY_DEPENDENCY_SCAN_V1",
+  "system": "uzg-plus",
+  "lane": "Lane_03",
+  "task_id": "LANE03-UZG-RPC-SYNC-ENERGY-DAILY-SERVICE-ROLE-PRIVILEGE-HARDENING-DESIGN-OR-APPLY-V1",
+  "generated_at": "2026-05-01T02:30:00+07:00",
+  "result": "PASS",
+  "product_repo": {
+    "path": "D:/UZG/Projects/uzgplus-app",
+    "remote": "unitonzengarden/uzgplus-app",
+    "fetch_origin_performed": true,
+    "origin_main": "fad8372ba277e14b08a38dfaec522cc82de6e5a4",
+    "local_head": "2c55814facf69b3ab6171aee285d4320555427ce",
+    "ahead": 1,
+    "behind": 108,
+    "pull_performed": false,
+    "pull_skip_reason": "local workspace is dirty with broad unrelated changes; scanned origin/main directly as GitHub truth"
+  },
+  "scan_patterns": [
+    "rpc_sync_energy_daily",
+    "sync_energy_daily",
+    ".rpc(",
+    "energy",
+    "syncDailyMissionsWorker",
+    "rpc_sync_daily_missions"
+  ],
+  "browser_direct_dependency": {
+    "paths_scanned": [
+      "src/**",
+      "apps/uzg-pwa/src/**"
+    ],
+    "rpc_sync_energy_daily_matches": 0,
+    "sync_energy_daily_matches": 0,
+    "browser_rpc_line_count": 23,
+    "browser_rpc_target_line_count": 0,
+    "direct_authenticated_client_depends_on_target_rpc": false
+  },
+  "server_dependency": {
+    "target_matches": [
+      {
+        "path": "public/_worker.js",
+        "line": 10750,
+        "snippet": "const syncResult = await invokeSupabaseRpc(config, 'rpc_sync_energy_daily', {"
+      },
+      {
+        "path": "apps/uzg-pwa/public/_worker.js",
+        "line": 10824,
+        "snippet": "const syncResult = await invokeSupabaseRpc(config, 'rpc_sync_energy_daily', {"
+      }
+    ],
+    "runtime_owner": "Cloudflare Worker/API facade",
+    "service_role_mode_evidence": [
+      "rebuildEnergyDailyWorker invokes target with { service: true }",
+      "buildSupabaseHeaders selects config.serviceRoleKey when options.service is true",
+      "resolveSupabaseConfig reads SUPABASE_SERVICE_ROLE_KEY or SUPABASE_SERVICE_ROLE_KEY_B64"
+    ],
+    "correct_service_role_runtime_owner": "Worker/API facade"
+  },
+  "sql_dependency": {
+    "migration_body_references": [
+      {
+        "path": "supabase/migrations/20260407093001_daily_mission_engine_foundation.sql",
+        "line": 70,
+        "reference": "v_daily := public.rpc_sync_energy_daily(p_user_id, v_event_date);"
+      },
+      {
+        "path": "supabase/migrations/20260407112001_daily_mission_reward_link_foundation.sql",
+        "line": 85,
+        "reference": "v_daily := public.rpc_sync_energy_daily(p_user_id, v_event_date);"
+      }
+    ],
+    "live_catalog_reference_check": [
+      {
+        "schema": "public",
+        "function": "rpc_sync_daily_missions",
+        "signature": "public.rpc_sync_daily_missions(uuid,date)",
+        "owner": "postgres",
+        "security_definer": true
+      },
+      {
+        "schema": "public",
+        "function": "rpc_sync_energy_daily",
+        "signature": "public.rpc_sync_energy_daily(uuid,date)",
+        "owner": "postgres",
+        "security_definer": true
+      }
+    ]
+  },
+  "decision": {
+    "safe_to_apply_target_privilege_hardening": true,
+    "reason": "No direct browser/authenticated source dependency was found; runtime owner uses service-role Worker/API path; live SQL function caller is SECURITY DEFINER owned by postgres.",
+    "sql_applied": true
+  },
+  "evidence_gaps": [
+    "Uniton_Shared_Live did not yet expose the prior Batch C ledger and RPC decision raw files at task start.",
+    "No browser E2E smoke was run in this task because no code or deploy changed and target validation was grant-level."
+  ]
+}
