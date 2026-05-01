@@ -29,7 +29,9 @@
     "hash_match_source_to_live": true,
     "json_parse_check": "PASS",
     "secret_shaped_token_scan": "PASS",
-    "raw_url_verification": "PENDING_UNTIL_PUSH"
+    "raw_url_verification": "PASS",
+    "raw_url_verified_at": "2026-05-01T10:07:54+07:00",
+    "raw_url_verified_commit": "4b77ebaaf2c00fa22d76cc5135d85fce287a25f8"
   },
   "raw_urls_to_verify": [
     "https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/runtime/uzg-plus/lane_03/LANE03_MIGRATION_BATCH_C_LEDGER.json",

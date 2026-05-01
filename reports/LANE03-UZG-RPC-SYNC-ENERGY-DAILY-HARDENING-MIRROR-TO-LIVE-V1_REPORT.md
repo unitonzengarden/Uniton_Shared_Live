@@ -59,7 +59,8 @@ Latest RPC hardening evidence:
 - JSON parse check for mirrored JSON files: PASS
 - Scoped write set only: PASS
 - Secret-shaped token scan: PASS
-- Raw public URL verification: PENDING_UNTIL_PUSH
+- Raw public URL verification: PASS at `2026-05-01T10:07:54+07:00`
+- Raw verification commit: `4b77ebaaf2c00fa22d76cc5135d85fce287a25f8`
 
 ## Raw URL Verification Targets
 
