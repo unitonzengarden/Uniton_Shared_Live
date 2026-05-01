@@ -1,0 +1,37 @@
+TIER GATING CONSOLE MARKERS — Sprint 5.6
+Date: 2026-05-02
+
+=== RULE ENGINE ===
+File: apps/uzg-pwa/src/hooks/useTierGating.ts
+
+```typescript
+const TIER_NAME_TO_RANK = {
+  explorer: 0, free: 0,        // Free tier
+  seeker: 1, member: 1,        // $9/30d
+  builder: 2, premium: 2,      // $39/30d
+  sovereign: 3, business: 3,   // $69/30d
+};
+
+canAccess(requiredTier) {
+  const requiredRank = nameToRank(requiredTier);
+  if (userTierRank >= requiredRank) {
+    console.info('[useTierGating] allow', userName, '(rank', userTierRank, ') >=', requiredTier);
+    return { allowed: true };
+  }
+  console.info('[useTierGating] deny', userName, '(rank', userTierRank, ') <', requiredTier);
+  return { allowed: false, upgradeTarget: requiredTier };
+}
+```
+
+=== EXPECTED CONSOLE OUTPUT (free tier user) ===
+[useTierGating] allow free (rank 0) >= free (rank 0)        — for u-reward, tao, booking, membership, etc.
+[useTierGating] deny free (rank 0) < member (rank 1)         — for stats
+[useTierGating] deny free (rank 0) < premium (rank 2)        — for governance
+[useTierGating] deny free (rank 0) < business (rank 3)       — for business
+
+=== UI BEHAVIOR ===
+- Locked apps render with 🔒 lock icon overlay
+- Tap on locked app → opens TierLockedAppV3 bottom sheet
+- Sheet shows app icon + name + "Yêu cầu gói {target}" + "Nâng cấp ngay" CTA
+- CTA navigates to /membership?upgrade={tier_code}
+- UpgradeFlowV3 reads ?upgrade= search param, pre-selects target tier

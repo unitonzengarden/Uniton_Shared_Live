@@ -1,0 +1,15 @@
+PLAYWRIGHT PRODUCTION RESULTS — Sprint 5.6 PLUS + Membership
+Date: 2026-05-02
+Spec: tests/visual/p5-6-plus-membership-prod.spec.mjs
+Config: playwright.visual-prod.config.mjs
+
+Running 6 tests using 1 worker
+
+PASS [chromium] prod /plus redirects to login when unauthed
+PASS [chromium] prod /membership redirects to login when unauthed
+PASS [chromium] prod V2 Express /membership/upgrade endpoint reachable (AUTH_REQUIRED)
+PASS [chromium] prod V2 Express /membership/upgrade POST exists
+PASS [chromium] prod Direct member_tiers REST table exists (catalog read)
+PASS [chromium] prod login page reachable for PLUS/Membership redirect target
+
+6 passed (7.3s)

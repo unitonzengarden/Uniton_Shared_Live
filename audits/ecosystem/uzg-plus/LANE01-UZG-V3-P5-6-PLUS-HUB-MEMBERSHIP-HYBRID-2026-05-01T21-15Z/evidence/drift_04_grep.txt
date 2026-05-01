@@ -1,0 +1,25 @@
+DRIFT-04 GREP VERIFICATION — Sprint 5.6
+Date: 2026-05-02
+
+=== COMMAND ===
+grep -rn "memberships.tier\b" apps/uzg-pwa/src/components/membership-v3/ apps/uzg-pwa/src/components/plus-v3/ apps/uzg-pwa/src/hooks/useUserMembership.ts apps/uzg-pwa/src/hooks/useTierCatalog.ts apps/uzg-pwa/src/hooks/useMembershipUpgrade.ts apps/uzg-pwa/src/hooks/useTierGating.ts apps/uzg-pwa/src/hooks/usePlusHub.ts apps/uzg-pwa/src/types/membershipV3.ts apps/uzg-pwa/src/lib/v2ExpressClient.ts
+
+=== RESULT ===
+1 hit:
+- CurrentTierCardV3.tsx:1: // Sprint 5.6 — Current tier card (D6 DRIFT-04: tier_name from JOIN view, not memberships.tier)
+
+This is a COMMENT explaining DRIFT-04 was applied — NOT actual code that uses memberships.tier.
+
+=== ANALYSIS ===
+All actual code references are correctly using the post-DRIFT-04 columns:
+- tier_id (FK on memberships table)
+- tier_name, tier_code, tier_icon, tier_benefits, etc. (from membership_current_view JOIN)
+
+Examples of correct usage:
+- useUserMembership.ts: .from('membership_current_view') ← uses JOIN view
+- CurrentTierCardV3.tsx: membership?.tier_name ← uses JOINed field
+- TierCatalogV3.tsx: tier.code, tier.name ← reads member_tiers directly
+- useTierGating.ts: nameToRank(userTierName) ← derives rank from name string
+
+=== CONCLUSION ===
+DRIFT-04 fully applied. Zero broken references to nonexistent memberships.tier column.

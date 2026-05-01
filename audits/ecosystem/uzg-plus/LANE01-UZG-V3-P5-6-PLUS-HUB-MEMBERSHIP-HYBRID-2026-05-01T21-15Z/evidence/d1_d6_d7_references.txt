@@ -1,0 +1,30 @@
+BACKEND DEEP AUDIT REFERENCES — Sprint 5.6
+Date: 2026-05-02
+
+=== D1 SCHEMA (membership/mission tables verified live) ===
+memberships (14 cols)              — id, user_id, tier_id, status, started_at, expires_at, auto_renew, created_at, updated_at, source, reputation_score, lifetime_points, current_period_points, notes
+member_tiers (20 cols)             — id, code, name, monthly_price, priority_rank, booking_priority, reward_multiplier, benefits[], is_active, description, icon, priority, reputation_threshold, yearly_points_required, price_amount, price_currency, duration_days, is_public
+membership_current_view (27 cols)  — JOIN view: ALL memberships fields + tier_code, tier_name, tier_description, tier_icon, tier_benefits[], tier_priority, price_amount, price_currency, duration_days
+app_memberships (9 cols)           — alternative simpler table (NOT used Sprint 5.6)
+member_badges (6 cols)             — badge tracking (deferred)
+missions (14 cols)                 — mission catalog (deferred Sprint 5.7)
+user_missions (13 cols)            — user progress (deferred Sprint 5.7)
+daily_missions (14 cols)           — daily rotation (deferred Sprint 5.7)
+
+=== D6 DRIFT-04 (HIGH severity, APPLIED) ===
+Drift: memberships.tier does NOT exist; column is tier_id (FK).
+Resolution: Use membership_current_view (JOIN view) — exposes tier_name, tier_code, tier_benefits directly.
+Verification: Zero `memberships.tier` references in Sprint 5.6 code (only 1 comment).
+
+=== D7 V2 EXPRESS (Hybrid endpoints verified) ===
+GET /api/v1/membership/upgrade   — baseline (eligible tiers + payment methods)
+POST /api/v1/membership/upgrade  — initiate upgrade with idempotency_key
+                                   Response: 401 if unauthed, 400 if missing tier_id/tier_code
+                                   Verified live by Playwright AC-13
+
+=== D3 RPC ENDPOINTS (Sprint 5.6 deferred) ===
+fn_membership_subscribe(tier_code)         — Direct subscription path (deferred — V2 Express used)
+bootstrap_membership_for_user(p_user_id)   — Bootstrap helper (not invoked Sprint 5.6)
+rpc_payment_membership(...)                — Paid upgrade with idempotency (deferred — V2 Express used)
+rpc_sync_daily_missions(...)               — Daily mission rotation (Sprint 5.7)
+rpc_activation_reset_daily_missions(...)   — Mission reset (Sprint 5.7)
