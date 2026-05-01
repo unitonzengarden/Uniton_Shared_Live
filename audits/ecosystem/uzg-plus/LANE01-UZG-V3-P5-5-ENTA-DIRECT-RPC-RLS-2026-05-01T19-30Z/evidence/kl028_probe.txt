@@ -1,0 +1,22 @@
+KL-028 PRODUCTION PROBE — Sprint 5.5 ENTA
+Date: 2026-05-02
+Method: curl -L --max-redirs 3 https://uzg.plus<route>
+
+200 https://uzg.plus/v3/
+200 https://uzg.plus/v3/login
+200 https://uzg.plus/v3/signup
+200 https://uzg.plus/v3/home
+200 https://uzg.plus/v3/chat
+200 https://uzg.plus/v3/wallet
+200 https://uzg.plus/v3/wallet/asset/U
+200 https://uzg.plus/v3/wallet/convert
+200 https://uzg.plus/v3/enta              [NEW Sprint 5.5]
+200 https://uzg.plus/v3/enta/onboarding   [NEW Sprint 5.5]
+200 https://uzg.plus/v3/enta/identity     [redirect → /v3/enta]
+200 https://uzg.plus/v3/plus
+200 https://uzg.plus/v3/onboarding
+200 https://uzg.plus/api/health
+200 https://uzg.plus/v3/wallet/send
+
+RESULT: 15/15 PASS
+Sprint 5.1-5.4 routes UNTOUCHED. ENTA Sprint 5.5 routes live.

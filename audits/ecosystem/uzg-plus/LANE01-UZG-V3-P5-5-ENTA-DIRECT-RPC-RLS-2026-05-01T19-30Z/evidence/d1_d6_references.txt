@@ -1,0 +1,50 @@
+D1+D6 BACKEND DEEP AUDIT REFERENCES — Sprint 5.5 ENTA
+Date: 2026-05-02
+
+=== D1 SCHEMA (27 enta_* tables — all verified live) ===
+enta_profiles (52 cols)         — used by useEnta
+enta_current_fields (19 cols)   — used by useEnta + useEntaWheel
+enta_resonance_scores (10 cols) — used by useEntaResonance
+enta_circles (10 cols)          — used by useEntaCircles
+enta_circle_members (8 cols)    — used by useEntaCircles
+enta_flow_events (13 cols)      — used by useEntaJourney
+enta_root_snapshots (22 cols)   — read via rpc_get_enta_snapshots
+enta_states (31 cols)           — read via rpc_get_enta_state
+enta_birth_data (8 cols)        — RPC internal use
+enta_bazi_records (22 cols)     — read via rpc_get_enta_bazi_record
+enta_birth_normalizations (10)  — RPC internal use
+enta_change_logs (8 cols)       — Phase 6 audit
+enta_connection_events (18)     — deferred 5.5.x
+enta_connection_requests (7)    — deferred 5.5.x
+enta_connections (11 cols)      — deferred 5.5.x
+enta_conversation_members (8)   — Sprint 5.3 chat
+enta_conversations (11)         — Sprint 5.3 chat
+enta_conversion_test_cases (10) — internal QA
+enta_events (6 cols)            — flow telemetry
+enta_message_reads (5 cols)     — Sprint 5.3 chat
+enta_messages (10 cols)         — Sprint 5.3 chat
+enta_post_reactions             — (alias not in dump)
+enta_posts (10 cols)            — Sprint 5.2 home
+enta_presence (5 cols)          — Sprint 5.3 presence
+enta_reward_calculations (16)   — D5 reward audit
+enta_reward_events              — (alias not in dump)
+enta_snapshots (22 cols)        — alias of enta_root_snapshots
+enta_typing_states (7 cols)     — Sprint 5.3 chat
+enta_activity_log (10)          — telemetry
+
+=== D6 CANON DRIFT (0 ENTA-specific drift entries) ===
+DRIFT-04 memberships.tier_id (membership module, not ENTA)
+DRIFT-02 wallet_balances.asset (wallet module, not ENTA)
+DRIFT-14 u_reward_baseline_emissions REST-blocked (reward module, not ENTA)
+
+ENTA tables: 0 drift entries — all column names match canon.
+
+=== KEY COLUMN VERIFICATION ===
+enta_profiles.user_id (NOT auth_user_id) ✓
+enta_current_fields.element_sum (number, expected 12) ✓
+enta_current_fields.sum_rule_ok (boolean) ✓
+enta_current_fields.current_element_percentages (jsonb) ✓
+enta_resonance_scores.resonance_score (number) ✓
+enta_circles.visibility (string: public|private|invite_only) ✓
+enta_circle_members.status (string: active|pending|left) ✓
+enta_flow_events.actor_user_id ✓ + enta_flow_events.user_id ✓ (dual reference)

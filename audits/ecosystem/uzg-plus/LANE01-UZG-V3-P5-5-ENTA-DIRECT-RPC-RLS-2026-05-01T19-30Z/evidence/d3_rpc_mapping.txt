@@ -1,0 +1,36 @@
+D3 RPC MAPPING — Sprint 5.5 ENTA (14 invoked / 47 ENTA-related catalogued)
+Date: 2026-05-02
+
+=== INVOKED IN supabaseRpc.ts ===
+rpc_create_enta_profile(p_birth_year, p_birth_month, p_birth_day, p_birth_hour_branch,
+                       p_birth_hour_estimated, p_gender, p_theme_preference,
+                       p_current_theme_mode, p_dominant_element_override)
+rpc_compute_enta()
+rpc_compute_enta_state()
+rpc_recompute_enta_state(target_user_id)
+rpc_needs_enta_recompute()
+calc_enta_profile(p_year, p_month, p_day, p_hour, p_gender)
+rpc_calculate_resonance(p_other_user_id)
+fn_enta_suggest_resonance(p_user_id, p_limit_count)
+rpc_get_enta_profile()
+rpc_get_enta_state()
+rpc_get_enta_snapshots(limit_count)
+rpc_can_update_enta_profile()
+rpc_get_my_circles(limit_count)
+rpc_join_circle(p_circle_id)
+rpc_leave_circle(p_circle_id)
+
+=== PRODUCTION REACHABILITY VERIFIED ===
+POST /rest/v1/rpc/rpc_get_enta_profile     → reachable
+POST /rest/v1/rpc/rpc_create_enta_profile  → reachable
+POST /rest/v1/rpc/fn_enta_suggest_resonance → reachable
+GET  /rest/v1/enta_current_fields?select=sum_rule_ok&limit=1 → 200 (column exists)
+
+=== DEFERRED 5.5.x ===
+rpc_calculate_resonance        — pair compute (Connect action)
+rpc_join_circle                — circle membership write
+rpc_upsert_enta_connection_event — connection write
+rpc_update_enta_birth_core     — birth data edit
+rpc_update_enta_profile        — profile edit
+rpc_update_enta_profile_identity — bio/name edit
+rpc_circle_business_commission_settle — business circle ops

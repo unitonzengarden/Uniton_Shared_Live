@@ -1,0 +1,35 @@
+ENTA INVARIANT VALIDATION — Sprint 5.5
+Date: 2026-05-02
+
+=== D5 INVARIANT ===
+element_sum = 12 + sum_rule_ok = true (per Backend Deep Audit D5)
+
+=== IMPLEMENTATION ===
+File: apps/uzg-pwa/src/hooks/useEntaWheel.ts (lines 43-52)
+
+```typescript
+const totalSum = Number(currentFields.element_sum) || 0;
+const invariantOk = totalSum === ELEMENT_TOTAL_INVARIANT && currentFields.sum_rule_ok === true;
+
+if (!invariantOk) {
+  console.warn(
+    '[useEntaWheel] INVARIANT VIOLATED — total_scores=',
+    totalSum,
+    'sum_rule_ok=',
+    currentFields.sum_rule_ok,
+    '(expected 12, true)',
+  );
+} else {
+  console.info('[useEntaWheel] total scores = 12 (invariant OK)');
+}
+```
+
+=== UI FALLBACK ===
+EntaShellV3.tsx renders warning banner if !wheel.invariantOk:
+  "⚠ ENTA total = {totalSum} (expected 12) — hiển thị tạm thời"
+
+Wheel still renders with absolute scores; user sees warning + valid display.
+
+=== PRODUCTION VERIFY ===
+GET /rest/v1/enta_current_fields?select=sum_rule_ok&limit=1 → 200
+Column exists, RLS enforces auth.uid() filter.

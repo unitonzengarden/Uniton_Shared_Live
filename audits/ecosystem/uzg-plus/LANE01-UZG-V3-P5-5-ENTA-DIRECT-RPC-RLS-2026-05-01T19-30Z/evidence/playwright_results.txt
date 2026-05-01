@@ -1,0 +1,17 @@
+PLAYWRIGHT PRODUCTION RESULTS — Sprint 5.5 ENTA
+Date: 2026-05-02
+Spec: tests/visual/p5-5-enta-prod.spec.mjs
+Config: playwright.visual-prod.config.mjs
+
+Running 8 tests using 1 worker
+
+PASS [chromium] prod /enta redirects to login when unauthed
+PASS [chromium] prod /enta/onboarding redirects to login when unauthed
+PASS [chromium] prod /enta/identity redirects to /enta (legacy path consolidation)
+PASS [chromium] prod ENTA RPC rpc_get_enta_profile reachable (401 unauthed expected)
+PASS [chromium] prod ENTA RPC rpc_create_enta_profile reachable
+PASS [chromium] prod fn_enta_suggest_resonance reachable
+PASS [chromium] prod ENTA invariant — sum_rule_ok column exists in enta_current_fields
+PASS [chromium] prod login page reachable for ENTA redirect target
+
+8 passed (8.8s)
