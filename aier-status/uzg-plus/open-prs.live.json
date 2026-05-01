@@ -1,20 +1,7 @@
 {
   "project_slug": "uzg-plus",
   "github_repo": "unitonzengarden/uzgplus-app",
-  "polled_at": "2026-05-01T09:13:14.776Z",
-  "count": 1,
-  "prs": [
-    {
-      "number": 70,
-      "title": "feat(lane02): LANE02-UZG-TAO-T-TAO-069-082-V1 — Tử Vi V2 Phase 8C UI overhaul (FINAL)",
-      "state": "open",
-      "head_ref": "feat/lane02/LANE02-UZG-TAO-T-TAO-069-082-V1",
-      "base_ref": "main",
-      "author": "unitonzengarden",
-      "created_at": "2026-05-01T09:03:40Z",
-      "updated_at": "2026-05-01T09:03:40Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/pull/70",
-      "draft": false
-    }
-  ]
+  "polled_at": "2026-05-01T10:44:50.839Z",
+  "count": 0,
+  "prs": []
 }

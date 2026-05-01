@@ -1,9 +1,37 @@
 {
   "project_slug": "uzg-plus",
   "github_repo": "unitonzengarden/uzgplus-app",
-  "polled_at": "2026-05-01T09:13:14.776Z",
+  "polled_at": "2026-05-01T10:44:50.839Z",
   "count": 30,
   "commits": [
+    {
+      "sha": "8517c60ef2b843241cc3a1c2d23c05b62f851592",
+      "message": "feat(lane02): LANE02-UZG-TAO-T-TAO-069-082-V1 — Tử Vi V2 Phase 8C UI overhaul (FINAL) (#70)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-01T10:41:47Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/8517c60ef2b843241cc3a1c2d23c05b62f851592"
+    },
+    {
+      "sha": "6a0003db1bcec97982ccf28b3a35b76e1070a947",
+      "message": "fix(p4s1): restore Lane_02 apps/.../tao/{aier,ziwei}/* clobbered by mirror",
+      "author": "LANE01-Cursor",
+      "committed_at": "2026-05-01T10:10:28Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/6a0003db1bcec97982ccf28b3a35b76e1070a947"
+    },
+    {
+      "sha": "d50211d910825e3b3a67596bbd15c71ba468c776",
+      "message": "chore(deploy): force Cloudflare Pages redeploy for PR #71 Sprint 4.1 TAO",
+      "author": "LANE01-Cursor",
+      "committed_at": "2026-05-01T10:01:41Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/d50211d910825e3b3a67596bbd15c71ba468c776"
+    },
+    {
+      "sha": "a4c40f96c2e9ef8a281c79fba3499afeed31e562",
+      "message": "feat(p4s1): UZG+ Phase 4 Sprint 4.1 — TAO mini app shell + Overview + Lịch widget [solo CLAC1] (#71)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-01T09:18:54Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/a4c40f96c2e9ef8a281c79fba3499afeed31e562"
+    },
     {
       "sha": "930a7caa6bbcaee40cc187b25cc619702228b12f",
       "message": "feat(s8): UZG+ V3 U-Reward mini app — 4 modules (TAP/QUIZ/TASK/CAMPAIGN) — FINAL Phase 3 (#69)",
@@ -185,34 +213,6 @@
       "author": "Uniton Zen",
       "committed_at": "2026-04-30T17:48:48Z",
       "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/c6d2070c277c55c45f0c5bb4552b6517b3e9a603"
-    },
-    {
-      "sha": "2463f927d9df67a7202da885f54b6b8cdd53f2c4",
-      "message": "feat(lane02): LANE02-UZG-TAO-T-TAO-019-024-V1 — Tử Vi V2 Phase 2 Interpretive layer (Brightness + Cách cục + Reading) (#49)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-04-30T17:41:21Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/2463f927d9df67a7202da885f54b6b8cdd53f2c4"
-    },
-    {
-      "sha": "5a135d26e9fe87123b651c3bc1d75e074d36a291",
-      "message": "docs(lane02): LANE02-UZG-TAO-CANON-AMENDMENT-001-V1 ship report + snapshot + audit log [vercel skip]",
-      "author": "unitonzengarden",
-      "committed_at": "2026-04-30T16:58:01Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/5a135d26e9fe87123b651c3bc1d75e074d36a291"
-    },
-    {
-      "sha": "e8f44c212c197992a0f0e25699683087e0861fd3",
-      "message": "docs(canon): TAO ziwei spec amendment 001 — §7.9 transcription errors (#48)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-04-30T16:56:00Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/e8f44c212c197992a0f0e25699683087e0861fd3"
-    },
-    {
-      "sha": "768d4ae91d20465e6a0dac7f879e0514b5924653",
-      "message": "docs(lane02): T-TAO-014-018-V1 ship report + Hero Vu cycle JSON + 4 screenshots [vercel skip]",
-      "author": "unitonzengarden",
-      "committed_at": "2026-04-30T16:32:59Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/768d4ae91d20465e6a0dac7f879e0514b5924653"
     }
   ]
 }
