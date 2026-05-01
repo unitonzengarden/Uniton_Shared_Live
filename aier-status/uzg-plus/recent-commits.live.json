@@ -1,9 +1,23 @@
 {
   "project_slug": "uzg-plus",
   "github_repo": "unitonzengarden/uzgplus-app",
-  "polled_at": "2026-05-01T15:40:17.090Z",
+  "polled_at": "2026-05-01T16:38:59.669Z",
   "count": 30,
   "commits": [
+    {
+      "sha": "2931a04411b5bf09fc6bedfc8467178bebfa45f8",
+      "message": "feat(p5-3): UZG+ Phase 5 Sprint 5.3 — CHAT module Hybrid Integration (#82)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-01T16:36:07Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/2931a04411b5bf09fc6bedfc8467178bebfa45f8"
+    },
+    {
+      "sha": "94c14e0c2010361c193a58ab54db7ae71697ae88",
+      "message": "feat(p5-2): UZG+ Phase 5 Sprint 5.2 — HOME feed Hybrid Integration (#81)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-01T15:53:14Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/94c14e0c2010361c193a58ab54db7ae71697ae88"
+    },
     {
       "sha": "9802e5de720cf53b7a9adb9acc42eb91a400749f",
       "message": "chore(lane02): runtime audit + secrets governance v1 [vercel skip]",
@@ -199,20 +213,6 @@
       "author": "Uniton Zen",
       "committed_at": "2026-05-01T02:52:11Z",
       "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/c93ec1cf2ef469bfec7164c482cc3dfe0b9c7215"
-    },
-    {
-      "sha": "53112706c06e6cf67d1b3a62dfb47a69b010ed3b",
-      "message": "feat(s4): UZG+ V3 CHAT module components (6 reusable + 2 hooks) (#58)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-05-01T02:33:03Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/53112706c06e6cf67d1b3a62dfb47a69b010ed3b"
-    },
-    {
-      "sha": "62255a636dd056559500b897fb088e440a9e1bbb",
-      "message": "fix(v3-deploy): explicit /v3/* worker handler — _redirects ignored in advanced mode (#57)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-04-30T20:19:40Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/62255a636dd056559500b897fb088e440a9e1bbb"
     }
   ]
 }
