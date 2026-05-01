@@ -1,9 +1,44 @@
 {
   "project_slug": "uzg-plus",
   "github_repo": "unitonzengarden/uzgplus-app",
-  "polled_at": "2026-05-01T07:13:29.199Z",
+  "polled_at": "2026-05-01T09:13:14.776Z",
   "count": 30,
   "commits": [
+    {
+      "sha": "930a7caa6bbcaee40cc187b25cc619702228b12f",
+      "message": "feat(s8): UZG+ V3 U-Reward mini app — 4 modules (TAP/QUIZ/TASK/CAMPAIGN) — FINAL Phase 3 (#69)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-01T08:56:40Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/930a7caa6bbcaee40cc187b25cc619702228b12f"
+    },
+    {
+      "sha": "5ffed557dc8b349049e9072b1985cc8c878e7941",
+      "message": "feat(lane02): T-TAO-052-068-V1 — Tử Vi V2 Phase 8B engine canonical completion (5 gaps closed) (#68)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-01T08:32:12Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/5ffed557dc8b349049e9072b1985cc8c878e7941"
+    },
+    {
+      "sha": "f4fa499ce91db118506d5f9cc768783417627888",
+      "message": "feat(s7): UZG+ V3 PLUS Hub — springboard + 10 components + mini app takeover (#67)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-01T07:53:55Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/f4fa499ce91db118506d5f9cc768783417627888"
+    },
+    {
+      "sha": "de1c25ff3775bd200c17a4a2232beb9213eb8152",
+      "message": "feat(s6): UZG+ V3 ENTA module — Pentagon Wheel + 4 tabs + Onboarding + G01 fix (#66)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-01T07:32:38Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/de1c25ff3775bd200c17a4a2232beb9213eb8152"
+    },
+    {
+      "sha": "5a893e7dc940a2e3ba27044e6a1b5106d0cd8d82",
+      "message": "audit(lane02/tao-ziwei): Phase 8A 6-chart engine vs lyso GT audit (#65)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-01T07:23:57Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/5a893e7dc940a2e3ba27044e6a1b5106d0cd8d82"
+    },
     {
       "sha": "3bb0b82d5a9d810a399bd8ac5b721c91b54bea52",
       "message": "feat(s5): UZG+ V3 WALLET module — 6 components + 5 pages + KL-030 (#64)",
@@ -178,41 +213,6 @@
       "author": "unitonzengarden",
       "committed_at": "2026-04-30T16:32:59Z",
       "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/768d4ae91d20465e6a0dac7f879e0514b5924653"
-    },
-    {
-      "sha": "60c36304c0223c57c5be7c3286e9b7d0148700a1",
-      "message": "feat(lane02): T-TAO-014-018-V1 — Tử Vi V2 Phase 1.4 Cycles (Lưu niên + Tiểu vận + Lưu nguyệt + Annual stars + UI overlay) (#47)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-04-30T16:22:40Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/60c36304c0223c57c5be7c3286e9b7d0148700a1"
-    },
-    {
-      "sha": "241f771a306a696228160153e262ebb1cf51e554",
-      "message": "docs(lane02): T-TAO-005-013-V1 ship report + lyso comparison + 4 screenshots [vercel skip]",
-      "author": "unitonzengarden",
-      "committed_at": "2026-04-30T15:44:21Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/241f771a306a696228160153e262ebb1cf51e554"
-    },
-    {
-      "sha": "15766dcf4b810e692ca676dd30110c2431677239",
-      "message": "feat(lane02): T-TAO-005-013-V1 — Tử Vi V2 Phase 1.3 (8 engines + Natal Chart UI) — lyso.vn ground-truth verified (#46)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-04-30T15:36:59Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/15766dcf4b810e692ca676dd30110c2431677239"
-    },
-    {
-      "sha": "020c2655a7119beec1f047e839ea60f8de8de5a2",
-      "message": "docs(lane02): LANE02-UZG-TAO-T-TAO-001-004-V1 ship report + snapshot + audit + NTS canonical chart [vercel skip]",
-      "author": "unitonzengarden",
-      "committed_at": "2026-04-30T14:35:25Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/020c2655a7119beec1f047e839ea60f8de8de5a2"
-    },
-    {
-      "sha": "7142e10c6a00eb04bf8c4fa3d689e93ac0531f94",
-      "message": "feat(lane02): T-TAO-001-004-V1 — Tử Vi V2 Phase 1.2 Engine Core (4 engines + NTS canonical anchor) (#45)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-04-30T14:29:57Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/7142e10c6a00eb04bf8c4fa3d689e93ac0531f94"
     }
   ]
 }
