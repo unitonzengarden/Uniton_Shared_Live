@@ -1,0 +1,45 @@
+{
+  "schema_version": "v1",
+  "project_slug": "uzg-plus",
+  "isolation_rule": "3 Supabase projects INDEPENDENT, no cross-Lane sharing",
+  "last_updated": "2026-05-01T16:06:15Z",
+  "source_task": "LANE02-UZG-RUNTIME-NAMESPACE-V1",
+  "source_evidence": "NTS confirm 2026-05-01 + LANE02-UZG-RUNTIME-AUDIT-V1",
+  "projects": {
+    "uzg_plus": {
+      "ref": "kkhhpecofolmrodyeslp",
+      "name": "uzgplus-superapp-dev",
+      "owner_lane": "Lane_02",
+      "owner_project": "UZG+ TAO module",
+      "env_var_prefix": "SUPABASE_",
+      "evidence": "RUNTIME-AUDIT-V1, Sprint 5.1 Auth + Identity Foundation real Supabase commit bfac517",
+      "status": "ACTIVE"
+    },
+    "uniton_os": {
+      "ref": "vstnvvwmztotgogobefx",
+      "name": "Uniton_OS",
+      "owner_lane": "Lane_01",
+      "owner_project": "AIER Ops",
+      "env_var_prefix": "SUPABASE_LANE01_",
+      "evidence": "Lane_01 .env.local pattern, NTS confirm 2026-05-01",
+      "lane_02_access": "FORBIDDEN - cross-Lane secret leak per LAW-NTS-LANE-2-08 R-LANE-01",
+      "status": "REFERENCE_ONLY"
+    },
+    "aifi": {
+      "ref": "TBD_DISCOVER",
+      "name": "AIFI",
+      "owner_lane": "Lane_02",
+      "owner_project": "AIFI / AIER AT",
+      "env_var_prefix": "SUPABASE_AIFI_",
+      "evidence": "NTS confirm 2026-05-01; AIFI_LIFE local clone NOT present at D:/UZG/Projects-v2/AIFI_LIFE/ as of 2026-05-01T16:06:15Z",
+      "discovery_status": "PENDING",
+      "discovery_path": "Read AIFI_LIFE/.env.local OR query Supabase Dashboard projects list scoped to NTS account; commission follow-up task LANE02-UZG-AIFI-DISCOVERY-V1",
+      "status": "FUTURE"
+    }
+  },
+  "redlines": [
+    "R-RUN-NS-03: 3 Supabase projects ISOLATION rule - never cross-reference values",
+    "Never expose service_role_key, anon_key, or JWT secret from any of the 3 projects in any runtime file",
+    "ENV_VAR prefixes (SUPABASE_, SUPABASE_LANE01_, SUPABASE_AIFI_) are NAMING CONVENTION ONLY - actual values stored in respective Cloudflare Pages env per project"
+  ]
+}
