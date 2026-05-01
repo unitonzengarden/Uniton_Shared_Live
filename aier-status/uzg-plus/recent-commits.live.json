@@ -1,9 +1,30 @@
 {
   "project_slug": "uzg-plus",
   "github_repo": "unitonzengarden/uzgplus-app",
-  "polled_at": "2026-05-01T11:45:48.828Z",
+  "polled_at": "2026-05-01T13:20:48.781Z",
   "count": 30,
   "commits": [
+    {
+      "sha": "9809f077bf5ccf709310d1ac73c90594ea732f90",
+      "message": "feat(p4s4): UZG+ Phase 4 Sprint 4.4 — AIER TAO Reading + 4-tier gating [solo CLAC1] (#76)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-01T13:17:34Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/9809f077bf5ccf709310d1ac73c90594ea732f90"
+    },
+    {
+      "sha": "12b855c646337853ace56256592e1c918b9d6141",
+      "message": "feat(lane02): T-VAN-016-020-V1 add 28 sao plus hour Hoang Dao standalone engines (#74)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-01T13:12:05Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/12b855c646337853ace56256592e1c918b9d6141"
+    },
+    {
+      "sha": "9aa13754b0dde1aec5035fe9038b35febdc1472a",
+      "message": "fix(p4s3.1): NAM TAO 南道 branding consistency hot-fix (#75)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-01T12:47:31Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/9aa13754b0dde1aec5035fe9038b35febdc1472a"
+    },
     {
       "sha": "0b8ee0fa058f800b30a52ae146ce69329b666178",
       "message": "feat(p4s3): UZG+ Phase 4 Sprint 4.3 — Tử Vi Full Flow PREMIUM (3 surfaces) [solo CLAC1] (#73)",
@@ -192,27 +213,6 @@
       "author": "Uniton Zen",
       "committed_at": "2026-04-30T18:51:47Z",
       "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/fad8372ba277e14b08a38dfaec522cc82de6e5a4"
-    },
-    {
-      "sha": "39925a209d54d89b594d1ba9618a877df56f8d25",
-      "message": "docs(lane02): T-TAO-025-030-V1 ship report + Hero Vu AIER context pack + safety report + 4 screenshots [vercel skip]",
-      "author": "unitonzengarden",
-      "committed_at": "2026-04-30T18:42:42Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/39925a209d54d89b594d1ba9618a877df56f8d25"
-    },
-    {
-      "sha": "b83926ae38d7b96254665c48c89367c4b5d42490",
-      "message": "feat(lane02): LANE02-UZG-TAO-T-TAO-025-030-V1 — Tử Vi V2 Phase 3 AIER Tao advisory chat (#51)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-04-30T18:35:33Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/b83926ae38d7b96254665c48c89367c4b5d42490"
-    },
-    {
-      "sha": "4087ad3487b2469e6bfd6c7268dfeec8113d5a02",
-      "message": "feat(s1): UZG+ V3 chrome refactor to --t-* tokens [vercel skip] (#53)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-04-30T18:35:03Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/4087ad3487b2469e6bfd6c7268dfeec8113d5a02"
     }
   ]
 }
