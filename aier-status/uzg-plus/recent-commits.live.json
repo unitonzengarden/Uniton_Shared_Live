@@ -1,9 +1,44 @@
 {
   "project_slug": "uzg-plus",
   "github_repo": "unitonzengarden/uzgplus-app",
-  "polled_at": "2026-05-01T04:18:24.174Z",
+  "polled_at": "2026-05-01T07:13:29.199Z",
   "count": 30,
   "commits": [
+    {
+      "sha": "3bb0b82d5a9d810a399bd8ac5b721c91b54bea52",
+      "message": "feat(s5): UZG+ V3 WALLET module — 6 components + 5 pages + KL-030 (#64)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-01T07:05:28Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/3bb0b82d5a9d810a399bd8ac5b721c91b54bea52"
+    },
+    {
+      "sha": "cdc81f2d64fe138aca6bb5426fedab70e2fa8ead",
+      "message": "feat(lane02): T-TAO-046-051-V1 — Tử Vi V2 Phase 7 minor cách cục (6 patterns) (#63)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-01T05:51:46Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/cdc81f2d64fe138aca6bb5426fedab70e2fa8ead"
+    },
+    {
+      "sha": "6f4f44182f68da8a20961049f22a10627585d1b0",
+      "message": "fix(v3-canon): enforce mobile shell max-width 480px on tablet/desktop per Foundation Canon §1.2 + §8 (#62)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-01T05:02:14Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/6f4f44182f68da8a20961049f22a10627585d1b0"
+    },
+    {
+      "sha": "739f5b45e598368657f729ef4f62b01b09d00668",
+      "message": "docs(lane02): T-TAO-036-045-V1 ship report + Lá số Mẫu engine output + nạp âm table + coverage report + 4 screenshots [vercel skip]",
+      "author": "unitonzengarden",
+      "committed_at": "2026-05-01T04:38:43Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/739f5b45e598368657f729ef4f62b01b09d00668"
+    },
+    {
+      "sha": "4050f00723e8d0d583ce3aa539da2c6abf1acd09",
+      "message": "feat(lane02): LANE02-UZG-TAO-T-TAO-036-045-V1 — Tử Vi V2 Phase 6 coverage + demo swap (#60)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-01T04:31:47Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/4050f00723e8d0d583ce3aa539da2c6abf1acd09"
+    },
     {
       "sha": "a3466ce5744ccefe63d0ae5391a90eaef5dc6a0c",
       "message": "feat(s4): wire CHAT module + 4 routes deployed to uzg.plus/v3/chat/* (#61)",
@@ -178,41 +213,6 @@
       "author": "Uniton Zen",
       "committed_at": "2026-04-30T14:29:57Z",
       "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/7142e10c6a00eb04bf8c4fa3d689e93ac0531f94"
-    },
-    {
-      "sha": "ad7da56b853d902a49abbf554965ffc117199e88",
-      "message": "docs(canon): mirror v1.1 INDEX fix (#44)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-04-30T14:06:25Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/ad7da56b853d902a49abbf554965ffc117199e88"
-    },
-    {
-      "sha": "20cd69a129e6fc22da7605047aa58b612435ca7c",
-      "message": "docs(lane02): LANE02-UZG-VANNIEN-T-VN-001-005-V1 ship report + snapshot + audit log + screenshots [vercel skip]",
-      "author": "unitonzengarden",
-      "committed_at": "2026-04-30T13:03:50Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/20cd69a129e6fc22da7605047aa58b612435ca7c"
-    },
-    {
-      "sha": "fe78bbfee7270b95931a083c19b754a13d8125cd",
-      "message": "feat(lane02): T-VN-001-005-V1 — Lịch Vạn Niên Phase 1 MVP (3 engines + 2 surfaces + Bazi-aware) (#43)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-04-30T12:55:26Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/fe78bbfee7270b95931a083c19b754a13d8125cd"
-    },
-    {
-      "sha": "962a088147621a31b0957e5cbd98d5f6bac0c2cf",
-      "message": "docs(canon): mirror Foundation v1.1 INDEX + footer fix [vercel skip] (#42)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-04-30T12:47:48Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/962a088147621a31b0957e5cbd98d5f6bac0c2cf"
-    },
-    {
-      "sha": "5fbdc2dab9a7f8459a98b4a38af5a321f7f0900f",
-      "message": "docs(canon): mirror Foundation OS v1.1 [vercel skip] (#41)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-04-30T12:28:44Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/5fbdc2dab9a7f8459a98b4a38af5a321f7f0900f"
     }
   ]
 }
