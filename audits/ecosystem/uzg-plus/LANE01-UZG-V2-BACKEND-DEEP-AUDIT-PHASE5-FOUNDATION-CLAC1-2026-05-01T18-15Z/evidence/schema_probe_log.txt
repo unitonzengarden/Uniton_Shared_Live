@@ -1,0 +1,53 @@
+SCHEMA PROBE LOG — Backend Deep Audit Phase 5 Foundation
+Date: 2026-05-02
+Target: https://kkhhpecofolmrodyeslp.supabase.co
+
+=== METHOD 1: execute_sql RPC ===
+POST /rest/v1/rpc/execute_sql {"query":"SELECT table_name FROM information_schema.tables..."}
+Result: HTTP 204 (no content) — execute_sql exists but returns empty for all queries
+Conclusion: execute_sql RPC is blocked from arbitrary SQL via custom policy
+
+=== METHOD 2: OpenAPI Spec ===
+GET /rest/v1/ → HTTP 200, 1.13 MB JSON
+Tables in spec: 192
+Table definitions: full column names, types, format, nullable
+RPC paths: 188 (/rpc/* paths)
+Method confirmed as PRIMARY
+
+=== METHOD 3: get_schema_tables RPC ===
+POST /rest/v1/rpc/get_schema_tables {} → HTTP 200
+Returns: [{table_name: "circle_members"}, ...] — list of 192 public tables
+Confirms OpenAPI count
+
+=== METHOD 4: pg_policies via REST ===
+GET /rest/v1/pg_policies → HTTP 404 {"code":"PGRST205","hint":"Perhaps you meant 'node_policies'"}
+pg_policies not exposed — RLS policy source = migrations
+
+=== METHOD 5: is_admin probe ===
+POST /rest/v1/rpc/is_admin {} → HTTP 200 "false"
+Service role is not "admin" in app RBAC — expected
+
+=== RPC CATALOG ===
+Source: OpenAPI /rpc/ paths
+Count: 188 functions
+
+=== ROW COUNTS (REST probes) ===
+profiles: 441
+posts: 236
+comments: 286
+reactions: 0
+circles: 3
+circle_members: 0
+wallet_accounts: 294
+wallet_ledger: 2374
+wallet_currencies: 3
+wallet_balances: 355
+wallet_transactions: 190
+wallet_conversion_rates: 6
+reward_events: 1942
+follows: 127
+orders: 6
+tickets: 22
+memberships: 135
+aier_license_tokens: 0
+

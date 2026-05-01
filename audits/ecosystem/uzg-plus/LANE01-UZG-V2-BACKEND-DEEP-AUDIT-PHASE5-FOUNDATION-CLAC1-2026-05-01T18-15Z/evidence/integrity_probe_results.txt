@@ -1,0 +1,53 @@
+INTEGRITY PROBE RESULTS — Backend Deep Audit Phase 5 Foundation
+Date: 2026-05-02
+Method: REST API probes via SERVICE_ROLE_KEY
+
+=== PROBE 1: wallet_ledger paired entries ===
+GET /rest/v1/wallet_ledger?select=direction,asset_code,amount,entry_type&limit=10&order=created_at.desc
+Sample: [
+  {"direction":"debit","asset_code":"UZG","amount":5,"entry_type":"transfer"},
+  {"direction":"credit","asset_code":"UZG","amount":5,"entry_type":"transfer"},
+  ...
+]
+Result: PASS — debit/credit pairs confirmed for transfer entries
+
+=== PROBE 2: wallet_transactions all completed ===
+GET /rest/v1/wallet_transactions?select=status&limit=200
+Result: {"completed":190} — 100% completed
+PASS — no stuck/pending/failed transactions
+
+=== PROBE 3: U→UZG conversion rate ===
+GET /rest/v1/wallet_conversion_rates?select=*
+Row 1: from_asset=U, to_asset=UZG, rate_numerator=1, rate_denominator=1000, is_active=true
+Effective: 1 U = 0.001 UZG
+PASS
+
+=== PROBE 4: UZG→U reverse disabled ===
+GET /rest/v1/wallet_conversion_rates?from_asset=eq.UZG
+from_asset=UZG, to_asset=U, is_active=false, disabled_reason=reverse_u_conversion_not_allowed
+PASS — reverse conversion intentionally disabled (Phase 1b5 decision)
+
+=== PROBE 5: wallet_balances is a view ===
+GET /rest/v1/wallet_balances?select=user_id,asset,balance&limit=3
+Returns: [{user_id,asset,balance}] — no id column, computed from ledger
+PASS — view confirmed
+
+=== PROBE 6: wallet_accounts < profiles (activation gap) ===
+wallet_accounts: 294 | profiles: 441
+Activation rate: 66.7%
+PASS — expected behavior, wallets created on first activity
+
+=== PROBE 7: wallet_currencies count ===
+GET /rest/v1/wallet_currencies?select=*
+3 rows: USD (USDc), VND (VNDc), UZG
+PASS
+
+=== PROBE 8: Edge Function auth gate ===
+POST wallet_convert_u_to_uzg (no JWT) → HTTP 401 auth_required
+POST wallet_spend_uzg (no JWT) → HTTP 401 auth_required
+PASS — financial operations require valid JWT
+
+=== PROBE 9: memberships.tier column ===
+GET /rest/v1/memberships?select=tier → HTTP 400 "column memberships.tier does not exist"
+Column is tier_id (FK) — DRIFT-04 confirmed
+
