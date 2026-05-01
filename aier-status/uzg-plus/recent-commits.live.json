@@ -1,9 +1,37 @@
 {
   "project_slug": "uzg-plus",
   "github_repo": "unitonzengarden/uzgplus-app",
-  "polled_at": "2026-05-01T00:06:19.804Z",
+  "polled_at": "2026-05-01T04:18:24.174Z",
   "count": 30,
   "commits": [
+    {
+      "sha": "a3466ce5744ccefe63d0ae5391a90eaef5dc6a0c",
+      "message": "feat(s4): wire CHAT module + 4 routes deployed to uzg.plus/v3/chat/* (#61)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-01T03:54:33Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/a3466ce5744ccefe63d0ae5391a90eaef5dc6a0c"
+    },
+    {
+      "sha": "9af6d508ea71323220669c40b494e1a6d9df4fa0",
+      "message": "docs(lane02): T-AIER-CROSS-001-V1 ship report + unified pack sample + 100/100 safety report + 4 screenshots [vercel skip]",
+      "author": "unitonzengarden",
+      "committed_at": "2026-05-01T02:58:57Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/9af6d508ea71323220669c40b494e1a6d9df4fa0"
+    },
+    {
+      "sha": "c93ec1cf2ef469bfec7164c482cc3dfe0b9c7215",
+      "message": "feat(lane02): LANE02-UZG-TAO-T-AIER-CROSS-001-V1 — AIER cross-context unified (4 modules) (#59)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-01T02:52:11Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/c93ec1cf2ef469bfec7164c482cc3dfe0b9c7215"
+    },
+    {
+      "sha": "53112706c06e6cf67d1b3a62dfb47a69b010ed3b",
+      "message": "feat(s4): UZG+ V3 CHAT module components (6 reusable + 2 hooks) (#58)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-01T02:33:03Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/53112706c06e6cf67d1b3a62dfb47a69b010ed3b"
+    },
     {
       "sha": "62255a636dd056559500b897fb088e440a9e1bbb",
       "message": "fix(v3-deploy): explicit /v3/* worker handler — _redirects ignored in advanced mode (#57)",
@@ -185,34 +213,6 @@
       "author": "Uniton Zen",
       "committed_at": "2026-04-30T12:28:44Z",
       "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/5fbdc2dab9a7f8459a98b4a38af5a321f7f0900f"
-    },
-    {
-      "sha": "8640c217d6bf6d69c33fcc4fb392001e5fa8d658",
-      "message": "docs(lane02): LANE02-UZG-TAO-T-PT-001-005-V1 ship report + snapshot + audit log + screenshots [vercel skip]",
-      "author": "unitonzengarden",
-      "committed_at": "2026-04-30T11:56:51Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/8640c217d6bf6d69c33fcc4fb392001e5fa8d658"
-    },
-    {
-      "sha": "a3a817bcd932f47d88dd9823d885c26498c1dd6d",
-      "message": "feat(lane02): T-PT-001-005-V1 — Phong Thủy V3 Basics (Cung Mệnh + Bát Trạch + 2 surfaces) (#40)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-04-30T11:49:48Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/a3a817bcd932f47d88dd9823d885c26498c1dd6d"
-    },
-    {
-      "sha": "2183f8be1aa5c125ffa0b1129015c2ed05d2ec88",
-      "message": "docs(lane02): LANE02-UZG-TAO-T-BAZI-019-022-V1 ship report + snapshot + audit log + screenshots [vercel skip]",
-      "author": "unitonzengarden",
-      "committed_at": "2026-04-30T11:10:49Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/2183f8be1aa5c125ffa0b1129015c2ed05d2ec88"
-    },
-    {
-      "sha": "e47f5ec6a910775fe222cdd62586c7261bfb8b66",
-      "message": "LANE02-UZG-TAO-T-BAZI-019-022-V1: Luck Pillars (Đại Vận) + Surface (Phase 2.1 Track 2) (#39)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-04-30T11:04:50Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/e47f5ec6a910775fe222cdd62586c7261bfb8b66"
     }
   ]
 }
