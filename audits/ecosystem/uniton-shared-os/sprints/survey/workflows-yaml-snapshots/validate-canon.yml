@@ -1,0 +1,48 @@
+name: Validate Canon
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Validate skill.yaml schema
+        run: |
+          pip install jsonschema pyyaml
+          for skill_yaml in skills/*/skill.yaml; do
+            python scripts/validate-skill.py "$skill_yaml"
+          done
+
+      - name: Check Tier 1 immutability
+        run: |
+          # Tier 1 canon files MUST NOT be modified in PR
+          CHANGED=$(git diff --name-only origin/main...HEAD -- docs/00_ECOSYSTEM_CANON/)
+          if [ -n "$CHANGED" ]; then
+            echo "❌ Tier 1 canon modified (forbidden):"
+            echo "$CHANGED"
+            exit 1
+          fi
+          echo "✅ Tier 1 canon: no modifications detected"
+
+      - name: Markdown lint
+        run: |
+          npm install -g markdownlint-cli
+          markdownlint "docs/**/*.md" --ignore "node_modules"
+
+      - name: Check amendment format
+        run: |
+          # If PR adds file to docs/02_AMENDMENTS/, must match naming convention
+          NEW_AMENDMENTS=$(git diff --name-only --diff-filter=A origin/main...HEAD -- docs/02_AMENDMENTS/)
+          if [ -n "$NEW_AMENDMENTS" ]; then
+            for f in $NEW_AMENDMENTS; do
+              python scripts/validate-amendment-format.py "$f"
+            done
+          else
+            echo "✅ No new amendments in this PR"
+          fi

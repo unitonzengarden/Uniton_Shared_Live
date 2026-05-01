@@ -1,0 +1,95 @@
+name: AIER Code Heartbeat
+
+# Per LANE01-INH-CODE-02-HEARTBEAT-7-CONDITION (Canon Amendment A1 §6.4 +
+# Whitepaper V3 §X.2). Pattern inherited from AIER Ops 7-condition heartbeat
+# (R-INHERIT-03: NO rebuild from scratch).
+#
+# Runs every 10 minutes via cron + on-demand via workflow_dispatch. Heartbeat
+# script writes single-source-of-truth state JSON (overwrite) and append-only
+# markdown ledger (R-CANON-02). Workflow then commits ledger updates back to
+# main with [vercel skip] marker.
+#
+# Authority: tech non-canon CI mode (LAW_N8 §L8.2 + AMD_LANE01_CTO_AUTO_APPROVE_TECH_NON_CANON
+# §3.1) — heartbeat ledger maintenance is operational, not canonical.
+#
+# Boundary: AIER Code OWN heartbeat data only. NO cross-write to Uniton_OS
+# (R-INTER-AIER-01).
+
+on:
+  schedule:
+    - cron: '*/10 * * * *'
+  workflow_dispatch:
+
+# Concurrency group prevents overlap when a slow run (e.g. push-rebase race)
+# overlaps the next scheduled tick. cancel-in-progress: false ensures every
+# scheduled tick eventually completes — heartbeat is meaningful only when
+# every tick runs.
+concurrency:
+  group: aier-code-heartbeat
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  heartbeat:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout dispatch ref (defaults to main on cron)
+        # github.ref is 'refs/heads/main' on schedule; on workflow_dispatch it
+        # is whichever branch the operator chose. This lets fix branches test
+        # checker changes via on-branch dispatch without merging first.
+        # Auto-commit step pushes back to whatever ref ran (cron → main;
+        # branch-dispatch → that branch — confined and safe).
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref }}
+          # Use admin PAT so push-back can bypass branch protection on main.
+          # GITHUB_TOKEN cannot bypass; admin PAT can because enforce_admins: false.
+          # See LANE01-WORKFLOW-FAILURES-FIX-V1 root-cause analysis (2026-04-30).
+          token: ${{ secrets.GH_TOKEN_AUTO_COMMIT != '' && secrets.GH_TOKEN_AUTO_COMMIT || secrets.GITHUB_TOKEN }}
+
+      - name: Setup Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Run heartbeat 7-condition checker
+        # continue-on-error: heartbeat exit-1 (unhealthy) must STILL commit
+        # the ledger entry — the FAIL signal is the value. Workflow run will
+        # be marked red by the next step's exit code passthrough.
+        id: heartbeat
+        continue-on-error: true
+        run: |
+          python scripts/heartbeat_checker.py
+          echo "exit_code=$?" >> "$GITHUB_OUTPUT"
+
+      - name: Commit + push heartbeat ledger (race-safe)
+        run: |
+          git config user.name "AIER Code Heartbeat"
+          git config user.email "aier-code-heartbeat@unitonfuture.local"
+          git add network/heartbeat/
+          # Skip empty commits if state JSON + ledger are byte-equal previous tick
+          if git diff --staged --quiet; then
+            echo "no staged diff — skipping commit"
+            exit 0
+          fi
+          git commit -m "AIER Code heartbeat $(date -u +%Y-%m-%dT%H:%M:%SZ) [vercel skip]"
+          # Pull-rebase before push to avoid races against other auto-commit workflows.
+          # Push to the dispatched ref (cron → main; branch-dispatch → that branch).
+          REF_NAME="${GITHUB_REF#refs/heads/}"
+          git pull --rebase origin "$REF_NAME" || true
+          git push origin "HEAD:$REF_NAME"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN_AUTO_COMMIT != '' && secrets.GH_TOKEN_AUTO_COMMIT || secrets.GITHUB_TOKEN }}
+
+      - name: Propagate heartbeat exit code
+        # If heartbeat itself returned non-zero (any of 7 conditions FAIL),
+        # mark the workflow run red so dashboards/alerts pick it up — even
+        # though the ledger commit succeeded.
+        run: |
+          if [ "${{ steps.heartbeat.outputs.exit_code }}" != "0" ]; then
+            echo "Heartbeat unhealthy — propagating exit code ${{ steps.heartbeat.outputs.exit_code }}"
+            exit 1
+          fi
+          echo "Heartbeat alive — all 7 conditions PASS"

@@ -1,0 +1,72 @@
+name: Lane Guardrails
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+jobs:
+  guardrails:
+    name: Enforce SHARED and Lane governance
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    env:
+      BEFORE_SHA: ${{ github.event.before }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Collect changed files and commit messages
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = "Stop"
+
+          if ($env:GITHUB_EVENT_NAME -eq "pull_request") {
+            git fetch origin $env:GITHUB_BASE_REF --depth=1
+            $base = "origin/$($env:GITHUB_BASE_REF)"
+            $changed = git diff --name-only "$base...HEAD"
+            $messages = git log --format=%s "$base..HEAD"
+          }
+          else {
+            $before = $env:BEFORE_SHA
+            if ($before -and $before -notmatch "^0+$") {
+              $changed = git diff --name-only "$before..HEAD"
+              $messages = git log --format=%s "$before..HEAD"
+            }
+            else {
+              $changed = git diff-tree --no-commit-id --name-only -r HEAD
+              $messages = git log -1 --format=%s
+            }
+          }
+
+          $changed | Where-Object { $_ -and $_.Trim().Length -gt 0 } | Set-Content -Path changed_files.txt
+          $messages | Where-Object { $_ -and $_.Trim().Length -gt 0 } | Set-Content -Path commit_messages.txt
+
+          Write-Host "Changed files:"
+          Get-Content changed_files.txt
+          Write-Host "Commit messages:"
+          Get-Content commit_messages.txt
+
+      - name: SHARED immutability
+        shell: pwsh
+        run: scripts/ci/check_shared_immutability.ps1 -ChangedFilesPath changed_files.txt -CommitMessagesPath commit_messages.txt
+
+      - name: Lane isolation and no build drift
+        shell: pwsh
+        run: scripts/ci/check_lane_isolation.ps1 -ChangedFilesPath changed_files.txt
+
+      - name: Required task deliverables
+        shell: pwsh
+        run: scripts/ci/check_deliverables.ps1 -ChangedFilesPath changed_files.txt -CommitMessagesPath commit_messages.txt
+
+      - name: Commit policy
+        shell: pwsh
+        run: scripts/ci/check_commit_policy.ps1 -CommitMessagesPath commit_messages.txt
+
+      - name: Topology consistency
+        shell: pwsh
+        run: scripts/ci/check_topology.ps1

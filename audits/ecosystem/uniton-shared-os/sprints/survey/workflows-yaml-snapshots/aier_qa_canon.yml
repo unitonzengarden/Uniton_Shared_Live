@@ -1,0 +1,141 @@
+name: AIER Canon QA Worker
+
+# Per V1.1 W2.T4 (LANE01-W2-T4-AIER-QA-CANON-V1).
+# Runs `scripts/workers/aier_qa_canon.py` to detect canon drift via 5 checks:
+# cross-reference integrity, redline citation coverage, AMENDMENTS_LOG
+# coverage, frontmatter consistency, pending amendments aging.
+#
+# Defense-in-depth: complements `aier-canon-guard` skill (PRE-execute block)
+# with POST-execute drift detection. Findings dispatched to Lane_03 (canon
+# owner) via dispatcher.py.
+#
+# Authority: tech non-canon CI mode per LAW_N8 §L8.2 explicitly enabled.
+# **workflow_dispatch only -- NO push trigger / NO cron / NO schedule** per
+# R-RUN-01..06 (no daemon, no autonomous execution beyond declared CI gate).
+# Lane EXPLICITLY invokes this workflow when ready to run a canon QA scan.
+
+on:
+  workflow_dispatch:
+    inputs:
+      check_mode:
+        description: 'Check mode (all = run all 5 canon checks; or single check name)'
+        required: false
+        default: 'all'
+        type: choice
+        options:
+          - all
+          - cross_reference_integrity
+          - redline_citation_coverage
+          - amendments_log_coverage
+          - frontmatter_consistency
+          - pending_amendments_aging
+      auto_dispatch:
+        description: 'If findings, dispatch task spec via dispatcher.py'
+        required: false
+        default: false
+        type: boolean
+      target_lane:
+        description: 'Lane to dispatch findings to (canon owner = Lane_03)'
+        required: false
+        default: 'Lane_03'
+        type: choice
+        options:
+          - Lane_03
+          - Lane_01
+
+permissions:
+  contents: write
+
+jobs:
+  canon_qa:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install jsonschema
+
+      - name: Run aier_qa_canon worker self-test
+        run: python scripts/workers/aier_qa_canon.py --self-test
+
+      - name: Run aier_qa_canon (scan-only or with auto_dispatch)
+        id: scan
+        run: |
+          mkdir -p canon_qa_reports
+          if [ "${{ inputs.auto_dispatch }}" = "true" ]; then
+            extra_args="--target-lane ${{ inputs.target_lane }}"
+          else
+            extra_args="--scan-only"
+          fi
+          if [ "${{ inputs.check_mode }}" = "all" ]; then
+            check_arg=""
+          else
+            check_arg="--check ${{ inputs.check_mode }}"
+          fi
+          python scripts/workers/aier_qa_canon.py $check_arg $extra_args | tee canon_qa_output.txt
+          # Find the latest canon QA report just written
+          latest_report=$(ls -t canon_qa_reports/AIER-CANON-QA-*.json 2>/dev/null | head -1 || echo "")
+          echo "latest_report=$latest_report" >> "$GITHUB_OUTPUT"
+          if [ -n "$latest_report" ]; then
+            total=$(python -c "import json; print(json.load(open('$latest_report'))['summary']['total_findings'])")
+            score=$(python -c "import json; print(json.load(open('$latest_report'))['canon_health_score'])")
+            echo "total_findings=$total" >> "$GITHUB_OUTPUT"
+            echo "canon_health_score=$score" >> "$GITHUB_OUTPUT"
+          else
+            echo "total_findings=0" >> "$GITHUB_OUTPUT"
+            echo "canon_health_score=100" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Upload canon QA report artifact
+        if: ${{ steps.scan.outputs.latest_report != '' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: aier-canon-qa-report
+          path: ${{ steps.scan.outputs.latest_report }}
+          retention-days: 30
+
+      - name: Commit canon QA report + dispatched task spec (if auto_dispatch)
+        if: ${{ inputs.auto_dispatch == true && steps.scan.outputs.latest_report != '' }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config user.name "AIER Canon QA Bot"
+          git config user.email "canon-qa-bot@unitonzengarden"
+          # Stage canon QA report + any dispatched message file targeted at the chosen lane
+          git add canon_qa_reports/ "handoffs/inbox/${{ inputs.target_lane }}/MSG-*.json" 2>/dev/null || true
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "[auto-canon-qa] aier-qa-canon ${{ steps.scan.outputs.latest_report }} ($(echo ${{ steps.scan.outputs.total_findings }}) findings; score ${{ steps.scan.outputs.canon_health_score }}/100) [vercel skip]"
+            # Pull-rebase before push to avoid races against other auto-commit workflows
+            # (auto_project_status, dispatch, aier_scan).
+            git pull --rebase origin main || true
+            git push
+          fi
+
+      - name: Output canon QA summary
+        if: ${{ always() }}
+        run: |
+          echo "## AIER Canon QA Summary" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "**Check mode:** \`${{ inputs.check_mode }}\`" >> "$GITHUB_STEP_SUMMARY"
+          echo "**Auto-dispatch:** \`${{ inputs.auto_dispatch }}\`" >> "$GITHUB_STEP_SUMMARY"
+          echo "**Target lane:** \`${{ inputs.target_lane }}\`" >> "$GITHUB_STEP_SUMMARY"
+          echo "**Total findings:** ${{ steps.scan.outputs.total_findings }}" >> "$GITHUB_STEP_SUMMARY"
+          echo "**Canon health score:** ${{ steps.scan.outputs.canon_health_score }}/100" >> "$GITHUB_STEP_SUMMARY"
+          echo "**Report:** \`${{ steps.scan.outputs.latest_report }}\`" >> "$GITHUB_STEP_SUMMARY"
+          if [ -f canon_qa_output.txt ]; then
+            echo "" >> "$GITHUB_STEP_SUMMARY"
+            echo '```' >> "$GITHUB_STEP_SUMMARY"
+            cat canon_qa_output.txt >> "$GITHUB_STEP_SUMMARY"
+            echo '```' >> "$GITHUB_STEP_SUMMARY"
+          fi

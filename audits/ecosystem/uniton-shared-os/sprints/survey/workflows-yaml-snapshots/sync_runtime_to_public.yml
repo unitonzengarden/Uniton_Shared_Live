@@ -1,0 +1,280 @@
+name: Sync Runtime to Public
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'runtime/current_state.md'
+      - 'runtime/checklist/MASTER_CHECKLIST.md'
+      - 'runtime/ACTION_REQUIRED_BOARD.md'
+      - 'runtime/PROJECT_STATUS.md'
+      - 'runtime/AIER_CONTEXT_PACKET.md'
+      - 'runtime/AIER_CONTEXT_PACKET.json'
+      - 'runtime/health/ECOSYSTEM_HEALTH_STATE.md'
+      - 'runtime/health/ECOSYSTEM_HEALTH_STATE.json'
+      - 'runtime/health/LATEST_VERIFIED_COMMITS.json'
+      - 'runtime/health/BLOCKERS_AND_RISKS.md'
+      - 'runtime/health/NEXT_SAFE_ACTION.md'
+      - 'notifications/NOTIFICATION_LEDGER.md'
+      - 'network/LANE_REGISTRY.md'
+      - 'network/ACTIVITY_FEED.md'
+      - 'network/task_queues/**'
+      # Live Ledger v1 namespaces (LANE01-LIVE-LEDGER-FOUNDATION)
+      - 'tasks/**'
+      - 'ledger/**'
+      - 'status/**'
+      - 'aier-status/**'
+      # aier-verify skill outputs (LANE01-SKILL-AIER-VERIFY-EXECUTABLE-V1)
+      - 'docs/LAW_CLA_LLM/SHARED/skills/aier-verify/results/**'
+      - 'docs/LAW_CLA_LLM/SHARED/skills/aier-verify/EXECUTION_LOG.live.md'
+      # Cross-published audits / system maps / handoffs (LANE01-CANON-V2-RECONCILIATION-V1, HD-03 fix)
+      # NB: *_audit.log files are EXCLUDED from the public mirror — operational
+      # logs may contain ephemeral details (paths, tokens, internal hostnames)
+      # that should not propagate to a public repository. Surface the audit
+      # report (.md) and snapshot (.json) instead. See LANE01-CANON-V2-
+      # RECONCILIATION-V1 incident note: 2026-04-29 push-protection block on
+      # leaked classic PAT in cross-published audit log → NTS action item.
+      - 'audits/ecosystem/**'
+      - 'system_maps/**'
+      - 'handoffs/inbox/**'
+      # LAWs + LAW index (LANE01-LAW-LANE-3-PUBLISH-V1-1-AND-QOT-CANON-UPDATE-V1)
+      - 'laws/**'
+      - 'LAW_INDEX_MASTER.md'
+      # Canon docs (LANE01-UZG-PLUS-UIUX-CANON-SPEC-AUTHOR-V1) — UI/UX canon + future canonical content
+      - 'canon/**'
+      # Governance docs (LANE01-CLA-PERSISTENT-REMINDERS-UPDATE-V2) — CLA persistent reminders + future governance content
+      - 'governance/**'
+      - '!runtime/archive/**'
+      - '!notifications/archive/**'
+      - '!tasks/archive/**'
+      - '!audits/archive/**'
+      - '!audits/**/*_audit.log'
+      - '!audits/**/*.log'
+      - '!handoffs/_archive/**'
+  workflow_dispatch:
+
+  # Self-healing trigger chain (LANE01-LIVE-LEDGER-TRIGGER-FIX 2026-04-29).
+  # Fires when an auto workflow finishes — necessary because those workflows
+  # commit using the default GITHUB_TOKEN, which by GitHub Actions design does
+  # NOT trigger downstream workflows on push (anti-loop protection). Without
+  # this trigger, the public mirror goes stale every time auto_project_status
+  # or aier_code_heartbeat regenerates state surfaces.
+  #
+  # Workflow names below MUST match the `name:` field of the target workflows
+  # exactly (case-sensitive). Verified 2026-04-29 against repo HEAD:
+  #   .github/workflows/auto_project_status.yml:1  name: Auto PROJECT_STATUS Regenerate
+  #   .github/workflows/aier_code_heartbeat.yml:1  name: AIER Code Heartbeat
+  workflow_run:
+    workflows:
+      - "Auto PROJECT_STATUS Regenerate"
+      - "AIER Code Heartbeat"
+    types:
+      - completed
+    branches:
+      - main
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    # Skip the run if the upstream workflow_run trigger came from a failed
+    # workflow — no point syncing state that an upstream job failed to
+    # regenerate. Push and workflow_dispatch always proceed.
+    if: |
+      github.event_name == 'push' ||
+      github.event_name == 'workflow_dispatch' ||
+      (github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success')
+    steps:
+      - name: Checkout source (private)
+        uses: actions/checkout@v4
+        with:
+          path: source
+
+      - name: Checkout target (public)
+        uses: actions/checkout@v4
+        with:
+          repository: unitonzengarden/Uniton_Shared_Live
+          token: ${{ secrets.LIVE_SYNC_TOKEN }}
+          path: target
+
+      - name: Copy runtime files
+        run: |
+          mkdir -p target/runtime/checklist
+          mkdir -p target/runtime/health
+          mkdir -p target/notifications
+          mkdir -p target/network
+          cp source/runtime/current_state.md target/runtime/current_state.md || echo "current_state.md not found, skip"
+          cp source/runtime/checklist/MASTER_CHECKLIST.md target/runtime/checklist/MASTER_CHECKLIST.md || echo "MASTER_CHECKLIST.md not found, skip"
+          cp source/runtime/ACTION_REQUIRED_BOARD.md target/runtime/ACTION_REQUIRED_BOARD.md || echo "ACTION_REQUIRED_BOARD.md not found, skip"
+          cp source/runtime/PROJECT_STATUS.md target/runtime/PROJECT_STATUS.md || echo "PROJECT_STATUS.md not found, skip"
+          cp source/runtime/AIER_CONTEXT_PACKET.md target/runtime/AIER_CONTEXT_PACKET.md || echo "AIER_CONTEXT_PACKET.md not found, skip"
+          cp source/runtime/AIER_CONTEXT_PACKET.json target/runtime/AIER_CONTEXT_PACKET.json || echo "AIER_CONTEXT_PACKET.json not found, skip"
+          cp source/runtime/health/ECOSYSTEM_HEALTH_STATE.md target/runtime/health/ECOSYSTEM_HEALTH_STATE.md || echo "ECOSYSTEM_HEALTH_STATE.md not found, skip"
+          cp source/runtime/health/ECOSYSTEM_HEALTH_STATE.json target/runtime/health/ECOSYSTEM_HEALTH_STATE.json || echo "ECOSYSTEM_HEALTH_STATE.json not found, skip"
+          cp source/runtime/health/LATEST_VERIFIED_COMMITS.json target/runtime/health/LATEST_VERIFIED_COMMITS.json || echo "LATEST_VERIFIED_COMMITS.json not found, skip"
+          cp source/runtime/health/BLOCKERS_AND_RISKS.md target/runtime/health/BLOCKERS_AND_RISKS.md || echo "BLOCKERS_AND_RISKS.md not found, skip"
+          cp source/runtime/health/NEXT_SAFE_ACTION.md target/runtime/health/NEXT_SAFE_ACTION.md || echo "NEXT_SAFE_ACTION.md not found, skip"
+          cp source/notifications/NOTIFICATION_LEDGER.md target/notifications/NOTIFICATION_LEDGER.md || echo "NOTIFICATION_LEDGER.md not found, skip"
+          cp source/network/LANE_REGISTRY.md target/network/LANE_REGISTRY.md || echo "LANE_REGISTRY.md not found, skip"
+          cp source/network/ACTIVITY_FEED.md target/network/ACTIVITY_FEED.md || echo "ACTIVITY_FEED.md not found, skip"
+          mkdir -p target/network/task_queues
+          if [ -d source/network/task_queues ]; then
+            cp source/network/task_queues/*.md target/network/task_queues/ 2>/dev/null || echo "task_queues empty, skip"
+          fi
+          # Live Ledger v1 namespaces (LANE01-LIVE-LEDGER-FOUNDATION).
+          # rsync-style recursive copy preserves nested layout (e.g. tasks/completed/<date>/).
+          # --update + delete-extras semantics not used: target tracks source 1:1 (sync bot owns target).
+          for ns in tasks ledger status aier-status; do
+            if [ -d "source/$ns" ]; then
+              mkdir -p "target/$ns"
+              cp -R "source/$ns/." "target/$ns/" 2>/dev/null || echo "$ns copy partial, continuing"
+            fi
+          done
+          # aier-verify skill results + execution log (LANE01-SKILL-AIER-VERIFY-EXECUTABLE-V1).
+          # Surfaces under skills/aier-verify/ at the mirror root so NTS can fetch via:
+          #   https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/skills/aier-verify/...
+          mkdir -p target/skills/aier-verify
+          if [ -d source/docs/LAW_CLA_LLM/SHARED/skills/aier-verify/results ]; then
+            mkdir -p target/skills/aier-verify/results
+            cp -R source/docs/LAW_CLA_LLM/SHARED/skills/aier-verify/results/. target/skills/aier-verify/results/ 2>/dev/null || echo "aier-verify/results copy partial"
+          fi
+          if [ -f source/docs/LAW_CLA_LLM/SHARED/skills/aier-verify/EXECUTION_LOG.live.md ]; then
+            cp source/docs/LAW_CLA_LLM/SHARED/skills/aier-verify/EXECUTION_LOG.live.md target/skills/aier-verify/EXECUTION_LOG.live.md
+          fi
+          # Cross-published audits + system maps + handoffs (LANE01-CANON-V2-RECONCILIATION-V1).
+          # Uses cp -R to mirror the directory subtree, then strips operational
+          # log files from the audits subtree before pushing to the public
+          # mirror. See LANE01-CANON-V2-RECONCILIATION-V1 incident note.
+          for ns in audits/ecosystem system_maps handoffs/inbox; do
+            if [ -d "source/$ns" ]; then
+              mkdir -p "target/$ns"
+              cp -R "source/$ns/." "target/$ns/" 2>/dev/null || echo "$ns copy partial, continuing"
+            fi
+          done
+          # Strip *_audit.log + *.log under audits/ before push (push-protection
+          # safety net + canonical 'public mirror = report + snapshot, never
+          # operational log').
+          if [ -d target/audits ]; then
+            find target/audits -type f \( -name '*_audit.log' -o -name '*.log' \) -print -delete || true
+          fi
+          # LAWs + LAW index (LANE01-LAW-LANE-3-PUBLISH-V1-1-AND-QOT-CANON-UPDATE-V1)
+          if [ -d source/laws ]; then
+            mkdir -p target/laws
+            cp -R source/laws/. target/laws/ 2>/dev/null || echo "laws/ copy partial, continuing"
+          fi
+          if [ -f source/LAW_INDEX_MASTER.md ]; then
+            cp source/LAW_INDEX_MASTER.md target/LAW_INDEX_MASTER.md
+          fi
+          # Canon docs (LANE01-UZG-PLUS-UIUX-CANON-SPEC-AUTHOR-V1)
+          if [ -d source/canon ]; then
+            mkdir -p target/canon
+            cp -R source/canon/. target/canon/ 2>/dev/null || echo "canon/ copy partial, continuing"
+          fi
+          # Governance docs (LANE01-CLA-PERSISTENT-REMINDERS-UPDATE-V2)
+          if [ -d source/governance ]; then
+            mkdir -p target/governance
+            cp -R source/governance/. target/governance/ 2>/dev/null || echo "governance/ copy partial, continuing"
+          fi
+
+      - name: Generate SYNC_INFO.md
+        run: |
+          cd target
+          cat > SYNC_INFO.md <<EOF
+          # Uniton_Shared_Live — Sync Info
+
+          **Source repo**: unitonzengarden/Uniton_Shared (private)
+          **Last sync**: $(date -u +"%Y-%m-%dT%H:%M:%SZ")
+          **Source commit**: ${{ github.sha }}
+          **Triggered by**: ${{ github.event_name }}
+
+          ## Purpose
+
+          Public mirror of runtime state files for CLA chat to fetch.
+          Canon, laws, skills, lab, rules remain private in Uniton_Shared.
+
+          ## Files synced
+
+          - runtime/current_state.md
+          - runtime/checklist/MASTER_CHECKLIST.md
+          - runtime/ACTION_REQUIRED_BOARD.md
+          - runtime/PROJECT_STATUS.md
+          - runtime/AIER_CONTEXT_PACKET.md
+          - runtime/AIER_CONTEXT_PACKET.json
+          - runtime/health/ECOSYSTEM_HEALTH_STATE.md
+          - runtime/health/ECOSYSTEM_HEALTH_STATE.json
+          - runtime/health/LATEST_VERIFIED_COMMITS.json
+          - runtime/health/BLOCKERS_AND_RISKS.md
+          - runtime/health/NEXT_SAFE_ACTION.md
+          - notifications/NOTIFICATION_LEDGER.md
+          - network/LANE_REGISTRY.md
+          - network/ACTIVITY_FEED.md
+
+          ## CLA fetch URLs (raw)
+
+          - https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/runtime/current_state.md
+          - https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/runtime/checklist/MASTER_CHECKLIST.md
+          - https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/runtime/ACTION_REQUIRED_BOARD.md
+          - https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/runtime/PROJECT_STATUS.md
+          - https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/runtime/AIER_CONTEXT_PACKET.md
+          - https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/runtime/AIER_CONTEXT_PACKET.json
+          - https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/runtime/health/ECOSYSTEM_HEALTH_STATE.md
+          - https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/runtime/health/ECOSYSTEM_HEALTH_STATE.json
+          - https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/runtime/health/LATEST_VERIFIED_COMMITS.json
+          - https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/runtime/health/BLOCKERS_AND_RISKS.md
+          - https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/runtime/health/NEXT_SAFE_ACTION.md
+          - https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/notifications/NOTIFICATION_LEDGER.md
+          - https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/network/LANE_REGISTRY.md
+          - https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/network/ACTIVITY_FEED.md
+          - https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/network/task_queues/Lane_01.md
+          - https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/network/task_queues/Lane_02.md
+          - https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/network/task_queues/Lane_03.md
+
+          ## Live Ledger v1 surfaces (LANE01-LIVE-LEDGER-FOUNDATION)
+
+          - https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/status/DASHBOARD.live.md
+          - https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/status/BLOCKERS.live.md
+          - https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/status/NEXT_ACTIONS.live.md
+          - https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/ledger/decisions.live.md
+          - https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/ledger/canon-changes.live.md
+          - https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/ledger/deploy-events.live.md
+          - https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/ledger/halt-events.live.md
+          - https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/aier-status/aier-code/state.live.json
+          - https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/aier-status/aier-code/heartbeat.live.json
+          - https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/aier-status/aier-code/brain-pointer.live.md
+
+          ## Ecosystem state poll (LANE01-AIER-CODE-UZG-PLUS-RUNTIME-NAMESPACE-V1)
+
+          - https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/aier-status/aier-ops/repo-state.live.json
+          - https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/aier-status/uzg-plus/repo-state.live.json
+          - https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/aier-status/uzg-plus/recent-commits.live.json
+          - https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/aier-status/uzg-plus/open-prs.live.json
+          - https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/aier-status/uzg-plus/ci-status.live.json
+          - https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/aier-status/aifi-life/repo-state.live.json
+          - https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/aier-status/aier-life-super/repo-state.live.json
+          - (tasks/completed/<YYYY-MM-DD>/<TASK-ID>.live.json — date-rooted; see tasks/INDEX.live.md when present)
+
+          ## aier-verify skill outputs (LANE01-SKILL-AIER-VERIFY-EXECUTABLE-V1)
+
+          - https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/skills/aier-verify/EXECUTION_LOG.live.md
+          - https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/skills/aier-verify/results/<TASK-ID>.verify.json
+
+          ## Audits + system maps + handoffs (LANE01-CANON-V2-RECONCILIATION-V1, HD-03 fix)
+
+          - https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/audits/ecosystem/uzg-plus/LANE01-UZG-PLUS-AUDIT-AND-SYSTEM-MAP-V1_REPORT.md
+          - https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/audits/ecosystem/uzg-plus/CANON_V2_RECONCILIATION_PROPOSAL.md
+          - https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/system_maps/UZG_PLUS_SYSTEM_MAP_V1.md
+          - https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/system_maps/UZG_PLUS_SYSTEM_MAP_V1.json
+          - (handoffs/inbox/<lane>/<MSG-...>.json — fetch by exact path)
+          EOF
+
+      - name: Commit + push to public
+        run: |
+          cd target
+          git config user.name "AIER Code Sync Bot"
+          git config user.email "sync-bot@unitonzengarden"
+          git add -A
+          if git diff --staged --quiet; then
+            echo "No changes to sync"
+          else
+            git commit -m "sync: runtime state from ${{ github.sha }}"
+            git push
+          fi

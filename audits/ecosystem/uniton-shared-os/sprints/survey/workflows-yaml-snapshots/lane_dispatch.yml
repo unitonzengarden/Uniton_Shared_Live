@@ -1,0 +1,112 @@
+name: Lane Dispatch
+
+# Per V1.1 W2-MASTER-TASK-LIST (LANE01-W2-MASTER-TASK-LIST-COMMIT-AND-BATCH-AUTHOR-V1).
+# Surfaces the next READY task spec from a Lane's queue (network/task_queues/Lane_NN.md)
+# for the operator to copy into CLAC. CRITICAL: this workflow does NOT execute the
+# task itself — task execution remains a human-driven CLAC chat operation.
+#
+# Authority: tech non-canon CI mode per LAW_N8 §L8.2 explicitly enabled.
+# **workflow_dispatch only -- NO push trigger / NO cron / NO schedule** per
+# R-RUN-01..06 (no daemon, no autonomous execution beyond declared CI gate).
+# Lane operator EXPLICITLY invokes when ready to fetch the next task.
+
+on:
+  workflow_dispatch:
+    inputs:
+      lane_id:
+        description: 'Lane id (Lane_01 / Lane_02 / Lane_03 / Lane_04)'
+        required: true
+        default: 'Lane_01'
+        type: choice
+        options:
+          - Lane_01
+          - Lane_02
+          - Lane_03
+          - Lane_04
+      task_id:
+        description: 'Optional: specific task_id to fetch spec (overrides --pick-next; for re-fetch)'
+        required: false
+        default: ''
+        type: string
+      auto_chain:
+        description: 'Optional: continue chain after current task DONE (placeholder; v1 = false)'
+        required: false
+        default: false
+        type: boolean
+
+permissions:
+  contents: read
+
+jobs:
+  dispatch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Setup Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install jsonschema pyyaml
+
+      - name: Run lane_dispatch self-test
+        run: python scripts/runtime/lane_dispatch.py --self-test
+
+      - name: Lane status snapshot
+        run: |
+          python scripts/runtime/lane_dispatch.py --lane ${{ inputs.lane_id }} --status
+
+      - name: Pick next task (or fetch specific)
+        id: pick
+        run: |
+          mkdir -p /tmp/lane_dispatch
+          if [ -n "${{ inputs.task_id }}" ]; then
+            # Specific task fetch
+            echo "Fetching spec for explicit task_id: ${{ inputs.task_id }}"
+            cat task_specs/${{ inputs.task_id }}.md 2>/dev/null > /tmp/lane_dispatch/spec.md || echo "task spec not found: task_specs/${{ inputs.task_id }}.md" > /tmp/lane_dispatch/spec.md
+            echo "task_id=${{ inputs.task_id }}" >> "$GITHUB_OUTPUT"
+          else
+            # Pick next READY for the lane
+            python scripts/runtime/lane_dispatch.py --lane ${{ inputs.lane_id }} --pick-next | tee /tmp/lane_dispatch/pick_output.txt
+            # Extract the task_id from output line "NEXT_TASK_ID: <id>"
+            next_id=$(grep "^NEXT_TASK_ID:" /tmp/lane_dispatch/pick_output.txt | head -1 | awk '{print $2}')
+            echo "task_id=$next_id" >> "$GITHUB_OUTPUT"
+            cp /tmp/lane_dispatch/pick_output.txt /tmp/lane_dispatch/spec.md
+          fi
+
+      - name: Surface task spec to step summary
+        if: ${{ always() }}
+        run: |
+          echo "## Lane Dispatch — Next Task" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "**Lane:** \`${{ inputs.lane_id }}\`" >> "$GITHUB_STEP_SUMMARY"
+          echo "**Task ID:** \`${{ steps.pick.outputs.task_id }}\`" >> "$GITHUB_STEP_SUMMARY"
+          echo "**Auto-chain:** \`${{ inputs.auto_chain }}\` (v1 placeholder; not active)" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "### Task Spec" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          if [ -f /tmp/lane_dispatch/spec.md ]; then
+            cat /tmp/lane_dispatch/spec.md >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "_(no spec content captured)_" >> "$GITHUB_STEP_SUMMARY"
+          fi
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "### Next operator action" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "1. Copy the task spec above into CLAC for execution" >> "$GITHUB_STEP_SUMMARY"
+          echo "2. After CLAC reports task PASS with commit SHA, run:" >> "$GITHUB_STEP_SUMMARY"
+          echo "   \`python scripts/runtime/lane_dispatch.py --lane ${{ inputs.lane_id }} --mark-done <TASK_ID> --commit-sha <SHA>\`" >> "$GITHUB_STEP_SUMMARY"
+          echo "3. Re-run \`gh workflow run lane_dispatch.yml -f lane_id=${{ inputs.lane_id }}\` for the next task" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload spec artifact
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: lane-dispatch-spec-${{ inputs.lane_id }}
+          path: /tmp/lane_dispatch/spec.md
+          retention-days: 7

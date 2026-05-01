@@ -1,0 +1,19 @@
+=== Workflow summaries ===
+aier_code_heartbeat | AIER Code Heartbeat | triggers: schedule,workflow_dispatch | 95 lines
+aier_qa_canon | AIER Canon QA Worker | triggers: workflow_dispatch | 141 lines
+aier_qa_loop | AIER QA Loop Coordinator | triggers: workflow_dispatch | 150 lines
+aier_qa_skill | AIER Skill QA Worker | triggers: workflow_dispatch | 139 lines
+aier_scan | AIER Scan Worker | triggers: workflow_dispatch | 121 lines
+aier_verify | AIER Verify Skill | triggers: push,workflow_dispatch | 133 lines
+auto_project_status | Auto PROJECT_STATUS Regenerate | triggers: push,workflow_dispatch | 119 lines
+build-artifacts | Build Artifacts | triggers: push | 49 lines
+dispatch | Dispatch Task Spec | triggers: workflow_dispatch | 110 lines
+ecosystem_state_poll | Ecosystem State Poll | triggers: schedule,workflow_dispatch | 88 lines
+handoff_validator | Handoff Validator | triggers: pull_request,push | 110 lines
+lane-guardrails | Lane Guardrails | triggers: pull_request,push | 72 lines
+lane_dispatch | Lane Dispatch | triggers: workflow_dispatch | 112 lines
+preflight_validator | Pre-Flight Validator | triggers: pull_request,push | 124 lines
+sync_runtime_to_public | Sync Runtime to Public | triggers: push,workflow_dispatch,workflow_run | 280 lines
+tag-release | Tag Release | triggers: workflow_dispatch | 51 lines
+task_prompt_validator | Task Prompt Validator | triggers: pull_request,push | 100 lines
+validate-canon | Validate Canon | triggers: pull_request | 48 lines

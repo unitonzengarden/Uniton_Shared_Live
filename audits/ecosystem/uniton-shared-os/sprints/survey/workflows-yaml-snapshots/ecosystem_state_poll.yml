@@ -1,0 +1,88 @@
+name: Ecosystem State Poll
+
+on:
+  schedule:
+    - cron: '*/15 * * * *'   # every 15 minutes
+  workflow_dispatch:
+    inputs:
+      repo:
+        description: 'Slug to poll (leave empty for all)'
+        required: false
+        default: ''
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ecosystem-state-poll
+  cancel-in-progress: false
+
+jobs:
+  poll:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # Use admin PAT so push-back can bypass branch protection on main.
+          # See LANE01-WORKFLOW-FAILURES-FIX-V1 root-cause analysis (2026-04-30).
+          token: ${{ secrets.GH_TOKEN_AUTO_COMMIT != '' && secrets.GH_TOKEN_AUTO_COMMIT || secrets.GITHUB_TOKEN }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Run poller
+        env:
+          # Use admin PAT (set 2026-04-30 post LANE01-WORKFLOW-FAILURES-FIX-V1)
+          # which has org-wide read scope so cross-repo polls succeed on all
+          # 5 ecosystem repos. Falls back to legacy GH_TOKEN_ECOSYSTEM (if still
+          # set) then GITHUB_TOKEN (this repo only — placeholders for cross-repo).
+          GH_TOKEN: ${{ secrets.GH_TOKEN_AUTO_COMMIT != '' && secrets.GH_TOKEN_AUTO_COMMIT || (secrets.GH_TOKEN_ECOSYSTEM != '' && secrets.GH_TOKEN_ECOSYSTEM || secrets.GITHUB_TOKEN) }}
+        run: |
+          if [ -n "${{ github.event.inputs.repo }}" ]; then
+            node scripts/ecosystem_state_poller.cjs --repo="${{ github.event.inputs.repo }}"
+          else
+            node scripts/ecosystem_state_poller.cjs
+          fi
+
+      - name: Commit if state changed
+        shell: bash
+        run: |
+          set -eu
+          git config user.name "Ecosystem Poller Bot"
+          git config user.email "ecosystem-poller@unitonzengarden.local"
+          if git status --porcelain aier-status/ | grep -q .; then
+            git add aier-status/
+            git commit -m "poll: ecosystem state update [vercel skip]" \
+              -m "Triggered by ${{ github.event_name }}; commit ${{ github.sha }}"
+            # Pull-rebase before push to avoid races against other auto-commit
+            # workflows (LANE01-WORKFLOW-FAILURES-FIX-V1 KL-D — race-safe push).
+            git pull --rebase origin main || true
+            git push origin HEAD:main
+          else
+            echo "No aier-status/ changes to commit."
+          fi
+
+      - name: Summarise verdicts
+        if: always()
+        shell: bash
+        run: |
+          set +e
+          {
+            echo "## Ecosystem state poll summary"
+            echo ""
+            echo "Trigger: ${{ github.event_name }}  ·  Commit: ${{ github.sha }}"
+            echo ""
+            echo "| Slug | Poll status | HEAD SHA | Open PRs | Open issues | Last CI |"
+            echo "|---|---|---|---|---|---|"
+            for f in aier-status/*/state.live.json; do
+              [ -f "$f" ] || continue
+              node -e "
+                const s=require('./'+'$f');
+                const sha=s.head_sha?s.head_sha.slice(0,7):'n/a';
+                const prs=s.open_prs_count??'?';
+                const iss=s.open_issues_count??'?';
+                const ci=s.last_workflow_run_status??'n/a';
+                process.stdout.write(\`| \${s.project_slug} | \${s.poll_status} | \${sha} | \${prs} | \${iss} | \${ci} |\n\`);
+              "
+            done
+          } >> "$GITHUB_STEP_SUMMARY"

@@ -1,0 +1,119 @@
+name: Auto PROJECT_STATUS Regenerate
+
+# Per V1.1 W2.T1 (LANE01-W2-T1-PROJECT-STATUS-AUTO-V1).
+# Caller of aier-state-update SHARED skill v1.0 ACTIVE.
+# Authority: tech non-canon CI mode per LAW_N8 §L8.2 explicitly enabled
+# (state-mirror auto-regenerate scope only); push-trigger + workflow_dispatch
+# only — NO cron/schedule (R-RUN-01..06: no daemon, no scheduler, no
+# autonomous execution beyond declared CI gate).
+#
+# Output: runtime/PROJECT_STATUS.md (auto-committed back to main with [auto-status]
+# marker — the marker also keeps this workflow from re-triggering on its own
+# auto-commits because the paths filter does NOT include PROJECT_STATUS.md
+# itself).
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'runtime/current_state.md'
+      - 'runtime/checklist/MASTER_CHECKLIST.md'
+      - 'runtime/ACTION_REQUIRED_BOARD.md'
+      - 'notifications/NOTIFICATION_LEDGER.md'
+      - 'docs/LAW_CLA_LLM/SHARED/amendments/AMENDMENTS_LOG.md'
+      - 'docs/LAW_CLA_LLM/SHARED/skills/**/METADATA.yaml'
+      - 'docs/LAW_CLA_LLM/LANE_*/lane_laws/**'
+      - 'audit_logs/**'
+      - 'network/task_queues/**'
+      - 'scan_reports/**'
+      - 'canon_qa_reports/**'
+      - 'skill_qa_reports/**'
+      - 'qa_loop_reports/**'
+      - '!runtime/archive/**'
+      - '!notifications/archive/**'
+      - '!runtime/PROJECT_STATUS.md'
+      - '!network/LANE_REGISTRY.md'
+      - '!network/ACTIVITY_FEED.md'
+  workflow_dispatch:
+
+# Concurrency group prevents lost updates when multiple pushes land within
+# a short window. cancel-in-progress: false ensures every state-changing push
+# eventually generates a fresh PROJECT_STATUS — no skipped updates.
+concurrency:
+  group: project-status-update
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  regenerate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          # Use admin PAT so push-back can bypass branch protection on main.
+          # See LANE01-WORKFLOW-FAILURES-FIX-V1 root-cause analysis (2026-04-30).
+          token: ${{ secrets.GH_TOKEN_AUTO_COMMIT != '' && secrets.GH_TOKEN_AUTO_COMMIT || secrets.GITHUB_TOKEN }}
+
+      - name: Setup Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install minimal dependencies
+        # Generator uses stdlib only; no requirements.txt needed.
+        run: python --version
+
+      - name: Run generate_project_status.py self-test
+        env:
+          AIER_TASK_ID: auto_project_status_workflow_selftest
+        run: python scripts/runtime/generate_project_status.py --self-test
+
+      - name: Run generate_lane_registry.py self-test
+        env:
+          AIER_TASK_ID: auto_lane_registry_workflow_selftest
+        run: python scripts/runtime/generate_lane_registry.py --self-test
+
+      - name: Run generate_activity_feed.py self-test
+        env:
+          AIER_TASK_ID: auto_activity_feed_workflow_selftest
+        run: python scripts/runtime/generate_activity_feed.py --self-test
+
+      - name: Run generate_project_status.py
+        env:
+          AIER_TASK_ID: auto_project_status_workflow
+        id: regen
+        run: |
+          python scripts/runtime/generate_project_status.py
+          python scripts/runtime/generate_lane_registry.py
+          python scripts/runtime/generate_activity_feed.py
+          # Compare against committed version (any of 3 surfaces may have changed)
+          if git diff --quiet runtime/PROJECT_STATUS.md network/LANE_REGISTRY.md network/ACTIVITY_FEED.md 2>/dev/null; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "no diff — runtime/network surfaces unchanged"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+            echo "runtime/network surfaces regenerated (content changed)"
+          fi
+
+      - name: Commit + push regenerated runtime/network surfaces (race-safe)
+        if: steps.regen.outputs.changed == 'true'
+        run: |
+          git config user.name "AIER State Bot"
+          git config user.email "state-bot@unitonzengarden"
+          git add runtime/PROJECT_STATUS.md network/LANE_REGISTRY.md network/ACTIVITY_FEED.md
+          # Skip empty commits if any one of the 3 generators is idempotent for this push
+          git diff --staged --quiet && echo "no staged diff — skipping commit" && exit 0
+          git commit -m "[auto-status] regen runtime+network surfaces from ${GITHUB_SHA::7} [vercel skip]"
+          # Pull-rebase before push to avoid races against other auto-commit workflows
+          git pull --rebase origin main || true
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN_AUTO_COMMIT != '' && secrets.GH_TOKEN_AUTO_COMMIT || secrets.GITHUB_TOKEN }}
+
+      - name: Skip note (no change)
+        if: steps.regen.outputs.changed == 'false'
+        run: echo "Idempotent skip — no commit issued (3 surfaces byte-equal previous)."
