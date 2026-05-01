@@ -1,0 +1,36 @@
+BUNDLE MARKERS — Sprint 5.4 WALLET Direct Edge Functions
+Date: 2026-05-02
+
+=== KL-05 DUAL-TREE VERIFICATION ===
+Files synced: 34 (types + lib + hooks + components + pages)
+Verification: diff apps/uzg-pwa/src/types/walletV3.ts src/types/walletV3.ts → BYTE-IDENTICAL
+Verification: diff apps/uzg-pwa/src/lib/supabaseEdgeFunctions.ts src/lib/supabaseEdgeFunctions.ts → BYTE-IDENTICAL
+
+=== AC-13 NO V2 EXPRESS CALLS ===
+Test: p5-4-wallet.spec.mjs "no /api/v1 calls emitted by wallet routes"
+Method: Playwright request listener on page.on('request')
+Result: PASS — wallet_balances + wallet_currencies read via Supabase JS client
+        Edge Functions called via direct fetch() to SUPABASE_URL
+        NO /api/v1/* requests detected from /v3/wallet routes
+
+=== COMMIT SHA ===
+UZGPLUS repo: 8e7bee6 (feature branch) → af3a26f (main, squash merge)
+PR: unitonzengarden/uzgplus-app#83
+Branch: feature/v3-p5-4-wallet-direct-edge
+
+=== COMPONENTS REGISTERED ===
+wallet-v3/index.ts exports:
+  WalletShellV3, WalletOverviewV3, AssetCardV3, AssetDetailV3,
+  TransactionListV3, TransactionRowV3, WalletSkeletonV3,
+  WalletEmptyStateV3, WalletErrorStateV3,
+  ConvertOverlayV3, ConvertConfirmV3, ConvertSuccessV3
+
+=== DATA ATTRIBUTES ===
+data-component="wallet-shell-v3"    → WalletShellV3
+data-component="wallet-overview-v3" → WalletOverviewV3
+data-component="asset-detail-v3"    → AssetDetailV3
+data-component="wallet-empty-v3"    → WalletEmptyStateV3
+data-component="wallet-error-v3"    → WalletErrorStateV3
+data-component="convert-confirm-v3" → ConvertConfirmV3
+data-component="convert-success-v3" → ConvertSuccessV3
+data-component="transaction-list-v3"→ TransactionListV3

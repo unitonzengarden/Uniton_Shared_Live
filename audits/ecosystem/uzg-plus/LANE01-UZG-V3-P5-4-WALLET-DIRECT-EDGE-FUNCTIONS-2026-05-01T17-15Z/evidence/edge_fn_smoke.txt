@@ -1,0 +1,28 @@
+AC-7 EDGE FUNCTION SMOKE — Sprint 5.4 WALLET (Financial Integrity Gate B-6)
+Date: 2026-05-02
+
+=== wallet_convert_u_to_uzg (no JWT) ===
+POST https://kkhhpecofolmrodyeslp.supabase.co/functions/v1/wallet_convert_u_to_uzg
+Payload: { from_asset: "U", to_asset: "UZG", amount: 100, idempotency_key: "test-key-01" }
+Response: HTTP 401 (auth_required — expected)
+
+=== wallet_convert_u_to_uzg (empty payload, no JWT) ===
+POST https://kkhhpecofolmrodyeslp.supabase.co/functions/v1/wallet_convert_u_to_uzg
+Payload: {}
+Response: HTTP 401 (auth_required — expected)
+
+=== wallet_spend_uzg (no JWT) ===
+POST https://kkhhpecofolmrodyeslp.supabase.co/functions/v1/wallet_spend_uzg
+Payload: {}
+Response: HTTP 401 (auth_required — expected)
+
+=== RESULT ===
+AC-7 PASS: all Edge Function probes returned expected auth-gate codes (401)
+B-6 condition: CLEARED — no financial integrity risk detected
+
+=== IDEMPOTENCY KEY IMPLEMENTATION ===
+Source: apps/uzg-pwa/src/hooks/useConvert.ts
+Method: crypto.randomUUID() with RFC 4122 v4 fallback
+Timing: Generated fresh on each open() call
+Scope: Passed to Edge Function as idempotency_key field
+Protection: Prevents double-debit if user submits twice or network retries

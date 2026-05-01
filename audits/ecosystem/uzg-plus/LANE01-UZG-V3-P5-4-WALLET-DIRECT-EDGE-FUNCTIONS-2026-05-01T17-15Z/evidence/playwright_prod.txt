@@ -1,0 +1,29 @@
+PLAYWRIGHT PRODUCTION RESULTS — Sprint 5.4 WALLET
+Date: 2026-05-02
+Config: playwright.visual-prod.config.mjs
+Spec: tests/visual/p5-4-wallet-prod.spec.mjs
+
+=== FIRST RUN (4/6) ===
+FAIL [chromium] prod Edge Function wallet_convert_u_to_uzg reachable (401 expected unauthed)
+  Error: Expected [401, 403] to contain 405
+  Root cause: Test was hitting https://uzg.plus/functions/v1/... (Cloudflare proxy returns 405)
+  Fix: Updated test to use Supabase URL directly
+
+FAIL [chromium] prod Edge Function wallet_spend_uzg reachable (401 expected unauthed)
+  Same root cause as above
+
+=== SECOND RUN (6/6) ===
+Running 6 tests using 1 worker
+
+PASS [chromium] prod /wallet redirects to login when unauthed
+PASS [chromium] prod /wallet/convert redirects to login when unauthed
+PASS [chromium] prod /wallet/asset/u redirects to login when unauthed
+PASS [chromium] prod Edge Function wallet_convert_u_to_uzg reachable (401 expected unauthed)
+PASS [chromium] prod Edge Function wallet_spend_uzg reachable (401 expected unauthed)
+PASS [chromium] prod login page reachable for wallet redirect target
+
+6 passed (6.2s)
+
+=== NOTES ===
+- Auth-state limitation (B-5): No TEST_USER session — all wallet routes redirect to login (expected)
+- Edge Function test URL: Supabase URL (not uzg.plus proxy) for direct Edge Function probing

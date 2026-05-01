@@ -1,0 +1,47 @@
+SCHEMA DISCOVERY — Sprint 5.4 WALLET Direct Edge Functions
+Date: 2026-05-02
+Method: Supabase REST API probes (SERVICE_ROLE_KEY) + Edge Function source inspection
+
+=== TABLE PROBES ===
+wallet_accounts: HTTP 200
+wallet_ledger: HTTP 200
+wallet_currencies: HTTP 200
+wallet_balances: HTTP 200
+wallet_transactions: HTTP 200
+
+=== wallet_currencies (1 row sample) ===
+currency_code=USD full_name="USD Credit" ticker=USDc precision=2 is_active=true is_convertible=true
+
+=== wallet_balances (1 row sample) ===
+user_id=<uuid> asset=UZG balance=5.00000000 balance_u=0.00000000 balance_uzg=5.00000000
+
+=== wallet_ledger (1 row sample) ===
+direction=debit asset_code=UZG amount=5.00 entry_type=transfer created_at=2026-05-01T12:15:14+00:00
+
+=== wallet_transactions (1 row sample) ===
+tx_type=transfer status=completed asset_code=UZG amount=5.0 amount_in=5.0 amount_out=5.0
+
+=== wallet_conversion_rates (1 row) ===
+from_asset=U to_asset=UZG rate_numerator=1 rate_denominator=1000 is_active=true
+Effective rate: 1 U = 0.001 UZG
+
+=== CANON_DRIFT ===
+wallet_currencies.currency_code (live) vs .code (canon)
+wallet_balances.asset (live) vs .asset_code (canon)
+wallet_ledger.direction (live) vs .entry_type (canon)
+Resolution: hooks use live column names
+
+=== EDGE FUNCTIONS ===
+wallet_convert_u_to_uzg: supabase/functions/wallet_convert_u_to_uzg/index.ts (420 lines)
+  Payload: { from_asset, to_asset, amount, idempotency_key, source?, context? }
+  Tables read: wallet_conversion_rates, wallet_asset_registry, wallet_conversions
+  RPC: rpc_wallet_convert_asset
+  Response: { success, status, request:{...}, ledger:{debit,credit}, policy:{...} }
+
+wallet_spend_uzg: supabase/functions/wallet_spend_uzg/index.ts (212 lines)
+  Payload: { spend_type, source_id, source_label?, amount, idempotency_key, route? }
+  RPC: rpc_burn_asset
+  Response: { success, status, spend_type, burn:{...}, context:{...}, policy:{...} }
+
+=== EDGE FUNCTION PROBE ===
+POST /functions/v1/wallet_convert_u_to_uzg (no JWT) → HTTP 401 (reachable)

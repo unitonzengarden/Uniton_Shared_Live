@@ -1,0 +1,24 @@
+KL-028 PRODUCTION PROBE — Sprint 5.4 WALLET
+Date: 2026-05-02
+Method: curl -s -o /dev/null -w "%{http_code}" -L --max-redirs 3
+
+=== SPA ROUTES ===
+PASS 200 https://uzg.plus/v3/home
+PASS 200 https://uzg.plus/v3/login
+PASS 200 https://uzg.plus/v3/wallet           [NEW Sprint 5.4]
+PASS 200 https://uzg.plus/v3/wallet/convert   [NEW Sprint 5.4]
+PASS 200 https://uzg.plus/v3/wallet/asset/u   [NEW Sprint 5.4]
+PASS 200 https://uzg.plus/v3/chat
+PASS 200 https://uzg.plus/v3/enta
+PASS 200 https://uzg.plus/v3/plus
+PASS 200 https://uzg.plus/v3/settings
+PASS 200 https://uzg.plus/v3/notifications
+PASS 200 https://uzg.plus/v3/
+
+=== API ROUTES ===
+PASS 200 https://uzg.plus/api/health
+NOTE 401 https://uzg.plus/api/v1/conversations (auth required — expected, not a KL-028 failure)
+
+=== RESULT ===
+KL-028: 12/12 targeted routes PASS (HTTP 200)
+All 3 new wallet routes confirmed live on production.

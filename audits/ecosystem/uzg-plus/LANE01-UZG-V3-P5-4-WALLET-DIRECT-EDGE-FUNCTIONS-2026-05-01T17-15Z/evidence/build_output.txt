@@ -1,0 +1,27 @@
+BUILD OUTPUT — Sprint 5.4 WALLET Direct Edge Functions
+Date: 2026-05-02
+Command: cd apps/uzg-pwa && npm run build
+
+=== V3 BUILD (vite build --config vite.config.v3.ts) ===
+✓ 402 modules transformed.
+dist-v3/index.v3.html             3.05 kB │ gzip:   1.29 kB
+dist-v3/assets/main-C3wgazcQ.css  1,105.21 kB │ gzip: 156.02 kB
+dist-v3/assets/main-Ch3q2lfA.js   741.54 kB │ gzip: 222.40 kB
+✓ built in 4.11s
+
+=== TYPESCRIPT ERRORS ===
+0 errors
+
+=== BUNDLE DELTA vs SPRINT 5.3 ===
+Sprint 5.3: 741 KB
+Sprint 5.4: 741.54 KB
+Delta: ~+0.5 KB (12 new components, 4 new hooks, types, Edge Fn wrapper)
+
+=== NEW FILES COMPILED ===
+apps/uzg-pwa/src/types/walletV3.ts
+apps/uzg-pwa/src/lib/supabaseEdgeFunctions.ts
+apps/uzg-pwa/src/hooks/useWallet.ts
+apps/uzg-pwa/src/hooks/useWalletLedger.ts
+apps/uzg-pwa/src/hooks/useConvert.ts
+apps/uzg-pwa/src/hooks/useWalletRealtime.ts
+apps/uzg-pwa/src/components/wallet-v3/ (12 components × 2 files each)
