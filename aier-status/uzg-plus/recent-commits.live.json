@@ -1,9 +1,30 @@
 {
   "project_slug": "uzg-plus",
   "github_repo": "unitonzengarden/uzgplus-app",
-  "polled_at": "2026-05-01T13:20:48.781Z",
+  "polled_at": "2026-05-01T14:37:13.493Z",
   "count": 30,
   "commits": [
+    {
+      "sha": "d311f9cd5a00259356a5c84401263106b20d61d8",
+      "message": "feat(p4s6): UZG+ Phase 4 Sprint 4.6 FINAL — Lịch + AIER Chat + Residence + Phase 4 CLOSURE [solo CLAC1] (#78)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-01T14:18:38Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/d311f9cd5a00259356a5c84401263106b20d61d8"
+    },
+    {
+      "sha": "087278d751d26117e64a8e5ee35973087f9e87a3",
+      "message": "Update lane_02 screenshots, runtime catalogs, and Cursor settings",
+      "author": "unitonzengarden",
+      "committed_at": "2026-05-01T13:56:13Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/087278d751d26117e64a8e5ee35973087f9e87a3"
+    },
+    {
+      "sha": "e28e4621f4b2ff983e3989ad0449a95e0ea13da2",
+      "message": "feat(p4s5): UZG+ Phase 4 Sprint 4.5 — Bazi Premium Luck Pillars + Phong Thủy 3 surfaces [solo CLAC1] (#77)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-01T13:49:51Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/e28e4621f4b2ff983e3989ad0449a95e0ea13da2"
+    },
     {
       "sha": "9809f077bf5ccf709310d1ac73c90594ea732f90",
       "message": "feat(p4s4): UZG+ Phase 4 Sprint 4.4 — AIER TAO Reading + 4-tier gating [solo CLAC1] (#76)",
@@ -192,27 +213,6 @@
       "author": "unitonzengarden",
       "committed_at": "2026-04-30T19:38:28Z",
       "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/870c3d95f2228796882a150e33294b6c69cdfb7a"
-    },
-    {
-      "sha": "6eb418592c606914b57389ae4610c74df0efc9ad",
-      "message": "feat(lane02): LANE02-UZG-TAO-T-TAO-031-035-V1 — Tử Vi V2 Phase 4 real user flow (closes demo-only gap) (#55)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-04-30T19:30:50Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/6eb418592c606914b57389ae4610c74df0efc9ad"
-    },
-    {
-      "sha": "00720ee53e2762f337ef306d34f30887b155891c",
-      "message": "chore(lane01): add empty s1 vite preview stderr capture [vercel skip]",
-      "author": "LANE01-Cursor",
-      "committed_at": "2026-04-30T19:27:34Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/00720ee53e2762f337ef306d34f30887b155891c"
-    },
-    {
-      "sha": "fad8372ba277e14b08a38dfaec522cc82de6e5a4",
-      "message": "feat(s3): UZG+ V3 HOME interaction components (5 patterns) (#54)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-04-30T18:51:47Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/fad8372ba277e14b08a38dfaec522cc82de6e5a4"
     }
   ]
 }
