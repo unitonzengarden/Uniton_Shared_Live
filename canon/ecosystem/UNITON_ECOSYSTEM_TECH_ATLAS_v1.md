@@ -433,21 +433,56 @@ Executors:
   - Dev2: Cursor (Cursor IDE, Vultr)
 ```
 
-### §8.2 Lane_02 — TAO / Bazi / Language OS
+### §8.2 Lane_02 (TAO / Bazi / Language OS / UZG+ frontend modules)
 
-```
-Owner: TBD
-Hardware: Desktop UI
-Scope: TAO mini-app engine, Bazi/Tử Vi calculations, Language OS resolver
+**Lane status:** ACTIVE — vĩnh viễn (locked 2026-04-28)
+**Last updated:** 2026-05-01
 
-Status: Building independently (parallel with Lane_01)
+**Hardware:**
+- NTS Desktop Windows (single machine for both executors)
+- 2 executors operating in parallel since 2026-05-01:
+  - **CLAC-2** = Claude Code Desktop, Opus 4.7, owns engine + canon + AIER + tests
+  - **CURSOR-2** = Cursor IDE, Sonnet 4.6 1M, owns documentation + UI polish + governance contributions
 
-Recent work observed in uzgplus-app PR history:
-  - PR #45 Phase 2 canon lock-in
-  - Lane_02 TAO AIER work in feat/lane01-s4-chat-components branch (CLAC1 collision avoided per KL-029)
+**Reviewer:** CLA-2 (Claude Web baothybiz, Opus 4.7) — strategic + spec author, no filesystem.
 
-Files: Documents in canon/ecosystem/, TAO_*, ZIWEI_*, LANG_OS_* in project knowledge
-```
+**Owned scope:**
+- TAO module within `uzgplus-app` (Bazi V1 + Tử Vi V2 + Phong Thủy V3 + Lịch Vạn Niên)
+- Language OS canonical files (13 files in project knowledge)
+- AIFI_LIFE repo (sleep — not yet active)
+- aier-life-super-app repo (sleep — not yet active)
+- Tech Atlas contributions for Lane_02 owned sections
+
+**Current operational state (post Phase 6 ship 2026-05-01):**
+- 41 canonical engines + modules (10 Bazi + 2 PT + 3 VN + 26 Tử Vi)
+- 15 live surfaces on https://uzg.plus
+- 1247/1247 cumulative engine fixtures PASS
+- 70 lyso ground-truth categories (30 HEROVU archive + 40 MAU active)
+- 100/100 cumulative AIER safety tests
+- 31 P-LANE02 policies enforced
+- 4 Supabase tables (bazi_charts + bazi_audit_log + ziwei_charts + ziwei_audit_log)
+- 22 canonical TAO docs + 2 canon amendments shipped
+- 13 cumulative ship cycles (Phase 1.2 → Phase 6, all green)
+
+**Active work:**
+- Phase 7 dispatched 2026-05-01 → CLAC-2 (Tử Vi minor cách cục, T-TAO-046..051)
+- Tech Atlas contribution → CURSOR-2 (this task)
+
+**Strategic position post Phase 6:**
+- Engineering complete, lyso.vn parity achieved
+- CLA-2 strong recommendation: PAUSE FOR MARKET SIGNAL after Phase 7 ships
+- Demo binding: Lá số Mẫu Quý Hợi 1983 (live on `?demo=1` routes)
+
+**Cross-Lane dependencies:**
+- Lane_01: Bazi → ENTA upgrade flow (deferred), Wallet U-reward integration
+- Lane_03: AES-256 infrastructure (blocks PT Residence Phase 3), Anthropic API production proxy
+
+**Source citations:**
+- LANE02_BOOT_v1.4_2026-04-29
+- LANE02_STATE_v1_2026-05-01
+- LANE02_THREAD_MEMORY_v1_2026-05-01
+- 22 TAO canonical docs
+- 32 LAW files (NTS-LLM Universal + NTS-LANE-2 + UZG-TAO)
 
 ### §8.3 Lane_03 — UZG+ Backend / Supabase
 
@@ -994,6 +1029,7 @@ Legend: [x] verified · [~] partial / blocked / indirect · [ ] still TBD
 |---|---|---|---|
 | v1.0 | 2026-05-01 | CLA Lane_01 | Initial Phase A skeleton from project knowledge |
 | **v1.0-verified** | **2026-05-01** | **CLAC1 Phase B audit** | **Verified accuracy via gh api + curl + Supabase Mgmt API. Updated Supabase project metadata (region, version, status), edge functions (3 ACTIVE), V3 production probes (all routes 200 OK incl. Sprint 4 CHAT LIVE), Uniton_OS deploy status (404 — not deployed), admin allowlist confirmed. Documented drift in §20.** |
+| v1.1 | 2026-05-01 | Lane_02 | Initial contribution: §8.2 Lane_02 state update + §21 TAO Engine tech stack NEW + §22 Language OS NEW + §23 TAO data flows NEW. Author: CURSOR-2. Reviewer: CLA-2. Per UNITON_TECH_ATLAS_CONTRIBUTION_REQUEST_v1 §4.1. |
 
 ---
 
@@ -1077,7 +1113,218 @@ Legend: [x] verified · [~] partial / blocked / indirect · [ ] still TBD
 
 ---
 
+## §21 TAO ENGINE TECH STACK (Lane_02)
+
+**Owner:** Lane_02
+**Last updated:** 2026-05-01
+**Source canon:** TAO_BAZI_SYSTEM_LAW_v1_2 + TAO_ZIWEI_SYSTEM_LAW_v1_1 + TAO_LUNAR_CALENDAR_ALGORITHM_v1_0
+
+### §21.1 Bazi 4 Pillars Engine
+
+- **Algorithm source:** TAO_BAZI_IMPLEMENTATION_SPEC_v1_1
+- **Implementation:** Pure JavaScript ES modules (no TypeScript at runtime — Vite bundler)
+- **Location:** `lib/tao/bazi/` (Lane_02 namespace, mirrored to `apps/uzg-pwa/src/lib/tao/bazi/` and `src/lib/tao/bazi/`)
+- **10 engines:** Year Pillar, Month Pillar, Day Pillar, Hour Pillar, Day Master Strength, Useful God, Luck Pillars, Element Polarity, Hidden Stems (Tàng Can), Lunar-Solar bridge
+- **Output schema:** JSONB chart_object stored in Supabase `bazi_charts`
+- **Test coverage:** 318 fixtures
+- **Performance target:** <50ms compute for full 4-pillar chart
+- **Live surfaces:** 7 routes (`/tao/bazi`, `/tao/bazi/pillars`, `/tao/bazi/day-master`, `/tao/bazi/useful-god`, `/tao/bazi/luck-pillars`, `/tao/bazi/create`, `/tao/bazi/saved`)
+
+### §21.2 Tử Vi Đẩu Số Engine V2
+
+- **Algorithm source:** TAO_ZIWEI_FORMULA_REFERENCE_v1_0 + TAO_ZIWEI_IMPLEMENTATION_SPEC_v1_1 (+ AMENDMENT_001)
+- **Implementation:** Pure JavaScript ES modules
+- **Location:** `lib/tao/ziwei/` (mirrored to apps/uzg-pwa + src)
+- **26 modules cumulative across 6 phases:**
+  - Phase 1.2 Engine core: 14 chính tinh, Cục, 12 cung, Mệnh-Thân
+  - Phase 1.3 Aux stars (~15) + 3 rings + Tứ Hóa + Đại vận + Mệnh/Thân chủ
+  - Phase 1.4 Cycles: Lưu niên + Tiểu vận + Lưu nguyệt + Annual stars
+  - Phase 2 Interpretive: Brightness + Luminosity + Element + Cách cục + Reading framing
+  - Phase 3 AIER: Context engine + System prompt + Output filter + Safety tests
+  - Phase 4 Real flow: ziwei_charts + create form + saved + 5-layer resolution
+  - Phase 5 AIER cross-context: Module resolver + unified pack + cross-ref rules
+  - Phase 6 Coverage: 33 NEW aux stars (§11.1 + §11.6 + §11.7 + §13) + 8 Lưu sao + nạp âm + UI overhaul
+- **Output:** JSONB chart_object in Supabase `ziwei_charts` (12 cung + ~120 chart elements)
+- **Test coverage:** 689 fixtures
+- **Lyso ground-truth:** 70 categories (Hero Vu archive 30 + Lá số Mẫu Quý Hợi 1983 active 40)
+- **Performance target:** <150ms full chart compute (12 palaces × ~10 sao avg)
+- **Live surfaces:** 3 routes (`/tao/tuvi`, `/tao/tuvi/create`, `/tao/tuvi/saved`)
+
+### §21.3 Phong Thủy Engine
+
+- **Algorithm source:** TAO_BAZI_PHONGTHUY_REFERENCE_v1_1 (Cung Mệnh + Bát Trạch derivation)
+- **Implementation:** Pure JS, depends on Bazi engine output (Day Master + Year Pillar)
+- **Location:** `lib/tao/phongthuy/`
+- **2 engines:** Cung Mệnh (8-direction palace) + Bát Trạch (8-house compatibility)
+- **Test coverage:** 60 fixtures
+- **Future Phase 3:** Residence Mapping + Cửu Cung Phi Tinh (BLOCKED on Lane_03 AES-256)
+- **Live surfaces:** 2 routes (`/tao/phongthuy`, `/tao/phongthuy/bat-trach`)
+
+### §21.4 Lịch Vạn Niên Engine
+
+- **Algorithm source:** TAO_LUNAR_CALENDAR_ALGORITHM_v1_0 + UZGPLUS_VANNIEN_CALENDAR_SPEC_v1_0
+- **Vietnamese-school binding:** Tết Nguyên Đán + lunar month (NOT classical Chinese)
+- **Implementation:** Precomputed lookup tables (1900-2100 coverage)
+- **3 engines:** Day energy + Bazi-aware match + Activity advisor (Phase 1 only; Phase 2 Activity Picker UI deferred)
+- **Test coverage:** 75 fixtures
+- **Performance:** O(1) day lookup
+- **Live surfaces:** 3 routes (`/tao/lichvannien`, `/tao/lichvannien/today`, `/tao/lichvannien/day/:date`)
+
+### §21.5 AIER TAO Advisory (cross-module unified)
+
+- **Architecture:** Anthropic API via Artifact pattern (Claudeception) for demo + grounded backend for production
+- **Model:** Claude Sonnet 4 in production (planned), Opus 4 / Sonnet 4.5 for testing
+- **System prompt:** Embedded with module-specific context packs + 5 constitutional rules + REDLINE 1/3 + LAW 6/9 runtime
+- **Output filter:** Forbidden phrase contextual + 100/100 safety tests deploy gate
+- **Cross-module integrity:** Module resolver + unified pack speaks 4 modules (Bazi + PT + VN + Tử Vi)
+- **Live surface:** 1 route (`/tao/aier`)
+- **5 P-LANE02 policies enforced:** AIER-CONTEXT-BOUND, NO-PHAN-MENH, OUTPUT-FILTER, 50-SAFETY, MEMBERSHIP-GATE + 5 Phase 5 cross-context
+
+### §21.6 Storage & persistence
+
+- **Supabase tables:** `bazi_charts`, `bazi_audit_log`, `ziwei_charts`, `ziwei_audit_log`
+- **RLS policies:** 12 cumulative (4+2+4+2)
+- **Triggers:** 4 (updated_at + single_primary on both chart tables)
+- **Migrations:** 2 applied (Phase 1.3 Bazi + Phase 4 Tử Vi)
+
+### §21.7 Engineering invariants
+
+- Phase N never modifies Phase N-1 engine math (proven across 9 phases)
+- LAW 8 append-only: Hero Vu fixtures preserved as archive after demo swap
+- ARCHITECTURE §8.4 cross-module integrity: 0 violations cumulative
+- 0% CI fail rate, 0 boundary violations, 0 LAW 4 violations
+
+---
+
+## §22 LANGUAGE OS TECH STACK (Lane_02)
+
+**Owner:** Lane_02
+**Last updated:** 2026-05-01
+**Source canon:** LANG_OS_00_INDEX_v1_0 → LANG_OS_12_GLOSSARY_v1_0 (13 files)
+
+### §22.1 Resolver Contract
+
+- **Source:** LANG_OS_03_RESOLVER_CONTRACT_v1_0
+- **Function signature:** `resolve(token, locale, context) → rendered string`
+- **Locales canonical:** `vi` (default), `en` (secondary)
+- **Future locales:** per locale lifecycle gate (LANG_OS_07)
+
+### §22.2 Dictionary Governance
+
+- **Source:** LANG_OS_04_DICTIONARY_GOVERNANCE_v1_0
+- **Storage:** Per-locale JS constant maps
+- **Validation:** Type-checked at compile time via Vite
+- **Append-only:** New tokens added, deprecated tokens marked with strikethrough
+
+### §22.3 Render Contract
+
+- **Source:** LANG_OS_05_RENDER_CONTRACT_v1_0
+- **Output:** Pure string, no HTML escaping concerns
+- **Pluralization:** Per-locale rules (LANG_OS_05 Annex A)
+
+### §22.4 Semantic Tokens
+
+- **Source:** LANG_OS_02_SEMANTIC_TOKENS_v1_0
+- **Convention:** `domain.category.specific` dot-notation
+- **TAO-specific tokens:** `tao.bazi.*`, `tao.tuvi.*`, `tao.phongthuy.*`, `tao.vannien.*`
+- **Cross-module tokens:** `aier.*`, `chart.*`, `palace.*`
+
+### §22.5 Locale Lifecycle
+
+- **Source:** LANG_OS_07_LOCALE_LIFECYCLE_v1_0
+- **States:** Draft → Active → Deprecated → Archived
+- **Gate criteria:** Coverage % + canonical review + NTS approval
+
+### §22.6 Hot-fix mini roadmap
+
+- **Source:** LANE02_LANGUAGE_OS_HOTFIX_MINI_ROADMAP_v1_0_2026-04-29
+- **Status:** Documented, awaiting prioritization post Phase 7
+
+---
+
+## §23 TAO DATA FLOWS (Lane_02)
+
+**Owner:** Lane_02
+**Last updated:** 2026-05-01
+
+### §23.1 Birth input → chart object pipeline
+
+```
+NTS user input form (/tao/tuvi/create or /tao/bazi/create)
+   ↓
+Validation layer (timezone, lunar/solar conversion, gender, Tết boundary)
+   ↓
+Calendar engine (LANG_OS-aware lunar conversion via Lịch Vạn Niên engine)
+   ↓
+Core algorithm pipeline (per chart type):
+   - Bazi: 4 pillars → Day Master → Useful God → Luck Pillars
+   - Tử Vi: An cung → An cục → An sao (chính + phụ + lưu) → An vòng → An hạn
+   ↓
+JSONB chart_object → Supabase persistence (bazi_charts / ziwei_charts)
+   ↓
+Audit log entry (bazi_audit_log / ziwei_audit_log) — version + formula tracking
+   ↓
+RLS-gated retrieval → 5-layer resolution chain (URL → params → primary → bazi-fallback → demo)
+   ↓
+UI render (12-cung grid for Tử Vi, 4-pillar layout for Bazi)
+```
+
+### §23.2 Cross-module integration (Phase 5 unified AIER)
+
+```
+User question on /tao/aier
+   ↓
+Context engine: detect module mention (Bazi / Tử Vi / PT / VN)
+   ↓
+Module resolver: fetch chart_object(s) from Supabase per detected modules
+   ↓
+Unified pack assembler: merge module-specific facts + cross-reference rules
+   ↓
+System prompt embed: cross-module context + REDLINE 1/3 + LAW 6/9
+   ↓
+Anthropic API call (Sonnet 4 production / Opus 4 testing)
+   ↓
+Output filter: forbidden phrase scan + safety test enforcement (100/100 deploy gate)
+   ↓
+Render to chat surface with module badges + confidence band
+```
+
+### §23.3 5-Layer resolution chain (chart selection)
+
+Layer order for `/tao/tuvi` and `/tao/bazi`:
+
+1. URL query: `?chart_id=<uuid>` (explicit)
+2. URL query: `?demo=1` (demo mode → loads ACTIVE_DEMO_FIXTURE = Lá số Mẫu)
+3. User primary chart (Supabase, RLS-gated)
+4. Bazi-fallback (Phase 4 BONUS — if user has Bazi chart but no Tử Vi, derive Tử Vi from same birth input)
+5. Empty state → CTA to `/create`
+
+### §23.4 Hero Vu archive vs Lá số Mẫu active (Phase 6 demo lifecycle)
+
+```
+demoFixtures.js:
+   - LYSO_HERO_VU_2023 (status: 'archived', LAW 8 preserved)
+   - LYSO_MAU_1983     (status: 'active', current demo)
+   - ACTIVE_DEMO_FIXTURE = LYSO_MAU_1983
+
+Engine math handles both charts identically.
+GT-HEROVU-1..30 fixtures still PASS against engine (loaded directly via input, not via demo URL).
+GT-MAU-1..40 fixtures verify Lá số Mẫu via canon §12 anchors.
+```
+
+### §23.5 Source citations
+
+- `TAO_ZIWEI_SYSTEM_ARCHITECTURE_v1_0_2026-04-25`
+- `TAO_BAZI_SYSTEM_ARCHITECTURE_v1_1_2026-04-29`
+- `LAW-UZG-TAO-06_CROSS_ENGINE_INTEGRITY`
+- `LAW-UZG-TAO-07_ZIWEI_OPERATIONAL`
+- `LANE02-UZG-TAO-T-TAO-031-035-V1_TASK_SPEC` (Phase 4 real flow)
+- `LANE02-UZG-TAO-T-AIER-CROSS-001-V1_TASK_SPEC` (Phase 5 cross-context)
+- `LANE02-UZG-TAO-T-TAO-036-045-V1_TASK_SPEC` (Phase 6 coverage)
+
+---
+
 🔒 UNITON ECOSYSTEM — TECH STACK ATLAS v1.0-verified
-**Status:** Phase B audit complete by CLAC1 (Sonnet 4.6) at 2026-05-01.
+**Status:** Phase B audit complete by CLAC1 (Sonnet 4.6) at 2026-05-01. v1.1 Lane_02 contribution by CURSOR-2 at 2026-05-01.
 **Next update trigger:** Per §17 — major infrastructure change OR weekly snapshot OR CLA-NTS request for re-verification of TBD items.
 End of file.
