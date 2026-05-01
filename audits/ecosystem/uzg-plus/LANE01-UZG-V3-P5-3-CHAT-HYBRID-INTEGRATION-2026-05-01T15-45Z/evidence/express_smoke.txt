@@ -1,0 +1,6 @@
+=== Express endpoint smoke (no token) ===
+GET  /api/v1/conversations            -> 401  (AUTH_REQUIRED, exists)
+GET  /api/v1/messages                 -> 401  (AUTH_REQUIRED, exists)
+POST /api/v1/messages/read            -> 405  (POST endpoint exists; GET refused)
+POST /api/v1/conversations/presence   -> 405
+POST /api/v1/conversations/typing     -> 405

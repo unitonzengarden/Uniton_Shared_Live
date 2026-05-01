@@ -1,0 +1,21 @@
+=== Deployed bundle marker verification ===
+$ curl -sI https://uzg.plus/v3/assets/main-Bb8xDhx0.js
+HTTP/1.1 200 OK
+Content-Type: application/javascript
+Content-Length: 741081
+ETag: "5e58cd0f448c0687107d064e1e2c8a62"
+
+$ curl -s https://uzg.plus/v3/assets/main-Bb8xDhx0.js | grep -oE \
+  'chat-v3|chat-inbox-v3|conversation-list-item|message-bubble|composer-dock|room-top-bar|dm-room-v3|enta_messages|useChatRoom' | sort -u
+
+chat-inbox-v3
+chat-v3
+composer-dock
+conversation-list-item
+dm-room-v3
+enta_messages
+message-bubble
+room-top-bar
+useChatRoom
+
+9/9 expected tokens present in deployed bundle.

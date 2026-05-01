@@ -1,0 +1,20 @@
+=== Schema discovery output ===
+[dotenv@17.3.1] injecting env (10) from .env.local
+
+CANON-named tables:
+  conversations              OK columns: (empty row)              count=0
+  messages                   OK columns: (empty row)              count=0
+  conversation_participants  NOT_FOUND PGRST205
+  message_reads              NOT_FOUND PGRST205
+
+ACTUAL production tables:
+  enta_conversations         OK columns: id,conversation_type,title,created_by,direct_key,
+                                         circle_id,flow_id,event_id,is_active,created_at,updated_at
+                             count=76
+  enta_messages              OK columns: id,conversation_id,sender_id,message_type,body,
+                                         metadata,reply_to_message_id,is_deleted,created_at,updated_at
+                             count=390
+  enta_message_reads         OK columns: id,conversation_id,message_id,user_id,read_at
+
+Resolution: V2 Express abstracts schema via /api/v1/conversations + /api/v1/messages.
+Realtime subscribes enta_messages INSERT events directly.

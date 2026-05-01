@@ -1,0 +1,12 @@
+=== Production Playwright (p5-3-chat-prod.spec.mjs) ===
+QA_BASE_URL=https://uzg.plus npx playwright test --config playwright.v3.config.js
+
+Running 6 tests using 1 worker
+  ok 1 prod /chat redirects to login when unauthed (3.8s)
+  ok 2 prod /chat/<id> redirects to login when unauthed (1.0s)
+  ok 3 prod V2 Express conversations endpoint reachable (AUTH_REQUIRED) (239ms)
+  ok 4 prod V2 Express messages endpoint reachable (AUTH_REQUIRED) (143ms)
+  ok 5 prod V2 Express messages POST endpoint exists (206ms)
+  ok 6 prod login page reachable for chat redirect target (1.2s)
+
+  6 passed (8.8s)

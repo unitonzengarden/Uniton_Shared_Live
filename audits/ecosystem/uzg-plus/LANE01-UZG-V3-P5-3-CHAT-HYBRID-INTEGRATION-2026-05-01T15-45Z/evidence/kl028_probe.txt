@@ -1,0 +1,29 @@
+=== KL-028 PRODUCTION PROBE — Sprint 5.3 deployed ===
+  200 https://uzg.plus/v3/
+  200 https://uzg.plus/v3/login
+  200 https://uzg.plus/v3/signup
+  200 https://uzg.plus/v3/home
+  200 https://uzg.plus/v3/chat
+  200 https://uzg.plus/v3/chat/00000000-0000-4000-8000-000000000000  ← NEW
+  200 https://uzg.plus/v3/chat/dm/test
+  200 https://uzg.plus/v3/chat/aier
+  200 https://uzg.plus/v3/chat/circle/test
+  200 https://uzg.plus/v3/enta
+  200 https://uzg.plus/v3/enta/identity
+  200 https://uzg.plus/v3/enta/resonance
+  200 https://uzg.plus/v3/enta/circles
+  200 https://uzg.plus/v3/enta/journey
+  200 https://uzg.plus/v3/wallet
+  200 https://uzg.plus/v3/wallet/convert
+  200 https://uzg.plus/v3/wallet/send
+  200 https://uzg.plus/v3/wallet/receive
+  200 https://uzg.plus/v3/plus
+  200 https://uzg.plus/v3/onboarding
+  200 https://uzg.plus/v3/tao
+  200 https://uzg.plus/v3/tao/bazi
+  200 https://uzg.plus/v3/tao/tuvi
+  200 https://uzg.plus/v3/tao/phongthuy
+  200 https://uzg.plus/v3/tao/lichvannien
+  200 https://uzg.plus/
+
+26/26 200 PASS
