@@ -10,7 +10,7 @@
 ## §0. Header
 
 - **Generator:** `aier-state-update v1.0` invoked via `scripts/runtime/generate_project_status.py v1.1`
-- **Source commit:** `72b02bb502cc757ebb83e75f9a047d1b23e08f49` (short: `72b02bb`)
+- **Source commit:** `3a993b66b2f6907f9d80a49d7f7dcbf58d4386dc` (short: `3a993b6`)
 - **Auto-generated:** `true` (do not hand-edit)
 - **Authority:** repo-backed automation per LAW_N8 §L8.2 explicitly enabled CI mode (state-mirror auto-regenerate scope only)
 
@@ -68,11 +68,11 @@
 
 | SHA | Author | Subject |
 |---|---|---|
-| `72b02bb` | unitonzengarden | docs(lane03): harden energy daily rpc privileges |
-| `9496fb7` | Uniton Zen | Lane01 S3: HOME interaction components deliverables (3 DOT root per KL-023) [vercel skip] (#51) |
-| `44b306f` | Uniton Zen | Lane01 S1: chrome refactor deliverables [vercel skip] (#50) |
-| `124c053` | Uniton Zen | Lane01 S2: Foundation components deliverables (3 DOT root per KL-023) [vercel skip] (#49) |
-| `f3c31d4` | AIER State Bot | [auto-status] regen runtime+network surfaces from 1f59c78 [vercel skip] |
+| `3a993b6` | unitonzengarden | docs(lane03): review daily missions rpc privilege posture |
+| `0f2cb78` | Uniton Zen | Lane01 S7: PLUS Hub deliverables — uzg.plus/v3/plus + /v3/app/* LIVE [solo CLAC1] (#62) |
+| `749b793` | Uniton Zen | Lane01 S6: ENTA full build deliverables — uzg.plus/v3/enta/* LIVE [solo CLAC1] (#61) |
+| `409b6fc` | Ecosystem Poller Bot | poll: ecosystem state update [vercel skip] |
+| `e50fa1a` | Uniton Zen | Lane01 S5 takeover: production verify + 15 screenshots after CLAC1 push uzgplus-app PR (#60) |
 
 ## §7. Latest 5 DONE Tasks (from MASTER_CHECKLIST)
 
@@ -107,7 +107,7 @@ Latest scores from the 4-worker QA family (per `LANE01-W3-QA-LOOP-WIRE-V1`).
 
 | Worker | Latest Report | Health | Findings (C/W/I) |
 |---|---|---|---|
-| scan | `AIER-SCAN-2026-04-27-001.json` | 82/100 | 0/6/0 |
+| scan | `AIER-SCAN-2026-04-28-VERIFY-T3-5.json` | 90/100 | 1/0/0 |
 | canon | `AIER-CANON-QA-V1-FINAL-AUDIT.json` | 76/100 | 0/7/3 |
 | skill | `AIER-SKILL-QA-CAPABILITY-VERIFY.json` | 100/100 | 0/0/0 |
 | qa_loop | `POST-LANE01-W5-V1-FINAL-AUDIT-V1.json` | 60/100 | 10/12/3 |
