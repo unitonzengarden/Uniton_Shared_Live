@@ -1,9 +1,22 @@
 {
   "project_slug": "uzg-plus",
   "github_repo": "unitonzengarden/uzgplus-app",
-  "polled_at": "2026-05-01T16:38:59.669Z",
+  "polled_at": "2026-05-01T17:41:55.953Z",
   "count": 20,
   "workflow_runs": [
+    {
+      "id": 25225206379,
+      "name": "Deploy to Cloudflare Pages (Stable)",
+      "head_branch": "main",
+      "head_sha": "af3a26f0f2eb0af46eb02d13e516cbfe600bb218",
+      "event": "push",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-05-01T17:36:13Z",
+      "updated_at": "2026-05-01T17:37:23Z",
+      "run_started_at": "2026-05-01T17:36:13Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/actions/runs/25225206379"
+    },
     {
       "id": 25222939936,
       "name": "Deploy to Cloudflare Pages (Stable)",
@@ -250,19 +263,6 @@
       "updated_at": "2026-05-01T12:59:10Z",
       "run_started_at": "2026-05-01T12:47:26Z",
       "html_url": "https://github.com/unitonzengarden/uzgplus-app/actions/runs/25214793252"
-    },
-    {
-      "id": 25214763657,
-      "name": "TAO Bazi CI Regression",
-      "head_branch": "feat/lane02/clac2/LANE02-UZG-VANNIEN-T-VAN-016-020-V1",
-      "head_sha": "5ffb066aa77cf4a3ddd5e235a4b7e3e3e40227c7",
-      "event": "pull_request",
-      "status": "completed",
-      "conclusion": "success",
-      "created_at": "2026-05-01T12:46:22Z",
-      "updated_at": "2026-05-01T12:57:43Z",
-      "run_started_at": "2026-05-01T12:46:22Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/actions/runs/25214763657"
     }
   ]
 }

@@ -1,9 +1,16 @@
 {
   "project_slug": "uzg-plus",
   "github_repo": "unitonzengarden/uzgplus-app",
-  "polled_at": "2026-05-01T16:38:59.669Z",
+  "polled_at": "2026-05-01T17:41:55.953Z",
   "count": 30,
   "commits": [
+    {
+      "sha": "af3a26f0f2eb0af46eb02d13e516cbfe600bb218",
+      "message": "feat(p5-4): UZG+ Phase 5 Sprint 5.4 — WALLET Direct Edge Functions Hybrid Integration (#83)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-01T17:36:10Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/af3a26f0f2eb0af46eb02d13e516cbfe600bb218"
+    },
     {
       "sha": "2931a04411b5bf09fc6bedfc8467178bebfa45f8",
       "message": "feat(p5-3): UZG+ Phase 5 Sprint 5.3 — CHAT module Hybrid Integration (#82)",
@@ -206,13 +213,6 @@
       "author": "unitonzengarden",
       "committed_at": "2026-05-01T02:58:57Z",
       "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/9af6d508ea71323220669c40b494e1a6d9df4fa0"
-    },
-    {
-      "sha": "c93ec1cf2ef469bfec7164c482cc3dfe0b9c7215",
-      "message": "feat(lane02): LANE02-UZG-TAO-T-AIER-CROSS-001-V1 — AIER cross-context unified (4 modules) (#59)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-05-01T02:52:11Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/c93ec1cf2ef469bfec7164c482cc3dfe0b9c7215"
     }
   ]
 }
