@@ -1,9 +1,30 @@
 {
   "project_slug": "uzg-plus",
   "github_repo": "unitonzengarden/uzgplus-app",
-  "polled_at": "2026-05-01T10:44:50.839Z",
+  "polled_at": "2026-05-01T11:45:48.828Z",
   "count": 30,
   "commits": [
+    {
+      "sha": "0b8ee0fa058f800b30a52ae146ce69329b666178",
+      "message": "feat(p4s3): UZG+ Phase 4 Sprint 4.3 — Tử Vi Full Flow PREMIUM (3 surfaces) [solo CLAC1] (#73)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-01T11:39:21Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/0b8ee0fa058f800b30a52ae146ce69329b666178"
+    },
+    {
+      "sha": "033a85c51d0ecee8e3e51dcac532856ae7a0a042",
+      "message": "feat(p4s2): UZG+ Phase 4 Sprint 4.2 — Bazi 4 surfaces [solo CLAC1] (#72)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-01T10:56:04Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/033a85c51d0ecee8e3e51dcac532856ae7a0a042"
+    },
+    {
+      "sha": "f07c1558e14fc3e581f53c239f8993b73ad1a0cb",
+      "message": "chore(deploy): force Cloudflare Pages redeploy for PR 70 Phase 8C TAO",
+      "author": "unitonzengarden",
+      "committed_at": "2026-05-01T10:49:05Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/f07c1558e14fc3e581f53c239f8993b73ad1a0cb"
+    },
     {
       "sha": "8517c60ef2b843241cc3a1c2d23c05b62f851592",
       "message": "feat(lane02): LANE02-UZG-TAO-T-TAO-069-082-V1 — Tử Vi V2 Phase 8C UI overhaul (FINAL) (#70)",
@@ -192,27 +213,6 @@
       "author": "Uniton Zen",
       "committed_at": "2026-04-30T18:35:03Z",
       "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/4087ad3487b2469e6bfd6c7268dfeec8113d5a02"
-    },
-    {
-      "sha": "2205f671adc3589807ce8ab86cb677c26f0fe26c",
-      "message": "feat(s2): UZG+ V3 Foundation OS components (7 reusable shells) (#52)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-04-30T18:30:12Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/2205f671adc3589807ce8ab86cb677c26f0fe26c"
-    },
-    {
-      "sha": "6d56b9519b4a414a4fddf70aecc92c2c26f1c54d",
-      "message": "docs(lane02): T-TAO-019-024-V1 ship report + Hero Vu interpretive JSON + 4 screenshots [vercel skip]",
-      "author": "unitonzengarden",
-      "committed_at": "2026-04-30T17:48:56Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/6d56b9519b4a414a4fddf70aecc92c2c26f1c54d"
-    },
-    {
-      "sha": "c6d2070c277c55c45f0c5bb4552b6517b3e9a603",
-      "message": "feat(design-system): add V3 token infrastructure — 5 ngũ hành themes + 3-namespace architecture (#50)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-04-30T17:48:48Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/c6d2070c277c55c45f0c5bb4552b6517b3e9a603"
     }
   ]
 }
