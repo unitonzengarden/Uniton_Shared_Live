@@ -1,0 +1,8 @@
+PLACEHOLDER — populate immediately after merged commit lands on main.
+
+Commands (PowerShell friendly):
+
+  gh run list --repo unitonzengarden/Uniton_Shared --workflow=sync_runtime_to_public.yml --limit 3
+  gh run view <RUN_ID> --repo unitonzengarden/Uniton_Shared --log
+
+Expect log lines referencing copy of runtime/lane_02_uzg and network/lane_02_uzg when source directories exist on private main (otherwise skip / partial messages only).

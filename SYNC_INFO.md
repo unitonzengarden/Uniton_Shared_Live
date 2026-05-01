@@ -1,8 +1,8 @@
 # Uniton_Shared_Live — Sync Info
 
 **Source repo**: unitonzengarden/Uniton_Shared (private)
-**Last sync**: 2026-05-01T16:39:20Z
-**Source commit**: 6473950b41ada9c1c0093cbd243678fb964e5cf2
+**Last sync**: 2026-05-01T16:49:48Z
+**Source commit**: 6cae772cd69864c134b623cc4f267ea03d7c347b
 **Triggered by**: push
 
 ## Purpose
@@ -26,6 +26,8 @@ Canon, laws, skills, lab, rules remain private in Uniton_Shared.
 - notifications/NOTIFICATION_LEDGER.md
 - network/LANE_REGISTRY.md
 - network/ACTIVITY_FEED.md
+- runtime/lane_02_uzg/** (9 Lane_02 runtime surfaces; present when merged on source main)
+- network/lane_02_uzg/** (1 Lane_02 MISSION; present when merged on source main)
 
 ## CLA fetch URLs (raw)
 
@@ -46,6 +48,25 @@ Canon, laws, skills, lab, rules remain private in Uniton_Shared.
 - https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/network/task_queues/Lane_01.md
 - https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/network/task_queues/Lane_02.md
 - https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/network/task_queues/Lane_03.md
+
+## Lane_02 UZG runtime namespace (Lane_02 bootstrap — LANE01-SYNC-EXTEND-LANE02-V1)
+
+**Files synced**
+- runtime/lane_02_uzg/** (9 files, Tier 1-3 CLA-2 bootstrap)
+- network/lane_02_uzg/** (1 file, Lane_02 MISSION declaration)
+
+### CLA fetch URLs (raw)
+
+- https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/runtime/lane_02_uzg/INDEX.live.md
+- https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/runtime/lane_02_uzg/state.live.md
+- https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/runtime/lane_02_uzg/blockers.live.md
+- https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/runtime/lane_02_uzg/dispatches.live.md
+- https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/runtime/lane_02_uzg/tier_canon.live.md
+- https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/runtime/lane_02_uzg/canon_amendments.live.md
+- https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/runtime/lane_02_uzg/aier_tao_status.live.md
+- https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/runtime/lane_02_uzg/ROADMAP.live.md
+- https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/runtime/lane_02_uzg/RUNTIME_URLS.live.md
+- https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/network/lane_02_uzg/MISSION.live.md
 
 ## Live Ledger v1 surfaces (LANE01-LIVE-LEDGER-FOUNDATION)
 
