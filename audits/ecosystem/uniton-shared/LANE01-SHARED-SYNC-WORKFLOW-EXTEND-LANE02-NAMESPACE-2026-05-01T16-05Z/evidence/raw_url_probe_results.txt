@@ -8,3 +8,21 @@
 404 runtime/lane_02_uzg/dispatches.live.md
 404 runtime/lane_02_uzg/state.live.md
 404 runtime/lane_02_uzg/tier_canon.live.md
+
+=== POST-MERGE POST-SYNC probe (2026-05-02 after gh run 25223449688 success) ===
+Reason: private origin/main still lacks runtime/lane_02_uzg/** and network/lane_02_uzg/** (files only on feat/lane02/clac2/runtime-namespace-v1).
+
+404 network/lane_02_uzg/MISSION.live.md
+404 runtime/lane_02_uzg/INDEX.live.md
+404 runtime/lane_02_uzg/ROADMAP.live.md
+404 runtime/lane_02_uzg/RUNTIME_URLS.live.md
+404 runtime/lane_02_uzg/aier_tao_status.live.md
+404 runtime/lane_02_uzg/blockers.live.md
+404 runtime/lane_02_uzg/canon_amendments.live.md
+404 runtime/lane_02_uzg/dispatches.live.md
+404 runtime/lane_02_uzg/state.live.md
+404 runtime/lane_02_uzg/tier_canon.live.md
+
+Regression:
+200 aier-status/uzg-plus/supabase_projects.live.json
+200 audits/ecosystem/uniton-shared/LANE01-SHARED-SYNC-WORKFLOW-EXTEND-LANE02-NAMESPACE-2026-05-01T16-05Z.snapshot.md

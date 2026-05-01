@@ -1,8 +1,443 @@
-PLACEHOLDER — populate immediately after merged commit lands on main.
-
-Commands (PowerShell friendly):
-
-  gh run list --repo unitonzengarden/Uniton_Shared --workflow=sync_runtime_to_public.yml --limit 3
-  gh run view <RUN_ID> --repo unitonzengarden/Uniton_Shared --log
-
-Expect log lines referencing copy of runtime/lane_02_uzg and network/lane_02_uzg when source directories exist on private main (otherwise skip / partial messages only).
+﻿sync	Set up job	∩╗┐2026-05-01T16:49:41.4758450Z Current runner version: '2.334.0'
+sync	Set up job	2026-05-01T16:49:41.4799631Z ##[group]Runner Image Provisioner
+sync	Set up job	2026-05-01T16:49:41.4800769Z Hosted Compute Agent
+sync	Set up job	2026-05-01T16:49:41.4801610Z Version: 20260213.493
+sync	Set up job	2026-05-01T16:49:41.4802686Z Commit: 5c115507f6dd24b8de37d8bbe0bb4509d0cc0fa3
+sync	Set up job	2026-05-01T16:49:41.4803764Z Build Date: 2026-02-13T00:28:41Z
+sync	Set up job	2026-05-01T16:49:41.4804751Z Worker ID: {7b6d1cb0-5a95-48c5-a2c4-7e83ab0ed71b}
+sync	Set up job	2026-05-01T16:49:41.4806177Z Azure Region: northcentralus
+sync	Set up job	2026-05-01T16:49:41.4807098Z ##[endgroup]
+sync	Set up job	2026-05-01T16:49:41.4809070Z ##[group]Operating System
+sync	Set up job	2026-05-01T16:49:41.4810030Z Ubuntu
+sync	Set up job	2026-05-01T16:49:41.4810778Z 24.04.4
+sync	Set up job	2026-05-01T16:49:41.4811437Z LTS
+sync	Set up job	2026-05-01T16:49:41.4812172Z ##[endgroup]
+sync	Set up job	2026-05-01T16:49:41.4812910Z ##[group]Runner Image
+sync	Set up job	2026-05-01T16:49:41.4813691Z Image: ubuntu-24.04
+sync	Set up job	2026-05-01T16:49:41.4814537Z Version: 20260413.86.1
+sync	Set up job	2026-05-01T16:49:41.4816483Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260413.86/images/ubuntu/Ubuntu2404-Readme.md
+sync	Set up job	2026-05-01T16:49:41.4819184Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260413.86
+sync	Set up job	2026-05-01T16:49:41.4820615Z ##[endgroup]
+sync	Set up job	2026-05-01T16:49:41.4822321Z ##[group]GITHUB_TOKEN Permissions
+sync	Set up job	2026-05-01T16:49:41.4824950Z Contents: read
+sync	Set up job	2026-05-01T16:49:41.4826109Z Metadata: read
+sync	Set up job	2026-05-01T16:49:41.4827013Z Packages: read
+sync	Set up job	2026-05-01T16:49:41.4827727Z ##[endgroup]
+sync	Set up job	2026-05-01T16:49:41.4830517Z Secret source: Actions
+sync	Set up job	2026-05-01T16:49:41.4832380Z Prepare workflow directory
+sync	Set up job	2026-05-01T16:49:41.5723261Z Prepare all required actions
+sync	Set up job	2026-05-01T16:49:41.5827698Z Getting action download info
+sync	Set up job	2026-05-01T16:49:41.9784141Z Download action repository 'actions/checkout@v4' (SHA:34e114876b0b11c390a56381ad16ebd13914f8d5)
+sync	Set up job	2026-05-01T16:49:42.1800520Z Complete job name: sync
+sync	Checkout source (private)	∩╗┐2026-05-01T16:49:42.2484731Z ##[group]Run actions/checkout@v4
+sync	Checkout source (private)	2026-05-01T16:49:42.2485742Z with:
+sync	Checkout source (private)	2026-05-01T16:49:42.2486136Z   path: source
+sync	Checkout source (private)	2026-05-01T16:49:42.2486563Z   repository: unitonzengarden/Uniton_Shared
+sync	Checkout source (private)	2026-05-01T16:49:42.2487282Z   token: ***
+sync	Checkout source (private)	2026-05-01T16:49:42.2487669Z   ssh-strict: true
+sync	Checkout source (private)	2026-05-01T16:49:42.2488057Z   ssh-user: git
+sync	Checkout source (private)	2026-05-01T16:49:42.2488455Z   persist-credentials: true
+sync	Checkout source (private)	2026-05-01T16:49:42.2488984Z   clean: true
+sync	Checkout source (private)	2026-05-01T16:49:42.2489387Z   sparse-checkout-cone-mode: true
+sync	Checkout source (private)	2026-05-01T16:49:42.2489867Z   fetch-depth: 1
+sync	Checkout source (private)	2026-05-01T16:49:42.2490240Z   fetch-tags: false
+sync	Checkout source (private)	2026-05-01T16:49:42.2490639Z   show-progress: true
+sync	Checkout source (private)	2026-05-01T16:49:42.2491036Z   lfs: false
+sync	Checkout source (private)	2026-05-01T16:49:42.2491403Z   submodules: false
+sync	Checkout source (private)	2026-05-01T16:49:42.2491805Z   set-safe-directory: true
+sync	Checkout source (private)	2026-05-01T16:49:42.2492463Z ##[endgroup]
+sync	Checkout source (private)	2026-05-01T16:49:42.3662083Z Syncing repository: unitonzengarden/Uniton_Shared
+sync	Checkout source (private)	2026-05-01T16:49:42.3664866Z ##[group]Getting Git version info
+sync	Checkout source (private)	2026-05-01T16:49:42.3666485Z Working directory is '/home/runner/work/Uniton_Shared/Uniton_Shared/source'
+sync	Checkout source (private)	2026-05-01T16:49:42.3669728Z [command]/usr/bin/git version
+sync	Checkout source (private)	2026-05-01T16:49:42.3760859Z git version 2.53.0
+sync	Checkout source (private)	2026-05-01T16:49:42.3766190Z ##[endgroup]
+sync	Checkout source (private)	2026-05-01T16:49:42.3780947Z Temporarily overriding HOME='/home/runner/work/_temp/685b5f39-e603-417e-8fc9-35ead9ec1202' before making global git config changes
+sync	Checkout source (private)	2026-05-01T16:49:42.3783024Z Adding repository directory to the temporary git global config as a safe directory
+sync	Checkout source (private)	2026-05-01T16:49:42.3786274Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/Uniton_Shared/Uniton_Shared/source
+sync	Checkout source (private)	2026-05-01T16:49:42.3816125Z ##[group]Initializing the repository
+sync	Checkout source (private)	2026-05-01T16:49:42.3822072Z [command]/usr/bin/git init /home/runner/work/Uniton_Shared/Uniton_Shared/source
+sync	Checkout source (private)	2026-05-01T16:49:42.3889425Z hint: Using 'master' as the name for the initial branch. This default branch name
+sync	Checkout source (private)	2026-05-01T16:49:42.3891451Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+sync	Checkout source (private)	2026-05-01T16:49:42.3893798Z hint: to use in all of your new repositories, which will suppress this warning,
+sync	Checkout source (private)	2026-05-01T16:49:42.3895532Z hint: call:
+sync	Checkout source (private)	2026-05-01T16:49:42.3897034Z hint:
+sync	Checkout source (private)	2026-05-01T16:49:42.3898075Z hint: 	git config --global init.defaultBranch <name>
+sync	Checkout source (private)	2026-05-01T16:49:42.3900220Z hint:
+sync	Checkout source (private)	2026-05-01T16:49:42.3901610Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+sync	Checkout source (private)	2026-05-01T16:49:42.3903744Z hint: 'development'. The just-created branch can be renamed via this command:
+sync	Checkout source (private)	2026-05-01T16:49:42.3905136Z hint:
+sync	Checkout source (private)	2026-05-01T16:49:42.3907798Z hint: 	git branch -m <name>
+sync	Checkout source (private)	2026-05-01T16:49:42.3908985Z hint:
+sync	Checkout source (private)	2026-05-01T16:49:42.3910442Z hint: Disable this message with "git config set advice.defaultBranchName false"
+sync	Checkout source (private)	2026-05-01T16:49:42.3912505Z Initialized empty Git repository in /home/runner/work/Uniton_Shared/Uniton_Shared/source/.git/
+sync	Checkout source (private)	2026-05-01T16:49:42.3917200Z [command]/usr/bin/git remote add origin https://github.com/unitonzengarden/Uniton_Shared
+sync	Checkout source (private)	2026-05-01T16:49:42.3942955Z ##[endgroup]
+sync	Checkout source (private)	2026-05-01T16:49:42.3944409Z ##[group]Disabling automatic garbage collection
+sync	Checkout source (private)	2026-05-01T16:49:42.3947830Z [command]/usr/bin/git config --local gc.auto 0
+sync	Checkout source (private)	2026-05-01T16:49:42.3981569Z ##[endgroup]
+sync	Checkout source (private)	2026-05-01T16:49:42.3984950Z ##[group]Setting up auth
+sync	Checkout source (private)	2026-05-01T16:49:42.3988532Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+sync	Checkout source (private)	2026-05-01T16:49:42.4021609Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+sync	Checkout source (private)	2026-05-01T16:49:42.4467847Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+sync	Checkout source (private)	2026-05-01T16:49:42.4471663Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+sync	Checkout source (private)	2026-05-01T16:49:42.5458116Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+sync	Checkout source (private)	2026-05-01T16:49:42.5460292Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+sync	Checkout source (private)	2026-05-01T16:49:42.5462274Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+sync	Checkout source (private)	2026-05-01T16:49:42.5463849Z ##[endgroup]
+sync	Checkout source (private)	2026-05-01T16:49:42.5464503Z ##[group]Fetching the repository
+sync	Checkout source (private)	2026-05-01T16:49:42.5466005Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +6cae772cd69864c134b623cc4f267ea03d7c347b:refs/remotes/origin/main
+sync	Checkout source (private)	2026-05-01T16:49:44.6216192Z From https://github.com/unitonzengarden/Uniton_Shared
+sync	Checkout source (private)	2026-05-01T16:49:44.6218930Z  * [new ref]         6cae772cd69864c134b623cc4f267ea03d7c347b -> origin/main
+sync	Checkout source (private)	2026-05-01T16:49:44.6247167Z ##[endgroup]
+sync	Checkout source (private)	2026-05-01T16:49:44.6249174Z ##[group]Determining the checkout info
+sync	Checkout source (private)	2026-05-01T16:49:44.6251424Z ##[endgroup]
+sync	Checkout source (private)	2026-05-01T16:49:44.6255146Z [command]/usr/bin/git sparse-checkout disable
+sync	Checkout source (private)	2026-05-01T16:49:44.6296554Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+sync	Checkout source (private)	2026-05-01T16:49:44.6328115Z ##[group]Checking out the ref
+sync	Checkout source (private)	2026-05-01T16:49:44.6331127Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+sync	Checkout source (private)	2026-05-01T16:49:45.0451140Z Switched to a new branch 'main'
+sync	Checkout source (private)	2026-05-01T16:49:45.0452934Z branch 'main' set up to track 'origin/main'.
+sync	Checkout source (private)	2026-05-01T16:49:45.0477518Z ##[endgroup]
+sync	Checkout source (private)	2026-05-01T16:49:45.0520907Z [command]/usr/bin/git log -1 --format=%H
+sync	Checkout source (private)	2026-05-01T16:49:45.0547145Z 6cae772cd69864c134b623cc4f267ea03d7c347b
+sync	Checkout target (public)	∩╗┐2026-05-01T16:49:45.0787442Z ##[group]Run actions/checkout@v4
+sync	Checkout target (public)	2026-05-01T16:49:45.0787795Z with:
+sync	Checkout target (public)	2026-05-01T16:49:45.0788052Z   repository: unitonzengarden/Uniton_Shared_Live
+sync	Checkout target (public)	2026-05-01T16:49:45.0788839Z   token: ***
+sync	Checkout target (public)	2026-05-01T16:49:45.0789075Z   path: target
+sync	Checkout target (public)	2026-05-01T16:49:45.0789324Z   ssh-strict: true
+sync	Checkout target (public)	2026-05-01T16:49:45.0789571Z   ssh-user: git
+sync	Checkout target (public)	2026-05-01T16:49:45.0789809Z   persist-credentials: true
+sync	Checkout target (public)	2026-05-01T16:49:45.0790079Z   clean: true
+sync	Checkout target (public)	2026-05-01T16:49:45.0790323Z   sparse-checkout-cone-mode: true
+sync	Checkout target (public)	2026-05-01T16:49:45.0790609Z   fetch-depth: 1
+sync	Checkout target (public)	2026-05-01T16:49:45.0790851Z   fetch-tags: false
+sync	Checkout target (public)	2026-05-01T16:49:45.0791313Z   show-progress: true
+sync	Checkout target (public)	2026-05-01T16:49:45.0791564Z   lfs: false
+sync	Checkout target (public)	2026-05-01T16:49:45.0791779Z   submodules: false
+sync	Checkout target (public)	2026-05-01T16:49:45.0792048Z   set-safe-directory: true
+sync	Checkout target (public)	2026-05-01T16:49:45.0792340Z ##[endgroup]
+sync	Checkout target (public)	2026-05-01T16:49:45.1912594Z Syncing repository: unitonzengarden/Uniton_Shared_Live
+sync	Checkout target (public)	2026-05-01T16:49:45.1920315Z ##[group]Getting Git version info
+sync	Checkout target (public)	2026-05-01T16:49:45.1921411Z Working directory is '/home/runner/work/Uniton_Shared/Uniton_Shared/target'
+sync	Checkout target (public)	2026-05-01T16:49:45.1966154Z [command]/usr/bin/git version
+sync	Checkout target (public)	2026-05-01T16:49:45.2010732Z git version 2.53.0
+sync	Checkout target (public)	2026-05-01T16:49:45.2037925Z ##[endgroup]
+sync	Checkout target (public)	2026-05-01T16:49:45.2052906Z Temporarily overriding HOME='/home/runner/work/_temp/f7c9059a-cd41-401a-a364-1eeb87db3c4f' before making global git config changes
+sync	Checkout target (public)	2026-05-01T16:49:45.2054822Z Adding repository directory to the temporary git global config as a safe directory
+sync	Checkout target (public)	2026-05-01T16:49:45.2073139Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/Uniton_Shared/Uniton_Shared/target
+sync	Checkout target (public)	2026-05-01T16:49:45.2114062Z ##[group]Initializing the repository
+sync	Checkout target (public)	2026-05-01T16:49:45.2116014Z [command]/usr/bin/git init /home/runner/work/Uniton_Shared/Uniton_Shared/target
+sync	Checkout target (public)	2026-05-01T16:49:45.2160191Z hint: Using 'master' as the name for the initial branch. This default branch name
+sync	Checkout target (public)	2026-05-01T16:49:45.2161785Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+sync	Checkout target (public)	2026-05-01T16:49:45.2163587Z hint: to use in all of your new repositories, which will suppress this warning,
+sync	Checkout target (public)	2026-05-01T16:49:45.2167492Z hint: call:
+sync	Checkout target (public)	2026-05-01T16:49:45.2167921Z hint:
+sync	Checkout target (public)	2026-05-01T16:49:45.2168430Z hint: 	git config --global init.defaultBranch <name>
+sync	Checkout target (public)	2026-05-01T16:49:45.2168912Z hint:
+sync	Checkout target (public)	2026-05-01T16:49:45.2169283Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+sync	Checkout target (public)	2026-05-01T16:49:45.2169843Z hint: 'development'. The just-created branch can be renamed via this command:
+sync	Checkout target (public)	2026-05-01T16:49:45.2170270Z hint:
+sync	Checkout target (public)	2026-05-01T16:49:45.2170538Z hint: 	git branch -m <name>
+sync	Checkout target (public)	2026-05-01T16:49:45.2170856Z hint:
+sync	Checkout target (public)	2026-05-01T16:49:45.2171274Z hint: Disable this message with "git config set advice.defaultBranchName false"
+sync	Checkout target (public)	2026-05-01T16:49:45.2171910Z Initialized empty Git repository in /home/runner/work/Uniton_Shared/Uniton_Shared/target/.git/
+sync	Checkout target (public)	2026-05-01T16:49:45.2175425Z [command]/usr/bin/git remote add origin https://github.com/unitonzengarden/Uniton_Shared_Live
+sync	Checkout target (public)	2026-05-01T16:49:45.2211545Z ##[endgroup]
+sync	Checkout target (public)	2026-05-01T16:49:45.2212731Z ##[group]Disabling automatic garbage collection
+sync	Checkout target (public)	2026-05-01T16:49:45.2217142Z [command]/usr/bin/git config --local gc.auto 0
+sync	Checkout target (public)	2026-05-01T16:49:45.2250699Z ##[endgroup]
+sync	Checkout target (public)	2026-05-01T16:49:45.2252309Z ##[group]Setting up auth
+sync	Checkout target (public)	2026-05-01T16:49:45.2257501Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+sync	Checkout target (public)	2026-05-01T16:49:45.2291476Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+sync	Checkout target (public)	2026-05-01T16:49:45.2544540Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+sync	Checkout target (public)	2026-05-01T16:49:45.2579974Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+sync	Checkout target (public)	2026-05-01T16:49:45.2988767Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+sync	Checkout target (public)	2026-05-01T16:49:45.2993815Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+sync	Checkout target (public)	2026-05-01T16:49:45.3311601Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+sync	Checkout target (public)	2026-05-01T16:49:45.5675866Z ##[endgroup]
+sync	Checkout target (public)	2026-05-01T16:49:45.5680311Z ##[group]Determining the default branch
+sync	Checkout target (public)	2026-05-01T16:49:45.5681321Z Retrieving the default branch name
+sync	Checkout target (public)	2026-05-01T16:49:45.8445954Z Default branch 'main'
+sync	Checkout target (public)	2026-05-01T16:49:45.8454899Z ##[endgroup]
+sync	Checkout target (public)	2026-05-01T16:49:45.8514349Z ##[group]Fetching the repository
+sync	Checkout target (public)	2026-05-01T16:49:45.8524458Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +refs/heads/main:refs/remotes/origin/main
+sync	Checkout target (public)	2026-05-01T16:49:48.2003926Z From https://github.com/unitonzengarden/Uniton_Shared_Live
+sync	Checkout target (public)	2026-05-01T16:49:48.2005159Z  * [new branch]      main       -> origin/main
+sync	Checkout target (public)	2026-05-01T16:49:48.2038031Z ##[endgroup]
+sync	Checkout target (public)	2026-05-01T16:49:48.2038957Z ##[group]Determining the checkout info
+sync	Checkout target (public)	2026-05-01T16:49:48.2056566Z ##[endgroup]
+sync	Checkout target (public)	2026-05-01T16:49:48.2076470Z [command]/usr/bin/git sparse-checkout disable
+sync	Checkout target (public)	2026-05-01T16:49:48.2146725Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+sync	Checkout target (public)	2026-05-01T16:49:48.2196818Z ##[group]Checking out the ref
+sync	Checkout target (public)	2026-05-01T16:49:48.2197727Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+sync	Checkout target (public)	2026-05-01T16:49:48.5205785Z Switched to a new branch 'main'
+sync	Checkout target (public)	2026-05-01T16:49:48.5208932Z branch 'main' set up to track 'origin/main'.
+sync	Checkout target (public)	2026-05-01T16:49:48.5233911Z ##[endgroup]
+sync	Checkout target (public)	2026-05-01T16:49:48.5293696Z [command]/usr/bin/git log -1 --format=%H
+sync	Checkout target (public)	2026-05-01T16:49:48.5332620Z c57b310886cc5d99588ecc6483915191725fd10e
+sync	Copy runtime files	∩╗┐2026-05-01T16:49:48.5506793Z ##[group]Run mkdir -p target/runtime/checklist
+sync	Copy runtime files	2026-05-01T16:49:48.5507350Z ^[[36;1mmkdir -p target/runtime/checklist^[[0m
+sync	Copy runtime files	2026-05-01T16:49:48.5507661Z ^[[36;1mmkdir -p target/runtime/health^[[0m
+sync	Copy runtime files	2026-05-01T16:49:48.5507947Z ^[[36;1mmkdir -p target/notifications^[[0m
+sync	Copy runtime files	2026-05-01T16:49:48.5508216Z ^[[36;1mmkdir -p target/network^[[0m
+sync	Copy runtime files	2026-05-01T16:49:48.5508727Z ^[[36;1mcp source/runtime/current_state.md target/runtime/current_state.md || echo "current_state.md not found, skip"^[[0m
+sync	Copy runtime files	2026-05-01T16:49:48.5509564Z ^[[36;1mcp source/runtime/checklist/MASTER_CHECKLIST.md target/runtime/checklist/MASTER_CHECKLIST.md || echo "MASTER_CHECKLIST.md not found, skip"^[[0m
+sync	Copy runtime files	2026-05-01T16:49:48.5510454Z ^[[36;1mcp source/runtime/ACTION_REQUIRED_BOARD.md target/runtime/ACTION_REQUIRED_BOARD.md || echo "ACTION_REQUIRED_BOARD.md not found, skip"^[[0m
+sync	Copy runtime files	2026-05-01T16:49:48.5511314Z ^[[36;1mcp source/runtime/PROJECT_STATUS.md target/runtime/PROJECT_STATUS.md || echo "PROJECT_STATUS.md not found, skip"^[[0m
+sync	Copy runtime files	2026-05-01T16:49:48.5512150Z ^[[36;1mcp source/runtime/AIER_CONTEXT_PACKET.md target/runtime/AIER_CONTEXT_PACKET.md || echo "AIER_CONTEXT_PACKET.md not found, skip"^[[0m
+sync	Copy runtime files	2026-05-01T16:49:48.5513040Z ^[[36;1mcp source/runtime/AIER_CONTEXT_PACKET.json target/runtime/AIER_CONTEXT_PACKET.json || echo "AIER_CONTEXT_PACKET.json not found, skip"^[[0m
+sync	Copy runtime files	2026-05-01T16:49:48.5513953Z ^[[36;1mcp source/runtime/health/ECOSYSTEM_HEALTH_STATE.md target/runtime/health/ECOSYSTEM_HEALTH_STATE.md || echo "ECOSYSTEM_HEALTH_STATE.md not found, skip"^[[0m
+sync	Copy runtime files	2026-05-01T16:49:48.5514938Z ^[[36;1mcp source/runtime/health/ECOSYSTEM_HEALTH_STATE.json target/runtime/health/ECOSYSTEM_HEALTH_STATE.json || echo "ECOSYSTEM_HEALTH_STATE.json not found, skip"^[[0m
+sync	Copy runtime files	2026-05-01T16:49:48.5516266Z ^[[36;1mcp source/runtime/health/LATEST_VERIFIED_COMMITS.json target/runtime/health/LATEST_VERIFIED_COMMITS.json || echo "LATEST_VERIFIED_COMMITS.json not found, skip"^[[0m
+sync	Copy runtime files	2026-05-01T16:49:48.5517276Z ^[[36;1mcp source/runtime/health/BLOCKERS_AND_RISKS.md target/runtime/health/BLOCKERS_AND_RISKS.md || echo "BLOCKERS_AND_RISKS.md not found, skip"^[[0m
+sync	Copy runtime files	2026-05-01T16:49:48.5518153Z ^[[36;1mcp source/runtime/health/NEXT_SAFE_ACTION.md target/runtime/health/NEXT_SAFE_ACTION.md || echo "NEXT_SAFE_ACTION.md not found, skip"^[[0m
+sync	Copy runtime files	2026-05-01T16:49:48.5519053Z ^[[36;1mcp source/notifications/NOTIFICATION_LEDGER.md target/notifications/NOTIFICATION_LEDGER.md || echo "NOTIFICATION_LEDGER.md not found, skip"^[[0m
+sync	Copy runtime files	2026-05-01T16:49:48.5519879Z ^[[36;1mcp source/network/LANE_REGISTRY.md target/network/LANE_REGISTRY.md || echo "LANE_REGISTRY.md not found, skip"^[[0m
+sync	Copy runtime files	2026-05-01T16:49:48.5520581Z ^[[36;1mcp source/network/ACTIVITY_FEED.md target/network/ACTIVITY_FEED.md || echo "ACTIVITY_FEED.md not found, skip"^[[0m
+sync	Copy runtime files	2026-05-01T16:49:48.5521082Z ^[[36;1mmkdir -p target/network/task_queues^[[0m
+sync	Copy runtime files	2026-05-01T16:49:48.5521597Z ^[[36;1mif [ -d source/network/task_queues ]; then^[[0m
+sync	Copy runtime files	2026-05-01T16:49:48.5522118Z ^[[36;1m  cp source/network/task_queues/*.md target/network/task_queues/ 2>/dev/null || echo "task_queues empty, skip"^[[0m
+sync	Copy runtime files	2026-05-01T16:49:48.5522599Z ^[[36;1mfi^[[0m
+sync	Copy runtime files	2026-05-01T16:49:48.5523045Z ^[[36;1m# Lane_02 UZG runtime namespace (LANE01-SHARED-SYNC-WORKFLOW-EXTEND-LANE02-NAMESPACE-2026-05-01T16-05Z)^[[0m
+sync	Copy runtime files	2026-05-01T16:49:48.5523571Z ^[[36;1mmkdir -p target/runtime/lane_02_uzg^[[0m
+sync	Copy runtime files	2026-05-01T16:49:48.5523859Z ^[[36;1mif [ -d source/runtime/lane_02_uzg ]; then^[[0m
+sync	Copy runtime files	2026-05-01T16:49:48.5524417Z ^[[36;1m  cp -R source/runtime/lane_02_uzg/. target/runtime/lane_02_uzg/ 2>/dev/null || echo "runtime/lane_02_uzg copy partial, continuing"^[[0m
+sync	Copy runtime files	2026-05-01T16:49:48.5524930Z ^[[36;1mfi^[[0m
+sync	Copy runtime files	2026-05-01T16:49:48.5525127Z ^[[36;1mmkdir -p target/network/lane_02_uzg^[[0m
+sync	Copy runtime files	2026-05-01T16:49:48.5525406Z ^[[36;1mif [ -d source/network/lane_02_uzg ]; then^[[0m
+sync	Copy runtime files	2026-05-01T16:49:48.5526185Z ^[[36;1m  cp -R source/network/lane_02_uzg/. target/network/lane_02_uzg/ 2>/dev/null || echo "network/lane_02_uzg copy partial, continuing"^[[0m
+sync	Copy runtime files	2026-05-01T16:49:48.5526686Z ^[[36;1mfi^[[0m
+sync	Copy runtime files	2026-05-01T16:49:48.5526960Z ^[[36;1m# Live Ledger v1 namespaces (LANE01-LIVE-LEDGER-FOUNDATION).^[[0m
+sync	Copy runtime files	2026-05-01T16:49:48.5527645Z ^[[36;1m# rsync-style recursive copy preserves nested layout (e.g. tasks/completed/<date>/).^[[0m
+sync	Copy runtime files	2026-05-01T16:49:48.5528266Z ^[[36;1m# --update + delete-extras semantics not used: target tracks source 1:1 (sync bot owns target).^[[0m
+sync	Copy runtime files	2026-05-01T16:49:48.5604185Z ^[[36;1mfor ns in tasks ledger status aier-status; do^[[0m
+sync	Copy runtime files	2026-05-01T16:49:48.5604672Z ^[[36;1m  if [ -d "source/$ns" ]; then^[[0m
+sync	Copy runtime files	2026-05-01T16:49:48.5605134Z ^[[36;1m    mkdir -p "target/$ns"^[[0m
+sync	Copy runtime files	2026-05-01T16:49:48.5605920Z ^[[36;1m    cp -R "source/$ns/." "target/$ns/" 2>/dev/null || echo "$ns copy partial, continuing"^[[0m
+sync	Copy runtime files	2026-05-01T16:49:48.5606520Z ^[[36;1m  fi^[[0m
+sync	Copy runtime files	2026-05-01T16:49:48.5606772Z ^[[36;1mdone^[[0m
+sync	Copy runtime files	2026-05-01T16:49:48.5607288Z ^[[36;1m# aier-verify skill results + execution log (LANE01-SKILL-AIER-VERIFY-EXECUTABLE-V1).^[[0m
+sync	Copy runtime files	2026-05-01T16:49:48.5608168Z ^[[36;1m# Surfaces under skills/aier-verify/ at the mirror root so NTS can fetch via:^[[0m
+sync	Copy runtime files	2026-05-01T16:49:48.5609159Z ^[[36;1m#   https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/skills/aier-verify/...^[[0m
+sync	Copy runtime files	2026-05-01T16:49:48.5609969Z ^[[36;1mmkdir -p target/skills/aier-verify^[[0m
+sync	Copy runtime files	2026-05-01T16:49:48.5610552Z ^[[36;1mif [ -d source/docs/LAW_CLA_LLM/SHARED/skills/aier-verify/results ]; then^[[0m
+sync	Copy runtime files	2026-05-01T16:49:48.5611226Z ^[[36;1m  mkdir -p target/skills/aier-verify/results^[[0m
+sync	Copy runtime files	2026-05-01T16:49:48.5612320Z ^[[36;1m  cp -R source/docs/LAW_CLA_LLM/SHARED/skills/aier-verify/results/. target/skills/aier-verify/results/ 2>/dev/null || echo "aier-verify/results copy partial"^[[0m
+sync	Copy runtime files	2026-05-01T16:49:48.5613378Z ^[[36;1mfi^[[0m
+sync	Copy runtime files	2026-05-01T16:49:48.5613928Z ^[[36;1mif [ -f source/docs/LAW_CLA_LLM/SHARED/skills/aier-verify/EXECUTION_LOG.live.md ]; then^[[0m
+sync	Copy runtime files	2026-05-01T16:49:48.5615102Z ^[[36;1m  cp source/docs/LAW_CLA_LLM/SHARED/skills/aier-verify/EXECUTION_LOG.live.md target/skills/aier-verify/EXECUTION_LOG.live.md^[[0m
+sync	Copy runtime files	2026-05-01T16:49:48.5616312Z ^[[36;1mfi^[[0m
+sync	Copy runtime files	2026-05-01T16:49:48.5616908Z ^[[36;1m# Cross-published audits + system maps + handoffs (LANE01-CANON-V2-RECONCILIATION-V1).^[[0m
+sync	Copy runtime files	2026-05-01T16:49:48.5617749Z ^[[36;1m# Uses cp -R to mirror the directory subtree, then strips operational^[[0m
+sync	Copy runtime files	2026-05-01T16:49:48.5618470Z ^[[36;1m# log files from the audits subtree before pushing to the public^[[0m
+sync	Copy runtime files	2026-05-01T16:49:48.5619188Z ^[[36;1m# mirror. See LANE01-CANON-V2-RECONCILIATION-V1 incident note.^[[0m
+sync	Copy runtime files	2026-05-01T16:49:48.5619855Z ^[[36;1mfor ns in audits/ecosystem system_maps handoffs/inbox; do^[[0m
+sync	Copy runtime files	2026-05-01T16:49:48.5620350Z ^[[36;1m  if [ -d "source/$ns" ]; then^[[0m
+sync	Copy runtime files	2026-05-01T16:49:48.5620745Z ^[[36;1m    mkdir -p "target/$ns"^[[0m
+sync	Copy runtime files	2026-05-01T16:49:48.5621157Z ^[[36;1m    cp -R "source/$ns/." "target/$ns/" 2>/dev/null || echo "$ns copy partial, continuing"^[[0m
+sync	Copy runtime files	2026-05-01T16:49:48.5621572Z ^[[36;1m  fi^[[0m
+sync	Copy runtime files	2026-05-01T16:49:48.5621791Z ^[[36;1mdone^[[0m
+sync	Copy runtime files	2026-05-01T16:49:48.5622328Z ^[[36;1m# Strip *_audit.log + *.log under audits/ before push (push-protection^[[0m
+sync	Copy runtime files	2026-05-01T16:49:48.5622782Z ^[[36;1m# safety net + canonical 'public mirror = report + snapshot, never^[[0m
+sync	Copy runtime files	2026-05-01T16:49:48.5623144Z ^[[36;1m# operational log').^[[0m
+sync	Copy runtime files	2026-05-01T16:49:48.5623400Z ^[[36;1mif [ -d target/audits ]; then^[[0m
+sync	Copy runtime files	2026-05-01T16:49:48.5623828Z ^[[36;1m  find target/audits -type f \( -name '*_audit.log' -o -name '*.log' \) -print -delete || true^[[0m
+sync	Copy runtime files	2026-05-01T16:49:48.5624232Z ^[[36;1mfi^[[0m
+sync	Copy runtime files	2026-05-01T16:49:48.5624550Z ^[[36;1m# LAWs + LAW index (LANE01-LAW-LANE-3-PUBLISH-V1-1-AND-QOT-CANON-UPDATE-V1)^[[0m
+sync	Copy runtime files	2026-05-01T16:49:48.5624949Z ^[[36;1mif [ -d source/laws ]; then^[[0m
+sync	Copy runtime files	2026-05-01T16:49:48.5625202Z ^[[36;1m  mkdir -p target/laws^[[0m
+sync	Copy runtime files	2026-05-01T16:49:48.5625841Z ^[[36;1m  cp -R source/laws/. target/laws/ 2>/dev/null || echo "laws/ copy partial, continuing"^[[0m
+sync	Copy runtime files	2026-05-01T16:49:48.5626234Z ^[[36;1mfi^[[0m
+sync	Copy runtime files	2026-05-01T16:49:48.5626453Z ^[[36;1mif [ -f source/LAW_INDEX_MASTER.md ]; then^[[0m
+sync	Copy runtime files	2026-05-01T16:49:48.5626822Z ^[[36;1m  cp source/LAW_INDEX_MASTER.md target/LAW_INDEX_MASTER.md^[[0m
+sync	Copy runtime files	2026-05-01T16:49:48.5627148Z ^[[36;1mfi^[[0m
+sync	Copy runtime files	2026-05-01T16:49:48.5627417Z ^[[36;1m# Canon docs (LANE01-UZG-PLUS-UIUX-CANON-SPEC-AUTHOR-V1)^[[0m
+sync	Copy runtime files	2026-05-01T16:49:48.5627920Z ^[[36;1mif [ -d source/canon ]; then^[[0m
+sync	Copy runtime files	2026-05-01T16:49:48.5628177Z ^[[36;1m  mkdir -p target/canon^[[0m
+sync	Copy runtime files	2026-05-01T16:49:48.5628562Z ^[[36;1m  cp -R source/canon/. target/canon/ 2>/dev/null || echo "canon/ copy partial, continuing"^[[0m
+sync	Copy runtime files	2026-05-01T16:49:48.5628959Z ^[[36;1mfi^[[0m
+sync	Copy runtime files	2026-05-01T16:49:48.5629239Z ^[[36;1m# Governance docs (LANE01-CLA-PERSISTENT-REMINDERS-UPDATE-V2)^[[0m
+sync	Copy runtime files	2026-05-01T16:49:48.5629596Z ^[[36;1mif [ -d source/governance ]; then^[[0m
+sync	Copy runtime files	2026-05-01T16:49:48.5629864Z ^[[36;1m  mkdir -p target/governance^[[0m
+sync	Copy runtime files	2026-05-01T16:49:48.5630315Z ^[[36;1m  cp -R source/governance/. target/governance/ 2>/dev/null || echo "governance/ copy partial, continuing"^[[0m
+sync	Copy runtime files	2026-05-01T16:49:48.5630762Z ^[[36;1mfi^[[0m
+sync	Copy runtime files	2026-05-01T16:49:48.5657571Z shell: /usr/bin/bash -e {0}
+sync	Copy runtime files	2026-05-01T16:49:48.5657865Z ##[endgroup]
+sync	Copy runtime files	2026-05-01T16:49:48.7134949Z target/audits/ecosystem/uzg-plus/LANE01-TECH-STACK-REGISTRY-CREATE-V1_audit.log
+sync	Copy runtime files	2026-05-01T16:49:48.7136598Z target/audits/ecosystem/uzg-plus/LANE01-UZG-PLUS-V2-AUTHENTICATED-SCREENSHOTS-V1_audit.log
+sync	Copy runtime files	2026-05-01T16:49:48.7138068Z target/audits/ecosystem/uzg-plus/LANE01-CLA-PERSISTENT-REMINDERS-UPDATE-V2_audit.log
+sync	Copy runtime files	2026-05-01T16:49:48.7139467Z target/audits/ecosystem/uzg-plus/LANE01-UZG-PLUS-AUDIT-AND-SYSTEM-MAP-V1_audit.log
+sync	Copy runtime files	2026-05-01T16:49:48.7140511Z target/audits/ecosystem/uzg-plus/LANE01-UZG-PLUS-V2-MASTER-AUDIT-PUBLISH-V1_audit.log
+sync	Copy runtime files	2026-05-01T16:49:48.7141621Z target/audits/ecosystem/uzg-plus/LANE01-CLA-PERSISTENT-REMINDERS-UPDATE-V1_audit.log
+sync	Copy runtime files	2026-05-01T16:49:48.7142660Z target/audits/ecosystem/uzg-plus/LANE01-UZG-PLUS-V2-USER-FLOW-AUDIT-V1_audit.log
+sync	Copy runtime files	2026-05-01T16:49:48.7143819Z target/audits/ecosystem/uzg-plus/LANE01-UZG-PLUS-UIUX-CANON-SPEC-AUTHOR-V1_audit.log
+sync	Copy runtime files	2026-05-01T16:49:48.7144939Z target/audits/ecosystem/uzg-plus/LANE01-UZG-PLUS-IMPLEMENTATION-PRIORITY-MATRIX-V1_audit.log
+sync	Copy runtime files	2026-05-01T16:49:48.7146589Z target/audits/ecosystem/uzg-plus/LANE01-UZG-PLUS-V2-AUTHENTICATED-SCREENSHOTS-V2_audit.log
+sync	Copy runtime files	2026-05-01T16:49:48.7147782Z target/audits/ecosystem/uzg-plus/LANE01-UZG-PLUS-PHASE2-MOCKUP-PRIORITY-BRIEF-V1_audit.log
+sync	Generate SYNC_INFO.md	∩╗┐2026-05-01T16:49:48.7333538Z ##[group]Run cd target
+sync	Generate SYNC_INFO.md	2026-05-01T16:49:48.7333888Z ^[[36;1mcd target^[[0m
+sync	Generate SYNC_INFO.md	2026-05-01T16:49:48.7334103Z ^[[36;1mcat > SYNC_INFO.md <<EOF^[[0m
+sync	Generate SYNC_INFO.md	2026-05-01T16:49:48.7334377Z ^[[36;1m# Uniton_Shared_Live ΓÇö Sync Info^[[0m
+sync	Generate SYNC_INFO.md	2026-05-01T16:49:48.7334644Z ^[[36;1m^[[0m
+sync	Generate SYNC_INFO.md	2026-05-01T16:49:48.7334890Z ^[[36;1m**Source repo**: unitonzengarden/Uniton_Shared (private)^[[0m
+sync	Generate SYNC_INFO.md	2026-05-01T16:49:48.7335267Z ^[[36;1m**Last sync**: $(date -u +"%Y-%m-%dT%H:%M:%SZ")^[[0m
+sync	Generate SYNC_INFO.md	2026-05-01T16:49:48.7336001Z ^[[36;1m**Source commit**: 6cae772cd69864c134b623cc4f267ea03d7c347b^[[0m
+sync	Generate SYNC_INFO.md	2026-05-01T16:49:48.7336345Z ^[[36;1m**Triggered by**: push^[[0m
+sync	Generate SYNC_INFO.md	2026-05-01T16:49:48.7336580Z ^[[36;1m^[[0m
+sync	Generate SYNC_INFO.md	2026-05-01T16:49:48.7336763Z ^[[36;1m## Purpose^[[0m
+sync	Generate SYNC_INFO.md	2026-05-01T16:49:48.7337181Z ^[[36;1m^[[0m
+sync	Generate SYNC_INFO.md	2026-05-01T16:49:48.7337442Z ^[[36;1mPublic mirror of runtime state files for CLA chat to fetch.^[[0m
+sync	Generate SYNC_INFO.md	2026-05-01T16:49:48.7337867Z ^[[36;1mCanon, laws, skills, lab, rules remain private in Uniton_Shared.^[[0m
+sync	Generate SYNC_INFO.md	2026-05-01T16:49:48.7338203Z ^[[36;1m^[[0m
+sync	Generate SYNC_INFO.md	2026-05-01T16:49:48.7338370Z ^[[36;1m## Files synced^[[0m
+sync	Generate SYNC_INFO.md	2026-05-01T16:49:48.7338614Z ^[[36;1m^[[0m
+sync	Generate SYNC_INFO.md	2026-05-01T16:49:48.7338798Z ^[[36;1m- runtime/current_state.md^[[0m
+sync	Generate SYNC_INFO.md	2026-05-01T16:49:48.7339083Z ^[[36;1m- runtime/checklist/MASTER_CHECKLIST.md^[[0m
+sync	Generate SYNC_INFO.md	2026-05-01T16:49:48.7339387Z ^[[36;1m- runtime/ACTION_REQUIRED_BOARD.md^[[0m
+sync	Generate SYNC_INFO.md	2026-05-01T16:49:48.7339653Z ^[[36;1m- runtime/PROJECT_STATUS.md^[[0m
+sync	Generate SYNC_INFO.md	2026-05-01T16:49:48.7339911Z ^[[36;1m- runtime/AIER_CONTEXT_PACKET.md^[[0m
+sync	Generate SYNC_INFO.md	2026-05-01T16:49:48.7340181Z ^[[36;1m- runtime/AIER_CONTEXT_PACKET.json^[[0m
+sync	Generate SYNC_INFO.md	2026-05-01T16:49:48.7340466Z ^[[36;1m- runtime/health/ECOSYSTEM_HEALTH_STATE.md^[[0m
+sync	Generate SYNC_INFO.md	2026-05-01T16:49:48.7340792Z ^[[36;1m- runtime/health/ECOSYSTEM_HEALTH_STATE.json^[[0m
+sync	Generate SYNC_INFO.md	2026-05-01T16:49:48.7341135Z ^[[36;1m- runtime/health/LATEST_VERIFIED_COMMITS.json^[[0m
+sync	Generate SYNC_INFO.md	2026-05-01T16:49:48.7341468Z ^[[36;1m- runtime/health/BLOCKERS_AND_RISKS.md^[[0m
+sync	Generate SYNC_INFO.md	2026-05-01T16:49:48.7341772Z ^[[36;1m- runtime/health/NEXT_SAFE_ACTION.md^[[0m
+sync	Generate SYNC_INFO.md	2026-05-01T16:49:48.7342065Z ^[[36;1m- notifications/NOTIFICATION_LEDGER.md^[[0m
+sync	Generate SYNC_INFO.md	2026-05-01T16:49:48.7342342Z ^[[36;1m- network/LANE_REGISTRY.md^[[0m
+sync	Generate SYNC_INFO.md	2026-05-01T16:49:48.7342589Z ^[[36;1m- network/ACTIVITY_FEED.md^[[0m
+sync	Generate SYNC_INFO.md	2026-05-01T16:49:48.7342983Z ^[[36;1m- runtime/lane_02_uzg/** (9 Lane_02 runtime surfaces; present when merged on source main)^[[0m
+sync	Generate SYNC_INFO.md	2026-05-01T16:49:48.7343543Z ^[[36;1m- network/lane_02_uzg/** (1 Lane_02 MISSION; present when merged on source main)^[[0m
+sync	Generate SYNC_INFO.md	2026-05-01T16:49:48.7343926Z ^[[36;1m^[[0m
+sync	Generate SYNC_INFO.md	2026-05-01T16:49:48.7344107Z ^[[36;1m## CLA fetch URLs (raw)^[[0m
+sync	Generate SYNC_INFO.md	2026-05-01T16:49:48.7344335Z ^[[36;1m^[[0m
+sync	Generate SYNC_INFO.md	2026-05-01T16:49:48.7344793Z ^[[36;1m- https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/runtime/current_state.md^[[0m
+sync	Generate SYNC_INFO.md	2026-05-01T16:49:48.7345546Z ^[[36;1m- https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/runtime/checklist/MASTER_CHECKLIST.md^[[0m
+sync	Generate SYNC_INFO.md	2026-05-01T16:49:48.7346460Z ^[[36;1m- https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/runtime/ACTION_REQUIRED_BOARD.md^[[0m
+sync	Generate SYNC_INFO.md	2026-05-01T16:49:48.7347178Z ^[[36;1m- https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/runtime/PROJECT_STATUS.md^[[0m
+sync	Generate SYNC_INFO.md	2026-05-01T16:49:48.7347902Z ^[[36;1m- https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/runtime/AIER_CONTEXT_PACKET.md^[[0m
+sync	Generate SYNC_INFO.md	2026-05-01T16:49:48.7348639Z ^[[36;1m- https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/runtime/AIER_CONTEXT_PACKET.json^[[0m
+sync	Generate SYNC_INFO.md	2026-05-01T16:49:48.7349395Z ^[[36;1m- https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/runtime/health/ECOSYSTEM_HEALTH_STATE.md^[[0m
+sync	Generate SYNC_INFO.md	2026-05-01T16:49:48.7350196Z ^[[36;1m- https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/runtime/health/ECOSYSTEM_HEALTH_STATE.json^[[0m
+sync	Generate SYNC_INFO.md	2026-05-01T16:49:48.7350993Z ^[[36;1m- https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/runtime/health/LATEST_VERIFIED_COMMITS.json^[[0m
+sync	Generate SYNC_INFO.md	2026-05-01T16:49:48.7351784Z ^[[36;1m- https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/runtime/health/BLOCKERS_AND_RISKS.md^[[0m
+sync	Generate SYNC_INFO.md	2026-05-01T16:49:48.7352534Z ^[[36;1m- https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/runtime/health/NEXT_SAFE_ACTION.md^[[0m
+sync	Generate SYNC_INFO.md	2026-05-01T16:49:48.7353470Z ^[[36;1m- https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/notifications/NOTIFICATION_LEDGER.md^[[0m
+sync	Generate SYNC_INFO.md	2026-05-01T16:49:48.7354183Z ^[[36;1m- https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/network/LANE_REGISTRY.md^[[0m
+sync	Generate SYNC_INFO.md	2026-05-01T16:49:48.7354861Z ^[[36;1m- https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/network/ACTIVITY_FEED.md^[[0m
+sync	Generate SYNC_INFO.md	2026-05-01T16:49:48.7355657Z ^[[36;1m- https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/network/task_queues/Lane_01.md^[[0m
+sync	Generate SYNC_INFO.md	2026-05-01T16:49:48.7356483Z ^[[36;1m- https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/network/task_queues/Lane_02.md^[[0m
+sync	Generate SYNC_INFO.md	2026-05-01T16:49:48.7357185Z ^[[36;1m- https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/network/task_queues/Lane_03.md^[[0m
+sync	Generate SYNC_INFO.md	2026-05-01T16:49:48.7357644Z ^[[36;1m^[[0m
+sync	Generate SYNC_INFO.md	2026-05-01T16:49:48.7357989Z ^[[36;1m## Lane_02 UZG runtime namespace (Lane_02 bootstrap ΓÇö LANE01-SYNC-EXTEND-LANE02-V1)^[[0m
+sync	Generate SYNC_INFO.md	2026-05-01T16:49:48.7358375Z ^[[36;1m^[[0m
+sync	Generate SYNC_INFO.md	2026-05-01T16:49:48.7358548Z ^[[36;1m**Files synced**^[[0m
+sync	Generate SYNC_INFO.md	2026-05-01T16:49:48.7358856Z ^[[36;1m- runtime/lane_02_uzg/** (9 files, Tier 1-3 CLA-2 bootstrap)^[[0m
+sync	Generate SYNC_INFO.md	2026-05-01T16:49:48.7359265Z ^[[36;1m- network/lane_02_uzg/** (1 file, Lane_02 MISSION declaration)^[[0m
+sync	Generate SYNC_INFO.md	2026-05-01T16:49:48.7359585Z ^[[36;1m^[[0m
+sync	Generate SYNC_INFO.md	2026-05-01T16:49:48.7359759Z ^[[36;1m### CLA fetch URLs (raw)^[[0m
+sync	Generate SYNC_INFO.md	2026-05-01T16:49:48.7359989Z ^[[36;1m^[[0m
+sync	Generate SYNC_INFO.md	2026-05-01T16:49:48.7360408Z ^[[36;1m- https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/runtime/lane_02_uzg/INDEX.live.md^[[0m
+sync	Generate SYNC_INFO.md	2026-05-01T16:49:48.7361145Z ^[[36;1m- https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/runtime/lane_02_uzg/state.live.md^[[0m
+sync	Generate SYNC_INFO.md	2026-05-01T16:49:48.7361882Z ^[[36;1m- https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/runtime/lane_02_uzg/blockers.live.md^[[0m
+sync	Generate SYNC_INFO.md	2026-05-01T16:49:48.7362652Z ^[[36;1m- https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/runtime/lane_02_uzg/dispatches.live.md^[[0m
+sync	Generate SYNC_INFO.md	2026-05-01T16:49:48.7363419Z ^[[36;1m- https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/runtime/lane_02_uzg/tier_canon.live.md^[[0m
+sync	Generate SYNC_INFO.md	2026-05-01T16:49:48.7364204Z ^[[36;1m- https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/runtime/lane_02_uzg/canon_amendments.live.md^[[0m
+sync	Generate SYNC_INFO.md	2026-05-01T16:49:48.7365001Z ^[[36;1m- https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/runtime/lane_02_uzg/aier_tao_status.live.md^[[0m
+sync	Generate SYNC_INFO.md	2026-05-01T16:49:48.7366060Z ^[[36;1m- https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/runtime/lane_02_uzg/ROADMAP.live.md^[[0m
+sync	Generate SYNC_INFO.md	2026-05-01T16:49:48.7366836Z ^[[36;1m- https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/runtime/lane_02_uzg/RUNTIME_URLS.live.md^[[0m
+sync	Generate SYNC_INFO.md	2026-05-01T16:49:48.7367595Z ^[[36;1m- https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/network/lane_02_uzg/MISSION.live.md^[[0m
+sync	Generate SYNC_INFO.md	2026-05-01T16:49:48.7368082Z ^[[36;1m^[[0m
+sync	Generate SYNC_INFO.md	2026-05-01T16:49:48.7368340Z ^[[36;1m## Live Ledger v1 surfaces (LANE01-LIVE-LEDGER-FOUNDATION)^[[0m
+sync	Generate SYNC_INFO.md	2026-05-01T16:49:48.7368655Z ^[[36;1m^[[0m
+sync	Generate SYNC_INFO.md	2026-05-01T16:49:48.7369047Z ^[[36;1m- https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/status/DASHBOARD.live.md^[[0m
+sync	Generate SYNC_INFO.md	2026-05-01T16:49:48.7369724Z ^[[36;1m- https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/status/BLOCKERS.live.md^[[0m
+sync	Generate SYNC_INFO.md	2026-05-01T16:49:48.7370413Z ^[[36;1m- https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/status/NEXT_ACTIONS.live.md^[[0m
+sync	Generate SYNC_INFO.md	2026-05-01T16:49:48.7371101Z ^[[36;1m- https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/ledger/decisions.live.md^[[0m
+sync	Generate SYNC_INFO.md	2026-05-01T16:49:48.7371800Z ^[[36;1m- https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/ledger/canon-changes.live.md^[[0m
+sync	Generate SYNC_INFO.md	2026-05-01T16:49:48.7372504Z ^[[36;1m- https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/ledger/deploy-events.live.md^[[0m
+sync	Generate SYNC_INFO.md	2026-05-01T16:49:48.7373360Z ^[[36;1m- https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/ledger/halt-events.live.md^[[0m
+sync	Generate SYNC_INFO.md	2026-05-01T16:49:48.7374095Z ^[[36;1m- https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/aier-status/aier-code/state.live.json^[[0m
+sync	Generate SYNC_INFO.md	2026-05-01T16:49:48.7374871Z ^[[36;1m- https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/aier-status/aier-code/heartbeat.live.json^[[0m
+sync	Generate SYNC_INFO.md	2026-05-01T16:49:48.7375780Z ^[[36;1m- https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/aier-status/aier-code/brain-pointer.live.md^[[0m
+sync	Generate SYNC_INFO.md	2026-05-01T16:49:48.7376408Z ^[[36;1m^[[0m
+sync	Generate SYNC_INFO.md	2026-05-01T16:49:48.7376726Z ^[[36;1m## Ecosystem state poll (LANE01-AIER-CODE-UZG-PLUS-RUNTIME-NAMESPACE-V1)^[[0m
+sync	Generate SYNC_INFO.md	2026-05-01T16:49:48.7377095Z ^[[36;1m^[[0m
+sync	Generate SYNC_INFO.md	2026-05-01T16:49:48.7377535Z ^[[36;1m- https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/aier-status/aier-ops/repo-state.live.json^[[0m
+sync	Generate SYNC_INFO.md	2026-05-01T16:49:48.7378321Z ^[[36;1m- https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/aier-status/uzg-plus/repo-state.live.json^[[0m
+sync	Generate SYNC_INFO.md	2026-05-01T16:49:48.7379123Z ^[[36;1m- https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/aier-status/uzg-plus/recent-commits.live.json^[[0m
+sync	Generate SYNC_INFO.md	2026-05-01T16:49:48.7379931Z ^[[36;1m- https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/aier-status/uzg-plus/open-prs.live.json^[[0m
+sync	Generate SYNC_INFO.md	2026-05-01T16:49:48.7380720Z ^[[36;1m- https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/aier-status/uzg-plus/ci-status.live.json^[[0m
+sync	Generate SYNC_INFO.md	2026-05-01T16:49:48.7381529Z ^[[36;1m- https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/aier-status/aifi-life/repo-state.live.json^[[0m
+sync	Generate SYNC_INFO.md	2026-05-01T16:49:48.7382358Z ^[[36;1m- https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/aier-status/aier-life-super/repo-state.live.json^[[0m
+sync	Generate SYNC_INFO.md	2026-05-01T16:49:48.7383149Z ^[[36;1m- (tasks/completed/<YYYY-MM-DD>/<TASK-ID>.live.json ΓÇö date-rooted; see tasks/INDEX.live.md when present)^[[0m
+sync	Generate SYNC_INFO.md	2026-05-01T16:49:48.7383640Z ^[[36;1m^[[0m
+sync	Generate SYNC_INFO.md	2026-05-01T16:49:48.7383935Z ^[[36;1m## aier-verify skill outputs (LANE01-SKILL-AIER-VERIFY-EXECUTABLE-V1)^[[0m
+sync	Generate SYNC_INFO.md	2026-05-01T16:49:48.7384289Z ^[[36;1m^[[0m
+sync	Generate SYNC_INFO.md	2026-05-01T16:49:48.7384750Z ^[[36;1m- https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/skills/aier-verify/EXECUTION_LOG.live.md^[[0m
+sync	Generate SYNC_INFO.md	2026-05-01T16:49:48.7385689Z ^[[36;1m- https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/skills/aier-verify/results/<TASK-ID>.verify.json^[[0m
+sync	Generate SYNC_INFO.md	2026-05-01T16:49:48.7386217Z ^[[36;1m^[[0m
+sync	Generate SYNC_INFO.md	2026-05-01T16:49:48.7386538Z ^[[36;1m## Audits + system maps + handoffs (LANE01-CANON-V2-RECONCILIATION-V1, HD-03 fix)^[[0m
+sync	Generate SYNC_INFO.md	2026-05-01T16:49:48.7386928Z ^[[36;1m^[[0m
+sync	Generate SYNC_INFO.md	2026-05-01T16:49:48.7387500Z ^[[36;1m- https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/audits/ecosystem/uzg-plus/LANE01-UZG-PLUS-AUDIT-AND-SYSTEM-MAP-V1_REPORT.md^[[0m
+sync	Generate SYNC_INFO.md	2026-05-01T16:49:48.7388495Z ^[[36;1m- https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/audits/ecosystem/uzg-plus/CANON_V2_RECONCILIATION_PROPOSAL.md^[[0m
+sync	Generate SYNC_INFO.md	2026-05-01T16:49:48.7389343Z ^[[36;1m- https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/system_maps/UZG_PLUS_SYSTEM_MAP_V1.md^[[0m
+sync	Generate SYNC_INFO.md	2026-05-01T16:49:48.7390105Z ^[[36;1m- https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/system_maps/UZG_PLUS_SYSTEM_MAP_V1.json^[[0m
+sync	Generate SYNC_INFO.md	2026-05-01T16:49:48.7390707Z ^[[36;1m- (handoffs/inbox/<lane>/<MSG-...>.json ΓÇö fetch by exact path)^[[0m
+sync	Generate SYNC_INFO.md	2026-05-01T16:49:48.7391030Z ^[[36;1mEOF^[[0m
+sync	Generate SYNC_INFO.md	2026-05-01T16:49:48.7413982Z shell: /usr/bin/bash -e {0}
+sync	Generate SYNC_INFO.md	2026-05-01T16:49:48.7414254Z ##[endgroup]
+sync	Commit + push to public	∩╗┐2026-05-01T16:49:48.7536543Z ##[group]Run cd target
+sync	Commit + push to public	2026-05-01T16:49:48.7536805Z ^[[36;1mcd target^[[0m
+sync	Commit + push to public	2026-05-01T16:49:48.7537029Z ^[[36;1mgit config user.name "AIER Code Sync Bot"^[[0m
+sync	Commit + push to public	2026-05-01T16:49:48.7537382Z ^[[36;1mgit config user.email "sync-bot@unitonzengarden"^[[0m
+sync	Commit + push to public	2026-05-01T16:49:48.7537699Z ^[[36;1mgit add -A^[[0m
+sync	Commit + push to public	2026-05-01T16:49:48.7537938Z ^[[36;1mif git diff --staged --quiet; then^[[0m
+sync	Commit + push to public	2026-05-01T16:49:48.7538262Z ^[[36;1m  echo "No changes to sync"^[[0m
+sync	Commit + push to public	2026-05-01T16:49:48.7538498Z ^[[36;1melse^[[0m
+sync	Commit + push to public	2026-05-01T16:49:48.7538847Z ^[[36;1m  git commit -m "sync: runtime state from 6cae772cd69864c134b623cc4f267ea03d7c347b"^[[0m
+sync	Commit + push to public	2026-05-01T16:49:48.7539254Z ^[[36;1m  git push^[[0m
+sync	Commit + push to public	2026-05-01T16:49:48.7539449Z ^[[36;1mfi^[[0m
+sync	Commit + push to public	2026-05-01T16:49:48.7560624Z shell: /usr/bin/bash -e {0}
+sync	Commit + push to public	2026-05-01T16:49:48.7560958Z ##[endgroup]
+sync	Commit + push to public	2026-05-01T16:49:49.2708899Z [main 2d8d387] sync: runtime state from 6cae772cd69864c134b623cc4f267ea03d7c347b
+sync	Commit + push to public	2026-05-01T16:49:49.2709923Z  7 files changed, 237 insertions(+), 2 deletions(-)
+sync	Commit + push to public	2026-05-01T16:49:49.2711674Z  create mode 100644 audits/ecosystem/uniton-shared/LANE01-SHARED-SYNC-WORKFLOW-EXTEND-LANE02-NAMESPACE-2026-05-01T16-05Z.audit_log.md
+sync	Commit + push to public	2026-05-01T16:49:49.2713808Z  create mode 100644 audits/ecosystem/uniton-shared/LANE01-SHARED-SYNC-WORKFLOW-EXTEND-LANE02-NAMESPACE-2026-05-01T16-05Z.report.md
+sync	Commit + push to public	2026-05-01T16:49:49.2715505Z  create mode 100644 audits/ecosystem/uniton-shared/LANE01-SHARED-SYNC-WORKFLOW-EXTEND-LANE02-NAMESPACE-2026-05-01T16-05Z.snapshot.md
+sync	Commit + push to public	2026-05-01T16:49:49.2717626Z  create mode 100644 audits/ecosystem/uniton-shared/LANE01-SHARED-SYNC-WORKFLOW-EXTEND-LANE02-NAMESPACE-2026-05-01T16-05Z/evidence/raw_url_probe_results.txt
+sync	Commit + push to public	2026-05-01T16:49:49.2719587Z  create mode 100644 audits/ecosystem/uniton-shared/LANE01-SHARED-SYNC-WORKFLOW-EXTEND-LANE02-NAMESPACE-2026-05-01T16-05Z/evidence/sync_run_log.txt
+sync	Commit + push to public	2026-05-01T16:49:49.2721405Z  create mode 100644 audits/ecosystem/uniton-shared/LANE01-SHARED-SYNC-WORKFLOW-EXTEND-LANE02-NAMESPACE-2026-05-01T16-05Z/evidence/yaml_diff.txt
+sync	Commit + push to public	2026-05-01T16:49:50.1591458Z To https://github.com/unitonzengarden/Uniton_Shared_Live
+sync	Commit + push to public	2026-05-01T16:49:50.1606401Z    c57b310..2d8d387  main -> main
+sync	Post Checkout target (public)	∩╗┐2026-05-01T16:49:50.1758836Z Post job cleanup.
+sync	Post Checkout target (public)	2026-05-01T16:49:50.2769055Z [command]/usr/bin/git version
+sync	Post Checkout target (public)	2026-05-01T16:49:50.2810223Z git version 2.53.0
+sync	Post Checkout target (public)	2026-05-01T16:49:50.2855128Z Temporarily overriding HOME='/home/runner/work/_temp/1e5cdbec-d265-4ae6-b306-04c4b102690d' before making global git config changes
+sync	Post Checkout target (public)	2026-05-01T16:49:50.2856928Z Adding repository directory to the temporary git global config as a safe directory
+sync	Post Checkout target (public)	2026-05-01T16:49:50.2861982Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/Uniton_Shared/Uniton_Shared/target
+sync	Post Checkout target (public)	2026-05-01T16:49:50.2910291Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+sync	Post Checkout target (public)	2026-05-01T16:49:50.2948641Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+sync	Post Checkout target (public)	2026-05-01T16:49:50.3200120Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+sync	Post Checkout target (public)	2026-05-01T16:49:50.3226532Z http.https://github.com/.extraheader
+sync	Post Checkout target (public)	2026-05-01T16:49:50.3240120Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+sync	Post Checkout target (public)	2026-05-01T16:49:50.3274355Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+sync	Post Checkout target (public)	2026-05-01T16:49:50.3525154Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+sync	Post Checkout target (public)	2026-05-01T16:49:50.3560430Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+sync	Post Checkout source (private)	∩╗┐2026-05-01T16:49:50.3956670Z Post job cleanup.
+sync	Post Checkout source (private)	2026-05-01T16:49:50.5086421Z [command]/usr/bin/git version
+sync	Post Checkout source (private)	2026-05-01T16:49:50.5139303Z git version 2.53.0
+sync	Post Checkout source (private)	2026-05-01T16:49:50.5212547Z Temporarily overriding HOME='/home/runner/work/_temp/18891e7d-cb6b-49ba-80e0-c07c9cde18ef' before making global git config changes
+sync	Post Checkout source (private)	2026-05-01T16:49:50.5223688Z Adding repository directory to the temporary git global config as a safe directory
+sync	Post Checkout source (private)	2026-05-01T16:49:50.5224947Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/Uniton_Shared/Uniton_Shared/source
+sync	Post Checkout source (private)	2026-05-01T16:49:50.5298671Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+sync	Post Checkout source (private)	2026-05-01T16:49:50.5366439Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+sync	Post Checkout source (private)	2026-05-01T16:49:50.5702997Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+sync	Post Checkout source (private)	2026-05-01T16:49:50.5726795Z http.https://github.com/.extraheader
+sync	Post Checkout source (private)	2026-05-01T16:49:50.5752546Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+sync	Post Checkout source (private)	2026-05-01T16:49:50.5794830Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+sync	Post Checkout source (private)	2026-05-01T16:49:50.6153838Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+sync	Post Checkout source (private)	2026-05-01T16:49:50.6210437Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+sync	Complete job	∩╗┐2026-05-01T16:49:50.6705470Z Cleaning up orphan processes
+sync	Complete job	2026-05-01T16:49:50.7007627Z ##[warning]Node.js 20 actions are deprecated. The following actions are running on Node.js 20 and may not work as expected: actions/checkout@v4. Actions will be forced to run with Node.js 24 by default starting June 2nd, 2026. Node.js 20 will be removed from the runner on September 16th, 2026. Please check if updated versions of these actions are available that support Node.js 24. To opt into Node.js 24 now, set the FORCE_JAVASCRIPT_ACTIONS_TO_NODE24=true environment variable on the runner or in your workflow file. Once Node.js 24 becomes the default, you can temporarily opt out by setting ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
