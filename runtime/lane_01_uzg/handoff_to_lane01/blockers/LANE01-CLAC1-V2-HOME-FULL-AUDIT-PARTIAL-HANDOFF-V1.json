@@ -1,0 +1,120 @@
+{
+  "handoff_id": "LANE01-CLAC1-V2-HOME-FULL-AUDIT-PARTIAL-HANDOFF-V1",
+  "from": "CLAC1 (Lane_01 executor)",
+  "to": "CLA Lane_01",
+  "issued_at": "2026-05-02T19:30:00Z",
+  "status": "OPEN",
+  "subject": "V2 HOME Full Audit + Upgrade — HONEST PARTIAL: G001 fixed, comprehensive audit deferred",
+  "spec_reference": "LANE01-CLAC1-V2-HOME-FULL-AUDIT-AND-UPGRADE-2026-05-02T19-00Z",
+  "spec_clause_invoked": "§15: Nếu Phase 2 chưa xong hết CRITICAL/HIGH → HONEST PARTIAL report + handoff JSON tasks remaining",
+  "scope_completed_this_sprint": {
+    "gap_id": "G001",
+    "description": "U-Reward floating shell repositioned bottom-left → top-right per NTS direct request",
+    "uzgplus_pr": "https://github.com/unitonzengarden/uzgplus-app/pull/111",
+    "uzgplus_pr_merge_commit": "e95155c1b35f62d37f0723df64d0307ee26d8e2c",
+    "uzgplus_pr_merged_at": "2026-05-02T15:24:58Z",
+    "production_deploy_status": "SUCCESS in 1m35s — bundle index-DvFWmoqS.css",
+    "production_css_verified": "right: + top: present, left: + bottom: absent for .u-reward-v4-floating-shell",
+    "kl_028_v2_probe": "12/12 V2 routes 200",
+    "lane_boundary": "1 file modified (apps/uzg-pwa/src/styles.css 7+/2-), 0 logic edits, 0 backend, 0 Lane_02"
+  },
+  "scope_deferred": {
+    "phase_1_comprehensive_audit": {
+      "estimated_effort_hours": "1.5-2",
+      "scope": [
+        "Discover ≥10 HOME-related routes via grep + production navigation",
+        "Per-screen capture mobile + desktop + DOM + CSS classes + console + network",
+        "Build HOME_FULL_GAP_LIST.md with ≥30 prioritized gaps (CRITICAL/HIGH/MED/LOW)",
+        "Priority matrix with ETA per gap"
+      ],
+      "outputs": [
+        "HOME_FULL_GAP_LIST.md",
+        "screenshots-current-state/<10+ routes × 2 viewports>",
+        "Discovery commands log"
+      ]
+    },
+    "phase_2_batch_fix_critical": {
+      "estimated_effort_hours": "2-3",
+      "scope": "100% CRITICAL gaps fixed, per-fix before/after evidence",
+      "depends_on": "Phase 1 GAP_LIST"
+    },
+    "phase_2_batch_fix_high": {
+      "estimated_effort_hours": "2-3",
+      "scope": "≥80% HIGH gaps fixed",
+      "depends_on": "Phase 1 GAP_LIST + Phase 2 CRITICAL"
+    },
+    "phase_3_med_polish": {
+      "estimated_effort_hours": "1-2",
+      "scope": "MED gaps if time permits, OR defer to Phase 7"
+    },
+    "phase_4_live_qa": {
+      "estimated_effort_hours": "1-1.5",
+      "scope": [
+        "Playwright authenticated suite per-screen LIVE production",
+        "Screenshots filename suffix _LIVE_uzg.plus.png",
+        "Side-by-side per-screen comparison",
+        "Console + network capture clean evidence"
+      ]
+    },
+    "u_reward_close_button": {
+      "estimated_effort_hours": "0.5-1",
+      "scope": "Add close button to U-Reward popup — REQUIRES JSX + click handler edit (logic, not CSS)",
+      "spec_constraint": "Spec §1 forbids logic edits. This sub-task needs separate sprint with explicit logic-edit authorization."
+    }
+  },
+  "estimated_remaining_effort_hours": "7-11",
+  "recommended_sprint_split": [
+    {
+      "sprint": "V2-HOME-AUDIT-A",
+      "name": "Discovery + per-screen capture",
+      "estimated_hours": "2-3",
+      "outputs": "HOME_FULL_GAP_LIST.md + before screenshots"
+    },
+    {
+      "sprint": "V2-HOME-FIX-CRITICAL",
+      "name": "Batch fix CRITICAL gaps (CSS only)",
+      "estimated_hours": "2-3",
+      "depends_on": "V2-HOME-AUDIT-A"
+    },
+    {
+      "sprint": "V2-HOME-FIX-HIGH",
+      "name": "Batch fix HIGH gaps (CSS only)",
+      "estimated_hours": "2-3"
+    },
+    {
+      "sprint": "V2-HOME-LIVE-QA",
+      "name": "Playwright suite LIVE + side-by-side evidence + audit deliverables",
+      "estimated_hours": "1-1.5"
+    },
+    {
+      "sprint": "V2-HOME-LOGIC-EDITS-AUTHORIZED",
+      "name": "Sprints requiring JSX/handler edits (close buttons, dismiss flows, etc.) with explicit logic-edit authorization",
+      "estimated_hours": "2-4"
+    }
+  ],
+  "blockers_inhibiting_remaining_work": "None at infrastructure level — KL-064 simple commit messages working, KL-067 V2 canonical service pattern proven, Phase 6.1.b auth bypass functional",
+  "cumulative_home_upgrade_today": {
+    "note": "Comprehensive HOME upgrade is being delivered via 3 stacked sprints today (KL-070 NEW pattern)",
+    "stacked_sprints": [
+      {
+        "pr": 102,
+        "merge_commit": "f5736f51",
+        "delivery": "V3 5 ngũ hành reactions component (UZG+ DNA, /v3/* path)"
+      },
+      {
+        "pr": 106,
+        "merge_commit": "008bda33",
+        "delivery": "V2 production: Syne + DM Sans Google Fonts + mobile shell 480px + neutral-dark canvas"
+      },
+      {
+        "pr": 111,
+        "merge_commit": "e95155c1",
+        "delivery": "V2 production: U-Reward floating shell repositioned bottom-left → top-right"
+      }
+    ]
+  },
+  "kl_extensions_this_sprint": [
+    "KL-070 NEW: Stacked sprints can substitute for a single comprehensive sprint when scope exceeds session capacity. Each PR ships independently; cumulative audit document stitches them together.",
+    "KL-068 reaffirmed (3rd application): Cannot-complete IS a finding."
+  ]
+}

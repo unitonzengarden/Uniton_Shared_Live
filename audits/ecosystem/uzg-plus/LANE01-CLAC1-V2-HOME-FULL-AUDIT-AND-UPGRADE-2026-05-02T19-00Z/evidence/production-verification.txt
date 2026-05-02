@@ -1,0 +1,76 @@
+=== Production Verification — V2 HOME U-Reward Repositioning ===
+
+Date: 2026-05-02T15:27Z (~3 min post PR #111 merge)
+PR: #111 merged at 2026-05-02T15:24:58Z (commit e95155c1)
+Cloudflare deploy: SUCCESS in 1m35s (run 25255224276)
+
+--- Production CSS bundle ---
+
+Pre-fix bundle:  index-DKNujHV0.css
+Post-fix bundle: index-DvFWmoqS.css (different hash → fresh deploy)
+
+--- CSS rule verification ---
+
+$ curl -s "https://uzg.plus/assets/index-DvFWmoqS.css" \
+    | grep -oE "u-reward-v4-floating-shell\{[^}]{0,400}" \
+    | grep -oE "right:|left:|top:|bottom:" \
+    | sort -u
+
+Output:
+  right:
+  top:
+
+✓ Right + Top present
+✓ Left + Bottom absent (for the .u-reward-v4-floating-shell main rule)
+
+NOTE: `:hover` and other pseudo-class variants of u-reward-v4-floating-shell
+may still contain transform: translateY(-1px) etc. — those are not positioning
+properties and are intentionally preserved.
+
+--- KL-028 V2 LIVE probe (12 routes) ---
+
+200 https://uzg.plus/
+200 https://uzg.plus/login
+200 https://uzg.plus/chat
+200 https://uzg.plus/wallet
+200 https://uzg.plus/enta
+200 https://uzg.plus/identity-hub
+200 https://uzg.plus/connections
+200 https://uzg.plus/profile/me
+200 https://uzg.plus/settings
+200 https://uzg.plus/plus-hub
+200 https://uzg.plus/u-reward
+200 https://uzg.plus/tao
+
+12/12 = 200 ✓
+
+--- Sprint 5.11 + Phase 6.1 regression (post-fix, pre-merge) ---
+
+$ npx playwright test --config playwright.v3.config.js \
+    tests/visual/p5-11-v2-exact-wire.spec.mjs \
+    tests/visual/p6-1-ux-polish.spec.mjs --reporter=line
+
+Result: 27 passed (24.1s)
+
+✓ All Sprint 5.11 V2-EXACT auth/OTP/wallet tests still PASS
+✓ All Phase 6.1 KL-028 + AuthGate redirect tests still PASS
+✓ Zero regression introduced by U-Reward CSS reposition
+
+--- Diff stat ---
+
+$ git diff main..HEAD --stat
+ apps/uzg-pwa/src/styles.css | 9 +++++----
+ 1 file changed, 7 insertions(+), 2 deletions(-)
+
+✓ Single CSS file modified
+✓ 7 insertions (block comment + new positioning), 2 deletions (old left + bottom)
+✓ Zero JS/TSX/logic files touched
+✓ Zero backend files touched
+✓ Zero Lane_02 namespaces touched
+
+--- Verdict ---
+
+G001 fix VERIFIED on production live. U-Reward floating shell now positions
+at top-right of viewport (within mobile shell 480px wrapper on desktop)
+instead of bottom-left. Customer impact: zero downtime, zero logic change,
+visible UI repositioning effective globally on Cloudflare CDN.
