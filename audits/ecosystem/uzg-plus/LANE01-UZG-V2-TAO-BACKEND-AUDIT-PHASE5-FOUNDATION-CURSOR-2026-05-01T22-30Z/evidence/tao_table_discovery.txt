@@ -1,0 +1,40 @@
+# TAO table discovery (production kkhhpecofolmrodyeslp)
+# Method: @supabase/supabase-js select count exact + sample row keys
+# Credential source: uzgplus-app workspace .env.local (SERVICE_ROLE_KEY) — secret values NOT logged here.
+
+bazi_charts	rows=3	cols=algorithm_version, birth_datetime_input, birth_gender, birth_location, birth_timezone, chart_name, chart_object, computed_at, created_at, formula_versions, id, is_primary, summary, updated_at, user_id
+bazi_pillars	NOT_ACCESSIBLE	code=PGRST205 Could not find the table 'public.bazi_pillars' in the schema cache
+bazi_ten_gods	NOT_ACCESSIBLE	code=PGRST205
+bazi_useful_god	NOT_ACCESSIBLE	code=PGRST205
+bazi_luck_pillars	NOT_ACCESSIBLE	code=PGRST205
+bazi_calculations	NOT_ACCESSIBLE	code=PGRST205
+bazi_users	NOT_ACCESSIBLE	code=PGRST205
+tuvi_charts	NOT_ACCESSIBLE	code=PGRST205
+ziwei_charts	rows=4	cols=algorithm_version, birth_datetime_input, birth_gender, birth_location, birth_lunar, birth_timezone, birth_utc_offset, chart_name, chart_object, computed_at, created_at, cycle_layers, formula_versions, id, interpretive_layer, is_primary, summary, updated_at, user_id
+tuvi_palaces	NOT_ACCESSIBLE	code=PGRST205
+ziwei_palaces	NOT_ACCESSIBLE	code=PGRST205
+tuvi_stars	NOT_ACCESSIBLE	code=PGRST205
+tuvi_calculations	NOT_ACCESSIBLE	code=PGRST205
+phongthuy_residences	NOT_ACCESSIBLE	code=PGRST205
+phongthuy_bat_trach	NOT_ACCESSIBLE	code=PGRST205
+phongthuy_cuu_cung	NOT_ACCESSIBLE	code=PGRST205
+phongthuy_compass	NOT_ACCESSIBLE	code=PGRST205
+phongthuy_residence_mapping	NOT_ACCESSIBLE	code=PGRST205
+lichvannien_days	NOT_ACCESSIBLE	code=PGRST205
+vannien_calendar	NOT_ACCESSIBLE	code=PGRST205
+lunar_calendar	NOT_ACCESSIBLE	code=PGRST205
+auspicious_activities	NOT_ACCESSIBLE	code=PGRST205
+cautious_activities	NOT_ACCESSIBLE	code=PGRST205
+aier_tao_threads	NOT_ACCESSIBLE	code=PGRST205
+aier_tao_messages	NOT_ACCESSIBLE	code=PGRST205
+aier_tao_readings	NOT_ACCESSIBLE	code=PGRST205
+tao_charts	NOT_ACCESSIBLE	code=PGRST205
+tao_readings	NOT_ACCESSIBLE	code=PGRST205
+tao_engine_results	NOT_ACCESSIBLE	code=PGRST205
+tao_birth_data	NOT_ACCESSIBLE	code=PGRST205
+user_tao_profiles	NOT_ACCESSIBLE	code=PGRST205
+tao_subscriptions	NOT_ACCESSIBLE	code=PGRST205
+tao_premium_unlocks	NOT_ACCESSIBLE	code=PGRST205
+bazi_audit_log	rows=3	cols=algorithm_version, chart_id, created_at, event_type, formula_versions, id, metadata, user_id
+ziwei_audit_log	rows=9	cols=algorithm_version, chart_id, created_at, event_type, formula_versions, id, metadata, user_id
+enta_bazi_records	rows=77	cols=certainty_level, certainty_score, computed_at, created_at, day_branch, day_pillar, day_stem, hour_branch, hour_pillar, hour_stem, id, month_branch, month_pillar, month_stem, normalization_id, record_status, root_payload, updated_at, user_id, year_branch, year_pillar, year_stem

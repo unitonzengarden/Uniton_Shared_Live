@@ -1,0 +1,84 @@
+# Tao-related RLS excerpt (Lane_01 Backend Audit #78 raw aggregate)
+# Source file in uzgplus-app workspace snapshot: .lane_01/audits/backend-audit/raw/rls_policies_raw.txt
+
+-- begin excerpt: public.bazi_charts / ziwei_* owner policies --
+    create policy bazi_charts_select_own
+      on public.bazi_charts
+      for select
+      to authenticated
+      using (auth.uid() = user_id);
+
+    create policy bazi_charts_insert_own
+      on public.bazi_charts
+      for insert
+      to authenticated
+      with check (auth.uid() = user_id);
+
+    create policy bazi_charts_update_own
+      on public.bazi_charts
+      for update
+      to authenticated
+      using (auth.uid() = user_id)
+      with check (auth.uid() = user_id);
+
+    create policy bazi_charts_delete_own
+      on public.bazi_charts
+      for delete
+      to authenticated
+      using (auth.uid() = user_id);
+
+    create policy bazi_audit_log_select_own
+      on public.bazi_audit_log
+      for select
+      to authenticated
+      using (auth.uid() = user_id);
+
+    create policy bazi_audit_log_insert_own
+      on public.bazi_audit_log
+      for insert
+      to authenticated
+      with check (auth.uid() = user_id);
+
+    create policy ziwei_charts_select_own
+      on public.ziwei_charts
+      for select
+      to authenticated
+      using (auth.uid() = user_id);
+
+    create policy ziwei_charts_insert_own
+      on public.ziwei_charts
+      for insert
+      to authenticated
+      with check (auth.uid() = user_id);
+
+    create policy ziwei_charts_update_own
+      on public.ziwei_charts
+      for update
+      to authenticated
+      using (auth.uid() = user_id)
+      with check (auth.uid() = user_id);
+
+    create policy ziwei_charts_delete_own
+      on public.ziwei_charts
+      for delete
+      to authenticated
+      using (auth.uid() = user_id);
+
+    create policy ziwei_audit_log_select_own
+      on public.ziwei_audit_log
+      for select
+      to authenticated
+      using (auth.uid() = user_id);
+
+    create policy ziwei_audit_log_insert_own
+      on public.ziwei_audit_log
+      for insert
+      to authenticated
+      with check (auth.uid() = user_id);
+
+-- end excerpt --
+
+# enta_bazi_records (migration reference — uzgplus-app docs/sql/enta_pack1_5_schema.sql)
+# create policy enta_bazi_records_select_own on enta_bazi_records for select to authenticated using (user_id = auth.uid());
+# grant select on enta_bazi_records to authenticated, service_role;
+

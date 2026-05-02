@@ -1,0 +1,12 @@
+# Canon ↔ production xref (TAO Phase 5)
+# Companion to UZG_PLUS_V2_TAO_CANON_DRIFT_MAP_v1.md
+
+ref_id	domain	canonical_path	canonical_claim	prod_check	evidence_notes
+XF-001	Bazi	TAO_BAZI_IMPLEMENTATION_SPEC §chart object versioning	chart object machine-readable persisted as JSON	bazi_charts.chart_object	jsonb populated path
+XF-002	Bazi	canonical candidate bazi_pillars table	decomposed pillars table	PGRST205 NOT IN schema	live probe 2026-05-02
+XF-003	Ziwei	TAO_ZIWEI_IMPLEMENTATION_SPEC §12.4.5 Cách B	ziwei_chart_palaces / main_stars / aux_stars	PGRST205 — tables absent	Jsonb Cách A in ziwei_charts
+XF-004	Ziwei	naming drift	tuvi_charts english alias	production uses ziwei_charts	no tuvi_* tables
+XF-005	Vạn Niên	TAO_VANNIEN_DATA_API	lookup tables bundled as JSON + engine functions	no vannien_* DB tables	phong/mock until Lane_02 DDL
+XF-006	ENTA bridge	Executive expectation “TAO standalone RPC”	task-list rpc_compute_bazi_chart style names	Absent; ENTA dome rpc_*enta* carriers	Sprint hybrid decision
+XF-007	AIER Tao	aier_tao_* persistence	deferred DDL for chat threads	no aier_tao_* tables	mocks in apps/uzg-pwa/src/data/
+

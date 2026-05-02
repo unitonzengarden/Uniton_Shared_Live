@@ -1,0 +1,32 @@
+# TAO RPC discovery (PostgREST supabase.rpc)
+# Note: '{}' probe cannot resolve overloads needing args — see FOOTNOTE.
+
+rpc_compute_bazi_chart	NOT_FOUND PGRST202 Could not find the function without parameters in the schema cache
+compute_bazi_chart	NOT_FOUND PGRST202
+bazi_compute	NOT_FOUND PGRST202
+rpc_compute_tuvi_chart	NOT_FOUND PGRST202
+compute_ziwei_chart	NOT_FOUND PGRST202
+tuvi_compute	NOT_FOUND PGRST202
+rpc_compute_phongthuy	NOT_FOUND PGRST202
+phongthuy_compute	NOT_FOUND PGRST202
+rpc_get_lichvannien_today	NOT_FOUND PGRST202
+get_today_calendar	NOT_FOUND PGRST202
+rpc_get_daily_match	NOT_FOUND PGRST202
+compute_daily_match	NOT_FOUND PGRST202
+rpc_unlock_useful_god	NOT_FOUND PGRST202
+rpc_unlock_luck_pillars	NOT_FOUND PGRST202
+rpc_get_compatibility	NOT_FOUND PGRST202
+compute_compatibility	NOT_FOUND PGRST202
+rpc_aier_tao_query	NOT_FOUND PGRST202
+aier_tao_completion	NOT_FOUND PGRST202
+
+rpc_get_enta_bazi_record	EXISTS (auth required — 42501 Authenticated user required with service-role zero-user context)
+rpc_upsert_enta_root_snapshot	EXISTS (P0001 Authentication required)
+rpc_update_enta_birth_core	EXISTS (42501 Authenticated user required)
+
+execute_sql	DEFERRED / NOT `{}`‑probed — real signature `{ query:text }`; privilege-gated lane audits forbid arbitrary SQL (KL-039). Listed in Backend Deep Audit #78 — D3 RPC catalog (188 RPCs total; bucket “System”).
+
+FOOTNOTE re calc_enta_profile:
+  Probe A: `{}` returned PGRST202 (misleading absent).
+  Probe B: Typed args `{p_year:int,p_month:int,p_day:int,p_hour:text,p_gender:text}` returned `Authentication required` — confirms RPC exists AND enforces JWT user context.
+
