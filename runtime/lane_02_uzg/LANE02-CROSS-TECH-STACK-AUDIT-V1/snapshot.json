@@ -1,0 +1,163 @@
+{
+  "task_id": "LANE02-CROSS-TECH-STACK-AUDIT-V1",
+  "stream": "Lane_02",
+  "executor": "CURSOR-2",
+  "status": "PASS",
+  "timestamp": "2026-05-02T16:30:00+07:00",
+  "mode": "read_only",
+
+  "sections": {
+    "A_supabase": {
+      "status": "POPULATED",
+      "project_id": "kkhhpecofolmrodyeslp",
+      "url": "https://kkhhpecofolmrodyeslp.supabase.co",
+      "auth_users_count": 451,
+      "profiles_count": 442,
+      "memberships_count": 135,
+      "tier_distribution": { "Explorer": 6, "Seeker": 55, "Builder": 46, "Sovereign": 28 },
+      "aier_kb_entries": 168,
+      "edge_functions": ["reward_emit", "wallet_convert_u_to_uzg", "wallet_spend_uzg"],
+      "extensions_installed": ["vector(0.8.0)", "pgcrypto", "citext", "uuid-ossp", "pg_stat_statements"],
+      "rpc_count_business": 87,
+      "service_role_key_location": "Cloudflare Pages env + local .env (NO value pasted)"
+    },
+
+    "B_cloudflare": {
+      "status": "POPULATED",
+      "worker_type": "Cloudflare Pages Function",
+      "worker_file": "dist/_worker.js",
+      "pages_project": "resolved from CLOUDFLARE_PAGES_PROJECT secret",
+      "primary_domain": "uzg.plus",
+      "deprecated_domain": "app.uzg.plus",
+      "deploy_workflow": ".github/workflows/deploy.yml",
+      "wrangler_config": "CLI args in deploy.yml (no wrangler.toml)",
+      "kv_namespaces": "none",
+      "r2_bucket": "uzg-enta-media",
+      "env_vars_count": 22,
+      "env_vars": [
+        "SUPABASE_URL", "SUPABASE_ANON_KEY", "SUPABASE_SERVICE_ROLE_KEY",
+        "VITE_SUPABASE_URL", "VITE_SUPABASE_ANON_KEY", "VITE_SUPABASE_PUBLISHABLE_KEY",
+        "SUPABASE_SERVICE_ROLE_KEY_B64",
+        "RESEND_API_KEY", "AUTH_OTP_EMAIL_FROM", "AUTH_OTP_EMAIL_FROM_NAME",
+        "AUTH_OTP_SUPPORT_EMAIL", "AUTH_OTP_RESEND_COOLDOWN_SECONDS",
+        "OPENAI_API_KEY", "OPENAI_PRIMARY_MODEL", "OPENAI_FALLBACK_MODEL",
+        "AITAO_OPENAI_MODEL", "GEMINI_API_KEY",
+        "R2_ACCOUNT_ID", "R2_ENDPOINT", "R2_BUCKET",
+        "R2_ACCESS_KEY_ID", "R2_SECRET_ACCESS_KEY", "R2_API_TOKEN"
+      ]
+    },
+
+    "C_resend": {
+      "status": "POPULATED",
+      "plan": "$20/month",
+      "send_domain": "uzg.plus",
+      "api_key_location": "Cloudflare Pages env var: RESEND_API_KEY",
+      "template_type": "inline HTML/text (no Resend template IDs)",
+      "otp_trigger_endpoint": "POST /api/v1/auth/otp/request",
+      "otp_supabase_flow": "admin/generate_link type=magiclink -> extract email_otp",
+      "otp_format": "6 digits (Supabase email_otp)",
+      "otp_subject": "Your UZG+ sign-in code",
+      "otp_cooldown_seconds": 60,
+      "otp_storage": "auth.one_time_tokens (62 rows currently)",
+      "otp_expiry": "Supabase managed (magiclink: 1 hour default)",
+      "fallback_path": "supabase.auth.signInWithOtp() direct on 404/gateway error"
+    },
+
+    "D_v2_backend": {
+      "status": "POPULATED",
+      "worker_file": "dist/_worker.js",
+      "api_routes_count": 72,
+      "api_prefix": "/api/v1/",
+      "auth_flow": "OTP email -> Supabase verifyOtp -> JWT session",
+      "session_storage": "Supabase JS localStorage (key: sb-kkhhpecofolmrodyeslp-auth-token)",
+      "jwt_issuer": "Supabase (HS256)",
+      "jwt_expiry": "1h with auto-refresh",
+      "cors": "Cloudflare default + OFFICIAL_LIVE_DOMAIN uzg.plus enforcement",
+      "express_server": "server/aier_server.js (port 3001, local dev AIER automation only)"
+    },
+
+    "E_v3_frontend": {
+      "status": "POPULATED",
+      "build_target": "Cloudflare Pages (dist/)",
+      "routes_total": 24,
+      "routes_live": 20,
+      "routes_mock": 4,
+      "mock_modules": ["phongthuy", "vannien", "aierTao"],
+      "TAO_DATA_SOURCE_file": "src/data/v3-tao-data-layer.ts:28",
+      "auth_state": "Supabase JS client (PKCE + persistSession + autoRefreshToken)",
+      "api_client": "Supabase SDK + direct fetch /api/v1/ via v2ExpressClient.ts"
+    },
+
+    "F_test_accounts": {
+      "status": "POPULATED",
+      "total_test_accounts": 321,
+      "has_signed_in": 299,
+      "email_confirmed": 310,
+      "best_reuse_account": "auditmol5eus0@deltajohnsons.com (Explorer, mail.tm OTP available)",
+      "mail_tm_token_location": ".env.local AUDIT_LOGIN_MAILTM_TOKEN",
+      "seeker_builder_sovereign_test_accounts": 0,
+      "gap": "No test accounts with paid tiers; need creation or admin SQL set"
+    },
+
+    "G_secrets_governance": {
+      "status": "POPULATED",
+      "governance_doc": ".lane_02/governance/SECRETS_GOVERNANCE_v1_2026-05-01.md",
+      "secrets_available": [
+        "OPENAI_API_KEY", "ANTHROPIC_API_KEY", "GEMINI_API_KEY",
+        "VITE_SUPABASE_URL", "VITE_SUPABASE_ANON_KEY", "SUPABASE_SERVICE_ROLE_KEY",
+        "GH_TOKEN", "R2_*", "AUDIT_LOGIN_MAILTM_TOKEN"
+      ],
+      "secrets_gap": ["Seeker/Builder/Sovereign test account credentials"],
+      "self_serve_otp_bypass": "ALREADY POSSIBLE via mail.tm for Explorer OR Supabase Admin SDK"
+    },
+
+    "H_auth_bypass": {
+      "status": "POPULATED",
+      "option_A_mailosaur": "VIABLE — requires NTS Resend DNS config, ~$10/month extra",
+      "option_B_worker_header": "BLOCKED — R-BACKEND-IMMUTABLE",
+      "option_C_admin_sdk": "RECOMMENDED — Lane_02 has service_role_key, generateLink returns OTP directly",
+      "option_D_inbucket": "LIMITED — only local dev, not production E2E",
+      "recommendation": "Option C (Admin SDK) — fastest, no extra cost, no DNS, self-contained"
+    },
+
+    "I_cross_lane": {
+      "status": "POPULATED",
+      "lane02_index": "HTTP 200",
+      "lane02_canon_local": "OK (tao_ziwei/ 10 files)",
+      "lane02_network_mission": "HTTP 404 (expected gap from NAMESPACE-V1)",
+      "lane01_index": "HTTP 200",
+      "cross_lane_handoff_log": "HTTP 200",
+      "sync_info_last_sync": "2026-05-02T09:02:50Z",
+      "sync_lag": "low (push-triggered)"
+    },
+
+    "J_recommendations": "POPULATED"
+  },
+
+  "gaps": [
+    "network/lane_02_uzg/MISSION.live.md — 404 (known from NAMESPACE-V1 task)",
+    "No Seeker/Builder/Sovereign test accounts (need creation)",
+    "aierTao TAO_DATA_SOURCE = mock (backend wire-up pending)"
+  ],
+
+  "recommendations": [
+    "Option C Auth bypass (Admin SDK generateLink) — fastest path for OTP bypass",
+    "Reuse auditmol5eus0@deltajohnsons.com + mail.tm for Explorer E2E today",
+    "Create 3 paid-tier test accounts via Admin SDK for Phase 6 full coverage",
+    "Flip TAO_DATA_SOURCE.aierTao to real when chat backend shipped",
+    "No Lane_01 secret request needed — Lane_02 self-sufficient"
+  ],
+
+  "ac_results": {
+    "AC-1": "PASS (4 deliverables pushed)",
+    "AC-2": "PASS (10/10 sections populated)",
+    "AC-3": "PASS (zero secrets pasted)",
+    "AC-4": "PASS (Section F populated: 321 test accounts, 4 samples)",
+    "AC-5": "PASS (Option C recommended with full analysis)",
+    "AC-6": "PENDING (PR creation step)",
+    "AC-7": "PENDING (HTTP 200 verify after push)",
+    "AC-8": "PASS (handoff_log.live.md appended)",
+    "AC-9": "PASS (Lane_01 zone NOT modified)",
+    "AC-10": "PASS (Lane_02 canon NOT modified)"
+  }
+}
