@@ -1,0 +1,38 @@
+=== Build Output — Phase 6.1 ===
+
+Date: 2026-05-02T10:21Z
+Command: npm run build:v3
+Branch: feat/lane01/phase6-ux-polish-home-enta-profile
+
+--- Output ---
+
+> uzgplus-auth-core@0.0.0 build:v3
+> vite build --config vite.config.v3.ts
+
+vite v7.3.1 building client environment for production...
+transforming...
+✓ 597 modules transformed.
+rendering chunks...
+computing gzip size...
+dist-v3/index.v3.html             3.05 kB │ gzip:   1.29 kB
+dist-v3/assets/main-CCfMF7hO.css  1,145.66 kB │ gzip: 163.28 kB
+dist-v3/assets/main-Lj0mkwOM.js   848.28 kB │ gzip: 254.26 kB
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✓ built in 4.50s
+
+--- Bundle size delta vs Sprint 5.12 baseline ---
+
+Baseline (Sprint 5.12 post-merge):  847.32 KB JS
+Phase 6.1 post-build:               848.28 KB JS
+Delta:                              +0.96 KB / +0.11%
+
+Gate: ≤ +5% bundle delta (per task spec AC-11)
+Status: PASS ✓
+
+--- TypeScript ---
+
+0 TS errors. Build exits 0.

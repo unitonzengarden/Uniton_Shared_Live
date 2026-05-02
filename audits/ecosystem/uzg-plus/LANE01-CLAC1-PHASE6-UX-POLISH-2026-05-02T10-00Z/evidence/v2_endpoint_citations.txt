@@ -1,0 +1,47 @@
+=== V2 EXACT Endpoint Citations (KL-048 file:line) ===
+
+Phase 6.1 wires Sprint 5.11 Fix 4 deferred. Endpoint citation:
+
+POST /api/v1/media/enta/upload
+  Source: aier_server.js:20114-20150
+  Reference: V2_FLOW_ENTA_EXACT_v1.md §3 (endpoint table)
+  Auth: requireUserAuth (Bearer JWT)
+  Method: POST
+  Content-Type: multipart/form-data
+  Body fields:
+    - file (binary)
+    - asset_kind ('avatar' | 'banner' | 'media')
+  Response shape: { ok, data: { url, public_url, object_id, asset_kind } }
+
+Pre-existing V2 wired endpoints (verified Sprint 5.2/5.11):
+
+GET /api/v1/flow/feed
+  Source: aier_server.js:20011-20070
+  Reference: V2_FLOW_HOME_EXACT_v1.md §3
+  Used by: useFeed hook (HOME)
+
+POST /api/v1/flow/posts
+  Source: aier_server.js:20072-20112
+  Reference: V2_FLOW_HOME_EXACT_v1.md §3
+  Used by: useFeedCompose hook (HOME composer)
+
+POST/DELETE /api/v1/flow/interactions
+  Source: aier_server.js:20245-20316
+  Reference: V2_FLOW_HOME_EXACT_v1.md §3
+  Used by: PostCardV3 reaction buttons
+
+POST /api/v1/wallet/transfer
+  Source: aier_server.js:18554
+  Reference: Sprint 5.11 Fix 2 (Lane_02 wallet)
+  Note: Lane_02 territory; Lane_01 read-only awareness
+
+POST /api/v1/deposits/address
+  Source: aier_server.js:18316
+  Reference: Sprint 5.11 Fix 2 (Lane_02 wallet)
+
+ENTA RPCs (Sprint 5.5):
+  rpc_create_enta_profile (onboarding submit)
+  rpc_compute_enta (state computation)
+  rpc_connect_user (Connect action — V3 uses this; V2 has both Express + Direct RPC)
+
+KL-048 compliance: All wirings cite EXACT V2 file:line. No paraphrasing, no assumed paths.

@@ -1,0 +1,46 @@
+=== Lane Boundary Diff — Phase 6.1 ===
+
+$ git diff --stat main..HEAD (post-merge SHA fbbc97f8 vs main)
+
+ apps/uzg-pwa/src/hooks/useAvatarUpload.ts |  74 ++++++++--
+ apps/uzg-pwa/src/lib/v2ExpressClient.ts   |  62 ++++++++
+ src/hooks/useAvatarUpload.ts              |  74 ++++++++--
+ src/lib/v2ExpressClient.ts                |  62 ++++++++
+ tests/visual/p6-1-ux-polish.spec.mjs      | 124 ++++++++++++++++
+
+ 5 files changed, 315 insertions(+), 18 deletions(-)
+
+--- Lane attribution ---
+
+| File | Lane | Owner |
+|---|---|---|
+| apps/uzg-pwa/src/lib/v2ExpressClient.ts | Lane_01 (shared lib, additive only) | Lane_01 |
+| apps/uzg-pwa/src/hooks/useAvatarUpload.ts | Lane_01 (Profile module hook) | Lane_01 |
+| src/lib/v2ExpressClient.ts | KL-05 mirror | Lane_01 |
+| src/hooks/useAvatarUpload.ts | KL-05 mirror | Lane_01 |
+| tests/visual/p6-1-ux-polish.spec.mjs | Tests (cross-cutting) | Lane_01 |
+
+--- Lane_02 territory check ---
+
+Searched for any edits to Lane_02 namespaces:
+
+  $ git diff main..HEAD --name-only | grep -E "(chat-v3|wallet-v3|plus-v3|membership-v3|u-reward-v3|tao-v3)/"
+  (no matches)
+
+UNTOUCHED:
+- apps/uzg-pwa/src/components/chat-v3/      (Lane_02)
+- apps/uzg-pwa/src/components/wallet-v3/    (Lane_02)
+- apps/uzg-pwa/src/components/plus-v3/      (Lane_02)
+- apps/uzg-pwa/src/components/membership-v3/(Lane_02)
+- apps/uzg-pwa/src/components/u-reward-v3/  (Lane_02)
+- apps/uzg-pwa/src/components/tao-v3/       (Lane_02)
+- apps/uzg-pwa/src/pages/v3/V3SendPage.jsx, V3ReceivePage.jsx, etc (Lane_02)
+
+--- V2 backend check ---
+
+$ git diff main..HEAD -- "_worker.js" "aier_server.js" "supabase/"
+(no matches — V2 backend immutable per DEC-08)
+
+--- Verdict ---
+
+Lane boundaries CLEAN. Acceptance Criterion AC-9 PASS.

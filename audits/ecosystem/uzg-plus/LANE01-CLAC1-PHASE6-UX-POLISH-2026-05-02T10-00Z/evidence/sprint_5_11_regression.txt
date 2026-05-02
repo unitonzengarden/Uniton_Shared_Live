@@ -1,0 +1,31 @@
+=== Sprint 5.11 Regression Check (Phase 6.1) ===
+
+Date: 2026-05-02T10:24Z
+Command: npx playwright test --config playwright.v3.config.js tests/visual/p5-11-v2-exact-wire.spec.mjs --reporter=line
+Target: http://127.0.0.1:4199 (test-static-server with Phase 6.1 build)
+
+--- Result ---
+
+15 passed (15.9s)
+
+[1/15] /v3/login shows "Vào UZG+" title (V2 titleRequest)                                            PASS
+[2/15] /v3/login identifier input type=text with autocomplete=username                               PASS
+[3/15] /v3/login send-otp button says "Gửi mã" not "Gửi mã xác thực"                                 PASS
+[4/15] /v3/login does NOT say "Đăng nhập" as page title                                              PASS
+[5/15] OTP form: hidden input maxLength=8 (OTP_MAX_LENGTH=8)                                         PASS
+[6/15] OTP form title = "Nhập mã xác minh" (V2 titleVerify)                                          PASS
+[7/15] OTP form subtitle = "Đã gửi tới" (V2 sentTo)                                                  PASS
+[8/15] OTP verify button = "Xác minh" (V2 verifyAction)                                              PASS
+[9/15] OTP verify button disabled < 6 digits, enabled at 6+                                          PASS
+[10/15] OTP resend = "Gửi lại sau Xs" (V2 resendIn format)                                           PASS
+[11/15] /v3/signup redirects to /v3/login                                                            PASS
+[12/15] /v3/wallet/send renders SendFlow (.v3-wallet-send)                                           PASS
+[13/15] /v3/wallet/receive renders ReceiveQR (.v3-wallet-receive)                                    PASS
+[14/15] v2ExpressClient walletTransfer: POST /api/v1/wallet/transfer endpoint registered             PASS
+[15/15] v2ExpressClient getDepositAddress: POST /api/v1/deposits/address endpoint registered         PASS
+
+--- Verdict ---
+
+Phase 6.1 changes (uploadEntaMedia + useAvatarUpload refactor) introduce
+ZERO regressions to Sprint 5.11 functionality. All Auth + Wallet behaviors
+preserved.

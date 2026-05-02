@@ -1,0 +1,33 @@
+=== Phase 6.1 Playwright (Local Run) ===
+
+Date: 2026-05-02T10:34Z
+Command: npx playwright test --config playwright.v3.config.js tests/visual/p6-1-ux-polish.spec.mjs --reporter=line
+Target: http://127.0.0.1:4199 (test-static-server with Phase 6.1 build)
+
+--- Result ---
+
+12 passed (9.9s)
+
+Phase 6.1: V3 Lane_01 routes return 200 + AuthGate intact
+[1/12]  /v3/home redirects to /v3/login when unauthenticated                                          PASS
+[2/12]  /v3/enta redirects to /v3/login when unauthenticated                                          PASS
+[3/12]  /v3/enta/onboarding redirects to /v3/login when unauthenticated                               PASS
+[4/12]  /v3/connections redirects to /v3/login when unauthenticated                                   PASS
+[5/12]  /v3/profile/me redirects to /v3/login when unauthenticated                                    PASS
+
+Phase 6.1 Fix 4: Avatar V2 endpoint registration
+[6/12]  uploadEntaMedia: POST /api/v1/media/enta/upload endpoint accessible from V3 bundle            PASS
+
+Phase 6.1 KL-028: 6 Lane_01 routes return 200
+[7/12]  /v3/home returns 200 (KL-028)                                                                 PASS
+[8/12]  /v3/enta returns 200 (KL-028)                                                                 PASS
+[9/12]  /v3/enta/onboarding returns 200 (KL-028)                                                      PASS
+[10/12] /v3/connections returns 200 (KL-028)                                                          PASS
+[11/12] /v3/profile/me returns 200 (KL-028)                                                           PASS
+[12/12] /v3/settings returns 200 (KL-028)                                                             PASS
+
+--- Coverage ---
+
+- 5 AuthGate redirect verifications (Lane_01 routes)
+- 1 V2 media endpoint accessibility from bundle
+- 6 KL-028 route 200 verifications
