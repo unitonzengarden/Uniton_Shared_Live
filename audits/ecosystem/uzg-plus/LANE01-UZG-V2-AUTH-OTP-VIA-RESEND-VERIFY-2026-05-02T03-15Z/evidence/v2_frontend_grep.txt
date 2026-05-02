@@ -1,0 +1,103 @@
+V2 FRONTEND OTP GREP — Audit 2026-05-02
+===
+
+=== File catalog (V2 auth-related) ===
+apps/uzg-pwa/src/pages/LoginPage.jsx (397 lines) — primary auth UI
+apps/uzg-pwa/src/services/authService.js (961 lines) — auth client
+apps/uzg-pwa/src/services/authTraceService.js — telemetry
+apps/uzg-pwa/src/components/auth/AuthShell.jsx — UI wrapper
+apps/uzg-pwa/src/lib/supabaseClient.js — Supabase JS init
+
+=== KEY IMPORTS (LoginPage.jsx) ===
+import {
+  DEFAULT_OTP_RESEND_COOLDOWN_SECONDS,
+  getSession,
+  getUserRole,
+  logSessionEvent,
+  resolveOtpCooldownSeconds,
+  sendOtp,
+  verifyOtpCode,
+} from '../services/authService'
+
+=== OTP FLOW VARIABLES ===
+const OTP_MIN_LENGTH = 6
+const OTP_MAX_LENGTH = 8
+const DEFAULT_OTP_RESEND_COOLDOWN_SECONDS = 60
+
+=== STATE MACHINE ===
+const [identifier, setIdentifier] = useState('')      // email or phone
+const [otpCode, setOtpCode] = useState('')            // 6-8 digit code
+const [isOtpSent, setIsOtpSent] = useState(false)     // 2-stage UI flag
+const [loadingSend, setLoadingSend] = useState(false)
+const [loadingVerify, setLoadingVerify] = useState(false)
+const [cooldownEndsAt, setCooldownEndsAt] = useState(0)
+const [deliveryChannel, setDeliveryChannel] = useState('')  // 'email' | 'phone'
+
+=== sendOtp FUNCTION (services/authService.js:673-748) ===
+export async function sendOtp(identifier, options = {}) {
+  const normalized = normalizeIdentifier(identifier)
+  if (!normalized) throw new Error('Email or phone is required.')
+
+  const emailRedirectTo = resolveEmailRedirectTo(options.emailRedirectTo)
+
+  if (isEmailIdentifier(normalized)) {
+    // Try Cloudflare Worker first
+    try {
+      const result = await requestEmailOtpGateway(normalized.toLowerCase(), { emailRedirectTo })
+      return result
+    } catch (gatewayError) {
+      if (!shouldFallbackToDirectEmailOtp(gatewayError)) {
+        throw normalizeOtpAuthError(gatewayError, 'send')
+      }
+      // Fallback to Supabase direct
+    }
+    const { error } = await supabase.auth.signInWithOtp({
+      email: normalized.toLowerCase(),
+      options: { emailRedirectTo },
+    })
+    // ...
+  }
+
+  // Phone path: Supabase direct
+  const phone = normalizePhone(normalized)
+  const { error } = await supabase.auth.signInWithOtp({ phone })
+  // ...
+}
+
+=== requestEmailOtpGateway (services/authService.js:589-622) ===
+const response = await fetch('/api/v1/auth/otp/request', {
+  method: 'POST',
+  headers: { 'content-type': 'application/json' },
+  body: JSON.stringify({
+    identifier: email,
+    emailRedirectTo,
+  }),
+})
+
+=== verifyOtpCode FUNCTION (services/authService.js:766-822) ===
+const payload = isEmailIdentifier(normalized)
+  ? { email: normalized.toLowerCase(), token, type: 'email' }
+  : { phone: normalizePhone(normalized), token, type: 'sms' }
+
+const { data, error } = await supabase.auth.verifyOtp(payload)
+if (error) throw normalizeOtpAuthError(error, 'verify')
+
+=== logout FUNCTION (services/authService.js:841-848) ===
+export async function logout() {
+  const { error } = await supabase.auth.signOut()
+  if (error) throw error
+  clearActivityTs()
+  clearRoleContext()
+  clearRecentVerifiedSessionMarker()
+  logSessionEvent('session_logout', { reason: 'manual' })
+}
+
+=== NO PASSWORD ANYWHERE ===
+grep "password" apps/uzg-pwa/src/services/authService.js → 0 hits (in auth flow context)
+grep "signInWithPassword" apps/uzg-pwa/src/ → 0 hits (only V3 Sprint 5.1 in components/auth-v3/)
+
+=== V3 BUG CONFIRMED ===
+apps/uzg-pwa/src/hooks/useAuth.ts:47 → const { error } = await supabase.auth.signInWithPassword({ email, password });
+apps/uzg-pwa/src/hooks/useAuth.ts:50-51 → signUp(email, password, metadata) { supabase.auth.signUp({ email, password, ... }) }
+apps/uzg-pwa/src/components/auth-v3/LoginForm.tsx:28 → await signIn(email.trim(), password);
+apps/uzg-pwa/src/components/auth-v3/SignupForm.tsx:44 → await signUp(email.trim(), password, metadata);

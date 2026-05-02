@@ -1,0 +1,87 @@
+V2 BACKEND CLOUDFLARE WORKER OTP — Audit 2026-05-02
+===
+
+=== LOCATION SURPRISE ===
+OTP endpoints are in Cloudflare Worker (apps/uzg-pwa/public/_worker.js),
+NOT in Express server (server/aier_server.js).
+
+=== aier_server.js OTP grep ===
+grep "otp\|OTP\|sendOtp\|verifyOtp\|generateLink|admin\.createUser|resend" server/aier_server.js
+→ Only 1 unrelated hit (line 5401: "External/provider-facing records...")
+
+=== _worker.js OTP grep ===
+grep -n "/api/v1/auth/otp|otp/request|resend|RESEND" apps/uzg-pwa/public/_worker.js | head
+
+624: '/api/v1/auth/otp/request': {
+629:   dbOwner: 'supabase-auth-admin + resend',
+3812: env.AUTH_OTP_RESEND_COOLDOWN_SECONDS
+3813: || env.VITE_OTP_RESEND_COOLDOWN_SECONDS
+3823: const resendApiKey = firstNonEmpty(env.RESEND_API_KEY)
+3826: env.RESEND_FROM_EMAIL,
+3827: env.RESEND_FROM,
+3831: env.RESEND_FROM_NAME,
+3834: const replyTo = firstNonEmpty(env.AUTH_OTP_REPLY_TO, env.RESEND_REPLY_TO)
+3838: if (!resendApiKey) missing.push('RESEND_API_KEY')
+3934: const response = await fetch('https://api.resend.com/emails', {
+3937:   Authorization: `Bearer ${gatewayConfig.resendApiKey}`,
+4008: path: '/api/v1/auth/otp/request',
+4050: delivery_owner: 'resend',
+4061: delivery_owner: 'worker-resend-email-gateway',
+24538: expected_env_keys: ['RESEND_API_KEY', 'AUTH_OTP_EMAIL_FROM'],
+47494: if (pathname === '/api/v1/auth/otp/request' && request.method === 'POST') return handleAuthOtpRequest(request, env)
+
+=== handleAuthOtpRequest (_worker.js:3966-4068) ===
+
+async function handleAuthOtpRequest(request, env) {
+  const body = await parseRequestJson(request)
+  const identifier = normalizeAuthOtpIdentifier(body?.identifier || body?.email)
+
+  if (!identifier) return json(400, { code: 'AUTH_OTP_IDENTIFIER_REQUIRED', ... })
+  if (!isAuthOtpEmailIdentifier(identifier)) return json(400, { code: 'AUTH_OTP_EMAIL_ONLY_GATEWAY', ... })
+
+  const config = resolveSupabaseConfig(env)
+  if (!config.ready) return json(503, { code: 'AUTH_OTP_GATEWAY_NOT_CONFIGURED', ... })
+
+  const gatewayConfig = resolveAuthOtpEmailGatewayConfig(env)
+  if (!gatewayConfig.ready) return json(503, { code: 'AUTH_EMAIL_PROVIDER_NOT_CONFIGURED', ... })
+
+  // STEP 1: Generate OTP via Supabase admin API
+  const generateResult = await generateAuthOtpEmailPayload(config, identifier.toLowerCase(), redirectTo)
+  // → POST {SUPABASE_URL}/auth/v1/admin/generate_link
+  // → Body: { type: 'magiclink', email, redirect_to }
+  // → Response: { email_otp: '123456', action_link, redirect_to }
+
+  if (!generateResult.ok) return json(..., { code: 'AUTH_OTP_GENERATE_FAILED', ... })
+
+  // STEP 2: Deliver OTP via Resend
+  const deliveryResult = await sendResendAuthOtpEmail(gatewayConfig, {
+    email: identifier.toLowerCase(),
+    otpCode: generateResult.otpCode,
+  })
+
+  if (!deliveryResult.ok) return json(..., { code: 'AUTH_EMAIL_PROVIDER_DELIVERY_FAILED', ... })
+
+  return json(200, {
+    ok: true,
+    data: {
+      sent: true,
+      channel: 'email',
+      email_hint: maskAuthOtpEmail(identifier),
+      delivery_owner: 'worker-resend-email-gateway',
+      verify_owner: 'supabase-auth-verifyOtp',
+      cooldown_seconds: gatewayConfig.cooldownSeconds,
+      requested_at: new Date().toISOString(),
+    },
+  })
+}
+
+=== ENV VARS REQUIRED ===
+RESEND_API_KEY                    (required)
+AUTH_OTP_EMAIL_FROM               (required, primary)
+RESEND_FROM_EMAIL / RESEND_FROM   (fallback)
+AUTH_OTP_EMAIL_FROM_NAME / RESEND_FROM_NAME (default 'UZG+')
+AUTH_OTP_REPLY_TO / RESEND_REPLY_TO (optional)
+AUTH_OTP_SUPPORT_EMAIL            (optional, fallback to replyTo or fromEmail)
+AUTH_OTP_RESEND_COOLDOWN_SECONDS  (default 60)
+VITE_OTP_RESEND_COOLDOWN_SECONDS  (alt)
+SUPABASE_URL + SUPABASE_SERVICE_ROLE_KEY (Supabase admin API access)

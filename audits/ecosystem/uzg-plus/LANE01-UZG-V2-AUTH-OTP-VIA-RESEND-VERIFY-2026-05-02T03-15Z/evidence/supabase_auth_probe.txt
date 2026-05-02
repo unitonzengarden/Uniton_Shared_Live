@@ -1,0 +1,72 @@
+SUPABASE AUTH PROVIDER PROBE — Audit 2026-05-02
+===
+
+=== TEST: Email/password signup capability ===
+
+Command:
+curl -s -X POST "https://kkhhpecofolmrodyeslp.supabase.co/auth/v1/signup" \
+  -H "apikey: $ANON_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{"email":"discovery-probe-test@example.test","password":"TestPassword123aB"}'
+
+Response (200 OK):
+{
+  "access_token": "eyJhbGc...(valid Supabase JWT)...",
+  "token_type": "bearer",
+  "expires_in": 3600,
+  "expires_at": 1777695971,
+  "refresh_token": "...",
+  "user": {
+    "id": "9d14d818-4f05-41bd-aa5e-b465d1861d0b",
+    "aud": "authenticated",
+    "role": "authenticated",
+    "email": "discovery-probe-test@example.test",
+    "app_metadata": {
+      "provider": "email",
+      "providers": ["email"]
+    },
+    "user_metadata": {
+      "email": "discovery-probe-test@example.test",
+      "email_verified": true,    // ← NO email confirmation required
+      "phone_verified": false
+    }
+  }
+}
+
+=== FINDINGS ===
+
+✓ Email/password signup ENABLED in this Supabase project
+✓ NO email confirmation required (email_verified=true immediately)
+✓ Supabase project supports BOTH password and OTP auth flows
+
+=== IMPLICATION ===
+
+V2 deliberately uses OTP-only flow (NOT password). Supabase password auth is enabled
+at the provider level but V2 user flow ignores it.
+
+V3 Sprint 5.1 LoginForm.signInWithPassword would technically work IF user had
+password set. BUT V2 users (created via OTP magiclink) have NO encrypted_password
+in auth.users → "Invalid login credentials" error.
+
+=== ORPHAN USERS ===
+
+Test user created during this audit:
+  user_id: 9d14d818-4f05-41bd-aa5e-b465d1861d0b
+  email: discovery-probe-test@example.test
+  created_at: ~2026-05-02T03:00:00Z
+  encrypted_password: SET (test password)
+
+Recommendation: NTS may clean up via Supabase dashboard.
+
+=== SPRINT 5.1 + 5.9 ORPHAN CHECK ===
+
+Audit recommendation: query auth.users for any test users created during Sprint 5.1
+manual testing.
+
+  SELECT id, email, created_at, encrypted_password IS NOT NULL AS has_password
+  FROM auth.users
+  WHERE created_at > '2026-04-30'
+    AND email LIKE '%test%' OR email LIKE '%discovery%'
+  ORDER BY created_at DESC;
+
+(Cannot run from audit without service_role; defer to NTS dashboard or Phase 6 cleanup.)
