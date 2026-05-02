@@ -1,9 +1,22 @@
 {
   "project_slug": "uzg-plus",
   "github_repo": "unitonzengarden/uzgplus-app",
-  "polled_at": "2026-05-02T16:50:41.833Z",
+  "polled_at": "2026-05-02T17:43:57.611Z",
   "count": 20,
   "workflow_runs": [
+    {
+      "id": 25257481633,
+      "name": "Deploy to Cloudflare Pages (Stable)",
+      "head_branch": "main",
+      "head_sha": "5a3049963e1bdeac08558cacca190f3d87e4d5ae",
+      "event": "push",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-05-02T17:20:54Z",
+      "updated_at": "2026-05-02T17:22:08Z",
+      "run_started_at": "2026-05-02T17:20:54Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/actions/runs/25257481633"
+    },
     {
       "id": 25256780932,
       "name": "Deploy to Cloudflare Pages (Stable)",
@@ -250,19 +263,6 @@
       "updated_at": "2026-05-02T13:59:26Z",
       "run_started_at": "2026-05-02T13:57:55Z",
       "html_url": "https://github.com/unitonzengarden/uzgplus-app/actions/runs/25253525632"
-    },
-    {
-      "id": 25253445976,
-      "name": "Deploy to Cloudflare Pages (Stable)",
-      "head_branch": "main",
-      "head_sha": "69a2ee23de57ffd7ce6c0852026a82cf3f64de35",
-      "event": "push",
-      "status": "completed",
-      "conclusion": "success",
-      "created_at": "2026-05-02T13:53:37Z",
-      "updated_at": "2026-05-02T13:54:48Z",
-      "run_started_at": "2026-05-02T13:53:37Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/actions/runs/25253445976"
     }
   ]
 }

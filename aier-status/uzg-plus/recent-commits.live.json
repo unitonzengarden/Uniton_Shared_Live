@@ -1,9 +1,16 @@
 {
   "project_slug": "uzg-plus",
   "github_repo": "unitonzengarden/uzgplus-app",
-  "polled_at": "2026-05-02T16:50:41.833Z",
+  "polled_at": "2026-05-02T17:43:57.611Z",
   "count": 30,
   "commits": [
+    {
+      "sha": "5a3049963e1bdeac08558cacca190f3d87e4d5ae",
+      "message": "test(lane02/uzg): PLUS Hub V2 upgrade QA spec (6 tests production) [vercel skip]",
+      "author": "unitonzengarden",
+      "committed_at": "2026-05-02T17:19:51Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/5a3049963e1bdeac08558cacca190f3d87e4d5ae"
+    },
     {
       "sha": "7799b4b43888c97651c1ff98bc600091fabcf679",
       "message": "feat(lane02/uzg/tao): TAO mini app full-screen takeover pattern V3 canon (#115)",
@@ -206,13 +213,6 @@
       "author": "Uniton Zen",
       "committed_at": "2026-05-02T10:06:43Z",
       "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/fbbc97f80cce22409c48743faf10889ce3413bfd"
-    },
-    {
-      "sha": "e18d67ceae2c5b35f85fad60c4839e7623e685e4",
-      "message": "feat(p5-12): Sprint 5.12 — QA Auto-Loop FINAL [vercel skip] (#92)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-05-02T08:15:30Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/e18d67ceae2c5b35f85fad60c4839e7623e685e4"
     }
   ]
 }
