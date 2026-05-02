@@ -1,9 +1,16 @@
 {
   "project_slug": "uzg-plus",
   "github_repo": "unitonzengarden/uzgplus-app",
-  "polled_at": "2026-05-02T08:00:16.660Z",
+  "polled_at": "2026-05-02T09:16:57.342Z",
   "count": 30,
   "commits": [
+    {
+      "sha": "e18d67ceae2c5b35f85fad60c4839e7623e685e4",
+      "message": "feat(p5-12): Sprint 5.12 — QA Auto-Loop FINAL [vercel skip] (#92)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-02T08:15:30Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/e18d67ceae2c5b35f85fad60c4839e7623e685e4"
+    },
     {
       "sha": "32cd9e264fadd811e0543621e0a73cdc0ea26c3c",
       "message": "feat(p5-11): Sprint 5.11 — V2-EXACT wire critical+optional [vercel skip] (#91)",
@@ -206,13 +213,6 @@
       "author": "Uniton Zen",
       "committed_at": "2026-05-01T09:18:54Z",
       "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/a4c40f96c2e9ef8a281c79fba3499afeed31e562"
-    },
-    {
-      "sha": "930a7caa6bbcaee40cc187b25cc619702228b12f",
-      "message": "feat(s8): UZG+ V3 U-Reward mini app — 4 modules (TAP/QUIZ/TASK/CAMPAIGN) — FINAL Phase 3 (#69)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-05-01T08:56:40Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/930a7caa6bbcaee40cc187b25cc619702228b12f"
     }
   ]
 }
