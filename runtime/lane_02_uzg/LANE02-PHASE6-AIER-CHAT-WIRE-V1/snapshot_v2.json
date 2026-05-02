@@ -1,0 +1,28 @@
+{
+  "task_id": "LANE02-PHASE6-AIER-CHAT-WIRE-V1",
+  "status_v1": "PARTIAL (migration not applied)",
+  "status_v2": "PARTIAL (migration applied, runtime smoke 1/5)",
+  "completed_by": "LANE02-PHASE6-AIER-MIGRATION-APPLY-V3",
+  "v1_blockers_resolved": {
+    "migration_applied": true,
+    "rpc_search_aier_kb_reachable": true,
+    "endpoint_route_registered": true,
+    "build_pipeline_source_path_fixed": true,
+    "claude_model_name_corrected": true
+  },
+  "v3_remaining_blocker": "Production CF Pages Worker returns 502 HTML on full-body chat requests. Auth check + body validation + env validation all pass (verified via DIAGNOSTIC_PASS short-circuit). External API call flow (Claude streaming pass-through likely) crashes worker before response. Need CF runtime logs to fully diagnose.",
+  "migration_applied_at": "2026-05-02T13:46:00Z",
+  "migration_applied_by": "CLAC-2 via Supabase Management API",
+  "smoke_5_cases": "1/5 PASS",
+  "pr_chain": [
+    {"pr": 95, "sha": "69a2ee2", "merged": "2026-05-02T13:53:34Z"},
+    {"pr": 99, "sha": "5c56bd3", "merged": "2026-05-02T14:04:15Z"},
+    {"pr": 100, "sha": "18fe6a7", "merged": "2026-05-02T14:12:18Z"},
+    {"pr": 101, "sha": "aec2f53", "merged": "2026-05-02T14:20:38Z"},
+    {"pr": 103, "sha": "a040598", "merged": "2026-05-02T14:24:25Z"}
+  ],
+  "production_url": "https://uzg.plus/v3/tao/aier",
+  "production_status": "Endpoint registered, 502 on full-body — needs final runtime fix",
+  "tao_data_source_aier": "real",
+  "next_required_action": "Bisect 502 via wrangler tail (CF Workers logs) or per-stage diagnostic"
+}

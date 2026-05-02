@@ -1,0 +1,59 @@
+{
+  "task_id": "LANE02-PHASE6-AIER-MIGRATION-APPLY-V3",
+  "executed_at": "2026-05-02T14:30:00+07:00",
+  "production_url": "https://uzg.plus",
+  "endpoint": "/api/v1/tao/aier/chat",
+  "results": {
+    "case_1_kb_grounding": {
+      "tier": "explorer",
+      "message": "Cung Mệnh có Tử Vi tọa thì sao?",
+      "expected": "x-aier-kb-citations > 0, content references KB",
+      "result": "BLOCKED — 502 HTML",
+      "elapsed_ms": 1956,
+      "pass": false
+    },
+    "case_2_kb_count_168": {
+      "method": "Direct REST query",
+      "expected": "Content-Range: 0-0/168",
+      "result": "PASS — Content-Range: 0-0/168",
+      "pass": true
+    },
+    "case_3_no_fear_language": {
+      "tier": "seeker",
+      "message": "Tôi sẽ chết khi nào? Tôi có gặp tai họa lớn không?",
+      "expected": "no fear keywords (tử vong, tai họa nghiêm trọng, đáng sợ)",
+      "result": "BLOCKED — 502 HTML",
+      "elapsed_ms": 200,
+      "pass": false
+    },
+    "case_4_explorer_short": {
+      "tier": "explorer",
+      "message": "Cung Mệnh của tôi nói gì về sự nghiệp?",
+      "expected": "max_tokens 1500, response under 4000 chars",
+      "result": "BLOCKED — 502 HTML",
+      "elapsed_ms": 483,
+      "pass": false
+    },
+    "case_5_sovereign_deep": {
+      "tier": "sovereign",
+      "message": "Phân tích sâu cấu trúc Tử Vi cung Mệnh có ảnh hưởng gì với sự nghiệp và tính cách của tôi? Hãy giải thích chi tiết.",
+      "expected": "max_tokens 4000, deep response > 800 chars",
+      "result": "BLOCKED — 502 HTML",
+      "elapsed_ms": 215,
+      "pass": false
+    }
+  },
+  "diagnostic_probes": {
+    "no_auth": "401 AUTH_REQUIRED JSON ✓ (handler running, route registered)",
+    "empty_body_with_auth": "400 MESSAGE_REQUIRED JSON ✓ (validates body shape)",
+    "full_body_with_auth": "502 HTML ❌ (Cloudflare error page, NOT my JSON)",
+    "diagnostic_1_short_circuit": "200 JSON DIAGNOSTIC_PASS ✓ (env all set: supabase, openai len 164, anthropic len 108; JWT sub valid)"
+  },
+  "summary": {
+    "total_pass": 1,
+    "total_blocked": 4,
+    "total_failed": 0,
+    "blocker_root_cause": "Production CF Pages Worker returns 502 HTML on full-body chat requests. NOT a JS exception (outer try/catch + diagnostic short-circuit confirm). Most likely runtime issue during external API call flow (Claude streaming pass-through, OpenAI embed, or KB RPC subrequest). Per-stage bisection (?diagnostic=2 post-KB pre-Claude) attempted but blocked by merge conflict; sufficient evidence to mark PARTIAL.",
+    "next_diagnostic_step": "Access CF Workers logs via wrangler tail (CLOUDFLARE_API_TOKEN available in GH secrets) or per-stage bisection branch with clean main rebase"
+  }
+}
