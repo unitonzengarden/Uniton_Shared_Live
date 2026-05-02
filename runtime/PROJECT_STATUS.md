@@ -10,7 +10,7 @@
 ## §0. Header
 
 - **Generator:** `aier-state-update v1.0` invoked via `scripts/runtime/generate_project_status.py v1.1`
-- **Source commit:** `eb9d1a1f1d3eb9928c501da0519df501a6000c6c` (short: `eb9d1a1`)
+- **Source commit:** `cf5b78e889d8be12960464b7e0ad9f649b70a84f` (short: `cf5b78e`)
 - **Auto-generated:** `true` (do not hand-edit)
 - **Authority:** repo-backed automation per LAW_N8 §L8.2 explicitly enabled CI mode (state-mirror auto-regenerate scope only)
 
@@ -68,11 +68,11 @@
 
 | SHA | Author | Subject |
 |---|---|---|
+| `cf5b78e` | unitonzengarden | chore(lane02/phase6): AIER chat migration applied PARTIAL + 5 deliverables + ledger |
+| `98ceee6` | Uniton Zen | audit lane01 v3 home ngu hanh reactions (#99) |
+| `2d80c75` | Uniton Zen | audit p6 endgame 2 honest partial composer fix only (#98) |
+| `fd10697` | AIER State Bot | [auto-status] regen runtime+network surfaces from eb9d1a1 [vercel skip] |
 | `eb9d1a1` | unitonzengarden | feat(lane02/sync): verify sync workflow + confirm Lane_02 visibility PASS |
-| `d57245a` | Ecosystem Poller Bot | poll: ecosystem state update [vercel skip] |
-| `7dc6a89` | AIER Code Heartbeat | AIER Code heartbeat 2026-05-02T13:46:01Z [vercel skip] |
-| `b917e54` | Uniton Zen | audit p6-endgame v3 home (#97) |
-| `a00216b` | AIER State Bot | [auto-status] regen runtime+network surfaces from 8255854 [vercel skip] |
 
 ## §7. Latest 5 DONE Tasks (from MASTER_CHECKLIST)
 
