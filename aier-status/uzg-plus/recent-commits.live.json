@@ -1,9 +1,51 @@
 {
   "project_slug": "uzg-plus",
   "github_repo": "unitonzengarden/uzgplus-app",
-  "polled_at": "2026-05-02T17:43:57.611Z",
+  "polled_at": "2026-05-02T18:36:18.698Z",
   "count": 30,
   "commits": [
+    {
+      "sha": "89a677cb38b7b6c5b128fb00881410959982f577",
+      "message": "fix(lane02/uzg): BUG-PLUS-01 i18n + BUG-PLUS-02 ENTA gate /app [vercel skip] (#119)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-02T18:26:07Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/89a677cb38b7b6c5b128fb00881410959982f577"
+    },
+    {
+      "sha": "3c56418de6a14f0362a1192b301cd27c32011e0f",
+      "message": "Merge pull request #118 from unitonzengarden/feat/LANE01-enta-wizard-result-reveal",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-02T18:20:27Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/3c56418de6a14f0362a1192b301cd27c32011e0f"
+    },
+    {
+      "sha": "8a3b350bf780fff82ee7fd037adba2c94862ad45",
+      "message": "feat(enta): EntaWheelHero reusable + Step 3 Result Reveal + Dashboard hero mount",
+      "author": "LANE01-Cursor",
+      "committed_at": "2026-05-02T18:19:55Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/8a3b350bf780fff82ee7fd037adba2c94862ad45"
+    },
+    {
+      "sha": "036f61b1cf8df246d2a9c17f8e2fa91596eb7e02",
+      "message": "feat(lane02/uzg/tao): Phase 6.2 Phong Thủy + Vạn Niên flip mock to real (#117)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-02T18:02:24Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/036f61b1cf8df246d2a9c17f8e2fa91596eb7e02"
+    },
+    {
+      "sha": "d539225f054c66e6f60e13ebac11f54c4ff40a15",
+      "message": "Merge pull request #116 from unitonzengarden/feat/LANE01-enta-wizard-scaffold",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-02T18:00:45Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/d539225f054c66e6f60e13ebac11f54c4ff40a15"
+    },
+    {
+      "sha": "75e33cf670b46f0f8d57c6f95f7237330ce75ce1",
+      "message": "feat(enta): 5-step onboarding wizard scaffold + step indicator",
+      "author": "LANE01-Cursor",
+      "committed_at": "2026-05-02T17:59:57Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/75e33cf670b46f0f8d57c6f95f7237330ce75ce1"
+    },
     {
       "sha": "5a3049963e1bdeac08558cacca190f3d87e4d5ae",
       "message": "test(lane02/uzg): PLUS Hub V2 upgrade QA spec (6 tests production) [vercel skip]",
@@ -171,48 +213,6 @@
       "author": "unitonzengarden",
       "committed_at": "2026-05-02T13:19:46Z",
       "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/783987d313e704c73eb04a48d58c4d6a2f1a83fc"
-    },
-    {
-      "sha": "bc2953f66929a4a02de705af7631fe38cf121ed4",
-      "message": "chore: redeploy trigger (#97)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-05-02T13:16:28Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/bc2953f66929a4a02de705af7631fe38cf121ed4"
-    },
-    {
-      "sha": "00942a963aca04cf6ecb0c39c0bdef8fba5b10b9",
-      "message": "fix(p6-endgame): V3 HOME real V2 data 100% — root cause crash + V2 EXACT mapper [vercel skip] (#96)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-05-02T13:11:35Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/00942a963aca04cf6ecb0c39c0bdef8fba5b10b9"
-    },
-    {
-      "sha": "ef9bf3314d2c4a8628cf388ecd36ccc012abe024",
-      "message": "fix(lane02/phase6): BUG-CHAT-01 ENTA gate UX + BUG-WALLET-01 black overlay [vercel skip]",
-      "author": "unitonzengarden",
-      "committed_at": "2026-05-02T12:01:48Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/ef9bf3314d2c4a8628cf388ecd36ccc012abe024"
-    },
-    {
-      "sha": "77dc66ed4636d0a4f0f59d9ce496ba7a9c046769",
-      "message": "feat(p6-1b): Phase 6.1.b authenticated QA infrastructure + measured V2-vs-V3 baselines [vercel skip] (#94)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-05-02T11:46:47Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/77dc66ed4636d0a4f0f59d9ce496ba7a9c046769"
-    },
-    {
-      "sha": "bb6731a60c1830b190758ab5224ec899b2fd12a8",
-      "message": "test(lane02/phase6): P0 user-journey audit 4 modules with auth bypass [vercel skip]",
-      "author": "unitonzengarden",
-      "committed_at": "2026-05-02T10:19:07Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/bb6731a60c1830b190758ab5224ec899b2fd12a8"
-    },
-    {
-      "sha": "fbbc97f80cce22409c48743faf10889ce3413bfd",
-      "message": "feat(p6-1): Phase 6.1 UX polish — avatar V2 endpoint wire (Sprint 5.11 Fix 4 deferred completion) [vercel skip] (#93)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-05-02T10:06:43Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/fbbc97f80cce22409c48743faf10889ce3413bfd"
     }
   ]
 }
