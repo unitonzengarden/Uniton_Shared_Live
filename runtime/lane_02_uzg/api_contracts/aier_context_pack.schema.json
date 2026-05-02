@@ -1,0 +1,83 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/runtime/lane_02_uzg/api_contracts/aier_context_pack.schema.json",
+  "title": "AIER Tao context_pack",
+  "description": "Compressed PII-safe context built from chart_object + interpretive_layer. Source: lib/tao/ziwei/aier/context-pack.js. PRIVACY INVARIANT: MUST NOT contain birth_solar_datetime, birth_location, name_full, address, phone, email, or raw lunar_day. Tests in __tests__/context-pack.test.js enforce this.",
+  "type": "object",
+  "properties": {
+    "chart_id": {
+      "type": "string",
+      "pattern": "^zw-[0-9a-f]{8}$",
+      "description": "Deterministic FNV-1a 32-bit fingerprint of canonical analytical fields — NOT derived from raw birth datetime"
+    },
+    "formula_version": { "type": "string" },
+    "source_authority": { "type": "array", "items": { "type": "string" } },
+    "menh": {
+      "type": "object",
+      "properties": {
+        "branch": { "type": "string" },
+        "main_stars": { "type": "array", "items": { "type": "string" } },
+        "brightness": { "type": "object", "additionalProperties": { "type": "string" } }
+      }
+    },
+    "than": {
+      "type": "object",
+      "properties": {
+        "branch": { "type": "string" }
+      }
+    },
+    "cuc": {
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "number": { "type": "integer", "minimum": 2, "maximum": 6 }
+      }
+    },
+    "stars_by_palace": {
+      "type": "object",
+      "description": "Palace name -> array of main star names",
+      "additionalProperties": {
+        "type": "array",
+        "items": { "type": "string" }
+      }
+    },
+    "interpretive_summary": {
+      "type": "object",
+      "description": "Compressed interpretive layer (top patterns, dominant elements)"
+    },
+    "cycle_layer": {
+      "type": ["object", "null"],
+      "description": "Optional dai-van / luu-nien for target year"
+    },
+    "user_profile": {
+      "type": ["object", "null"],
+      "properties": {
+        "displayName": { "type": "string" },
+        "ENTA_polarity": { "type": "string" }
+      },
+      "description": "ONLY non-PII display fields. Never name_full, never email."
+    },
+    "governance": {
+      "type": "object",
+      "properties": {
+        "context_bound_to_chart_id": { "type": "boolean", "const": true, "description": "P-LANE02-AIER-CONTEXT-BOUND — runtime enforced" },
+        "tier": { "type": "string", "enum": ["Explorer", "Seeker", "Builder", "Sovereign"] }
+      },
+      "required": ["context_bound_to_chart_id"]
+    }
+  },
+  "required": ["chart_id", "menh", "cuc", "stars_by_palace", "governance"],
+  "not": {
+    "anyOf": [
+      { "required": ["birth_solar_datetime"] },
+      { "required": ["birth_solar"] },
+      { "required": ["birth_timezone"] },
+      { "required": ["lunar_day"] },
+      { "required": ["birth_location"] },
+      { "required": ["name_full"] },
+      { "required": ["address"] },
+      { "required": ["phone"] },
+      { "required": ["email"] }
+    ]
+  }
+}

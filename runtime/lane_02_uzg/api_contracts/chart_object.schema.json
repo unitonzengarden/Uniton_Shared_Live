@@ -1,0 +1,132 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/runtime/lane_02_uzg/api_contracts/chart_object.schema.json",
+  "title": "TAO chart_object (Tu Vi V2 + Bat Tu)",
+  "description": "Output of computeZiweiCore + computeBaziPillars. Extracted from JSDoc in uzgplus/lib/tao/{ziwei,bazi}/types.js as of 2026-05-02. Descriptive — engines do not enforce this schema at boundary; use as a stable reference.",
+  "type": "object",
+  "properties": {
+    "ziwei": {
+      "type": "object",
+      "description": "Tu Vi V2 chart core",
+      "properties": {
+        "menh_branch": { "type": "string", "description": "Cung Menh branch name (Vietnamese diacritic)" },
+        "than_branch": { "type": "string", "description": "Cung Than branch name" },
+        "cuc_name": { "type": "string", "description": "Cuc name (e.g. Hoa Luc Cuc, Moc Tam Cuc)" },
+        "cuc_number": { "type": "integer", "minimum": 2, "maximum": 6 },
+        "tu_vi_position": {
+          "type": "object",
+          "properties": {
+            "branch": { "type": "string" },
+            "palace_index": { "type": "integer", "minimum": 1, "maximum": 12 }
+          }
+        },
+        "thien_phu_position": {
+          "type": "object",
+          "properties": {
+            "branch": { "type": "string" },
+            "palace_index": { "type": "integer", "minimum": 1, "maximum": 12 }
+          }
+        },
+        "main_stars": {
+          "type": "array",
+          "description": "14 chinh tinh placements",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": { "type": "string" },
+              "branch": { "type": "string" },
+              "palace_index": { "type": "integer", "minimum": 1, "maximum": 12 }
+            },
+            "required": ["name", "branch", "palace_index"]
+          }
+        },
+        "palaces": {
+          "type": "array",
+          "description": "12 palaces in canonical order",
+          "minItems": 12,
+          "maxItems": 12,
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": { "type": "string", "description": "Vietnamese palace name (Menh, Phu Mau, ...)" },
+              "branch": { "type": "string" },
+              "palace_index": { "type": "integer", "minimum": 1, "maximum": 12 }
+            }
+          }
+        },
+        "metadata": {
+          "type": "object",
+          "properties": {
+            "polarity": { "type": "string", "enum": ["Duong", "Am"] },
+            "gender": { "type": "string", "enum": ["Nam", "Nu"] }
+          }
+        }
+      },
+      "required": ["menh_branch", "cuc_name", "tu_vi_position", "main_stars", "palaces"]
+    },
+    "bazi": {
+      "type": "object",
+      "description": "Bat Tu pillar construction",
+      "properties": {
+        "year": { "$ref": "#/definitions/Pillar" },
+        "month": {
+          "type": "object",
+          "properties": {
+            "can": { "$ref": "#/definitions/CanLabel" },
+            "chi": { "$ref": "#/definitions/ChiLabel" },
+            "is_leap_month": { "type": "boolean" }
+          },
+          "required": ["can", "chi", "is_leap_month"]
+        },
+        "day": {
+          "oneOf": [
+            { "$ref": "#/definitions/Pillar" },
+            { "type": "null", "description": "null when calendar engine ran in lunar-only mode" }
+          ]
+        },
+        "hour": {
+          "oneOf": [
+            { "$ref": "#/definitions/Pillar" },
+            { "type": "null", "description": "null when hour_branch is missing OR day pillar is null" }
+          ]
+        },
+        "meta": {
+          "type": "object",
+          "properties": {
+            "formula_version": { "type": "string" },
+            "year_boundary_policy": { "type": "string", "enum": ["lunar_new_year", "li_chun"] },
+            "day_rollover_policy": { "type": "string" },
+            "day_rollover_applied": { "type": "boolean" },
+            "ty_phase": { "type": ["string", "null"], "enum": ["early", "late", null] },
+            "notes": { "type": "array", "items": { "type": "string" } }
+          },
+          "required": ["formula_version"]
+        }
+      }
+    },
+    "formula_version": { "type": "string", "description": "Composite engine version (TAO-ZIWEI-CORE-x.y or TAO-BAZI-PILLARS-x.y)" },
+    "source_authority": {
+      "type": "array",
+      "description": "Per Z7 LAW: every result ships source_authority",
+      "items": { "type": "string" }
+    }
+  },
+  "definitions": {
+    "CanLabel": {
+      "type": "string",
+      "enum": ["Giap", "At", "Binh", "Dinh", "Mau", "Ky", "Canh", "Tan", "Nham", "Quy"]
+    },
+    "ChiLabel": {
+      "type": "string",
+      "enum": ["Ty", "Suu", "Dan", "Mao", "Thin", "Ti", "Ngo", "Mui", "Than", "Dau", "Tuat", "Hoi"]
+    },
+    "Pillar": {
+      "type": "object",
+      "properties": {
+        "can": { "$ref": "#/definitions/CanLabel" },
+        "chi": { "$ref": "#/definitions/ChiLabel" }
+      },
+      "required": ["can", "chi"]
+    }
+  }
+}

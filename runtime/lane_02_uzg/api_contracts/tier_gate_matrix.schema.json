@@ -1,0 +1,72 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/runtime/lane_02_uzg/api_contracts/tier_gate_matrix.schema.json",
+  "title": "TAO 4-tier gate matrix",
+  "description": "Gating rules for TAO surfaces by membership tier. Source: TAO_ZIWEI_CANON_OFFICIAL §14 + UI/UX canon v1.1 + reading-framing.js. Tiers per UZG+ membership canon.",
+  "type": "object",
+  "properties": {
+    "tiers": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string", "enum": ["Explorer", "Seeker", "Builder", "Sovereign"] },
+          "rank": { "type": "integer", "minimum": 0, "maximum": 3 },
+          "description": { "type": "string" },
+          "ziwei": {
+            "type": "object",
+            "properties": {
+              "chart_view": { "type": "boolean" },
+              "interpretive_layer": { "type": "boolean" },
+              "cycle_layers": {
+                "type": "string",
+                "enum": ["none", "current_year_only", "current_dai_van", "full"]
+              },
+              "aier_chat": { "type": "boolean" },
+              "kb_depth": {
+                "type": "string",
+                "enum": ["summary", "member_depth", "premium_depth"]
+              }
+            }
+          },
+          "bazi": {
+            "type": "object",
+            "properties": {
+              "free_surfaces": { "type": "integer", "description": "Number of free Bazi surfaces — 4 per Sprint 4.2" },
+              "premium_surfaces": { "type": "integer", "description": "Premium luck pillars + Phong Thuy 3 surfaces (Sprint 4.5)" }
+            }
+          },
+          "vannien": {
+            "type": "object",
+            "properties": {
+              "daily_widget": { "type": "boolean" },
+              "full_calendar": { "type": "boolean" }
+            }
+          },
+          "aier_tao": {
+            "type": "object",
+            "properties": {
+              "messages_per_day": { "type": ["integer", "string"], "description": "Number or 'unlimited'" },
+              "context_depth": { "type": "string", "enum": ["summary", "member", "premium"] },
+              "cycle_aware": { "type": "boolean" }
+            }
+          }
+        },
+        "required": ["name", "rank"]
+      }
+    },
+    "fallback_for_unknown_tier": {
+      "type": "string",
+      "enum": ["Explorer"],
+      "description": "When tier is null or unknown, fall back to Explorer"
+    },
+    "source_canon": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Canon docs that define tier semantics"
+    }
+  },
+  "required": ["tiers", "fallback_for_unknown_tier"]
+}

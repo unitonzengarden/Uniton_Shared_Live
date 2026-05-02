@@ -1,0 +1,58 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/runtime/lane_02_uzg/api_contracts/reading_object.schema.json",
+  "title": "AIER Tao reading_object (chat response)",
+  "description": "Output of AIER Tao reading API after passing through output-filter. Source: lib/tao/ziwei/aier/output-filter.js + apps/uzg-pwa AIER chat handlers.",
+  "type": "object",
+  "properties": {
+    "reading_id": { "type": "string", "description": "UUID for the reading, persisted for audit" },
+    "chart_id": { "type": "string", "pattern": "^zw-[0-9a-f]{8}$" },
+    "tier": { "type": "string", "enum": ["Explorer", "Seeker", "Builder", "Sovereign"] },
+    "framing": {
+      "type": "object",
+      "description": "Reading framing applied per tier (reading-framing.js)",
+      "properties": {
+        "depth": { "type": "string", "enum": ["summary", "member_depth", "premium_depth"] },
+        "fear_relaxation": { "type": "boolean", "description": "NTS fear-UX relaxation per SYSTEM_LAW v1.1" }
+      }
+    },
+    "messages": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "role": { "type": "string", "enum": ["user", "assistant"] },
+          "content": { "type": "string" },
+          "filtered": { "type": "boolean", "description": "true if output-filter scrubbed PII or out-of-scope content" },
+          "filter_reasons": { "type": "array", "items": { "type": "string" } }
+        },
+        "required": ["role", "content"]
+      }
+    },
+    "citations": {
+      "type": "array",
+      "description": "RAG citations from KB (LANE02-UZG-AIER-KB-RAG-V1)",
+      "items": {
+        "type": "object",
+        "properties": {
+          "kb_entry_id": { "type": "string" },
+          "doc_id": { "type": "string" },
+          "section": { "type": "string" },
+          "score": { "type": "number" }
+        }
+      }
+    },
+    "governance": {
+      "type": "object",
+      "properties": {
+        "context_pack_chart_id": { "type": "string" },
+        "system_prompt_version": { "type": "string" },
+        "model_used": { "type": "string" },
+        "safety_filters_applied": { "type": "array", "items": { "type": "string" } }
+      },
+      "required": ["context_pack_chart_id"]
+    },
+    "created_at": { "type": "string", "format": "date-time" }
+  },
+  "required": ["reading_id", "chart_id", "tier", "messages", "governance"]
+}

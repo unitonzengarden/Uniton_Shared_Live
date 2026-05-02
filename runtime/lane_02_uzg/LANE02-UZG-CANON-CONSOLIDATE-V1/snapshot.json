@@ -1,0 +1,145 @@
+{
+  "task_id": "LANE02-UZG-CANON-CONSOLIDATE-V1",
+  "mode": "HARD",
+  "executor": "CLAC-2",
+  "date": "2026-05-02",
+  "issued_by": "CLA-2",
+  "branch": "main",
+  "lane": "Lane_02",
+  "scope": "Canon consolidate 1 lan dut diem - publish runtime canon master for Module TAO",
+  "status": "PASS-WITH-NOTES",
+  "summary": {
+    "files_published_total": 49,
+    "tao_ziwei_canon": 10,
+    "tao_bazi_canon": 7,
+    "tao_vannien_canon": 3,
+    "tao_cross_module_canon": 1,
+    "strategy_canon": 2,
+    "source_canon_published": 2,
+    "missing_canon_documented": 8,
+    "deprecated_archive_preserved": 9,
+    "api_contracts": 6,
+    "handoff_docs": 2,
+    "status_dashboards": 3,
+    "index_files": 2
+  },
+  "sources_scanned": [
+    {
+      "source": "Uniton_Shared",
+      "path": "D:/UZG/Projects-v2/Uniton_Shared/",
+      "type": "rw_repo",
+      "tao_canon_files": 0,
+      "notes": "no canonical TAO docs in canon/; some backend TAO refs in audits/"
+    },
+    {
+      "source": "Uniton_Shared_Live",
+      "path": "D:/UZG/Projects-v2/Uniton_Shared_Live/",
+      "type": "live_mirror",
+      "tao_canon_files": 0,
+      "notes": "mirror sync target only"
+    },
+    {
+      "source": "uzgplus",
+      "path": "D:/UZG/Projects-v2/uzgplus/docs/00_CANON/MODULES/TAO/",
+      "type": "product_source",
+      "tao_canon_files_active": 24,
+      "tao_canon_files_archived": 9,
+      "notes": "DE FACTO SOURCE OF TRUTH - all canonical TAO docs live here"
+    },
+    {
+      "source": "AIER_Code_Lane_02",
+      "path": "D:/UZG/Projects-v2/AIER_Code/Lane_02/",
+      "type": "lane_02_working_tree",
+      "tao_canon_files": 0,
+      "notes": "has UZG_PLUS_V3_* TAO-adjacent canons in different namespace"
+    }
+  ],
+  "drift_resolution": {
+    "active_drift_cases": 0,
+    "rationale": "T-HYGIENE-001-FU-01 + T-LANE02-TAO-DOCS-DROP-V1 already pre-resolved by moving deprecated copies to _archive/. Each canonical name has exactly one active version.",
+    "deprecated_files_preserved": 9
+  },
+  "missing_canon": [
+    {
+      "filename": "TAO_ZIWEI_USER_FLOW_SPEC_v1.0_2026-05-01.md",
+      "likely_location": "Lane_02 project knowledge (Claude.ai)",
+      "resolution": "NTS or CLA-2 amendment append"
+    },
+    {
+      "filename": "TAO_ZIWEI_MEMBER_TIER_CANON_v1.0_2026-05-01.md",
+      "likely_location": "Lane_02 project knowledge",
+      "resolution": "NTS or CLA-2 amendment append"
+    },
+    {
+      "filename": "TAO_MODULE_ROADMAP_v2.0_2026-05-01.md",
+      "likely_location": "Lane_02 project knowledge",
+      "resolution": "NTS or CLA-2 amendment append"
+    },
+    {
+      "filename": "AIER_TAO_ADVISOR_SPEC_v1.0_2026-05-01.md",
+      "likely_location": "Lane_02 project knowledge",
+      "resolution": "NTS or CLA-2 amendment append"
+    },
+    {
+      "filename": "LANE02_TAO_TUVI_COMPLETE_ROADMAP_v3.0_2026-05-01.md",
+      "likely_location": "Lane_02 project knowledge",
+      "resolution": "NTS or CLA-2 amendment append"
+    },
+    {
+      "filename": "UZG_TAO_CORE_V2.md",
+      "likely_location": "superseded by V3_CLEAN",
+      "resolution": "V3_CLEAN published; V2 considered deprecated"
+    },
+    {
+      "filename": "tu-vi-dau-so-toan-thu-tran-doan_docx.md",
+      "likely_location": "Lane_02 project knowledge",
+      "resolution": "NTS amendment append"
+    },
+    {
+      "filename": "Tu_Vi_Nghiem_Ly_cu_Thien_Luong_docx.md",
+      "likely_location": "Lane_02 project knowledge",
+      "resolution": "NTS amendment append"
+    }
+  ],
+  "raw_url_master": "https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/runtime/lane_02_uzg/INDEX.live.md",
+  "acceptance_criteria": {
+    "AC-01_preflight_clean": "PASS",
+    "AC-02_scan_complete_4_sources": "PASS",
+    "AC-03_drift_report_with_resolution": "PASS",
+    "AC-04_tu_vi_canon_published": "PASS",
+    "AC-05_bat_tu_canon_published": "PASS",
+    "AC-06_van_nien_canon_published": "PASS",
+    "AC-07_aier_tao_advisor_spec": "MISSING_DOCUMENTED",
+    "AC-08_strategy_docs": "PARTIAL_2_of_3",
+    "AC-09_source_canon_vietnamese": "PARTIAL_2_of_5",
+    "AC-10_api_contracts": "PASS",
+    "AC-11_handoff_to_lane01": "PASS",
+    "AC-12_status_dashboards": "PASS",
+    "AC-13_index_with_30plus_raw_urls": "PASS_41_urls",
+    "AC-14_http_200_validation_5_of_5": "TO_VERIFY_POST_PUSH"
+  },
+  "redlines": {
+    "R-CANON-CONSOL-01_append_only": "PASS",
+    "R-CANON-CONSOL-02_drift_resolution_documented": "PASS",
+    "R-CANON-CONSOL-03_index_lists_all_with_raw_urls": "PASS",
+    "R-CANON-CONSOL-04_no_content_modification": "PASS",
+    "R-CANON-CONSOL-05_push_only_lane02_canonical_path": "PASS",
+    "R-CANON-CONSOL-06_amendment_append_protocol_locked": "LOCKED"
+  },
+  "iteration_log": [
+    "iter_0: pre-flight + scan; discovered uzgplus is de-facto source",
+    "iter_1: copy 22 canonical + 9 deprecated files",
+    "iter_2: generate 5 API contracts from JSDoc types",
+    "iter_3: author handoff + 3 dashboards + INDEX + RUNTIME_URLS",
+    "iter_4: 4 mandatory deliverables",
+    "iter_5: commit + push + verify HTTP 200"
+  ],
+  "next_steps_for_cla2": [
+    "Lane_01 fetch handoff_to_lane01/HANDOFF_TUVI_V2_UI_INTEGRATION.md for UI ghep",
+    "CURSOR-2 ship LANE02-UZG-AIER-KB-RAG-V1 (parallel)",
+    "KB Phase 2 fill member_depth (NTS or expert)",
+    "Supply 5 missing 2026-05-01 canon docs via amendment append",
+    "Supply Vietnamese school sources via amendment append",
+    "E2E Playwright golive verify"
+  ]
+}
