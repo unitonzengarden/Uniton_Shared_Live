@@ -10,7 +10,7 @@
 ## §0. Header
 
 - **Generator:** `aier-state-update v1.0` invoked via `scripts/runtime/generate_project_status.py v1.1`
-- **Source commit:** `fab03a17c4b916cf095277c3eea13eaa5b2c0503` (short: `fab03a1`)
+- **Source commit:** `6c20fbe96834de9a6ddb789027deb60a7330043b` (short: `6c20fbe`)
 - **Auto-generated:** `true` (do not hand-edit)
 - **Authority:** repo-backed automation per LAW_N8 §L8.2 explicitly enabled CI mode (state-mirror auto-regenerate scope only)
 
@@ -68,11 +68,11 @@
 
 | SHA | Author | Subject |
 |---|---|---|
+| `6c20fbe` | unitonzengarden | chore(lane02/uzg): LAW-NTS-LANE-2-10 deliverables for LANE02-UZG-RUNTIME-LIVE-CHUAN-V1 |
+| `41eb049` | AIER Code Heartbeat | AIER Code heartbeat 2026-05-02T16:29:28Z [vercel skip] |
+| `cb7c23e` | AIER State Bot | [auto-status] regen runtime+network surfaces from fab03a1 [vercel skip] |
 | `fab03a1` | unitonzengarden | chore(lane02/v2live): PLUS Hub V2 upgrade DONE — deliverables + ledger |
 | `69499b2` | AIER State Bot | [auto-status] regen runtime+network surfaces from afc945c [vercel skip] |
-| `afc945c` | unitonzengarden | feat(lane02/runtime): persistent STATE.live.md + sync gap root cause fix |
-| `d9672f1` | Uniton Zen | Merge pull request #101 from unitonzengarden/audit/lane01-clac1-v2-home-audit-discovery |
-| `fa5f705` | CLAC Executor | audit: V2 HOME discovery Phase 1 — 42 gaps catalogued |
 
 ## §7. Latest 5 DONE Tasks (from MASTER_CHECKLIST)
 
