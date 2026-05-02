@@ -1,0 +1,83 @@
+{
+  "task_id": "LANE02-UZG-AIER-TAO-GOLIVE-V1",
+  "stream": "Lane_02",
+  "executor": "CURSOR-2",
+  "status": "PARTIAL",
+  "timestamp": "2026-05-02T11:30:00+07:00",
+
+  "git": {
+    "repo": "uzgplus-app",
+    "branch_merged": "feat/lane02/cursor2/aier-kb-rag-v1",
+    "pr": "https://github.com/unitonzengarden/uzgplus-app/pull/90",
+    "merge_commit": "25d07d372d5daa5ff400fb8b40e123ca2e745a19",
+    "merged_at": "2026-05-02T04:25:54Z",
+    "main_head": "4395419",
+    "conflict_with_lane01": false,
+    "rebase_result": "clean"
+  },
+
+  "ci": {
+    "run_id": "25243707962",
+    "name": "Deploy to Cloudflare Pages (Stable)",
+    "status": "success",
+    "duration_s": 72,
+    "result": "green"
+  },
+
+  "production": {
+    "url": "https://uzg.plus",
+    "http_status": 200,
+    "x_uzg_runtime": "product-v2-pages-shell",
+    "cf_ray": "9f54449b3a93ce27-SIN",
+    "deploy_confirmed": true
+  },
+
+  "supabase": {
+    "project_id": "kkhhpecofolmrodyeslp",
+    "table": "public.aier_kb_entries",
+    "count": 168,
+    "with_embedding": 168,
+    "with_member_depth": 0,
+    "rpc": "public.search_aier_kb",
+    "index": "idx_aier_kb_embedding_hnsw (HNSW, m=16, ef_construction=64)"
+  },
+
+  "smoke_tests": {
+    "spec": "tests/qa/aier-tao-golive.spec.js",
+    "Q1": "SKIP (no TEST_AUTH_TOKEN — chat API TAO_BACKEND_LANE02_DEFERRED)",
+    "Q2": "PASS (count=168, error=null, 488ms)",
+    "Q3": "SKIP (no TEST_AUTH_TOKEN — chat API TAO_BACKEND_LANE02_DEFERRED)",
+    "Q4": "SKIP (no TEST_EXPLORER_TOKEN)",
+    "Q5": "SKIP (no TEST_SOVEREIGN_TOKEN)",
+    "passed": 1,
+    "skipped": 4,
+    "failed": 0,
+    "exit_code": 0
+  },
+
+  "ac_results": {
+    "AC-01": "PASS",
+    "AC-02": "PASS",
+    "AC-03": "PASS",
+    "AC-04": "PARTIAL (chat API deferred)",
+    "AC-05": "PASS",
+    "AC-06": "PARTIAL (chat API deferred, compliance enforced in data layer)",
+    "AC-07": "PASS",
+    "AC-08": "PASS"
+  },
+
+  "blocker": {
+    "id": "TAO_BACKEND_LANE02_DEFERRED",
+    "description": "AIER Tao chat runs as mock frontend. No /api/aier/tao/chat endpoint in production. Q1/Q3/Q4/Q5 E2E tests require live backend wire-up.",
+    "source": "src/hooks/useAierTaoChat.ts line 2: TAO_BACKEND_LANE02_DEFERRED",
+    "escalate_to": "NTS",
+    "next_task": "Dispatch chat backend wire-up sprint (TAO_BACKEND_LANE02_DEFERRED → live)"
+  },
+
+  "deliverables": [
+    "runtime/lane_02_uzg/LANE02-UZG-AIER-TAO-GOLIVE-V1/audit_log.md",
+    "runtime/lane_02_uzg/LANE02-UZG-AIER-TAO-GOLIVE-V1/snapshot.json",
+    "runtime/lane_02_uzg/LANE02-UZG-AIER-TAO-GOLIVE-V1/REPORT.md",
+    "runtime/lane_02_uzg/LANE02-UZG-AIER-TAO-GOLIVE-V1/golive_evidence.md"
+  ]
+}
