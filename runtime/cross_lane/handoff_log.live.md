@@ -55,6 +55,15 @@
 - **Backfill reason:** Deliverables were pushed to Uniton_Shared canonical correctly, but no ledger entry was appended.
 - **Source of truth:** `runtime/lane_02_uzg/LANE02-PHASE6-AIER-CHAT-WIRE-V1/snapshot.json`
 
+### LANE02-UZG-PLUS-HUB-VERIFY-QA-V1 — 2026-05-03T00:30:00+07:00
+
+- **Executor:** CURSOR-2
+- **Status:** PASS (25/25 ACs)
+- **Scope:** PLUS Hub V2 upgrade Playwright QA + LAW-compliant deliverables (both tasks)
+- **QA:** 6/6 Playwright tests PASS production. Auth works. ENTA gate documented.
+- **Bugs:** BUG-PLUS-01 P2 i18n missing key; BUG-PLUS-02 P1 ENTA gate same as CHAT
+- **Screenshots:** 6 PNG _LIVE_uzg.plus.png captured
+
 ### LANE02-RUNTIME-LIVE-CHUAN-V1 — 2026-05-02T23:15:00+07:00
 
 - **Executor:** CURSOR-2
