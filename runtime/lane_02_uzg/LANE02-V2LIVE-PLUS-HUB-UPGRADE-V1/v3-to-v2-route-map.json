@@ -1,0 +1,18 @@
+// LANE02-V2LIVE-PLUS-HUB-UPGRADE-V1
+// Maps PLUS Hub app id -> V2 route path. Used by /app to render V3 PlusHubShellV3
+// while navigating tap targets to V2 routes (instead of V3 default routes from
+// APP_CATALOG). When app id absent from this map, PlusHubShellV3 falls back to
+// app.route from APP_CATALOG; if also absent, alerts "Sắp ra mắt".
+
+export const PLUS_HUB_V2_ROUTE_MAP: Record<string, string> = {
+  // Apps with verified V2 routes in apps/uzg-pwa/src/App.jsx
+  'u-reward': '/u-earnings',     // V2 alias /u-reward redirects here
+  tao: '/v3/tao',                // V2 has no /tao root; V3 has full TAO module (Bazi/Ziwei/AIER chat live)
+  booking: '/booking',           // BookingPage
+  membership: '/membership',     // MembershipPage
+  circles: '/circles',           // CirclesDiscoveryPage
+  aier: '/aier',                 // AIEROverviewPage
+  tickets: '/tickets',           // TicketsPage
+  // marketplace, retreat, governance, stats, business — no V2 route defined.
+  // Falls through to "Sắp ra mắt" alert (PlusHubShellV3 handleTap default).
+};
