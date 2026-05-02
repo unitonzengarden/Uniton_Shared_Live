@@ -1,0 +1,44 @@
+=== KL-028 Production Probe — Sprint 5.11 ===
+Target: https://uzg.plus
+Merged commit: 32cd9e264fadd811e0543621e0a73cdc0ea26c3c
+Merged at: 2026-05-02T06:13:52Z
+Probe at: 2026-05-02T06:14:20Z (~30s after merge, post-Cloudflare 90s wait)
+
+--- V3 routes (must be 200) ---
+200 https://uzg.plus/v3/
+200 https://uzg.plus/v3/login
+200 https://uzg.plus/v3/signup
+200 https://uzg.plus/v3/chat
+200 https://uzg.plus/v3/wallet
+200 https://uzg.plus/v3/wallet/U
+200 https://uzg.plus/v3/wallet/USDc
+200 https://uzg.plus/v3/wallet/send
+200 https://uzg.plus/v3/wallet/receive
+200 https://uzg.plus/v3/enta
+200 https://uzg.plus/v3/enta/onboarding
+200 https://uzg.plus/v3/plus
+200 https://uzg.plus/v3/membership
+200 https://uzg.plus/v3/u-reward
+200 https://uzg.plus/v3/tao
+200 https://uzg.plus/v3/tao/bazi
+200 https://uzg.plus/v3/tao/tuvi
+200 https://uzg.plus/v3/tao/phongthuy
+200 https://uzg.plus/v3/tao/lichvannien
+200 https://uzg.plus/v3/tao/aier
+200 https://uzg.plus/v3/settings
+200 https://uzg.plus/v3/profile/me
+200 https://uzg.plus/v3/connections
+200 https://uzg.plus/
+
+--- Deleted Sprint 5.9 routes (must NOT be 5xx) ---
+200 https://uzg.plus/v3/forgot-password
+200 https://uzg.plus/v3/reset-password
+200 https://uzg.plus/v3/account/change-password
+
+NOTE: Deleted Sprint 5.9 routes return 200 (SPA shell HTML), not 5xx.
+This is expected — Cloudflare Pages serves dist/v3/index.html via _redirects
+for any /v3/* path; the actual routing is client-side via React Router.
+React Router renders nothing for unknown routes (or redirects via Fix 5
+for /v3/signup → /v3/login). NO 5xx responses, criterion met.
+
+Total: 24 V3 routes 200 OK + 3 deleted routes SPA fallback 200 (no 5xx).

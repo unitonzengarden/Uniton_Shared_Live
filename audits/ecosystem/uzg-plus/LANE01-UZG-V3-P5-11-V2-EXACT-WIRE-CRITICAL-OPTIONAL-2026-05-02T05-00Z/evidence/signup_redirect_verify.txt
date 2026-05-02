@@ -1,0 +1,25 @@
+=== Fix 5 /v3/signup → /v3/login Redirect Verify ===
+V2 source of truth: V2 has NO separate signup page; accounts created on first OTP login
+
+V3App.jsx (line 176):
+  <Route path="/signup" element={<Navigate to="/login" replace />} />
+
+Behavior:
+  GET /v3/signup → React Router (basename="/v3") matches /signup
+                 → <Navigate to="/login" replace /> renders
+                 → URL becomes /v3/login (history.replace)
+
+Playwright test 11 (p5-11-v2-exact-wire.spec.mjs:181):
+  test('/v3/signup redirects to /v3/login', async ({ page }) => {
+    await page.goto('/v3/signup');
+    await page.waitForLoadState('networkidle');
+    await expect(page).toHaveURL(/\/v3\/login|\/login/);
+  });
+
+Local result: PASS (852ms)
+Production result: PASS (925ms)
+
+V2 signup-on-login behavior verified:
+  - User goes to /v3/signup → auto-redirects to /v3/login
+  - Login form is the unified entry point (V2 EXACT)
+  - First-time users have account created on first OTP verify

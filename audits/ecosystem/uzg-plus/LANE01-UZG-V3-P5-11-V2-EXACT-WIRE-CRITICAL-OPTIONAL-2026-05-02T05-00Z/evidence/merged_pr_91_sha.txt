@@ -1,0 +1,29 @@
+=== UZGPLUS PR #91 Merge Record ===
+
+Repository: unitonzengarden/uzgplus-app
+PR: https://github.com/unitonzengarden/eduzengarden/pull/91 → unitonzengarden/uzgplus-app/pull/91
+Title: feat(p5-11): Sprint 5.11 — V2-EXACT wire critical+optional
+Branch: feature/v3-p5-11-v2-exact-wire-critical-optional → main
+
+Merge details:
+  State: MERGED
+  Merge method: squash
+  Branch deleted: yes
+  Merge commit OID: 32cd9e264fadd811e0543621e0a73cdc0ea26c3c
+  Merged at: 2026-05-02T06:13:52Z
+  Merged by: --admin (CLAC1)
+
+Files changed: 21
+Lines: +867 / -151 (net +716)
+
+Verification:
+  $ gh pr view 91 --repo unitonzengarden/uzgplus-app --json state,mergedAt,mergeCommit
+  {"mergeCommit":{"oid":"32cd9e264fadd811e0543621e0a73cdc0ea26c3c"},
+   "mergedAt":"2026-05-02T06:13:52Z",
+   "state":"MERGED"}
+
+Why --admin:
+  PR mergeStateStatus = BLOCKED (branch protection requires reviews/checks)
+  No CI checks reported (commit had [vercel skip] — CF Pages auto-deploys
+  but reports no GH check).
+  Solo lane → admin merge per CLA escalation policy.

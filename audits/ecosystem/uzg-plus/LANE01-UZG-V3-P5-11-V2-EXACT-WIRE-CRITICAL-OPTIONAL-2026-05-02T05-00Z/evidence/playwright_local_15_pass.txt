@@ -1,0 +1,33 @@
+=== Local Playwright Run — Sprint 5.11 ===
+Target: http://127.0.0.1:4199 (scripts/test-static-server.mjs static server)
+Branch: feature/v3-p5-11-v2-exact-wire-critical-optional (pre-merge)
+Test run completed: 2026-05-02T05:50Z (approx)
+
+Command:
+  QA_BASE_URL=http://127.0.0.1:4199 npx playwright test \
+    --config playwright.v3.config.js \
+    tests/visual/p5-11-v2-exact-wire.spec.mjs
+
+Result: 15 passed (15.2s)
+
+  ok  1 /v3/login shows "Vào UZG+" title (V2 titleRequest) (942ms)
+  ok  2 /v3/login identifier input type=text with autocomplete=username (879ms)
+  ok  3 /v3/login send-otp button says "Gửi mã" not "Gửi mã xác thực" (882ms)
+  ok  4 /v3/login does NOT say "Đăng nhập" as page title (875ms)
+  ok  5 OTP form: hidden input maxLength=8 (OTP_MAX_LENGTH=8) (1.0s)
+  ok  6 OTP form title = "Nhập mã xác minh" (V2 titleVerify) (987ms)
+  ok  7 OTP form subtitle = "Đã gửi tới" (V2 sentTo) (971ms)
+  ok  8 OTP verify button = "Xác minh" (V2 verifyAction) (969ms)
+  ok  9 OTP verify button disabled < 6 digits, enabled at 6+ (1.0s)
+  ok 10 OTP resend = "Gửi lại sau Xs" (V2 resendIn format) (1.0s)
+  ok 11 /v3/signup redirects to /v3/login (852ms)
+  ok 12 /v3/wallet/send renders SendFlow (854ms)
+  ok 13 /v3/wallet/receive renders ReceiveQR (838ms)
+  ok 14 walletTransfer POST /api/v1/wallet/transfer endpoint registered (840ms)
+  ok 15 getDepositAddress POST /api/v1/deposits/address endpoint registered (833ms)
+
+Test infrastructure:
+  - playwright.v3.config.js: default baseURL = http://127.0.0.1:4199
+  - webServer auto-starts scripts/test-static-server.mjs
+  - test-static-server.mjs implements Cloudflare _redirects locally
+    (/v3/* → dist/v3/index.html, /* → dist/index.html)

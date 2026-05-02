@@ -1,0 +1,39 @@
+=== Fix 2 V2 Wallet Endpoint Wiring Verify ===
+V2 source of truth: V2 aier_server.js:18554-18620 (transfer), :18316+ (deposits/address)
+Grep target: apps/uzg-pwa/src/
+
+v2ExpressClient.ts (NEW exports)
+  Line 200: // V2 EXACT (aier_server.js:18554-18620): POST /api/v1/wallet/transfer
+  Line 201: // V2 EXACT (aier_server.js:18316+): POST /api/v1/deposits/address
+  Line 236: /** Initiate a wallet transfer. V2: POST /api/v1/wallet/transfer (aier_server.js:18554) */
+  Line 237: export async function walletTransfer(...
+  Line 249: /** Get or create a deposit address for an asset. V2: POST /api/v1/deposits/address (aier_server.js:18316) */
+  Line 250: export async function getDepositAddress(...
+
+V3SendPage.jsx
+  Line 1:   // Sprint 5.11 Fix 2 — Wire send to V2 POST /api/v1/wallet/transfer (aier_server.js:18554)
+  Line 8:   import { walletTransfer } from '../../lib/v2ExpressClient'
+  Line 37:  await walletTransfer(jwt, { ... })
+
+V3ReceivePage.jsx
+  Line 1:   // Sprint 5.11 Fix 2 — Wire receive to V2 POST /api/v1/deposits/address (aier_server.js:18316)
+  Line 8:   import { getDepositAddress } from '../../lib/v2ExpressClient'
+  Line 27:  // V2 EXACT: POST /api/v1/deposits/address { asset } → { data: { address, ... } }
+  Line 29:  getDepositAddress(jwt, asset)
+
+V2 EXACT request shape:
+  POST /api/v1/wallet/transfer
+    Headers: Authorization: Bearer <jwt>, Content-Type: application/json,
+             Idempotency-Key: <uuid>
+    Body: { asset, amount, to_wallet_id, note?, idempotency_key }
+
+  POST /api/v1/deposits/address
+    Headers: Authorization: Bearer <jwt>, Content-Type: application/json
+    Body: { asset }
+    Returns: { ok, data: { address, asset?, network? } }
+
+Playwright verification (test 14, 15 in p5-11-v2-exact-wire.spec.mjs):
+  - test 14: route('**/api/v1/wallet/transfer') intercepted on /v3/wallet/send → endpoint registered ✓
+  - test 15: route('**/api/v1/deposits/address') intercepted on /v3/wallet/receive → endpoint registered ✓
+
+Both endpoints wired to V2 Express via Strangler Fig pattern (no Worker proxy).
