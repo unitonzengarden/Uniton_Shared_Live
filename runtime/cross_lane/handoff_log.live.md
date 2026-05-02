@@ -55,6 +55,16 @@
 - **Backfill reason:** Deliverables were pushed to Uniton_Shared canonical correctly, but no ledger entry was appended.
 - **Source of truth:** `runtime/lane_02_uzg/LANE02-PHASE6-AIER-CHAT-WIRE-V1/snapshot.json`
 
+### LANE02-RUNTIME-LIVE-CHUAN-V1 — 2026-05-02T23:15:00+07:00
+
+- **Executor:** CURSOR-2
+- **Status:** DONE
+- **Scope:** Sync gap debug + STATE.live.md auto-generator + auto_lane02_state.yml workflow
+- **Root cause found:** H2+H4 timing lag (5-30 min) + no pre-aggregated state file
+- **Fix shipped:** `scripts/runtime/generate_lane02_state.py` + `.github/workflows/auto_lane02_state.yml`
+- **Effect:** CLA-2 fetches 1 URL for full state. Auto-regenerates on every snapshot.json push.
+- **Boot URL:** https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/runtime/lane_02_uzg/STATE.live.md
+
 ### LANE02-V2LIVE-FRONTEND-AUDIT-V1 — 2026-05-02T22:30:00+07:00
 
 - **Executor:** CURSOR-2
