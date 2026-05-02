@@ -1,0 +1,28 @@
+=== Fix 3 Phone OTP Auto-Detect Logic Verify ===
+V2 source of truth: V2 authService.js:673 (isEmailIdentifier auto-detect via @ char)
+Grep target: apps/uzg-pwa/src/lib/auth-v3/otpClient.ts
+
+otpClient.ts
+  Line 4:   //   Phone path → direct supabase.auth.signInWithOtp({ phone }) (skips Worker)
+  Line 8:   // 2. Phone: direct supabase.auth.signInWithOtp({ phone })
+  Line 19:  // V2 EXACT: isEmailIdentifier auto-detects via @ (authService.js:673)
+  Line 20:  function isEmailIdentifier(identifier: string): boolean {
+  Line 21:    return identifier.includes('@');
+  Line 22:  }
+  Line 51:  // V2 EXACT: phone path → direct supabase.auth.signInWithOtp({ phone }) skips Worker
+  Line 53:  if (!isEmailIdentifier(trimmed)) {
+  Line 55:    const { error: phoneError } = await supabase.auth.signInWithOtp({ phone: trimmed });
+  Line 138: const isEmail = isEmailIdentifier(trimmed);
+  Line 141:   : { phone: trimmed, token: trimmedToken, type: 'sms' as const };
+
+Path matrix (V2 EXACT):
+  Email identifier (contains @):
+    - requestOtp: Worker /api/v1/auth/otp/request (Resend) → fallback: supabase.auth.signInWithOtp({ email })
+    - verifyOtp: supabase.auth.verifyOtp({ email, token, type: 'email' })
+
+  Phone identifier (no @):
+    - requestOtp: supabase.auth.signInWithOtp({ phone }) DIRECT (bypasses Worker)
+    - verifyOtp: supabase.auth.verifyOtp({ phone, token, type: 'sms' })
+
+This matches V2 authService.js:673 isEmailIdentifier branching exactly.
+LoginForm.tsx identifier field type=text autocomplete=username accepts both.

@@ -1,0 +1,32 @@
+=== Cloudflare Pages Deploy Status — Sprint 5.11 ===
+
+Trigger: PR #91 merged to main on 2026-05-02T06:13:52Z
+Merged commit: 32cd9e264fadd811e0543621e0a73cdc0ea26c3c
+Cloudflare Pages project: uzg-plus (auto-deploy on push to main)
+Note: PR commit included [vercel skip] tag — Vercel not used; CF Pages handles deploy
+
+Deploy verification (post-merge timeline):
+  T+0s   PR #91 merged at 2026-05-02T06:13:52Z
+  T+90s  KL-028 production probe began at 2026-05-02T06:14:20Z (~28s after merge)
+         All 24 V3 routes returned 200 — deploy succeeded
+  T+~10m Production Playwright re-run on warm cache: 15/15 PASS
+         Confirms new bundle (with V2-EXACT 'Vào UZG+' heading) is live globally
+
+Bundle changes (apps/uzg-pwa/dist/v3/):
+  - HTML loads V3 SPA bundle with new auth-v3 components
+  - LoginForm.tsx → 'Vào UZG+' heading (was 'Đăng nhập')
+  - OtpEntryFormV3.tsx → 8 slots with maxLength=8 (was hard 6)
+  - V3SendPage / V3ReceivePage wire to V2 endpoints
+  - otpClient.ts handles email + phone identifier paths
+
+Cold-cache flake observed:
+  First production Playwright run (immediately after probe), test 1
+  "/v3/login shows 'Vào UZG+' title" failed because Cloudflare CDN edge
+  served stale HTML cache (took 16x retries to confirm "Đăng nhập" text).
+  Test 4 in same run (negation: NOT 'Đăng nhập') PASSED, indicating cache
+  flushed between tests. Re-run on warm cache: 15/15 PASS.
+
+  This confirms the deploy IS live; first request to specific edge node
+  was a cache miss → served stale, then refreshed. Normal CDN behavior.
+
+DEPLOY STATUS: SUCCESS

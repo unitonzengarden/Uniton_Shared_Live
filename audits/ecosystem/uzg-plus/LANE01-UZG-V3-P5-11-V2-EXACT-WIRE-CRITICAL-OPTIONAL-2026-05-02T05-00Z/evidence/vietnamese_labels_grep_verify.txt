@@ -1,0 +1,39 @@
+=== Fix 1 EXACT Match Proof — V2 Vietnamese Labels ===
+V2 source of truth: apps/uzg-pwa/src/system/languageFoundation.js:2970-3030
+Grep target: apps/uzg-pwa/src/components/auth-v3/
+
+Strings searched: Vào UZG+ | Nhập mã xác minh | Đã gửi tới | Xác minh | Gửi mã | Gửi lại sau
+
+LoginForm.tsx
+  Line 2:   // V2 EXACT: titleRequest='Vào UZG+', continueAction='Gửi mã', identifierLabel='Email hoặc số điện thoại'
+  Line 100: {/* V2 EXACT: titleRequest = 'Vào UZG+', requestStep = 'Bước 1 / 2' (languageFoundation.js:2970) */}
+  Line 102: <h1 id="login-heading" className={styles.title}>Vào UZG+</h1>
+  Line 130: {/* V2 EXACT: continueAction = 'Gửi mã', sendingCode = 'Đang gửi mã...' (languageFoundation.js:2970) */}
+  Line 137: {submitting ? 'Đang gửi mã…' : 'Gửi mã'}
+
+OtpEntryFormV3.tsx
+  Line 43:  // For 6-7 digit codes, user clicks "Xác minh" manually
+  Line 72:  {/* V2 EXACT: titleVerify = 'Nhập mã xác minh', sentTo = 'Đã gửi tới' (languageFoundation.js:2970) */}
+  Line 73:  <h1 className={styles.title}>Nhập mã xác minh</h1>
+  Line 75:  Đã gửi tới <strong>{email}</strong>
+  Line 111: {/* V2 EXACT: verifyAction = 'Xác minh', verifying = 'Đang xác minh...' (languageFoundation.js:2970) */}
+  Line 117: {loading ? 'Đang xác minh…' : 'Xác minh'}
+
+OtpResendCountdownV3.tsx
+  Line 2:   // V2: resend = 'Gửi lại mã', resendIn = 'Gửi lại sau {seconds}s'
+  Line 40:  {canResend ? 'Gửi lại mã' : `Gửi lại sau ${secondsLeft}s`}
+
+SignupForm.tsx
+  Line 113: <h1 id="signup-heading" className={styles.title}>Vào UZG+</h1>
+  Line 177: {/* V2 EXACT: continueAction = 'Gửi mã' (languageFoundation.js:2970) */}
+  Line 178: {submitting ? 'Đang gửi mã…' : 'Gửi mã'}
+
+ALL V2-EXACT strings present per languageFoundation.js:2970 file:line citation.
+KL-048 NEW: read EXACT from V2 code, never assume.
+
+V2 OTP_MIN_LENGTH=6 / OTP_MAX_LENGTH=8 verification (per V2 LoginPage.jsx:24-25):
+  OtpEntryFormV3.tsx OTP_MIN_LENGTH=6, OTP_MAX_LENGTH=8 constants applied to:
+    - 8 visual slots
+    - input[maxLength={OTP_MAX_LENGTH}] = 8
+    - Submit enabled at >= OTP_MIN_LENGTH (6)
+    - Auto-submit only at OTP_MAX_LENGTH (8)

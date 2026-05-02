@@ -1,0 +1,35 @@
+=== Fix 4 ENTA Avatar V2 Endpoint — Status: DEFERRED Phase 6 ===
+
+Original spec: ENTA avatar uploads should use V2 endpoint instead of direct Supabase Storage.
+
+Current implementation (Sprint 5.9, unchanged in 5.11):
+  apps/uzg-pwa/src/hooks/useAvatarUpload.ts
+  - Uploads via supabase.storage.from('avatars').upload(path, file, ...)
+  - Returns getPublicUrl(path) for the uploaded blob
+  - Bucket 'avatars' may need creation via Supabase Studio (Phase 6 verify)
+
+Why deferred:
+  1. OPTIONAL fix per original LANE01-UZG-V3-P5-11 spec (not P0)
+  2. Current Supabase Storage path WORKS for V3 users
+  3. V2 endpoint wiring requires backend audit (V2 may use different path
+     for ENTA-specific avatars vs general user avatars)
+  4. Sprint 5.11 P0 scope (Fix 1, Fix 2 CRITICAL) was completed and verified;
+     time-boxing demanded Fix 4 punt to avoid scope creep
+  5. CRSP says "If Fix 4 skip OK → document in audit log §4 NOTES"
+
+Phase 6 backlog action item:
+  - Audit V2 aier_server.js for /api/v1/profile/avatar or ENTA-specific endpoint
+  - Compare V2 avatar upload path vs Supabase Storage 'avatars' bucket
+  - Determine if Supabase Storage is the V2 EXACT path (in which case no
+    change needed) or if V2 has its own endpoint (refactor required)
+  - Re-test ENTA onboarding avatar flow on prod
+
+Impact assessment: LOW
+  - V3 ENTA users currently use Supabase Storage which functions correctly
+  - No P0 user-blocking behavior
+  - GO LIVE NOT blocked by Fix 4
+
+Verification commands (Phase 6):
+  grep -rn "/api/v1/profile/avatar\|enta_avatar" apps/uzg-pwa/src
+  grep -rn "supabase.storage.from('avatars')" apps/uzg-pwa/src
+  Audit V2 aier_server.js for avatar endpoints

@@ -1,0 +1,45 @@
+=== Raw URL Probe Results — Sprint Cross-Lane Open ===
+
+Probed at: 2026-05-02T08:57Z (post sync run 25248371247 success)
+Sync trigger: PR #91 push merge at 2026-05-02T08:57:06Z
+Sync duration: 16s
+Merged commit: 34644226421789b8c19c8f456f04e1e73357d954
+
+--- Lane_01 zone visibility (NEW — were 404 baseline) ---
+
+200 runtime/lane_01_uzg/INDEX.live.md
+200 runtime/lane_01_uzg/status_dashboards/v3_modules_status.live.md
+200 runtime/lane_01_uzg/status_dashboards/v3_blockers.live.md
+200 runtime/lane_01_uzg/status_dashboards/v3_audit_status.live.md
+200 runtime/lane_01_uzg/status_dashboards/lane_division_v1.live.md
+200 runtime/lane_01_uzg/audits/README.md
+200 runtime/lane_01_uzg/handoff_to_lane02/README.md
+200 runtime/lane_01_uzg/handoff_from_lane02/README.md
+200 network/lane_01_uzg/MISSION.live.md
+
+Lane_01 zone subtotal: 9/9 = 200 ✓
+
+--- Cross-Lane zone visibility (NEW — were 404 baseline) ---
+
+200 runtime/cross_lane/README.md
+200 runtime/cross_lane/master_module_map.live.md
+200 runtime/cross_lane/joint_blockers.live.md
+200 runtime/cross_lane/handoff_log.live.md
+
+Cross-Lane subtotal: 4/4 = 200 ✓
+
+--- Lane_02 zone regression check (was 200 baseline) ---
+
+200 runtime/lane_02_uzg/INDEX.live.md
+200 runtime/lane_02_uzg/RUNTIME_URLS.live.md
+404 runtime/lane_02_uzg/status_dashboards (directory listing — expected 404)
+
+Lane_02 regression: PASS (no degradation on individual files)
+
+--- Aggregate result ---
+
+NEW URLs verified: 13/13 = 200 ✓
+Lane_02 regression: PASS ✓
+Total: 15 URLs verified (excluding directory-listing 404 which is correct)
+
+Acceptance Criterion AC-4: Live mirror visibility — MET.

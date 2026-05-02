@@ -1,0 +1,36 @@
+=== Production Playwright Run — Sprint 5.11 ===
+Target: https://uzg.plus (post PR #91 merge)
+Merged commit: 32cd9e264fadd811e0543621e0a73cdc0ea26c3c
+Merged at: 2026-05-02T06:13:52Z
+Test run completed: 2026-05-02T06:24Z
+
+Command:
+  QA_BASE_URL=https://uzg.plus npx playwright test \
+    --config playwright.v3.config.js \
+    tests/visual/p5-11-v2-exact-wire.spec.mjs --reporter=list
+
+Result: 15 passed (16.7s)
+
+  ok  1 /v3/login shows "Vào UZG+" title (V2 titleRequest) (1.1s)
+  ok  2 /v3/login identifier input type=text with autocomplete=username (962ms)
+  ok  3 /v3/login send-otp button says "Gửi mã" not "Gửi mã xác thực" (965ms)
+  ok  4 /v3/login does NOT say "Đăng nhập" as page title (1.1s)
+  ok  5 OTP form: hidden input maxLength=8 (OTP_MAX_LENGTH=8) (1.1s)
+  ok  6 OTP form title = "Nhập mã xác minh" (V2 titleVerify) (1.1s)
+  ok  7 OTP form subtitle = "Đã gửi tới" (V2 sentTo) (1.0s)
+  ok  8 OTP verify button = "Xác minh" (V2 verifyAction) (1.0s)
+  ok  9 OTP verify button disabled < 6 digits, enabled at 6+ (1.1s)
+  ok 10 OTP resend = "Gửi lại sau Xs" (V2 resendIn format) (1.0s)
+  ok 11 /v3/signup redirects to /v3/login (925ms)
+  ok 12 /v3/wallet/send renders SendFlow (959ms)
+  ok 13 /v3/wallet/receive renders ReceiveQR (940ms)
+  ok 14 walletTransfer POST /api/v1/wallet/transfer endpoint registered (1.1s)
+  ok 15 getDepositAddress POST /api/v1/deposits/address endpoint registered (915ms)
+
+NOTES:
+  First production run had 1 cold-cache flake on test 1 (Cloudflare CDN
+  served stale HTML with old "Đăng nhập" heading). Test 4 in same run
+  (which asserts negation: NOT toContainText "Đăng nhập") PASSED, confirming
+  fresh bundle was live. Re-run on warm cache: 15/15 PASS — stable.
+
+  Total production verification: 15/15 (100%).

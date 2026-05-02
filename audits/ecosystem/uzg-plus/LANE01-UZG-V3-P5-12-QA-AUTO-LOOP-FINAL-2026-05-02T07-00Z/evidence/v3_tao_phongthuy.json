@@ -1,0 +1,20 @@
+{
+  "path": "/v3/tao/phongthuy",
+  "module": "tao",
+  "mockup": "UZG_PLUS_V3_MOCKUP_08_TAO_MINIAPP.html",
+  "authRequired": true,
+  "statusCode": 200,
+  "finalUrl": "https://uzg.plus/v3/login",
+  "redirectedToLogin": true,
+  "pageContent": {
+    "h1": "Vào UZG+",
+    "h2": null,
+    "bodyText": "UZG+Bước 1 / 2Vào UZG+Nhập email hoặc số điện thoại để nhận mã đăng nhập.Email hoặc số điện thoạiGửi mãMới? Tài khoản được tạo tự động khi bạn đăng nhập lần đầu.UZG+ trình bày cấu trúc tham chiếu để bạn tự hiểu cấu trúc của mình.AccountProfileSettingsPrivacyHelpSign Out",
+    "interactiveCount": 7
+  },
+  "bugCount": 0,
+  "bugs": [],
+  "consoleEntryCount": 2,
+  "networkFailCount": 0,
+  "timestamp": "2026-05-02T08:07:31.608Z"
+}

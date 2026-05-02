@@ -1,0 +1,77 @@
+=== Sync Workflow Diff Summary — Sprint Cross-Lane Open ===
+
+File: .github/workflows/sync_runtime_to_public.yml
+Diff scope: 3 ADDITIONS to enable Lane_01 + cross_lane namespaces.
+
+--- Addition 1: on.push.paths trigger array (line ~30) ---
+
+  # Lane_02 UZG runtime namespace (existing)
+  - 'runtime/lane_02_uzg/**'
+  - 'network/lane_02_uzg/**'
++ # Lane_01 UZG runtime namespace + cross-Lane shared dashboards
++ # (LANE01-CLAC1-RUNTIME-CROSS-LANE-OPEN-INFRASTRUCTURE-2026-05-02T08-30Z)
++ - 'runtime/lane_01_uzg/**'
++ - 'network/lane_01_uzg/**'
++ - 'runtime/cross_lane/**'
+
+--- Addition 2: copy step (line ~134) ---
+
+  # Lane_02 UZG runtime namespace (existing)
+  mkdir -p target/runtime/lane_02_uzg
+  if [ -d source/runtime/lane_02_uzg ]; then
+    cp -R source/runtime/lane_02_uzg/. target/runtime/lane_02_uzg/ ...
+  fi
+  mkdir -p target/network/lane_02_uzg
+  if [ -d source/network/lane_02_uzg ]; then
+    cp -R source/network/lane_02_uzg/. target/network/lane_02_uzg/ ...
+  fi
++ # Lane_01 UZG runtime namespace + cross-Lane shared dashboards
++ # (LANE01-CLAC1-RUNTIME-CROSS-LANE-OPEN-INFRASTRUCTURE-2026-05-02T08-30Z)
++ mkdir -p target/runtime/lane_01_uzg
++ if [ -d source/runtime/lane_01_uzg ]; then
++   cp -R source/runtime/lane_01_uzg/. target/runtime/lane_01_uzg/ 2>/dev/null || echo "runtime/lane_01_uzg copy partial, continuing"
++ fi
++ mkdir -p target/network/lane_01_uzg
++ if [ -d source/network/lane_01_uzg ]; then
++   cp -R source/network/lane_01_uzg/. target/network/lane_01_uzg/ 2>/dev/null || echo "network/lane_01_uzg copy partial, continuing"
++ fi
++ mkdir -p target/runtime/cross_lane
++ if [ -d source/runtime/cross_lane ]; then
++   cp -R source/runtime/cross_lane/. target/runtime/cross_lane/ 2>/dev/null || echo "runtime/cross_lane copy partial, continuing"
++ fi
+
+--- Addition 3: SYNC_INFO heredoc Lane_01 + Cross-Lane sections (line ~265) ---
+
+After existing Lane_02 fetch URLs:
+
++ ## Lane_01 UZG runtime namespace + Cross-Lane shared dashboards
++ ## (LANE01-CLAC1-RUNTIME-CROSS-LANE-OPEN-INFRASTRUCTURE-2026-05-02T08-30Z)
++
++ **Files synced**
++ - runtime/lane_01_uzg/** (Lane_01 UZG+ runtime — V3 PWA OS state, Auth/ENTA/HOME/Settings/Profile)
++ - network/lane_01_uzg/** (Lane_01 mission declaration)
++ - runtime/cross_lane/** (Cross-Lane shared dashboards visible to both Lanes)
++
++ ### Lane_01 entry points (raw — CLA-1 + CLA-2 fetch để đọc Lane_01 state)
++
++ - https://raw.githubusercontent.com/.../runtime/lane_01_uzg/INDEX.live.md
++ - https://raw.githubusercontent.com/.../runtime/lane_01_uzg/status_dashboards/v3_modules_status.live.md
++ - ... (8 URLs total)
++
++ ### Cross-Lane shared dashboards (raw — both Lanes read)
++
++ - https://raw.githubusercontent.com/.../runtime/cross_lane/README.md
++ - ... (4 URLs total)
+
+--- YAML validation ---
+
+$ python -c "import yaml; yaml.safe_load(open('sync_runtime_to_public.yml', encoding='utf-8'))"
+YAML VALID
+
+--- Total diff stats ---
+
+File: .github/workflows/sync_runtime_to_public.yml
++52 lines / -4 lines
+
+File: SYNC_INFO.md (private repo reference)
++44 lines / -4 lines
