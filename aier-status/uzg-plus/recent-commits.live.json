@@ -1,9 +1,16 @@
 {
   "project_slug": "uzg-plus",
   "github_repo": "unitonzengarden/uzgplus-app",
-  "polled_at": "2026-05-02T06:07:49.436Z",
+  "polled_at": "2026-05-02T08:00:16.660Z",
   "count": 30,
   "commits": [
+    {
+      "sha": "32cd9e264fadd811e0543621e0a73cdc0ea26c3c",
+      "message": "feat(p5-11): Sprint 5.11 — V2-EXACT wire critical+optional [vercel skip] (#91)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-02T06:13:51Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/32cd9e264fadd811e0543621e0a73cdc0ea26c3c"
+    },
     {
       "sha": "43954194a4b03149bfd232d6747ded0a98185d5e",
       "message": "test(lane02/golive): aier-tao-golive smoke suite Q1-Q5 [vercel skip]",
@@ -206,13 +213,6 @@
       "author": "Uniton Zen",
       "committed_at": "2026-05-01T08:56:40Z",
       "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/930a7caa6bbcaee40cc187b25cc619702228b12f"
-    },
-    {
-      "sha": "5ffed557dc8b349049e9072b1985cc8c878e7941",
-      "message": "feat(lane02): T-TAO-052-068-V1 — Tử Vi V2 Phase 8B engine canonical completion (5 gaps closed) (#68)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-05-01T08:32:12Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/5ffed557dc8b349049e9072b1985cc8c878e7941"
     }
   ]
 }
