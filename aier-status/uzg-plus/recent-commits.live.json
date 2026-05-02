@@ -1,9 +1,58 @@
 {
   "project_slug": "uzg-plus",
   "github_repo": "unitonzengarden/uzgplus-app",
-  "polled_at": "2026-05-02T13:48:56.784Z",
+  "polled_at": "2026-05-02T14:49:34.651Z",
   "count": 30,
   "commits": [
+    {
+      "sha": "a040598dbcaee2ea84d6cb06dadfd884c9eea367",
+      "message": "diag(lane02/phase6): add ?diagnostic=1 short-circuit (#103)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-02T14:25:50Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/a040598dbcaee2ea84d6cb06dadfd884c9eea367"
+    },
+    {
+      "sha": "f5736f5147eb428e9b476d8466bb7e76364810c1",
+      "message": "feat lane01 v3 home 5 ngu hanh reactions component v2 adapter (#102)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-02T14:22:22Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/f5736f5147eb428e9b476d8466bb7e76364810c1"
+    },
+    {
+      "sha": "aec2f5369a8a367131046140f04ab54a4da5334b",
+      "message": "fix(lane02/phase6): wrap handleTaoAierChat in try/catch (surface 502 root cause) (#101)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-02T14:20:34Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/aec2f5369a8a367131046140f04ab54a4da5334b"
+    },
+    {
+      "sha": "18fe6a78fecf247fde9b83c8552528689178d73f",
+      "message": "fix(lane02/phase6): AIER chat 502 — Claude model name + try/catch fetch (#100)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-02T14:12:14Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/18fe6a78fecf247fde9b83c8552528689178d73f"
+    },
+    {
+      "sha": "5c56bd30d7796f9de3f9b9579d9ac440e5b657d3",
+      "message": "fix(lane02/phase6): sync apps/uzg-pwa/public/_worker.js with V1 changes (production deploy fix) (#99)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-02T14:04:15Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/5c56bd30d7796f9de3f9b9579d9ac440e5b657d3"
+    },
+    {
+      "sha": "dd7191a61d9a1ff710daadab1cd9059716b711f9",
+      "message": "fix p6 endgame 2 composer v2 exact field names (#98)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-02T13:58:07Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/dd7191a61d9a1ff710daadab1cd9059716b711f9"
+    },
+    {
+      "sha": "69a2ee23de57ffd7ce6c0852026a82cf3f64de35",
+      "message": "feat(lane02/phase6): wire AIER chat backend mock to real (#95)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-02T13:53:34Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/69a2ee23de57ffd7ce6c0852026a82cf3f64de35"
+    },
     {
       "sha": "783987d313e704c73eb04a48d58c4d6a2f1a83fc",
       "message": "test(lane02/phase6): TAO module audit harness deferred run [vercel skip]",
@@ -164,55 +213,6 @@
       "author": "unitonzengarden",
       "committed_at": "2026-05-01T15:23:45Z",
       "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/9802e5de720cf53b7a9adb9acc42eb91a400749f"
-    },
-    {
-      "sha": "bfac5172dcd6eaa68c687c0191de61589e97646c",
-      "message": "feat(p5-1): UZG+ Phase 5 Sprint 5.1 — Auth + Identity Foundation (real Supabase) [solo CLAC1] (#79)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-05-01T15:06:41Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/bfac5172dcd6eaa68c687c0191de61589e97646c"
-    },
-    {
-      "sha": "d311f9cd5a00259356a5c84401263106b20d61d8",
-      "message": "feat(p4s6): UZG+ Phase 4 Sprint 4.6 FINAL — Lịch + AIER Chat + Residence + Phase 4 CLOSURE [solo CLAC1] (#78)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-05-01T14:18:38Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/d311f9cd5a00259356a5c84401263106b20d61d8"
-    },
-    {
-      "sha": "087278d751d26117e64a8e5ee35973087f9e87a3",
-      "message": "Update lane_02 screenshots, runtime catalogs, and Cursor settings",
-      "author": "unitonzengarden",
-      "committed_at": "2026-05-01T13:56:13Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/087278d751d26117e64a8e5ee35973087f9e87a3"
-    },
-    {
-      "sha": "e28e4621f4b2ff983e3989ad0449a95e0ea13da2",
-      "message": "feat(p4s5): UZG+ Phase 4 Sprint 4.5 — Bazi Premium Luck Pillars + Phong Thủy 3 surfaces [solo CLAC1] (#77)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-05-01T13:49:51Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/e28e4621f4b2ff983e3989ad0449a95e0ea13da2"
-    },
-    {
-      "sha": "9809f077bf5ccf709310d1ac73c90594ea732f90",
-      "message": "feat(p4s4): UZG+ Phase 4 Sprint 4.4 — AIER TAO Reading + 4-tier gating [solo CLAC1] (#76)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-05-01T13:17:34Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/9809f077bf5ccf709310d1ac73c90594ea732f90"
-    },
-    {
-      "sha": "12b855c646337853ace56256592e1c918b9d6141",
-      "message": "feat(lane02): T-VAN-016-020-V1 add 28 sao plus hour Hoang Dao standalone engines (#74)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-05-01T13:12:05Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/12b855c646337853ace56256592e1c918b9d6141"
-    },
-    {
-      "sha": "9aa13754b0dde1aec5035fe9038b35febdc1472a",
-      "message": "fix(p4s3.1): NAM TAO 南道 branding consistency hot-fix (#75)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-05-01T12:47:31Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/9aa13754b0dde1aec5035fe9038b35febdc1472a"
     }
   ]
 }
