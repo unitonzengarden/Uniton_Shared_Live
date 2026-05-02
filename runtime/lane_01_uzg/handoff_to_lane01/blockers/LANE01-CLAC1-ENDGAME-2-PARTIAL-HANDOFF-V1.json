@@ -1,0 +1,198 @@
+{
+  "handoff_id": "LANE01-CLAC1-ENDGAME-2-PARTIAL-HANDOFF-V1",
+  "from": "CLAC1 (Lane_01 executor)",
+  "to": "CLA Lane_01",
+  "issued_at": "2026-05-02T14:05:00Z",
+  "status": "OPEN — awaiting CLA Lane_01 sprint dispatch",
+  "subject": "V3 HOME Social ENDGAME-2 — HONEST PARTIAL: 1 of 11 sub-modules done, 10 deferred",
+  "spec_reference": "LANE01-CLAC1-V3-HOME-SOCIAL-ENDGAME-XCOM-GRADE-2026-05-02T13-30Z",
+  "spec_clause_invoked": "§12 + §16: Nếu AC-1 dù 1/18 fail sau hết rounds → HONEST FAIL report + handoff blocker, KHÔNG claim done",
+  "scope_completed_this_sprint": {
+    "sub_module_id": "D (Composer X.com-grade)",
+    "sub_module_subset_done": "createPost V3 → V2 EXACT body field mapping",
+    "uzgplus_pr": "https://github.com/unitonzengarden/uzgplus-app/pull/98",
+    "uzgplus_pr_merge_commit": "dd7191a61d9a1ff710daadab1cd9059716b711f9",
+    "uzgplus_pr_merged_at": "2026-05-02T13:58:07Z",
+    "production_deploy_status": "SUCCESS — bundle main-B0VorcoR.js",
+    "verification": {
+      "build": "PASS (852.80 KB)",
+      "ts_errors": 0,
+      "regression_sprint_5_11_phase_6_1": "27/27 PASS",
+      "production_bundle_v2_exact_fields_present": ["circle_id", "nft_attachment", "parent_qot_id", "repost_of_post_id"],
+      "playwright_composer_v2_exact_spec_on_production": "PASS"
+    },
+    "root_cause_class": "V3↔V2 field name mismatch (same class as ENDGAME-1 read crash)",
+    "kl_extension": "KL-067: V3 client must follow V2 canonical service (productV2Service.js) field names, not V3-internal type definitions"
+  },
+  "scope_deferred": {
+    "sub_modules": [
+      {
+        "id": "B",
+        "name": "Post component X.com-grade",
+        "spec_section": "§4.B",
+        "estimated_effort": "90-120 min",
+        "scope": "ENTA ring 40px + QOT trace icon + author info + ENTA element badge + body content + media gallery + action bar tap behaviors"
+      },
+      {
+        "id": "C",
+        "name": "5 Ngũ Hành Reactions",
+        "spec_section": "§4.C (CORE UZG+ DNA per canon §5)",
+        "estimated_effort": "90-120 min",
+        "scope": "5 elements (Kim/Thủy/Mộc/Hỏa/Thổ) + radial wheel + V2 reaction schema adapter + aggregate sentiment display (no raw count)"
+      },
+      {
+        "id": "D-remaining",
+        "name": "Composer media upload + poll + QOT context",
+        "spec_section": "§4.D (subset NOT in this sprint)",
+        "estimated_effort": "60-90 min",
+        "scope": "Image picker 1-4 + video + poll editor + QOT context selector + draft autosave"
+      },
+      {
+        "id": "E",
+        "name": "Post Detail full-screen",
+        "spec_section": "§4.E",
+        "estimated_effort": "60-90 min",
+        "scope": "New route /v3/post/:postId + GET /api/v1/posts/:id wire + comments thread + reactions + sticky composer",
+        "v2_endpoint": "GET /api/v1/posts/:postId (productV2Service.js:22454)"
+      },
+      {
+        "id": "F",
+        "name": "Image/Video Lightbox",
+        "spec_section": "§4.F",
+        "estimated_effort": "45-60 min",
+        "scope": "Pinch zoom + swipe between images + close gesture (mobile) + scroll zoom + arrow keys + Esc (desktop)"
+      },
+      {
+        "id": "G",
+        "name": "Comments System",
+        "spec_section": "§4.G",
+        "estimated_effort": "60-90 min",
+        "scope": "Thread component + composer + 1-level nested reply + reactions on comments",
+        "v2_endpoints": [
+          "GET /api/v1/posts/:postId/comments (productV2Service.js:22628)",
+          "POST /api/v1/posts/:postId/comments"
+        ]
+      },
+      {
+        "id": "H",
+        "name": "Share/Quote",
+        "spec_section": "§4.H",
+        "estimated_effort": "30-45 min",
+        "scope": "Action sheet + quote post inline reference + copy link",
+        "v2_endpoint": "POST /api/v1/posts/:postId/share (productV2Service.js:22690)"
+      },
+      {
+        "id": "I",
+        "name": "User Profile Mini View",
+        "spec_section": "§4.I",
+        "estimated_effort": "45-60 min",
+        "scope": "Bottom sheet preview (mobile) / hover card (desktop) with avatar + ENTA mini wheel + bio + connect button",
+        "v2_endpoint": "GET /api/v1/profile/:userId (verify aier_server.js line)"
+      },
+      {
+        "id": "J",
+        "name": "Connect 4 trust levels",
+        "spec_section": "§4.J",
+        "estimated_effort": "45-60 min",
+        "scope": "Action sheet (Open / Resonance / Circle / Trusted) + V2 endpoint wire + display 'Connected with N in resonance field' (NOT 'followers')",
+        "v2_endpoints": [
+          "POST /api/v1/resonance/connect (V2_FLOW_ENTA §3)",
+          "POST /api/v1/resonance/connections/actions"
+        ]
+      },
+      {
+        "id": "K",
+        "name": "Notifications",
+        "spec_section": "§4.K",
+        "estimated_effort": "60-90 min",
+        "scope": "Bell overlay + real-time updates via Supabase Realtime + types (comment/reaction/connect/quote/mention) + mark read"
+      },
+      {
+        "id": "L",
+        "name": "Suggested Resonance",
+        "spec_section": "§4.L",
+        "estimated_effort": "30-45 min",
+        "scope": "Interleaved cards every 5-7 posts + ENTA mini wheel + connect button + 'Why suggested?' explainer"
+      }
+    ],
+    "cross_cutting_work": [
+      {
+        "name": "Realtime channels integration",
+        "estimated_effort": "60-90 min",
+        "scope": "Supabase channels for app_posts + comments + reactions + notifications"
+      },
+      {
+        "name": "Responsive desktop polish",
+        "estimated_effort": "60-90 min",
+        "scope": "5 viewports test (480/768/1024/1440/1920) + adapt mobile shell"
+      },
+      {
+        "name": "Animation/micro-interaction polish",
+        "estimated_effort": "60-90 min",
+        "scope": "60fps Pinterest-grade — pull-to-refresh / slide-down / glow / wheel fade-in / color spread"
+      },
+      {
+        "name": "AC-1 18-step verification",
+        "estimated_effort": "90-180 min",
+        "scope": "Manual walkthrough + Playwright 5x consecutive + 2-browser realtime + 5-viewport responsive + Lighthouse + console + network capture"
+      }
+    ],
+    "estimated_remaining_effort_hours": "12-18",
+    "recommended_sprint_split": [
+      {
+        "sprint": "ENDGAME-2-A",
+        "name": "5 Ngũ Hành Reactions + Post component X.com-grade",
+        "estimated_hours": "2-3",
+        "sub_modules": ["B", "C"],
+        "rationale": "CORE UZG+ DNA — most differentiated feature. Ship together since both touch the post card."
+      },
+      {
+        "sprint": "ENDGAME-2-B",
+        "name": "Post Detail + Comments System",
+        "estimated_hours": "2-3",
+        "sub_modules": ["E", "G"],
+        "rationale": "Deep engagement. Post detail page provides surface for comments — ship together."
+      },
+      {
+        "sprint": "ENDGAME-2-C",
+        "name": "Lightbox + Composer media upload",
+        "estimated_hours": "2-3",
+        "sub_modules": ["F", "D-remaining"],
+        "rationale": "Rich content authoring + viewing. Both touch media handling."
+      },
+      {
+        "sprint": "ENDGAME-2-D",
+        "name": "Profile Preview + Connect 4 trust levels + Share/Quote",
+        "estimated_hours": "2-3",
+        "sub_modules": ["I", "J", "H"],
+        "rationale": "Social graph actions. Profile preview surfaces connect."
+      },
+      {
+        "sprint": "ENDGAME-2-E",
+        "name": "Notifications + Suggested Resonance + Realtime + AC-1 verification",
+        "estimated_hours": "3-4",
+        "sub_modules": ["K", "L", "Realtime", "AC-1"],
+        "rationale": "Real-time + final integration. Includes AC-1 18-step PASS verification."
+      }
+    ]
+  },
+  "blockers_inhibiting_remaining_work": "None at infrastructure level — V2 endpoints documented, Phase 6.1.b auth bypass functional, Playwright harness reusable",
+  "v2_endpoint_citations_for_followups": {
+    "GET /api/v1/flow/feed": "aier_server.js:20011-20070 (canonical mapper: productV2Service.js:22322-22384)",
+    "POST /api/v1/flow/posts": "aier_server.js:~20274 (canonical mapper: productV2Service.js:20246-20320)",
+    "GET /api/v1/posts/:postId": "(verify line) productV2Service.js:22454",
+    "GET /api/v1/posts/:postId/comments": "(verify line) productV2Service.js:22628",
+    "POST /api/v1/posts/:postId/comments": "(verify line)",
+    "POST /api/v1/posts/:postId/share": "(verify line) productV2Service.js:22690",
+    "POST /api/v1/flow/interactions": "aier_server.js:20245-20316",
+    "POST /api/v1/media/enta/upload": "aier_server.js:20114-20150 (Phase 6.1 wired)",
+    "GET /api/v1/profile/me": "aier_server.js:19667-19705",
+    "GET /api/v1/profile/:userId": "(verify line)",
+    "POST /api/v1/resonance/connect": "V2_FLOW_ENTA_EXACT_v1.md §3",
+    "POST /api/v1/resonance/connections/actions": "V2_FLOW_ENTA_EXACT_v1.md §3"
+  },
+  "kl_extensions_this_sprint": [
+    "KL-067 NEW: V3 client field mapping must follow V2 canonical service (productV2Service.js), not V3 type definitions. Both ENDGAME-1 read crash and ENDGAME-2 composer bug were V3↔V2 field-name mismatches.",
+    "KL-068 NEW: Cannot-complete IS a finding (mirror of KL-051). When task scope exceeds single-session capacity, honest partial + handoff blocker > fabricated completion."
+  ]
+}
