@@ -1,0 +1,32 @@
+KL-028 V2 LIVE probe — post merge of PR #114 at 5e4dc686 / 2026-05-02T16:40:50Z
+Cloudflare deploy run 25256693185 SUCCESS in 1m30s
+
+Probe target: https://uzg.plus
+Production CSS bundle: index-Cq5OYFDU.css
+Production JS bundle: index-DCqZtxur.js
+
+Routes (all HOME-related Lane_01 + adjacent):
+200 https://uzg.plus/
+200 https://uzg.plus/login
+200 https://uzg.plus/dashboard
+200 https://uzg.plus/enta
+200 https://uzg.plus/enta/Duy
+200 https://uzg.plus/compose
+200 https://uzg.plus/post
+200 https://uzg.plus/notifications
+200 https://uzg.plus/profile/me
+200 https://uzg.plus/settings
+200 https://uzg.plus/connections
+200 https://uzg.plus/u-reward
+
+Result: 12/12 routes 200. Customer impact during deploy: zero.
+
+CSS verification per bug:
+- B1 close button CSS: u-reward-v4-floating-shell-close{ PRESENT
+- B1 wrapper CSS: u-reward-v4-floating-shell-wrapper{ PRESENT
+- B2 avatar z-index: z-index:3 (avatar) + z-index:1 (banner) PRESENT
+- B3 compose page CSS: compose-page-shell{ PRESENT
+- B4 lightbox CSS: media-lightbox-overlay{ PRESENT
+- B5 counter CSS: flow-composer-counter-error{ PRESENT
+
+All 5 NTS-reported bugs fixed shipped to LIVE production.
