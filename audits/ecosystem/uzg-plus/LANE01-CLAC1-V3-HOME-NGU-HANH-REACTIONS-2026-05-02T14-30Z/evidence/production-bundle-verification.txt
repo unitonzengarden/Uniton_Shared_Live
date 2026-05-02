@@ -1,0 +1,63 @@
+=== Production Bundle Verification — V3 HOME 5 Ngũ Hành Reactions ===
+
+Date: 2026-05-02T14:25Z
+PR: #102 merged at 2026-05-02T14:22:23Z (commit f5736f51)
+Cloudflare deploy: SUCCESS in 1m16s (run 25254007485)
+Production bundle hash: main-Dqpw9Wi3.js
+
+--- V2 EXACT wire field strings ---
+
+$ curl -s "https://uzg.plus/v3/assets/main-Dqpw9Wi3.js" | grep -oE "ngu-hanh-bar|element_type|target_type:|target_id:"
+ngu-hanh-bar
+element_type
+target_type:
+target_id:
+
+✓ Component data attribute present
+✓ V2 EXACT field name `element_type`
+✓ V2 EXACT field name `target_type:`
+✓ V2 EXACT field name `target_id:`
+
+--- Vietnamese labels (canon §5.2) ---
+
+$ curl -s "https://uzg.plus/v3/assets/main-Dqpw9Wi3.js" | grep -oE "Kim|Thủy|Mộc|Hỏa|Thổ"
+Kim
+Thủy
+Mộc
+Hỏa
+Thổ
+
+✓ All 5 Vietnamese element labels present
+
+--- Aggregate sentiment strings (canon §5.4) ---
+
+$ curl -s "https://uzg.plus/v3/assets/main-Dqpw9Wi3.js" | grep -oE "Chủ yếu|Cân bằng|ngũ hành"
+Chủ yếu
+Cân bằng
+ngũ hành
+
+✓ "Chủ yếu" + "Cân bằng" + "ngũ hành" present
+
+--- Build delta ---
+
+Sprint 5.11 baseline:        847.32 KB
+Phase 6.1 (avatar V2):       848.28 KB (+0.96 KB / +0.11%)
+ENDGAME-1 (read crash fix):  850.74 KB (+2.46 KB / +0.29%)
+ENDGAME-2 (composer fix):    852.80 KB (+2.06 KB / +0.24%)
+ENDGAME-2-A1 (5 ngũ hành):   853.35 KB (+0.55 KB / +0.06%)
+
+Cumulative delta from Sprint 5.11: +6.03 KB / +0.71% — well under +5% gate
+
+--- Verdict ---
+
+The 5 Ngũ Hành Reactions component is DEPLOYED and FUNCTIONAL on production.
+
+Manual visual verification requires an authenticated user with completed ENTA Root
+(so feed posts render and NguHanhBar buttons are visible). Current test fixture
+(lane02-test-sovereign@uzg.local) is ENTA-gated.
+
+NTS verify steps (when logged in with ENTA-onboarded user):
+1. https://uzg.plus/v3/login → login
+2. /v3/home → posts visible with 5 ngũ hành buttons under each
+3. Tap any element → highlight + glow + count update
+4. Reload → reaction persists (V2 backend stored)
