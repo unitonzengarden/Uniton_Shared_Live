@@ -1,0 +1,24 @@
+PLAYWRIGHT PRODUCTION RESULTS — Sprint 5.9 (FINAL post-deploy)
+Date: 2026-05-02
+Spec: tests/visual/p5-9-auth-settings-profile-follow-prod.spec.mjs
+
+=== POST-DEPLOY RE-RUN ===
+Running 12 tests using 1 worker
+
+PASS [chromium] prod /forgot-password is public (no redirect)
+PASS [chromium] prod /reset-password is public (Supabase reset link target)
+PASS [chromium] prod /settings redirects to login when unauthed
+PASS [chromium] prod /profile/me redirects to login when unauthed
+PASS [chromium] prod /profile redirects to /profile/me
+PASS [chromium] prod /connections redirects to login when unauthed
+PASS [chromium] prod /account/change-password redirects to login when unauthed
+PASS [chromium] prod /account/delete redirects to login when unauthed
+PASS [chromium] prod login page has Forgot password link to /v3/forgot-password
+PASS [chromium] prod forgot-password page renders form
+PASS [chromium] prod reset-password page renders form
+PASS [chromium] prod Sprint 5.1-5.8 routes still 200 (no regression)
+
+12 passed (15.0s)
+
+RESULT: 12/12 PASS — all 3 prior deploy-lag failures now PASS.
+Sprint 5.9 fully verified post-Cloudflare propagation.
