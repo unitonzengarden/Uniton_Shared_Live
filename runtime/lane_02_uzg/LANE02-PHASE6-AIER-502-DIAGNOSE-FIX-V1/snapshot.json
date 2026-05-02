@@ -1,0 +1,73 @@
+{
+  "task_id": "LANE02-PHASE6-AIER-502-DIAGNOSE-FIX-V1",
+  "status": "PASS",
+  "executor": "CLAC-2 (Claude Code Desktop, Opus 4.7)",
+  "executed_at": "2026-05-02T15:21:26.742Z",
+  "authority": ["AMD_NTS_FULL_TECH_AUTONOMY", "LAW-NTS-LLM-01", "LAW-NTS-LANE-2-08"],
+  "root_cause_identified": "H_OUTBOUND_OPENAI_EMBED_CRASHES_CF_WORKER_BEYOND_JS_LAYER",
+  "root_cause_evidence": {
+    "bisect_via_diagnostic_stages": {
+      "diag_1_post_env": "200 PASS",
+      "diag_15_post_tier": "200 PASS",
+      "diag_17_post_embed": "502 HTML (worker killed)",
+      "diag_2_post_kb": "502 HTML (consistent — anything after embed killed)"
+    },
+    "defensive_embed_attempted_pr_108": "AbortSignal.timeout(20000) + text() + JSON.parse() + try/catch — STILL 502 HTML",
+    "conclusion": "Kill happens in CF runtime, not catchable JavaScript exception"
+  },
+  "fix_applied": "PIVOT: skip OpenAI embedding, use direct REST query of aier_kb_entries with star/palace filter. Tier-gated content mapping preserved. Claude does in-context retrieval.",
+  "fix_pr": 110,
+  "fix_pr_sha": "1453a8fd70e7541f0e4df3eb76de8304661f297d",
+  "smoke_5_cases": {
+    "kb_count_168": "PASS (range=0-0/168)",
+    "kb_grounding": "PASS (HTTP 200, 18.7s, text_len=1204, kb_citations=1)",
+    "no_fear_language": "PASS (HTTP 200, 23.6s, text_len=1792, kb_citations=12, no fear keywords)",
+    "explorer_short": "PASS (HTTP 200, 18.0s, text_len=1437, kb_citations=12, tier-bound)",
+    "sovereign_deep": "PASS (HTTP 200, 36.0s, text_len=2661, kb_citations=12, depth)"
+  },
+  "smoke_total": "5/5 PASS",
+  "endpoint_502_resolved": true,
+  "v3_golive": "COMPLETE",
+  "production_url": "https://uzg.plus/v3/tao/aier",
+  "production_endpoint_status": {
+    "/v3/tao/aier": 200,
+    "/api/v1/tao/aier/chat (no auth)": 401,
+    "/api/v1/tao/aier/chat (auth, empty body)": 400,
+    "/api/v1/tao/aier/chat?diagnostic=1": 200,
+    "/api/v1/tao/aier/chat?diagnostic=15": 200,
+    "/api/v1/tao/aier/chat?diagnostic=17": 200,
+    "/api/v1/tao/aier/chat?diagnostic=2": 200,
+    "/api/v1/tao/aier/chat (auth, full body)": "200 SSE stream"
+  },
+  "tao_data_source_aier": "real",
+  "pr_chain_v502": [
+    {"pr": 105, "sha": "d85f1d5c", "purpose": "diag stages 2 + 3"},
+    {"pr": 107, "sha": "d77ffe7a", "purpose": "diag stages 1.5 + 1.7"},
+    {"pr": 108, "sha": "0da8fb35", "purpose": "defensive embed (PARTIAL — confirmed kill is beyond JS)"},
+    {"pr": 110, "sha": "1453a8fd", "purpose": "PIVOT skip embedding (✅ smoke 5/5 PASS)"}
+  ],
+  "constraints_honored": {
+    "zero_questions_to_nts": true,
+    "zero_suggestions_for_nts_actions": true,
+    "zero_pause_asking_options": true,
+    "no_modify_v2_backend_beyond_route_handler": true,
+    "no_modify_lane_01_namespace": true,
+    "no_secrets_in_commits": true,
+    "ascii_commit_messages": true,
+    "self_merge_admin_only": true,
+    "append_only_ledger": true
+  },
+  "lessons_learned": [
+    "CF Pages Workers can crash beyond JS try/catch when fetching OpenAI embeddings — root cause unclear (CPU? memory? specific outbound issue?)",
+    "wrangler pages deployment tail in non-interactive mode requires explicit deployment ID — falling back to incremental diagnostic short-circuits is reliable workaround",
+    "Bisecting opaque CF errors via incremental diagnostic deploys (~90s per cycle) is practical when logs unreachable",
+    "Defensive layered try/catch + AbortSignal + text+parse split does NOT catch CF runtime kills — JS-layer defenses insufficient",
+    "Direct REST query without embedding is acceptable retrieval for KB with star/palace filters when 168 entries fit Claude context",
+    "Self-merge --admin enables fast iteration (4 PR cycles in ~30 minutes with each ~3-5 min deploy)"
+  ],
+  "next_phase_recommendations": [
+    "Phase 6.2: Phong Thủy DDL + AIER chat extension to phongthuy/vannien modules",
+    "Future: deploy embedding via Supabase Edge Function (Deno runtime, no CF Workers limit) to restore semantic similarity ranking",
+    "Future: investigate why OpenAI embedding from CF Workers crashes beyond JS layer (CPU profiling, CF dashboard logs)"
+  ]
+}

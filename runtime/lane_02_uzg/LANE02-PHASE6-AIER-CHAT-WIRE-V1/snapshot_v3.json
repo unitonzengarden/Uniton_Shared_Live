@@ -1,0 +1,43 @@
+{
+  "task_id": "LANE02-PHASE6-AIER-CHAT-WIRE-V1",
+  "status_v1": "PARTIAL (V1 ship — migration not applied, code wired)",
+  "status_v2": "PARTIAL (V2 ship — migration applied via Mgmt API, but 502 on full body)",
+  "status_v3": "PASS",
+  "completed_by": "LANE02-PHASE6-AIER-502-DIAGNOSE-FIX-V1",
+  "v1_blockers_resolved": {
+    "migration_applied": true,
+    "rpc_search_aier_kb_reachable": true,
+    "endpoint_route_registered": true,
+    "build_pipeline_source_path_fixed": true,
+    "claude_model_name_corrected": true,
+    "openai_embedding_502_resolved": "PIVOTED — skipped embedding, direct REST KB query"
+  },
+  "v3_smoke_5_cases": "5/5 PASS production",
+  "v3_pivot_decision": "OpenAI embedding fetch from CF Worker crashes beyond JS layer. Pivot: skip embedding, direct REST query of aier_kb_entries with star/palace filter. Tier-gated content. Claude in-context retrieval. Trade-off: no semantic similarity ranking, but endpoint works.",
+  "production_url": "https://uzg.plus/v3/tao/aier",
+  "production_endpoint_status": 200,
+  "tao_data_source_aier": "real",
+  "pr_chain_complete": [
+    {"pr": 95, "sha": "69a2ee2", "title": "V1 wire (root public/_worker.js)"},
+    {"pr": 99, "sha": "5c56bd3", "title": "Sync apps/uzg-pwa source path"},
+    {"pr": 100, "sha": "18fe6a7", "title": "Claude model 4-6 → 4-5 + try/catch"},
+    {"pr": 101, "sha": "aec2f53", "title": "Outer try/catch wrap"},
+    {"pr": 103, "sha": "a040598", "title": "Diagnostic ?diagnostic=1"},
+    {"pr": 105, "sha": "d85f1d5c", "title": "Diag stages 2 + 3"},
+    {"pr": 107, "sha": "d77ffe7a", "title": "Diag stages 1.5 + 1.7"},
+    {"pr": 108, "sha": "0da8fb35", "title": "Defensive embed (PARTIAL — kill beyond JS)"},
+    {"pr": 110, "sha": "1453a8fd", "title": "PIVOT skip embedding ✅ smoke 5/5 PASS"}
+  ],
+  "v3_pwa_os_golive": "COMPLETE",
+  "lane_02_modules_status": {
+    "chat": "real (V2 backend)",
+    "wallet": "real (V2 backend)",
+    "plus_membership": "real (V2 backend)",
+    "u_reward": "real (V2 backend)",
+    "tao_bazi": "real (Hybrid: enta_bazi_records + bazi_charts)",
+    "tao_ziwei": "real (ziwei_charts JSONB)",
+    "tao_aier_chat": "real (LANE02-PHASE6-AIER-502-DIAGNOSE-FIX-V1, 5/5 smoke PASS)",
+    "tao_phongthuy": "mock (Phase 6.2 pending)",
+    "tao_vannien": "mock (Phase 6.2 pending)"
+  }
+}

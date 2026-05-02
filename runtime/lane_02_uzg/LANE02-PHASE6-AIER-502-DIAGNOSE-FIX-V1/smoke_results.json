@@ -1,0 +1,57 @@
+{
+  "executed_at": "2026-05-02T15:21:26.742Z",
+  "production_url": "https://uzg.plus",
+  "pass_count": 5,
+  "total": 5,
+  "results": [
+    {
+      "name": "KB count 168",
+      "range": "0-0/168",
+      "pass": true
+    },
+    {
+      "name": "KB grounding",
+      "tier": "explorer",
+      "status": 200,
+      "elapsed_ms": 18739,
+      "text_len": 1204,
+      "kb_citations": "1",
+      "text_preview": "# Tử Vi Tọa Cung Mệnh - Ý Nghĩa Cấu Trúc\n\nChào bạn! Khi **Tử Vi tọa cung Mệnh**, đây là một cấu trúc rất đặc biệt trong Tu Vi học.\n\n## 🌟 Đặc Điểm Cốt Lõi\n\nTử Vi được gọi là **\"Đế tinh\"** - ngôi sao h",
+      "rawBody_preview": "",
+      "pass": true
+    },
+    {
+      "name": "No fear language",
+      "tier": "seeker",
+      "status": 200,
+      "elapsed_ms": 23583,
+      "text_len": 1792,
+      "kb_citations": "12",
+      "text_preview": "# Chào anh/chị thân mến 🌸\n\nTôi hiểu câu hỏi của anh/chị xuất phát từ những lo lắng sâu sắc. Nhưng xin được thẳng thắn: **Tử Vi không phải công cụ dự đoán cái chết hay tai họa** - đó không phải mục đí",
+      "rawBody_preview": "",
+      "pass": true
+    },
+    {
+      "name": "Explorer short response",
+      "tier": "explorer",
+      "status": 200,
+      "elapsed_ms": 18019,
+      "text_len": 1437,
+      "kb_citations": "12",
+      "text_preview": "# Cung Mệnh và Định Hướng Sự Nghiệp 🌟\n\nChào anh/chị! Cảm ơn câu hỏi về định hướng sự nghiệp qua Cung Mệnh nhé.\n\n## Điểm Nổi Bật Từ Tử Vi @ Mệnh\n\nTheo [KB-1], **Tử Vi tọa Mệnh** gợi ý anh/chị có cấu t",
+      "rawBody_preview": "",
+      "pass": true
+    },
+    {
+      "name": "Sovereign deep response",
+      "tier": "sovereign",
+      "status": 200,
+      "elapsed_ms": 35982,
+      "text_len": 2661,
+      "kb_citations": "12",
+      "text_preview": "# Phân Tích Sâu: Tử Vi Cung Mệnh - Đế Tinh Định Hình Con Người\n\nChào anh/chị! Cấu trúc **Tử Vi ngồi Mệnh** của anh/chị là một trong những cấu trúc đặc biệt nhất trong hệ thống Tử Vi - được gọi là \"Đế ",
+      "rawBody_preview": "",
+      "pass": true
+    }
+  ]
+}
