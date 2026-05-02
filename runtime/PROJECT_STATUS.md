@@ -10,7 +10,7 @@
 ## §0. Header
 
 - **Generator:** `aier-state-update v1.0` invoked via `scripts/runtime/generate_project_status.py v1.1`
-- **Source commit:** `5aa99180839b0dbf7fe02405366f2e52777061a9` (short: `5aa9918`)
+- **Source commit:** `c718a88042cc90802cfb1f697155d79ba93aad63` (short: `c718a88`)
 - **Auto-generated:** `true` (do not hand-edit)
 - **Authority:** repo-backed automation per LAW_N8 §L8.2 explicitly enabled CI mode (state-mirror auto-regenerate scope only)
 
@@ -68,11 +68,11 @@
 
 | SHA | Author | Subject |
 |---|---|---|
+| `c718a88` | unitonzengarden | qa(lane02/uzg): PLUS Hub V2 upgrade QA + LAW-compliant deliverables |
+| `cfc06cc` | Uniton Zen | Merge pull request #103 from unitonzengarden/feat/lane01-fix3-law-compliance-retroactive |
+| `c14362e` | CLAC Executor | fix(audit): retroactive LAW-NTS-LANE-1-10 compliance for Fix-3 deliverables [vercel skip] |
+| `43c0697` | AIER State Bot | [auto-status] regen runtime+network surfaces from 5aa9918 [vercel skip] |
 | `5aa9918` | unitonzengarden | chore(lane02/uzg/tao): LAW-compliant deliverables for TAO mini app chuan |
-| `9cad4f9` | Uniton Zen | Merge pull request #102 from unitonzengarden/audit/lane01-clac1-v2-home-fix-3-keystone-nts-5bugs |
-| `8289145` | Ecosystem Poller Bot | poll: ecosystem state update [vercel skip] |
-| `0904698` | CLAC Executor | audit: V2 HOME Fix-3 Keystone — 5 NTS bugs LIVE |
-| `a5b4a9b` | unitonzengarden | feat(sync): extend to include snapshots/ reports/ screenshots/ |
 
 ## §7. Latest 5 DONE Tasks (from MASTER_CHECKLIST)
 
