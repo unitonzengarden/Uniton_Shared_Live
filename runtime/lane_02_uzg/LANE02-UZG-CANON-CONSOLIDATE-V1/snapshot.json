@@ -116,7 +116,7 @@
     "AC-11_handoff_to_lane01": "PASS",
     "AC-12_status_dashboards": "PASS",
     "AC-13_index_with_30plus_raw_urls": "PASS_41_urls",
-    "AC-14_http_200_validation_5_of_5": "TO_VERIFY_POST_PUSH"
+    "AC-14_http_200_validation_5_of_5": "PASS_5_of_5_verified_2026-05-02_commit_0c32973"
   },
   "redlines": {
     "R-CANON-CONSOL-01_append_only": "PASS",

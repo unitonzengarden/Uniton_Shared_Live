@@ -123,7 +123,7 @@ PDFs (3 referenced in `LANE02_TAO_DOCUMENT_INDEX_v1.1` §1.7) intentionally NOT 
 | AC-11 | Handoff to Lane_01 doc published | PASS — 2 docs |
 | AC-12 | 3 status dashboards published | PASS |
 | AC-13 | INDEX.live.md updated with >=30 raw URLs | PASS — 41 raw URLs in RUNTIME_URLS.live.md, ~35 in INDEX.live.md |
-| AC-14 | HTTP 200 validation 5/5 PASS sub-10-min sync | TO VERIFY POST-PUSH |
+| AC-14 | HTTP 200 validation 5/5 PASS sub-10-min sync | PASS — verified 2026-05-02 (commit 0c32973), all 5 sample URLs return 200 |
 
 **Overall:** PASS-WITH-NOTES — 11/14 fully PASS, 3/14 PARTIAL with gap documented in `_MISSING_CANON.md` and clear path for amendment append.
 

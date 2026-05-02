@@ -1,6 +1,6 @@
 # LANE02-UZG-CANON-CONSOLIDATE-V1 — REPORT
 
-## Status: PASS-WITH-NOTES
+## Status: PASS-WITH-NOTES (AC-14 verified 5/5 HTTP 200 post-sync)
 
 ## Summary (Vietnamese)
 
@@ -12,7 +12,7 @@
 - Handoff to Lane_01: **2 files** — HANDOFF_TUVI_V2_UI_INTEGRATION.md + api_endpoints.md.
 - Status dashboards: **3 LIVE** — tao_modules + aier_tao_kb + golive_blockers.
 - Master INDEX.live.md updated với **41 raw URLs**; RUNTIME_URLS.live.md là flat catalog song song.
-- HTTP 200 validation 5/5: **TO VERIFY** sau push (~5 min sync window).
+- HTTP 200 validation 5/5: **PASS** — verified 2026-05-02 post-sync (commit 0c32973 -> Live mirror). All 5 sample URLs return 200.
 
 ## Critical Findings
 
@@ -78,9 +78,9 @@ https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/runtim
 - [x] AC-11: Handoff to Lane_01 doc published (2 files)
 - [x] AC-12: 3 status dashboards published
 - [x] AC-13: INDEX.live.md updated với 41 raw URLs (>= 30 target)
-- [ ] AC-14: HTTP 200 validation 5/5 PASS sau sync (TO VERIFY post-push)
+- [x] AC-14: HTTP 200 validation 5/5 PASS sau sync — VERIFIED 2026-05-02 (commit 0c32973)
 
-**11/14 PASS, 1/14 MISSING with gap documented, 2/14 PARTIAL with gap documented, 1/14 TO VERIFY.**
+**12/14 PASS, 1/14 MISSING with gap documented, 2/14 PARTIAL with gap documented.**
 
 ## Iteration log
 
