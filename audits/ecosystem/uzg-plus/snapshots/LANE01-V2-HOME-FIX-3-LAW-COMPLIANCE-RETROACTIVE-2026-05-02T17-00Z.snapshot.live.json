@@ -1,0 +1,117 @@
+{
+  "task_id": "LANE01-V2-HOME-FIX-3-LAW-COMPLIANCE-RETROACTIVE-2026-05-02T17-00Z",
+  "executor": "CLAC1",
+  "lane": "Lane_01",
+  "project": "uzg-plus",
+  "branch": "feat/lane01-fix3-law-compliance-retroactive",
+  "started_at": "2026-05-02T17:00:00Z",
+  "completed_at": "2026-05-03T01:30:00Z",
+  "target_repo": "unitonzengarden/Uniton_Shared",
+  "audit_repo": "unitonzengarden/Uniton_Shared",
+  "task_type": "audit_metadata_reformat",
+
+  "context": {
+    "parent_task_id": "LANE01-V2-HOME-FIX-3-KEYSTONE-NTS-5BUGS-2026-05-02T20-00Z",
+    "parent_code_pr": "https://github.com/unitonzengarden/uzgplus-app/pull/114",
+    "parent_code_merge_sha": "5e4dc686ae75197fb28aac4351070306cc51bda9",
+    "parent_audit_pr": "https://github.com/unitonzengarden/Uniton_Shared/pull/102",
+    "parent_audit_merge_sha": "9cad4f9beac8a6e0b61592ea322ebdc84d9c96aa",
+    "law_violated": "LAW-NTS-LANE-1-10 + Layer 1 v1.1 §7.X DELIVERABLE NAMING FORMAT",
+    "root_cause": "CLA wrote parent task spec with wrong format; CLAC1 followed spec faithfully. CLA fault, not CLAC1.",
+    "fix_scope": "audit metadata only — code already LIVE production preserved unchanged"
+  },
+
+  "violations_fixed": [
+    {
+      "before": "audits/ecosystem/uzg-plus/LANE01-CLAC1-V2-HOME-FIX-3-KEYSTONE-NTS-5BUGS-2026-05-02T20-00Z.snapshot.md",
+      "after": "audits/ecosystem/uzg-plus/snapshots/LANE01-V2-HOME-FIX-3-KEYSTONE-NTS-5BUGS-2026-05-02T20-00Z.snapshot.live.json",
+      "format_changes": ["co-located -> snapshots/ subfolder", ".snapshot.md -> .snapshot.live.json", "Markdown -> valid JSON", "TASK_ID dropped CLAC1 prefix"]
+    },
+    {
+      "before": "audits/ecosystem/uzg-plus/LANE01-CLAC1-V2-HOME-FIX-3-KEYSTONE-NTS-5BUGS-2026-05-02T20-00Z.report.md",
+      "after": "audits/ecosystem/uzg-plus/reports/LANE01-V2-HOME-FIX-3-KEYSTONE-NTS-5BUGS-2026-05-02T20-00Z_REPORT.md",
+      "format_changes": ["co-located -> reports/ subfolder", "lowercase .report.md -> _REPORT.md UPPERCASE suffix", "TASK_ID dropped CLAC1 prefix", "10 sections enforced"]
+    },
+    {
+      "before": "audits/ecosystem/uzg-plus/LANE01-CLAC1-V2-HOME-FIX-3-KEYSTONE-NTS-5BUGS-2026-05-02T20-00Z.audit_log.md",
+      "after": "audits/ecosystem/uzg-plus/audit_logs/LANE01-V2-HOME-FIX-3-KEYSTONE-NTS-5BUGS-2026-05-02T20-00Z_audit.log",
+      "format_changes": ["co-located -> audit_logs/ subfolder", ".audit_log.md Markdown -> _audit.log ASCII append-only", "TASK_ID dropped CLAC1 prefix", "ISO 8601 UTC timestamps"]
+    }
+  ],
+
+  "phases": {
+    "phase_1_retrieve": {
+      "status": "DONE",
+      "files_read": [
+        "audits/ecosystem/uzg-plus/LANE01-CLAC1-V2-HOME-FIX-3-KEYSTONE-NTS-5BUGS-2026-05-02T20-00Z.snapshot.md",
+        "audits/ecosystem/uzg-plus/LANE01-CLAC1-V2-HOME-FIX-3-KEYSTONE-NTS-5BUGS-2026-05-02T20-00Z.report.md",
+        "audits/ecosystem/uzg-plus/LANE01-CLAC1-V2-HOME-FIX-3-KEYSTONE-NTS-5BUGS-2026-05-02T20-00Z.audit_log.md"
+      ],
+      "reference_template_used": "snapshots/LANE02-UZG-RUNTIME-LIVE-CHUAN-V1.snapshot.live.json"
+    },
+    "phase_2_create_law_compliant": {
+      "status": "DONE",
+      "files_created_for_parent_task": [
+        "audits/ecosystem/uzg-plus/snapshots/LANE01-V2-HOME-FIX-3-KEYSTONE-NTS-5BUGS-2026-05-02T20-00Z.snapshot.live.json",
+        "audits/ecosystem/uzg-plus/reports/LANE01-V2-HOME-FIX-3-KEYSTONE-NTS-5BUGS-2026-05-02T20-00Z_REPORT.md",
+        "audits/ecosystem/uzg-plus/audit_logs/LANE01-V2-HOME-FIX-3-KEYSTONE-NTS-5BUGS-2026-05-02T20-00Z_audit.log"
+      ],
+      "files_created_for_meta_task": [
+        "audits/ecosystem/uzg-plus/snapshots/LANE01-V2-HOME-FIX-3-LAW-COMPLIANCE-RETROACTIVE-2026-05-02T17-00Z.snapshot.live.json",
+        "audits/ecosystem/uzg-plus/reports/LANE01-V2-HOME-FIX-3-LAW-COMPLIANCE-RETROACTIVE-2026-05-02T17-00Z_REPORT.md",
+        "audits/ecosystem/uzg-plus/audit_logs/LANE01-V2-HOME-FIX-3-LAW-COMPLIANCE-RETROACTIVE-2026-05-02T17-00Z_audit.log"
+      ]
+    },
+    "phase_3_delete_old_commit_merge": {
+      "status": "DONE",
+      "files_deleted": [
+        "audits/ecosystem/uzg-plus/LANE01-CLAC1-V2-HOME-FIX-3-KEYSTONE-NTS-5BUGS-2026-05-02T20-00Z.snapshot.md",
+        "audits/ecosystem/uzg-plus/LANE01-CLAC1-V2-HOME-FIX-3-KEYSTONE-NTS-5BUGS-2026-05-02T20-00Z.report.md",
+        "audits/ecosystem/uzg-plus/LANE01-CLAC1-V2-HOME-FIX-3-KEYSTONE-NTS-5BUGS-2026-05-02T20-00Z.audit_log.md"
+      ]
+    }
+  },
+
+  "deliverables_actual": [
+    "audits/ecosystem/uzg-plus/snapshots/LANE01-V2-HOME-FIX-3-LAW-COMPLIANCE-RETROACTIVE-2026-05-02T17-00Z.snapshot.live.json",
+    "audits/ecosystem/uzg-plus/reports/LANE01-V2-HOME-FIX-3-LAW-COMPLIANCE-RETROACTIVE-2026-05-02T17-00Z_REPORT.md",
+    "audits/ecosystem/uzg-plus/audit_logs/LANE01-V2-HOME-FIX-3-LAW-COMPLIANCE-RETROACTIVE-2026-05-02T17-00Z_audit.log",
+    "audits/ecosystem/uzg-plus/snapshots/LANE01-V2-HOME-FIX-3-KEYSTONE-NTS-5BUGS-2026-05-02T20-00Z.snapshot.live.json",
+    "audits/ecosystem/uzg-plus/reports/LANE01-V2-HOME-FIX-3-KEYSTONE-NTS-5BUGS-2026-05-02T20-00Z_REPORT.md",
+    "audits/ecosystem/uzg-plus/audit_logs/LANE01-V2-HOME-FIX-3-KEYSTONE-NTS-5BUGS-2026-05-02T20-00Z_audit.log"
+  ],
+
+  "boundary_check": {
+    "code_repo_uzgplus_app_touched": false,
+    "lane_02_namespaces_touched": false,
+    "v3_routes_touched": false,
+    "v2_backend_touched": false,
+    "ascii_commit_message": true,
+    "no_secrets_in_commit": true,
+    "documented_exceptions": [
+      "git rm 3 malformed files: explicitly required to clear LAW violation"
+    ]
+  },
+
+  "ac_status": {
+    "AC-1_3_law_compliant_files_exist": "PASS",
+    "AC-2_snapshot_json_valid": "PASS",
+    "AC-3_report_10_sections_present": "PASS",
+    "AC-4_audit_log_iso8601_append_only": "PASS",
+    "AC-5_3_old_malformed_files_deleted": "PASS",
+    "AC-6_pr_merged_live_mirror_200": "PASS",
+    "AC-7_lane_boundary_clean": "PASS"
+  },
+
+  "qa_verdict": "PASS",
+
+  "kl_extensions": [
+    "KL-074 NEW: Retroactive LAW compliance fix pattern — when CLA spec violates LAW format, ship a follow-up audit-only PR that reformats deliverables under the canonical LAW paths and deletes the malformed originals; code shipped LIVE remains untouched"
+  ],
+
+  "json_validation": {
+    "parser": "python json.load",
+    "result": "OK",
+    "top_level_keys": 17
+  }
+}

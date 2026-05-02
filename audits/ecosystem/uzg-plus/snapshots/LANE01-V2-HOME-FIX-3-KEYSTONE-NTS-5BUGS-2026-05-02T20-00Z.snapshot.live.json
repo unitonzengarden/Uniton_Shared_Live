@@ -1,0 +1,174 @@
+{
+  "task_id": "LANE01-V2-HOME-FIX-3-KEYSTONE-NTS-5BUGS-2026-05-02T20-00Z",
+  "executor": "CLAC1",
+  "lane": "Lane_01",
+  "project": "uzg-plus",
+  "branch": "feat/v2-home-fix-3-keystone-nts-5bugs",
+  "started_at": "2026-05-02T20:00:00Z",
+  "completed_at": "2026-05-02T16:40:50Z",
+  "target_repo": "unitonzengarden/uzgplus-app",
+  "audit_repo": "unitonzengarden/Uniton_Shared",
+  "forbidden_repos_untouched": [
+    "AIFI_LIFE",
+    "aier-life-super-app",
+    "_archive_chatbot",
+    "Uniton_OS"
+  ],
+
+  "phases": {
+    "phase_1_discovery": {
+      "status": "DONE",
+      "components_mapped": 5,
+      "deliverable": "audits/ecosystem/uzg-plus/LANE01-CLAC1-V2-HOME-FIX-3-KEYSTONE-NTS-5BUGS-2026-05-02T20-00Z/evidence/PLAN.md"
+    },
+    "round_1_b1_popup_close": {
+      "status": "DONE",
+      "commit": "d346219b",
+      "files_modified": [
+        "apps/uzg-pwa/src/components/layout/URewardV4FloatingShell.jsx",
+        "apps/uzg-pwa/src/styles.css",
+        "src/components/layout/URewardV4FloatingShell.jsx",
+        "src/styles.css"
+      ]
+    },
+    "round_2_b2_profile_avatar": {
+      "status": "DONE",
+      "commit": "d8111bd6",
+      "files_modified": [
+        "apps/uzg-pwa/src/styles.css",
+        "src/styles.css"
+      ]
+    },
+    "round_3_b5_content_limits": {
+      "status": "DONE",
+      "commit": "b470ec64",
+      "files_modified": [
+        "apps/uzg-pwa/src/components/flow/PostComposer.jsx",
+        "apps/uzg-pwa/src/styles.css",
+        "src/components/flow/PostComposer.jsx",
+        "src/styles.css"
+      ]
+    },
+    "round_4_b3_composer_page": {
+      "status": "DONE",
+      "commit": "5af73cac",
+      "files_modified": [
+        "apps/uzg-pwa/src/App.jsx",
+        "apps/uzg-pwa/src/pages/ComposePage.jsx",
+        "apps/uzg-pwa/src/styles.css",
+        "src/App.jsx",
+        "src/pages/ComposePage.jsx",
+        "src/styles.css"
+      ]
+    },
+    "round_5_b4_lightbox": {
+      "status": "DONE",
+      "commit": "9202a0b8",
+      "files_modified": [
+        "apps/uzg-pwa/src/App.jsx",
+        "apps/uzg-pwa/src/components/flow/FlowFeedList.jsx",
+        "apps/uzg-pwa/src/components/media/MediaLightbox.jsx",
+        "apps/uzg-pwa/src/styles.css",
+        "src/App.jsx",
+        "src/components/flow/FlowFeedList.jsx",
+        "src/components/media/MediaLightbox.jsx",
+        "src/styles.css"
+      ]
+    },
+    "phase_3_deploy_live": {
+      "status": "DONE",
+      "pr_url": "https://github.com/unitonzengarden/uzgplus-app/pull/114",
+      "merge_sha": "5e4dc686ae75197fb28aac4351070306cc51bda9",
+      "merged_at": "2026-05-02T16:40:50Z",
+      "cloudflare_deploy_run_id": "25256693185",
+      "cloudflare_deploy_status": "SUCCESS",
+      "cloudflare_deploy_duration_seconds": 90,
+      "production_css_bundle": "index-Cq5OYFDU.css",
+      "production_js_bundle": "index-DCqZtxur.js",
+      "kl028_probe_routes_total": 12,
+      "kl028_probe_routes_200": 12
+    }
+  },
+
+  "deliverables_actual": [
+    "audits/ecosystem/uzg-plus/snapshots/LANE01-V2-HOME-FIX-3-KEYSTONE-NTS-5BUGS-2026-05-02T20-00Z.snapshot.live.json",
+    "audits/ecosystem/uzg-plus/reports/LANE01-V2-HOME-FIX-3-KEYSTONE-NTS-5BUGS-2026-05-02T20-00Z_REPORT.md",
+    "audits/ecosystem/uzg-plus/audit_logs/LANE01-V2-HOME-FIX-3-KEYSTONE-NTS-5BUGS-2026-05-02T20-00Z_audit.log",
+    "audits/ecosystem/uzg-plus/LANE01-CLAC1-V2-HOME-FIX-3-KEYSTONE-NTS-5BUGS-2026-05-02T20-00Z/evidence/PLAN.md",
+    "audits/ecosystem/uzg-plus/LANE01-CLAC1-V2-HOME-FIX-3-KEYSTONE-NTS-5BUGS-2026-05-02T20-00Z/evidence/kl-028-probe-LIVE.txt",
+    "audits/ecosystem/uzg-plus/LANE01-CLAC1-V2-HOME-FIX-3-KEYSTONE-NTS-5BUGS-2026-05-02T20-00Z/evidence/git-diff-summary.md",
+    "audits/ecosystem/uzg-plus/LANE01-CLAC1-V2-HOME-FIX-3-KEYSTONE-NTS-5BUGS-2026-05-02T20-00Z/evidence/iteration-log-per-bug.md",
+    "audits/ecosystem/uzg-plus/LANE01-CLAC1-V2-HOME-FIX-3-KEYSTONE-NTS-5BUGS-2026-05-02T20-00Z/evidence/manual-walkthrough-evidence.md"
+  ],
+
+  "boundary_check": {
+    "lane_02_namespaces_touched": false,
+    "v2_backend_touched": false,
+    "v3_routes_touched": false,
+    "productV2Service_touched": false,
+    "ascii_commit_message": true,
+    "no_secrets_in_commit": true,
+    "documented_exceptions": []
+  },
+
+  "ac_status": {
+    "AC-1_5_bugs_fixed_LIVE": "PASS",
+    "AC-2_v2_backend_untouched": "PASS",
+    "AC-3_lane_boundary": "PASS",
+    "AC-4_kl028_probe": "PASS (12/12 routes 200)",
+    "AC-5_console_network_clean": "PASS",
+    "AC-6_qa_evidence_live": "PASS",
+    "AC-7_per_bug_commits": "PASS (5 granular commits)",
+    "AC-8_content_limits_edge_cases": "PASS"
+  },
+
+  "qa_verdict": "PASS",
+
+  "bug_status_per_item": {
+    "B1_ureward_close": "shipped — commit d346219b",
+    "B2_profile_avatar": "shipped — commit d8111bd6",
+    "B3_composer_wire": "shipped — commit 5af73cac",
+    "B4_lightbox_video": "shipped — commit 9202a0b8",
+    "B5_content_limits": "shipped — commit b470ec64"
+  },
+
+  "production_evidence": {
+    "code_pr_url": "https://github.com/unitonzengarden/uzgplus-app/pull/114",
+    "code_merge_sha": "5e4dc686ae75197fb28aac4351070306cc51bda9",
+    "audit_pr_url": "https://github.com/unitonzengarden/Uniton_Shared/pull/102",
+    "audit_merge_sha": "9cad4f9beac8a6e0b61592ea322ebdc84d9c96aa",
+    "cloudflare_deploy_run": "25256693185",
+    "cloudflare_deploy_status": "SUCCESS",
+    "kl028_probe_results_count": "12/12 routes 200",
+    "production_url": "https://uzg.plus/",
+    "production_css_markers_verified": [
+      "u-reward-v4-floating-shell-close{",
+      "u-reward-v4-floating-shell-wrapper{",
+      "enta-profile-avatar z-index:3",
+      "media-lightbox-overlay{",
+      "compose-page-shell{",
+      "flow-composer-counter-error{"
+    ]
+  },
+
+  "kl_extensions": [
+    "KL-070 reaffirmed (5th application — stacked sprints)",
+    "KL-067 reaffirmed (4th application — V2 EXACT body shape)",
+    "KL-073 NEW: Lightbox provider pattern for cross-route media viewers"
+  ],
+
+  "v2_backend_immutability_proof": {
+    "aier_server_changed": false,
+    "worker_changed": false,
+    "supabase_functions_changed": false,
+    "productV2Service_changed": false
+  },
+
+  "evidence_urls": {
+    "code_pr": "https://github.com/unitonzengarden/uzgplus-app/pull/114",
+    "audit_pr": "https://github.com/unitonzengarden/Uniton_Shared/pull/102",
+    "cloudflare_deploy_run": "https://github.com/unitonzengarden/uzgplus-app/actions/runs/25256693185"
+  },
+
+  "nts_message": "5 bugs B1-B5 LIVE production tai uzg.plus. Mo trinh duyet test 5 scenarios per evidence/manual-walkthrough-evidence.md."
+}
