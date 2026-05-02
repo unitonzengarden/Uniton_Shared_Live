@@ -1,0 +1,28 @@
+KL-028 PRODUCTION PROBE — Sprint 5.10 Auth OTP refactor
+Date: 2026-05-02
+
+=== ROUTES ===
+200 https://uzg.plus/v3/
+200 https://uzg.plus/v3/login                      [REFACTORED Sprint 5.10 — email-only OTP]
+200 https://uzg.plus/v3/signup                     [REFACTORED Sprint 5.10 — email-only OTP]
+200 https://uzg.plus/v3/forgot-password            [Sprint 5.10 redirect → /login]
+200 https://uzg.plus/v3/reset-password             [Sprint 5.10 redirect → /login]
+200 https://uzg.plus/v3/account/change-password    [Sprint 5.10 redirect → /settings]
+200 https://uzg.plus/v3/settings
+200 https://uzg.plus/v3/profile/me
+200 https://uzg.plus/v3/connections
+200 https://uzg.plus/v3/wallet
+200 https://uzg.plus/v3/enta
+200 https://uzg.plus/v3/plus
+200 https://uzg.plus/v3/u-reward
+200 https://uzg.plus/v3/tao
+200 https://uzg.plus/api/health
+
+=== V2 WORKER ENDPOINT ===
+400 POST https://uzg.plus/api/v1/auth/otp/request (empty body)
+  → Expected: AUTH_OTP_IDENTIFIER_REQUIRED
+  → Confirms Worker is deployed and reachable
+
+RESULT: 14/14 SPA routes 200 + Worker reachable.
+Sprint 5.10 deleted routes redirect successfully (200 because Navigate component
+serves redirect target). Sprint 5.1-5.9 routes UNTOUCHED.

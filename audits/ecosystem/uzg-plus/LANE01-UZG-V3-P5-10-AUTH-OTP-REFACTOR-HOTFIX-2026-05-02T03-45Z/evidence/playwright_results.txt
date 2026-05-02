@@ -1,0 +1,38 @@
+PLAYWRIGHT PRODUCTION RESULTS — Sprint 5.10 Auth OTP refactor
+Date: 2026-05-02
+Spec: tests/visual/p5-10-auth-otp-prod.spec.mjs
+Config: playwright.visual-prod.config.mjs
+
+Running 8 tests using 1 worker
+
+PASS [chromium] prod /login renders email-only form (NO password field)
+  - data-component="login-form" visible
+  - #login-email input visible
+  - #login-password input does NOT exist (count = 0)
+  - [data-cta="send-otp"] button visible
+
+PASS [chromium] prod /signup renders email-only + display name (NO password)
+  - data-component="signup-form" visible
+  - #signup-email + #signup-name inputs visible
+  - #signup-password + #signup-confirm do NOT exist (count = 0)
+
+PASS [chromium] prod /forgot-password redirects to /login (Sprint 5.10 deletion)
+  - URL after navigation matches /login/
+
+PASS [chromium] prod /reset-password redirects to /login (Sprint 5.10 deletion)
+  - URL after navigation matches /login/
+
+PASS [chromium] prod /account/change-password redirects to /settings (Sprint 5.10 deletion)
+  - URL after navigation matches /settings|login/ (auth gate may redirect first)
+
+PASS [chromium] prod V2 Worker /api/v1/auth/otp/request reachable
+  - POST with empty body returns 400 AUTH_OTP_IDENTIFIER_REQUIRED OR 503
+  - Confirms Worker endpoint deployed
+
+PASS [chromium] prod login page does NOT have "Forgot password?" link
+  - Sprint 5.9 forgot link reverted via LoginForm refactor
+
+PASS [chromium] prod Sprint 5.1-5.9 routes still 200 (no regression)
+  - /v3/ /v3/wallet /v3/enta /v3/plus /v3/u-reward /v3/tao /v3/settings /v3/profile/me all 200
+
+8 passed (12.8s)

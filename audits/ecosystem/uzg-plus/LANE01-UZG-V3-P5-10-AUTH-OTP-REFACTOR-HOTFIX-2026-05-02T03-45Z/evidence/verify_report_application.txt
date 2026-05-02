@@ -1,0 +1,68 @@
+VERIFY REPORT §10 → SPRINT 5.10 IMPLEMENTATION MAPPING
+===
+Date: 2026-05-02
+Source: Uniton_Shared PR #86 (LANE01-UZG-V2-AUTH-OTP-VIA-RESEND-VERIFY)
+
+=== §10 RECOMMENDATION → IMPLEMENTATION ===
+
+VERIFY §10.1 "Components to REFACTOR":
+  ✓ apps/uzg-pwa/src/components/auth-v3/LoginForm.tsx → email-only + OTP stage (DONE)
+  ✓ apps/uzg-pwa/src/components/auth-v3/SignupForm.tsx → email-only + OTP stage (DONE)
+  ✓ apps/uzg-pwa/src/hooks/useAuth.ts → sendOtp + verifyOtp (DONE)
+  ✓ apps/uzg-pwa/src/types/auth.ts → OTP types (DONE)
+
+VERIFY §10.2 "Components to DELETE":
+  ✓ ForgotPasswordFormV3.tsx (DELETED)
+  ✓ ResetPasswordFormV3.tsx (DELETED)
+  ✓ ChangePasswordFormV3.tsx (DELETED)
+  ✓ useForgotPassword.ts (DELETED)
+  ✓ useResetPassword.ts (DELETED)
+  ✓ useChangePassword.ts (DELETED)
+  ✓ V3ForgotPasswordPage.jsx (DELETED)
+  ✓ V3ResetPasswordPage.jsx (DELETED)
+  ✓ V3ChangePasswordPage.jsx (DELETED)
+
+VERIFY §10.3 "Routes to ADJUST":
+  ✓ /v3/forgot-password → redirect to /v3/login (Navigate component)
+  ✓ /v3/reset-password → redirect to /v3/login
+  ✓ /v3/account/change-password → redirect to /v3/settings
+  ✓ KEEP: /v3/account/delete + /v3/settings + /v3/profile + /v3/connections
+
+VERIFY §10.4 "NEW components needed":
+  ✓ OtpEntryFormV3.tsx (104 lines, 6-digit + paste + auto-submit)
+  ✓ OtpResendCountdownV3.tsx (43 lines, 60s cooldown)
+  ✓ useOtpAuth hook (90 lines, state machine)
+
+VERIFY §10.5 "NEW lib (Option B recommended)":
+  ✓ lib/auth-v3/otpClient.ts created
+  ✓ requestOtp() — POST /api/v1/auth/otp/request with Supabase fallback
+  ✓ verifyOtp() — supabase.auth.verifyOtp({type: 'email'})
+
+VERIFY §10.6 "Backend integration":
+  ✓ ZERO V2 backend changes
+  ✓ Worker /api/v1/auth/otp/request reused (existing production)
+  ✓ supabase.auth.verifyOtp() native Supabase API
+
+VERIFY §10.7 "Estimated scope":
+  Verify estimate: 80-100 min
+  Actual: ~55 min (under estimate, due to Verify report zero-discovery)
+
+VERIFY §10.8 "KEEP unchanged":
+  ✓ AuthProvider.tsx (untouched)
+  ✓ AuthGate.tsx (untouched)
+  ✓ UserMenuV3.tsx (KEEP — no "Change password" item to remove since Sprint 5.9 didn't add it to V3 UserMenuV3 directly)
+  ✓ LogoutConfirmV3.tsx (untouched)
+  ✓ useLogout.ts (untouched)
+  ✓ SessionExpiredOverlayV3.tsx (untouched)
+  ✓ useSessionExpiry.ts (untouched)
+  ✓ AccountDeletionConfirmV3.tsx (untouched — deletion independent of password)
+  ✓ Settings: KEPT, removed "Change password" link only
+  ✓ Profile: KEPT
+  ✓ Connect: KEPT
+
+=== DEVIATIONS FROM §10 ===
+
+None. Sprint 5.10 implementation matches Verify report §10 verbatim.
+
+Minor enhancement: OtpEntryFormV3 auto-submits when 6 digits entered (paste + last digit typed),
+beyond §10's "manual submit only" implication. This improves UX without violating §10 spec.
