@@ -1,9 +1,44 @@
 {
   "project_slug": "uzg-plus",
   "github_repo": "unitonzengarden/uzgplus-app",
-  "polled_at": "2026-05-02T00:06:08.054Z",
+  "polled_at": "2026-05-02T03:51:14.115Z",
   "count": 30,
   "commits": [
+    {
+      "sha": "feb0fecb6d30fa0a77d37cadfc8aee17e4f5d239",
+      "message": "feat(p5-9): UZG+ Phase 5 Sprint 5.9 — Auth UX hardening + Settings + Profile + Follow [solo CLAC1] (#88)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-02T02:27:42Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/feb0fecb6d30fa0a77d37cadfc8aee17e4f5d239"
+    },
+    {
+      "sha": "415d19a3c5124a29a21fe667d53ef3dba66dad9d",
+      "message": "feat(p5-8): UZG+ Phase 5 Sprint 5.8 — TAO Hybrid + Mock integration [solo CLAC1] (#87)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-02T01:58:59Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/415d19a3c5124a29a21fe667d53ef3dba66dad9d"
+    },
+    {
+      "sha": "0bf7565556bf339b42747439bae0d956905c682a",
+      "message": "feat(uzg-pwa): feed hooks + V3 home; prod visual specs; refresh s1-after screenshots",
+      "author": "LANE01-Cursor",
+      "committed_at": "2026-05-02T01:40:17Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/0bf7565556bf339b42747439bae0d956905c682a"
+    },
+    {
+      "sha": "19af98f4da5ab9f9081c2e578927a8acf8fe0ad7",
+      "message": "chore(lane01): add prod screenshots, backend audit dumps, Playwright prod config",
+      "author": "LANE01-Cursor",
+      "committed_at": "2026-05-02T01:39:30Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/19af98f4da5ab9f9081c2e578927a8acf8fe0ad7"
+    },
+    {
+      "sha": "28528b1689597df9fe065c961c88b36e15e57872",
+      "message": "feat(p5-7): UZG+ Phase 5 Sprint 5.7 — U-Reward Direct reward_emit Edge Function [solo CLAC1] (#86)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-02T01:23:43Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/28528b1689597df9fe065c961c88b36e15e57872"
+    },
     {
       "sha": "caa35f860492970ceb691063c90424e825c09985",
       "message": "feat(p5-6): UZG+ Phase 5 Sprint 5.6 — PLUS Hub + Membership Hybrid integration [solo CLAC1] (#85)",
@@ -178,41 +213,6 @@
       "author": "Uniton Zen",
       "committed_at": "2026-05-01T07:23:57Z",
       "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/5a893e7dc940a2e3ba27044e6a1b5106d0cd8d82"
-    },
-    {
-      "sha": "3bb0b82d5a9d810a399bd8ac5b721c91b54bea52",
-      "message": "feat(s5): UZG+ V3 WALLET module — 6 components + 5 pages + KL-030 (#64)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-05-01T07:05:28Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/3bb0b82d5a9d810a399bd8ac5b721c91b54bea52"
-    },
-    {
-      "sha": "cdc81f2d64fe138aca6bb5426fedab70e2fa8ead",
-      "message": "feat(lane02): T-TAO-046-051-V1 — Tử Vi V2 Phase 7 minor cách cục (6 patterns) (#63)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-05-01T05:51:46Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/cdc81f2d64fe138aca6bb5426fedab70e2fa8ead"
-    },
-    {
-      "sha": "6f4f44182f68da8a20961049f22a10627585d1b0",
-      "message": "fix(v3-canon): enforce mobile shell max-width 480px on tablet/desktop per Foundation Canon §1.2 + §8 (#62)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-05-01T05:02:14Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/6f4f44182f68da8a20961049f22a10627585d1b0"
-    },
-    {
-      "sha": "739f5b45e598368657f729ef4f62b01b09d00668",
-      "message": "docs(lane02): T-TAO-036-045-V1 ship report + Lá số Mẫu engine output + nạp âm table + coverage report + 4 screenshots [vercel skip]",
-      "author": "unitonzengarden",
-      "committed_at": "2026-05-01T04:38:43Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/739f5b45e598368657f729ef4f62b01b09d00668"
-    },
-    {
-      "sha": "4050f00723e8d0d583ce3aa539da2c6abf1acd09",
-      "message": "feat(lane02): LANE02-UZG-TAO-T-TAO-036-045-V1 — Tử Vi V2 Phase 6 coverage + demo swap (#60)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-05-01T04:31:47Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/4050f00723e8d0d583ce3aa539da2c6abf1acd09"
     }
   ]
 }
