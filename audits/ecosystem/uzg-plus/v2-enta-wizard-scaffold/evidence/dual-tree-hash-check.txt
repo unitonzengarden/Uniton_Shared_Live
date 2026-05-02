@@ -1,0 +1,22 @@
+KL-05 dual-tree byte-identical proof — Sprint Fix-ENTA-3A
+
+$ diff -q apps/uzg-pwa/src/hooks/useEntaWizardState.js src/hooks/useEntaWizardState.js
+(no output)
+
+$ diff -rq apps/uzg-pwa/src/components/enta/onboarding/ src/components/enta/onboarding/
+(no output)
+
+$ diff -q apps/uzg-pwa/src/pages/EntaOnboardingPage.jsx src/pages/EntaOnboardingPage.jsx
+(no output)
+
+$ diff -q apps/uzg-pwa/src/components/enta/ENTAShell.jsx src/components/enta/ENTAShell.jsx
+(no output)
+
+$ diff -q apps/uzg-pwa/src/App.jsx src/App.jsx
+(no output)
+
+$ diff -q apps/uzg-pwa/src/styles.css src/styles.css
+(no output)
+
+All 9 new files + 3 modified files byte-identical between apps/uzg-pwa/src and root src/.
+KL-05 dual-tree compliance: PASS.

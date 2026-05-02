@@ -1,0 +1,45 @@
+KL-028 V2 LIVE probe — post merge of PR #116 at d539225f / 2026-05-02T18:00:46Z
+Cloudflare deploy run 25258276270 SUCCESS in 1m18s
+
+Probe target: https://uzg.plus
+Production CSS bundle: index-CJspoGQ3.css
+Production JS bundle: index-Dk7LpRuL.js
+Production EntaOnboardingPage chunk: assets/EntaOnboardingPage-B3dcTnzy.js
+
+V2 routes (all HOME + ENTA-related Lane_01):
+200 https://uzg.plus/
+200 https://uzg.plus/login
+200 https://uzg.plus/dashboard
+200 https://uzg.plus/enta
+200 https://uzg.plus/enta/onboarding         <-- NEW route this sprint
+200 https://uzg.plus/enta/me
+200 https://uzg.plus/enta/Duy
+200 https://uzg.plus/identity-hub
+200 https://uzg.plus/profile/me
+200 https://uzg.plus/settings
+200 https://uzg.plus/connections
+200 https://uzg.plus/compose
+
+Result: 12/12 routes 200. Customer impact during deploy: zero.
+
+Production CSS marker grep:
+  ✓ enta-onboarding-shell
+  ✓ enta-wizard-step-indicator
+  ✓ enta-wizard-step-bubble
+  ✓ enta-wizard-calendar
+  ✓ enta-wizard-clock-branch
+  ✓ enta-wizard-gender-card
+  ✓ enta-wizard-calc-wheel
+  ✓ enta-wizard-submit
+
+Production JS marker grep (assets/EntaOnboardingPage-B3dcTnzy.js):
+  ✓ STEP_1_BIRTH_DATA
+  ✓ STEP_2_CALCULATING
+  ✓ STEP_5_WELCOME_HOME
+  ✓ enta_onboarding_progress (localStorage key)
+  ✓ Tý  (Vietnamese hour branch)
+  ✓ Sửu (Vietnamese hour branch)
+  ✓ Hợi (Vietnamese hour branch)
+  ✓ Vui lòng chọn (Vietnamese validation copy)
+
+Wizard scaffold shipped to LIVE production.

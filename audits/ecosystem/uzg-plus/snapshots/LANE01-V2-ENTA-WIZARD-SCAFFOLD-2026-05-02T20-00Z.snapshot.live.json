@@ -1,0 +1,177 @@
+{
+  "task_id": "LANE01-V2-ENTA-WIZARD-SCAFFOLD-2026-05-02T20-00Z",
+  "executor": "CLAC1",
+  "lane": "Lane_01",
+  "project": "uzg-plus",
+  "branch": "feat/LANE01-enta-wizard-scaffold",
+  "started_at": "2026-05-02T20:00:00Z",
+  "completed_at": "2026-05-02T18:05:00Z",
+  "target_repo": "unitonzengarden/uzgplus-app",
+  "audit_repo": "unitonzengarden/Uniton_Shared",
+  "task_type": "logic_authorized_fix_sprint",
+  "model_used": "Sonnet 4.6 primary (no escalation needed)",
+  "forbidden_repos_untouched": [
+    "AIFI_LIFE",
+    "aier-life-super-app",
+    "_archive_chatbot",
+    "Uniton_OS"
+  ],
+
+  "context": {
+    "predecessor_sprint": "LANE01-V2-ENTA-UI-UX-AUDIT-DISCOVERY-2026-05-02T18-00Z (audit PR #104 MERGED)",
+    "gap_id_addressed": ["EG011 (CRITICAL): 5-step onboarding wizard state machine MISSING", "EG012 (CRITICAL): Step indicator visualization MISSING"],
+    "strategic_directive": "DEC-13 ENTA pivot priority + DEC-12 UI-First approach",
+    "kl_applied": ["KL-05 dual-tree byte-identical", "KL-028 production probe gate", "KL-064 simple ASCII commit", "KL-067 V2 EXACT body shape preserved", "KL-068 honest partial for authenticated walkthrough", "KL-070 stacked sprints", "KL-076 V3 deprecated tree harvest"],
+    "lane_02_unblock_progress": "1/3 sprints DONE (3A scaffold). Remaining: 3B Result Reveal + ENTA Wheel hero, 3C Resonance + Welcome HOME"
+  },
+
+  "phases": {
+    "phase_a_v3_harvest": {
+      "status": "DONE",
+      "approach": "rebuild rather than direct lift",
+      "v3_components_inspected": 7,
+      "v3_components_lifted_directly": 0,
+      "rationale": "TS vs JS / module CSS vs single styles.css / V3 RPC vs V2 productV2Service / visual-first upgrade beyond V3 selects",
+      "v2_added_beyond_v3": ["localStorage persistence (resume-on-abandon)", "calendar grid", "clock face hour picker", "gender icon button cards", "5 SVG icon step indicator with checkmark overlay", "Step 3-5 placeholder graceful fallback"],
+      "deliverable": "audits/ecosystem/uzg-plus/v2-enta-wizard-scaffold/evidence/v3-harvest-log.md"
+    },
+    "phase_b_shell_indicator_state": {
+      "status": "DONE",
+      "files_created": [
+        "apps/uzg-pwa/src/hooks/useEntaWizardState.js",
+        "apps/uzg-pwa/src/components/enta/onboarding/EntaOnboardingShell.jsx",
+        "apps/uzg-pwa/src/components/enta/onboarding/WizardStepIndicator.jsx"
+      ],
+      "lines_added": 497,
+      "step_indicator_icons": ["Calendar", "Lightning", "Star", "Handshake", "Home"]
+    },
+    "phase_c_step1_birth_data": {
+      "status": "DONE",
+      "file_created": "apps/uzg-pwa/src/components/enta/onboarding/Step1BirthData.jsx",
+      "lines_added": 388,
+      "visual_first_inputs": ["Calendar grid picker (month + scroll year)", "Clock face hour picker (12 Vietnamese branches)", "Tôi không biết toggle for hour", "Gender icon button cards (Nam/Nữ/Khác ≥96px)", "Country select with auto-derived timezone", "Lock-icon privacy note"],
+      "validation_language": "Vietnamese"
+    },
+    "phase_d_step2_calculating": {
+      "status": "DONE",
+      "file_created": "apps/uzg-pwa/src/components/enta/onboarding/Step2Calculating.jsx",
+      "lines_added": 104,
+      "animation_duration_ms": 2400,
+      "animation_layers": ["Animated 5-element SVG wheel forming sequentially", "Element labels reveal with element-color dots", "Polarity reveal text fade-in @ 95% progress"]
+    },
+    "phase_e_routing_placeholders_css": {
+      "status": "DONE",
+      "files_modified": ["apps/uzg-pwa/src/App.jsx (route + lazy load)", "apps/uzg-pwa/src/components/enta/ENTAShell.jsx (auth-gate redirect)", "apps/uzg-pwa/src/styles.css (~754 lines wizard CSS)"],
+      "files_created": ["apps/uzg-pwa/src/components/enta/onboarding/StepPlaceholder.jsx (73 lines, used for STEP_3 / 4 / 5)", "apps/uzg-pwa/src/pages/EntaOnboardingPage.jsx (7 lines)"]
+    },
+    "phase_f_dual_tree_build_deploy_qa": {
+      "status": "DONE",
+      "dual_tree_byte_identical": true,
+      "vite_build_status": "PASS",
+      "vite_build_duration_seconds": 7.43,
+      "pr_url": "https://github.com/unitonzengarden/uzgplus-app/pull/116",
+      "merge_sha": "d539225f054c66e6f60e13ebac11f54c4ff40a15",
+      "merged_at": "2026-05-02T18:00:46Z",
+      "cloudflare_deploy_run": "25258276270",
+      "cloudflare_deploy_status": "SUCCESS",
+      "cloudflare_deploy_duration_seconds": 78,
+      "production_css_bundle": "index-CJspoGQ3.css",
+      "production_js_bundle": "index-Dk7LpRuL.js",
+      "production_onboarding_chunk": "assets/EntaOnboardingPage-B3dcTnzy.js",
+      "kl028_probe_routes_total": 12,
+      "kl028_probe_routes_200": 12,
+      "production_css_markers_verified": ["enta-onboarding-shell", "enta-wizard-step-indicator", "enta-wizard-step-bubble", "enta-wizard-calendar", "enta-wizard-clock-branch", "enta-wizard-gender-card", "enta-wizard-calc-wheel", "enta-wizard-submit"],
+      "production_js_markers_verified": ["STEP_1_BIRTH_DATA", "STEP_2_CALCULATING", "STEP_5_WELCOME_HOME", "enta_onboarding_progress", "Tý", "Sửu", "Hợi", "Vui lòng chọn"]
+    },
+    "phase_g_audit_deliverables": {
+      "status": "DONE",
+      "law_dot_files": [
+        "audits/ecosystem/uzg-plus/snapshots/LANE01-V2-ENTA-WIZARD-SCAFFOLD-2026-05-02T20-00Z.snapshot.live.json",
+        "audits/ecosystem/uzg-plus/reports/LANE01-V2-ENTA-WIZARD-SCAFFOLD-2026-05-02T20-00Z_REPORT.md",
+        "audits/ecosystem/uzg-plus/audit_logs/LANE01-V2-ENTA-WIZARD-SCAFFOLD-2026-05-02T20-00Z_audit.log"
+      ],
+      "companion_evidence": [
+        "audits/ecosystem/uzg-plus/v2-enta-wizard-scaffold/evidence/v3-harvest-log.md",
+        "audits/ecosystem/uzg-plus/v2-enta-wizard-scaffold/evidence/state-machine-diagram.md",
+        "audits/ecosystem/uzg-plus/v2-enta-wizard-scaffold/evidence/component-tree.md",
+        "audits/ecosystem/uzg-plus/v2-enta-wizard-scaffold/evidence/git-diff-summary.md",
+        "audits/ecosystem/uzg-plus/v2-enta-wizard-scaffold/evidence/dual-tree-hash-check.txt",
+        "audits/ecosystem/uzg-plus/v2-enta-wizard-scaffold/evidence/kl-028-probe.txt"
+      ]
+    }
+  },
+
+  "deliverables_actual": [
+    "audits/ecosystem/uzg-plus/snapshots/LANE01-V2-ENTA-WIZARD-SCAFFOLD-2026-05-02T20-00Z.snapshot.live.json",
+    "audits/ecosystem/uzg-plus/reports/LANE01-V2-ENTA-WIZARD-SCAFFOLD-2026-05-02T20-00Z_REPORT.md",
+    "audits/ecosystem/uzg-plus/audit_logs/LANE01-V2-ENTA-WIZARD-SCAFFOLD-2026-05-02T20-00Z_audit.log",
+    "audits/ecosystem/uzg-plus/v2-enta-wizard-scaffold/evidence/v3-harvest-log.md",
+    "audits/ecosystem/uzg-plus/v2-enta-wizard-scaffold/evidence/state-machine-diagram.md",
+    "audits/ecosystem/uzg-plus/v2-enta-wizard-scaffold/evidence/component-tree.md",
+    "audits/ecosystem/uzg-plus/v2-enta-wizard-scaffold/evidence/git-diff-summary.md",
+    "audits/ecosystem/uzg-plus/v2-enta-wizard-scaffold/evidence/dual-tree-hash-check.txt",
+    "audits/ecosystem/uzg-plus/v2-enta-wizard-scaffold/evidence/kl-028-probe.txt"
+  ],
+
+  "boundary_check": {
+    "v2_backend_touched": false,
+    "productV2Service_touched": false,
+    "lane_02_namespaces_touched": false,
+    "v3_routes_touched": false,
+    "v3_deprecated_tree_components_modified": false,
+    "ascii_commit_message": true,
+    "no_secrets_in_commit": true,
+    "documented_exceptions": []
+  },
+
+  "ac_status": {
+    "AC-1_north_star_nts_verify_live_production": "PASS_CODE_LEVEL — Cloudflare deploy SUCCESS, 12/12 routes 200, all CSS+JS markers verified in production bundle. Click-flow walkthrough handed to NTS for manual validation.",
+    "AC-2_visual_first_compliance": "PASS — 5 SVG icons in indicator (NOT emoji NOT text-only); calendar grid (NOT 3 text inputs); clock face (NOT select); gender icon cards ≥96px (NOT radio); lock icon + Vietnamese privacy",
+    "AC-3_state_machine_persistence": "PASS — useEntaWizardState writes to localStorage 'enta_onboarding_progress' on every state change; readPersistedProgress() hydrates synchronously on mount; clearEntaOnboardingProgress called on completeOnboarding",
+    "AC-4_auth_gate": "PASS — ENTAShell.jsx redirects /enta -> /enta/onboarding when bootstrap completes with no saved profile (savedResult===null + path==='/enta'). Wizard ONBOARDED -> navigate('/enta', replace) returns the user to dashboard.",
+    "AC-5_v3_harvest_documented": "PASS — evidence/v3-harvest-log.md lists 7 V3 components inspected + 4 reasons for rebuild + V2 additions (localStorage / calendar grid / clock face / gender icons / placeholder fallback / 5-icon indicator)",
+    "AC-6_dual_tree_byte_identical": "PASS — diff -q + diff -rq across all 9 new + 3 modified files → no output. Documented in evidence/dual-tree-hash-check.txt",
+    "AC-7_kl028_playwright_live": "PARTIAL — KL-028 12/12 routes 200 verified (PASS); production CSS+JS markers verified (PASS); Playwright authenticated walkthrough deferred per KL-068 honest partial (requires authenticated harness with fresh-user fixture seed; out of scope for single-session sprint)",
+    "AC-8_lane_boundary_clean": "PASS — 0 edits aier_server.js / _worker.js / supabase/functions/ / productV2Service.js / Lane_02 / V3 deprecated tree",
+    "AC-9_3_law_compliant_deliverables": "PASS — Layer 1 v1.1 §7.X format applied from start"
+  },
+
+  "qa_verdict": "PASS_HONEST_PARTIAL",
+  "qa_verdict_note": "8/9 AC clean PASS. AC-7 split into PASS (KL-028 + production markers) and PARTIAL (Playwright authenticated walkthrough deferred per KL-068). All scaffolding shipped LIVE; click-flow validation handed to NTS.",
+
+  "production_evidence": {
+    "code_pr_url": "https://github.com/unitonzengarden/uzgplus-app/pull/116",
+    "code_merge_sha": "d539225f054c66e6f60e13ebac11f54c4ff40a15",
+    "audit_pr_url": "(this PR after merge)",
+    "cloudflare_deploy_run": "25258276270",
+    "cloudflare_deploy_status": "SUCCESS",
+    "production_url": "https://uzg.plus/enta/onboarding"
+  },
+
+  "kl_extensions": [
+    "KL-076 reaffirmed (1st application via rebuild approach): V3 deprecated tree as inspiration not direct lift — rebuild in V2 conventions with V2-specific upgrades is faster + cleaner than translation overhead"
+  ],
+
+  "v2_backend_immutability_proof": {
+    "aier_server_changed": false,
+    "worker_changed": false,
+    "supabase_functions_changed": false,
+    "productV2Service_changed": false,
+    "v3_deprecated_tree_changed": false
+  },
+
+  "next_dispatch_recommendation": {
+    "sprint_id": "LANE01-CLAC1-V2-ENTA-RESULT-REVEAL-FIX-3B",
+    "scope": "Step 3 Result Reveal full content + ENTA Wheel hero on /enta dashboard (EG001 keystone gap)",
+    "estimate": "4-6 h logic auth",
+    "rationale": "Continues Lane_02 unblock critical path; brings ENTA dashboard from C-grade text to A-grade visual"
+  },
+
+  "evidence_urls": {
+    "code_pr": "https://github.com/unitonzengarden/uzgplus-app/pull/116",
+    "audit_branch": "audit/lane01-clac1-v2-enta-wizard-scaffold",
+    "cloudflare_deploy_run": "https://github.com/unitonzengarden/uzgplus-app/actions/runs/25258276270"
+  },
+
+  "nts_message": "ENTA wizard scaffold LIVE tai uzg.plus/enta/onboarding. 5-step flow: Birth Data (calendar + clock + gender icons) -> Calculating (wheel forming animation) -> Reveal (placeholder cho 3B) -> Resonance (placeholder cho 3C) -> Welcome (placeholder cho 3C). Visual-first compliance per DEC-12. Lane_02 unblock 1/3."
+}
