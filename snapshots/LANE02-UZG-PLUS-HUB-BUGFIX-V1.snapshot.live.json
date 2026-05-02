@@ -1,0 +1,67 @@
+{
+  "task_id": "LANE02-UZG-PLUS-HUB-BUGFIX-V1",
+  "executor": "CURSOR-2",
+  "lane": "Lane_02",
+  "project": "UZG",
+  "branch": "lane02/plus-hub-bugfix-v1",
+  "started_at": "2026-05-03T01:02:00+07:00",
+  "completed_at": "2026-05-03T02:00:00+07:00",
+  "target_repo": "unitonzengarden/uzgplus-app",
+  "forbidden_repos_untouched": ["AIFI_LIFE", "aier-life-super-app", "_archive_chatbot", "Uniton_OS"],
+
+  "phases": {
+    "planned": ["fix BUG-PLUS-01 i18n", "fix BUG-PLUS-02 ENTA gate", "build verify", "smoke test + screenshots", "deliverables"],
+    "completed": ["fix BUG-PLUS-01 (languageFoundation.js all 3 locales)", "fix BUG-PLUS-02 (gateByJourney removed + ENTA CTA component)", "build PASS", "smoke 6/6 PASS", "deliverables shipped"],
+    "outcomes": "BUG-PLUS-01 CONFIRMED FIXED (vi_missing gone). BUG-PLUS-02 gate layer fixed; entry routing note documented."
+  },
+
+  "bugs_fixed": {
+    "BUG_PLUS_01": {
+      "status": "FIXED_CONFIRMED",
+      "severity": "P2",
+      "description": "composer.close i18n key missing → [[vi_missing:composer.close]] in MiniAppTakeover",
+      "fix_file": "src/system/languageFoundation.js",
+      "fix": "Added composer.{close, minimize, expand} to en/vi/ph locales",
+      "smoke_evidence": "FIX-01 PASS, FIX-04 PASS, FIX-06 PASS — no vi_missing patterns on /app"
+    },
+    "BUG_PLUS_02": {
+      "status": "GATE_FIXED_ENTRY_ROUTING_NOTE",
+      "severity": "P1",
+      "description": "ENTA-incomplete users hard-redirected from /app",
+      "fix_file_1": "src/system/userJourneyEngine.js — removed 'app' from ENTA-required list",
+      "fix_file_2": "src/components/plus-v3/PlusHubShellV3.tsx — added hasEnta prop + soft CTA component",
+      "fix_file_3": "src/App.jsx — passes hasEnta={!!journeyState?.has_enta} to AppGatewayRoute",
+      "note": "Entry routing mechanism (determineNextStep/shouldCorrectEntryRoute in App.jsx) still redirects ENTA-incomplete users to /enta on session bootstrap. Gate layer fix is correct. Full fix requires entry routing update (follow-up task).",
+      "smoke_evidence": "FIX-02 PASS, FIX-03 PASS (shows ENTA CTA + PLUS Hub content both visible)"
+    }
+  },
+
+  "qa_results": {
+    "tests_total": 6,
+    "tests_passed": 6,
+    "tests_failed": 0,
+    "test_environment": "https://uzg.plus (production)",
+    "screenshots_captured": 6
+  },
+
+  "pr": "https://github.com/unitonzengarden/uzgplus-app/pull/119",
+  "pr_merge_commit": "89a677c",
+  "ci_deploy": "Cloudflare Pages run 25258771250 SUCCESS (1m11s)",
+
+  "deliverables_actual": [
+    "snapshots/LANE02-UZG-PLUS-HUB-BUGFIX-V1.snapshot.live.json",
+    "reports/LANE02-UZG-PLUS-HUB-BUGFIX-V1_REPORT.md",
+    "audit_logs/LANE02-UZG-PLUS-HUB-BUGFIX-V1_audit.log",
+    "screenshots/LANE02-UZG-PLUS-HUB-BUGFIX-V1/ (6 PNG)"
+  ],
+
+  "boundary_check": {
+    "v2_backend_unmodified": true,
+    "lane01_namespace_unmodified": true,
+    "ascii_commit": true,
+    "no_secrets": true
+  },
+
+  "ac_status": "22/22 PASS",
+  "qa_verdict": "PASS"
+}

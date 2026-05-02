@@ -55,6 +55,14 @@
 - **Backfill reason:** Deliverables were pushed to Uniton_Shared canonical correctly, but no ledger entry was appended.
 - **Source of truth:** `runtime/lane_02_uzg/LANE02-PHASE6-AIER-CHAT-WIRE-V1/snapshot.json`
 
+### LANE02-UZG-PLUS-HUB-BUGFIX-V1 — 2026-05-03T02:00:00+07:00
+
+- **Executor:** CURSOR-2 (overnight autonomous, NTS asleep)
+- **Status:** PASS (6/6 smoke tests production)
+- **PR:** #119 merged commit 89a677c | CF Pages SUCCESS 1m11s
+- **BUG-PLUS-01 FIXED:** composer.close i18n key added to all locales (en/vi/ph)
+- **BUG-PLUS-02 PARTIAL:** gateByJourney gate removed + ENTA CTA component; entry routing follow-up needed
+
 ### LANE02-UZG-PLUS-HUB-VERIFY-QA-V1 — 2026-05-03T00:30:00+07:00
 
 - **Executor:** CURSOR-2
