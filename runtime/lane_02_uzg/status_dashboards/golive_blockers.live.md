@@ -38,7 +38,7 @@ Pricing per tier: NOT YET SET. See `runtime/lane_02_uzg/tier_canon.live.md` (sep
 
 | Item | Status | Owner |
 |---|---|---|
-| 50 safety tests for AIER chat | PENDING — verify count + pass rate | CLA-2 / CLAC-2 |
+| 50 safety tests for AIER chat | PARTIAL — code authored 2026-05-02 (uzgplus/tests/qa/aier-safety-50.spec.js, 50 cases x 5 categories x 6 assertions); execution PENDING TEST_AUTH_TOKEN provisioning + AIER chat de-mock. See LANE02-UZG-AIER-SAFETY-TESTS-V1/ deliverables. | CLAC-2 (code) / NTS+Lane_03 (token) / CURSOR-2 (de-mock) |
 | E2E Playwright for TAO surfaces | PENDING — verify post-Cloudflare deploy | CLAC-1 |
 | KB Phase 2 member_depth fill | PENDING NTS / expert | NTS |
 | RAG pipeline e2e | IN FLIGHT | CURSOR-2 |
