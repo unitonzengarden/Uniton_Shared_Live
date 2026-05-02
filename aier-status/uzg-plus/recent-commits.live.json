@@ -1,9 +1,16 @@
 {
   "project_slug": "uzg-plus",
   "github_repo": "unitonzengarden/uzgplus-app",
-  "polled_at": "2026-05-02T18:36:18.698Z",
+  "polled_at": "2026-05-02T19:42:41.485Z",
   "count": 30,
   "commits": [
+    {
+      "sha": "5d629477aaccf4e23a0f45e00b485c6a8afa9c79",
+      "message": "test(lane02/uzg): PLUS Hub bugfix QA smoke tests + 6 screenshots [vercel skip]",
+      "author": "unitonzengarden",
+      "committed_at": "2026-05-02T18:35:40Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/5d629477aaccf4e23a0f45e00b485c6a8afa9c79"
+    },
     {
       "sha": "89a677cb38b7b6c5b128fb00881410959982f577",
       "message": "fix(lane02/uzg): BUG-PLUS-01 i18n + BUG-PLUS-02 ENTA gate /app [vercel skip] (#119)",
@@ -206,13 +213,6 @@
       "author": "Uniton Zen",
       "committed_at": "2026-05-02T13:53:34Z",
       "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/69a2ee23de57ffd7ce6c0852026a82cf3f64de35"
-    },
-    {
-      "sha": "783987d313e704c73eb04a48d58c4d6a2f1a83fc",
-      "message": "test(lane02/phase6): TAO module audit harness deferred run [vercel skip]",
-      "author": "unitonzengarden",
-      "committed_at": "2026-05-02T13:19:46Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/783987d313e704c73eb04a48d58c4d6a2f1a83fc"
     }
   ]
 }
