@@ -10,7 +10,7 @@
 ## §0. Header
 
 - **Generator:** `aier-state-update v1.0` invoked via `scripts/runtime/generate_project_status.py v1.1`
-- **Source commit:** `628d66870718e91364cec67df8e5a44b466e6905` (short: `628d668`)
+- **Source commit:** `9e2aea1dbc70fa4f5136c6f077ccad6e00b84e40` (short: `9e2aea1`)
 - **Auto-generated:** `true` (do not hand-edit)
 - **Authority:** repo-backed automation per LAW_N8 §L8.2 explicitly enabled CI mode (state-mirror auto-regenerate scope only)
 
@@ -68,11 +68,11 @@
 
 | SHA | Author | Subject |
 |---|---|---|
+| `9e2aea1` | unitonzengarden | audit(lane02/v2live): comprehensive V2 frontend audit for V3 strategic pivot |
+| `91d4088` | AIER State Bot | [auto-status] regen runtime+network surfaces from 628d668 [vercel skip] |
 | `628d668` | unitonzengarden | chore(lane02/phase6): AIER chat V502 PASS \xe2\x80\x94 5/5 smoke production + ledger |
 | `e64990a` | Ecosystem Poller Bot | poll: ecosystem state update [vercel skip] |
 | `4c83620` | AIER Code Heartbeat | AIER Code heartbeat 2026-05-02T14:38:21Z [vercel skip] |
-| `84e55d9` | AIER State Bot | [auto-status] regen runtime+network surfaces from cf5b78e [vercel skip] |
-| `cf5b78e` | unitonzengarden | chore(lane02/phase6): AIER chat migration applied PARTIAL + 5 deliverables + ledger |
 
 ## §7. Latest 5 DONE Tasks (from MASTER_CHECKLIST)
 
