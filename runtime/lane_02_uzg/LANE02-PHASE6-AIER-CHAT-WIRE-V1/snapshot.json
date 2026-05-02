@@ -1,0 +1,101 @@
+{
+  "task_id": "LANE02-PHASE6-AIER-CHAT-WIRE-V1",
+  "status": "PARTIAL",
+  "status_reason": "Code wired end-to-end and builds clean; runtime blocked on migration 20260502093001_lane02_aier_kb_rag_v1.sql NOT applied to live Supabase (PGRST202 404). Lane_02 forbidden from running migrations per task §7; escalated to Lane_01.",
+  "executor": "CLAC-2 (Claude Code Desktop, Opus 4.7)",
+  "executed_at": "2026-05-02T19:15:00+07:00",
+  "authority": ["handoff #2 LANE01-TO-LANE02-CLA2-STRATEGIC-DELEGATION-PHASE6-MODULES", "AMD_NTS_FULL_TECH_AUTONOMY"],
+  "code_changes": {
+    "endpoint_added": "/api/v1/tao/aier/chat",
+    "endpoint_methods": ["POST"],
+    "endpoint_auth": "authenticated",
+    "endpoint_file": "public/_worker.js",
+    "endpoint_route_entry_line": 1814,
+    "endpoint_dispatcher_line": 47847,
+    "endpoint_handler_line": 47513,
+    "endpoint_handler_function": "handleTaoAierChat",
+    "hook_modified": "src/hooks/useAierTaoChat.ts",
+    "hook_signature_compat": "no-args call still works (V3TaoAierPage.jsx untouched)",
+    "flag_flipped_file": "src/data/v3-tao-data-layer.ts",
+    "flag_flipped_line": 33,
+    "flag_flipped_value": "aierTao: 'mock' -> 'real'"
+  },
+  "build_verification": {
+    "node_check_public_worker": "PASS",
+    "node_check_lines_added": 8856,
+    "vite_build_v3": "PASS",
+    "vite_build_modules_transformed": 597,
+    "vite_build_seconds": 3.62,
+    "vite_build_main_js_bytes": 851000,
+    "vite_build_main_js_gzip_bytes": 255000,
+    "tsc_check": "SKIPPED (no typescript installed locally; vite build is authoritative)"
+  },
+  "smoke_tests": {
+    "local_passed": 1,
+    "local_blocked": 4,
+    "local_failed": 0,
+    "case_1_kb_grounding": "BLOCKED (migration not applied)",
+    "case_2_kb_count_168": "PASS (Content-Range 0-0/168 via REST)",
+    "case_3_no_fear_language": "BLOCKED (gated by Claude reply)",
+    "case_4_explorer_short": "BLOCKED (gated by Claude reply)",
+    "case_5_sovereign_deep": "BLOCKED (gated by Claude reply)",
+    "preview_deploy_run": "DEFERRED to post-migration apply"
+  },
+  "blockers": [
+    {
+      "id": "MIGRATION_NOT_APPLIED",
+      "severity": "P0",
+      "description": "Migration supabase/migrations/20260502093001_lane02_aier_kb_rag_v1.sql exists in repo but NOT applied to live Supabase. RPC search_aier_kb returns PGRST202 404.",
+      "remediation": "Apply migration via Supabase Studio SQL editor or supabase CLI from authorised lane. Lane_02 forbidden per task §7.",
+      "escalation": "runtime/lane_02_uzg/handoff_to_lane01/LANE02-TO-LANE01-AIER-CHAT-ROUTE-ESCALATION.json"
+    }
+  ],
+  "kb_facts": {
+    "table_name": "public.aier_kb_entries",
+    "row_count": 168,
+    "embedding_dimension": 1536,
+    "embedding_model": "text-embedding-3-small",
+    "kb_version": "KB_TUVI_CHINH_TINH_x_CUNG_v1_0_FINAL_2026-05-01",
+    "rpc_signature_actual": "search_aier_kb(p_query_embedding vector(1536), p_match_count int, p_tier text, p_star_filter text, p_palace_filter text)",
+    "rpc_signature_task_spec_assumed": "search_aier_kb(query_embedding, match_count, filter_tier, filter_module, filter_topic) -- WRONG; corrected in code",
+    "tier_max_tokens": {
+      "explorer": 1500,
+      "seeker": 2000,
+      "builder": 2500,
+      "sovereign": 4000
+    },
+    "tier_match_count": {
+      "explorer": 5,
+      "seeker": 5,
+      "builder": 6,
+      "sovereign": 8
+    }
+  },
+  "constraints_honored": {
+    "no_modify_existing_routes": true,
+    "no_modify_lane_01_zone": true,
+    "no_modify_supabase_auth": true,
+    "no_modify_resend": true,
+    "no_modify_cf_pages_env": true,
+    "no_run_production_migration": true,
+    "no_paste_secrets_in_commit": true,
+    "no_touch_cursor2_test_infra": true,
+    "ascii_commit_message": "PENDING (will use ASCII when committing)"
+  },
+  "deliverables": {
+    "REPORT.md": "Uniton_Shared/runtime/lane_02_uzg/LANE02-PHASE6-AIER-CHAT-WIRE-V1/REPORT.md",
+    "AIER_CHAT_WIRE_REPORT_v1.md": "Uniton_Shared/runtime/lane_02_uzg/LANE02-PHASE6-AIER-CHAT-WIRE-V1/AIER_CHAT_WIRE_REPORT_v1.md",
+    "audit_log.md": "Uniton_Shared/runtime/lane_02_uzg/LANE02-PHASE6-AIER-CHAT-WIRE-V1/audit_log.md",
+    "snapshot.json": "Uniton_Shared/runtime/lane_02_uzg/LANE02-PHASE6-AIER-CHAT-WIRE-V1/snapshot.json",
+    "escalation_handoff": "Uniton_Shared/runtime/lane_02_uzg/handoff_to_lane01/LANE02-TO-LANE01-AIER-CHAT-ROUTE-ESCALATION.json"
+  },
+  "next_steps_for_nts": [
+    "1. Apply migration 20260502093001_lane02_aier_kb_rag_v1.sql to production Supabase (via Studio SQL editor or supabase CLI)",
+    "2. Commit + push 3 code files (public/_worker.js, src/hooks/useAierTaoChat.ts, src/data/v3-tao-data-layer.ts) to feature branch",
+    "3. CF Pages auto-deploys preview on push",
+    "4. Re-run task §4.5 smoke tests (5 cases) against preview URL with valid bearer token",
+    "5. If 5/5 PASS, merge PR + flip status PARTIAL -> PASS",
+    "6. If any FAIL, debug per error response (KB_SEARCH_FAILED hint, CLAUDE_FAILED detail, etc.)"
+  ],
+  "previous_task_pending_unrelated": "LANE02-INFRA-SECRETS-PERMANENT-STORE-V1 still HALTed pending NTS browser key rotation (4 leaked secrets in chat history)."
+}

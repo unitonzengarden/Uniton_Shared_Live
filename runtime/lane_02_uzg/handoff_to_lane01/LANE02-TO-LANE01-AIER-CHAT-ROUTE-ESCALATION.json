@@ -1,0 +1,68 @@
+{
+  "handoff_id": "LANE02-TO-LANE01-AIER-CHAT-ROUTE-ESCALATION-2026-05-02",
+  "from_lane": "Lane_02",
+  "to_lane": "Lane_01",
+  "from_executor": "CLAC-2",
+  "type": "BACKEND_DEPENDENCY_BLOCKER",
+  "priority": "P0",
+  "created_at": "2026-05-02T19:15:00+07:00",
+  "blocking_task_id": "LANE02-PHASE6-AIER-CHAT-WIRE-V1",
+  "blocking_status": "PARTIAL (code wired but runtime non-functional)",
+  "title": "Apply migration 20260502093001_lane02_aier_kb_rag_v1.sql to production Supabase",
+  "summary": "Lane_02 has wired AIER chat backend end-to-end (worker route + hook + flag) per task spec. Build PASS. Endpoint code is syntactically and structurally complete. However, runtime is blocked because the SQL migration that creates RPC public.search_aier_kb has NOT been applied to live Supabase. The migration FILE exists in the uzgplus-app repo at supabase/migrations/20260502093001_lane02_aier_kb_rag_v1.sql (committed today 2026-05-02). PostgREST returns PGRST202 404 'function not found' when invoked. Lane_02 is forbidden per task §7 from running migrations against production Supabase. Requesting Lane_01 (or NTS direct) apply the migration so AIER chat can go live.",
+  "evidence": {
+    "migration_file_in_repo": "uzgplus/supabase/migrations/20260502093001_lane02_aier_kb_rag_v1.sql",
+    "migration_size_bytes": 7355,
+    "migration_creates": [
+      "extension vector (pgvector)",
+      "table public.aier_kb_entries (already exists, 168 rows)",
+      "indexes idx_aier_kb_star, idx_aier_kb_palace, idx_aier_kb_star_palace, idx_aier_kb_embedding_hnsw (HNSW m=16 ef=64 cosine)",
+      "RLS policies aier_kb_entries_read_all (anon+auth), aier_kb_entries_service_write (service_role)",
+      "function public.aier_kb_entries_set_updated_at + trigger",
+      "function public.search_aier_kb(p_query_embedding vector(1536), p_match_count int, p_tier text, p_star_filter text, p_palace_filter text) returns table(kb_id, star, palace, subject, content, depth_level, tags, similarity)",
+      "grant execute on function search_aier_kb to anon, authenticated"
+    ],
+    "live_db_state": {
+      "aier_kb_entries_table": "EXISTS (168 rows confirmed via REST Content-Range)",
+      "search_aier_kb_function": "MISSING (PGRST202)",
+      "schema_cache_error_response": "{\"code\":\"PGRST202\",\"details\":\"Searched for the function public.search_aier_kb...but no matches were found in the schema cache.\"}"
+    },
+    "smoke_test_command": "node -e \"fetch(SB_URL+'/rest/v1/rpc/search_aier_kb',{method:'POST',headers:{apikey,authorization},body:JSON.stringify({p_query_embedding:[...1536 floats],p_match_count:3,p_tier:'explorer'})})\""
+  },
+  "remediation_required": {
+    "action": "Apply migration to production Supabase (project kkhhpecofolmrodyeslp)",
+    "options": [
+      "Option A: Supabase Studio -> SQL Editor -> paste contents of supabase/migrations/20260502093001_lane02_aier_kb_rag_v1.sql -> Run",
+      "Option B: supabase CLI from authorised host: supabase db push --include-all (requires SUPABASE_DB_URL or linked project)",
+      "Option C: psql -d $SUPABASE_DB_URL -f supabase/migrations/20260502093001_lane02_aier_kb_rag_v1.sql (requires direct connection string)"
+    ],
+    "verification_after_apply": [
+      "1. SELECT routine_name FROM information_schema.routines WHERE routine_schema='public' AND routine_name='search_aier_kb'; -- expect 1 row",
+      "2. POST /rest/v1/rpc/search_aier_kb with valid 1536-dim vector + p_tier='explorer' -- expect 200 with up to 5 rows",
+      "3. cd D:\\UZG\\Projects-v2\\uzgplus && curl -X POST <preview-url>/api/v1/tao/aier/chat with bearer + body -- expect SSE stream"
+    ],
+    "rollback_plan": "Migration is idempotent (CREATE IF NOT EXISTS / CREATE OR REPLACE). To rollback: DROP FUNCTION public.search_aier_kb(vector, int, text, text, text); -- table data preserved, indexes preserved, only the RPC function dropped."
+  },
+  "downstream_unblocked_after_apply": [
+    "Endpoint /api/v1/tao/aier/chat goes from 502 KB_SEARCH_FAILED -> 200 SSE stream",
+    "Hook useAierTaoChat real branch starts returning live Claude responses",
+    "Flag TAO_DATA_SOURCE.aierTao='real' goes from non-functional -> functional",
+    "V3 PWA route /v3/tao/aier exits MOCK + becomes production AIER chat",
+    "GO-LIVE blocker for Phase 6 cleared"
+  ],
+  "constraints_observed": {
+    "lane_02_did_not_run_migration": true,
+    "lane_02_did_not_modify_live_db": true,
+    "lane_02_did_not_modify_lane_01_zone": true,
+    "lane_02_did_not_paste_secrets": true,
+    "lane_02_only_added_routes_no_modify": true
+  },
+  "ack_required": "YES (Lane_01 confirm migration applied or delegate to NTS)",
+  "next_required_action_for_lane_01": "Apply migration via one of remediation options above. After apply, post ack to handoff inbox or notify Lane_02 via NOTIFICATION_LEDGER append.",
+  "deliverables_pointer": {
+    "REPORT": "Uniton_Shared/runtime/lane_02_uzg/LANE02-PHASE6-AIER-CHAT-WIRE-V1/REPORT.md",
+    "AIER_CHAT_WIRE_REPORT_v1": "Uniton_Shared/runtime/lane_02_uzg/LANE02-PHASE6-AIER-CHAT-WIRE-V1/AIER_CHAT_WIRE_REPORT_v1.md",
+    "audit_log": "Uniton_Shared/runtime/lane_02_uzg/LANE02-PHASE6-AIER-CHAT-WIRE-V1/audit_log.md",
+    "snapshot": "Uniton_Shared/runtime/lane_02_uzg/LANE02-PHASE6-AIER-CHAT-WIRE-V1/snapshot.json"
+  }
+}
