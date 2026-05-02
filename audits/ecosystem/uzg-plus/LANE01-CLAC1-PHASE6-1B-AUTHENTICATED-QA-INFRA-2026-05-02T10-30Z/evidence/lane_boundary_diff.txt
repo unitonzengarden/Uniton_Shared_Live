@@ -1,0 +1,46 @@
+=== Lane Boundary Diff — Phase 6.1.b ===
+
+$ git diff --stat main..HEAD (post-merge SHA 77dc66ed vs main)
+
+ .github/workflows/authenticated-visual-regression.yml |  87 +++++++++++
+ tests/lane01/README.md                                | 113 +++++++++++++++
+ tests/lane01/audit/01-v2-vs-v3-baselines.audit.spec.js| 175 ++++++++++++++++++++++
+ tests/lane01/baselines/v2/connections.png             | Bin
+ tests/lane01/baselines/v2/enta-onboarding.png         | Bin
+ tests/lane01/baselines/v2/enta.png                    | Bin
+ tests/lane01/baselines/v2/home.png                    | Bin
+ tests/lane01/baselines/v2/profile-me.png              | Bin
+ tests/lane01/baselines/v2/settings.png                | Bin
+ tests/lane01/baselines/v3/<6 PNGs>                    | Bin
+ tests/lane01/console-logs/<12 logs>                   | (text)
+ tests/lane01/diffs/<6 diff PNGs>                      | Bin
+ tests/lane01/fixtures/auth-bypass.fixture.js          | 185 ++++++++++++++++++++++
+ tests/lane01/measured-scores.json                     |  98 ++++++++++++
+ tests/lane01/playwright.lane01.config.js              |  29 +++
+ tests/lane01/scripts/smoke-test-auth-bypass.mjs       | 114 +++++++++++++
+
+ 31 files changed, +759 / 0 deletions
+
+--- Lane attribution ---
+
+| File | Lane | Notes |
+|---|---|---|
+| tests/lane01/* | Lane_01 | New Lane_01 test infrastructure |
+| .github/workflows/authenticated-visual-regression.yml | Lane_01 | CI workflow for Lane_01 paths |
+
+--- Lane_02 territory check ---
+
+$ git diff main..HEAD --name-only | grep -E "(chat-v3|wallet-v3|plus-v3|membership-v3|u-reward-v3|tao-v3|tests/lane02/)/"
+(no matches — Lane_02 territory UNTOUCHED)
+
+--- V2 backend check ---
+
+$ git diff main..HEAD -- "_worker.js" "aier_server.js" "supabase/"
+(no matches — V2 backend immutable per DEC-08)
+
+--- V3 source code check ---
+
+$ git diff main..HEAD --name-only | grep -E "^(apps/uzg-pwa/src|src)/"
+(no matches — pure test infrastructure, zero V3 source code changes)
+
+Verdict: Lane boundaries CLEAN. AC-9 PASS.

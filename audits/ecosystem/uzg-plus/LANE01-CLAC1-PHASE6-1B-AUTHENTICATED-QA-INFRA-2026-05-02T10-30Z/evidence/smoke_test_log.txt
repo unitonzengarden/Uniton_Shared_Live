@@ -1,0 +1,21 @@
+=== Auth Bypass Smoke Test Log ===
+
+Date: 2026-05-02T10:42Z
+Command: node tests/lane01/scripts/smoke-test-auth-bypass.mjs
+
+Output:
+  [dotenv@17.3.1] injecting env (12) from .env -- tip: ⚙️  suppress all logs with { quiet: true }
+  [dotenv@17.3.1] injecting env (7) from .env.local -- tip: 🤖 agentic secret storage: https://dotenvx.com/as2
+  PROBE Smoke test auth bypass for: lane02-test-sovereign@uzg.local
+  OK User found: lane02-test-sovereign@uzg.local (id=e21e43d5...)
+  OK generateLink returned email_otp (length=8)
+  OK Session received (access_token length=990)
+
+  OK SMOKE TEST PASS
+
+Verdict:
+  - Supabase Service Role Key valid + readable from .env.local
+  - Admin SDK successfully calls auth.admin.generateLink for existing test user
+  - generateLink returns email_otp (8-char OTP — matches V2 EXACT max length per LoginPage.jsx:25)
+  - Session received from /auth/v1/verify with access_token
+  - End-to-end auth bypass working — Playwright can use this pattern

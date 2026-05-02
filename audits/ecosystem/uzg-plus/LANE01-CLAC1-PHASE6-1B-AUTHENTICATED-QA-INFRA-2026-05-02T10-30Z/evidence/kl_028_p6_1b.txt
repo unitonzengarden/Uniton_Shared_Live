@@ -1,0 +1,19 @@
+=== KL-028 Production Probe (Phase 6.1.b) ===
+
+Date: 2026-05-02T11:57Z (~10 min post PR #94 merge)
+Merged commit: 77dc66ed4636d0a4f0f59d9ce496ba7a9c046769
+Merged at: 2026-05-02T11:46:47Z
+Cloudflare deploy wait: ~90s
+
+--- 6 Lane_01 routes ---
+
+200 https://uzg.plus/v3/home
+200 https://uzg.plus/v3/enta
+200 https://uzg.plus/v3/enta/onboarding
+200 https://uzg.plus/v3/connections
+200 https://uzg.plus/v3/profile/me
+200 https://uzg.plus/v3/settings
+
+Lane_01 subtotal: 6/6 = 200 ✓
+
+Verdict: AC-8 PASS

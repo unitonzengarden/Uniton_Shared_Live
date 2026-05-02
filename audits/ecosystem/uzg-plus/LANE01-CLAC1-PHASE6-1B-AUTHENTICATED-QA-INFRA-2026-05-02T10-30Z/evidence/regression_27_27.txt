@@ -1,0 +1,16 @@
+=== Sprint 5.11 + Phase 6.1 Regression Check (Phase 6.1.b) ===
+
+Date: 2026-05-02T11:47Z
+Command: npx playwright test --config playwright.v3.config.js \
+  tests/visual/p5-11-v2-exact-wire.spec.mjs \
+  tests/visual/p6-1-ux-polish.spec.mjs --reporter=line
+
+Result: 27 passed (23.9s)
+
+  Sprint 5.11 V2-EXACT (15 tests):  PASS PASS PASS PASS PASS PASS PASS PASS PASS PASS PASS PASS PASS PASS PASS
+  Phase 6.1 UX Polish (12 tests):   PASS PASS PASS PASS PASS PASS PASS PASS PASS PASS PASS PASS
+
+Verdict:
+  - Phase 6.1.b infrastructure additions introduce ZERO regressions
+  - Sprint 5.11 + Phase 6.1 functionality preserved
+  - Auth + AuthGate + AvatarMenu + Avatar V2 endpoint + KL-028 routes all still pass
