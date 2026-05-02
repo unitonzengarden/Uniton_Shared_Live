@@ -1,9 +1,23 @@
 {
   "project_slug": "uzg-plus",
   "github_repo": "unitonzengarden/uzgplus-app",
-  "polled_at": "2026-05-02T09:16:57.342Z",
+  "polled_at": "2026-05-02T10:28:35.231Z",
   "count": 30,
   "commits": [
+    {
+      "sha": "bb6731a60c1830b190758ab5224ec899b2fd12a8",
+      "message": "test(lane02/phase6): P0 user-journey audit 4 modules with auth bypass [vercel skip]",
+      "author": "unitonzengarden",
+      "committed_at": "2026-05-02T10:19:07Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/bb6731a60c1830b190758ab5224ec899b2fd12a8"
+    },
+    {
+      "sha": "fbbc97f80cce22409c48743faf10889ce3413bfd",
+      "message": "feat(p6-1): Phase 6.1 UX polish — avatar V2 endpoint wire (Sprint 5.11 Fix 4 deferred completion) [vercel skip] (#93)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-02T10:06:43Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/fbbc97f80cce22409c48743faf10889ce3413bfd"
+    },
     {
       "sha": "e18d67ceae2c5b35f85fad60c4839e7623e685e4",
       "message": "feat(p5-12): Sprint 5.12 — QA Auto-Loop FINAL [vercel skip] (#92)",
@@ -199,20 +213,6 @@
       "author": "LANE01-Cursor",
       "committed_at": "2026-05-01T10:10:28Z",
       "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/6a0003db1bcec97982ccf28b3a35b76e1070a947"
-    },
-    {
-      "sha": "d50211d910825e3b3a67596bbd15c71ba468c776",
-      "message": "chore(deploy): force Cloudflare Pages redeploy for PR #71 Sprint 4.1 TAO",
-      "author": "LANE01-Cursor",
-      "committed_at": "2026-05-01T10:01:41Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/d50211d910825e3b3a67596bbd15c71ba468c776"
-    },
-    {
-      "sha": "a4c40f96c2e9ef8a281c79fba3499afeed31e562",
-      "message": "feat(p4s1): UZG+ Phase 4 Sprint 4.1 — TAO mini app shell + Overview + Lịch widget [solo CLAC1] (#71)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-05-01T09:18:54Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/a4c40f96c2e9ef8a281c79fba3499afeed31e562"
     }
   ]
 }
