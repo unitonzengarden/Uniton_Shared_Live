@@ -1,0 +1,47 @@
+AC-7 REWARD_EMIT SMOKE TEST — Sprint 5.7
+Date: 2026-05-02
+Status: PARTIAL PASS (B-5: TEST_USER not provisioned — full smoke deferred to NTS click verify)
+
+=== NO-JWT PATH (auth gate verified) ===
+Command:
+  curl -s -X POST "https://kkhhpecofolmrodyeslp.supabase.co/functions/v1/reward_emit" \
+    -H "Content-Type: application/json" \
+    -d '{"action_type":"online_active","source_id":"00000000-0000-0000-0000-000000000000","idempotency_key":"test-no-jwt-001"}'
+
+Response:
+{"success":false,"status":"auth_required","message":"A live session is required before reward emission."}
+HTTP 401
+
+Result: PASS — auth gate active, financial integrity protected.
+
+=== EMPTY-PAYLOAD PATH ===
+Command:
+  curl -s -X POST "https://kkhhpecofolmrodyeslp.supabase.co/functions/v1/reward_emit" \
+    -H "Content-Type: application/json" \
+    -d '{}'
+
+Response: 401 auth_required (same as above — auth gate before payload validation).
+
+=== FULL JWT-AUTHENTICATED PATH (DEFERRED) ===
+Reason: TEST_USER credentials not provisioned in this environment.
+Per Sprint 5.4 B-5 precedent + task spec §13 B-5: defer full smoke test to NTS click verify on real account.
+
+Expected behavior (per D4 reward_emit source 1983 lines):
+1. POST with valid JWT + action_type='online_active' + source_id (uuid) + idempotency_key (uuid)
+2. Server validates: auth, action_type in REWARD_RULES, source_id is uuid, idempotency_key required
+3. Server checks rate limits + daily caps
+4. Server atomic ledger write (reward_events + wallet_ledger INSERT)
+5. Server broadcasts via Realtime
+6. Response: { success: true, status, action_type, reward_amount, reward_event_id, wallet_ledger_id }
+
+Idempotency expected behavior:
+- Same idempotency_key on retry → server returns same reward_event_id (NO double credit)
+- This is server-side per (user_id, action_type, source_id, idempotency_key) dedup
+
+NTS Click Verify Steps (MILESTONE):
+1. Login at https://uzg.plus/v3/login
+2. Navigate https://uzg.plus/v3/u-reward
+3. Tap Energy Core
+4. Observe: balance increases (Realtime), +U feedback animation
+5. Verify: rapid tap (>5/sec) triggers AntiSpamWarning
+6. Verify: 50+ taps trigger DiminishingReturns warning

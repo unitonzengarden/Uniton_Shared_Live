@@ -1,0 +1,47 @@
+ANTI-SPAM + DIMINISHING RETURNS — Sprint 5.7
+Date: 2026-05-02
+
+=== IMPLEMENTATION ===
+File: apps/uzg-pwa/src/hooks/useEnergyCore.ts
+
+CONSTANTS:
+  TAP_RATE_LIMIT_PER_SEC = 5
+  DIMINISHING_THRESHOLD = 50 (taps/session)
+  DIMINISHING_MULTIPLIER = 0.3 (30% after threshold)
+  COOLDOWN_MS_AFTER_RATE_LIMIT = 1500ms
+  BOT_DETECTION_WINDOW = 100 (sample size)
+  BOT_DETECTION_VARIANCE_MIN = 5 (suspiciously uniform timing)
+
+=== RATE LIMITER LOGIC ===
+1. On each tap: cull tapTimestamps older than 1s
+2. If tapTimestamps.length >= 5 → setRateLimitTriggered(true) + setIsOnCooldown(true) + 1.5s timeout
+3. UI: AntiSpamWarning toast appears
+4. After cooldown: rate limit cleared, taps resume
+
+=== DIMINISHING RETURNS LOGIC ===
+1. Increment sessionTaps on each successful tap
+2. If sessionTaps >= 50 → setDiminishingReturns(true)
+3. UI: DiminishingReturns strip shown ("thử Quiz hoặc Task")
+4. Reward estimate: 0 instead of 0-1 random
+5. Server-side enforcement (Edge Function REWARD_RULES) is authoritative
+
+=== BOT DETECTION LOGIC ===
+1. Sample last 100 tap timestamps
+2. Compute intervals between consecutive taps
+3. Calculate variance of intervals
+4. If variance < 5ms → suspect bot pattern
+5. Action: 6s cooldown (4× normal)
+
+=== EXPECTED CONSOLE OUTPUT ===
+[useEnergyCore] cooldown active — tap ignored                       (when rate limited)
+[useEnergyCore] rate limit triggered (>5 taps/sec)                  (initial trigger)
+[useEnergyCore] bot pattern detected — cooldown                     (variance < 5)
+[useEnergyCore] diminishing returns — try Quiz/Task for higher rewards  (50+ taps)
+
+=== MANUAL TEST INSTRUCTIONS ===
+1. Login to /v3/u-reward
+2. Tap Energy Core rapidly (8+ times in 1 second)
+3. Expect: AntiSpamWarning toast + 1.5s cooldown
+4. Continue tapping after cooldown
+5. After 50 total taps in session: DiminishingReturns strip appears
+6. Console shows expected log markers

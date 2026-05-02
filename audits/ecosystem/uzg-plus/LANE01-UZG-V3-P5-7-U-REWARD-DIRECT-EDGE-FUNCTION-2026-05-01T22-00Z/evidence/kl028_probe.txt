@@ -1,0 +1,26 @@
+KL-028 PRODUCTION PROBE — Sprint 5.7 U-Reward
+Date: 2026-05-02
+Method: curl -L --max-redirs 3 https://uzg.plus<route>
+
+200 https://uzg.plus/v3/
+200 https://uzg.plus/v3/login
+200 https://uzg.plus/v3/signup
+200 https://uzg.plus/v3/home
+200 https://uzg.plus/v3/chat
+200 https://uzg.plus/v3/wallet
+200 https://uzg.plus/v3/wallet/asset/U
+200 https://uzg.plus/v3/wallet/convert
+200 https://uzg.plus/v3/enta
+200 https://uzg.plus/v3/enta/onboarding
+200 https://uzg.plus/v3/plus
+200 https://uzg.plus/v3/membership
+200 https://uzg.plus/v3/u-reward            [NEW Sprint 5.7]
+200 https://uzg.plus/v3/tao
+200 https://uzg.plus/v3/tao/bazi
+200 https://uzg.plus/v3/tao/tuvi
+200 https://uzg.plus/v3/tao/phongthuy
+200 https://uzg.plus/v3/tao/lichvannien
+200 https://uzg.plus/api/health
+
+RESULT: 19/19 PASS
+Sprint 5.1-5.6 routes UNTOUCHED. U-Reward Sprint 5.7 route live.

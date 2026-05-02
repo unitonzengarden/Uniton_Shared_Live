@@ -1,0 +1,55 @@
+BACKEND DEEP AUDIT REFERENCES — Sprint 5.7 U-Reward
+Date: 2026-05-02
+
+=== D1 SCHEMA (U-Reward tables verified) ===
+wallet_balances        — user_id, asset, balance (Sprint 5.4 verified, column is `asset` not `asset_code`)
+reward_events (36 cols) — id, user_id, event_type, action_type, source_type, source_id, reward_amount, asset_code, status, created_at, ...
+daily_missions (14)    — id, user_id, event_date, mission_type, target_value, current_value, status, reward_amount, reward_asset_code, rewarded_at
+user_missions (13)     — user_mission_id, user_id, mission_id, scope_date, progress, completed, completed_at, ...
+missions (14)          — mission_id, mission_type, title, description, reward_amount, reward_asset, goal_count, daily_limit, is_daily, ...
+promotion_u_campaigns (21) — id, campaign_code, campaign_name, campaign_description, campaign_status, start_at_utc, end_at_utc, reward_type, ...
+promotion_u_claims (20)    — claim tracking
+promotion_u_claim_attempts (18) — attempt audit
+u_emission_daily (6)       — emission_date, emission_cap, emitted_amount, network_multiplier
+u_reward_settled_history_view (18 cols, JOIN view) — alternative read path for history
+
+=== D4 REWARD_EMIT EDGE FUNCTION (verified) ===
+Source: supabase/functions/reward_emit/index.ts (1983 lines)
+Auth gate: Bearer JWT required → 401 auth_required if missing/invalid
+Payload: { user_id, action_type, source_id (uuid required), idempotency_key, metadata }
+
+12 actionTypes from REWARD_RULES (Sprint 5.7 mapping):
+  online_active     → Tap module
+  post_created      → HOME (deferred 5.7.x)
+  comment_created   → HOME (deferred 5.7.x)
+  reaction_added    → HOME (deferred 5.7.x)
+  circle_joined     → PLUS Circles (deferred 5.7.x)
+  user_followed     → ENTA (deferred 5.7.x)
+  daily_checkin     → Task (subset)
+  mission_daily     → Task module
+  promotion_claim   → Campaign module
+  lucky_spin        → (deferred 5.7.x)
+  chest_loot        → (deferred 5.7.x)
+  quiz_answer       → Quiz module
+
+=== D6 DRIFT-14 (HIGH severity, APPLIED) ===
+Drift: u_reward_baseline_emissions table REST-blocked (PGRST205 — not in REST schema cache).
+Resolution: Hardcoded BASELINE_REWARDS in apps/uzg-pwa/src/types/uRewardV3.ts:
+  - Matches Edge Function REWARD_RULES exactly (12 actionTypes, amount + dailyCap + cooldownSec)
+  - Used for client-side display estimates only
+  - Server-side caps + rate limits authoritative (Edge Function reads u_reward_baseline_emissions via service_role internally)
+
+Verification: grep for "u_reward_baseline_emissions" in Sprint 5.7 code → 0 matches in queries (only in comment).
+
+=== D7 V2 EXPRESS (ZERO endpoints used) ===
+GET /api/v1/reward/balance → 404 (no V2 reward endpoints exist).
+ALL U-Reward writes via Edge Function reward_emit.
+ALL U-Reward reads via Direct Supabase RLS.
+Direct pattern fully compliant.
+
+=== ADDITIONAL FINDINGS ===
+- Quiz tables (quiz_questions, user_quiz_answers) DO NOT exist in production.
+  → Sprint 5.7 hardcodes 5 sample questions in SAMPLE_QUIZ_POOL (types/uRewardV3.ts).
+  → Full DB-driven quiz system deferred to Sprint 5.7.x or Phase 6.
+- Quiz daily limit (5/day) tracked client-side via localStorage `uzg-quiz-daily-v1`.
+- Live ops campaigns: promotion_u_campaigns has 21 cols (verified live).

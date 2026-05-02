@@ -1,0 +1,17 @@
+PLAYWRIGHT PRODUCTION RESULTS — Sprint 5.7 U-Reward
+Date: 2026-05-02
+Spec: tests/visual/p5-7-u-reward-prod.spec.mjs
+Config: playwright.visual-prod.config.mjs
+
+Running 8 tests using 1 worker
+
+PASS [chromium] prod /u-reward redirects to login when unauthed
+PASS [chromium] prod reward_emit Edge Function reachable (401 expected unauthed)
+PASS [chromium] prod reward_emit empty payload (no JWT) returns auth_required 401
+PASS [chromium] prod Direct reward_events table exists (RLS read)
+PASS [chromium] prod Direct daily_missions table exists (Task module read)
+PASS [chromium] prod Direct promotion_u_campaigns table exists (Campaign module read)
+PASS [chromium] prod V2 Express has NO U-Reward endpoints (Direct pattern verified)
+PASS [chromium] prod login page reachable for U-Reward redirect target
+
+8 passed (7.7s)
