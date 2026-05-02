@@ -1,0 +1,66 @@
+ENTA CANON §13 REDLINES COMPLIANCE — Sprint 5.9
+Date: 2026-05-02
+
+=== AC-14 VERIFICATION ===
+
+Canon §13 lists 7 redlines that MUST NOT appear in Profile/Follow flow.
+Sprint 5.9 status:
+
+[1] NO follower count public ✓
+  - Profile views show ENTA tier badge but NO "X followers" public count
+  - Connections inbox shows count to OWNER only (private view)
+  - No social proof gamification
+
+[2] NO profile completeness % gamification ✓
+  - ProfileEditOverlay shows fields but NO "Profile 60% complete" meter
+  - No nag UI to fill more fields
+  - User chooses what to share (privacy-first)
+
+[3] NO "Verified" badges ✓
+  - membership_tier badge shown (Free/Member/Premium/Business) — NOT a verified badge
+  - No checkmark badge implying authenticity
+  - Tier badge is functional (gating) not status (prestige)
+
+[4] NO endorsements/recommendations ✓
+  - No skill endorsements
+  - No recommendations widget
+  - Profile is identity-aligned (ENTA), not capability-aligned (LinkedIn)
+
+[5] NO profile views count ✓
+  - No "127 people viewed your profile this week"
+  - No view tracking visible to user
+  - Privacy-first: no surveillance dynamics
+
+[6] Resume/CV NOT shown ✓
+  - bio (500 chars) is identity narrative, not work history
+  - No employer / education / certifications section
+  - Profile = ENTA-aligned cultural identity, not professional CV
+
+[7] Numerical leaderboards absent ✓
+  - Connections inbox sorted by date (created_at), not rank
+  - No "Top 10 most connected" lists
+  - No reputation_score displayed prominently in leaderboard form
+
+=== UI EVIDENCE ===
+
+ProfileHeaderV3.tsx:
+  - Display name + handle + bio + country + tier badge
+  - NO completeness %, NO follower count, NO views
+
+ProfileEditOverlayV3.tsx:
+  - Fields: display_name, handle, bio, website
+  - NO required fields beyond minimum
+  - NO progress bar / "complete your profile" nag
+
+ConnectionRequestsInboxV3.tsx:
+  - Sorted by created_at DESC
+  - NO scoring, NO ranking
+  - Status badges (pending/accepted) ≠ leaderboard
+
+PrivacySectionV3.tsx (Settings):
+  - User controls visibility
+  - Default settings: profile_public=true, enta_visibility='connections', show_activity=false
+  - Privacy-first defaults
+
+CONCLUSION: ALL 7 redlines respected. Sprint 5.9 ships UX hardening without
+LinkedIn/Facebook anti-pattern violations.

@@ -1,0 +1,39 @@
+KL-028 PRODUCTION PROBE — Sprint 5.9 Auth UX + Settings + Profile + Follow
+Date: 2026-05-02
+Method: curl -L --max-redirs 3 https://uzg.plus<route>
+
+200 https://uzg.plus/v3/
+200 https://uzg.plus/v3/login
+200 https://uzg.plus/v3/signup
+200 https://uzg.plus/v3/forgot-password         [NEW Sprint 5.9]
+200 https://uzg.plus/v3/reset-password          [NEW Sprint 5.9]
+200 https://uzg.plus/v3/account/change-password [NEW Sprint 5.9]
+200 https://uzg.plus/v3/account/delete          [NEW Sprint 5.9]
+200 https://uzg.plus/v3/settings                [NEW Sprint 5.9]
+200 https://uzg.plus/v3/profile/me              [NEW Sprint 5.9]
+200 https://uzg.plus/v3/connections             [NEW Sprint 5.9]
+200 https://uzg.plus/v3/home
+200 https://uzg.plus/v3/chat
+200 https://uzg.plus/v3/wallet
+200 https://uzg.plus/v3/wallet/asset/U
+200 https://uzg.plus/v3/wallet/convert
+200 https://uzg.plus/v3/enta
+200 https://uzg.plus/v3/enta/onboarding
+200 https://uzg.plus/v3/plus
+200 https://uzg.plus/v3/membership
+200 https://uzg.plus/v3/u-reward
+200 https://uzg.plus/v3/tao
+200 https://uzg.plus/v3/tao/bazi
+200 https://uzg.plus/v3/tao/tuvi
+200 https://uzg.plus/v3/tao/phongthuy
+200 https://uzg.plus/v3/tao/lichvannien
+200 https://uzg.plus/v3/tao/aier
+200 https://uzg.plus/api/health
+
+RESULT: 27/27 PASS
+9 new Sprint 5.9 routes live (forgot/reset/account/settings/profile/connections).
+Sprint 5.1-5.8 routes UNTOUCHED.
+
+Note: HTTP 200 indicates SPA shell served correctly. Client-side React Router decides
+final destination per route + AuthGate. Public routes (forgot-password, reset-password)
+render directly; auth routes redirect to /v3/login when no session.

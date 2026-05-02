@@ -1,0 +1,75 @@
+CONNECT 4-TRUST-LEVEL STATE MACHINE — Sprint 5.9
+Date: 2026-05-02
+
+=== ENTA CANON §7.4 MAPPING ===
+
+types/connectV3.ts TRUST_LEVELS array:
+
+[
+  {
+    key: 'open',
+    label: 'Mở',
+    description: 'Kết nối công khai, ai cũng thấy'
+  },
+  {
+    key: 'resonance',
+    label: 'Cộng hưởng',
+    description: 'Chia sẻ ENTA wheel + status'
+  },
+  {
+    key: 'circle',
+    label: 'Vòng tròn',
+    description: 'Chia sẻ chi tiết hoạt động'
+  },
+  {
+    key: 'trusted',
+    label: 'Tin cậy',
+    description: 'Chia sẻ phân tích sâu (cần xác nhận)'
+  }
+]
+
+=== USE CONNECT FLOW ===
+
+ConnectActionSheetV3 component:
+  1. User taps avatar in HOME/CHAT/ENTA → opens bottom sheet
+  2. 4 trust levels rendered as selectable rows
+  3. User selects trust level (e.g. 'resonance')
+  4. selectTrust('resonance') sets selectedTrust + step='SELECTING'
+  5. User taps "Gửi yêu cầu" button
+  6. connect(targetUserId) calls rpc_connect_user
+  7. step='SUBMITTING' → 'SUCCESS' or 'ERROR'
+  8. On success: connection request created in enta_connections (status='pending')
+  9. trust_level stored in enta_connection_requests.metadata JSONB
+
+=== ACCEPT/REJECT FLOW ===
+
+ConnectionRequestsInboxV3:
+  - GET rpc_get_connection_requests(50) → pending list
+  - User accepts → rpc_accept_connection(request_id) → connection.status='accepted'
+  - User rejects → rpc_reject_connection(request_id) → connection.status='rejected'
+
+=== STATE TRANSITIONS ===
+
+connection.status lifecycle:
+  pending → accepted (rpc_accept_connection)
+  pending → rejected (rpc_reject_connection)
+  accepted → blocked (future Sprint 5.9.x)
+
+=== INTEGRATION POINTS (FUTURE WIRING) ===
+
+Sprint 5.9 ships ConnectActionSheet as standalone component.
+Cross-module wiring deferred to Sprint 5.9.x:
+
+- HOME PostCardV3 avatar tap → ConnectActionSheet (Sprint 5.2 hook extension)
+- CHAT inbox avatar tap → ConnectActionSheet (Sprint 5.3 hook extension)
+- ENTA ResonanceTabV3 connect button → ConnectActionSheet (Sprint 5.5 wiring)
+
+These are 1-line hook extensions; Sprint 5.9 ships standalone component for re-use.
+
+=== TELEMETRY ===
+
+console.info('[useConnect] connected user_id=', xxxxx, 'trust=', selectedTrust);
+console.info('[useConnections] loaded', N, 'connections');
+console.info('[useConnectionRequests] loaded', P, 'pending,', A, 'accepted');
+console.info('[useConnectionRequests] accepted', id);
+console.info('[useConnectionRequests] rejected', id);

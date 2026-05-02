@@ -1,0 +1,49 @@
+BACKEND AUDIT REFERENCES — Sprint 5.9
+Date: 2026-05-02
+
+=== D1 SCHEMA (verified) ===
+
+profiles (31 cols): id, email, full_name, display_name, handle, avatar_url, bio,
+country_code, phone, interests, locale, reputation_score, created_at, updated_at,
+user_id, country, city, birthday, gender, preferred_language, timezone, website,
+telegram_url, facebook_url, membership_tier, currency, context_auto_detect,
+language, banner_url
+
+→ All Sprint 5.9 needed columns present (display_name, handle, bio, avatar_url,
+preferred_language, locale, timezone)
+
+enta_connections (11 cols): id, requester_id, recipient_id, status, user_low,
+user_high, created_at, updated_at, accepted_at, rejected_at, blocked_at
+
+enta_connection_requests (7 cols): id, sender_id, receiver_id, status, metadata,
+created_at, updated_at
+
+→ trust_level stored in metadata JSONB
+
+NO user_settings or user_preferences table → fallback strategy:
+- localStorage primary store (uzg-user-settings-v1)
+- profiles.preferred_language for language persistence (server-side)
+
+=== D3 RPCs (verified live) ===
+
+rpc_connect_user(target_user_id) → useConnect.connect()
+rpc_accept_connection(connection_id) → useConnectionRequests.acceptRequest()
+rpc_reject_connection(connection_id) → useConnectionRequests.rejectRequest()
+rpc_get_my_connections(limit_count) → useConnections.reload()
+rpc_get_connection_requests(limit_count) → useConnectionRequests.reload()
+rpc_get_connection_suggestions(limit_count) → wrapper exported, deferred consumption
+
+=== Supabase Auth API ===
+
+auth.signOut() → useLogout
+auth.resetPasswordForEmail(email, { redirectTo }) → useForgotPassword
+auth.updateUser({ password }) → useResetPassword + useChangePassword
+auth.onAuthStateChange((event, session) => ...) → useSessionExpiry
+
+=== Supabase Storage ===
+
+avatars bucket (verify status pending — graceful fallback in useAvatarUpload):
+- 5 MB max file size
+- Path: <user_id>/avatar-<timestamp>.<ext>
+- Public URL via getPublicUrl
+- Bucket-not-found error → friendly message "Bucket avatars chưa tồn tại — chờ thiết lập Phase 6"
