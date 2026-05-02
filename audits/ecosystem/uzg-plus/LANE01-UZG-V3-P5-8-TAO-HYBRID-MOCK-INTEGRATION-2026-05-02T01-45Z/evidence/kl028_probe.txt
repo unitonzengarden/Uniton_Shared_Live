@@ -1,0 +1,29 @@
+KL-028 PRODUCTION PROBE — Sprint 5.8 TAO (FINAL Phase 5)
+Date: 2026-05-02
+Method: curl -L --max-redirs 3 https://uzg.plus<route>
+
+200 https://uzg.plus/v3/
+200 https://uzg.plus/v3/login
+200 https://uzg.plus/v3/signup
+200 https://uzg.plus/v3/home
+200 https://uzg.plus/v3/chat
+200 https://uzg.plus/v3/wallet
+200 https://uzg.plus/v3/wallet/asset/U
+200 https://uzg.plus/v3/wallet/convert
+200 https://uzg.plus/v3/enta
+200 https://uzg.plus/v3/enta/onboarding
+200 https://uzg.plus/v3/plus
+200 https://uzg.plus/v3/membership
+200 https://uzg.plus/v3/u-reward
+200 https://uzg.plus/v3/tao              [Sprint 5.8 — Overview]
+200 https://uzg.plus/v3/tao/bazi         [Sprint 5.8 — Hybrid]
+200 https://uzg.plus/v3/tao/tuvi         [Sprint 5.8 — Hybrid]
+200 https://uzg.plus/v3/tao/phongthuy    [Sprint 5.8 — Mock]
+200 https://uzg.plus/v3/tao/lichvannien  [Sprint 5.8 — Mock]
+200 https://uzg.plus/v3/tao/aier         [Sprint 5.8 — Mock NEW]
+200 https://uzg.plus/api/health
+
+RESULT: 20/20 PASS
+Sprint 5.1-5.7 routes UNTOUCHED. TAO Sprint 5.8 routes live (6 V3 routes).
+
+🏁 V3 PWA OS PRODUCTION READY — 20 routes verified

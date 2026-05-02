@@ -1,0 +1,17 @@
+PLAYWRIGHT PRODUCTION RESULTS — Sprint 5.8 TAO
+Date: 2026-05-02
+Spec: tests/visual/p5-8-tao-prod.spec.mjs
+Config: playwright.visual-prod.config.mjs
+
+Running 8 tests using 1 worker
+
+PASS [chromium] prod /tao redirects to login when unauthed
+PASS [chromium] prod /tao/bazi redirects to login when unauthed
+PASS [chromium] prod /tao/tuvi redirects to login when unauthed
+PASS [chromium] prod /tao/phongthuy redirects to login (mock module)
+PASS [chromium] prod Direct bazi_charts table exists (Hybrid Bazi read)
+PASS [chromium] prod Direct enta_bazi_records table exists (KL-046 bridge)
+PASS [chromium] prod Direct ziwei_charts table exists (Hybrid Tử Vi read)
+PASS [chromium] prod rpc_get_enta_bazi_record reachable (compute path)
+
+8 passed (9.5s)

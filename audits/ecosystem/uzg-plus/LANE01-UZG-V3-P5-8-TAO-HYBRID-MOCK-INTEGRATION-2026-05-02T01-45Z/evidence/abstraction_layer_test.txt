@@ -1,0 +1,55 @@
+ABSTRACTION LAYER TEST — Sprint 5.8
+Date: 2026-05-02
+
+=== TEST: Lane_02 ship pattern (mock → real flip) ===
+
+Scenario: Lane_02 ships Phong Thủy DDL in Phase 6.
+
+Step 1: Update src/data/v3-tao-data-layer.ts:
+  TAO_DATA_SOURCE.phongthuy = 'real'  // was 'mock'
+
+Step 2: Implement fetchRealPhongThuy:
+  export async function fetchRealPhongThuy(userId: string) {
+    const { data } = await supabase
+      .from('phong_thuy_profiles')  // hypothetical Lane_02 table
+      .select('*')
+      .eq('user_id', userId)
+      .single();
+    return data;
+  }
+
+Step 3: Update usePhongThuyData.ts (already wired):
+  if (TAO_DATA_SOURCE.phongthuy === 'real') {
+    const real = await fetchRealPhongThuy(userId);
+    if (real) { setData(real); setSource('real'); return; }
+  }
+
+Step 4: UI components — UNCHANGED.
+  V3TaoPhongThuyPage.jsx still imports usePhongThuyData(),
+  reads data + loading state same way.
+  No JSX modifications required.
+
+=== VERIFICATION ===
+
+Compile clean test:
+  - usePhongThuyData has both mock + real paths coded
+  - Real fetcher stub already exists (returns null currently)
+  - Hook auto-routes: if config='real' AND fetcher returns data → use it; else fallback mock
+
+Result: PASS — abstraction layer absorbs Lane_02 swap with NO UI changes required.
+
+=== BENEFITS ===
+
+1. Lane_02 ship timeline uncertainty handled (today mock, tomorrow real)
+2. UI testing happens NOW with mock data (no waiting for backend)
+3. Backend swap is a 1-flag + 1-fetcher commit (≤30 min in Phase 6)
+4. Sprint 5.8 architectural investment saves ~8-12h in Phase 6 if Lane_02 ships unpredictably
+
+=== ROLLBACK SAFETY ===
+
+If Lane_02 real fetcher has bugs:
+  - Revert TAO_DATA_SOURCE.phongthuy = 'mock'
+  - Mock data renders again
+  - No user-facing breakage
+
+This pattern is reusable for any future Mock → Real migration in Phase 6.

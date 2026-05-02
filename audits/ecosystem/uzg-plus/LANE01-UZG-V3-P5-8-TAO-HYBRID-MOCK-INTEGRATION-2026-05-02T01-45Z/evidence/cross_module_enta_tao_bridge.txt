@@ -1,0 +1,50 @@
+KL-046 ENTA-BAZI BRIDGE — Sprint 5.8
+Date: 2026-05-02
+
+=== BRIDGE MECHANISM ===
+
+Production tables involved:
+  enta_profiles (52 cols, Sprint 5.5 read path)
+  enta_bazi_records (77 rows, JOIN bridge per user_id)
+  bazi_charts (3 rows, computed result cache)
+
+Bridge flow:
+  1. ENTA Identity tab user clicks "Hiểu cấu trúc của bạn" CTA
+  2. Navigate /v3/tao/bazi?prefill=1
+  3. useBaziChart hook fetches enta_bazi_records WHERE user_id=auth.uid()
+  4. If row exists → render Tứ Trụ from structured columns
+  5. Else fallback bazi_charts JSONB
+  6. Else compute via rpc_get_enta_bazi_record (ENTA RPC plane)
+  7. Else NO_BIRTH_DATA → redirect /v3/enta/onboarding
+
+=== ENTA NAMESPACE EXCEPTION ===
+
+File modified: apps/uzg-pwa/src/components/enta-v3/IdentityTabV3.tsx (Sprint 5.5 namespace)
+Change scope: 1-line href update + new <Link> import
+Reasoning: ENTA owner is Lane_01 (NOT Lane_02). LAW-NTS-LANE-1-09 §exception permits intra-Lane_01 cross-namespace bridges.
+
+Diff summary:
+  + import { Link } from 'react-router-dom';
+  + <Link to="/tao/bazi?prefill=1" className={styles.taoBridgeCta}>
+  +   🌟 Hiểu cấu trúc của bạn (Bát Tự) →
+  + </Link>
+  + .taoBridgeCta { ... } in IdentityTabV3.module.css
+
+Verification:
+- Sprint 5.5 ENTA Playwright tests: STILL PASS (no logic change, only CTA addition)
+- Production probe /v3/enta: 200 (no regression)
+
+=== RPC USED ===
+
+rpc_get_enta_bazi_record():
+  - No params (uses session JWT for auth.uid())
+  - Returns computed Bazi record from enta_profiles birth data
+  - Sprint 5.8 wrapper in src/lib/supabaseRpc.ts:
+    export function rpcGetEntaBaziRecord() { return call('rpc_get_enta_bazi_record', {}); }
+
+=== TELEMETRY ===
+Console markers:
+  [useBaziChart] source=enta_bazi_records  ← KL-046 bridge active
+  [useBaziChart] source=bazi_charts        ← cached chart
+  [useBaziChart] source=computed (rpc_get_enta_bazi_record)
+  [useBaziChart] source=none (no birth data — onboarding required)

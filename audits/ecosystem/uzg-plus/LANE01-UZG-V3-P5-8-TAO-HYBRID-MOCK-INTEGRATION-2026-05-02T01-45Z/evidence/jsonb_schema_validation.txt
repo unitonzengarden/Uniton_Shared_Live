@@ -1,0 +1,41 @@
+KL-045 JSONB-CENTRIC STORAGE — Sprint 5.8
+Date: 2026-05-02
+
+=== PRODUCTION SCHEMAS (verified TAO Audit #82 D1) ===
+
+bazi_charts (3 rows):
+  - user_id (FK to auth)
+  - chart_object (JSONB) — full chart payload
+  - computed_at, version, created_at, updated_at
+  → Frontend: parse JSONB.pillars / JSONB.luck_pillars / JSONB.useful_god
+
+enta_bazi_records (77 rows — KL-046 bridge):
+  - user_id, normalization_id, record_status
+  - year_pillar / month_pillar / day_pillar / hour_pillar (text)
+  - year_stem / year_branch / month_stem / month_branch / day_stem / day_branch / hour_stem / hour_branch (granular text)
+  - certainty_level / certainty_score
+  - root_payload (JSONB) — additional structured data
+  - computed_at, created_at, updated_at
+  → Frontend: prefer structured columns, fallback to root_payload JSONB
+
+ziwei_charts (4 rows):
+  - user_id, chart_object (JSONB), cycle_layers (JSONB), computed_at
+  → Frontend: parse JSONB.palaces (12) + JSONB.cycle_layers
+
+=== CLIENT-SIDE SCHEMA HANDLING ===
+
+types/taoV3.ts uses LOOSE typing for JSONB:
+  - chart_object: Record<string, unknown>
+  - root_payload: Record<string, unknown> | null
+
+Hooks extract with type guards:
+  - useBaziPillars: isEntaBaziRecord(chart) ? structured : isBaziChartRow(chart) ? JSONB : null
+  - useBaziLuckPillars: payload.luck_pillars OR payload.luckPillars OR payload.dai_van
+  - useBaziUsefulGod: payload.useful_god OR payload.usefulGod OR payload.dung_than
+  - useZiweiPalaces: chart_object.palaces OR chart_object.cung
+
+=== RATIONALE ===
+- DB has no schema constraint enforcement on JSONB
+- Multiple chart versions may have different shapes
+- Lightweight client-side validation (try multiple field names) is more resilient
+- KL-045 lesson: prefer JSONB read over migration for schema flexibility

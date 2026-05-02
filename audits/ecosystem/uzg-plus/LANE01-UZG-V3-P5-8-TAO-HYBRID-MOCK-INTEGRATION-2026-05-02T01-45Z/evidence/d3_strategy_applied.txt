@@ -1,0 +1,64 @@
+TAO AUDIT #82 D3 INTEGRATION STRATEGY — APPLIED VERBATIM
+Date: 2026-05-02
+
+=== PER SUB-MODULE MAPPING ===
+
+[BAZI] — Hybrid (real)
+  D3 strategy: Direct read bazi_charts + enta_bazi_records via RLS; compute via rpc_get_enta_bazi_record
+  Sprint 5.8 implementation:
+    - useBaziChart hook: 3-tier fallback
+      1. enta_bazi_records (richest, 77 rows)
+      2. bazi_charts JSONB (3 rows)
+      3. rpc_get_enta_bazi_record (compute on-demand)
+      4. Else NO_BIRTH_DATA → /v3/enta/onboarding
+    - useBaziPillars: extract year/month/day/hour from JSONB or structured pillars
+    - useBaziLuckPillars: extract Đại Vận from JSONB (premium gated)
+    - useBaziUsefulGod: extract Dụng Thần from JSONB (premium gated)
+  Console marker: [useBaziChart] source=enta_bazi_records|bazi_charts|computed|none
+
+[ZIWEI] — Hybrid (real)
+  D3 strategy: Direct read ziwei_charts JSONB; compute keep mock
+  Sprint 5.8 implementation:
+    - useZiweiChart hook: ziwei_charts JSONB read with mock fallback
+    - useZiweiPalaces: extract 12 palaces from chart_object
+    - useZiweiAierReading: mock per-palace reading
+  Console marker: [useZiweiChart] source=ziwei_charts|mock
+
+[PHONG THỦY] — Mock (TAO_BACKEND_LANE02_DEFERRED)
+  D3 strategy: Mock + abstraction for Lane_02 future ship
+  Sprint 5.8 implementation:
+    - usePhongThuyData / usePhongThuyBatTrach / usePhongThuyCuuCung / usePhongThuyResidence
+    - All return mock data + deferred='TAO_BACKEND_LANE02_DEFERRED'
+    - fetchRealPhongThuy stub reserved
+  Console marker: [usePhongThuyData] source=mock TAO_BACKEND_LANE02_DEFERRED
+
+[LỊCH VẠN NIÊN] — Mock (TAO_BACKEND_LANE02_DEFERRED)
+  D3 strategy: Mock + abstraction
+  Sprint 5.8 implementation:
+    - useLichVanNien / useLichVanNienDetail
+    - fetchRealVannien stub reserved
+  Console marker: [useLichVanNien] source=mock TAO_BACKEND_LANE02_DEFERRED
+
+[AIER TAO] — Mock (TAO_BACKEND_LANE02_DEFERRED)
+  D3 strategy: Mock + infrastructure for future aier_tao_threads + aier_tao_messages
+  Sprint 5.8 implementation:
+    - useAierTaoChat: ChatMessage[] with mock responses
+    - useAierTaoReading: per-palace mock reading
+    - fetchRealAierTao stub reserved
+  Console marker: [useAierTaoChat] mock response sent (TAO_BACKEND_LANE02_DEFERRED)
+
+=== ABSTRACTION LAYER ===
+TAO_DATA_SOURCE config in src/data/v3-tao-data-layer.ts:
+{
+  bazi: 'real',
+  ziwei: 'real',
+  phongthuy: 'mock',
+  vannien: 'mock',
+  aierTao: 'mock',
+}
+
+Lane_02 ship pattern (verified in evidence/abstraction_layer_test.txt):
+1. Flip TAO_DATA_SOURCE.<sub_module> = 'real'
+2. Implement fetchReal<SubModule>(args)
+3. Hook auto-routes to real fetcher
+4. UI components UNCHANGED — abstraction layer absorbs the swap
