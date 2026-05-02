@@ -10,7 +10,7 @@
 ## §0. Header
 
 - **Generator:** `aier-state-update v1.0` invoked via `scripts/runtime/generate_project_status.py v1.1`
-- **Source commit:** `3a993b66b2f6907f9d80a49d7f7dcbf58d4386dc` (short: `3a993b6`)
+- **Source commit:** `59a2ac76a399b19470b7a9edd860f5ad95e1f8cc` (short: `59a2ac7`)
 - **Auto-generated:** `true` (do not hand-edit)
 - **Authority:** repo-backed automation per LAW_N8 §L8.2 explicitly enabled CI mode (state-mirror auto-regenerate scope only)
 
@@ -68,11 +68,11 @@
 
 | SHA | Author | Subject |
 |---|---|---|
-| `3a993b6` | unitonzengarden | docs(lane03): review daily missions rpc privilege posture |
-| `0f2cb78` | Uniton Zen | Lane01 S7: PLUS Hub deliverables — uzg.plus/v3/plus + /v3/app/* LIVE [solo CLAC1] (#62) |
-| `749b793` | Uniton Zen | Lane01 S6: ENTA full build deliverables — uzg.plus/v3/enta/* LIVE [solo CLAC1] (#61) |
-| `409b6fc` | Ecosystem Poller Bot | poll: ecosystem state update [vercel skip] |
-| `e50fa1a` | Uniton Zen | Lane01 S5 takeover: production verify + 15 screenshots after CLAC1 push uzgplus-app PR (#60) |
+| `59a2ac7` | unitonzengarden | docs(lane02): LANE02-PHASE6-AIER-CHAT-WIRE-V1 deliverables (PARTIAL) |
+| `61adfca` | Ecosystem Poller Bot | poll: ecosystem state update [vercel skip] |
+| `0dcf304` | AIER Code Heartbeat | AIER Code heartbeat 2026-05-02T12:02:24Z [vercel skip] |
+| `abf4b9f` | Uniton Zen | audit(p6-1b): authenticated QA infrastructure + measured V2 vs V3 baselines (#96) |
+| `d421c1b` | Ecosystem Poller Bot | poll: ecosystem state update [vercel skip] |
 
 ## §7. Latest 5 DONE Tasks (from MASTER_CHECKLIST)
 
