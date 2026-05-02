@@ -10,7 +10,7 @@
 ## §0. Header
 
 - **Generator:** `aier-state-update v1.0` invoked via `scripts/runtime/generate_project_status.py v1.1`
-- **Source commit:** `59a2ac76a399b19470b7a9edd860f5ad95e1f8cc` (short: `59a2ac7`)
+- **Source commit:** `825585473f10ae6046281a3853ecbd98d10455de` (short: `8255854`)
 - **Auto-generated:** `true` (do not hand-edit)
 - **Authority:** repo-backed automation per LAW_N8 §L8.2 explicitly enabled CI mode (state-mirror auto-regenerate scope only)
 
@@ -68,11 +68,11 @@
 
 | SHA | Author | Subject |
 |---|---|---|
+| `8255854` | unitonzengarden | audit(lane02/phase6): backfill 4 missing runtime ledger entries |
+| `ba2c7c1` | AIER State Bot | [auto-status] regen runtime+network surfaces from 59a2ac7 [vercel skip] |
 | `59a2ac7` | unitonzengarden | docs(lane02): LANE02-PHASE6-AIER-CHAT-WIRE-V1 deliverables (PARTIAL) |
 | `61adfca` | Ecosystem Poller Bot | poll: ecosystem state update [vercel skip] |
 | `0dcf304` | AIER Code Heartbeat | AIER Code heartbeat 2026-05-02T12:02:24Z [vercel skip] |
-| `abf4b9f` | Uniton Zen | audit(p6-1b): authenticated QA infrastructure + measured V2 vs V3 baselines (#96) |
-| `d421c1b` | Ecosystem Poller Bot | poll: ecosystem state update [vercel skip] |
 
 ## §7. Latest 5 DONE Tasks (from MASTER_CHECKLIST)
 

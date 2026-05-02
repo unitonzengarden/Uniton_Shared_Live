@@ -10,7 +10,7 @@
 ## §0. Header
 
 - **Generator:** `aier-state-update v1.0` invoked via `scripts/runtime/generate_lane_registry.py v1.0`
-- **Source commit:** `59a2ac76a399b19470b7a9edd860f5ad95e1f8cc` (short: `59a2ac7`)
+- **Source commit:** `825585473f10ae6046281a3853ecbd98d10455de` (short: `8255854`)
 - **Auto-generated:** `true` (do not hand-edit)
 - **Authority:** repo-backed automation per LAW_N8 §L8.2 explicitly enabled CI mode (visibility surface only — does NOT register Lanes; new Lane registration remains NTS-gated per LAW_N10 §L10.x).
 
@@ -19,7 +19,7 @@
 | Lane ID | Mission | Status | Capability summary | Owner | Last activity |
 |---|---|---|---|---|---|
 | `Lane_01` | CTO-style governance contributor and draft author inside `Uniton_Shared` under active law and explicit task scope | BOOTSTRAP / BASELINE / NO_NEW_CAPABILITY_GRANTED | limited: BASELINE_READ_AND_REPORT, BASELINE_NON_CANON_DRAFTING, BASELINE_REPO_VISIBILITY_UPDATES | NTS | `2026-04-29T06:30:00Z` |
-| `Lane_02` | (not declared) | ACTIVE / AIER_CODE_PARALLEL_EXECUTOR / TECH_NON_CANON_ONLY | allowed: read AIER Code boot, SHARED index, active laws, runtime/current_state, checklist, action board, notifications, handoffs, and scoped target files, read  | NTS | `2026-05-02T19:15:00+07:00` |
+| `Lane_02` | (not declared) | ACTIVE / AIER_CODE_PARALLEL_EXECUTOR / TECH_NON_CANON_ONLY | allowed: read AIER Code boot, SHARED index, active laws, runtime/current_state, checklist, action board, notifications, handoffs, and scoped target files, read  | NTS | `2026-05-02T20:00:00+07:00` |
 | `Lane_03` | execution-support, audit, cross-review, and state-reconciliation work inside `Uniton_Shared` under active law and explic | BOOTSTRAP / BASELINE / NO_NEW_CAPABILITY_GRANTED | limited: BASELINE_READ_AND_REPORT, BASELINE_CROSS_REVIEW, BASELINE_STATE_RECONCILIATION | NTS | `2026-04-29T01:45:00+07:00` |
 
 ## §2. Pending Lanes
