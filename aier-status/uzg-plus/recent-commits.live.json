@@ -1,9 +1,58 @@
 {
   "project_slug": "uzg-plus",
   "github_repo": "unitonzengarden/uzgplus-app",
-  "polled_at": "2026-05-02T14:49:34.651Z",
+  "polled_at": "2026-05-02T15:47:42.939Z",
   "count": 30,
   "commits": [
+    {
+      "sha": "e0f60714cc203af143d2262f27e273192d8777f3",
+      "message": "test(lane02/phase6): AIER chat 5-case production smoke test (#112)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-02T15:27:09Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/e0f60714cc203af143d2262f27e273192d8777f3"
+    },
+    {
+      "sha": "e95155c1b35f62d37f0723df64d0307ee26d8e2c",
+      "message": "feat v2 home u reward floating shell top right per nts request (#111)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-02T15:24:58Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/e95155c1b35f62d37f0723df64d0307ee26d8e2c"
+    },
+    {
+      "sha": "1453a8fd70e7541f0e4df3eb76de8304661f297d",
+      "message": "fix(lane02/phase6): PIVOT skip OpenAI embedding (CF Worker crash) (#110)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-02T15:18:29Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/1453a8fd70e7541f0e4df3eb76de8304661f297d"
+    },
+    {
+      "sha": "0da8fb35c9950db4db453566b08a70581d6d83f2",
+      "message": "fix(lane02/phase6): defensive OpenAI embed handling (#108)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-02T15:10:18Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/0da8fb35c9950db4db453566b08a70581d6d83f2"
+    },
+    {
+      "sha": "d77ffe7a50e21d2e3d961bd733916daa67f81f48",
+      "message": "diag(lane02/phase6): bisect 502 via stage 1.5 + 1.7 + 2 (#107)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-02T15:06:47Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/d77ffe7a50e21d2e3d961bd733916daa67f81f48"
+    },
+    {
+      "sha": "008bda3346ae9f3b05142e8398d8b5c4102f0dd6",
+      "message": "feat v2 ui upgrade live syne dm sans mobile shell neutral canvas (#106)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-02T15:06:31Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/008bda3346ae9f3b05142e8398d8b5c4102f0dd6"
+    },
+    {
+      "sha": "d85f1d5c1d15b0e4f67b0fbb78e7880f627fd7f4",
+      "message": "diag(lane02/phase6): add ?diagnostic=2 (post-KB) + ?diagnostic=3 (Claude non-stream) (#105)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-02T15:03:49Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/d85f1d5c1d15b0e4f67b0fbb78e7880f627fd7f4"
+    },
     {
       "sha": "a040598dbcaee2ea84d6cb06dadfd884c9eea367",
       "message": "diag(lane02/phase6): add ?diagnostic=1 short-circuit (#103)",
@@ -164,55 +213,6 @@
       "author": "LANE01-Cursor",
       "committed_at": "2026-05-02T01:39:30Z",
       "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/19af98f4da5ab9f9081c2e578927a8acf8fe0ad7"
-    },
-    {
-      "sha": "28528b1689597df9fe065c961c88b36e15e57872",
-      "message": "feat(p5-7): UZG+ Phase 5 Sprint 5.7 — U-Reward Direct reward_emit Edge Function [solo CLAC1] (#86)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-05-02T01:23:43Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/28528b1689597df9fe065c961c88b36e15e57872"
-    },
-    {
-      "sha": "caa35f860492970ceb691063c90424e825c09985",
-      "message": "feat(p5-6): UZG+ Phase 5 Sprint 5.6 — PLUS Hub + Membership Hybrid integration [solo CLAC1] (#85)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-05-01T19:43:47Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/caa35f860492970ceb691063c90424e825c09985"
-    },
-    {
-      "sha": "80707ed6db3d174f64a2df95e391bfe5ffb6cff2",
-      "message": "feat(p5-5): UZG+ Phase 5 Sprint 5.5 — ENTA module Direct RPC + RLS integration [solo CLAC1] (#84)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-05-01T19:09:45Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/80707ed6db3d174f64a2df95e391bfe5ffb6cff2"
-    },
-    {
-      "sha": "af3a26f0f2eb0af46eb02d13e516cbfe600bb218",
-      "message": "feat(p5-4): UZG+ Phase 5 Sprint 5.4 — WALLET Direct Edge Functions Hybrid Integration (#83)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-05-01T17:36:10Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/af3a26f0f2eb0af46eb02d13e516cbfe600bb218"
-    },
-    {
-      "sha": "2931a04411b5bf09fc6bedfc8467178bebfa45f8",
-      "message": "feat(p5-3): UZG+ Phase 5 Sprint 5.3 — CHAT module Hybrid Integration (#82)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-05-01T16:36:07Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/2931a04411b5bf09fc6bedfc8467178bebfa45f8"
-    },
-    {
-      "sha": "94c14e0c2010361c193a58ab54db7ae71697ae88",
-      "message": "feat(p5-2): UZG+ Phase 5 Sprint 5.2 — HOME feed Hybrid Integration (#81)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-05-01T15:53:14Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/94c14e0c2010361c193a58ab54db7ae71697ae88"
-    },
-    {
-      "sha": "9802e5de720cf53b7a9adb9acc42eb91a400749f",
-      "message": "chore(lane02): runtime audit + secrets governance v1 [vercel skip]",
-      "author": "unitonzengarden",
-      "committed_at": "2026-05-01T15:23:45Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/9802e5de720cf53b7a9adb9acc42eb91a400749f"
     }
   ]
 }
