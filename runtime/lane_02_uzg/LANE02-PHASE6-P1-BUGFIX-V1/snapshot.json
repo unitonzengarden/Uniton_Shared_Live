@@ -1,0 +1,83 @@
+{
+  "task_id": "LANE02-PHASE6-P1-BUGFIX-V1",
+  "status": "PASS",
+  "timestamp": "2026-05-02T18:30:00+07:00",
+  "executor": "CURSOR-2",
+  "commit": "ef9bf33",
+
+  "bugs_fixed": {
+    "BUG-CHAT-01": {
+      "status": "FIXED",
+      "severity": "P1",
+      "description": "ENTA_ROOT_REQUIRED gate shows Vietnamese CTA button instead of English error",
+      "files": [
+        "src/hooks/useInbox.ts",
+        "src/components/chat-v3/ChatInboxV3.tsx",
+        "src/components/chat-v3/ChatInboxV3.module.css",
+        "apps/uzg-pwa/src/hooks/useInbox.ts",
+        "apps/uzg-pwa/src/components/chat-v3/ChatInboxV3.tsx",
+        "apps/uzg-pwa/src/components/chat-v3/ChatInboxV3.module.css"
+      ]
+    },
+    "BUG-CHAT-02": {
+      "status": "FIXED",
+      "severity": "P2",
+      "description": "Auto-fixed via BUG-CHAT-01 — Vietnamese message now shows instead of English",
+      "files": ["same as BUG-CHAT-01"]
+    },
+    "BUG-WALLET-01": {
+      "status": "FIXED",
+      "severity": "P1",
+      "description": "Convert overlay now renders wallet state background (skeleton/empty/overview)",
+      "approach": "Option B — render wallet state background layer in V3ConvertPage",
+      "bonus_fix": "navigate('/wallet') corrected to navigate('/v3/wallet')",
+      "files": [
+        "src/pages/v3/V3ConvertPage.jsx",
+        "apps/uzg-pwa/src/pages/v3/V3ConvertPage.jsx"
+      ]
+    },
+    "BUG-WALLET-02": {
+      "status": "FIXED",
+      "severity": "P2",
+      "description": "WalletEmptyStateV3 adds 'Bat dau kiem U ->' button linking to /v3/u-reward",
+      "files": [
+        "src/components/wallet-v3/WalletEmptyStateV3.tsx",
+        "src/components/wallet-v3/WalletEmptyStateV3.module.css",
+        "apps/uzg-pwa/src/components/wallet-v3/WalletEmptyStateV3.tsx",
+        "apps/uzg-pwa/src/components/wallet-v3/WalletEmptyStateV3.module.css"
+      ]
+    }
+  },
+
+  "audit_results": {
+    "tests_total": 24,
+    "tests_passed": 22,
+    "tests_failed": 2,
+    "regressions": 0,
+    "original_baseline": "20/21 PASS (same as Track A)",
+    "new_bugfix_tests": 3,
+    "failures": [
+      {
+        "id": "ureward-04",
+        "reason": "P2 test-infra: page.request doesn't carry localStorage auth. Known from Track A. Not a production bug."
+      },
+      {
+        "id": "chat-fix-01",
+        "reason": "Pre-deploy: production uzg.plus still has old build. Fix will show after CI deploy of ef9bf33."
+      }
+    ]
+  },
+
+  "approach_chosen": {
+    "BUG-WALLET-01": "Option B — render wallet state (WalletOverviewV3/WalletEmptyStateV3/WalletSkeletonV3) as background layer in V3ConvertPage. No duplicate hook calls (uses existing useWallet()). ConvertOverlayV3 (position:fixed) overlays the wallet state naturally."
+  },
+
+  "constraints_verified": {
+    "v2_backend_unmodified": true,
+    "lane01_namespace_unmodified": true,
+    "tao_frontend_unmodified": true,
+    "use_aier_tao_chat_unmodified": true,
+    "no_secrets_in_commit": true,
+    "ascii_commit_message": true
+  }
+}

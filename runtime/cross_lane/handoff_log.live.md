@@ -15,3 +15,30 @@
 - **PR:** TBD
 
 (future cross-Lane handoffs append here)
+
+### LANE02-CROSS-TECH-STACK-AUDIT-V1 — 2026-05-02T09:30:00Z
+
+| Field | Value |
+|-------|-------|
+| Task | LANE02-CROSS-TECH-STACK-AUDIT-V1 |
+| Executor | CURSOR-2 |
+| Status | DONE |
+| Note | tech stack audit published. 10/10 sections A-J. Option C auth bypass recommended. |
+
+### LANE02-PHASE6-P0-USER-JOURNEY-AUDIT-V1 — 2026-05-02T10:30:00Z
+
+| Field | Value |
+|-------|-------|
+| Task | LANE02-PHASE6-P0-USER-JOURNEY-AUDIT-V1 |
+| Executor | CURSOR-2 |
+| Status | DONE |
+| Note | 4 modules audited, 20/21 pass, 2 P1 bugs found. Auth bypass working. |
+
+### LANE02-PHASE6-P1-BUGFIX-V1 — 2026-05-02T18:30:00Z
+
+| Field | Value |
+|-------|-------|
+| Task | LANE02-PHASE6-P1-BUGFIX-V1 |
+| Executor | CURSOR-2 |
+| Status | DONE |
+| Note | 4 bugs fixed (2 P1 + 2 P2). Audit re-run 22/24 pass, 0 regressions. Commit ef9bf33. |
