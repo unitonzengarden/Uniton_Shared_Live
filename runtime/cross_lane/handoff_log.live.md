@@ -55,6 +55,15 @@
 - **Backfill reason:** Deliverables were pushed to Uniton_Shared canonical correctly, but no ledger entry was appended.
 - **Source of truth:** `runtime/lane_02_uzg/LANE02-PHASE6-AIER-CHAT-WIRE-V1/snapshot.json`
 
+### LANE02-V2LIVE-FRONTEND-AUDIT-V1 — 2026-05-02T22:30:00+07:00
+
+- **Executor:** CURSOR-2
+- **Status:** PASS
+- **Scope:** V2 LIVE frontend read-only audit (CHAT/WALLET/PLUS+Membership/U-Reward/TAO)
+- **Key finding:** TAO module FULLY PRESENT in V2 (task spec assumption was wrong). 189 files, 16 routes.
+- **Integration strategy:** 4-step plan ~14-18h total. P0 blocker: AIER migration (NTS/Lane_01).
+- **Next action:** CLAC-2 start Step 2 (Bazi/Ziwei V3 swap); NTS apply migration Step 1.
+
 ### LANE02-CROSS-SYNC-WORKFLOW-EXTEND-V1 — 2026-05-02T20:35:00+07:00
 
 - **Executor:** CURSOR-2

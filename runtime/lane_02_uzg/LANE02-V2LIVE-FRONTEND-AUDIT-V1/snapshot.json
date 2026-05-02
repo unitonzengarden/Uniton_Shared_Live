@@ -1,0 +1,94 @@
+{
+  "task_id": "LANE02-V2LIVE-FRONTEND-AUDIT-V1",
+  "status": "PASS",
+  "timestamp": "2026-05-02T22:30:00+07:00",
+  "executor": "CURSOR-2",
+  "mode": "READ_ONLY",
+
+  "framework": "React + Vite (SPA)",
+  "router": "react-router-dom v6",
+  "build_target": "Cloudflare Pages (dist/_worker.js)",
+  "app_entry": "src/App.jsx (4266 lines)",
+  "ts_js_ratio": "~60% TS / ~40% JSX",
+  "styling": "CSS Modules + plain CSS + CSS custom properties",
+  "theme_system": "src/theme/appTheme.js (5 themes: metal/water/wood/fire/earth)",
+  "state_management": "React hooks + Context",
+
+  "key_finding": "TAO module is FULLY PRESENT in V2 — 189 files, 16 routes. Task spec assumption was wrong.",
+
+  "v2_routes_total": 28,
+  "v2_routes_200": 28,
+  "v2_routes_4xx": 0,
+
+  "modules_audited": {
+    "CHAT": {
+      "exists_in_v2": true,
+      "v2_components": 26,
+      "v3_upgrade_components": 20,
+      "main_routes": ["/chat", "/chat/:id", "/chat/:id/info"],
+      "backend_endpoints": ["/api/v1/conversations", "/api/v1/messages"],
+      "data_source": "real (V2 backend + Supabase Realtime)",
+      "bugs_fixed": ["BUG-CHAT-01 ef9bf33"],
+      "v3_pivot_effort_hours": "1.5-2h"
+    },
+    "WALLET": {
+      "exists_in_v2": true,
+      "v2_components": 41,
+      "v3_upgrade_components": 12,
+      "main_routes": ["/wallet", "/wallet/asset/:code", "/wallet/activity/:id"],
+      "backend_endpoints": ["/api/v1/wallet/summary", "/api/v1/wallet/history", "/api/v1/wallet/convert"],
+      "data_source": "real (V2 backend + Edge Functions)",
+      "bugs_fixed": ["BUG-WALLET-01 ef9bf33", "BUG-WALLET-02 ef9bf33"],
+      "v3_pivot_effort_hours": "1.5-2h"
+    },
+    "PLUS_MEMBERSHIP": {
+      "exists_in_v2": true,
+      "v2_components": 22,
+      "v3_upgrade_components_plus": "many (plus-v3/)",
+      "v3_upgrade_components_membership": "many (membership-v3/)",
+      "main_routes": ["/app", "/membership"],
+      "backend_endpoints": ["/api/v1/membership/status", "/api/v1/membership/upgrade"],
+      "data_source": "real (V2 backend + Supabase)",
+      "v3_pivot_effort_hours": "1.5h"
+    },
+    "U_REWARD": {
+      "exists_in_v2": true,
+      "v2_components": 14,
+      "v3_upgrade_components": "many (u-reward-v3/)",
+      "main_routes": ["/u-earnings"],
+      "redirect_from": "/u-reward -> /u-earnings",
+      "backend_endpoints": ["/api/v1/u-reward/checkin", "/api/v1/u-reward/quiz"],
+      "data_source": "real (V2 backend + Edge Function reward_emit)",
+      "v3_pivot_effort_hours": "1.5h"
+    },
+    "TAO": {
+      "exists_in_v2": true,
+      "v2_components_total": 189,
+      "sub_modules": {
+        "bazi": { "files": 30, "data_source": "real", "routes": 7 },
+        "ziwei": { "files": 15, "data_source": "real", "routes": 3 },
+        "phongthuy": { "files": 8, "data_source": "mock", "routes": 2 },
+        "vannien": { "files": 12, "data_source": "mock", "routes": 3 },
+        "aier_tao": { "files": 5, "data_source": "real (migration pending)", "routes": 1 }
+      },
+      "v3_upgrade_components_embedded": 46,
+      "v3_upgrade_subfolders": ["bazi-premium-v3", "ziwei-v3", "phong-thuy-v3", "lich-van-nien-v3", "aier-tao-v3", "aier-tao-chat-v3", "residence-v3"],
+      "aier_chat_status": "wired (LANE02-PHASE6-AIER-CHAT-WIRE-V1 PARTIAL, migration pending)",
+      "v3_pivot_effort_notes": "V3 components already embedded in tao/*-v3/ folders"
+    }
+  },
+
+  "v3_namespace": {
+    "chat_v3_files": 20,
+    "wallet_v3_files": 12,
+    "plus_v3_files": "many",
+    "u_reward_v3_files": "many",
+    "membership_v3_files": "many",
+    "tao_v3_embedded_files": 46
+  },
+
+  "integration_strategy_steps": 4,
+  "step_1_blocker": "Apply migration 20260502093001_lane02_aier_kb_rag_v1.sql (NTS/Lane_01 action)",
+  "total_effort_estimate_hours": "14-18h",
+  "next_action": "CLAC-2 start Step 2 (Bazi/Ziwei V3 swap) + NTS apply migration for Step 1"
+}
