@@ -1,0 +1,77 @@
+{
+  "task_id": "LANE01-V1-GA-AUTOPILOT-LOOP-V1",
+  "title": "Autopilot loop to AIER Code v1.0 GA — execute Lane_01 rows 4-9 sequentially",
+  "lane": "Lane_01",
+  "executor": "CLAC-1",
+  "model": "claude-opus-4-7",
+  "self_approve_authority": "AMD_LANE01_CTO_AUTO_APPROVE_TECH_NON_CANON §3.1 YES list — autopilot loop wrapper is tech non-canon (orchestration only, no canon/law/skill edits)",
+  "parent_head": "0531fea107f6e9ec765beec6665cfef248f7eeed",
+  "iterations_planned": 6,
+  "halt_at_iteration_5_for_NTS_SIGN_OFF": "MANDATORY per spec — iterations 5+6 awaiting NTS approval message",
+  "iterations": [
+    {
+      "n": 1,
+      "task_id": "LANE01-W4-ROADMAP-HOT-RELOAD-V1",
+      "phase": "W4",
+      "cross_lane_deps": "none",
+      "expected_artifact": "roadmaps/AIER_CODE_V1.1_SUPPLEMENT.md"
+    },
+    {
+      "n": 2,
+      "task_id": "LANE01-W4-PROJECT-STATUS-EXTEND-V1",
+      "phase": "W4",
+      "cross_lane_deps": "none",
+      "expected_artifact": "scripts/runtime/generate_project_status.py v1.0→v1.1 + §11 + §12"
+    },
+    {
+      "n": 3,
+      "task_id": "LANE01-W4-V1-RC-COMMIT-V1",
+      "phase": "W4",
+      "cross_lane_deps": "LANE03-W4-V1-RC-CROSS-REVIEW-V1 (skip — Lane_03 not yet DONE; log skip)",
+      "expected_artifact": "git tag v1.0-rc + releases/v1.0-rc-NOTES.md"
+    },
+    {
+      "n": 4,
+      "task_id": "LANE01-W5-V1-FINAL-AUDIT-V1",
+      "phase": "W5",
+      "cross_lane_deps": "LANE03-W5-LAB-RULE-V1-RELEASE-V1 (skip — Lane_03 not yet DONE; skip lab+rule audit dimension; 7 dimensions only)",
+      "expected_artifact": "reports/LANE01-W5-V1-FINAL-AUDIT-V1_REPORT.md (verdict)"
+    },
+    {
+      "n": 5,
+      "task_id": "LANE01-W5-V1-RELEASE-COMMIT-V1",
+      "phase": "W5",
+      "cross_lane_deps": "NTS_SIGN_OFF — MANDATORY HALT per spec; do NOT execute without NTS verbatim quote",
+      "halt_action": "Write halt note to master report; report v1.0-rc state to NTS; await NTS approval message"
+    },
+    {
+      "n": 6,
+      "task_id": "LANE01-W5-UNITON-FUTURE-HANDOFF-V1",
+      "phase": "W5",
+      "cross_lane_deps": "none",
+      "blocked_by": "Iteration 5 NTS_SIGN_OFF gate"
+    }
+  ],
+  "halt_conditions": [
+    "Boundary violation",
+    "Validator FAIL after 3 retries",
+    "aier-qa-loop health drop > 10 from baseline 76",
+    "NTS_SIGN_OFF gate at iteration 5 (mandatory halt)",
+    "CI workflow FAIL after 3 retries",
+    "Cross-Lane modification needed (R-LANE-01)"
+  ],
+  "boundary_check": {
+    "no_shared_laws": true,
+    "no_canon_edited": true,
+    "no_5_active_skills": true,
+    "no_existing_workers_modified": true,
+    "no_dispatcher_modified": true,
+    "no_lane_dispatch_modified": true,
+    "no_generators_modified_at_master_level": "NB: iteration 2 explicitly bumps generator v1.0→v1.1 per spec; this is its own scope, not autopilot violation",
+    "no_locked_roadmap_final_modified": true,
+    "no_lane_02_03_modified": true,
+    "no_daemon_or_cron": true,
+    "no_secrets_hardcoded": true,
+    "nts_sign_off_gate_respected": true
+  }
+}

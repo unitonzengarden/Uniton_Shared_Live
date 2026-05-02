@@ -1,0 +1,95 @@
+{
+  "task_id": "LANE01-AIER-CODE-STANDARDIZATION-CLOSEOUT-V1",
+  "task_title": "AIER Code post-Canon-activation standardization closeout (Phases A-F mechanical reconcile)",
+  "phase": "Post-Canon-activation state-surface reconcile; Phase G (Final Readiness Report) deferred to Lane_01 chat",
+  "executor": {
+    "lane": "Lane_01 (Claude Opus 4.7 on Vultr Windows Server)",
+    "role": "CTO author per AMD_LANE01_ROLE_REFRAME §3.1; self-approve state-surface reconcile under AMD_LANE01_CTO_AUTO_APPROVE_TECH_NON_CANON §3.1 YES list (architecture/spec drafts non-SHARED/laws + state reconcile precedent per LANE03-AIER-CODE-CANON-DRAFT-UPDATE-SYNC-V1 + AIER-CODE-STATE-SURFACE-RECONCILIATION-V1)",
+    "agent": "CLAC-1 (Claude Code Desktop)",
+    "model": "claude-opus-4-7",
+    "working_dir": "C:\\workspace\\Uniton_Shared"
+  },
+  "authority_chain": {
+    "task_dispatched_by": "NTS chat dispatch on 2026-04-27 (LANE01-AIER-CODE-STANDARDIZATION-CLOSEOUT-V1 task body)",
+    "scope": "Phases A-F mechanical reconcile (state surfaces, capability classification, skill alignment, Lane status, roadmap readiness, validation)",
+    "phase_g_deferred": "Phase G Final Readiness Report deferred to Lane_01 (CLA chat) per task body — NTS will pass this task's report to CLA for final verdict"
+  },
+  "execution_started_utc": "2026-04-27T12:00:00Z",
+  "parent_head_at_start": "035195c77bec6f78c9b330a5d5512c8f9091a833",
+  "branch": "main",
+  "remote": "https://github.com/unitonzengarden/Uniton_Shared.git",
+  "preflight_result": "PASS — HEAD == 035195c (matches parent stated in task body; fast-forwarded from 6694baf to 035195c via Lane_03 commits af49cf9 + 035195c); branch main; worktree clean; up to date with origin/main",
+  "canon_binding_state_at_start": {
+    "active_canon_files_aier_code_canon_folder": [
+      "docs/LAW_CLA_LLM/CANON/00_README_CANON.md (v1.1 ACTIVE)",
+      "docs/LAW_CLA_LLM/CANON/01_AIER_CODE_MASTER_CANON.md (v1.1 ACTIVE)",
+      "docs/LAW_CLA_LLM/CANON/02_AIER_CODE_AUTHORITY_CANON.md (v1.1 ACTIVE)",
+      "docs/LAW_CLA_LLM/CANON/03_AIER_CODE_BOUNDARY_CANON.md (v1.1 ACTIVE)",
+      "docs/LAW_CLA_LLM/CANON/04_AIER_CODE_LIFECYCLE_CANON.md (v1.1 ACTIVE)",
+      "docs/LAW_CLA_LLM/CANON/05_AIER_CODE_INVARIANTS.md (v1.1 ACTIVE)"
+    ],
+    "active_laws": "11 v1.0 ACTIVE (LAW_SYSTEM, LAW_N1-N11, REDLINES) per AMD_LANE03_LAWS_N7_N11 + earlier baselines",
+    "active_amds": [
+      "AMD_LANE01_ROLE_REFRAME_2026-04-26 (CTO scope; trial 2026-04-26→2026-05-26)",
+      "AMD_LANE01_CTO_AUTO_APPROVE_TECH_NON_CANON_2026-04-26 (tech non-canon self-approve; trial)",
+      "AMD_LANE01_FAST_ENDORSER_MODE_2026-04-27 (fast-endorse Lane_03; trial within existing)",
+      "AMD_LANE03_LAWS_N7_N11_2026-04-26 (LAW_N7-N11 v1.0 ACTIVE)",
+      "AMD_LANE03_AIER_CODE_CANON_BUNDLE_2026-04-27 (per Lane_03 apply commit 035195c — 6 canon files DRAFT→ACTIVE)"
+    ],
+    "roadmap": "AIER_CODE_V1_AUTOPILOT_ROADMAP_FINAL.md — APPROVED + LOCKED (tag roadmap-locked-v2-final, NTS APPROVED 2026-04-27 commit 14f7509)",
+    "redlines": "REDLINES.md v1.0 ACTIVE — preserved unchanged"
+  },
+  "files_to_create": [
+    "snapshots/LANE01-AIER-CODE-STANDARDIZATION-CLOSEOUT-V1.snapshot.live.json (this file)",
+    "reports/LANE01-AIER-CODE-STANDARDIZATION-CLOSEOUT-V1_REPORT.md (12 sections per spec)",
+    "audit_logs/LANE01-AIER-CODE-STANDARDIZATION-CLOSEOUT-V1_audit.log"
+  ],
+  "files_to_edit_planned": [
+    "runtime/current_state.md (Phase B.1 — reflect ACTIVE canon + ACTIVE laws + ACTIVE AMDs + LOCKED roadmap + W1.T1 DONE; phase update)",
+    "runtime/checklist/MASTER_CHECKLIST.md (Phase B.2 — reclassify; mark stale rows SUPERSEDED/RESOLVED; add this task IN_PROGRESS then DONE)",
+    "runtime/ACTION_REQUIRED_BOARD.md (Phase B.3 — clean stale entries)",
+    "notifications/NOTIFICATION_LEDGER.md + .json (Phase B.4 — append entry; preserve historical)",
+    "docs/LAW_CLA_LLM/SHARED/sync/SYNC_MANIFEST.json (Phase B.5)",
+    "docs/LAW_CLA_LLM/SHARED/runtime/UNITON_SHARED_RUNTIME_ACCEPTANCE_MANIFEST.json (Phase B.6)",
+    "docs/LAW_CLA_LLM/SHARED/SHARED_INDEX.md (Phase A.2 — verify AIER CODE CANON section reflects ACTIVE)",
+    "docs/LAW_CLA_LLM/SHARED/amendments/AMENDMENTS_LOG.md (Phase A.3 — verify canon apply row recorded; if not, add)",
+    "docs/LAW_CLA_LLM/LANE_01/lane_laws/LAW_LANE_CAPABILITIES.md (Phase C.2 — classify only; UPDATE only if Lane_01 has evidence of using a capability)"
+  ],
+  "files_NOT_to_edit": [
+    "docs/LAW_CLA_LLM/CANON/* (READ-ONLY — R-AUTH-01)",
+    "docs/LAW_CLA_LLM/SHARED/laws/* (READ-ONLY — R-AUTH-01)",
+    "docs/LAW_CLA_LLM/SHARED/os_operations/AUTHORITY_DECLARATION.md (READ-ONLY — R-AUTH-01)",
+    "docs/LAW_CLA_LLM/LANE_02/* (R-LANE-01)",
+    "docs/LAW_CLA_LLM/LANE_03/* (R-LANE-01)",
+    "docs/LAW_CLA_LLM/SHARED/capabilities/REGISTRY.md (Phase C.1 — classify only; do NOT grant new capabilities)",
+    "docs/00_ECOSYSTEM_CANON/* (existing NTS-approved ecosystem canon)",
+    "docs/01_AIER_COMMON/* (existing NTS-approved AIER Common)",
+    "Anything in sibling repos (D:\\UZG\\Projects-v2\\uzgplus, etc.)"
+  ],
+  "boundary_verified_planned": {
+    "shared_laws_modified": false,
+    "canon_modified": false,
+    "active_authority_declaration_modified": false,
+    "lane_other_folders_modified": false,
+    "outside_repo_touched": false,
+    "force_push_or_rebase": false,
+    "new_capabilities_granted": false
+  },
+  "validation_planned": [
+    "scripts/governance/preflight_check.py",
+    "scripts/ci/check_contract_files.ps1",
+    "pytest scripts/governance/test_validate_handoff.py + test_preflight_check.py + test_validate_task_prompt.py -q",
+    "scripts/runtime/aier_loop.ps1 -SelfTest",
+    "scripts/runtime/route_messages.ps1 -SelfTest",
+    "JSON parse: NOTIFICATION_LEDGER.json + SYNC_MANIFEST.json + RUNTIME_ACCEPTANCE_MANIFEST.json + this snapshot",
+    "git diff --stat boundary scope check"
+  ],
+  "git_apply_commit_sha": "76fdf9f59f583f7ce1214dc6ab0da3f191d6cb3e",
+  "git_backfill_commit_sha": "526d648",
+  "git_cleanup_commit_sha": "4d16cc9",
+  "git_final_local_HEAD": "4d16cc9",
+  "git_final_origin_main": "4d16cc9",
+  "worktree_clean": "YES",
+  "cleanup_note": "3rd commit 4d16cc9 removed 3 pytest __pycache__/*.pyc files accidentally committed in 526d648 backfill via git add -A. R-CANON-02 unaffected (pyc files are not canon/audit/log artifacts).",
+  "next_recommended_task": "Lane_01 (CLA chat) authors Phase G Final Readiness Report based on this task's report. Verdict: READY_FOR_ROADMAP_EXECUTION / READY_WITH_WARNINGS / BLOCKED. If READY → next task likely W1.T2 (5 core skills full content)."
+}

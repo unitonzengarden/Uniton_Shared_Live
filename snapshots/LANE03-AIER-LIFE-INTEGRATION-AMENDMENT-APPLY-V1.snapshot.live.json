@@ -1,0 +1,57 @@
+{
+  "task_id": "LANE03-AIER-LIFE-INTEGRATION-AMENDMENT-APPLY-V1",
+  "lane": "Lane_03",
+  "write_repo": "Uniton_Shared",
+  "read_repos": [
+    "Uniton_Shared",
+    "Uniton_OS"
+  ],
+  "law": "LAW_N13",
+  "law_id": "LAW_N13",
+  "status": "ACTIVE",
+  "activation_performed": true,
+  "source_candidate": "docs/LAW_CLA_LLM/SHARED/architecture/AIER_LIFE_BRIDGE_CONTRACTS/LAW_N13_MULTI_REPO_AND_HANDOFFS_FULL_CANDIDATE.md",
+  "target_path": "docs/LAW_CLA_LLM/SHARED/laws/LAW_N13_MULTI_REPO_AND_HANDOFFS.md",
+  "amendment_id": "AMD_LANE03_LAW_N13_AIER_LIFE_INTEGRATION_2026-04-29",
+  "amendment_packet_path": "docs/LAW_CLA_LLM/SHARED/amendments/approved/AMD_LANE03_LAW_N13_AIER_LIFE_INTEGRATION_2026-04-29/",
+  "nts_approval": "APPROVED",
+  "approval_commit": "cfc5eac1d6848395be83b19ee6a567668ab5fc44",
+  "sync_before": {
+    "uniton_shared_head": "cfc5eac1d6848395be83b19ee6a567668ab5fc44",
+    "uniton_shared_origin_main": "cfc5eac1d6848395be83b19ee6a567668ab5fc44",
+    "uniton_os_head": "58a084187bef36e15f1dc540f8ea88266d29f4dc"
+  },
+  "files_created": [
+    "docs/LAW_CLA_LLM/SHARED/laws/LAW_N13_MULTI_REPO_AND_HANDOFFS.md",
+    "reports/LANE03-AIER-LIFE-INTEGRATION-AMENDMENT-APPLY-V1_REPORT.md",
+    "snapshots/LANE03-AIER-LIFE-INTEGRATION-AMENDMENT-APPLY-V1.snapshot.live.json",
+    "audit_logs/LANE03-AIER-LIFE-INTEGRATION-AMENDMENT-APPLY-V1_audit.log"
+  ],
+  "files_modified": [
+    "docs/LAW_CLA_LLM/SHARED/amendments/AMENDMENTS_LOG.md",
+    "docs/LAW_CLA_LLM/SHARED/SHARED_INDEX.md",
+    "runtime/current_state.md",
+    "runtime/checklist/MASTER_CHECKLIST.md",
+    "runtime/ACTION_REQUIRED_BOARD.md",
+    "notifications/NOTIFICATION_LEDGER.md"
+  ],
+  "files_moved": [
+    {
+      "from": "docs/LAW_CLA_LLM/SHARED/amendments/pending/AMD_LANE03_LAW_N13_AIER_LIFE_INTEGRATION_2026-04-29/",
+      "to": "docs/LAW_CLA_LLM/SHARED/amendments/approved/AMD_LANE03_LAW_N13_AIER_LIFE_INTEGRATION_2026-04-29/"
+    }
+  ],
+  "validation_results": {
+    "approval_verified": "PASS",
+    "file_checks": "PASS",
+    "candidate_body_byte_match": "PASS",
+    "snapshot_json_parse": "PASS",
+    "contract_file_check": "PASS",
+    "pytest_governance_tests": "PASS - 174 passed, 39 warnings",
+    "aier_loop_selftest": "PASS",
+    "route_messages_selftest": "PASS",
+    "law_n1_through_n12_content_unchanged": "PASS",
+    "uniton_os_clean": "PASS - 58a084187bef36e15f1dc540f8ea88266d29f4dc"
+  },
+  "next_task": "AIER-LIFE-FIRST-INTEGRATION-DRYRUN-V1"
+}

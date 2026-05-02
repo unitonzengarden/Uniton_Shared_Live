@@ -1,0 +1,61 @@
+{
+  "schema_version": "LANE03_TASK_REPORT_V1",
+  "task_id": "LANE03-UZG-RPC-SYNC-DAILY-MISSIONS-PRIVILEGE-REVIEW-V1",
+  "generated_at": "2026-05-01T15:16:18+07:00",
+  "lane": "lane_03",
+  "system": "uzg-plus",
+  "result": "PASS",
+  "summary": "Review/design completed for public.rpc_sync_daily_missions(uuid,date). No direct browser/authenticated dependency was found in origin/main; Worker/API uses service-role invocation. Live production grants still expose the SECURITY DEFINER RPC to PUBLIC, anon, authenticated, and service_role.",
+  "sql_apply_status": {
+    "sql_applied": false,
+    "supabase_permissions_changed": false,
+    "migrations_applied": false,
+    "schema_migrations_modified": false,
+    "code_changed": false,
+    "deployed": false
+  },
+  "dependency_scan": {
+    "scan_ref": "origin/main",
+    "origin_main_commit": "f4fa499ce91db118506d5f9cc768783417627888",
+    "direct_browser_dependency_found": false,
+    "worker_or_api_dependency_found": true,
+    "worker_or_api_uses_service_role_path": true,
+    "scheduled_dependency_found": false,
+    "trigger_model": "MIXED_USER_TRIGGERED_SERVER_EXECUTED"
+  },
+  "privilege_review": {
+    "target_function": "public.rpc_sync_daily_missions(uuid,date)",
+    "security_definer": true,
+    "owner": "postgres",
+    "volatility": "VOLATILE",
+    "execute_grants": {
+      "public": true,
+      "anon": true,
+      "authenticated": true,
+      "service_role": true
+    },
+    "references_rpc_sync_energy_daily": true,
+    "related_rpc_sync_energy_daily_service_role_only": true
+  },
+  "canonical_recommendation": {
+    "classification": "RESTRICT_SERVICE_ROLE_ONLY",
+    "apply_now": false,
+    "nts_approval_required": true,
+    "risk_rating": "HIGH",
+    "future_sql": [
+      "REVOKE EXECUTE ON FUNCTION public.rpc_sync_daily_missions(uuid,date) FROM PUBLIC;",
+      "REVOKE EXECUTE ON FUNCTION public.rpc_sync_daily_missions(uuid,date) FROM anon;",
+      "REVOKE EXECUTE ON FUNCTION public.rpc_sync_daily_missions(uuid,date) FROM authenticated;",
+      "GRANT EXECUTE ON FUNCTION public.rpc_sync_daily_missions(uuid,date) TO service_role;"
+    ]
+  },
+  "created_files": [
+    "runtime/uzg-plus/lane_03/LANE03_RPC_SYNC_DAILY_MISSIONS_PRIVILEGE_REVIEW.json",
+    "runtime/uzg-plus/lane_03/LANE03_RPC_SYNC_DAILY_MISSIONS_DEPENDENCY_SCAN.json",
+    "reports/LANE03-UZG-RPC-SYNC-DAILY-MISSIONS-PRIVILEGE-REVIEW-V1_REPORT.md",
+    "reports/LANE03-UZG-RPC-SYNC-DAILY-MISSIONS-PRIVILEGE-REVIEW-V1.json",
+    "snapshots/LANE03-UZG-RPC-SYNC-DAILY-MISSIONS-PRIVILEGE-REVIEW-V1.snapshot.json",
+    "audit_logs/LANE03-UZG-RPC-SYNC-DAILY-MISSIONS-PRIVILEGE-REVIEW-V1_audit.log"
+  ],
+  "next_safe_action": "LANE03-UZG-RPC-SYNC-DAILY-MISSIONS-SERVICE-ROLE-HARDENING-APPLY-WITH-NTS-APPROVAL-V1"
+}

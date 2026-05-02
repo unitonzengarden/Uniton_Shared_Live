@@ -1,0 +1,80 @@
+{
+  "task_id": "LANE03-LAWS-N7-N11-V0-3-CROSS-REVIEW-V1",
+  "created_at_utc": "2026-04-27T04:52:49.6127576Z",
+  "status": "warning",
+  "repo": {
+    "root": "D:\\UZG\\Projects-v2\\Uniton_Shared",
+    "remote": "https://github.com/unitonzengarden/Uniton_Shared.git",
+    "branch": "main",
+    "local_before": "4fcb17793e83753f05c028bb0f49f92419963209",
+    "origin_before": "4fcb17793e83753f05c028bb0f49f92419963209",
+    "local_after_pull": "4fcb17793e83753f05c028bb0f49f92419963209",
+    "origin_after_pull": "4fcb17793e83753f05c028bb0f49f92419963209",
+    "sibling_repo_note": "D:\\UZG\\Projects-v2\\uzgplus = INFO_ONLY_UNRELATED_SIBLING_REPO_NOT_USED",
+    "final_local": "PENDING",
+    "final_origin": "PENDING",
+    "worktree_clean": "PENDING"
+  },
+  "reviewed_candidates": [
+    {
+      "candidate": "LAW_N7_MEMORY.v0.3.candidate.md",
+      "verdict": "AMEND",
+      "v0_1_preservation": "FAIL",
+      "edit_markers": "FAIL",
+      "canon_alignment": "PARTIAL_PASS",
+      "summary": "L7.2 and L7.6 are directionally correct; L7.4 regresses by dropping the task-specific-files read; wrapper and formatting churn remain outside marked edits."
+    },
+    {
+      "candidate": "LAW_N8_RUNTIME.v0.3.candidate.md",
+      "verdict": "ENDORSE_WITH_NOTES",
+      "v0_1_preservation": "FAIL",
+      "edit_markers": "FAIL",
+      "canon_alignment": "PASS",
+      "summary": "L8.5, L8.8, and L8.12 fixes are substantively correct, but wrapper and formatting churn remain outside marked edits."
+    },
+    {
+      "candidate": "LAW_N11_BACKEND_BRIDGE.v0.3.candidate.md",
+      "verdict": "ENDORSE_WITH_NOTES",
+      "v0_1_preservation": "FAIL",
+      "edit_markers": "FAIL",
+      "canon_alignment": "PASS",
+      "summary": "L11.5, L11.16, L11.17, and L11.27 fixes are substantively correct and boundary-safe, but wrapper and formatting churn remain outside marked edits."
+    }
+  ],
+  "review_style_prose_check": {
+    "law_body_removed": true,
+    "unmarked_candidate_preamble_remains": true
+  },
+  "spillover_check": {
+    "law_n7_l7_12_semantic_spillover_removed": true,
+    "remaining_unmarked_wrapper_or_formatting_spillover": true
+  },
+  "top_level_verdict": "AMEND",
+  "recommended_amendments": [
+    "Prepare a v0.4 round.",
+    "Restore `LAW_N7 §L7.4` task-specific-files read alignment.",
+    "Strip or explicitly govern the unmarked candidate wrapper.",
+    "Remove formatting-only churn outside `[v0.3 EDIT]` while keeping current substantive N8/N11 fixes."
+  ],
+  "boundary_verified": {
+    "v0_3_candidates_modified": false,
+    "v0_2_candidates_modified": false,
+    "shared_laws_modified": false,
+    "lane_01_folder_modified": false,
+    "nts_decision_prefilled": false,
+    "active_status_changed": false,
+    "new_lane_opened": false,
+    "deploy_performed": false,
+    "force_push_performed": false,
+    "runtime_backend_product_code_created": false,
+    "outside_repo_touched": false
+  },
+  "validation": {
+    "rsp_json_schema_validation": "PASS",
+    "contract_validation": "PASS",
+    "routing_self_test": "PASS",
+    "aier_loop_self_test": "PASS",
+    "governance_tests": "PASS"
+  },
+  "next_recommended_task": "LANE01-LAWS-N7-N11-V0-4-CANDIDATES-V1"
+}

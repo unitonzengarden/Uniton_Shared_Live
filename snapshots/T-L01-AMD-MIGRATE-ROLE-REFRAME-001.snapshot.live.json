@@ -1,0 +1,94 @@
+{
+  "task_id": "T-L01-AMD-MIGRATE-ROLE-REFRAME-001",
+  "created_at": "2026-04-26T09:18:20Z",
+  "canonical_repo": {
+    "path": "C:\\workspace\\Uniton_Shared",
+    "remote": "https://github.com/unitonzengarden/Uniton_Shared.git",
+    "branch": "main",
+    "head_before_migration": "f964ef6f2f553427515620883af5eaa5a03a7e86",
+    "preflight_method": "scripts/governance/preflight_check.py (Step 3)",
+    "preflight_result": "PASS"
+  },
+  "task_intent": {
+    "type": "amendment migration — STEP 3 apply (LAW_SYSTEM §4)",
+    "amendment_id": "AMD_LANE01_ROLE_REFRAME_2026-04-26",
+    "approval_evidence": {
+      "nts_decision_commit_sha": "c034c22b86d925e73b5062346ccabf941fa41db0",
+      "nts_decision_file": "docs/LAW_CLA_LLM/SHARED/amendments/pending/AMD_LANE01_ROLE_REFRAME_2026-04-26/NTS_DECISION.md (will be moved to approved/ as part of this migration)",
+      "trial_period_days": 30,
+      "effective_date": "2026-04-26",
+      "mid_trial_review": "2026-05-11",
+      "auto_rollback_ref": "ROLLBACK_PLAN.md"
+    },
+    "executor_authorization": "NTS dispatch (autonomous): 'YES cả 2: xóa .env.local, dispatch migration task. Auto chạy hết, không cần hỏi NTS từng bước.'"
+  },
+  "sub_task_a_completed": {
+    "task": "Delete .env.local",
+    "result": "removed; gh keyring auth verified intact; git fetch verified post-deletion"
+  },
+  "migration_steps": {
+    "step_1_git_mv": {
+      "from": "docs/LAW_CLA_LLM/SHARED/amendments/pending/AMD_LANE01_ROLE_REFRAME_2026-04-26/",
+      "to": "docs/LAW_CLA_LLM/SHARED/amendments/approved/AMD_LANE01_ROLE_REFRAME_2026-04-26/",
+      "files_renamed": 6,
+      "preserves_history": true
+    },
+    "step_2_authority_declaration": {
+      "file": "docs/LAW_CLA_LLM/SHARED/os_operations/AUTHORITY_DECLARATION.md",
+      "change_type": "additive — new §3.1 subsection after §3 matrix table; no row deletions, no NTS authority changes",
+      "scope": "Lane_01 + Lane_03 operating-model addenda + cross-reference to PR_REVIEW_PROCEDURE.md + trial period note"
+    },
+    "step_3_shared_index": {
+      "file": "docs/LAW_CLA_LLM/SHARED/SHARED_INDEX.md",
+      "changes": [
+        "REGISTERED LANES Notes column: Lane_01 + Lane_03 prepended with role attribution; Lane_02 UNCHANGED per amendment",
+        "os_operations/ ACTIVE files table: add PR_REVIEW_PROCEDURE.md entry"
+      ]
+    },
+    "step_4_pr_review_procedure": {
+      "file": "docs/LAW_CLA_LLM/SHARED/os_operations/PR_REVIEW_PROCEDURE.md",
+      "change_type": "new file (ACTIVE)",
+      "purpose": "Documents canon-adjacent review process: MSG → Lane_03 RSP → ENDORSE/AMEND/OBJECT decision; evidence threshold; HALT-and-route on canon-boundary objection"
+    },
+    "step_5_amendments_log": {
+      "file": "docs/LAW_CLA_LLM/SHARED/amendments/AMENDMENTS_LOG.md",
+      "change_type": "append (per format table)",
+      "entry": "2026-04-26 | AMD_LANE01_ROLE_REFRAME_2026-04-26 | Lane_01 | role reframe — CTO-style operator + Lane_03 canon reviewer + multi-LLM consensus | APPROVE (NTS, c034c22) | applied <this-commit-sha> | Lane_01, Lane_03 (Lane_02 unbound)"
+    }
+  },
+  "deliverables": {
+    "snapshot": "snapshots/T-L01-AMD-MIGRATE-ROLE-REFRAME-001.snapshot.live.json",
+    "report": "reports/T-L01-AMD-MIGRATE-ROLE-REFRAME-001_REPORT.md",
+    "audit_log": "audit_logs/T-L01-AMD-MIGRATE-ROLE-REFRAME-001_audit.log"
+  },
+  "canon_changes": {
+    "shared_laws_changed": false,
+    "law_system_changed": false,
+    "redlines_changed": false,
+    "authority_declaration_changed": "ADDITIVE only (new §3.1; no row changes)",
+    "shared_index_changed": "ADDITIVE only (Notes column prepends + new os_operations row)",
+    "amendments_log_changed": "APPEND only (R-CANON-02)",
+    "lane_02_files_changed": false,
+    "lane_03_files_changed": false,
+    "contracts_changed": false,
+    "scripts_changed": false,
+    "workflows_changed": false,
+    "version_bump": "NOT bumped — no SHARED/VERSION change in this migration; amendment is footnote + new doc; future task may bump"
+  },
+  "trial_period_active": {
+    "starts": "2026-04-26",
+    "ends_default": "2026-05-26",
+    "mid_trial_review_due": "2026-05-11",
+    "rollback_triggers": "see SHARED/amendments/approved/AMD_LANE01_ROLE_REFRAME_2026-04-26/ROLLBACK_PLAN.md §1 (6 trigger conditions)"
+  },
+  "validation": {
+    "qa_gate": "to be recorded after gate run",
+    "ci_status": "to be recorded after push"
+  },
+  "risks": [
+    "Authority text edit — must be additive only (verified in step 2 design).",
+    "AMENDMENTS_LOG append-only — must not modify existing format/header text.",
+    "git mv preserves history — verify renames don't break audit chain via git log --follow."
+  ],
+  "final_commit_sha": "recorded after commit and push"
+}

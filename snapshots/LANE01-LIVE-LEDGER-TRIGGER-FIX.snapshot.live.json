@@ -1,0 +1,109 @@
+{
+  "task_id": "LANE01-LIVE-LEDGER-TRIGGER-FIX",
+  "executor": "CLAC-1",
+  "model": "claude-opus-4-7",
+  "lane": "Lane_01",
+  "self_approve_authority": "AMD_LANE01_CTO_AUTO_APPROVE_TECH_NON_CANON §3.1 (workflow trigger fix = tech non-canon) + AMD_NTS_FULL_TECH_AUTONOMY_2026-04-29",
+  "purpose": "Close the chained-workflow trigger gap surfaced by LANE01-LIVE-LEDGER-AUDIT-V1: GitHub Actions default GITHUB_TOKEN cannot trigger downstream workflows on push. Add workflow_run trigger to sync_runtime_to_public.yml so it auto-fires when auto_project_status or aier_code_heartbeat complete.",
+  "started_at": "2026-04-29T13:55:00Z",
+  "head_pre_flight": "post-audit + post Lane_03 sync expansion",
+  "branch": "fix/LANE01-LIVE-LEDGER-TRIGGER-FIX (squash-merged)",
+  "pr": "https://github.com/unitonzengarden/Uniton_Shared/pull/15",
+  "merge_commit": "584bef25d0403c7008bfa20597a7fb3dfc88b9e9",
+  "phases": [
+    {
+      "id": "A",
+      "name": "Inspect current sync workflow",
+      "outcome": "Read sync_runtime_to_public.yml — found push paths-filter (now expanded to include AIER_CONTEXT_PACKET + ECOSYSTEM_HEALTH_STATE files via Lane_03's parallel SYNC_EXPANSION_V1) + workflow_dispatch. No workflow_run trigger present."
+    },
+    {
+      "id": "B",
+      "name": "Verify exact name fields on upstream auto workflows",
+      "outcome": "auto_project_status.yml line 1: 'Auto PROJECT_STATUS Regenerate' (NOT 'Auto Project Status' as task spec assumed). aier_code_heartbeat.yml line 1: 'AIER Code Heartbeat'. Used actual names verbatim because workflow_run is case-sensitive name-match (would silently never fire otherwise)."
+    },
+    {
+      "id": "C-D",
+      "name": "Add workflow_run trigger + conditional skip",
+      "outcome": "Single edit to sync_runtime_to_public.yml: added workflow_run block (workflows array with 2 names, types completed, branches main) + jobs.sync.if conditional that skips runs from failed upstream workflows while keeping push and workflow_dispatch unaffected. 27 lines added, no lines removed."
+    },
+    {
+      "id": "E",
+      "name": "YAML validation",
+      "outcome": "yaml.safe_load confirms: 3 triggers (push + workflow_dispatch + workflow_run) + workflow_run.workflows = ['Auto PROJECT_STATUS Regenerate', 'AIER Code Heartbeat'] + workflow_run.types = ['completed'] + workflow_run.branches = ['main'] + jobs.sync.if exists + 5 steps preserved"
+    },
+    {
+      "id": "F",
+      "name": "Commit + PR + self-merge + E2E test",
+      "outcome": "Commit da36d94; PR #15; squash-merged at 584bef2 by self per AMD. Test: triggered Auto PROJECT_STATUS Regenerate manually (run 25113517473, completed success); 20s later sync_runtime_to_public auto-fired with event=workflow_run (run 25113539568, completed success); Live mirror caught up to HEAD 86105cb (SYNC_INFO records Triggered by: workflow_run)."
+    },
+    {
+      "id": "G",
+      "name": "3 mandatory deliverables",
+      "outcome": "snapshots/LANE01-LIVE-LEDGER-TRIGGER-FIX.snapshot.live.json (this) + reports/LANE01-LIVE-LEDGER-TRIGGER-FIX_REPORT.md + audit_logs/LANE01-LIVE-LEDGER-TRIGGER-FIX_audit.log"
+    }
+  ],
+  "trigger_fix_strategy": {
+    "chosen": "workflow_run (native GitHub Actions feature)",
+    "rejected": "PAT (Personal Access Token) — adds secret rotation overhead; max 90-day expiration per GitHub security best practices",
+    "rejected": "repository_dispatch event chain — more invasive (requires upstream workflow modification too)",
+    "rationale": "workflow_run is single-file edit downstream-only. No secret to rotate. Conclusion-aware (success/failure visible). Conditional skip available. Reduces blast radius vs PAT (no token leak risk)."
+  },
+  "watched_workflows": [
+    {
+      "name": "Auto PROJECT_STATUS Regenerate",
+      "file": ".github/workflows/auto_project_status.yml",
+      "produces_files_in_sync_whitelist": ["runtime/PROJECT_STATUS.md", "network/LANE_REGISTRY.md", "network/ACTIVITY_FEED.md"]
+    },
+    {
+      "name": "AIER Code Heartbeat",
+      "file": ".github/workflows/aier_code_heartbeat.yml",
+      "produces_files_in_sync_whitelist": "(none directly — heartbeat ledger lives at network/heartbeat/ which is NOT in whitelist; included in workflow_run watch list anyway because heartbeat workflow-run completes ~every 10 min and serves as a heartbeat for the sync chain itself)"
+    }
+  ],
+  "e2e_test_evidence": {
+    "test_step_1": "gh workflow run auto_project_status.yml --ref main → triggered run 25113517473",
+    "test_step_2": "Run 25113517473 completed success at 14:03:18Z",
+    "test_step_3": "Sync workflow auto-fired: run 25113539568, event=workflow_run, status=completed, conclusion=success",
+    "test_step_4": "Live mirror Uniton_Shared_Live HEAD updated 51a939b → 86105cb",
+    "test_step_5": "SYNC_INFO.md on Live mirror records 'Triggered by: workflow_run' (was always 'push' before this fix)",
+    "lag_observed_seconds": "~20s from upstream completion to downstream sync run start"
+  },
+  "boundary_check": {
+    "no_uniton_os_modified": true,
+    "no_uniton_shared_live_modified_directly": true,
+    "no_docs_or_canon_modified": true,
+    "no_PAT_introduced": true,
+    "single_file_scope": ".github/workflows/sync_runtime_to_public.yml only",
+    "vercel_skip_on_commit": true,
+    "lane01_dot_format_3_deliverables": true,
+    "self_merge_per_AMD": true,
+    "nts_clicks": 0
+  },
+  "acceptance_criteria_status": {
+    "AC1_workflow_run_trigger_added": true,
+    "AC2_workflow_names_match_exactly": "PASS (Auto PROJECT_STATUS Regenerate + AIER Code Heartbeat — verbatim from name: fields)",
+    "AC3_conditional_skip_for_failed_upstream": true,
+    "AC4_yaml_syntax_valid": true,
+    "AC5_PR_merged_CI_green": "PASS (merged 584bef2; sync workflow ran clean post-merge)",
+    "AC6_test_trigger_auto_fire_verified": "PASS (run 25113539568 event=workflow_run conclusion=success)",
+    "AC7_live_mirror_caught_up": "PASS (Uniton_Shared_Live HEAD 86105cb; SYNC_INFO triggered_by=workflow_run)",
+    "AC8_existing_triggers_preserved": true,
+    "AC9_3_deliverables_DOT_format": true,
+    "AC10_self_merge_per_AMD": true,
+    "AC11_nts_clicks_zero": true
+  },
+  "expected_deliverables": [
+    ".github/workflows/sync_runtime_to_public.yml (modified — committed via 584bef2)",
+    "snapshots/LANE01-LIVE-LEDGER-TRIGGER-FIX.snapshot.live.json (this)",
+    "reports/LANE01-LIVE-LEDGER-TRIGGER-FIX_REPORT.md",
+    "audit_logs/LANE01-LIVE-LEDGER-TRIGGER-FIX_audit.log",
+    "handoffs/inbox/Lane_01/MSG-CLAC1-LIVE-LEDGER-TRIGGER-FIX-COMPLETE.json"
+  ],
+  "next_recommended_tasks": [
+    "LANE01-LIVE-LEDGER-FOUNDATION (Option B from audit) — now unblocked. Sync chain is self-healing; Foundation can extend whitelist + add new namespaces (tasks/, ledger/, status/, aier-status/) without re-engineering trigger.",
+    "Optional follow-up: add unit-test workflow that checks workflow_run target names still match upstream `name:` fields — protects against silent-no-fire if either workflow renames itself."
+  ],
+  "open_followups_orthogonal": [
+    "AC5 of LANE01-INH-CODE-02b heartbeat (2 scheduled cron runs verification window) — note that since heartbeat workflow now also triggers sync, the sync chain itself is implicit verification; the heartbeat status will land in SYNC_INFO automatically every 10 min."
+  ]
+}

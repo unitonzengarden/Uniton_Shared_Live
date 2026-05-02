@@ -1,0 +1,57 @@
+{
+  "task_id": "LANE01-W2-PROJECT-STATUS-REFRESH-AFTER-CANON-GUARD-APPLY-V1",
+  "result": "PASS",
+  "timestamp": "2026-04-28T01:40:35Z",
+  "repo": {
+    "root": "D:/UZG/Projects-v2/Uniton_Shared",
+    "remote": "https://github.com/unitonzengarden/Uniton_Shared.git",
+    "branch": "main",
+    "local_before": "4caf91f9aecac18e8412d9d23e6065efad314e87",
+    "origin_before": "4caf91f9aecac18e8412d9d23e6065efad314e87",
+    "local_after_sync": "4caf91f9aecac18e8412d9d23e6065efad314e87",
+    "origin_after_sync": "4caf91f9aecac18e8412d9d23e6065efad314e87",
+    "head_at_or_after_required_commit": true,
+    "required_commit": "7a0e64a510eeb5ecd4e78ed7de7ba88c022c082d",
+    "final_local": "pending_after_commit_push",
+    "final_origin": "pending_after_commit_push",
+    "worktree_clean": false
+  },
+  "updated_files": [
+    "runtime/PROJECT_STATUS.md"
+  ],
+  "created_files": [
+    "snapshots/LANE01-W2-PROJECT-STATUS-REFRESH-AFTER-CANON-GUARD-APPLY-V1.snapshot.live.json",
+    "reports/LANE01-W2-PROJECT-STATUS-REFRESH-AFTER-CANON-GUARD-APPLY-V1_REPORT.md",
+    "reports/LANE01-W2-PROJECT-STATUS-REFRESH-AFTER-CANON-GUARD-APPLY-V1.json",
+    "audit_logs/LANE01-W2-PROJECT-STATUS-REFRESH-AFTER-CANON-GUARD-APPLY-V1_audit.log"
+  ],
+  "project_status": {
+    "source_commit_after_refresh": "4caf91f9aecac18e8412d9d23e6065efad314e87",
+    "w1_7_pending_removed": true,
+    "w1_complete_reported": true,
+    "w2_controlled_execution_reported": true,
+    "active_skills_count": 5,
+    "canon_guard_status": "ACTIVE v1.0",
+    "pending_canon_guard_amd_resolved": true,
+    "regen_note": "Generator refreshed source commit/latest commits; Gate line normalized to current_state truth because generator did not parse the current_state sentence punctuation."
+  },
+  "validation": {
+    "project_status_self_test": "PASS with PYTHONIOENCODING=utf-8; initial plain console invocation hit Windows cp1252 UnicodeEncodeError while printing an arrow",
+    "project_status_regen": "PASS",
+    "project_status_acceptance_check": "PASS",
+    "json_parse": "PASS",
+    "contract_check": "PASS",
+    "pytest": "PASS (53 passed, 14 jsonschema deprecation warnings)",
+    "aier_loop": "PASS",
+    "route_messages": "PASS"
+  },
+  "boundary": {
+    "laws_modified": false,
+    "canon_modified": false,
+    "skill_logic_modified": false,
+    "daemon_backend_deploy_enabled": false,
+    "new_capabilities_granted": false,
+    "runtime_checklist_notification_updated": false
+  },
+  "next": "Continue W2 controlled automation."
+}

@@ -1,0 +1,115 @@
+{
+  "project": "AIER_CODE",
+  "canonical_root": "D:\\UZG\\Projects-v2\\Uniton_Shared",
+  "remote": "https://github.com/unitonzengarden/Uniton_Shared.git",
+  "branch": "main",
+  "latest_verified_commit": "9d2762bcdaef03980ff59eb3919f96a3ad6d294f",
+  "mode": "CONTROLLED_EXECUTION / GOVERNANCE_FIRST / RUNTIME_DRYRUN_ONLY",
+  "phase": "ROADMAP_DRAFT_COMMITTED / PENDING_NTS_GATE_1 / STATE_RECONCILIATION_NEEDED",
+  "gate": "NTS_ROADMAP_GATE_1_DECISION_PENDING",
+  "active_lanes": [
+    {
+      "lane_id": "Lane_01",
+      "status": "ACTIVE / ROADMAP_DRAFT_COMMITTED / AWAITING_NTS_GATE_1_DECISION",
+      "last_evidence_path": "reports/LANE01-AIER-CODE-V1-ROADMAP-COMMIT-V1_REPORT.md",
+      "next_action": "Await NTS Gate 1 decision on the DRAFT roadmap or a revision dispatch."
+    },
+    {
+      "lane_id": "Lane_02",
+      "status": "ONBOARDING_SCAFFOLDED / SMOKE_PENDING / PRODUCT_EXECUTION_NOT_ENABLED",
+      "last_evidence_path": "reports/LANE03-AIER-CODE-LANE02-CONSUMER-ONBOARDING-APPLY-V1_REPORT.md",
+      "next_action": "Run LANE02-AIER-CODE-CONSUMER-READINESS-SMOKE-V1 and return readiness evidence."
+    },
+    {
+      "lane_id": "Lane_03",
+      "status": "ACTIVE / EXECUTION_SUPPORT",
+      "last_evidence_path": "reports/LANE03-LAWS-N7-N11-V0-4-CROSS-REVIEW-V1_REPORT.md",
+      "next_action": "Support roadmap-gate review and state reconciliation planning after this audit."
+    }
+  ],
+  "completed_tasks": [
+    {
+      "task_id": "LANE01-AIER-CODE-V1-ROADMAP-COMMIT-V1",
+      "result": "PASS",
+      "report_path": "reports/LANE01-AIER-CODE-V1-ROADMAP-COMMIT-V1_REPORT.md"
+    },
+    {
+      "task_id": "LANE01-LAWS-N7-N11-APPROVAL-APPLY-V1",
+      "result": "PASS",
+      "report_path": "reports/LANE01-LAWS-N7-N11-APPROVAL-APPLY-V1_REPORT.md"
+    },
+    {
+      "task_id": "LANE01-LAWS-N7-N11-NTS-ESCALATION-V1",
+      "result": "PASS",
+      "report_path": "reports/LANE01-LAWS-N7-N11-NTS-ESCALATION-V1_REPORT.md"
+    },
+    {
+      "task_id": "LANE03-LAWS-N7-N11-V0-4-CROSS-REVIEW-V1",
+      "result": "PASS",
+      "report_path": "reports/LANE03-LAWS-N7-N11-V0-4-CROSS-REVIEW-V1_REPORT.md"
+    }
+  ],
+  "in_flight_tasks": [
+    {
+      "task_id": "NTS-AIER-CODE-V1-ROADMAP-GATE1-DECISION-V1",
+      "status": "PENDING_DECISION"
+    },
+    {
+      "task_id": "LANE02-AIER-CODE-CONSUMER-READINESS-SMOKE-V1",
+      "status": "PLANNED"
+    },
+    {
+      "task_id": "LANE03-AIER-CODE-NOTIFICATION-COLLECTOR-DRYRUN-DESIGN-V1",
+      "status": "PLANNED"
+    },
+    {
+      "task_id": "T-RUNTIME-003",
+      "status": "PLANNED"
+    },
+    {
+      "task_id": "T-RUNTIME-004",
+      "status": "PLANNED"
+    }
+  ],
+  "pending_decisions": [
+    "Whether to approve, revise, or reject the DRAFT roadmap at Gate 1.",
+    "Whether to run a scoped state-surface reconciliation task before or as part of roadmap execution.",
+    "When to review or promote the draft notification and ACK protocol.",
+    "When to confirm Lane_02 product-repo path and complete smoke readiness.",
+    "How to bootstrap LAW_N10 capability registry surfaces now that the law is active."
+  ],
+  "blockers": [
+    "The DRAFT roadmap is pending NTS Gate 1 approval and cannot be treated as execution authority yet.",
+    "runtime/current_state.md is stale after LAW_N7-N11 activation.",
+    "runtime/ACTION_REQUIRED_BOARD.md and notifications ledger are stale/bootstrap-only.",
+    "SYNC_MANIFEST.json and UNITON_SHARED_RUNTIME_ACCEPTANCE_MANIFEST.json are stale versus actual lane evidence.",
+    "LAW_N10 capability registry surfaces are incomplete.",
+    "Lane_02 smoke readiness is still pending."
+  ],
+  "warnings": [
+    "Incoming chat context lagged repo truth by multiple commits.",
+    "A concurrent roadmap draft commit landed during this audit and was incorporated into the final repo-truth summary.",
+    "No formal in-progress checklist rows are populated even though planned work exists.",
+    "T-L03-LAWS-DRAFT-REVIEW appears stale in MASTER_CHECKLIST."
+  ],
+  "do_not_do": [
+    "Do not treat stale runtime/current_state.md alone as authoritative.",
+    "Do not activate or amend laws without approved workflow and NTS decision.",
+    "Do not touch sibling repos such as D:\\UZG\\Projects-v2\\uzgplus.",
+    "Do not enable daemon mode, autonomous runtime, backend mutation, or deploy.",
+    "Do not treat lane review as NTS approval.",
+    "Do not overwrite repo approval/apply evidence with chat-memory assumptions."
+  ],
+  "next_recommended_task": "NTS-AIER-CODE-V1-ROADMAP-GATE1-DECISION-V1",
+  "roadmap_readiness": "ROADMAP_DRAFT_PRESENT_WITH_WARNINGS",
+  "automation_opportunities": [
+    "State and memory hardening",
+    "Notification and ACK automation",
+    "Report and snapshot parsing",
+    "Task prompt generation assistance",
+    "Lane inbox and outbox processing",
+    "NTS decision board",
+    "Runtime DryRun hardening",
+    "Controlled apply gate design"
+  ]
+}

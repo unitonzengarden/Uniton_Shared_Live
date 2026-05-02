@@ -1,0 +1,81 @@
+{
+  "task_id": "LANE01-INH-CODE-03-BRAIN-BLUEPRINT",
+  "executor": "CLAC-1",
+  "model": "claude-opus-4-7",
+  "lane": "Lane_01",
+  "self_approve_authority": "AMD_LANE01_CTO_AUTO_APPROVE_TECH_NON_CANON §3.1 (design doc = tech non-canon)",
+  "purpose": "Author 4-layer memory architecture blueprint for AIER Code; inherit AIER Ops L1-L4 pattern; share Supabase DB with namespace aier_code_*; design only (no code, no migration)",
+  "started_at": "2026-04-29T03:35:00Z",
+  "head_pre_flight": "58965ff84ef6f5ea46d22c4c31cceeb798875c20",
+  "branch": "design/LANE01-INH-CODE-03-brain-blueprint",
+  "phases": [
+    {
+      "id": "A",
+      "name": "Pre-flight + research (canon + Task 1 + Task 2 + Day 1 audit)",
+      "outcome": "git pull rebase clean; design branch created from HEAD 58965ff; read Whitepaper V3 §6.2 (5-layer cognitive memory) + AIER Complete Blueprint v2 §5.5 + Memory Spec V1 ACTIVE canon (V0 repo-backed) + Day 1 audit (290 chunks across 7 groups) + Task 2 heartbeat checker + identity marker"
+    },
+    {
+      "id": "B-F",
+      "name": "Author blueprint sections 1-10 + references (single doc)",
+      "outcome": "docs/architecture/BRAIN_BLUEPRINT_AIER_CODE.md ~30K chars; 11 sections (10 required + 1 references); 4-layer L1-L4 + L0 + UDNA + heartbeat mapping; ASCII diagram; 4 query examples (L4/L2/L3/L1); migration SQL DDL preview; 4 NTS decision questions; explicit V0 repo-memory ↔ V1+ DB-brain coexistence reconciliation"
+    },
+    {
+      "id": "G",
+      "name": "3 mandatory deliverables (DOT format)",
+      "outcome": "snapshots/LANE01-INH-CODE-03-BRAIN-BLUEPRINT.snapshot.live.json (this — DOT format) + reports/LANE01-INH-CODE-03-BRAIN-BLUEPRINT_REPORT.md (brief, points to blueprint) + audit_logs/LANE01-INH-CODE-03-BRAIN-BLUEPRINT_audit.log"
+    },
+    {
+      "id": "H",
+      "name": "Commit + push + open PR (design branch → main)",
+      "outcome": "PENDING — single commit on design branch + push + gh pr create --base main"
+    }
+  ],
+  "key_design_decisions": {
+    "share_db_with_aier_ops": "NTS Q1 verbatim: 'AIER chung 1 database trên Supabase'. 1 Supabase project, 2 logical namespaces (aier_ops_* / aier_code_*). Sovereignty via namespace, not infra.",
+    "5_tables": "aier_code_udna + aier_code_lineage (Task 1 EXISTS) + aier_code_knowledge_chunks (L1) + aier_code_episodic_events (L2) + aier_code_semantic_facts (L3) + aier_code_procedural_tags (L4) — Task 4 will create the 4 NEW",
+    "v0_v1_coexistence": "AIER Code Memory Spec V1 (ACTIVE canon, NTS approved 2026-04-26) defines V0 repo-backed memory. This blueprint extends to V1+ DB-backed brain. V0 stays cold-start truth; V1+ extends for runtime cognition. Repo wins on conflict.",
+    "decision_layer_folded_into_L2": "Whitepaper V3 §6.2.4 specs Decision Memory as separate cognitive layer; blueprint folds into L2 episodic with event_type='decision' (simpler, AIER Ops pattern; one-fewer-table). Q4 to NTS as decision point.",
+    "L0_deferred_phase_2": "Query classifier needs LLM-tuned routing; defer Phase 2. Phase 1 callers query layers directly. Q3 to NTS.",
+    "build_order_tuan_1_L1_only": "290 chunks ingest + pgvector smoke test = manageable Tuần 1 scope. L2-L4 Tuần 2-3. Q2 to NTS.",
+    "inheritance_pattern": "L0/L1/L2/L3/L4 from AIER Ops (R-INHERIT-03 — NO rebuild). Explicit map back to V3 §6.2 5-layer (Identity in UDNA; Episodic→L2; Semantic→L3; Decision→L2 events; System→L0+heartbeat).",
+    "RLS_per_layer": "Postgres RLS policies on aier_code_* tables; JWT scope = aier_code:read | aier_code:write; mirror Task 1 UDNA pattern."
+  },
+  "boundary_check": {
+    "no_code_or_migration_changes": true,
+    "no_DB_writes_during_authoring": true,
+    "no_canon_modified": true,
+    "no_laws_or_redlines_modified": true,
+    "no_amendments_modified": true,
+    "no_5_active_skills_modified": true,
+    "no_Lane_02_03_territory_edited": true,
+    "no_uniton_os_repo_touched": true,
+    "no_cross_AIER_writes": true,
+    "design_only_design_branch_used": true
+  },
+  "acceptance_criteria_pass": {
+    "AC1_blueprint_file_exists": true,
+    "AC2_all_10_sections_present": true,
+    "AC3_NTS_Q1_decision_quoted_verbatim": true,
+    "AC4_storage_decision_5_tables_alternatives_rejected": true,
+    "AC5_ASCII_diagram_present": true,
+    "AC6_read_write_paths_clear": true,
+    "AC7_4_query_examples_L1_L2_L3_L4": true,
+    "AC8_migration_plan_preview": true,
+    "AC9_4_NTS_decision_questions": true,
+    "AC10_DOT_format_snapshot_filename": true,
+    "AC11_3_mandatory_deliverables_present": true,
+    "AC12_inheritance_citations_correct": true
+  },
+  "nts_decision_questions": [
+    "Q1: Table prefix aier_code_* OK? (A=OK / B=Postgres schema / C=other prefix)",
+    "Q2: Build order Tuần 1 = L1 only OK? (A=L1 only / B=L1+L2 parallel / C=all 4 aggressive)",
+    "Q3: L0 Interface defer Phase 2 OK? (A=defer / B=minimal Phase 1 / C=full Phase 1)",
+    "Q4: Decision Memory fold into L2 or separate L5? (A=fold into L2 / B=separate L5 / C=defer Phase 2)"
+  ],
+  "expected_deliverables": [
+    "docs/architecture/BRAIN_BLUEPRINT_AIER_CODE.md",
+    "snapshots/LANE01-INH-CODE-03-BRAIN-BLUEPRINT.snapshot.live.json",
+    "reports/LANE01-INH-CODE-03-BRAIN-BLUEPRINT_REPORT.md",
+    "audit_logs/LANE01-INH-CODE-03-BRAIN-BLUEPRINT_audit.log"
+  ]
+}

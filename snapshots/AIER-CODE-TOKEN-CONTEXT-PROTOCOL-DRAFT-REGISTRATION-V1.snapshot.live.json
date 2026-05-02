@@ -1,0 +1,26 @@
+{
+  "timestamp": "2026-04-26T21:12:59+07:00",
+  "task_id": "AIER-CODE-TOKEN-CONTEXT-PROTOCOL-DRAFT-REGISTRATION-V1",
+  "git_head_at_snapshot_generation": "967873731b3fcc1c2499b3439cac3f65a15b50e6",
+  "git_origin_main_at_snapshot_generation": "967873731b3fcc1c2499b3439cac3f65a15b50e6",
+  "git_final_local_head": "recorded in final NTS output after push",
+  "git_final_origin_main": "recorded in final NTS output after push",
+  "file_count": 1,
+  "packet_path": "docs/LAW_CLA_LLM/SHARED/amendments/pending/AMD_LANE03_AIER_CODE_TOKEN_CONTEXT_PROTOCOL_2026-04-26/",
+  "handoff_path": "handoffs/inbox/Lane_01/MSG-L03-L01-REVIEW-20260426-005.json",
+  "statuses": {
+    "draft_file": "DRAFT/PENDING_REVIEW",
+    "packet": "PENDING_REVIEW",
+    "handoff_validation": "PASS",
+    "index_registration": "DRAFT/PENDING_REVIEW",
+    "checklist_update": "DONE entry added",
+    "activation": "none"
+  },
+  "report_paths": {
+    "markdown": "reports/AIER-CODE-TOKEN-CONTEXT-PROTOCOL-DRAFT-REGISTRATION-V1_REPORT.md",
+    "json": "reports/AIER-CODE-TOKEN-CONTEXT-PROTOCOL-DRAFT-REGISTRATION-V1.json",
+    "audit_log": "audit_logs/AIER-CODE-TOKEN-CONTEXT-PROTOCOL-DRAFT-REGISTRATION-V1_audit.log"
+  },
+  "worktree_clean": "verified after push"
+}
+

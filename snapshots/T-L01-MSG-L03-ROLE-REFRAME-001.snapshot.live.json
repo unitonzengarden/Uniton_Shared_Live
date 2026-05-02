@@ -1,0 +1,67 @@
+{
+  "task_id": "T-L01-MSG-L03-ROLE-REFRAME-001",
+  "created_at": "2026-04-26T04:54:35Z",
+  "canonical_repo": {
+    "path": "C:\\workspace\\Uniton_Shared",
+    "remote": "https://github.com/unitonzengarden/Uniton_Shared.git",
+    "branch": "main",
+    "local_before_sync": "5e2eeb1672c7f0b81217922deaee2e9c13457218",
+    "origin_before_sync": "d67d674373a11df2ab3f8c55b538c53afecc334e",
+    "local_after_pull": "d67d674373a11df2ab3f8c55b538c53afecc334e",
+    "origin_after_pull": "d67d674373a11df2ab3f8c55b538c53afecc334e",
+    "preflight_method": "scripts/governance/preflight_check.py (Step 3 — eat-own-dogfood)",
+    "preflight_result": "PASS",
+    "sync_clean_before_work": true
+  },
+  "task_intent": {
+    "type": "cross-Lane MSG (PROPOSAL)",
+    "from_lane": "Lane_01",
+    "to_lane": "Lane_03",
+    "message_type": "contribution-review",
+    "subject_summary": "Role reframe proposal — Lane_01 ↔ Lane_03 cross-Lane operating model",
+    "nts_authorization": "NTS-approved meta-instruction: Lane_01 = CTO autonomous within tech scope, NTS = strategic/vision only, multi-LLM consensus drives tech decisions before NTS approval on SHARED matters.",
+    "coi_disclosure": "Lane_01 is both proposer of this reframe AND proposed CTO-style operator. Disclosed transparently in MSG SECTION 4. Lane_03 veto authority preserved."
+  },
+  "deliverables": {
+    "msg_path": "handoffs/inbox/Lane_03/MSG-L01-L03-PROPOSAL-20260426-001.json",
+    "report_path": "reports/T-L01-MSG-L03-ROLE-REFRAME-001_REPORT.md",
+    "snapshot_path": "snapshots/T-L01-MSG-L03-ROLE-REFRAME-001.snapshot.live.json",
+    "audit_log_path": "audit_logs/T-L01-MSG-L03-ROLE-REFRAME-001_audit.log"
+  },
+  "msg_structure": {
+    "sections": [
+      "1. CONTEXT (NTS no-touch + multi-LLM consensus rationale)",
+      "2. PROPOSAL SUMMARY (NTS / Lane_01 / Lane_03 role table)",
+      "3. ACKNOWLEDGE LANE_03 CONTRIBUTIONS (5 LOCKED skill rules, schemas, audits)",
+      "4. RATIONALE (with COI disclosed)",
+      "5. STRATEGIC GATES G1-G4 (scope boundary, consensus protocol, override/appeal, audit/measurement)",
+      "6. QUESTIONS Q1-Q4 for Lane_03",
+      "7. NEXT STEPS (RSP path + amendment workflow)",
+      "8. REQUEST (RSP timeline + dialogue opener framing)"
+    ],
+    "acceptance_criteria_count": 4,
+    "evidence_paths_count": 7
+  },
+  "canon_preserved": {
+    "shared_laws_unchanged": true,
+    "contracts_unchanged": true,
+    "authority_declaration_unchanged": true,
+    "law_system_amendment_required_for_in_effect_change": true
+  },
+  "lane_03_position_acknowledged": {
+    "ref_msg": "handoffs/outbox/RSP-L03-L01-20260426-002.json",
+    "lane_03_stance": "strict-canon-gatekeeping; SHARED/laws + Roadmap V2 + skill implementation + schema/canon expansion all require explicit NTS-approved amendment evidence",
+    "msg_explicitly_preserves_this_stance": true
+  },
+  "validation": {
+    "schema_validation": "to be recorded after Step 2 validate_handoff.py run",
+    "qa_gate": "to be recorded after gate run",
+    "ci_status": "to be recorded after push"
+  },
+  "risks": [
+    "Lane_03 may object to the reframe; this MSG explicitly accommodates that path (Q1 OBJECT branch + LAW_SYSTEM §8 arbitration in NEXT STEPS).",
+    "MSG length is substantial; readability addressed via 8-section structure with explicit headers.",
+    "Until NTS amendment is approved + applied, this MSG is a discussion-opener only, not an in-effect change. Snapshot+report make this constraint explicit."
+  ],
+  "final_commit_sha": "recorded after commit and push"
+}

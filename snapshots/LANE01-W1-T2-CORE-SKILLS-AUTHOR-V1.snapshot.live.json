@@ -1,0 +1,93 @@
+{
+  "task_id": "LANE01-W1-T2-CORE-SKILLS-AUTHOR-V1",
+  "task_title": "Roadmap W1.T2 — Author 4 core skills DRAFT (CLA-authored content; aier-canon-guard deferred to Lane_3)",
+  "phase": "Roadmap V1 FINAL — Layer 1 SKILL FOUNDATION — Week 1 — Task T2",
+  "executor": {
+    "lane": "Lane_01 (Claude Opus 4.7 on Vultr Windows Server)",
+    "role": "MECHANICAL EXECUTOR — file create + commit + push of CLA-authored content; CTO scope per AMD_LANE01_ROLE_REFRAME §3.1; self-approve DRAFT skill authoring per AMD_LANE01_CTO_AUTO_APPROVE_TECH_NON_CANON §3.1 YES list item 1 (architecture/spec drafts non-SHARED/laws/)",
+    "agent": "CLAC-1 (Claude Code Desktop)",
+    "model": "claude-opus-4-7",
+    "working_dir": "C:\\workspace\\Uniton_Shared"
+  },
+  "authority_chain": {
+    "task_dispatched_by": "NTS chat dispatch on 2026-04-27 (LANE01-W1-T2-CORE-SKILLS-AUTHOR-V1 task body — content authored by CLA chat per NTS pattern: chat LLM = author depth, code LLM = file ops)",
+    "content_authority": "CLA (chat) authored skill content verbatim in the task body",
+    "self_approve_authority": "Lane_01 self-approve DRAFT status per AMD_LANE01_CTO_AUTO_APPROVE_TECH_NON_CANON §3.1 YES list item 1 (architecture/spec drafts non-SHARED/laws/); per SKILL_AUTHORING_GUIDE §9 DRAFT lifecycle is owner-Lane self-promote; ACTIVE promotion of these skills is deferred to a future per-skill task per R-SKILL-01"
+  },
+  "execution_started_utc": "2026-04-27T13:00:00Z",
+  "parent_head_at_start": "982d78037534ea2176e76e376b41be9149c626f0",
+  "branch": "main",
+  "remote": "https://github.com/unitonzengarden/Uniton_Shared.git",
+  "preflight_result": "PASS — HEAD == 982d780 (matches parent stated in task body); branch main; worktree clean (untracked .claude/ and scripts/governance/__pycache__/ are local cache only, not tracked); up to date with origin/main; SHARED/skills/ has W1.T1 infrastructure ACTIVE plus 3 SKELETON skill folders (aier-dispatch, aier-verify, aier-canon-guard) with placeholder SKILL.md only",
+  "canon_binding": [
+    "LAW_N9_SKILL (R-SKILL-01..05 — skill authoring, frontmatter, lifecycle)",
+    "LAW_N5 (task prompt template — referenced by aier-dispatch §D step 4)",
+    "LAW_N6_OS (OS layout — handoffs/inbox path)",
+    "LAW_N7 (memory — referenced by aier-state-update)",
+    "LAW_N8_RUNTIME (R-RUN-01..06 — boundary)",
+    "LAW_N10_CAPABILITY_MATRIX (R-CAP-01..05)",
+    "LAW_N11_BACKEND_BRIDGE (R-BRIDGE-01..07 — boundary for aier-handoff-route)",
+    "REDLINES.md (R-AUTH-01, R-LANE-01, R-CANON-02)",
+    "SHARED/skills/SKILL_AUTHORING_GUIDE.md (W1.T1 ACTIVE — frontmatter + body §A-§I structure)",
+    "SHARED/skills/SKILL_INVOCATION_PROTOCOL.md (W1.T1 ACTIVE)",
+    "AIER Code Canon (6 ACTIVE files)",
+    "Roadmap V1 FINAL §3 W1.T2 (LOCKED tag roadmap-locked-v2-final)"
+  ],
+  "skills_to_create": [
+    "docs/LAW_CLA_LLM/SHARED/skills/aier-dispatch/ (overwrite SKELETON SKILL.md + add 5 new files: README.md, inputs.schema.json, outputs.schema.json, examples/dispatch_w1_t2.json, tests/test_self_check.md)",
+    "docs/LAW_CLA_LLM/SHARED/skills/aier-verify/ (same pattern: overwrite SKELETON SKILL.md + add 5 new files)",
+    "docs/LAW_CLA_LLM/SHARED/skills/aier-state-update/ (NEW folder + 6 files)",
+    "docs/LAW_CLA_LLM/SHARED/skills/aier-handoff-route/ (NEW folder + 6 files)"
+  ],
+  "skill_NOT_to_create": [
+    "docs/LAW_CLA_LLM/SHARED/skills/aier-canon-guard/ (DEFERRED — Lane_03 will author per Lane_03 canon expertise; SKELETON SKILL.md preserved untouched in this task)"
+  ],
+  "files_to_edit": [
+    "docs/LAW_CLA_LLM/SHARED/skills/INDEX.md (4 rows: SKELETON/NOT_YET_CREATED → DRAFT v0.1 + populated descriptions; aier-canon-guard row kept SKELETON)",
+    "docs/LAW_CLA_LLM/SHARED/SHARED_INDEX.md (skills folders block — 4 rows updated to DRAFT v0.1 + Lane_01)",
+    "docs/LAW_CLA_LLM/SHARED/amendments/AMENDMENTS_LOG.md (+1 row — LANE_01 SELF-APPROVE under AMD_LANE01_CTO_AUTO_APPROVE_TECH_NON_CANON §3.1 YES list item 1; aier-canon-guard deferred note)",
+    "runtime/checklist/MASTER_CHECKLIST.md (atomic header bump + new DONE row; remove this task from NEXT)"
+  ],
+  "files_NOT_to_edit": [
+    "docs/LAW_CLA_LLM/CANON/* (READ-ONLY — R-AUTH-01)",
+    "docs/LAW_CLA_LLM/SHARED/laws/* (READ-ONLY — R-AUTH-01)",
+    "docs/LAW_CLA_LLM/SHARED/os_operations/AUTHORITY_DECLARATION.md (READ-ONLY)",
+    "docs/LAW_CLA_LLM/LANE_02/*, LANE_03/* (R-LANE-01)",
+    "docs/00_ECOSYSTEM_CANON/*, docs/01_AIER_COMMON/* (existing NTS-approved canon)",
+    "docs/LAW_CLA_LLM/SHARED/skills/INDEX.md AIER CODE CANON section (canon-related, not in scope)",
+    "docs/LAW_CLA_LLM/SHARED/skills/SKILL_AUTHORING_GUIDE.md (already ACTIVE; no edit)",
+    "docs/LAW_CLA_LLM/SHARED/skills/SKILL_INVOCATION_PROTOCOL.md (already ACTIVE; no edit)",
+    "docs/LAW_CLA_LLM/SHARED/skills/aier-canon-guard/* (DEFERRED to Lane_03)",
+    "docs/LAW_CLA_LLM/SHARED/lab/* (Lane_03 owned)",
+    "docs/LAW_CLA_LLM/SHARED/rules/* (Lane_03 owned)"
+  ],
+  "filename_artifact_note": "Task body contains dispatch-time markdown rendering artifacts where bare filenames were auto-linked (e.g., '[SKILL.md](http://SKILL.md)' which renders as a broken link to a non-existent URL). The author's intent — consistent with all prior tasks (e.g., LANE01-ROADMAP-FINAL-COMMIT-V1) — is bare filenames. Files written with clean filenames per intent (e.g., 'SKILL.md' not '[SKILL.md](http://SKILL.md)'). Otherwise content is verbatim from the task body.",
+  "boundary_verified_planned": {
+    "shared_laws_modified": false,
+    "canon_modified": false,
+    "active_authority_declaration_modified": false,
+    "lane_other_folders_modified": false,
+    "outside_repo_touched": false,
+    "force_push_or_rebase": false,
+    "skill_status_set_to_active": false,
+    "aier_canon_guard_touched": false,
+    "skill_authoring_guide_or_invocation_protocol_modified": false
+  },
+  "validation_planned": [
+    "JSON parse: 8 schema files (inputs + outputs × 4 skills)",
+    "JSON parse: 4 example JSON files where applicable",
+    "QA grep: 'status: DRAFT' must appear in 4 SKILL.md",
+    "QA grep: 'version: v0.1' must appear in 4 SKILL.md",
+    "QA grep: 'DRAFT' v0.1 in 4 INDEX.md rows",
+    "Git diff scope: edits within SHARED/skills/ + SHARED_INDEX + AMENDMENTS_LOG + standard deliverables"
+  ],
+  "git_apply_commit_sha": "af525b711090d9460bacbdb2c0728d0c9afc322b",
+  "git_backfill_commit_sha": "7a1f871",
+  "git_cleanup_commit_sha": "358f9f9",
+  "rebase_note": "Origin advanced by 1 commit during work — Lane_03's spawned __pycache__ gitignore fix (2b3a655). Rebased on top with NO conflicts (gitignore did not overlap with my changes).",
+  "cleanup_note": "3rd commit 358f9f9 untracked .claude/worktrees/quizzical-hopper-a75604 accidentally added by `git add -A` in 7a1f871 backfill (it had a sub-.git inside, making it look like an embedded git repo); also added .claude/ to .gitignore to prevent recurrence — same fix-pattern as prior 4d16cc9 __pycache__ cleanup. R-CANON-02 unaffected (.claude/worktrees is local agent worktree state, not canon/audit/log artifact).",
+  "git_final_local_HEAD": "358f9f9",
+  "git_final_origin_main": "358f9f9",
+  "worktree_clean": "YES",
+  "next_recommended_task": "Lane_01 dispatches handoff to Lane_03 for aier-canon-guard authoring (5th skill). Lane_03 expertise: canon + amendment workflow (Lane_3 authored AIER Code Canon). After Lane_3 done → cross-review → 5 skills DRAFT complete → W1.T2 fully done. Then W1.T3 (boot protocol update) → W1.T4 (smoke test) → Gate W1."
+}

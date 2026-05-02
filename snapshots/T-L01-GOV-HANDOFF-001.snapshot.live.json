@@ -1,0 +1,77 @@
+{
+  "task_id": "T-L01-GOV-HANDOFF-001",
+  "phase": "Step 2 of 3 governance layer fix",
+  "predecessor": "T-L01-GOV-VALIDATOR-001 (Step 1) at 72a979d (preserved per R-CANON-02)",
+  "lane": "Lane_01",
+  "executor": "Lane_01 code agent (CLAC-1) on Vultr Windows Server",
+  "model": "claude-sonnet-4-7",
+  "started_at": "2026-04-26T02:52:42Z",
+  "git_head_before": "72a979d5cee59a992ed3d7799c78abe1ceb6280b",
+
+  "intent": "Build cross-Lane handoff validator + GitHub Action workflow consuming existing lane_message.schema.json + lane_response.schema.json. Validate filename + path + schema for every MSG/RSP in handoffs/.",
+
+  "next_steps": ["Step 3: pre-flight sync stricter (T-L01-GOV-PREFLIGHT-001)"],
+
+  "discovery": {
+    "lane_message_schema_already_exists": true,
+    "owner": "Lane_03 (committed earlier)",
+    "decision": "Use as-is per R-CANON-02 — do NOT modify; existing canon is richer (14 required fields including message_type, priority, status, requested_action enum) than spec's AC1 listed (those are subset of existing schema).",
+    "ac1_satisfied_by_existing_canon": true,
+    "additional_schemas_present": [
+      "contracts/handoff.schema.json (HOF- IDs — separate from MSG/RSP, not in this validator's scope)",
+      "contracts/control_signal.schema.json (control plane — Lane_03 owns)",
+      "contracts/control_signal_ack.schema.json (control plane — Lane_03 owns)",
+      "contracts/contribution_proposal.schema.json (proposal handoffs — Lane_03 owns)"
+    ]
+  },
+
+  "schemas_consumed": {
+    "MSG": {
+      "path": "contracts/lane_message.schema.json",
+      "required_fields_count": 14,
+      "additional_properties": false,
+      "message_id_pattern": "^MSG-(L[0-9]{2}|LN|NTS)-(L[0-9]{2}|LN|NTS)-(REQUEST|NOTICE|REVIEW|SYNC|HANDOFF|ACCEPTANCE|PROPOSAL)-[0-9]{8}-(00[1-9]|0[1-9][0-9]|[1-9][0-9]{2})$"
+    },
+    "RSP": {
+      "path": "contracts/lane_response.schema.json",
+      "required_fields_count": 10,
+      "additional_properties": false,
+      "response_id_pattern": "^[A-Z0-9][A-Z0-9_-]+$"
+    }
+  },
+
+  "validator_design": {
+    "filename_detection": "First 4 chars: 'MSG-' → lane_message schema; 'RSP-' → lane_response schema",
+    "path_validation": "MSG-* MUST be in handoffs/inbox/**/*.json; RSP-* MUST be in handoffs/outbox/**/*.json",
+    "filename_regex": "Must match schema's id pattern",
+    "lane_consistency": "MSG: filename embeds 'MSG-LFROM-LTO-' — must match JSON from_lane/to_lane fields. RSP: response_id pattern looser, skip lane consistency check (RSP filename pattern not standardized)."
+  },
+
+  "fixtures_planned": {
+    "valid": [
+      "handoff_valid_msg_minimal.json — minimal MSG conforming to schema",
+      "handoff_valid_msg_with_evidence.json — MSG with evidence_paths + acceptance_criteria",
+      "handoff_valid_rsp_minimal.json — minimal RSP",
+      "handoff_valid_rsp_with_recommendations.json — RSP with rich result text"
+    ],
+    "invalid": [
+      "handoff_invalid_msg_bad_message_id.json — message_id violates regex (e.g., MSG-L99-X-FOO-123-1)",
+      "handoff_invalid_msg_path_lane_mismatch.json — JSON content claims from_lane=Lane_03 but filename has 'L01'",
+      "handoff_invalid_rsp_missing_field.json — RSP missing 'next_action' (required)",
+      "handoff_invalid_msg_wrong_path.json — MSG- file placed in handoffs/outbox/ (wrong path)"
+    ]
+  },
+
+  "ac_status": {
+    "AC1_lane_message_schema": "pending (existing canon used as-is)",
+    "AC2_validator_script": "pending",
+    "AC3_pytest_8_of_8": "pending",
+    "AC4_github_action_yaml": "pending",
+    "AC5_rsp_schema_unchanged": "pending",
+    "AC6_handoffs_readme": "pending",
+    "AC7_eat_own_dogfood_demo": "pending",
+    "AC8_single_commit_pushed": "pending"
+  },
+
+  "overall_status": "in_progress"
+}

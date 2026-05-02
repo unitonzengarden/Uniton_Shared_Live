@@ -1,0 +1,68 @@
+{
+  "task_id": "LANE01-W1-LOOP-VALIDATION-V1",
+  "lane": "Lane_01",
+  "executor": "CLAC-1",
+  "model": "claude-opus-4-7",
+  "captured_at": "2026-04-28T03:00:00Z",
+  "parent_head": "16bbb0ea97c726e77439033a680f7828c7843b21",
+  "working_dir": "C:\\workspace\\Uniton_Shared",
+  "branch": "main",
+  "v1_1_phase": "W1.6 LOOP VALIDATION",
+  "next_phase_on_pass": "W1.7 NTS amendment for aier-canon-guard ACTIVATE",
+  "next_phase_on_fail": "LANE01-W1-LOOP-VALIDATION-FIX-V1 per failed skill",
+  "scope": "Validate 4 ACTIVE skills (aier-dispatch v1.0, aier-handoff-route v1.0, aier-state-update v1.0, aier-verify v1.0) work end-to-end through 2-3 real loop runs",
+  "loop_definition": [
+    "Step 1: INVOKE aier-dispatch (input: task spec; output: handoff JSON validating lane_message.schema.json)",
+    "Step 2: INVOKE aier-handoff-route (input: pull from inbox; output: routed list + ACK protocol)",
+    "Step 3: EXECUTE TASK (Lane_01 self executes per dispatch payload; commit + push)",
+    "Step 4: INVOKE aier-state-update (input: task evidence; output: regenerated state payload, idempotent)",
+    "Step 5: INVOKE aier-verify (input: report_path OR commit_evidence; output: ENDORSE/REJECT/REQUEST_CLARIFICATION)"
+  ],
+  "loop_runs": [
+    {
+      "run_id": "LV-RUN-1",
+      "task_id": "LANE01-W1-LV-RUN1-DOC-UPDATE-V1",
+      "scope": "Update SHARED/skills/README.md with note '4 skills ACTIVE post W1.5'",
+      "files_in_scope": ["docs/LAW_CLA_LLM/SHARED/skills/README.md"],
+      "test_focus": "Baseline 5-step loop coverage"
+    },
+    {
+      "run_id": "LV-RUN-2",
+      "task_id": "LANE01-W1-LV-RUN2-RUNTIME-NOTE-V1",
+      "scope": "Append §13 changelog entry to runtime/current_state.md",
+      "files_in_scope": ["runtime/current_state.md"],
+      "test_focus": "aier-state-update idempotency verification (run 2x same input → same output → no second write)"
+    },
+    {
+      "run_id": "LV-RUN-3",
+      "task_id": "LANE01-W1-LV-RUN3-CLEANUP-V1",
+      "scope": "Archive stale handoff messages from handoffs/inbox/Lane_01/ to handoffs/inbox/Lane_01/_archive/",
+      "files_in_scope": [
+        "handoffs/inbox/Lane_01/MSG-L03-L01-REVIEW-20260426-* (move to _archive/)"
+      ],
+      "test_focus": "aier-handoff-route pull/push + ACK protocol in real workflow"
+    }
+  ],
+  "evaluation_criteria": {
+    "pass": "All 3 loop runs end-to-end success; 24/24 schema validation PASS; aier-state-update idempotent verified; aier-handoff-route ACK protocol works; no skill HALT mid-loop; 3 verify verdicts collected",
+    "fail": "Any skill schema fail OR HALT mid-loop OR idempotency break OR loop incomplete → file fix tasks per skill"
+  },
+  "boundary_check": {
+    "no_shared_laws_edit": true,
+    "no_canon_edit": true,
+    "no_skill_md_or_metadata_edit": true,
+    "no_canon_guard_edit": true,
+    "no_lane_other": true,
+    "no_nts_escalation": true,
+    "run3_archive_preserves_content": true
+  },
+  "expected_deliverables": [
+    "snapshots/LANE01-W1-LOOP-VALIDATION-V1.snapshot.live.json (this file)",
+    "evidence/LV-RUN-1_evidence.md",
+    "evidence/LV-RUN-2_evidence.md",
+    "evidence/LV-RUN-3_evidence.md",
+    "reports/LANE01-W1-LOOP-VALIDATION-V1_REPORT.md (8 sections)",
+    "audit_logs/LANE01-W1-LOOP-VALIDATION-V1_audit.log",
+    "Per-run commits + final consolidated commit + backfill"
+  ]
+}

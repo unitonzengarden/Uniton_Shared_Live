@@ -1,0 +1,121 @@
+{
+  "task_id": "LANE01-INH-CODE-02b-HEARTBEAT-FIX-FAILING",
+  "executor": "CLAC-1",
+  "model": "claude-opus-4-7",
+  "lane": "Lane_01",
+  "self_approve_authority": "AMD_LANE01_CTO_AUTO_APPROVE_TECH_NON_CANON §3.1 (bug fix on shipped infra = tech non-canon) + NTS verbatim 'CLAC phải chạy tiếp để fix lỗi cho hoàn chỉnh' 2026-04-29",
+  "purpose": "Fix Continuity threshold bug in shipped Task 2 heartbeat checker (8+ scheduled runs failing); commit NTS_DECISION packet for INTER_AIER_BRIDGE_CANON v1.1 + LAW_N13 to provide repo-backed authority chain",
+  "started_at": "2026-04-29T07:00:00Z",
+  "supersedes": "LANE01-INH-CODE-02-HEARTBEAT-7COND (V2 dispatch) — CANCELLED by CLA per R-INHERIT-03",
+  "head_pre_flight": "c56b07f",
+  "head_post_merge": "3e1af632e01bcdbbab7380bf316a3a629b952d0c",
+  "branch": "fix/LANE01-INH-CODE-02b-heartbeat-failing (squash-merged + deleted)",
+  "pr": "https://github.com/unitonzengarden/Uniton_Shared/pull/9",
+  "phases": [
+    {
+      "id": "A",
+      "name": "Pre-flight + branch",
+      "outcome": "git status clean; branch fix/LANE01-INH-CODE-02b-heartbeat-failing created from c56b07f; AMD packet 22bfadb (Task 3 Q1-Q4 approval) confirmed in repo"
+    },
+    {
+      "id": "B",
+      "name": "Diagnose failing condition",
+      "outcome": "Root cause identified: Continuity check FAIL with gap > 900s threshold. 7 consecutive scheduled runs (78/72/66/59/235/153 min gaps) failed because GitHub Actions free-tier cron */10 fires at 60-235 min real intervals, far exceeding the 900s (15 min) threshold. State JSON correctly showed status=unhealthy with single FAIL on Continuity. All 6 other conditions OK. Architecture note: LAW_N8 §L8.8 specifies 60s threshold for daemon-style heartbeat (Lane runtime on Vultr) — does not apply to cron-style heartbeat (this)."
+    },
+    {
+      "id": "C",
+      "name": "Apply fix",
+      "outcome": "Bumped CONTINUITY_MAX_GAP_SECONDS = 21600 (6h) in scripts/heartbeat_checker.py with detailed docstring rationale. No redesign — same 7-condition shape, same Python stdlib, same sovereignty-respecting repo-only ledger (R-INTER-AIER-01). Local dry-run: 7/7 PASS, exit 0, status=alive."
+    },
+    {
+      "id": "D",
+      "name": "NTS_DECISION packet",
+      "outcome": "Authored docs/LAW_CLA_LLM/SHARED/amendments/approved/NTS_DECISION_2026-04-29_BRIDGE_CANON_v1_1_LAW_N13.md recording NTS verbatim approval 'APPROVE INTER_AIER_BRIDGE_CANON v1.1 + LAW_N13 multi-repo workflow' so future task specs can cite repo-backed authority instead of chat-only claims (Memory Spec V1 §22)."
+    },
+    {
+      "id": "E",
+      "name": "Open PR + manual trigger workflow",
+      "outcome": "PR #9 opened. First on-branch dispatch (run 25095413368) FAILED because workflow had hardcoded ref: main (so it ran main's checker, not branch's). Companion fix: workflow .github/workflows/aier_code_heartbeat.yml updated to ref: ${{ github.ref }} so dispatch on branch tests branch code; auto-commit pushes back to dispatched ref. Re-trigger run 25095463913 SUCCESS — Status: alive 7/7."
+    },
+    {
+      "id": "F",
+      "name": "Self-merge after AC verify",
+      "outcome": "PR #9 squash-merged at 3e1af63. Required rebase + skip on-branch verification auto-commit (ledger conflict with main's auto-commits while fix branch was open). Branch deleted post-merge."
+    },
+    {
+      "id": "G",
+      "name": "Post-merge stability watch",
+      "outcome": "Manual dispatch on main (run 25095568456) SUCCESS — Status: alive 7/7. Awaiting next 2 scheduled cron runs to verify (cron */10 fires irregularly on GHA free-tier; will update snapshot when scheduled-run conclusions land)."
+    },
+    {
+      "id": "H",
+      "name": "3 mandatory deliverables (DOT format)",
+      "outcome": "snapshots/LANE01-INH-CODE-02b-HEARTBEAT-FIX-FAILING.snapshot.live.json (this) + reports/LANE01-INH-CODE-02b-HEARTBEAT-FIX-FAILING_REPORT.md + audit_logs/LANE01-INH-CODE-02b-HEARTBEAT-FIX-FAILING_audit.log"
+    },
+    {
+      "id": "I",
+      "name": "Handoff CLA inbox MSG",
+      "outcome": "PENDING — handoffs/inbox/Lane_01/MSG-CLAC1-HEARTBEAT-FIX-COMPLETE.json with root cause + fix summary + 2 manual dispatch success + scheduled run verification status"
+    }
+  ],
+  "root_cause": "Continuity threshold (900s) too tight for GitHub Actions cron */10 real-world timing (60-235 min observed gaps). Bug introduced in Task 2 v1 implementation 2026-04-28.",
+  "fix": "Bump CONTINUITY_MAX_GAP_SECONDS to 21600 (6h) + workflow ref tweak to enable branch-based testing.",
+  "verification_runs": [
+    {
+      "run_id": 25095413368,
+      "branch": "fix/LANE01-INH-CODE-02b-heartbeat-failing",
+      "conclusion": "failure",
+      "reason": "ran main's pre-fix checker due to ref: main hardcode — exposed companion workflow bug; fix included in same PR"
+    },
+    {
+      "run_id": 25095463913,
+      "branch": "fix/LANE01-INH-CODE-02b-heartbeat-failing",
+      "conclusion": "success",
+      "status": "alive",
+      "all_7_pass": true
+    },
+    {
+      "run_id": 25095568456,
+      "branch": "main (post-merge)",
+      "conclusion": "success",
+      "status": "alive",
+      "all_7_pass": true
+    }
+  ],
+  "scheduled_runs_post_merge": "PENDING (will append on next cron fires; expected within 30-60 min based on GHA observed cadence)",
+  "boundary_check": {
+    "no_redesign_architecture": true,
+    "no_disable_condition": true,
+    "no_uniton_os_modified": true,
+    "no_admin_bypass_or_force_push_to_main": true,
+    "no_chat_only_authority": true,
+    "lane01_dot_prefix_on_3_deliverables": true,
+    "vercel_skip_on_all_commits": true,
+    "self_merge_post_AC_verify": true,
+    "nts_zero_clicks": true
+  },
+  "acceptance_criteria_status": {
+    "AC1_root_cause_identified_with_evidence": true,
+    "AC2_fix_applied_in_scope_files_only": true,
+    "AC3_local_dry_run_exit_0_7_of_7_PASS": true,
+    "AC4_manual_workflow_trigger_success": true,
+    "AC5_2_scheduled_runs_success": "PENDING (next 30-60 min)",
+    "AC6_ledger_entry_reflects_7_of_7_alive": true,
+    "AC7_NTS_DECISION_packet_committed": true,
+    "AC8_LANE01_DOT_format_3_deliverables": true,
+    "AC9_self_audit_log_complete": true,
+    "AC10_NTS_zero_clicks": true
+  },
+  "expected_deliverables": [
+    "scripts/heartbeat_checker.py (modified — Continuity threshold + docstring)",
+    ".github/workflows/aier_code_heartbeat.yml (modified — dispatch ref support)",
+    "docs/LAW_CLA_LLM/SHARED/amendments/approved/NTS_DECISION_2026-04-29_BRIDGE_CANON_v1_1_LAW_N13.md (NEW)",
+    "snapshots/LANE01-INH-CODE-02b-HEARTBEAT-FIX-FAILING.snapshot.live.json (this)",
+    "reports/LANE01-INH-CODE-02b-HEARTBEAT-FIX-FAILING_REPORT.md",
+    "audit_logs/LANE01-INH-CODE-02b-HEARTBEAT-FIX-FAILING_audit.log"
+  ],
+  "follow_ups_for_CLA": [
+    "Task 4 LANE01-INH-CODE-04-BUILD-L1-INGEST still HALT — needs Supabase env vars + Mgmt API runner authoring + PR #8 (blueprint) merge",
+    "PR #8 (blueprint) still OPEN — recommend merge so docs/architecture/BRAIN_BLUEPRINT_AIER_CODE.md reaches main"
+  ]
+}

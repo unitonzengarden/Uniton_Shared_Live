@@ -1,0 +1,102 @@
+{
+  "task_id": "LAW_GITHUB_01_REPO_GOVERNANCE_DRAFT_V1",
+  "result": "PASS",
+  "status": "DRAFT / PENDING_NTS_REVIEW",
+  "audited_owner": "unitonzengarden",
+  "source_audit_task_id": "LANE03-GITHUB-ORG-AUDIT-ALL-REPOS-V1",
+  "source_audit_result": "WARNING",
+  "source_audit_files": [
+    "reports/LANE03-GITHUB-ORG-AUDIT-ALL-REPOS-V1_REPORT.md",
+    "reports/LANE03-GITHUB-ORG-AUDIT-ALL-REPOS-V1.json",
+    "snapshots/LANE03-GITHUB-ORG-AUDIT-ALL-REPOS-V1.snapshot.json",
+    "audit_logs/LANE03-GITHUB-ORG-AUDIT-ALL-REPOS-V1_audit.log"
+  ],
+  "created": [
+    "docs/LAW_CLA_LLM/SHARED/laws/drafts/LAW_GITHUB_01_REPO_GOVERNANCE_DRAFT.md",
+    "reports/LAW_GITHUB_01_REPO_GOVERNANCE_DRAFT_V1_REPORT.md",
+    "reports/LAW_GITHUB_01_REPO_GOVERNANCE_DRAFT_V1.json",
+    "snapshots/LAW_GITHUB_01_REPO_GOVERNANCE_DRAFT_V1.snapshot.json",
+    "audit_logs/LAW_GITHUB_01_REPO_GOVERNANCE_DRAFT_V1_audit.log"
+  ],
+  "repo_classification": [
+    {
+      "repo": "unitonzengarden/Uniton_Shared",
+      "classification": "GOVERNANCE / BRAIN",
+      "draft_treatment": "canonical governance source of truth"
+    },
+    {
+      "repo": "unitonzengarden/Uniton_Shared_Live",
+      "classification": "MIRROR / PUBLIC STATE",
+      "draft_treatment": "public mirror only; not source of truth"
+    },
+    {
+      "repo": "unitonzengarden/Uniton_OS",
+      "classification": "RUNTIME / EXECUTION",
+      "draft_treatment": "runtime/execution repo; no governance-only writes"
+    },
+    {
+      "repo": "unitonzengarden/uzgplus-app",
+      "classification": "PRODUCT",
+      "draft_treatment": "product repo; product-scoped work only"
+    },
+    {
+      "repo": "unitonzengarden/AIFI_LIFE",
+      "classification": "PRODUCT",
+      "draft_treatment": "product repo pending clearer domain ownership"
+    },
+    {
+      "repo": "unitonzengarden/aier-life-super-app",
+      "classification": "UNKNOWN / NEEDS NTS DECISION",
+      "draft_treatment": "blocked from active implementation until NTS decision"
+    },
+    {
+      "repo": "unitonzengarden/_archive_chatbot",
+      "classification": "ARCHIVE / LEGACY / NOT ACTIVE",
+      "draft_treatment": "excluded from active work and dispatch"
+    }
+  ],
+  "key_rules": [
+    "GitHub source-of-truth rule",
+    "Repo role registry",
+    "Current repo classification from audit",
+    "Codex repo selection rule",
+    "Branch protection policy by repo role",
+    "PR policy by repo role",
+    "CI / Actions minimum by repo role",
+    "Report / snapshot / audit artifact standard",
+    "Mirror sync rule",
+    "Archive handling rule",
+    "Security hygiene minimum",
+    "Metadata / README / topics requirement",
+    "Open PR backlog handling rule",
+    "Emergency NTS-only exception path",
+    "Amendment / apply path"
+  ],
+  "nts_decisions_still_required": [
+    "Approve, reject, or request revision for LAW_GITHUB_01",
+    "Classify aier-life-super-app",
+    "Clarify AIFI_LIFE product ownership or consolidation path",
+    "Authorize any future GitHub settings changes",
+    "Authorize handling of open PR backlog"
+  ],
+  "risks": [
+    "This is a draft and has no active enforcement authority until NTS approval and a separate apply task",
+    "Audit result was WARNING due to branch protection, CI, metadata, mirror, PR backlog, and repo-role risks",
+    "aier-life-super-app remains UNKNOWN / NEEDS NTS DECISION",
+    "_archive_chatbot must remain excluded from active work"
+  ],
+  "boundaries": {
+    "github_settings_changed": false,
+    "branch_protection_enabled": false,
+    "repos_renamed_or_deleted": false,
+    "uniton_os_touched": false,
+    "product_repos_touched": false,
+    "active_law_files_changed": false,
+    "law_github_01_applied": false,
+    "law_n13_applied": false,
+    "integration_tasks_run": false,
+    "deployment_performed": false
+  },
+  "next_recommended_task": "LAW_GITHUB_01_NTS_REVIEW_AND_DECISION_V1",
+  "timestamp": "2026-04-29T13:18:24.2221892+07:00"
+}

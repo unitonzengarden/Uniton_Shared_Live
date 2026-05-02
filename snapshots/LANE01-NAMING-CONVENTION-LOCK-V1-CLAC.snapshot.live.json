@@ -1,0 +1,82 @@
+{
+  "task_id": "LANE01-NAMING-CONVENTION-LOCK-V1-CLAC",
+  "executor": "CLAC-1",
+  "model": "claude-opus-4-7",
+  "lane": "Lane_01",
+  "self_approve_authority": "AMD_LANE01_CTO_AUTO_APPROVE_TECH_NON_CANON §3.1 YES list (operator doc + CI script update + rename mechanics = tech non-canon; ratification via Lane_03 LAW amendment post-migration)",
+  "parent_task": "LANE01-NAMING-CONVENTION-LOCK-V1 (parallel CLAC + Cursor)",
+  "parallel_with": "Cursor LANE01-NAMING-CONVENTION-LOCK-V1-CURSOR (Uniton_OS side)",
+  "nts_verbatim_2026_04_29": "quy chuẩn report của Lane 1, phải có chữ Lane01- đầu report, để tránh nhầm các lane khác, vì chúng ta phát triển repo github chung phải có quy chuẩn",
+  "started_at": "2026-04-29T08:00:00Z",
+  "branch": "chore/LANE01-naming-convention-2026-04-29",
+  "phases": [
+    {
+      "id": "1",
+      "name": "Pre-flight + inventory",
+      "outcome": "git pull --rebase clean; HEAD 83fda04; ~50 historical non-prefixed files inventoried (T-L01-*, T-LAW-LOCK-*, T-RUNTIME-*, T-POSTMERGE-*, AIER-CODE-* etc.); decision = scope to 3 mandatories per spec, leave historical archive (would create 50+ broken_refs cascade if mass-renamed)"
+    },
+    {
+      "id": "2",
+      "name": "git mv rename CLAC-DAY1-BUNDLE-V1 deliverables (3 files)",
+      "outcome": "snapshots/CLAC-DAY1-BUNDLE-V1.snapshot.live.json → LANE01-CLAC-DAY1-BUNDLE-V1.snapshot.live.json + reports/CLAC-DAY1-BUNDLE-V1_REPORT.md → LANE01-CLAC-DAY1-BUNDLE-V1_REPORT.md + audit_logs/CLAC-DAY1-BUNDLE-V1_audit.log → LANE01-CLAC-DAY1-BUNDLE-V1_audit.log; git history preserved (R-CANON-02 append-only)"
+    },
+    {
+      "id": "3",
+      "name": "Update check_deliverables.ps1 (LANE prefix awareness; 7-day grace)",
+      "outcome": "Added prefix check loop after existing 3-file bundle validation; warns on non-LANE-prefixed task IDs but does not fail (grace period until 2026-05-06); existing strict 3-file bundle requirement preserved"
+    },
+    {
+      "id": "4",
+      "name": "Author docs/NAMING_CONVENTION_DELIVERABLES.md",
+      "outcome": "Authored ~120 lines covering: format spec + Lane prefix mapping + file templates + examples (✅/❌) + enforcement (CI + grace) + out-of-scope historical files list + forward-only enforcement + cross-repo applicability + ratification path + CLA task spec template update + cross-references"
+    },
+    {
+      "id": "5",
+      "name": "Author 3 mandatory deliverables (correct LANE01- prefix)",
+      "outcome": "snapshots/LANE01-NAMING-CONVENTION-LOCK-V1-CLAC.snapshot.live.json (this file) + reports/LANE01-NAMING-CONVENTION-LOCK-V1-CLAC_REPORT.md + audit_logs/LANE01-NAMING-CONVENTION-LOCK-V1-CLAC_audit.log"
+    },
+    {
+      "id": "6",
+      "name": "Commit + push + PR",
+      "outcome": "Branch chore/LANE01-naming-convention-2026-04-29 + single commit + PR to main"
+    }
+  ],
+  "files_renamed": [
+    {"from": "snapshots/CLAC-DAY1-BUNDLE-V1.snapshot.live.json", "to": "snapshots/LANE01-CLAC-DAY1-BUNDLE-V1.snapshot.live.json"},
+    {"from": "reports/CLAC-DAY1-BUNDLE-V1_REPORT.md", "to": "reports/LANE01-CLAC-DAY1-BUNDLE-V1_REPORT.md"},
+    {"from": "audit_logs/CLAC-DAY1-BUNDLE-V1_audit.log", "to": "audit_logs/LANE01-CLAC-DAY1-BUNDLE-V1_audit.log"}
+  ],
+  "files_authored": [
+    "docs/NAMING_CONVENTION_DELIVERABLES.md",
+    "snapshots/LANE01-NAMING-CONVENTION-LOCK-V1-CLAC.snapshot.live.json",
+    "reports/LANE01-NAMING-CONVENTION-LOCK-V1-CLAC_REPORT.md",
+    "audit_logs/LANE01-NAMING-CONVENTION-LOCK-V1-CLAC_audit.log"
+  ],
+  "files_modified": [
+    "scripts/ci/check_deliverables.ps1"
+  ],
+  "boundary_check": {
+    "no_content_modification_only_rename": true,
+    "no_migration_files_modified": true,
+    "no_shared_laws_modified": true,
+    "no_canon_modified": true,
+    "no_5_active_skills_modified": true,
+    "no_workers_modified": true,
+    "no_lane_02_03_internal_modified": true,
+    "git_history_preserved_via_git_mv": true,
+    "backward_compat_7_day_grace_period": true,
+    "historical_archive_left_intact": true
+  },
+  "ratification_path": {
+    "now_2026_04_29": "Lane_01 self-approve under AMD §3.1 YES list (operator doc + CI script + rename = tech non-canon)",
+    "post_migration_target": "Lane_03 amendment packet adding LANE prefix convention to LAW_N5 (TASK_PROMPT) or LAW_N12 (REPO_RUNTIME_STANDARD)",
+    "nts_approval_pattern": "Lane_03 authors PROPOSAL + RATIONALE + IMPACT + NTS_DECISION; NTS approves verbatim; Lane_03 applies; AMENDMENTS_LOG +1 row"
+  },
+  "expected_deliverables_acceptance": {
+    "criterion_1_clac_day1_renamed": "✓ 3 files with LANE01- prefix",
+    "criterion_2_check_deliverables_updated": "✓ prefix warn + grace period",
+    "criterion_3_naming_convention_doc_authored": "✓ docs/NAMING_CONVENTION_DELIVERABLES.md",
+    "criterion_4_3_mandatory_deliverables_correct_prefix": "✓ LANE01-NAMING-CONVENTION-LOCK-V1-CLAC trio",
+    "criterion_5_pr_opened_ci_pass": "pending push"
+  }
+}

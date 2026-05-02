@@ -1,0 +1,75 @@
+{
+  "task_id": "LANE02-W4-DOCS-OPERATOR-MANUAL-V1",
+  "loop_test_id": "LANE02-W3-W5-LOOP-V1-20260428",
+  "loop_order": "L2/3",
+  "type": "operator_manual_v1_authoring",
+  "lane": "Lane_02",
+  "executor": "CLAC2",
+  "timestamp_utc": "2026-04-28T08:46:00Z",
+  "verdict": "PASS",
+  "head_before": "e34c8a1d6ef0eea0fc1a8b36758de8cd2e1478e0",
+
+  "deliverable": {
+    "path": "docs/OPERATOR_MANUAL_v1.0.md",
+    "status": "DRAFT v1.0",
+    "lines": 741,
+    "sections": 14,
+    "subsections": 72,
+    "audience": "NTS + future operators (post v1.0 GA)",
+    "approval_path": "Lane_03 + Lane_01 cross-review -> NTS approve before v1.0 GA"
+  },
+
+  "major_expansions_vs_v0_1": {
+    "workflow_cookbook_recipes": 10,
+    "troubleshooting_flowcharts": 7,
+    "recovery_patterns": 6,
+    "delivery_matrix_subtables": 4,
+    "quality_metrics": 5,
+    "emergency_procedures": 4,
+    "glossary_terms": 22,
+    "reference_subcategories": 8
+  },
+
+  "draft_evidence_preserved": "docs/OPERATOR_MANUAL_DRAFT.md (186 lines, kept as historical; git diff zero changes)",
+
+  "shared_index_edit": {
+    "edit_type": "APPEND_ONLY",
+    "new_section": "Tier 2 — OPERATOR DOCS (DRAFT v1.0)",
+    "rows_added": 1,
+    "existing_rows_modified": 0
+  },
+
+  "boundary_compliance": {
+    "draft_v1_0_status_explicit": true,
+    "draft_v0_1_preserved": true,
+    "shared_index_append_only": true,
+    "no_canon_law_edits": true,
+    "no_other_lane_docs_edited": true,
+    "no_secrets": true,
+    "no_canon_level_statements": true
+  },
+
+  "files_changed": {
+    "new": [
+      "docs/OPERATOR_MANUAL_v1.0.md",
+      "reports/LANE02-W4-DOCS-OPERATOR-MANUAL-V1_REPORT.md",
+      "snapshots/LANE02-W4-DOCS-OPERATOR-MANUAL-V1_snapshot.live.json",
+      "audit_logs/LANE02-W4-DOCS-OPERATOR-MANUAL-V1_audit.log",
+      "handoffs/outbox/Lane_02/RSP-L02-L01-L2-COMPLETE-20260428-001.json"
+    ],
+    "modified": [
+      "docs/LAW_CLA_LLM/SHARED/SHARED_INDEX.md",
+      "runtime/current_state.md",
+      "runtime/checklist/MASTER_CHECKLIST.md",
+      "notifications/NOTIFICATION_LEDGER.md",
+      "notifications/NOTIFICATION_LEDGER.json"
+    ]
+  },
+
+  "commit": {
+    "sha": "8d6c7d0436c08facf533f348b5a50fe695551100",
+    "message": "docs: operator manual v1.0 DRAFT - full upgrade from v0.1 [vercel skip]"
+  },
+
+  "schema_version": "lane02_snapshot_v1"
+}

@@ -1,0 +1,87 @@
+{
+  "task_id": "T-DOCS-LANE-GUIDE-001",
+  "executed_at": "2026-04-25T12:27:00Z",
+  "executor": "CLAC-1 Lane_01",
+  "model": "claude-sonnet-4-7",
+  "stream": "Lane_01",
+  "working_dir": "C:\\workspace\\Uniton_Shared",
+  "working_dir_verified": true,
+  "task_type": "docs",
+
+  "pre_task_state": {
+    "head_hash_main": "5996b21d03407246875d70e8732591f600b4b954",
+    "how_to_file_local_size_bytes": 22379,
+    "how_to_file_local_lines": 654,
+    "shared_index_local_lines_before": 99,
+    "law_cla_llm_total_files": 51
+  },
+
+  "backup": {
+    "location": "/tmp/T-DOCS-LANE-GUIDE-001-backup/LAW_CLA_LLM",
+    "created_at": "2026-04-25T12:00:00Z",
+    "file_count": 51,
+    "verified": true
+  },
+
+  "files_added": ["docs/LAW_CLA_LLM/HOW_TO_OPEN_NEW_LANE.md"],
+  "files_modified": ["docs/LAW_CLA_LLM/SHARED/SHARED_INDEX.md"],
+  "files_canon_changed_count": 2,
+
+  "shared_index_change": {
+    "lines_before": 99,
+    "lines_after": 105,
+    "lines_added": 6,
+    "section_added": "### Top-level guides (with HOW_TO_OPEN_NEW_LANE registration row)",
+    "insertion_point": "After Tier 1 SHARED — os_operations/ subsection, before --- separator and ## REGISTERED LANES"
+  },
+
+  "branch_created": "docs/lane-onboarding-guide",
+  "pr_opened": 3,
+  "pr_url": "https://github.com/unitonzengarden/Uniton_Shared/pull/3",
+
+  "commits": [
+    {"hash": "6d8998194e689af7df9260615d1c32d21c9c49d8", "message": "docs(lane): add HOW_TO_OPEN_NEW_LANE.md guide v1.0 [vercel skip]"},
+    {"hash": "c44752944221730680c91073800e1714bb0fb74d", "message": "docs(index): register HOW_TO_OPEN_NEW_LANE in SHARED_INDEX [vercel skip]"},
+    {"hash": "7b1f44a2809adada00e1e7eb294ade5faf51f02b", "message": "docs(report): T-DOCS-LANE-GUIDE-001 deliverables [vercel skip]"}
+  ],
+
+  "tag": "docs-lane-guide-v1.0",
+  "tag_sha": "c44752944221730680c91073800e1714bb0fb74d",
+
+  "qa_gate": {
+    "result": "PASS",
+    "checks_run": 5,
+    "checks_passed": 5,
+    "failures": [],
+    "details": {
+      "check1_how_to_remote_size_bytes": 22379,
+      "check2_shared_index_how_to_refs": 1,
+      "check3_canon_files_total": 2,
+      "check3_canon_files_expected_match": 2,
+      "check4_commits_missing_vercel_skip": 0,
+      "check5_secrets_found": 0
+    }
+  },
+  "tests": null,
+  "ui_review": null,
+
+  "self_audit_log": "audit_logs/T-DOCS-LANE-GUIDE-001_audit.log",
+  "steps_total": 12,
+  "steps_passed": 12,
+  "steps_failed": 0,
+  "steps_skipped": 0,
+
+  "rollback_available": false,
+  "rollback_reason": "single PR with 2 additive changes, low risk (per LAW 31 N/A justification — backup preserved at /tmp/, NTS approval gate before merge)",
+
+  "ac1_status": "PASS",
+  "ac2_status": "PASS",
+  "ac3_status": "PASS",
+  "ac4_status": "PASS",
+  "ac5_status": "PASS",
+  "ac6_status": "PASS",
+  "ac7_status": "PASS",
+  "ac8_status": "PASS",
+  "ac9_status": "PASS",
+  "overall_status": "PASS"
+}

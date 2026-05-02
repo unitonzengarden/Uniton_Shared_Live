@@ -1,0 +1,63 @@
+{
+  "task_id": "LANE01-W3-FIRE-3-LANES-V1",
+  "title": "Fire 3 lane_dispatch workflow_dispatch + execute Lane_01 task full lifecycle",
+  "lane": "Lane_01",
+  "executor": "CLAC-1",
+  "model": "claude-opus-4-7",
+  "self_approve_authority": "AMD_LANE01_CTO_AUTO_APPROVE_TECH_NON_CANON §3.1 YES list (workflow firing + Lane_01 task execution wrapper is tech non-canon)",
+  "parent_head": "7e10f18a6c7c1c2329c52a694d7451fffbc5f72c",
+  "wraps_inner_task": "LANE01-W3-QA-LOOP-WIRE-V1 (Lane_01 task pickup from workflow run step summary; full lifecycle executed in same session)",
+  "phases": [
+    {
+      "id": "A",
+      "name": "Fire 3 workflow_dispatch",
+      "actions": [
+        "gh workflow run lane_dispatch.yml -f lane_id=Lane_01 → run 25038947664",
+        "gh workflow run lane_dispatch.yml -f lane_id=Lane_02 → run 25038950207",
+        "gh workflow run lane_dispatch.yml -f lane_id=Lane_03 → run 25038951889"
+      ]
+    },
+    {
+      "id": "B",
+      "name": "Verify 3 runs SUCCESS + capture URLs",
+      "actions": [
+        "Wait until all 3 runs complete; verify status=completed conclusion=success",
+        "Verify run logs contain expected NEXT_TASK_ID line for each Lane",
+        "Lane_01 → LANE01-W3-QA-LOOP-WIRE-V1 ✓",
+        "Lane_02 → LANE02-W3-LANE-NETWORK-CONSOLIDATE-V1 ✓",
+        "Lane_03 → LANE03-W2-CANON-GUARD-HEADING-FIX-V1 ✓"
+      ]
+    },
+    {
+      "id": "C",
+      "name": "Pickup + execute Lane_01 task (full lifecycle)",
+      "actions": [
+        "Read task_specs/LANE01-W3-QA-LOOP-WIRE-V1.md",
+        "Run full task lifecycle: snapshot → 5 phases → standard validators → commit → push → mark-done queue",
+        "Wraps LANE01-W3-QA-LOOP-WIRE-V1 (separate snapshot + report + audit_log)"
+      ]
+    },
+    {
+      "id": "D",
+      "name": "Report",
+      "actions": [
+        "3 workflow run IDs + URLs documented",
+        "Lane_01 task LANE01-W3-QA-LOOP-WIRE-V1 execution status reported",
+        "Lane_02 + Lane_03 task specs + run URLs surfaced for their respective executors to pickup"
+      ]
+    }
+  ],
+  "boundary_check": {
+    "no_queue_files_modified_during_fire_phase": true,
+    "no_lane_02_task_executed": "out of scope per R-LANE-01",
+    "no_lane_03_task_executed": "out of scope per R-LANE-01",
+    "no_secrets_hardcoded": true,
+    "lane_dispatch_workflow_does_not_execute_task": "verified — only surfaces spec to step summary"
+  },
+  "expected_deliverables": [
+    "snapshots/LANE01-W3-FIRE-3-LANES-V1.snapshot.live.json",
+    "reports/LANE01-W3-FIRE-3-LANES-V1_REPORT.md",
+    "audit_logs/LANE01-W3-FIRE-3-LANES-V1_audit.log",
+    "(wrapped) all LANE01-W3-QA-LOOP-WIRE-V1 deliverables"
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "task_id": "LANE01-W2-T3-AIER-WORKER-SCAN-V1",
+  "lane": "Lane_01",
+  "executor": "CLAC-1",
+  "model": "claude-opus-4-7",
+  "captured_at": "2026-04-28T07:00:00Z",
+  "parent_head": "e23c046c72766669c78c29a05551ed720db694d2",
+  "working_dir": "C:\\workspace\\Uniton_Shared",
+  "branch": "main",
+  "v1_1_phase": "W2.T3 AUTOMATE — 1st AIER worker = repo scanner; closes W2 automation loop (W2.T1 state-mirror + W2.T2 dispatcher + W2.T3 scanner)",
+  "scope": "Build aier-scan worker — Python + GitHub Action workflow_dispatch only — quét repo phát hiện stale handoffs / broken refs / version drift / contract violations / pending NTS decisions → dispatch findings via dispatcher CLI → results update ACTION_REQUIRED_BOARD via aier-state-update workflow",
+  "phases": {
+    "A": "scripts/workers/aier_scan.py v1.0 — 5 check functions (stale handoffs / broken refs / version drift / contract violations / pending NTS decisions); ScanReport object; modes (--scan-only / --dry-run / --self-test / --check NAME)",
+    "B": "contracts/scan_report.schema.json (NEW) + check_contract_files.ps1 update",
+    "C": ".github/workflows/aier_scan.yml workflow_dispatch only — NO cron per R-RUN-01..06; inputs scan_mode + auto_dispatch",
+    "D": "tests/test_aier_scan.py — 10 pytest tests (5 check fixtures + schema valid + dispatch behavior + no-findings-no-dispatch + self-test + audit shape)"
+  },
+  "parallel_safety": {
+    "lane_3_active_task": "LANE03-W1-AIER-CANON-GUARD-NTS-AMENDMENT-AUTHOR-V1 (W1.7 in flight or PASS)",
+    "lane_3_files": ["SHARED/amendments/", "AMENDMENTS_LOG.md", "runtime/"],
+    "lane_01_files": ["scripts/workers/ (NEW dir)", "contracts/scan_report.schema.json (NEW)", ".github/workflows/aier_scan.yml (NEW)", "tests/test_aier_scan.py (NEW)"],
+    "verdict": "PARALLEL SAFE (zero file overlap on new files; semantic merge available for runtime/AMENDMENTS_LOG)",
+    "conflict_protocol": "git pull --rebase before final commit"
+  },
+  "boundary_check": {
+    "no_shared_laws_edit": true,
+    "no_canon_edit": true,
+    "no_5_skill_edit": true,
+    "no_aier_state_update_edit": true,
+    "no_dispatcher_edit": true,
+    "no_lane_other_edit": true,
+    "no_nts_escalation": true,
+    "no_cron_or_schedule": true,
+    "no_hardcoded_secrets": true,
+    "no_break_existing_pipelines": true,
+    "no_break_aier_loop_route_selftest": true,
+    "no_break_existing_43_pytest": true
+  },
+  "expected_deliverables": [
+    "snapshots/LANE01-W2-T3-AIER-WORKER-SCAN-V1.snapshot.live.json (this file)",
+    "scripts/workers/aier_scan.py (NEW ~400 lines)",
+    "scripts/workers/__init__.py (NEW empty package marker)",
+    "contracts/scan_report.schema.json (NEW)",
+    ".github/workflows/aier_scan.yml (NEW workflow_dispatch only)",
+    "tests/test_aier_scan.py (NEW 10 pytest tests)",
+    "scripts/ci/check_contract_files.ps1 (UPDATED)",
+    "runtime/current_state.md (§3.8 +aier_scan; §13 changelog)",
+    "runtime/checklist/MASTER_CHECKLIST.md (W2.T3 DONE + W2.T4 PRIMARY NEXT)",
+    "notifications/NOTIFICATION_LEDGER.md + .json (NTF entry)",
+    "docs/LAW_CLA_LLM/SHARED/SHARED_INDEX.md (worker note)",
+    "docs/LAW_CLA_LLM/SHARED/amendments/AMENDMENTS_LOG.md (+1 row)",
+    "reports/LANE01-W2-T3-AIER-WORKER-SCAN-V1_REPORT.md",
+    "audit_logs/LANE01-W2-T3-AIER-WORKER-SCAN-V1_audit.log"
+  ]
+}

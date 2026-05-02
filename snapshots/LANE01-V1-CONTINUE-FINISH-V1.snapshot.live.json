@@ -1,0 +1,58 @@
+{
+  "task_id": "LANE01-V1-CONTINUE-FINISH-V1",
+  "title": "Audit gap + finalize V1.0 GA tracker hygiene",
+  "lane": "Lane_01",
+  "executor": "CLAC-1",
+  "model": "claude-opus-4-7",
+  "self_approve_authority": "AMD_LANE01_CTO_AUTO_APPROVE_TECH_NON_CANON §3.1 YES list (tracker hygiene = tech non-canon; no canon/law/skill edits)",
+  "parent_head": "2cb41e9cbccfba76e7a7b93dbe7c5173d03facad",
+  "phase_a_audit_findings": {
+    "lane_01_queue_state": "9/9 DONE confirmed via lane_dispatch.py --status",
+    "tags_state": "v1.0 + v1.0-rc + v1.0.0 (legacy) all present",
+    "release_files_present": ["v1.0-NOTES.md", "v1.0-OPERATOR-HANDOFF.md", "v1.0-rc-NOTES.md", "v1.0-rc-NOTES-DRAFT.md (Lane_02 companion)"],
+    "operations_manual_present": "docs/UNITON_FUTURE_OPERATIONS.md (v1.0)",
+    "tracker_gaps": {
+      "missing_done_rows": [
+        "LANE01-W4-ROADMAP-HOT-RELOAD-V1 → bb3c6a9",
+        "LANE01-W4-PROJECT-STATUS-EXTEND-V1 → 3dd97fe",
+        "LANE01-W4-V1-RC-COMMIT-V1 → d996a46 + tag v1.0-rc",
+        "LANE01-W5-V1-FINAL-AUDIT-V1 → 347e39c",
+        "LANE01-W5-V1-RELEASE-COMMIT-V1 → 7a02007 + tag v1.0",
+        "LANE01-W5-UNITON-FUTURE-HANDOFF-V1 → 524aad3"
+      ],
+      "wrong_pending_row": "LANE01-W4-ROADMAP-HOT-RELOAD-V1 (line 21) — already DONE since bb3c6a9, must remove from PENDING table",
+      "this_commit_placeholders": [
+        "LANE01-W3-QA-LOOP-WIRE-V1 (line 71) → 9238779",
+        "LANE01-W3-FIRE-3-LANES-V1 (line 72) → 9238779 (same commit)"
+      ]
+    }
+  },
+  "phases": [
+    {"id": "A", "name": "Audit gap", "status": "complete (findings recorded above)"},
+    {"id": "B", "name": "Fix tracker", "actions": ["Add 6 NEW DONE rows for W4-W5 Lane_01 tasks at top of DONE table", "Remove stale PENDING row line 21", "Backfill 2 (this commit) placeholders on W3 rows", "Update major banner", "Regen PROJECT_STATUS via generator"]},
+    {"id": "C", "name": "Complete missing iterations", "status": "skip — all 6 iterations already DONE per audit"},
+    {"id": "D", "name": "Final sweep", "actions": ["Run aier-qa-loop final scan", "Run 4 standard validators", "Update current_state §1 Phase = V1_0_GA_COMPLETE", "Single commit + push"]}
+  ],
+  "boundary_check": {
+    "no_shared_laws": true,
+    "no_canon_edited": true,
+    "no_5_active_skills": true,
+    "no_workers_modified": true,
+    "no_dispatcher_modified": true,
+    "no_lane_dispatch_modified": true,
+    "no_generators_modified": true,
+    "no_lane_02_03_modified": true,
+    "no_daemon_or_cron": true,
+    "no_secrets_hardcoded": true,
+    "tracker_hygiene_only": true
+  },
+  "expected_deliverables": [
+    "snapshots/LANE01-V1-CONTINUE-FINISH-V1.snapshot.live.json",
+    "reports/LANE01-V1-CONTINUE-FINISH-V1_REPORT.md",
+    "audit_logs/LANE01-V1-CONTINUE-FINISH-V1_audit.log",
+    "runtime/checklist/MASTER_CHECKLIST.md (6 NEW DONE rows + remove stale PENDING + 2 placeholder backfills + banner)",
+    "runtime/PROJECT_STATUS.md (regenerated with W4 + W5 100%)",
+    "runtime/current_state.md §1 Phase = V1_0_GA_COMPLETE",
+    "qa_loop_reports/V1-FINAL-COMPLETE.json"
+  ]
+}

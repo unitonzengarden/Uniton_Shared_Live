@@ -1,0 +1,80 @@
+{
+  "task_id": "LANE02-W3-DOMAIN-CANONS-DRAFT-V1",
+  "loop_test_id": "LANE02-W3-W5-LOOP-V1-20260428",
+  "loop_order": "L1/3",
+  "type": "domain_canons_draft_authoring",
+  "lane": "Lane_02",
+  "executor": "CLAC2",
+  "timestamp_utc": "2026-04-28T08:36:15Z",
+  "verdict": "PASS",
+  "head_before": "17b4d303a4ce6872ab3b9820ce70bed6ab0153b3",
+  "authority": "AMD_LANE02_AIER_CODE_ROLE_REFRAME (DRAFT authoring); NTS approval required for ACTIVE",
+
+  "deliverables": {
+    "domain_canons_directory": "docs/LAW_CLA_LLM/domain_canons/",
+    "files_authored": 4,
+    "all_status_draft_v0_1": true,
+    "no_active_promotion": true,
+    "files": [
+      {"path": "docs/LAW_CLA_LLM/domain_canons/00_README_DOMAIN_CANONS.md", "domain": "meta", "sections": 8},
+      {"path": "docs/LAW_CLA_LLM/domain_canons/01_UZG_PLUS_CANON_DRAFT_v0_1.md", "domain": "UZG+", "sections": 10, "redlines": 5},
+      {"path": "docs/LAW_CLA_LLM/domain_canons/02_AIER_LIFE_CANON_DRAFT_v0_1.md", "domain": "AIER_LIFE", "sections": 10, "redlines": 6},
+      {"path": "docs/LAW_CLA_LLM/domain_canons/03_AIFI_LIFE_CANON_DRAFT_v0_1.md", "domain": "AIFI_LIFE", "sections": 10, "redlines": 7}
+    ]
+  },
+
+  "shared_index_edit": {
+    "edit_type": "APPEND_ONLY",
+    "new_section": "Tier 2 — DOMAIN CANONS (DRAFT)",
+    "rows_added": 4,
+    "existing_rows_modified": 0,
+    "git_diff_removed_lines": 0
+  },
+
+  "review_request": {
+    "to_lane": "Lane_03",
+    "msg_path": "handoffs/inbox/Lane_03/MSG-L02-L03-REVIEW-DOMAIN-CANONS-20260428-001.json",
+    "ack_required": true,
+    "expected_response_time_days": 7,
+    "review_focus_areas": 6
+  },
+
+  "boundary_compliance": {
+    "draft_status_strict": true,
+    "no_self_approve": true,
+    "no_canon_active": true,
+    "no_shared_laws_canon_edits": true,
+    "no_amendments_lab_rules_skills_edits": true,
+    "shared_index_append_only": true,
+    "lane_silos_untouched": true,
+    "no_unreleased_features_claimed": true
+  },
+
+  "files_changed": {
+    "new": [
+      "docs/LAW_CLA_LLM/domain_canons/00_README_DOMAIN_CANONS.md",
+      "docs/LAW_CLA_LLM/domain_canons/01_UZG_PLUS_CANON_DRAFT_v0_1.md",
+      "docs/LAW_CLA_LLM/domain_canons/02_AIER_LIFE_CANON_DRAFT_v0_1.md",
+      "docs/LAW_CLA_LLM/domain_canons/03_AIFI_LIFE_CANON_DRAFT_v0_1.md",
+      "handoffs/inbox/Lane_03/MSG-L02-L03-REVIEW-DOMAIN-CANONS-20260428-001.json",
+      "reports/LANE02-W3-DOMAIN-CANONS-DRAFT-V1_REPORT.md",
+      "snapshots/LANE02-W3-DOMAIN-CANONS-DRAFT-V1_snapshot.live.json",
+      "audit_logs/LANE02-W3-DOMAIN-CANONS-DRAFT-V1_audit.log",
+      "handoffs/outbox/Lane_02/RSP-L02-L01-L1-COMPLETE-20260428-001.json"
+    ],
+    "modified": [
+      "docs/LAW_CLA_LLM/SHARED/SHARED_INDEX.md",
+      "runtime/current_state.md",
+      "runtime/checklist/MASTER_CHECKLIST.md",
+      "notifications/NOTIFICATION_LEDGER.md",
+      "notifications/NOTIFICATION_LEDGER.json"
+    ]
+  },
+
+  "commit": {
+    "sha": "3a668a56b325c37a4ef77a42fa6ed5282721be94",
+    "message": "docs(canon): W3 domain canons DRAFT v0.1 - UZG+, AIER_LIFE, AIFI_LIFE [vercel skip]"
+  },
+
+  "schema_version": "lane02_snapshot_v1"
+}

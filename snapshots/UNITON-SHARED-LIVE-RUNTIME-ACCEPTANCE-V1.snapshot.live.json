@@ -1,0 +1,56 @@
+{
+  "task_id": "UNITON-SHARED-LIVE-RUNTIME-ACCEPTANCE-V1",
+  "snapshot_type": "live",
+  "created_at": "2026-04-25T15:25:32Z",
+  "repo": {
+    "local_path": "D:\\UZG\\Projects-v2\\uniton_shared",
+    "remote": "https://github.com/unitonzengarden/Uniton_Shared.git",
+    "branch": "main",
+    "base_head": "dc3032d96db1bf2590e8aeebe386f21853aaa9be",
+    "shared_version": "v1.1.0"
+  },
+  "runtime_acceptance": {
+    "status": "ACTIVE_PENDING_CROSS_LANE_RECEIPTS",
+    "manifest": "docs/LAW_CLA_LLM/SHARED/runtime/UNITON_SHARED_RUNTIME_ACCEPTANCE_MANIFEST.json",
+    "acceptance_protocol": "docs/LAW_CLA_LLM/SHARED/runtime/LANE_ACCEPTANCE_PROTOCOL.md",
+    "skill_lab_contribution_protocol": "docs/LAW_CLA_LLM/SHARED/runtime/SKILL_LAB_CONTRIBUTION_PROTOCOL.md",
+    "contribution_schema": "contracts/contribution_proposal.schema.json",
+    "release_tag": "uniton-shared-live-runtime-acceptance-v1.0.0"
+  },
+  "lane_acceptance": [
+    {
+      "lane_id": "Lane_01",
+      "sync_status": "LEGACY_PENDING",
+      "acceptance_status": "PENDING",
+      "receipt_path": null
+    },
+    {
+      "lane_id": "Lane_02",
+      "sync_status": "LEGACY_PENDING",
+      "acceptance_status": "PENDING",
+      "receipt_path": null
+    },
+    {
+      "lane_id": "Lane_03",
+      "sync_status": "IN_SYNC",
+      "acceptance_status": "ACCEPTED",
+      "receipt_path": "handoffs/lane_acceptance/LANE_03_ACCEPTANCE.md"
+    }
+  ],
+  "handoff_paths": [
+    "handoffs/lane_acceptance",
+    "handoffs/inbox",
+    "handoffs/outbox",
+    "handoffs/contribution_proposals"
+  ],
+  "scope_assertions": {
+    "uniton_os_product_built": false,
+    "runtime_app_folders_created": false,
+    "lane_01_created_or_renamed": false,
+    "lane_02_created": false,
+    "shared_laws_modified": false,
+    "deploy_run": false,
+    "secrets_added": false,
+    "cross_lane_acceptance_faked": false
+  }
+}

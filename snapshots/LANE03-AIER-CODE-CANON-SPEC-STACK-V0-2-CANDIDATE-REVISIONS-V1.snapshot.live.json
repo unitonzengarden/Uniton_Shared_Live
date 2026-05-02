@@ -1,0 +1,30 @@
+{
+  "timestamp": "2026-04-26T21:30:44+07:00",
+  "task_id": "LANE03-AIER-CODE-CANON-SPEC-STACK-V0-2-CANDIDATE-REVISIONS-V1",
+  "git_head_at_snapshot_generation": "92b13ceae4c439b923cc758b0b7e039aa230a855",
+  "git_origin_main_at_snapshot_generation": "92b13ceae4c439b923cc758b0b7e039aa230a855",
+  "git_final_local_head": "recorded in final NTS output after push",
+  "git_final_origin_main": "recorded in final NTS output after push",
+  "packet_id": "AMD_LANE03_AIER_CODE_CANON_SPEC_STACK_2026-04-26",
+  "candidate_file_count": 5,
+  "candidate_paths": [
+    "docs/LAW_CLA_LLM/SHARED/amendments/pending/AMD_LANE03_AIER_CODE_CANON_SPEC_STACK_2026-04-26/revisions/aier_code_master_canon_v_1_v0_2_candidate.md",
+    "docs/LAW_CLA_LLM/SHARED/amendments/pending/AMD_LANE03_AIER_CODE_CANON_SPEC_STACK_2026-04-26/revisions/aier_code_memory_spec_v_1_v0_2_candidate.md",
+    "docs/LAW_CLA_LLM/SHARED/amendments/pending/AMD_LANE03_AIER_CODE_CANON_SPEC_STACK_2026-04-26/revisions/aier_code_lane_federation_spec_v_1_v0_2_candidate.md",
+    "docs/LAW_CLA_LLM/SHARED/amendments/pending/AMD_LANE03_AIER_CODE_CANON_SPEC_STACK_2026-04-26/revisions/aier_code_capability_matrix_spec_v_1_v0_2_candidate.md",
+    "docs/LAW_CLA_LLM/SHARED/amendments/pending/AMD_LANE03_AIER_CODE_CANON_SPEC_STACK_2026-04-26/revisions/aier_code_backend_event_spec_v_1_v0_2_candidate.md"
+  ],
+  "handoff_path": "handoffs/inbox/Lane_01/MSG-L03-L01-REVIEW-20260426-006.json",
+  "statuses": {
+    "candidates": "CANDIDATE_REVISION/PENDING_REVIEW",
+    "handoff_validation": "PASS",
+    "activation": "none",
+    "approval": "none"
+  },
+  "report_paths": {
+    "markdown": "reports/LANE03-AIER-CODE-CANON-SPEC-STACK-V0-2-CANDIDATE-REVISIONS-V1_REPORT.md",
+    "json": "reports/LANE03-AIER-CODE-CANON-SPEC-STACK-V0-2-CANDIDATE-REVISIONS-V1.json",
+    "audit_log": "audit_logs/LANE03-AIER-CODE-CANON-SPEC-STACK-V0-2-CANDIDATE-REVISIONS-V1_audit.log"
+  },
+  "worktree_clean": "verified after push"
+}

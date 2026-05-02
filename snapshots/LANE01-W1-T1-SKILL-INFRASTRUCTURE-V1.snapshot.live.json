@@ -1,0 +1,64 @@
+{
+  "task_id": "LANE01-W1-T1-SKILL-INFRASTRUCTURE-V1",
+  "task_title": "Roadmap W1.T1 — SKILL Infrastructure (INDEX + AUTHORING_GUIDE + INVOCATION_PROTOCOL)",
+  "phase": "Roadmap V1 FINAL — Layer 1 SKILL FOUNDATION — Week 1 — Task T1",
+  "executor": {
+    "lane": "Lane_01 (Claude Opus 4.7 on Vultr Windows Server)",
+    "role": "CTO author per AMD_LANE01_ROLE_REFRAME §3.1; self-approve under AMD_LANE01_CTO_AUTO_APPROVE_TECH_NON_CANON_2026-04-26 §3.1 YES list item 1 (architecture/spec drafts non-SHARED/laws/)",
+    "agent": "CLAC-1 (Claude Code Desktop)",
+    "model": "claude-opus-4-7",
+    "working_dir": "C:\\workspace\\Uniton_Shared"
+  },
+  "authority_chain": {
+    "task_dispatched_by": "NTS chat dispatch on 2026-04-27 (LANE01-W1-T1-SKILL-INFRASTRUCTURE-V1 task body)",
+    "roadmap_authority": "Roadmap V1 FINAL §3 W1.T1 (LOCKED tag roadmap-locked-v2-final, NTS APPROVED 2026-04-27)",
+    "self_approve_authority": "AMD_LANE01_CTO_AUTO_APPROVE_TECH_NON_CANON_2026-04-26 §3.1 YES list item 1 (architecture/spec drafts non-SHARED/laws/) — these 3 docs are infrastructure under SHARED/skills/, not skills themselves; NOT under R-SKILL-01 SHARED Skill activation (no skill is being activated SKELETON→ACTIVE in this task)",
+    "fast_endorser_mode_note": "AMD_LANE01_FAST_ENDORSER_MODE_2026-04-27 ACTIVE applies to ENDORSING Lane_03 deliverables in 1 turn (Rule 1); does NOT extend Lane_01 self-approve scope. Authority for self-approve here = CTO_AUTO_APPROVE_TECH_NON_CANON YES list."
+  },
+  "execution_started_utc": "2026-04-27T08:50:00Z",
+  "parent_head_at_start": "bd1c0d12bfed92ed5e0ae326c0302ec1a5de9b0a",
+  "branch": "main",
+  "remote": "https://github.com/unitonzengarden/Uniton_Shared.git",
+  "preflight_result": "PASS (HEAD == bd1c0d1; branch main; worktree clean; up to date with origin/main; SHARED/skills/ has README.md + 3 skeleton skill folders; no roadmap-locked-v2-final tag conflict)",
+  "canon_binding": [
+    "LAW_N9_SKILL.md (R-SKILL-01..05 — skill cannot grant capability/bypass NTS/execute side effects/hide runtime/become active without amendment)",
+    "LAW_N6_OS.md (OS layout, GitHub source of truth)",
+    "LAW_N1.md §L4 (anti-flooding — 1 task per response)",
+    "REDLINES preserved: R-AUTH-01 (NTS sole approver canon — these are not canon, but cite for clarity), R-LANE-01 (no LANE_<other>/ touched), R-MEM-04 (single current_state — not touched), R-SKILL-01..05",
+    "Roadmap V1 FINAL §3 W1.T1 (output spec)",
+    "AMD_LANE01_CTO_AUTO_APPROVE_TECH_NON_CANON_2026-04-26 §3.1 YES list item 1 (self-approve basis)"
+  ],
+  "files_to_create": [
+    "snapshots/LANE01-W1-T1-SKILL-INFRASTRUCTURE-V1.snapshot.live.json (this file)",
+    "docs/LAW_CLA_LLM/SHARED/skills/INDEX.md (NEW — registry table 5 rows + 7 sections)",
+    "docs/LAW_CLA_LLM/SHARED/skills/SKILL_AUTHORING_GUIDE.md (NEW — 9 sections)",
+    "docs/LAW_CLA_LLM/SHARED/skills/SKILL_INVOCATION_PROTOCOL.md (NEW — 8 sections)",
+    "reports/LANE01-W1-T1-SKILL-INFRASTRUCTURE-V1_REPORT.md",
+    "audit_logs/LANE01-W1-T1-SKILL-INFRASTRUCTURE-V1_audit.log"
+  ],
+  "files_to_edit": [
+    "docs/LAW_CLA_LLM/SHARED/skills/README.md (update reference to 3 new docs + bootstrap status line)",
+    "docs/LAW_CLA_LLM/SHARED/SHARED_INDEX.md (skills section — add 3 new infra rows + bump existing 3 skill folder rows to point to skill_name + reference INDEX)",
+    "docs/LAW_CLA_LLM/SHARED/amendments/AMENDMENTS_LOG.md (append PROPOSED → AUTO_APPROVED row with backfill SHA placeholder)",
+    "runtime/checklist/MASTER_CHECKLIST.md (atomic header bump + new DONE row)"
+  ],
+  "boundary_verified": {
+    "shared_laws_modified": false,
+    "active_architecture_modified": false,
+    "active_boot_modified": false,
+    "active_os_operations_modified": false,
+    "shared_lab_touched": false,
+    "shared_rules_touched": false,
+    "lane_other_folders_modified": false,
+    "outside_repo_touched": false,
+    "force_push_or_rebase": false,
+    "skill_skeleton_to_active_promotion": "NO — none of the 3 skeleton skills (aier-dispatch, aier-verify, aier-canon-guard) is being promoted; W1.T1 is infrastructure docs only, skill content authoring is W1.T2",
+    "r_skill_01_compliance": "PASS — no SHARED Skill activated (SKELETON→ACTIVE) in this task; only infrastructure docs created"
+  },
+  "git_apply_commit_sha": "0c9b4c8dc0b9513171e4c8b6a522665a0c7abe73",
+  "git_backfill_commit_sha": "5cb0359",
+  "git_final_local_HEAD": "5cb0359",
+  "git_final_origin_main": "5cb0359",
+  "worktree_clean": "YES",
+  "next_recommended_task": "W1.T2 — author 5 core skills full content (aier-dispatch + aier-verify + aier-canon-guard SKELETON→DRAFT/ACTIVE; create aier-state-update + aier-handoff-route from scratch). Skill activation SKELETON→ACTIVE per R-SKILL-01 requires NTS-approved amendment for each skill (or a bundled amendment for all 5)."
+}

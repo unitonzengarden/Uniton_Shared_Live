@@ -1,0 +1,76 @@
+{
+  "task_id": "UNITON-SHARED-CANONICAL-HEAD-RECONCILE-V1",
+  "created_at": "2026-04-26T09:03:35+07:00",
+  "project_id": "AIER_CODE",
+  "canonical_repo": {
+    "path": "D:\\UZG\\Projects-v2\\Uniton_Shared",
+    "remote": "https://github.com/unitonzengarden/Uniton_Shared.git",
+    "branch": "main",
+    "head_before": "556d832210c35c1485326d586a905a6d67be8dd3",
+    "origin_main_before": "556d832210c35c1485326d586a905a6d67be8dd3"
+  },
+  "backup_branch": {
+    "name": "backup/local-main-before-canonicalization-20260426_085536",
+    "head": "29e0ff294918d367d4f897a4d97189430490592f"
+  },
+  "preflight": {
+    "pwd_verified": true,
+    "remote_verified": true,
+    "branch_verified": true,
+    "side_repo_created": false,
+    "temp_worktree_created": false,
+    "worktree_list": [
+      "D:/UZG/Projects-v2/Uniton_Shared 556d832 [main]"
+    ]
+  },
+  "required_files_present_before": [
+    "docs/LAW_CLA_LLM/ROADMAPS/AIER_CODE_ROADMAP_V2_DISCUSSION_PACK.md",
+    "handoffs/inbox/MSG-L03-L01-REVIEW-20260426-001.json",
+    "handoffs/inbox/MSG-L03-L02-REVIEW-20260426-001.json",
+    "contracts/lane_response.schema.json"
+  ],
+  "required_files_missing_before": [
+    "contracts/lane_message.schema.json",
+    "contracts/handoff.schema.json",
+    "contracts/control_signal.schema.json",
+    "contracts/control_signal_ack.schema.json",
+    "docs/LAW_CLA_LLM/SHARED/runtime/CROSS_LANE_COMMUNICATION_PROTOCOL.md",
+    "docs/LAW_CLA_LLM/SHARED/runtime/LANE_MESSAGE_ID_POLICY.md",
+    "docs/LAW_CLA_LLM/SHARED/runtime/MESSAGE_ROUTING_PROCEDURE.md",
+    "docs/LAW_CLA_LLM/SHARED/runtime/AIER_RUNTIME_LOOP_PROTOCOL.md",
+    "docs/LAW_CLA_LLM/SHARED/runtime/AIER_HALT_SIGNAL_POLICY.md",
+    "docs/LAW_CLA_LLM/SHARED/runtime/AIER_RESUME_POLICY.md",
+    "docs/LAW_CLA_LLM/SHARED/runtime/CONTROL_ACK_IDEMPOTENCY_POLICY.md",
+    "docs/LAW_CLA_LLM/SHARED/runtime/CONTROL_SIGNAL_LOCKING_POLICY.md",
+    "docs/LAW_CLA_LLM/SHARED/runtime/CONTROL_SIGNAL_SIGNATURE_POLICY.md",
+    "scripts/runtime/aier_loop.ps1",
+    "scripts/runtime/route_messages.ps1",
+    "scripts/ci/check_contract_files.ps1"
+  ],
+  "restored_from_backup": [
+    "contracts/lane_message.schema.json",
+    "contracts/handoff.schema.json",
+    "contracts/control_signal.schema.json",
+    "contracts/control_signal_ack.schema.json",
+    "docs/LAW_CLA_LLM/SHARED/runtime/CROSS_LANE_COMMUNICATION_PROTOCOL.md",
+    "docs/LAW_CLA_LLM/SHARED/runtime/LANE_MESSAGE_ID_POLICY.md",
+    "docs/LAW_CLA_LLM/SHARED/runtime/MESSAGE_ROUTING_PROCEDURE.md",
+    "docs/LAW_CLA_LLM/SHARED/runtime/AIER_RUNTIME_LOOP_PROTOCOL.md",
+    "docs/LAW_CLA_LLM/SHARED/runtime/AIER_HALT_SIGNAL_POLICY.md",
+    "docs/LAW_CLA_LLM/SHARED/runtime/AIER_RESUME_POLICY.md",
+    "docs/LAW_CLA_LLM/SHARED/runtime/CONTROL_ACK_IDEMPOTENCY_POLICY.md",
+    "docs/LAW_CLA_LLM/SHARED/runtime/CONTROL_SIGNAL_LOCKING_POLICY.md",
+    "docs/LAW_CLA_LLM/SHARED/runtime/CONTROL_SIGNAL_SIGNATURE_POLICY.md",
+    "scripts/runtime/aier_loop.ps1",
+    "scripts/runtime/route_messages.ps1",
+    "scripts/ci/check_contract_files.ps1"
+  ],
+  "forbidden_scope_checks": {
+    "shared_laws_changed": false,
+    "lane_folders_changed": false,
+    "side_repo_or_worktree_created": false,
+    "deploy_run": false,
+    "force_push": false
+  },
+  "final_commit_sha": "recorded after commit"
+}

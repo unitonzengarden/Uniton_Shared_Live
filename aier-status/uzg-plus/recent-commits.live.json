@@ -1,9 +1,65 @@
 {
   "project_slug": "uzg-plus",
   "github_repo": "unitonzengarden/uzgplus-app",
-  "polled_at": "2026-05-02T15:47:42.939Z",
+  "polled_at": "2026-05-02T16:50:41.833Z",
   "count": 30,
   "commits": [
+    {
+      "sha": "7799b4b43888c97651c1ff98bc600091fabcf679",
+      "message": "feat(lane02/uzg/tao): TAO mini app full-screen takeover pattern V3 canon (#115)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-02T16:45:24Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/7799b4b43888c97651c1ff98bc600091fabcf679"
+    },
+    {
+      "sha": "5e4dc686ae75197fb28aac4351070306cc51bda9",
+      "message": "Merge pull request #114 from unitonzengarden/feat/v2-home-fix-3-keystone-nts-5bugs",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-02T16:40:49Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/5e4dc686ae75197fb28aac4351070306cc51bda9"
+    },
+    {
+      "sha": "9202a0b8ec9f786828c198795980f23738e32daa",
+      "message": "fix(home): B4 media lightbox for image + video viewers",
+      "author": "LANE01-Cursor",
+      "committed_at": "2026-05-02T16:39:49Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/9202a0b8ec9f786828c198795980f23738e32daa"
+    },
+    {
+      "sha": "5af73cacc893b593cf33fe3690bb0553d55dd8a2",
+      "message": "fix(home): B3 dedicated /compose page wires real PostComposer",
+      "author": "LANE01-Cursor",
+      "committed_at": "2026-05-02T16:36:13Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/5af73cacc893b593cf33fe3690bb0553d55dd8a2"
+    },
+    {
+      "sha": "b470ec64b3105e6c8b0f47b246bfaf80391fff65",
+      "message": "fix(home): B5 content limits 900 chars, 9 images, 2 MB, 36s video",
+      "author": "LANE01-Cursor",
+      "committed_at": "2026-05-02T16:33:50Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/b470ec64b3105e6c8b0f47b246bfaf80391fff65"
+    },
+    {
+      "sha": "d8111bd68e7ab243811b662feaaf166f829c3e3e",
+      "message": "fix(home): B2 profile banner+avatar layering z-index",
+      "author": "LANE01-Cursor",
+      "committed_at": "2026-05-02T16:31:45Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/d8111bd68e7ab243811b662feaaf166f829c3e3e"
+    },
+    {
+      "sha": "d346219b397eab7d6a3588a36142c67601e2e9eb",
+      "message": "fix(home): B1 U-Reward popup close button + 24h dismissal",
+      "author": "LANE01-Cursor",
+      "committed_at": "2026-05-02T16:30:03Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/d346219b397eab7d6a3588a36142c67601e2e9eb"
+    },
+    {
+      "sha": "831595356c35819bbdd38a43aad0eabcec3d8187",
+      "message": "feat(lane02/v2live): PLUS Hub V2 UI upgrade icon grid + real modules wire (#113)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-02T15:58:51Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/831595356c35819bbdd38a43aad0eabcec3d8187"
+    },
     {
       "sha": "e0f60714cc203af143d2262f27e273192d8777f3",
       "message": "test(lane02/phase6): AIER chat 5-case production smoke test (#112)",
@@ -157,62 +213,6 @@
       "author": "Uniton Zen",
       "committed_at": "2026-05-02T08:15:30Z",
       "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/e18d67ceae2c5b35f85fad60c4839e7623e685e4"
-    },
-    {
-      "sha": "32cd9e264fadd811e0543621e0a73cdc0ea26c3c",
-      "message": "feat(p5-11): Sprint 5.11 — V2-EXACT wire critical+optional [vercel skip] (#91)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-05-02T06:13:51Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/32cd9e264fadd811e0543621e0a73cdc0ea26c3c"
-    },
-    {
-      "sha": "43954194a4b03149bfd232d6747ded0a98185d5e",
-      "message": "test(lane02/golive): aier-tao-golive smoke suite Q1-Q5 [vercel skip]",
-      "author": "unitonzengarden",
-      "committed_at": "2026-05-02T04:28:49Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/43954194a4b03149bfd232d6747ded0a98185d5e"
-    },
-    {
-      "sha": "25d07d372d5daa5ff400fb8b40e123ca2e745a19",
-      "message": "feat(lane02/aier-kb-rag): pgvector KB + RAG retrieval + smoke tests [vercel skip] (#90)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-05-02T04:25:54Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/25d07d372d5daa5ff400fb8b40e123ca2e745a19"
-    },
-    {
-      "sha": "268fec7e334d988a97979ece13533f491ba685b7",
-      "message": "hotfix(p5-10): UZG+ Phase 5 Sprint 5.10 — Auth OTP refactor (Sprint 5.1+5.9 P0 bug correction) (#89)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-05-02T03:55:54Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/268fec7e334d988a97979ece13533f491ba685b7"
-    },
-    {
-      "sha": "feb0fecb6d30fa0a77d37cadfc8aee17e4f5d239",
-      "message": "feat(p5-9): UZG+ Phase 5 Sprint 5.9 — Auth UX hardening + Settings + Profile + Follow [solo CLAC1] (#88)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-05-02T02:27:42Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/feb0fecb6d30fa0a77d37cadfc8aee17e4f5d239"
-    },
-    {
-      "sha": "415d19a3c5124a29a21fe667d53ef3dba66dad9d",
-      "message": "feat(p5-8): UZG+ Phase 5 Sprint 5.8 — TAO Hybrid + Mock integration [solo CLAC1] (#87)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-05-02T01:58:59Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/415d19a3c5124a29a21fe667d53ef3dba66dad9d"
-    },
-    {
-      "sha": "0bf7565556bf339b42747439bae0d956905c682a",
-      "message": "feat(uzg-pwa): feed hooks + V3 home; prod visual specs; refresh s1-after screenshots",
-      "author": "LANE01-Cursor",
-      "committed_at": "2026-05-02T01:40:17Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/0bf7565556bf339b42747439bae0d956905c682a"
-    },
-    {
-      "sha": "19af98f4da5ab9f9081c2e578927a8acf8fe0ad7",
-      "message": "chore(lane01): add prod screenshots, backend audit dumps, Playwright prod config",
-      "author": "LANE01-Cursor",
-      "committed_at": "2026-05-02T01:39:30Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/19af98f4da5ab9f9081c2e578927a8acf8fe0ad7"
     }
   ]
 }

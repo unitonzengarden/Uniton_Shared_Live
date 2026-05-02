@@ -1,0 +1,65 @@
+{
+  "task_id": "LANE03-W3-AIER-OPERATOR-CONSOLE-V1",
+  "result": "PASS",
+  "generated_at": "2026-04-28T16:46:25+07:00",
+  "repo": {
+    "root": "D:\\UZG\\Projects-v2\\Uniton_Shared",
+    "remote": "https://github.com/unitonzengarden/Uniton_Shared.git",
+    "branch": "main",
+    "local_before": "1cc8037659b589f7bae0f0cdeb0bffa1fd0f103e",
+    "origin_before": "1cc8037659b589f7bae0f0cdeb0bffa1fd0f103e",
+    "local_after_sync": "3d2179226791ec40038681bc262ee46085dcac3a",
+    "origin_after_sync": "3d2179226791ec40038681bc262ee46085dcac3a",
+    "rebase_base_after_push_rejection": "02f99b4a98da413706a9ac3f8f7d13f4d32733c2",
+    "second_rebase_base_after_push_rejection": "3cef977bd8df4bd1ec9a9531009a64e8715cf6d7",
+    "task_commit": "pending final commit",
+    "final_local": "pending final verification",
+    "final_origin": "pending final verification",
+    "worktree_clean": "pending final verification"
+  },
+  "console_outputs": {
+    "markdown": "runtime/operator_console/AIER_OPERATOR_CONSOLE.md",
+    "json": "runtime/operator_console/AIER_OPERATOR_CONSOLE.json",
+    "phase": "V1_0_GA_HANDED_OFF / UZG_PLUS_AIER_AIFI_READY",
+    "gate": "W3_ACTIVE / NTS_GATE_LANE04_OPEN_DEFERRED_STRATEGIC / NTS_SIGN_OFF_REMAINS_FOR_V1_RC_FINAL",
+    "system_health": "READY_WITH_WARNINGS",
+    "source_commit": "9cf1341cbd4677bb9effe2fa4230a9f8a9d6b4b8",
+    "counts": {
+      "active_lanes": 3,
+      "done_tasks": 9,
+      "blocked_items": 10,
+      "pending_nts_decisions": 10,
+      "latest_reports": 10,
+      "latest_notifications": 10
+    },
+    "recommended_next_task": {
+      "task_id": "LANE03-W3-LANE02-SMOKE-LIVE-V1",
+      "source": "network/task_queues/Lane_03.md",
+      "can_run_inside_this_task": false
+    }
+  },
+  "boundary": {
+    "shared_laws_modified": false,
+    "canon_modified": false,
+    "lane_folders_modified": false,
+    "amendments_modified": false,
+    "capability_registry_modified": false,
+    "contracts_or_workflows_modified": false,
+    "product_or_sibling_repo_touched": false,
+    "daemon_backend_deploy_enabled": false,
+    "new_capabilities_granted": false
+  },
+  "validation": {
+    "self_test": "PASS",
+    "dry_run": "PASS",
+    "emit": "PASS",
+    "unit_tests": "PASS: 10 passed",
+    "contract_check": "PASS",
+    "pytest": "PASS: 161 passed, 39 warnings",
+    "aier_loop": "PASS",
+    "route_messages": "PASS",
+    "json_parse": "PASS: operator console JSON, report JSON, snapshot JSON, notification ledger JSON",
+    "markdown_heading_check": "PASS",
+    "boundary_diff": "PASS: no forbidden paths changed"
+  }
+}

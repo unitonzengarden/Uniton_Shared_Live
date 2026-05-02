@@ -1,0 +1,115 @@
+{
+  "task_id": "LAW_GITHUB_01_REPO_GOVERNANCE_DRAFT_V1",
+  "result": "PASS",
+  "timestamp": "2026-04-29T13:18:24.2221892+07:00",
+  "draft_law": {
+    "path": "docs/LAW_CLA_LLM/SHARED/laws/drafts/LAW_GITHUB_01_REPO_GOVERNANCE_DRAFT.md",
+    "status": "DRAFT / PENDING_NTS_REVIEW",
+    "active": false,
+    "applied": false
+  },
+  "source_audit": {
+    "task_id": "LANE03-GITHUB-ORG-AUDIT-ALL-REPOS-V1",
+    "result": "WARNING",
+    "owner": "unitonzengarden",
+    "all_target_repos_accessible": true,
+    "files": [
+      "reports/LANE03-GITHUB-ORG-AUDIT-ALL-REPOS-V1_REPORT.md",
+      "reports/LANE03-GITHUB-ORG-AUDIT-ALL-REPOS-V1.json",
+      "snapshots/LANE03-GITHUB-ORG-AUDIT-ALL-REPOS-V1.snapshot.json",
+      "audit_logs/LANE03-GITHUB-ORG-AUDIT-ALL-REPOS-V1_audit.log"
+    ]
+  },
+  "repo_registry": [
+    {
+      "repo": "unitonzengarden/Uniton_Shared",
+      "role": "GOVERNANCE / BRAIN",
+      "active_for_implementation": true,
+      "codex_rule": "default repo for governance, audit, law draft, report, snapshot, and cross-repo evidence tasks"
+    },
+    {
+      "repo": "unitonzengarden/Uniton_Shared_Live",
+      "role": "MIRROR / PUBLIC STATE",
+      "active_for_implementation": false,
+      "codex_rule": "read-only mirror unless explicit mirror-sync task is authorized"
+    },
+    {
+      "repo": "unitonzengarden/Uniton_OS",
+      "role": "RUNTIME / EXECUTION",
+      "active_for_implementation": true,
+      "codex_rule": "use only for explicitly scoped runtime or execution tasks"
+    },
+    {
+      "repo": "unitonzengarden/uzgplus-app",
+      "role": "PRODUCT",
+      "active_for_implementation": true,
+      "codex_rule": "use only for product-scoped tasks"
+    },
+    {
+      "repo": "unitonzengarden/AIFI_LIFE",
+      "role": "PRODUCT",
+      "active_for_implementation": true,
+      "codex_rule": "use only for product-scoped tasks after domain ownership is clear"
+    },
+    {
+      "repo": "unitonzengarden/aier-life-super-app",
+      "role": "UNKNOWN / NEEDS NTS DECISION",
+      "active_for_implementation": false,
+      "codex_rule": "blocked from active implementation until NTS decision"
+    },
+    {
+      "repo": "unitonzengarden/_archive_chatbot",
+      "role": "ARCHIVE / LEGACY / NOT ACTIVE",
+      "active_for_implementation": false,
+      "codex_rule": "excluded from active work and dispatch"
+    }
+  ],
+  "rules_included": {
+    "purpose_and_authority": true,
+    "github_source_of_truth_rule": true,
+    "repo_role_registry": true,
+    "current_repo_classification": true,
+    "codex_repo_selection_rule": true,
+    "branch_protection_policy_by_role": true,
+    "pr_policy_by_role": true,
+    "ci_actions_minimum_by_role": true,
+    "report_snapshot_audit_standard": true,
+    "mirror_sync_rule": true,
+    "archive_handling_rule": true,
+    "security_hygiene_minimum": true,
+    "metadata_readme_topics_requirement": true,
+    "open_pr_backlog_handling_rule": true,
+    "emergency_exception_path": true,
+    "amendment_apply_path": true
+  },
+  "audit_risks_carried_forward": [
+    "No audited repo reported active default-branch protection on main",
+    "Uniton_Shared latest Handoff Validator run failed in audit evidence",
+    "Uniton_OS latest CI runs failed in audit evidence",
+    "Open PR backlog exists in Uniton_OS, uzgplus-app, and aier-life-super-app",
+    "Metadata and README quality gaps exist across several repos",
+    "Uniton_Shared_Live mirror drift risk remains",
+    "uzgplus-app root .env and .env.test presence requires future secret-handling review",
+    "aier-life-super-app role remains unresolved"
+  ],
+  "boundaries": {
+    "no_github_settings_changed": true,
+    "no_branch_protection_enabled": true,
+    "no_repo_renamed_deleted_archived_or_unarchived": true,
+    "no_uniton_os_files_touched": true,
+    "no_product_repo_files_touched": true,
+    "no_active_law_files_changed": true,
+    "law_github_01_not_applied": true,
+    "law_n13_not_applied": true,
+    "no_integration_tasks_run": true,
+    "no_deploy_performed": true
+  },
+  "created_files": [
+    "docs/LAW_CLA_LLM/SHARED/laws/drafts/LAW_GITHUB_01_REPO_GOVERNANCE_DRAFT.md",
+    "reports/LAW_GITHUB_01_REPO_GOVERNANCE_DRAFT_V1_REPORT.md",
+    "reports/LAW_GITHUB_01_REPO_GOVERNANCE_DRAFT_V1.json",
+    "snapshots/LAW_GITHUB_01_REPO_GOVERNANCE_DRAFT_V1.snapshot.json",
+    "audit_logs/LAW_GITHUB_01_REPO_GOVERNANCE_DRAFT_V1_audit.log"
+  ],
+  "next_recommended_task": "LAW_GITHUB_01_NTS_REVIEW_AND_DECISION_V1"
+}

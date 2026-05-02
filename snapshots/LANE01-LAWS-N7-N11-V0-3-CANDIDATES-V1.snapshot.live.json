@@ -1,0 +1,77 @@
+{
+  "task_id": "LANE01-LAWS-N7-N11-V0-3-CANDIDATES-V1",
+  "task_title": "Create LAW_N7 + LAW_N8 + LAW_N11 v0.3 candidates per Lane_03 cross-review verdict AMEND",
+  "phase": "AIER_CODE_V0 → LAW_N7-N11 v0.3 cleanup (pre-NTS-escalation, post-Lane_03-cross-review)",
+  "executor": {
+    "lane": "Lane_01 (Claude Opus 4.7 on Vultr Windows Server, working tree C:\\workspace\\Uniton_Shared)",
+    "role": "v0.3 candidate author per AMD_LANE01_ROLE_REFRAME §3.1 CTO authoring scope",
+    "agent": "Claude Code Desktop (Vultr Windows Server)",
+    "model": "claude-opus-4-7"
+  },
+  "authority_chain": {
+    "task_dispatched_by": "NTS chat dispatch on 2026-04-27 (TASK_ID: LANE01-LAWS-N7-N11-V0-3-CANDIDATES-V1)",
+    "review_basis": "Lane_03 cross-review RSP-L03-L01-LAWS-N7-N11-V0-2-CROSS-REVIEW-RERUN-20260427-002 + report LANE03-LAWS-N7-N11-V0-2-CROSS-REVIEW-RERUN-V2_REPORT (verdict: AMEND on N7+N8, ENDORSE_WITH_NOTES on N11; top-level AMEND)",
+    "boundary": "v0.3 candidates DRAFT only in pending/.../revisions/. NO SHARED/laws/* edits (R-AUTH-01 preserved). LAW_N7-N11 final approval still NTS-only via future task."
+  },
+  "execution_started_utc": "2026-04-27T02:30:00Z",
+  "parent_head_at_start_pre_rebase": "fabcdf1011c60d109c42fbca6947f52c2a9829a7",
+  "parent_head_at_start_post_rebase": "4fd631c9975a97e0626c464b684556ac1c5b1038",
+  "branch": "main",
+  "remote": "https://github.com/unitonzengarden/Uniton_Shared.git",
+  "files_planned_create": [
+    "docs/LAW_CLA_LLM/SHARED/amendments/pending/AMD_LANE03_LAWS_N7_N11_2026-04-26/revisions/LAW_N7_MEMORY.v0.3.candidate.md",
+    "docs/LAW_CLA_LLM/SHARED/amendments/pending/AMD_LANE03_LAWS_N7_N11_2026-04-26/revisions/LAW_N8_RUNTIME.v0.3.candidate.md",
+    "docs/LAW_CLA_LLM/SHARED/amendments/pending/AMD_LANE03_LAWS_N7_N11_2026-04-26/revisions/LAW_N11_BACKEND_BRIDGE.v0.3.candidate.md",
+    "docs/LAW_CLA_LLM/SHARED/amendments/pending/AMD_LANE03_LAWS_N7_N11_2026-04-26/V0_3_REVISION_NOTES.md",
+    "reports/LANE01-LAWS-N7-N11-V0-3-CANDIDATES-V1_REPORT.md",
+    "reports/LANE01-LAWS-N7-N11-V0-3-CANDIDATES-V1.json",
+    "snapshots/LANE01-LAWS-N7-N11-V0-3-CANDIDATES-V1.snapshot.live.json",
+    "audit_logs/LANE01-LAWS-N7-N11-V0-3-CANDIDATES-V1_audit.log"
+  ],
+  "v0_3_strategy": {
+    "preservation_principle": "Start from v0.1 verbatim baseline. Apply ONLY [v0.3 EDIT]-marked sections per Lane_03 + NTS spec. Revert v0.2 unmarked spillover (especially N7 §L7.12 correction-trail rewrite). No consistency edits, no review-style prose, no formatting churn outside marked sections.",
+    "law_n7_v0_3_edits": {
+      "L7.2": "KEEP from v0.2 (path top-level runtime/ + Memory Spec §5 reference) — Lane_03 verified correct",
+      "L7.4": "KEEP from v0.2 (5 mandatory reads + Boot Minimum) — Lane_03 verified correct",
+      "L7.6": "REWRITE: explicit acknowledgment of active Memory Spec §6.3 vs shipped runtime/current_state.md v1.0 HOT_MEMORY mismatch; defer schema authority to active Memory Spec + current_state evidence; future schema changes via scoped current_state hardening/amendment path; do NOT hardcode conflicting list",
+      "REVERT": "All non-marked v0.2 changes reverted to v0.1 verbatim: §L7.3, §L7.7-§L7.10 V0/V1+ split → reverted; §L7.12 unmarked correction-trail rewrite → reverted to v0.1"
+    },
+    "law_n8_v0_3_edits": {
+      "L8.5": "FIX daemon registry path: docs/LAW_CLA_LLM/SHARED/runtime/daemons/REGISTRY.md → runtime/daemons/REGISTRY.md (sibling drift bundled)",
+      "L8.8": "KEEP 60s heartbeat threshold (v0.2 correct); FIX heartbeat path: docs/LAW_CLA_LLM/SHARED/runtime/heartbeat/Lane_<NN>.json → runtime/heartbeat/Lane_<NN>.json (Lane_03 said this should have been bundled in v0.2)",
+      "L8.12": "FIX incident path: docs/LAW_CLA_LLM/SHARED/runtime/incidents/<INCIDENT_ID>.md → runtime/incidents/<INCIDENT_ID>.md (sibling drift bundled)"
+    },
+    "law_n11_v0_3_edits": {
+      "L11.5": "KEEP from v0.2 (paths runtime/actions/inbox/ + outbox/) — Lane_03 verified correct; STRIP review-style rationale prose from law body (move to V0_3_REVISION_NOTES.md or report)",
+      "L11.16": "FIX backend service identity registry path: docs/LAW_CLA_LLM/SHARED/runtime/backend/REGISTRY.md → runtime/backend/REGISTRY.md",
+      "L11.17": "FIX backend registry path: docs/LAW_CLA_LLM/SHARED/runtime/backend/REGISTRY.md → runtime/backend/REGISTRY.md (same target)",
+      "L11.27": "FIX incident path: docs/LAW_CLA_LLM/SHARED/runtime/incidents/<INCIDENT_ID>.md → runtime/incidents/<INCIDENT_ID>.md"
+    }
+  },
+  "boundary_constraints": {
+    "WILL_DO": [
+      "Author 3 v0.3 candidate files in pending/.../revisions/",
+      "Author optional V0_3_REVISION_NOTES.md in packet folder",
+      "Each candidate preserves v0.1 verbatim outside [v0.3 EDIT] markers",
+      "Frontmatter: v0.3 DRAFT/CANDIDATE_REVISION/PENDING_REVIEW (NOT ACTIVE / NOT APPROVED)",
+      "Standard task deliverables (report MD + JSON, snapshot, audit log)",
+      "Atomic MASTER_CHECKLIST update (preserves Lane_03 recent additions)"
+    ],
+    "WILL_NOT_DO": [
+      "Modify SHARED/laws/* directly (R-AUTH-01)",
+      "Modify v0.2 candidates",
+      "Modify LAW_N9/N10 v0.1 drafts",
+      "Pre-fill NTS_DECISION.md.template",
+      "Mark candidates ACTIVE",
+      "Touch original packet files (R-CANON-02)",
+      "Touch LANE_<other>/* folders (R-LANE-01)",
+      "Touch active architecture/boot/os_operations files",
+      "Open new Lane",
+      "Production deploy",
+      "Force-push or rebase",
+      "Add review-style prose to law body (move to V0_3_REVISION_NOTES.md or report)",
+      "Touch UZG+ product repo or any side repo"
+    ]
+  },
+  "next_recommended_task": "LANE03-LAWS-N7-N11-V0-3-CROSS-REVIEW-V1 — Lane_03 cross-review of v0.3 candidates. After ENDORSE, Lane_01 escalates 1-line VN to NTS for canon-level approval per R-AUTH-01."
+}

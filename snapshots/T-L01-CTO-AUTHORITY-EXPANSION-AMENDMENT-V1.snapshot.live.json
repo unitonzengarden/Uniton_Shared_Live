@@ -1,0 +1,105 @@
+{
+  "task_id": "T-L01-CTO-AUTHORITY-EXPANSION-AMENDMENT-V1",
+  "task_title": "Formalize NTS standing-instruction delegation of Lane_01 auto-approve authority for tech non-canon scope",
+  "phase": "Communication Layer Bootstrap → Authority delegation expansion",
+  "executor": {
+    "lane": "Lane_01",
+    "role": "Apply-delegated executor; this amendment expands Lane_01's own authority",
+    "agent": "Claude Code Desktop (Vultr Windows Server)",
+    "model": "claude-opus-4-7"
+  },
+  "authority_chain": {
+    "decided_by": "NTS",
+    "decision_channel_1": "Standing instruction delivered via natural language chat dispatch on 2026-04-26 (T-L01-CTO-AUTO-APPROVE-PENDING-CYCLE-001 message body)",
+    "decision_channel_2": "Confirmation dispatch on 2026-04-27 selecting Option B (formalize as amendment) per Lane_01's safety question",
+    "decision_recorder": "Lane_01 (Claude Opus 4.7) writing pre-filled NTS_DECISION.md in this amendment packet",
+    "apply_authority": "Lane_01 delegated per AMD_LANE01_ROLE_REFRAME_2026-04-26 §3 + §3.1",
+    "conflict_of_interest_disclosure": "This is a SELF-AUTHORITY-EXPANSION amendment. Lane_01 writes an amendment that expands its own approval authority. Mitigations documented in NTS_DECISION.md and ROLLBACK_PLAN.md; NTS retains revoke authority at any time per AUTHORITY_DECLARATION §1.",
+    "precedent": "AMD_LANE01_ROLE_REFRAME_2026-04-26 (commits c034c22 decision + b51934d apply) — same pattern of Lane authority change via NTS-dispatched amendment, but that amendment was originally authored by NTS-spoken intent and reviewed by Lane_03 before approval. This amendment follows a similar structure but is formalized as a single Lane_01 task per NTS Option-B selection."
+  },
+  "execution_started_utc": "2026-04-27T00:00:00Z",
+  "parent_head_at_start": "0cba8ff14417922abad31c02c5a1d8955cfd4859",
+  "branch": "main",
+  "remote": "https://github.com/unitonzengarden/Uniton_Shared.git",
+  "amendment_id": "AMD_LANE01_CTO_AUTO_APPROVE_TECH_NON_CANON_2026-04-26",
+  "amendment_scope": {
+    "delegation_grant_YES_list": [
+      "Architecture/spec drafts (non-SHARED/laws)",
+      "OS Operations procedures (non-AUTHORITY)",
+      "Memory/Communication/Capability/Backend specs",
+      "Task Context Templates, Boot Minimum updates",
+      "v0.X candidate revisions",
+      "Cleanup/archive tasks",
+      "Apply migrations for above (already delegated by AMD_LANE01_ROLE_REFRAME §3; this amendment adds approve too)"
+    ],
+    "delegation_NOT_GRANTED_NO_list": [
+      "SHARED/laws/* edits (R-AUTH-01 unchanged)",
+      "AUTHORITY_DECLARATION.md edits",
+      "LAW_SYSTEM.md edits",
+      "REDLINES.md edits",
+      "Lane registration (Lane_04+, future Lanes)",
+      "Production deploy",
+      "Secrets/finance/security",
+      "AIER kill switch",
+      "Strategic direction"
+    ],
+    "escalation_format_to_NTS": "NTS, cần approve [X]. OK hay Không?",
+    "trial_period": "30 days: 2026-04-26 → 2026-05-26",
+    "mid_trial_review": "2026-05-11",
+    "rollback_authority": "NTS revoke at any time without cause per AUTHORITY_DECLARATION §1; auto-rollback triggers in ROLLBACK_PLAN.md"
+  },
+  "files_created_planned": {
+    "decision_commit": [
+      "docs/LAW_CLA_LLM/SHARED/amendments/pending/AMD_LANE01_CTO_AUTO_APPROVE_TECH_NON_CANON_2026-04-26/AMENDMENT_PROPOSAL.md",
+      "docs/LAW_CLA_LLM/SHARED/amendments/pending/AMD_LANE01_CTO_AUTO_APPROVE_TECH_NON_CANON_2026-04-26/IMPACT_ANALYSIS.md",
+      "docs/LAW_CLA_LLM/SHARED/amendments/pending/AMD_LANE01_CTO_AUTO_APPROVE_TECH_NON_CANON_2026-04-26/PACKET_INDEX.md",
+      "docs/LAW_CLA_LLM/SHARED/amendments/pending/AMD_LANE01_CTO_AUTO_APPROVE_TECH_NON_CANON_2026-04-26/NTS_DECISION.md (PRE-FILLED with disclaimer)",
+      "docs/LAW_CLA_LLM/SHARED/amendments/pending/AMD_LANE01_CTO_AUTO_APPROVE_TECH_NON_CANON_2026-04-26/ROLLBACK_PLAN.md"
+    ],
+    "apply_commit": [
+      "docs/LAW_CLA_LLM/SHARED/amendments/approved/AMD_LANE01_CTO_AUTO_APPROVE_TECH_NON_CANON_2026-04-26/* (5 files, git mv)",
+      "docs/LAW_CLA_LLM/SHARED/os_operations/AUTHORITY_DECLARATION.md (edit §3 matrix + §3.1 addendum)",
+      "docs/LAW_CLA_LLM/SHARED/amendments/AMENDMENTS_LOG.md (append entry)",
+      "snapshots/T-L01-CTO-AUTHORITY-EXPANSION-AMENDMENT-V1.snapshot.live.json",
+      "reports/T-L01-CTO-AUTHORITY-EXPANSION-AMENDMENT-V1_REPORT.md",
+      "audit_logs/T-L01-CTO-AUTHORITY-EXPANSION-AMENDMENT-V1_audit.log",
+      "runtime/checklist/MASTER_CHECKLIST.md"
+    ]
+  },
+  "boundary_constraints": {
+    "WILL_DO": [
+      "Create 5-file amendment packet",
+      "Pre-fill NTS_DECISION.md (exceptional per NTS dispatch with disclaimer)",
+      "Edit AUTHORITY_DECLARATION.md §3 matrix Approve-amendment row + §3.1 add new addendum bullet",
+      "Append AMENDMENTS_LOG.md (R-CANON-02 append-only)",
+      "git mv packet pending → approved (preserves history)",
+      "Standard task deliverables + MASTER_CHECKLIST"
+    ],
+    "WILL_NOT_DO": [
+      "NOT modify SHARED/laws/* (R-AUTH-01 unchanged; this amendment EXPLICITLY excludes laws)",
+      "NOT modify LAW_SYSTEM.md or REDLINES.md",
+      "NOT open new Lane",
+      "NOT deploy",
+      "NOT touch any of the 13 active SHARED/architecture/ files",
+      "NOT touch active os_operations/ files OTHER than AUTHORITY_DECLARATION.md (which is the file this amendment edits)",
+      "NOT touch LANE_02/ or LANE_03/ folders",
+      "NOT force-push or rebase shared",
+      "NOT use this delegation to retroactively self-approve any prior task"
+    ]
+  },
+  "qa_gate": {
+    "checks_planned": 8,
+    "result": "PENDING_RUN",
+    "items": [
+      "Packet has 5 required files",
+      "NTS_DECISION.md PRE-FILLED with disclaimer present",
+      "AUTHORITY_DECLARATION §3 matrix + §3.1 edited correctly",
+      "AMENDMENTS_LOG appended (no existing rows modified)",
+      "Packet pending → approved via git mv",
+      "MASTER_CHECKLIST updated atomically",
+      "NO files outside scope modified",
+      "Push verified HEAD = origin/main"
+    ]
+  },
+  "next_recommended_task": "After this amendment activates: T-L01-CTO-AUTO-APPROVE-PENDING-CYCLE-001 cycle (A-F) — Lane_01 reviews Task Context Template, applies OS Operations packet under new authority, etc. NTS escalation only for LAW_N7-N11 (canon-level). All other cycle steps Lane_01 auto-approves under this amendment's expanded scope."
+}

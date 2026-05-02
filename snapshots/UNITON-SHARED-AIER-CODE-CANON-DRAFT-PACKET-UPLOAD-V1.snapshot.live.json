@@ -1,0 +1,25 @@
+{
+  "timestamp": "2026-04-26T20:23:13+07:00",
+  "task_id": "UNITON-SHARED-AIER-CODE-CANON-DRAFT-PACKET-UPLOAD-V1",
+  "git_head_at_snapshot_generation": "4f5e776a7854210d4ec3dd3030d9e672307649be",
+  "git_origin_main_at_snapshot_generation": "4f5e776a7854210d4ec3dd3030d9e672307649be",
+  "git_final_local_head": "recorded in final NTS output after commit and push",
+  "git_final_origin_main": "recorded in final NTS output after commit and push",
+  "file_count": 11,
+  "packet_path": "docs/LAW_CLA_LLM/SHARED/amendments/pending/AMD_LANE03_AIER_CODE_CANON_SPEC_STACK_2026-04-26/",
+  "handoff_path": "handoffs/inbox/Lane_01/MSG-L03-L01-REVIEW-20260426-004.json",
+  "statuses": {
+    "draft_files": "DRAFT/PENDING_REVIEW",
+    "packet": "PENDING_REVIEW",
+    "handoff_validation": "PASS",
+    "index_registration": "DRAFT/PENDING_REVIEW",
+    "checklist_update": "DONE entry added",
+    "activation": "none"
+  },
+  "report_paths": {
+    "markdown": "reports/UNITON-SHARED-AIER-CODE-CANON-DRAFT-PACKET-UPLOAD-V1_REPORT.md",
+    "json": "reports/UNITON-SHARED-AIER-CODE-CANON-DRAFT-PACKET-UPLOAD-V1.json",
+    "audit_log": "audit_logs/UNITON-SHARED-AIER-CODE-CANON-DRAFT-PACKET-UPLOAD-V1_audit.log"
+  }
+}
+

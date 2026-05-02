@@ -1,0 +1,147 @@
+{
+  "task_id": "LANE01-LAWS-N7-N11-V0-4-CANDIDATES-V1",
+  "result": "PASS",
+  "result_summary": "3 v0.4 candidates created with literal v0.1 baseline preservation; only [v0.4 EDIT]-marked sections changed; no candidate wrapper / preamble / version-date-footer drift / formatting churn. R-AUTH-01 preserved. Lane_03 cross-review of v0.4 next.",
+  "executor": {
+    "lane": "Lane_01",
+    "agent": "Claude Opus 4.7 on Vultr Windows Server",
+    "working_root": "C:\\workspace\\Uniton_Shared"
+  },
+  "authority_basis": "Lane_01 CTO authoring scope per AMD_LANE01_ROLE_REFRAME_2026-04-26 §3.1. NOT self-approve under AMD_LANE01_CTO_AUTO_APPROVE_TECH_NON_CANON (LAW_N7-N11 are R-AUTH-01 NO-list item 1).",
+  "review_basis": {
+    "rsp_json": "handoffs/outbox/Lane_01/RSP-L03-L01-LAWS-N7-N11-V0-3-CROSS-REVIEW-20260427-001.json",
+    "rsp_md": "handoffs/outbox/Lane_01/RSP-L03-L01-LAWS-N7-N11-V0-3-CROSS-REVIEW-20260427-001.md",
+    "report": "reports/LANE03-LAWS-N7-N11-V0-3-CROSS-REVIEW-V1_REPORT.md",
+    "verdicts": {
+      "LAW_N7_MEMORY": "AMEND (regression at §L7.4 + preservation FAIL)",
+      "LAW_N8_RUNTIME": "ENDORSE_WITH_NOTES (substantive correct, preservation FAIL)",
+      "LAW_N11_BACKEND_BRIDGE": "ENDORSE_WITH_NOTES (substantive correct, preservation FAIL)",
+      "top_level": "AMEND"
+    }
+  },
+  "repo_sync": {
+    "remote": "https://github.com/unitonzengarden/Uniton_Shared.git",
+    "branch": "main",
+    "local_before": "4acd52d062572091c3924476a13ced587c66530c",
+    "origin_before": "7cba6a6650573a6e3840982c98a7be2a95143a08",
+    "local_after_pull": "7cba6a6650573a6e3840982c98a7be2a95143a08",
+    "origin_after_pull": "7cba6a6650573a6e3840982c98a7be2a95143a08",
+    "rebase_clean": true,
+    "final_local": "cbd937df4bcce09775fd0166da1b6de798529488",
+    "final_origin": "cbd937df4bcce09775fd0166da1b6de798529488",
+    "match": "YES",
+    "worktree_clean": "YES"
+  },
+  "candidates_created": [
+    {
+      "path": "docs/LAW_CLA_LLM/SHARED/amendments/pending/AMD_LANE03_LAWS_N7_N11_2026-04-26/revisions/LAW_N7_MEMORY.v0.4.candidate.md",
+      "predecessor": "v0.1 active draft (literal cp baseline)",
+      "sections_marked_v0_4_edit": ["§L7.2 (path drift fix)", "§L7.4 (expanded reads incl. task-specific files restored)", "§L7.6 (defer schema authority to active Memory Spec + shipped current_state)"],
+      "diff_hunks_against_v0_1": "4 hunks, all inside marked sections",
+      "wrapper_or_preamble_present": false,
+      "version_date_footer_drift": false,
+      "formatting_churn_outside_marked": false
+    },
+    {
+      "path": "docs/LAW_CLA_LLM/SHARED/amendments/pending/AMD_LANE03_LAWS_N7_N11_2026-04-26/revisions/LAW_N8_RUNTIME.v0.4.candidate.md",
+      "predecessor": "v0.1 active draft (literal cp baseline)",
+      "sections_marked_v0_4_edit": ["§L8.5 (daemon registry path)", "§L8.8 (heartbeat path + 60s threshold)", "§L8.12 (incident path)"],
+      "diff_hunks_against_v0_1": "7 hunks, all inside marked sections",
+      "wrapper_or_preamble_present": false,
+      "version_date_footer_drift": false,
+      "formatting_churn_outside_marked": false
+    },
+    {
+      "path": "docs/LAW_CLA_LLM/SHARED/amendments/pending/AMD_LANE03_LAWS_N7_N11_2026-04-26/revisions/LAW_N11_BACKEND_BRIDGE.v0.4.candidate.md",
+      "predecessor": "v0.1 active draft (literal cp baseline)",
+      "sections_marked_v0_4_edit": ["§L11.5 (actions paths)", "§L11.16 (backend registry path)", "§L11.17 (backend registry path)", "§L11.27 (incident path)"],
+      "diff_hunks_against_v0_1": "9 hunks, all inside marked sections",
+      "wrapper_or_preamble_present": false,
+      "version_date_footer_drift": false,
+      "formatting_churn_outside_marked": false
+    }
+  ],
+  "additional_artifacts": [
+    "docs/LAW_CLA_LLM/SHARED/amendments/pending/AMD_LANE03_LAWS_N7_N11_2026-04-26/V0_4_REVISION_NOTES.md"
+  ],
+  "fix_matrix": {
+    "LAW_N7": [
+      {"finding": "§L7.2 carried correctly to top-level runtime/", "addressed": true, "section": "§L7.2", "notes": "kept; carried from v0.3"},
+      {"finding": "§L7.6 materially better than v0.2 (defer schema authority)", "addressed": true, "section": "§L7.6", "notes": "kept; carried from v0.3"},
+      {"finding": "§L7.12 spillover removed", "addressed": true, "section": "§L7.12", "notes": "kept (no edit on §L7.12 in v0.4 — preserved as v0.1 verbatim)"},
+      {"finding": "§L7.4 regression: dropped task-specific files read while citing Memory Spec §15.2 items 6-9", "addressed": true, "section": "§L7.4", "notes": "FIXED — restored task-specific files read as item #10; full §15.2 items 1-9 + Boot Minimum included"},
+      {"finding": "Literal v0.1 preservation FAIL (wrapper, version/date/footer, formatting churn)", "addressed": true, "section": "(entire candidate)", "notes": "FIXED — v0.4 is literal cp of v0.1 + marked edits only; verified by diff"}
+    ],
+    "LAW_N8": [
+      {"finding": "§L8.5 path fix correct (runtime/daemons/REGISTRY.md)", "addressed": true, "section": "§L8.5", "notes": "kept; carried from v0.3"},
+      {"finding": "§L8.8 path fix correct (runtime/heartbeat/Lane_<NN>.json) + 60s preserved", "addressed": true, "section": "§L8.8", "notes": "both kept; carried from v0.3"},
+      {"finding": "§L8.12 path fix correct (runtime/incidents/<INCIDENT_ID>.md)", "addressed": true, "section": "§L8.12", "notes": "kept; carried from v0.3"},
+      {"finding": "Runtime boundary intact (no daemon/autonomous activation)", "addressed": true, "section": "(entire candidate)", "notes": "no new authority introduced"},
+      {"finding": "Literal v0.1 preservation FAIL", "addressed": true, "section": "(entire candidate)", "notes": "FIXED — v0.4 is literal cp + marked edits only"}
+    ],
+    "LAW_N11": [
+      {"finding": "§L11.5 path fix correct (runtime/actions/...)", "addressed": true, "section": "§L11.5", "notes": "kept; carried from v0.3"},
+      {"finding": "§L11.16 path fix correct (runtime/backend/REGISTRY.md)", "addressed": true, "section": "§L11.16", "notes": "kept; carried from v0.3"},
+      {"finding": "§L11.17 path fix correct (runtime/backend/REGISTRY.md)", "addressed": true, "section": "§L11.17", "notes": "kept; carried from v0.3"},
+      {"finding": "§L11.27 path fix correct (runtime/incidents/<INCIDENT_ID>.md)", "addressed": true, "section": "§L11.27", "notes": "kept; carried from v0.3"},
+      {"finding": "Bridge boundary preserved (no AI direct DB/API mutation, NTS+contract+capability+audit gate)", "addressed": true, "section": "(entire candidate)", "notes": "no new authority"},
+      {"finding": "Review-style prose removed from law body", "addressed": true, "section": "(entire candidate)", "notes": "v0.4 has zero review prose in law body; revision prose lives in V0_4_REVISION_NOTES.md and report"},
+      {"finding": "Literal v0.1 preservation FAIL", "addressed": true, "section": "(entire candidate)", "notes": "FIXED — v0.4 is literal cp + marked edits only"}
+    ]
+  },
+  "preservation_check": {
+    "LAW_N7_MEMORY": {
+      "v0_1_baseline_used": true,
+      "only_v0_4_edit_sections_changed": true,
+      "wrapper_removed": true,
+      "formatting_churn_removed": true
+    },
+    "LAW_N8_RUNTIME": {
+      "v0_1_baseline_used": true,
+      "only_v0_4_edit_sections_changed": true,
+      "wrapper_removed": true,
+      "formatting_churn_removed": true
+    },
+    "LAW_N11_BACKEND_BRIDGE": {
+      "v0_1_baseline_used": true,
+      "only_v0_4_edit_sections_changed": true,
+      "wrapper_removed": true,
+      "formatting_churn_removed": true
+    }
+  },
+  "boundary": {
+    "shared_laws_active_modified": false,
+    "v0_2_or_v0_3_candidates_modified": false,
+    "nts_decision_pre_filled": false,
+    "active_status_changed": false,
+    "law_n9_or_n10_modified": false,
+    "original_packet_files_modified": false,
+    "lane_other_folders_modified": false,
+    "active_architecture_modified": false,
+    "active_boot_modified": false,
+    "active_os_operations_modified": false,
+    "runtime_backend_product_code_created": false,
+    "production_deploy": false,
+    "aier_kill_switch": false,
+    "lane_registration_or_new_lane": false,
+    "force_push_or_rebase_shared": false,
+    "outside_repo_touched": false,
+    "uzgplus_repo_touched": false
+  },
+  "validation": {
+    "v0_4_candidate_files_exist_and_non_empty": "PASS",
+    "v0_4_edit_markers_present_at_changed_sections": "PASS",
+    "no_visible_wrapper_or_preamble_in_law_body": "PASS",
+    "v0_1_preservation_outside_edited_sections": "PASS (verified by diff)",
+    "preflight_pass": "PASS",
+    "contract_validation": "N/A",
+    "governance_tests": "N/A"
+  },
+  "known_notes": [
+    "Memory Spec §6.3 vs shipped current_state.md v1.0 reconciliation acknowledged in LAW_N7 v0.4 §L7.6 — actual reconciliation is a separate scoped task (out of scope for v0.4).",
+    "LAW_N9 + LAW_N10 ENDORSE — no v0.4 needed, not touched.",
+    "v0.1 markdown structural quirk (unclosed ```text code block in each of the 3 v0.1 laws) is preserved literally per the v0.1-baseline rule. Fixing it would be unmarked formatting-only churn outside [v0.4 EDIT].",
+    "v0.1 'Version: v0.1 DRAFT / Date: 2026-04-26' header lines + trailing version-section metadata are preserved unchanged in each candidate body — updating in-body metadata would itself be an unmarked edit per Lane_03's strict discipline. Candidate version is signalled by filename + V0_4_REVISION_NOTES.md only."
+  ],
+  "next_recommended_task": "LANE03-LAWS-N7-N11-V0-4-CROSS-REVIEW-V1"
+}

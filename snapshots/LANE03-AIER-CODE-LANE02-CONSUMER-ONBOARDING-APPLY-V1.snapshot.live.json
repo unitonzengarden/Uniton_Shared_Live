@@ -1,0 +1,18 @@
+{
+  "timestamp": "2026-04-27T09:18:59+07:00",
+  "task_id": "LANE03-AIER-CODE-LANE02-CONSUMER-ONBOARDING-APPLY-V1",
+  "git_final_local_head": "post_commit_push_verification_required",
+  "git_final_origin_main": "post_commit_push_verification_required",
+  "git_head_after_pull": "465dcc417207761652959c8fb548e27714a69633",
+  "git_origin_main_after_pull": "465dcc417207761652959c8fb548e27714a69633",
+  "lane_02_folder_status": "created",
+  "files_created_count": 8,
+  "acceptance_status": "AIER_CODE_CONSUMER_ACCEPTANCE_PENDING_SMOKE",
+  "product_execution_enabled": false,
+  "report_paths": {
+    "markdown": "reports/LANE03-AIER-CODE-LANE02-CONSUMER-ONBOARDING-APPLY-V1_REPORT.md",
+    "json": "reports/LANE03-AIER-CODE-LANE02-CONSUMER-ONBOARDING-APPLY-V1.json",
+    "audit_log": "audit_logs/LANE03-AIER-CODE-LANE02-CONSUMER-ONBOARDING-APPLY-V1_audit.log"
+  },
+  "worktree_clean_after_push": "post_commit_push_verification_required"
+}

@@ -1,0 +1,309 @@
+{
+  "task_id": "LANE03-GITHUB-METADATA-HYGIENE-APPLY-V1",
+  "result": "WARNING",
+  "timestamp": "2026-04-29T17:11:29.5702325+07:00",
+  "execution_header": {
+    "lane": "Lane_03",
+    "executor": "Codex",
+    "authority": "NTS",
+    "mode": "CONTROLLED_EXECUTION",
+    "task_id": "LANE03-GITHUB-METADATA-HYGIENE-APPLY-V1",
+    "scope": "Apply GitHub metadata hygiene for active repos only, then write V2 evidence into Uniton_Shared.",
+    "working_dir": "D:/UZG/Projects-v2/Uniton_Shared",
+    "repo": "unitonzengarden/Uniton_Shared",
+    "branch": "main",
+    "commit_sha_at_report_generation": "a68a3d2b32854074a48669bc0b7b90d337b83d75"
+  },
+  "source_files_read": [
+    "docs/LAW_CLA_LLM/SHARED/laws/LAW_GITHUB_01_REPO_GOVERNANCE.md",
+    "docs/LAW_CLA_LLM/SHARED/github/REPO_REGISTRY.md",
+    "docs/LAW_CLA_LLM/SHARED/github/GITHUB_METADATA_HYGIENE_PLAN_V1.md",
+    "docs/LAW_CLA_LLM/SHARED/laws/LAW_N5_TASK_PROMPT.md"
+  ],
+  "metadata_before": [
+    {
+      "repo": "unitonzengarden/Uniton_Shared",
+      "description": "Governance-as-Code: Tier 1 ecosystem canon + Tier 2 AIER_COMMON + skills + adapters for Uniton Future ecosystem",
+      "topics": [],
+      "archived": false
+    },
+    {
+      "repo": "unitonzengarden/Uniton_Shared_Live",
+      "description": "Pulic live state for AIER Code",
+      "topics": [],
+      "archived": false
+    },
+    {
+      "repo": "unitonzengarden/Uniton_OS",
+      "description": "",
+      "topics": [],
+      "archived": false
+    },
+    {
+      "repo": "unitonzengarden/uzgplus-app",
+      "description": "UZG+ Super App frontend - Auth Core, onboarding, dashboard and future V1 modules",
+      "topics": [],
+      "archived": false
+    },
+    {
+      "repo": "unitonzengarden/AIFI_LIFE",
+      "description": "",
+      "topics": [],
+      "archived": false
+    },
+    {
+      "repo": "unitonzengarden/aier-life-super-app",
+      "description": "",
+      "topics": [],
+      "archived": false
+    },
+    {
+      "repo": "unitonzengarden/_archive_chatbot",
+      "description": "",
+      "topics": [],
+      "archived": true
+    }
+  ],
+  "metadata_after": [
+    {
+      "repo": "unitonzengarden/Uniton_Shared",
+      "description": "Governance-as-Code source of truth for Uniton Future / AIER Code laws, canon, reports, snapshots, skills, and shared governance artifacts.",
+      "topics": [
+        "active",
+        "aier-code",
+        "governance-brain",
+        "repo-truth",
+        "report-v2",
+        "uniton-future"
+      ],
+      "archived": false
+    },
+    {
+      "repo": "unitonzengarden/Uniton_Shared_Live",
+      "description": "Public mirror and live state surface for AIER Code, generated from Uniton_Shared; not the source of truth.",
+      "topics": [
+        "aier-code",
+        "mirror-public",
+        "public-state",
+        "read-only",
+        "uniton-future"
+      ],
+      "archived": false
+    },
+    {
+      "repo": "unitonzengarden/Uniton_OS",
+      "description": "Runtime and execution system for Uniton Future / AIER Code operator workflows, APIs, persistence, and execution-side tests.",
+      "topics": [
+        "active",
+        "aier-code",
+        "runtime-execution",
+        "uniton-future",
+        "uniton-os"
+      ],
+      "archived": false
+    },
+    {
+      "repo": "unitonzengarden/uzgplus-app",
+      "description": "UZG+ product application frontend and product modules for onboarding, dashboard, and app workflows.",
+      "topics": [
+        "active",
+        "frontend",
+        "product",
+        "uniton-future",
+        "uzgplus"
+      ],
+      "archived": false
+    },
+    {
+      "repo": "unitonzengarden/AIFI_LIFE",
+      "description": "AIFI LIFE product application for finance-domain product experiences and related app workflows.",
+      "topics": [
+        "active",
+        "aifi-life",
+        "finance",
+        "product",
+        "uniton-future"
+      ],
+      "archived": false
+    },
+    {
+      "repo": "unitonzengarden/aier-life-super-app",
+      "description": "AIER LIFE product application for AIER life super-app experiences and product workflows.",
+      "topics": [
+        "active",
+        "aier-life",
+        "product",
+        "super-app",
+        "uniton-future"
+      ],
+      "archived": false
+    },
+    {
+      "repo": "unitonzengarden/_archive_chatbot",
+      "description": "",
+      "topics": [
+        "archive-legacy",
+        "historical-evidence",
+        "not-active"
+      ],
+      "archived": true
+    }
+  ],
+  "metadata_operations": [
+    {
+      "repo": "unitonzengarden/Uniton_Shared",
+      "description_update": "APPLIED",
+      "topic_update": "APPLIED"
+    },
+    {
+      "repo": "unitonzengarden/Uniton_Shared_Live",
+      "description_update": "APPLIED",
+      "topic_update": "APPLIED"
+    },
+    {
+      "repo": "unitonzengarden/Uniton_OS",
+      "description_update": "APPLIED",
+      "topic_update": "APPLIED"
+    },
+    {
+      "repo": "unitonzengarden/uzgplus-app",
+      "description_update": "APPLIED",
+      "topic_update": "APPLIED"
+    },
+    {
+      "repo": "unitonzengarden/AIFI_LIFE",
+      "description_update": "APPLIED",
+      "topic_update": "APPLIED"
+    },
+    {
+      "repo": "unitonzengarden/aier-life-super-app",
+      "description_update": "APPLIED",
+      "topic_update": "APPLIED"
+    },
+    {
+      "repo": "unitonzengarden/_archive_chatbot",
+      "description_update": "BLOCKED_BY_ARCHIVE_READ_ONLY",
+      "topic_update": "APPLIED",
+      "github_response": "HTTP 403: Repository was archived so is read-only."
+    }
+  ],
+  "branch_protection_before": [
+    {
+      "repo": "unitonzengarden/Uniton_Shared",
+      "default_branch": "main",
+      "protection_read": "NO_CLASSIC_PROTECTION_OR_INACCESSIBLE"
+    },
+    {
+      "repo": "unitonzengarden/Uniton_Shared_Live",
+      "default_branch": "main",
+      "protection_read": "NO_CLASSIC_PROTECTION_OR_INACCESSIBLE"
+    },
+    {
+      "repo": "unitonzengarden/Uniton_OS",
+      "default_branch": "main",
+      "protection_read": "NO_CLASSIC_PROTECTION_OR_INACCESSIBLE"
+    },
+    {
+      "repo": "unitonzengarden/uzgplus-app",
+      "default_branch": "main",
+      "protection_read": "PROTECTED_OR_RULE_PRESENT"
+    },
+    {
+      "repo": "unitonzengarden/AIFI_LIFE",
+      "default_branch": "main",
+      "protection_read": "NO_CLASSIC_PROTECTION_OR_INACCESSIBLE"
+    },
+    {
+      "repo": "unitonzengarden/aier-life-super-app",
+      "default_branch": "main",
+      "protection_read": "NO_CLASSIC_PROTECTION_OR_INACCESSIBLE"
+    },
+    {
+      "repo": "unitonzengarden/_archive_chatbot",
+      "default_branch": "main",
+      "protection_read": "NO_CLASSIC_PROTECTION_OR_INACCESSIBLE"
+    }
+  ],
+  "branch_protection_after": [
+    {
+      "repo": "unitonzengarden/Uniton_Shared",
+      "default_branch": "main",
+      "protection_read": "NO_CLASSIC_PROTECTION_OR_INACCESSIBLE"
+    },
+    {
+      "repo": "unitonzengarden/Uniton_Shared_Live",
+      "default_branch": "main",
+      "protection_read": "NO_CLASSIC_PROTECTION_OR_INACCESSIBLE"
+    },
+    {
+      "repo": "unitonzengarden/Uniton_OS",
+      "default_branch": "main",
+      "protection_read": "NO_CLASSIC_PROTECTION_OR_INACCESSIBLE"
+    },
+    {
+      "repo": "unitonzengarden/uzgplus-app",
+      "default_branch": "main",
+      "protection_read": "PROTECTED_OR_RULE_PRESENT"
+    },
+    {
+      "repo": "unitonzengarden/AIFI_LIFE",
+      "default_branch": "main",
+      "protection_read": "NO_CLASSIC_PROTECTION_OR_INACCESSIBLE"
+    },
+    {
+      "repo": "unitonzengarden/aier-life-super-app",
+      "default_branch": "main",
+      "protection_read": "NO_CLASSIC_PROTECTION_OR_INACCESSIBLE"
+    },
+    {
+      "repo": "unitonzengarden/_archive_chatbot",
+      "default_branch": "main",
+      "protection_read": "NO_CLASSIC_PROTECTION_OR_INACCESSIBLE"
+    }
+  ],
+  "scope_verification": {
+    "in_scope_actions": [
+      "Read active LAW_GITHUB_01, LAW_N5, repo registry, and metadata hygiene plan.",
+      "Updated GitHub repository descriptions and topics where GitHub allowed metadata mutation.",
+      "Verified metadata after apply.",
+      "Verified branch protection read state remained unchanged.",
+      "Created V2 evidence artifacts in Uniton_Shared."
+    ],
+    "out_of_scope_avoided": [
+      "No branch protection changes.",
+      "No GitHub Actions changes.",
+      "No PR merge or closure.",
+      "No code file changes in product or runtime repositories.",
+      "No deployment.",
+      "No secret changes.",
+      "No repo rename, delete, archive, or unarchive."
+    ],
+    "scope_integrity": "PASS"
+  },
+  "capability_check": {
+    "actor": "Lane_03",
+    "action": "Apply scoped GitHub metadata descriptions/topics and create V2 evidence.",
+    "side_effect_class": "GitHub metadata settings update plus Uniton_Shared evidence commit.",
+    "capability_source": "Active LAW_GITHUB_01, LAW_N5 REPORT_TEMPLATE_V2, REPO_REGISTRY, and NTS task authorization.",
+    "authorization": "NTS scoped metadata hygiene apply task."
+  },
+  "repo_boundary_check": {
+    "repo_ownership": "VALID",
+    "cross_repo_file_write": "NONE",
+    "scoped_github_metadata_write": "YES"
+  },
+  "sync": {
+    "local_head_at_report_generation": "a68a3d2b32854074a48669bc0b7b90d337b83d75",
+    "origin_main_at_report_generation": "a68a3d2b32854074a48669bc0b7b90d337b83d75",
+    "match_at_report_generation": "YES",
+    "worktree_clean_at_report_generation": "NO - evidence artifacts pending commit",
+    "final_sync": "VERIFY_AFTER_COMMIT_AND_PUSH"
+  },
+  "governance_confirmation": {
+    "no_law_modified": true,
+    "no_cross_lane_violation": true,
+    "no_authority_override": true,
+    "repo_integrity_preserved": true,
+    "one_task_only": true
+  }
+}

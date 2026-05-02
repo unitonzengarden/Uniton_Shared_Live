@@ -1,0 +1,81 @@
+{
+  "task_id": "LANE01-V1-GA-RESUME-V1",
+  "title": "Resume autopilot loop after NTS approval — release v1.0 GA + operator handoff",
+  "lane": "Lane_01",
+  "executor": "CLAC-1",
+  "model": "claude-opus-4-7",
+  "self_approve_authority": "AMD_LANE01_CTO_AUTO_APPROVE_TECH_NON_CANON §3.1 + NTS direct verbatim approval (R-AUTH-01 satisfied)",
+  "nts_verbatim_quote": "APPROVE V1.0 release — accept READY_WITH_NOTES caveats",
+  "nts_approval_date": "2026-04-29",
+  "parent_head": "3d2179226791ec40038681bc262ee46085dcac3a",
+  "rc_tag": "v1.0-rc (created 2026-04-29 via LANE01-W4-V1-RC-COMMIT-V1; points to 27c7958)",
+  "phases": [
+    {
+      "id": "A",
+      "name": "Record NTS verbatim approval",
+      "actions": [
+        "Append NTF-NTS-LANE01-V1-SIGN-OFF-2026-04-29 to NOTIFICATION_LEDGER.md + .json (CRITICAL priority; R-AUTH-01 satisfied)",
+        "AMENDMENTS_LOG +1 row Lane_01 self-approve v1.0 release execute (NTS verbatim recorded)"
+      ]
+    },
+    {
+      "id": "B",
+      "name": "Iteration 5: V1-RELEASE-COMMIT-V1 (tag v1.0 final)",
+      "actions": [
+        "Author releases/v1.0-NOTES.md (~300 lines, 12 sections)",
+        "git tag -a v1.0 -m \"AIER Code v1.0 GA — NTS-approved 2026-04-29\"",
+        "git push origin v1.0",
+        "Update runtime/current_state.md §1 Phase = V1_0_RELEASED / GA_TAGGED",
+        "Update MASTER_CHECKLIST.md major banner + DONE row",
+        "Run 4 standard validators",
+        "Single commit + push"
+      ]
+    },
+    {
+      "id": "C",
+      "name": "Iteration 6: UNITON-FUTURE-HANDOFF-V1",
+      "actions": [
+        "Author releases/v1.0-OPERATOR-HANDOFF.md (~200 lines, 11 sections)",
+        "Author docs/UNITON_FUTURE_OPERATIONS.md (~150 lines)",
+        "Update current_state §1 Phase = V1_0_GA_HANDED_OFF / UZG_PLUS_AIER_AIFI_READY",
+        "Update MASTER_CHECKLIST major banner + DONE row",
+        "Run 4 standard validators",
+        "Single commit + push"
+      ]
+    },
+    {
+      "id": "D",
+      "name": "Final close",
+      "actions": [
+        "Wait CI verification 4/4 SUCCESS on apply commits",
+        "Backfill SHA in release notes + handoff + checklist",
+        "Master report + audit log",
+        "Final aier-qa-loop archive"
+      ]
+    }
+  ],
+  "boundary_check": {
+    "no_shared_laws": true,
+    "no_canon_edited": true,
+    "no_5_active_skills": true,
+    "no_workers_modified": true,
+    "no_dispatcher_modified": true,
+    "no_lane_dispatch_modified": true,
+    "no_generators_modified": true,
+    "no_lane_02_03_modified": true,
+    "no_daemon_or_cron": true,
+    "no_secrets_hardcoded": true,
+    "no_force_push_v1_0_tag": true,
+    "no_break_pytest_baseline": true
+  },
+  "expected_deliverables": [
+    "snapshots/LANE01-V1-GA-RESUME-V1.snapshot.live.json",
+    "reports/LANE01-V1-GA-RESUME-V1_REPORT.md",
+    "audit_logs/LANE01-V1-GA-RESUME-V1_audit.log",
+    "releases/v1.0-NOTES.md (NEW — final release notes)",
+    "releases/v1.0-OPERATOR-HANDOFF.md (NEW — operator handoff)",
+    "docs/UNITON_FUTURE_OPERATIONS.md (NEW — operations manual)",
+    "git tag v1.0 (NEW — annotated, immutable per R-CANON-02)",
+    "qa_loop_reports/POST-V1-GA-FINAL.json"
+  ]
+}

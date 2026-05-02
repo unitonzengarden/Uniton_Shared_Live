@@ -1,0 +1,78 @@
+{
+  "task_id": "LANE03-AIER-CODE-LANE02-CONSUMER-ONBOARDING-APPLY-V1",
+  "result": "WARNING",
+  "repo_sync": {
+    "canonical_root": "D:\\UZG\\Projects-v2\\Uniton_Shared",
+    "remote": "https://github.com/unitonzengarden/Uniton_Shared.git",
+    "branch": "main",
+    "local_before": "71c5a98ed2644983bf7a0698a0adf8d01124719f",
+    "origin_before": "71c5a98ed2644983bf7a0698a0adf8d01124719f",
+    "local_after_pull": "465dcc417207761652959c8fb548e27714a69633",
+    "origin_after_pull": "465dcc417207761652959c8fb548e27714a69633",
+    "match_after_pull": true,
+    "worktree_clean_before_apply": true,
+    "duplicate_active_repo_or_worktree": false,
+    "final_local": "post_commit_push_verification_required",
+    "final_origin": "post_commit_push_verification_required"
+  },
+  "files_created_or_hardened": [
+    "docs/LAW_CLA_LLM/LANE_02/README.md",
+    "docs/LAW_CLA_LLM/LANE_02/LANE_INDEX.md",
+    "docs/LAW_CLA_LLM/LANE_02/boot/CUSTOM_INSTRUCTIONS.md",
+    "docs/LAW_CLA_LLM/LANE_02/lane_laws/LAW_LANE_REPO_REGISTRY.md",
+    "docs/LAW_CLA_LLM/LANE_02/lane_laws/LAW_LANE_CAPABILITIES.md",
+    "docs/LAW_CLA_LLM/LANE_02/lane_laws/LAW_LANE_CONVENTIONS.md",
+    "handoffs/outbox/Lane_02/README.md",
+    "handoffs/lane_acceptance/LANE_02_ACCEPTANCE.md",
+    "docs/LAW_CLA_LLM/SHARED/SHARED_INDEX.md",
+    "runtime/checklist/MASTER_CHECKLIST.md"
+  ],
+  "lane_02_status_after_apply": {
+    "consumer_scaffolding_status": "CREATED / ACTIVE FOR ONBOARDING",
+    "product_execution_status": "NOT_ENABLED",
+    "smoke_test_status": "PENDING",
+    "repo_registry_status": "candidate path recorded; NTS confirmation required",
+    "acceptance_status": "AIER_CODE_CONSUMER_ACCEPTANCE_PENDING_SMOKE",
+    "outbox_status": "README created"
+  },
+  "uzg_repo_registry": {
+    "candidate_path": "D:\\UZG\\Projects\\uzgplus-app",
+    "confirmation_status": "REQUIRES_NTS_CONFIRMATION_BEFORE_FIRST_PRODUCT_TASK",
+    "allowed_actions_before_confirmation": "NONE",
+    "deploy_before_confirmation": "NTS_ONLY",
+    "backend_mutation_before_confirmation": "NTS_ONLY + contract + capability + audit",
+    "conflicting_lane_registry_evidence_found": false
+  },
+  "validation_results": {
+    "lane_02_folder_exists": "PASS",
+    "required_lane_02_files_exist_non_empty": "PASS",
+    "lane_02_outbox_readme_exists": "PASS",
+    "acceptance_not_legacy_only": "PASS",
+    "product_repo_confirmation_marker_present": "PASS",
+    "no_uzg_product_repo_touched": "PASS",
+    "no_shared_laws_changed": "PASS",
+    "no_active_architecture_changed": "PASS",
+    "no_active_os_operations_changed": "PASS",
+    "no_active_boot_changed": "PASS",
+    "no_runtime_backend_product_code_created": "PASS",
+    "no_deploy_occurred": "PASS",
+    "contract_validation": "PASS",
+    "routing_self_test": "PASS",
+    "aier_loop_self_test": "PASS",
+    "lane_03_dry_run": "PASS",
+    "governance_tests": "PASS - 35 passed"
+  },
+  "boundary": {
+    "uzg_repo_touched": false,
+    "product_task_executed": false,
+    "deploy_occurred": false,
+    "backend_mutation_occurred": false,
+    "shared_laws_changed": false,
+    "active_architecture_changed": false,
+    "active_os_operations_changed": false,
+    "active_boot_changed": false,
+    "new_lane_opened": false,
+    "draft_activated": false
+  },
+  "next_recommended_task": "LANE02-AIER-CODE-CONSUMER-READINESS-SMOKE-V1"
+}

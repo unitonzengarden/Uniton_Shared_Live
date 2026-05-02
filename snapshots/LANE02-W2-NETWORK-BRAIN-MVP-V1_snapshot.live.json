@@ -1,0 +1,117 @@
+{
+  "task_id": "LANE02-W2-NETWORK-BRAIN-MVP-V1",
+  "task_scope": "Task A (code + tests, Lane_02 scope)",
+  "lane": "Lane_02",
+  "dispatched_by": "Lane_01",
+  "executor": "CLAC2",
+  "reviewer": "CLA2",
+  "type": "network_brain_mvp_code",
+  "timestamp_utc": "2026-04-28T05:00:51Z",
+  "verdict": "PASS",
+  "scope_split_approved_by": "NTS Option C 2026-04-28",
+  "head_before": "c882953531758273676096d7bf6f5a7c1337b605",
+
+  "phase_a_capability_matrix": {
+    "generator_path": "scripts/brain/generate_capability_matrix.py",
+    "output_path": "network/CAPABILITY_MATRIX.md",
+    "sections": 5,
+    "skills_discovered": 5,
+    "task_types_discovered": 9,
+    "self_test_passed": true,
+    "idempotency_verified": true,
+    "stdlib_only": true
+  },
+
+  "phase_b_intent_parser": {
+    "path": "scripts/brain/intent_parser.py",
+    "fixtures_count": 5,
+    "self_test_passed": true,
+    "languages_supported": ["en", "vi", "mixed", "unknown"],
+    "intents_supported": [
+      "build", "fix", "analyze", "review", "deploy",
+      "test", "document", "halt", "other"
+    ],
+    "real_test_examples": [
+      {
+        "input": "Lane_3 viết tôi spec ví thanh toán",
+        "primary_intent": "build",
+        "domain": "wallet",
+        "suggested_lanes": ["Lane_03"],
+        "confidence_score": 0.8
+      }
+    ]
+  },
+
+  "phase_c_lane_matcher": {
+    "path": "scripts/brain/lane_matcher.py",
+    "fixtures_count": 4,
+    "self_test_passed": true,
+    "confidence_threshold": 0.7,
+    "real_test_results": [
+      {"input": "Audit canon để check drift", "matched_lane": "Lane_03", "expected": "Lane_03", "match": true},
+      {"input": "Build worker mới", "matched_lane": "Lane_01", "expected": "Lane_01", "match": true},
+      {"input": "Lane_3 viết spec ví thanh toán", "matched_lane": "Lane_03", "expected": "Lane_03", "match": true}
+    ]
+  },
+
+  "phase_d_tests": {
+    "files_created": [
+      "tests/test_intent_parser.py",
+      "tests/test_lane_matcher.py"
+    ],
+    "tests_added": 16,
+    "tests_passed": 16,
+    "tests_failed": 0,
+    "tests_skipped": 0,
+    "pytest_count_before": 88,
+    "pytest_count_after": 104
+  },
+
+  "boundary_compliance": {
+    "R_AUTH_01_shared_laws_canon_untouched": true,
+    "R_LANE_01_other_lanes_untouched": true,
+    "R_RUN_01_06_no_llm_daemon_scheduler": true,
+    "R_SKILL_01_skill_files_unmodified": true,
+    "R_AUTH_04_no_secrets": true,
+    "lane_01_territory_untouched": true,
+    "lane_03_territory_untouched": true,
+    "stdlib_only": true,
+    "task_b_files_skipped": [
+      ".github/workflows/auto_project_status.yml",
+      ".github/workflows/sync_runtime_to_public.yml",
+      "docs/LAW_CLA_LLM/SHARED/SHARED_INDEX.md",
+      "docs/LAW_CLA_LLM/SHARED/amendments/AMENDMENTS_LOG.md"
+    ]
+  },
+
+  "files_changed": {
+    "new": [
+      "scripts/brain/__init__.py",
+      "scripts/brain/generate_capability_matrix.py",
+      "scripts/brain/intent_parser.py",
+      "scripts/brain/lane_matcher.py",
+      "network/CAPABILITY_MATRIX.md",
+      "tests/test_intent_parser.py",
+      "tests/test_lane_matcher.py",
+      "reports/LANE02-W2-NETWORK-BRAIN-MVP-V1_REPORT.md",
+      "snapshots/LANE02-W2-NETWORK-BRAIN-MVP-V1_snapshot.live.json",
+      "snapshots/LANE02-W2-NETWORK-BRAIN-MVP-V1_pre.txt",
+      "audit_logs/LANE02-W2-NETWORK-BRAIN-MVP-V1_audit.log",
+      "handoffs/outbox/Lane_02/RSP-L02-L01-BRAIN-MVP-DONE-20260428-001.json"
+    ],
+    "modified": [
+      "runtime/current_state.md",
+      "runtime/checklist/MASTER_CHECKLIST.md",
+      "notifications/NOTIFICATION_LEDGER.md",
+      "notifications/NOTIFICATION_LEDGER.json"
+    ]
+  },
+
+  "commit": {
+    "sha": "de14a91a2e958fce05f5f0ba76524850712bd705",
+    "message": "feat(brain): Network Brain MVP code + tests (Task A scope) [vercel skip]"
+  },
+
+  "task_b_pickup_required": true,
+  "schema_version": "lane02_snapshot_v1"
+}

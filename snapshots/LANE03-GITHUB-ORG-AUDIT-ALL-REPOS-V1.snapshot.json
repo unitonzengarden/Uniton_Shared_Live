@@ -1,0 +1,3360 @@
+{
+  "task_id": "LANE03-GITHUB-ORG-AUDIT-ALL-REPOS-V1",
+  "result": "WARNING",
+  "timestamp": "2026-04-29T06:04:53.353Z",
+  "audited_owner": "unitonzengarden",
+  "preflight": {
+    "cwd": "D:\\UZG\\Projects-v2\\Uniton_Shared",
+    "expected_cwd": "D:/UZG/Projects-v2/Uniton_Shared",
+    "remote_origin": "https://github.com/unitonzengarden/Uniton_Shared.git",
+    "expected_remote": "https://github.com/unitonzengarden/Uniton_Shared.git",
+    "branch": "main",
+    "expected_branch": "main",
+    "git_status_short_before_artifact_cleanup": "?? .tmp_audit/\n?? reports/LANE03-GITHUB-ORG-AUDIT-ALL-REPOS-V1.json\n?? reports/LANE03-GITHUB-ORG-AUDIT-ALL-REPOS-V1_REPORT.md\n?? snapshots/LANE03-GITHUB-ORG-AUDIT-ALL-REPOS-V1.snapshot.json"
+  },
+  "owner_repo_count": 7,
+  "owner_repos": [
+    {
+      "defaultBranchRef": {
+        "name": "main"
+      },
+      "description": "",
+      "isArchived": false,
+      "name": "Uniton_OS",
+      "nameWithOwner": "unitonzengarden/Uniton_OS",
+      "pushedAt": "2026-04-29T05:04:55Z",
+      "repositoryTopics": null,
+      "updatedAt": "2026-04-29T05:04:59Z",
+      "url": "https://github.com/unitonzengarden/Uniton_OS",
+      "visibility": "PRIVATE"
+    },
+    {
+      "defaultBranchRef": {
+        "name": "main"
+      },
+      "description": "Governance-as-Code: Tier 1 ecosystem canon + Tier 2 AIER_COMMON + skills + adapters for Uniton Future ecosystem",
+      "isArchived": false,
+      "name": "Uniton_Shared",
+      "nameWithOwner": "unitonzengarden/Uniton_Shared",
+      "pushedAt": "2026-04-29T04:58:05Z",
+      "repositoryTopics": null,
+      "updatedAt": "2026-04-29T04:58:09Z",
+      "url": "https://github.com/unitonzengarden/Uniton_Shared",
+      "visibility": "PRIVATE"
+    },
+    {
+      "defaultBranchRef": {
+        "name": "main"
+      },
+      "description": "UZG+ Super App frontend — Auth Core, onboarding, dashboard and future V1 modules",
+      "isArchived": false,
+      "name": "uzgplus-app",
+      "nameWithOwner": "unitonzengarden/uzgplus-app",
+      "pushedAt": "2026-04-29T04:43:57Z",
+      "repositoryTopics": null,
+      "updatedAt": "2026-04-29T04:24:51Z",
+      "url": "https://github.com/unitonzengarden/uzgplus-app",
+      "visibility": "PRIVATE"
+    },
+    {
+      "defaultBranchRef": {
+        "name": "main"
+      },
+      "description": "Pulic live state for AIER Code",
+      "isArchived": false,
+      "name": "Uniton_Shared_Live",
+      "nameWithOwner": "unitonzengarden/Uniton_Shared_Live",
+      "pushedAt": "2026-04-28T19:33:50Z",
+      "repositoryTopics": null,
+      "updatedAt": "2026-04-28T19:33:54Z",
+      "url": "https://github.com/unitonzengarden/Uniton_Shared_Live",
+      "visibility": "PUBLIC"
+    },
+    {
+      "defaultBranchRef": {
+        "name": "main"
+      },
+      "description": "",
+      "isArchived": true,
+      "name": "_archive_chatbot",
+      "nameWithOwner": "unitonzengarden/_archive_chatbot",
+      "pushedAt": "2026-04-24T16:42:36Z",
+      "repositoryTopics": null,
+      "updatedAt": "2026-04-24T16:42:46Z",
+      "url": "https://github.com/unitonzengarden/_archive_chatbot",
+      "visibility": "PRIVATE"
+    },
+    {
+      "defaultBranchRef": {
+        "name": "main"
+      },
+      "description": "",
+      "isArchived": false,
+      "name": "AIFI_LIFE",
+      "nameWithOwner": "unitonzengarden/AIFI_LIFE",
+      "pushedAt": "2026-04-19T17:08:23Z",
+      "repositoryTopics": null,
+      "updatedAt": "2026-04-19T17:08:28Z",
+      "url": "https://github.com/unitonzengarden/AIFI_LIFE",
+      "visibility": "PRIVATE"
+    },
+    {
+      "defaultBranchRef": {
+        "name": "main"
+      },
+      "description": "",
+      "isArchived": false,
+      "name": "aier-life-super-app",
+      "nameWithOwner": "unitonzengarden/aier-life-super-app",
+      "pushedAt": "2026-04-15T13:27:40Z",
+      "repositoryTopics": null,
+      "updatedAt": "2026-04-15T13:27:54Z",
+      "url": "https://github.com/unitonzengarden/aier-life-super-app",
+      "visibility": "PRIVATE"
+    }
+  ],
+  "archive_candidates": [
+    {
+      "name": "_archive_chatbot",
+      "nameWithOwner": "unitonzengarden/_archive_chatbot",
+      "visibility": "PRIVATE",
+      "isArchived": true,
+      "description": "",
+      "updatedAt": "2026-04-24T16:42:46Z",
+      "pushedAt": "2026-04-24T16:42:36Z",
+      "url": "https://github.com/unitonzengarden/_archive_chatbot"
+    }
+  ],
+  "repos": [
+    {
+      "requested_name": "Uniton_Shared",
+      "renamed_from": null,
+      "full_name": "unitonzengarden/Uniton_Shared",
+      "accessible": true,
+      "html_url": "https://github.com/unitonzengarden/Uniton_Shared",
+      "visibility": "PRIVATE",
+      "private": true,
+      "archived": false,
+      "disabled": false,
+      "fork": false,
+      "is_template": false,
+      "mirror_url": null,
+      "description": "Governance-as-Code: Tier 1 ecosystem canon + Tier 2 AIER_COMMON + skills + adapters for Uniton Future ecosystem",
+      "topics": [],
+      "default_branch": "main",
+      "created_at": "2026-04-24T18:20:42Z",
+      "updated_at": "2026-04-29T04:58:09Z",
+      "pushed_at": "2026-04-29T04:58:05Z",
+      "size": 3497,
+      "primary_language": "Python",
+      "languages": {
+        "Python": 557158,
+        "PowerShell": 108657,
+        "Shell": 40883
+      },
+      "license": null,
+      "package_indicators": [],
+      "packages_api": {
+        "accessible": false,
+        "error": "{\n  \"message\": \"Not Found\",\n  \"documentation_url\": \"https://docs.github.com/rest\",\n  \"status\": \"404\"\ngh: Not Found (HTTP 404)\n}",
+        "data": null
+      },
+      "has_issues": true,
+      "has_projects": true,
+      "has_wiki": false,
+      "merge_settings": {
+        "merge_commit_allowed": true,
+        "squash_merge_allowed": true,
+        "rebase_merge_allowed": true,
+        "auto_merge_allowed": false,
+        "delete_branch_on_merge": false,
+        "allow_update_branch": false,
+        "pull_request_creation_policy": "all"
+      },
+      "root_items": [
+        {
+          "name": ".github",
+          "type": "dir",
+          "path": ".github",
+          "size": 0
+        },
+        {
+          "name": ".gitignore",
+          "type": "file",
+          "path": ".gitignore",
+          "size": 275
+        },
+        {
+          "name": "CHANGELOG.md",
+          "type": "file",
+          "path": "CHANGELOG.md",
+          "size": 1067
+        },
+        {
+          "name": "LICENSE",
+          "type": "file",
+          "path": "LICENSE",
+          "size": 1076
+        },
+        {
+          "name": "README.md",
+          "type": "file",
+          "path": "README.md",
+          "size": 3942
+        },
+        {
+          "name": "SHARED",
+          "type": "dir",
+          "path": "SHARED",
+          "size": 0
+        },
+        {
+          "name": "VERSION",
+          "type": "file",
+          "path": "VERSION",
+          "size": 7
+        },
+        {
+          "name": "adapters",
+          "type": "dir",
+          "path": "adapters",
+          "size": 0
+        },
+        {
+          "name": "audit",
+          "type": "dir",
+          "path": "audit",
+          "size": 0
+        },
+        {
+          "name": "audit_logs",
+          "type": "dir",
+          "path": "audit_logs",
+          "size": 0
+        },
+        {
+          "name": "canon_qa_reports",
+          "type": "dir",
+          "path": "canon_qa_reports",
+          "size": 0
+        },
+        {
+          "name": "contracts",
+          "type": "dir",
+          "path": "contracts",
+          "size": 0
+        },
+        {
+          "name": "dist",
+          "type": "dir",
+          "path": "dist",
+          "size": 0
+        },
+        {
+          "name": "docs",
+          "type": "dir",
+          "path": "docs",
+          "size": 0
+        },
+        {
+          "name": "evidence",
+          "type": "dir",
+          "path": "evidence",
+          "size": 0
+        },
+        {
+          "name": "handoffs",
+          "type": "dir",
+          "path": "handoffs",
+          "size": 0
+        },
+        {
+          "name": "network",
+          "type": "dir",
+          "path": "network",
+          "size": 0
+        },
+        {
+          "name": "notifications",
+          "type": "dir",
+          "path": "notifications",
+          "size": 0
+        },
+        {
+          "name": "prompts",
+          "type": "dir",
+          "path": "prompts",
+          "size": 0
+        },
+        {
+          "name": "qa_loop_reports",
+          "type": "dir",
+          "path": "qa_loop_reports",
+          "size": 0
+        },
+        {
+          "name": "releases",
+          "type": "dir",
+          "path": "releases",
+          "size": 0
+        },
+        {
+          "name": "reports",
+          "type": "dir",
+          "path": "reports",
+          "size": 0
+        },
+        {
+          "name": "roadmaps",
+          "type": "dir",
+          "path": "roadmaps",
+          "size": 0
+        },
+        {
+          "name": "runtime",
+          "type": "dir",
+          "path": "runtime",
+          "size": 0
+        },
+        {
+          "name": "scan_reports",
+          "type": "dir",
+          "path": "scan_reports",
+          "size": 0
+        },
+        {
+          "name": "scripts",
+          "type": "dir",
+          "path": "scripts",
+          "size": 0
+        },
+        {
+          "name": "session_summaries",
+          "type": "dir",
+          "path": "session_summaries",
+          "size": 0
+        },
+        {
+          "name": "skill_qa_reports",
+          "type": "dir",
+          "path": "skill_qa_reports",
+          "size": 0
+        },
+        {
+          "name": "skills",
+          "type": "dir",
+          "path": "skills",
+          "size": 0
+        },
+        {
+          "name": "snapshots",
+          "type": "dir",
+          "path": "snapshots",
+          "size": 0
+        },
+        {
+          "name": "task_packets",
+          "type": "dir",
+          "path": "task_packets",
+          "size": 0
+        },
+        {
+          "name": "task_prompts",
+          "type": "dir",
+          "path": "task_prompts",
+          "size": 0
+        },
+        {
+          "name": "task_specs",
+          "type": "dir",
+          "path": "task_specs",
+          "size": 0
+        },
+        {
+          "name": "tests",
+          "type": "dir",
+          "path": "tests",
+          "size": 0
+        }
+      ],
+      "root_presence": {
+        "README": true,
+        "LICENSE": true,
+        "gitignore": true,
+        "docs": true,
+        "reports": true,
+        "snapshots": true,
+        "audit_logs": true,
+        "github_workflows": true
+      },
+      "readme": {
+        "exists": true,
+        "char_count": 3941,
+        "line_count": 82,
+        "headings": [
+          "# Uniton_Shared",
+          "## Active Governance Topology",
+          "## Legacy And Supporting Areas",
+          "## Operational Areas",
+          "## Versioning Policy",
+          "## Consumption",
+          "## Amendment And Authority",
+          "## Current Build Readiness",
+          "## License"
+        ],
+        "excerpt": "# Uniton_Shared\n**Governance-as-Code for the Uniton Future ecosystem**\nUniton_Shared is the shared source of truth for ecosystem canon, SHARED laws, Lane governance, skills, prompts, adapters, contracts, handoffs, reports, snapshots, and audit evidence.\nThis repository is not the Uniton OS product repo. Do not start Uniton OS build work from this repo until a separate NTS-approved task establishes the Uniton OS project context and target repo.\n## Active Governance Topology\nThe active Lane governance law system lives under:",
+        "error": null
+      },
+      "branches": [
+        {
+          "name": "audit/lane04-copilot-source-audit-001",
+          "protected": false,
+          "commit_sha": "37a80b569e737456476be2f18331024f751ad3d5"
+        },
+        {
+          "name": "feat/law-cla-llm-init",
+          "protected": false,
+          "commit_sha": "07577614854d9d808d7d269c3409ba6fe0254c83"
+        },
+        {
+          "name": "main",
+          "protected": false,
+          "commit_sha": "c56b07f6d7ef60fbb404db4e559d01700702f6ca"
+        }
+      ],
+      "default_branch_commit": {
+        "name": "main",
+        "protected": false,
+        "commit_sha": "c56b07f6d7ef60fbb404db4e559d01700702f6ca"
+      },
+      "branch_protection": {
+        "protected": false,
+        "reason": "gh: Branch not protected (HTTP 404)\n{\"message\":\"Branch not protected\",\"documentation_url\":\"https://docs.github.com/rest/branches/branch-protection#get-branch-protection\",\"status\":\"404\"}"
+      },
+      "workflow_files": [
+        ".gitkeep",
+        "aier_code_heartbeat.yml",
+        "aier_qa_canon.yml",
+        "aier_qa_loop.yml",
+        "aier_qa_skill.yml",
+        "aier_scan.yml",
+        "auto_project_status.yml",
+        "build-artifacts.yml",
+        "dispatch.yml",
+        "handoff_validator.yml",
+        "lane-guardrails.yml",
+        "lane_dispatch.yml",
+        "preflight_validator.yml",
+        "sync_runtime_to_public.yml",
+        "tag-release.yml",
+        "task_prompt_validator.yml",
+        "validate-canon.yml"
+      ],
+      "workflows": [
+        {
+          "id": 267933798,
+          "name": "AIER Code Heartbeat",
+          "path": ".github/workflows/aier_code_heartbeat.yml",
+          "state": "active"
+        },
+        {
+          "id": 267488246,
+          "name": "AIER Canon QA Worker",
+          "path": ".github/workflows/aier_qa_canon.yml",
+          "state": "active"
+        },
+        {
+          "id": 267565128,
+          "name": "AIER QA Loop Coordinator",
+          "path": ".github/workflows/aier_qa_loop.yml",
+          "state": "active"
+        },
+        {
+          "id": 267498667,
+          "name": "AIER Skill QA Worker",
+          "path": ".github/workflows/aier_qa_skill.yml",
+          "state": "active"
+        },
+        {
+          "id": 267309943,
+          "name": "AIER Scan Worker",
+          "path": ".github/workflows/aier_scan.yml",
+          "state": "active"
+        },
+        {
+          "id": 267285269,
+          "name": "Auto PROJECT_STATUS Regenerate",
+          "path": ".github/workflows/auto_project_status.yml",
+          "state": "active"
+        },
+        {
+          "id": 265987047,
+          "name": "Build Artifacts",
+          "path": ".github/workflows/build-artifacts.yml",
+          "state": "active"
+        },
+        {
+          "id": 267299381,
+          "name": "Dispatch Task Spec",
+          "path": ".github/workflows/dispatch.yml",
+          "state": "active"
+        },
+        {
+          "id": 266474590,
+          "name": "Handoff Validator",
+          "path": ".github/workflows/handoff_validator.yml",
+          "state": "active"
+        },
+        {
+          "id": 266310572,
+          "name": "Lane Guardrails",
+          "path": ".github/workflows/lane-guardrails.yml",
+          "state": "active"
+        },
+        {
+          "id": 267519799,
+          "name": "Lane Dispatch",
+          "path": ".github/workflows/lane_dispatch.yml",
+          "state": "active"
+        },
+        {
+          "id": 266480700,
+          "name": "Pre-Flight Validator",
+          "path": ".github/workflows/preflight_validator.yml",
+          "state": "active"
+        },
+        {
+          "id": 267166048,
+          "name": "Sync Runtime to Public",
+          "path": ".github/workflows/sync_runtime_to_public.yml",
+          "state": "active"
+        },
+        {
+          "id": 265987048,
+          "name": "Tag Release",
+          "path": ".github/workflows/tag-release.yml",
+          "state": "active"
+        },
+        {
+          "id": 266469963,
+          "name": "Task Prompt Validator",
+          "path": ".github/workflows/task_prompt_validator.yml",
+          "state": "active"
+        },
+        {
+          "id": 265987049,
+          "name": "Validate Canon",
+          "path": ".github/workflows/validate-canon.yml",
+          "state": "active"
+        }
+      ],
+      "recent_runs": [
+        {
+          "conclusion": "failure",
+          "createdAt": "2026-04-29T04:58:08Z",
+          "databaseId": 25091701617,
+          "displayTitle": "LANE01-INFRA-AUTOMATION-V1: Notify CLAC-1 prerequisites cleared [verc…",
+          "event": "push",
+          "headBranch": "main",
+          "status": "completed",
+          "updatedAt": "2026-04-29T04:58:25Z",
+          "url": "https://github.com/unitonzengarden/Uniton_Shared/actions/runs/25091701617",
+          "workflowName": "Handoff Validator"
+        },
+        {
+          "conclusion": "success",
+          "createdAt": "2026-04-29T04:58:08Z",
+          "databaseId": 25091701607,
+          "displayTitle": "LANE01-INFRA-AUTOMATION-V1: Notify CLAC-1 prerequisites cleared [verc…",
+          "event": "push",
+          "headBranch": "main",
+          "status": "completed",
+          "updatedAt": "2026-04-29T04:58:24Z",
+          "url": "https://github.com/unitonzengarden/Uniton_Shared/actions/runs/25091701607",
+          "workflowName": "Lane Guardrails"
+        },
+        {
+          "conclusion": "success",
+          "createdAt": "2026-04-29T04:58:08Z",
+          "databaseId": 25091701597,
+          "displayTitle": "LANE01-INFRA-AUTOMATION-V1: Notify CLAC-1 prerequisites cleared [verc…",
+          "event": "push",
+          "headBranch": "main",
+          "status": "completed",
+          "updatedAt": "2026-04-29T04:58:18Z",
+          "url": "https://github.com/unitonzengarden/Uniton_Shared/actions/runs/25091701597",
+          "workflowName": "Build Artifacts"
+        },
+        {
+          "conclusion": "success",
+          "createdAt": "2026-04-29T04:56:50Z",
+          "databaseId": 25091669586,
+          "displayTitle": "AMD: NTS approve A/A/A/A blueprint Q1-Q4 [vercel skip]",
+          "event": "push",
+          "headBranch": "main",
+          "status": "completed",
+          "updatedAt": "2026-04-29T04:57:05Z",
+          "url": "https://github.com/unitonzengarden/Uniton_Shared/actions/runs/25091669586",
+          "workflowName": "Lane Guardrails"
+        },
+        {
+          "conclusion": "success",
+          "createdAt": "2026-04-29T04:56:50Z",
+          "databaseId": 25091669581,
+          "displayTitle": "AMD: NTS approve A/A/A/A blueprint Q1-Q4 [vercel skip]",
+          "event": "push",
+          "headBranch": "main",
+          "status": "completed",
+          "updatedAt": "2026-04-29T04:57:01Z",
+          "url": "https://github.com/unitonzengarden/Uniton_Shared/actions/runs/25091669581",
+          "workflowName": "Build Artifacts"
+        }
+      ],
+      "open_pr_count": 0,
+      "open_prs_sample": [],
+      "open_issue_count_listed": 0,
+      "open_issues_sample": [],
+      "open_issues_count_api": 0,
+      "releases": [
+        {
+          "name": "v1.0.0",
+          "tag_name": "v1.0.0",
+          "draft": false,
+          "prerelease": false,
+          "published_at": "2026-04-25T01:47:01Z"
+        }
+      ],
+      "tags": [
+        {
+          "name": "versioning-system-v1.0",
+          "sha": "26641c3611f3e59ac07cd890e4d7ee739ad89bd0"
+        },
+        {
+          "name": "v1.0.0",
+          "sha": "27aa621db5a145d20b1024a4af83c8fc188be0d8"
+        },
+        {
+          "name": "v1.0",
+          "sha": "7a02007bbccab0f340a9f392247bb1b9fff91426"
+        },
+        {
+          "name": "v1.0-rc",
+          "sha": "27c79585472704306879db1353ade4eb353ef48d"
+        },
+        {
+          "name": "v0.4.0",
+          "sha": "8e1ed015a659d55c865befa64a4f4d24ff4eebf5"
+        },
+        {
+          "name": "v0.3.0",
+          "sha": "602361d9b16b8c22c0a7273754330ac62513bad6"
+        },
+        {
+          "name": "v0.2.0",
+          "sha": "2b1e161af4da64341c0f78c70c46d8f97104a6f5"
+        },
+        {
+          "name": "v0.1.0",
+          "sha": "8e127cf43b34b97f86209f1cf41d01cacf94a1b0"
+        },
+        {
+          "name": "uniton-shared-live-runtime-acceptance-v1.0.0",
+          "sha": "3fb451d49c30b098eb67e27b3c7162a545a7deec"
+        },
+        {
+          "name": "roadmap-locked-v2-final",
+          "sha": "14f7509e337438ec43417e0b58e2496596e1d510"
+        },
+        {
+          "name": "law-v2.0.0",
+          "sha": "237f4ec908df6f06ad0503cdd892b6341b427b45"
+        },
+        {
+          "name": "lane-normalize-01-v1.0",
+          "sha": "7e5716d1e17c0590e96634d8abd4aa8f3cfd8184"
+        },
+        {
+          "name": "governance-v1.0.0",
+          "sha": "5c4628139988313c1cbf9f731edfe6f3315fdbf2"
+        },
+        {
+          "name": "docs-lane-guide-v1.0",
+          "sha": "c44752944221730680c91073800e1714bb0fb74d"
+        }
+      ],
+      "latest_release": null,
+      "latest_tag": {
+        "name": "versioning-system-v1.0",
+        "sha": "26641c3611f3e59ac07cd890e4d7ee739ad89bd0"
+      },
+      "api_errors": {
+        "branches": null,
+        "protection": "gh: Branch not protected (HTTP 404)\n{\"message\":\"Branch not protected\",\"documentation_url\":\"https://docs.github.com/rest/branches/branch-protection#get-branch-protection\",\"status\":\"404\"}",
+        "root": null,
+        "workflows_contents": null,
+        "workflows": null,
+        "runs": null,
+        "prs": null,
+        "issues": null,
+        "releases": null,
+        "tags": null,
+        "languages": null,
+        "packages": "{\n  \"message\": \"Not Found\",\n  \"documentation_url\": \"https://docs.github.com/rest\",\n  \"status\": \"404\"\ngh: Not Found (HTTP 404)\n}",
+        "readme": null
+      },
+      "current_classification": "GOVERNANCE / BRAIN",
+      "recommended_classification": "Keep active as canonical governance, audit, canon, reports, snapshots, and shared skills repo.",
+      "folder_quality_notes": "structure is readable enough for current role",
+      "governance_risks": [
+        "default main branch has no branch protection",
+        "recent workflow failure observed"
+      ],
+      "required_next_action": "Add main branch protection and fix latest Handoff Validator failure before LAW_GITHUB activation.",
+      "future_law_github_should_cover": true
+    },
+    {
+      "requested_name": "Uniton_Shared_Live",
+      "renamed_from": null,
+      "full_name": "unitonzengarden/Uniton_Shared_Live",
+      "accessible": true,
+      "html_url": "https://github.com/unitonzengarden/Uniton_Shared_Live",
+      "visibility": "PUBLIC",
+      "private": false,
+      "archived": false,
+      "disabled": false,
+      "fork": false,
+      "is_template": false,
+      "mirror_url": null,
+      "description": "Pulic live state for AIER Code",
+      "topics": [],
+      "default_branch": "main",
+      "created_at": "2026-04-27T14:27:12Z",
+      "updated_at": "2026-04-28T19:33:54Z",
+      "pushed_at": "2026-04-28T19:33:50Z",
+      "size": 333,
+      "primary_language": null,
+      "languages": {},
+      "license": null,
+      "package_indicators": [],
+      "packages_api": {
+        "accessible": false,
+        "error": "{\n  \"message\": \"Not Found\",\n  \"documentation_url\": \"https://docs.github.com/rest\",\n  \"status\": \"404\"\ngh: Not Found (HTTP 404)\n}",
+        "data": null
+      },
+      "has_issues": true,
+      "has_projects": true,
+      "has_wiki": true,
+      "merge_settings": {
+        "merge_commit_allowed": true,
+        "squash_merge_allowed": true,
+        "rebase_merge_allowed": true,
+        "auto_merge_allowed": false,
+        "delete_branch_on_merge": false,
+        "allow_update_branch": false,
+        "pull_request_creation_policy": "all"
+      },
+      "root_items": [
+        {
+          "name": "README.md",
+          "type": "file",
+          "path": "README.md",
+          "size": 52
+        },
+        {
+          "name": "SYNC_INFO.md",
+          "type": "file",
+          "path": "SYNC_INFO.md",
+          "size": 1679
+        },
+        {
+          "name": "network",
+          "type": "dir",
+          "path": "network",
+          "size": 0
+        },
+        {
+          "name": "notifications",
+          "type": "dir",
+          "path": "notifications",
+          "size": 0
+        },
+        {
+          "name": "runtime",
+          "type": "dir",
+          "path": "runtime",
+          "size": 0
+        }
+      ],
+      "root_presence": {
+        "README": true,
+        "LICENSE": false,
+        "gitignore": false,
+        "docs": false,
+        "reports": false,
+        "snapshots": false,
+        "audit_logs": false,
+        "github_workflows": false
+      },
+      "readme": {
+        "exists": true,
+        "char_count": 51,
+        "line_count": 2,
+        "headings": [
+          "# Uniton_Shared_Live"
+        ],
+        "excerpt": "# Uniton_Shared_Live\nPulic live state for AIER Code",
+        "error": null
+      },
+      "branches": [
+        {
+          "name": "main",
+          "protected": false,
+          "commit_sha": "7785581aa5de637bcf7504597a20231a3f28b0ab"
+        }
+      ],
+      "default_branch_commit": null,
+      "branch_protection": {
+        "protected": false,
+        "reason": "gh: Branch not protected (HTTP 404)\n{\"message\":\"Branch not protected\",\"documentation_url\":\"https://docs.github.com/rest/branches/branch-protection#get-branch-protection\",\"status\":\"404\"}"
+      },
+      "workflow_files": [],
+      "workflows": [],
+      "recent_runs": [],
+      "open_pr_count": 0,
+      "open_prs_sample": [],
+      "open_issue_count_listed": 0,
+      "open_issues_sample": [],
+      "open_issues_count_api": 0,
+      "releases": [],
+      "tags": [],
+      "latest_release": null,
+      "latest_tag": null,
+      "api_errors": {
+        "branches": null,
+        "protection": "gh: Branch not protected (HTTP 404)\n{\"message\":\"Branch not protected\",\"documentation_url\":\"https://docs.github.com/rest/branches/branch-protection#get-branch-protection\",\"status\":\"404\"}",
+        "root": null,
+        "workflows_contents": "gh: Not Found (HTTP 404)\n{\"message\":\"Not Found\",\"documentation_url\":\"https://docs.github.com/rest/repos/contents#get-repository-content\",\"status\":\"404\"}",
+        "workflows": null,
+        "runs": null,
+        "prs": null,
+        "issues": null,
+        "releases": null,
+        "tags": null,
+        "languages": null,
+        "packages": "{\n  \"message\": \"Not Found\",\n  \"documentation_url\": \"https://docs.github.com/rest\",\n  \"status\": \"404\"\ngh: Not Found (HTTP 404)\n}",
+        "readme": null
+      },
+      "current_classification": "MIRROR / PUBLIC STATE",
+      "recommended_classification": "Keep as public mirror only; no manual truth edits; sync from Uniton_Shared by controlled workflow.",
+      "folder_quality_notes": "README is skeletal; no workflow files",
+      "governance_risks": [
+        "default main branch has no branch protection",
+        "README too thin for Codex/human orientation",
+        "public mirror lacks explicit mirror-only enforcement evidence"
+      ],
+      "required_next_action": "Correct description typo, document mirror-only rule, and add mirror sync/status evidence standard.",
+      "future_law_github_should_cover": true
+    },
+    {
+      "requested_name": "Uniton_OS",
+      "renamed_from": null,
+      "full_name": "unitonzengarden/Uniton_OS",
+      "accessible": true,
+      "html_url": "https://github.com/unitonzengarden/Uniton_OS",
+      "visibility": "PRIVATE",
+      "private": true,
+      "archived": false,
+      "disabled": false,
+      "fork": false,
+      "is_template": false,
+      "mirror_url": null,
+      "description": "",
+      "topics": [],
+      "default_branch": "main",
+      "created_at": "2026-04-19T18:41:39Z",
+      "updated_at": "2026-04-29T05:04:59Z",
+      "pushed_at": "2026-04-29T05:04:55Z",
+      "size": 8004,
+      "primary_language": "HTML",
+      "languages": {
+        "HTML": 1023010,
+        "TypeScript": 816434,
+        "JavaScript": 688179,
+        "PLpgSQL": 178008,
+        "PowerShell": 22065,
+        "Shell": 18847,
+        "CSS": 4399,
+        "Python": 744
+      },
+      "license": null,
+      "package_indicators": [
+        "package-lock.json",
+        "package.json"
+      ],
+      "packages_api": {
+        "accessible": false,
+        "error": "{\n  \"message\": \"Not Found\",\n  \"documentation_url\": \"https://docs.github.com/rest\",\n  \"status\": \"404\"\ngh: Not Found (HTTP 404)\n}",
+        "data": null
+      },
+      "has_issues": true,
+      "has_projects": true,
+      "has_wiki": false,
+      "merge_settings": {
+        "merge_commit_allowed": true,
+        "squash_merge_allowed": true,
+        "rebase_merge_allowed": true,
+        "auto_merge_allowed": false,
+        "delete_branch_on_merge": false,
+        "allow_update_branch": false,
+        "pull_request_creation_policy": "all"
+      },
+      "root_items": [
+        {
+          "name": ".archive",
+          "type": "dir",
+          "path": ".archive",
+          "size": 0
+        },
+        {
+          "name": ".claude",
+          "type": "dir",
+          "path": ".claude",
+          "size": 0
+        },
+        {
+          "name": ".cursorrules",
+          "type": "file",
+          "path": ".cursorrules",
+          "size": 4435
+        },
+        {
+          "name": ".env.example",
+          "type": "file",
+          "path": ".env.example",
+          "size": 2283
+        },
+        {
+          "name": ".gitattributes",
+          "type": "file",
+          "path": ".gitattributes",
+          "size": 150
+        },
+        {
+          "name": ".githooks",
+          "type": "dir",
+          "path": ".githooks",
+          "size": 0
+        },
+        {
+          "name": ".github",
+          "type": "dir",
+          "path": ".github",
+          "size": 0
+        },
+        {
+          "name": ".gitignore",
+          "type": "file",
+          "path": ".gitignore",
+          "size": 1343
+        },
+        {
+          "name": "CANON_HASH_MANIFEST.json",
+          "type": "file",
+          "path": "CANON_HASH_MANIFEST.json",
+          "size": 6592
+        },
+        {
+          "name": "CHANGELOG.md",
+          "type": "file",
+          "path": "CHANGELOG.md",
+          "size": 4594
+        },
+        {
+          "name": "CLAUDE.md",
+          "type": "file",
+          "path": "CLAUDE.md",
+          "size": 3175
+        },
+        {
+          "name": "HANDOFF_2026-04-23_POST_V0.2.md",
+          "type": "file",
+          "path": "HANDOFF_2026-04-23_POST_V0.2.md",
+          "size": 4485
+        },
+        {
+          "name": "README.md",
+          "type": "file",
+          "path": "README.md",
+          "size": 6268
+        },
+        {
+          "name": "apps",
+          "type": "dir",
+          "path": "apps",
+          "size": 0
+        },
+        {
+          "name": "audit-handoff",
+          "type": "dir",
+          "path": "audit-handoff",
+          "size": 0
+        },
+        {
+          "name": "audit",
+          "type": "dir",
+          "path": "audit",
+          "size": 0
+        },
+        {
+          "name": "audit_logs",
+          "type": "dir",
+          "path": "audit_logs",
+          "size": 0
+        },
+        {
+          "name": "docs",
+          "type": "dir",
+          "path": "docs",
+          "size": 0
+        },
+        {
+          "name": "package-lock.json",
+          "type": "file",
+          "path": "package-lock.json",
+          "size": 293258
+        },
+        {
+          "name": "package.json",
+          "type": "file",
+          "path": "package.json",
+          "size": 764
+        },
+        {
+          "name": "packages",
+          "type": "dir",
+          "path": "packages",
+          "size": 0
+        },
+        {
+          "name": "pytest.ini",
+          "type": "file",
+          "path": "pytest.ini",
+          "size": 52
+        },
+        {
+          "name": "reports",
+          "type": "dir",
+          "path": "reports",
+          "size": 0
+        },
+        {
+          "name": "screenshots",
+          "type": "dir",
+          "path": "screenshots",
+          "size": 0
+        },
+        {
+          "name": "scripts",
+          "type": "dir",
+          "path": "scripts",
+          "size": 0
+        },
+        {
+          "name": "snapshots",
+          "type": "dir",
+          "path": "snapshots",
+          "size": 0
+        },
+        {
+          "name": "supabase",
+          "type": "dir",
+          "path": "supabase",
+          "size": 0
+        },
+        {
+          "name": "tests",
+          "type": "dir",
+          "path": "tests",
+          "size": 0
+        }
+      ],
+      "root_presence": {
+        "README": true,
+        "LICENSE": false,
+        "gitignore": true,
+        "docs": true,
+        "reports": true,
+        "snapshots": true,
+        "audit_logs": true,
+        "github_workflows": true
+      },
+      "readme": {
+        "exists": true,
+        "char_count": 5489,
+        "line_count": 160,
+        "headings": [
+          "# 📘 UNITON OS — BỘ TÀI LIỆU OFFICIAL v1",
+          "## 🎯 MỤC ĐÍCH",
+          "## 📚 THỨ TỰ ĐỌC TÀI LIỆU",
+          "### Dành cho NTS (đọc theo thứ tự)",
+          "### Dành cho Claude Code / Cursor (không NTS đọc)",
+          "## 🚀 QUY TRÌNH BẮT ĐẦU (Tuần 1)",
+          "### Ngày 1 (Thứ Hai)",
+          "### Ngày 2-7 (Phase 0)",
+          "## 🛡️ NGUYÊN TẮC VÀNG (không quên)",
+          "## 🔥 KHI GẶP VẤN ĐỀ"
+        ],
+        "excerpt": "# 📘 UNITON OS — BỘ TÀI LIỆU OFFICIAL v1\n**Genesis date:** 2026-04-20\n**Human Kernel:** NTS\n**Author (AIER Advisor):** Claude Opus 4.7 (CLA)\n---\n## 🎯 MỤC ĐÍCH",
+        "error": null
+      },
+      "branches": [
+        {
+          "name": "audit/cla-integration-2026-04-29",
+          "protected": false,
+          "commit_sha": "0d1c8ad962353e9263a791af8e2c58d8a4d75212"
+        },
+        {
+          "name": "chore/LANE01-naming-convention-2026-04-29",
+          "protected": false,
+          "commit_sha": "df3b8c91c80c3a1195c526094b53affd33a03494"
+        },
+        {
+          "name": "cursor/foundation-lock-reports-and-operator-law-v2",
+          "protected": false,
+          "commit_sha": "f94e26c5b8d472614eaff738996510d44947f47e"
+        },
+        {
+          "name": "feat/T-INT-01-aier-code-schema",
+          "protected": false,
+          "commit_sha": "7ccace51bd2daa555a8e985079a75a984307844a"
+        },
+        {
+          "name": "feat/T-INT-02-service-token-broker",
+          "protected": false,
+          "commit_sha": "f1418322be17ffe036f31eec1cbd1a450c012d01"
+        },
+        {
+          "name": "main",
+          "protected": false,
+          "commit_sha": "2b7e70485a9b9653979fdd069d43370b2461747d"
+        }
+      ],
+      "default_branch_commit": {
+        "name": "main",
+        "protected": false,
+        "commit_sha": "2b7e70485a9b9653979fdd069d43370b2461747d"
+      },
+      "branch_protection": {
+        "protected": false,
+        "reason": "gh: Branch not protected (HTTP 404)\n{\"message\":\"Branch not protected\",\"documentation_url\":\"https://docs.github.com/rest/branches/branch-protection#get-branch-protection\",\"status\":\"404\"}"
+      },
+      "workflow_files": [
+        "ci.yml"
+      ],
+      "workflows": [
+        {
+          "id": 263297673,
+          "name": "CI",
+          "path": ".github/workflows/ci.yml",
+          "state": "active"
+        }
+      ],
+      "recent_runs": [
+        {
+          "conclusion": "failure",
+          "createdAt": "2026-04-29T05:04:57Z",
+          "databaseId": 25091879233,
+          "displayTitle": "LANE01-INFRA-AUTOMATION-V1: Cursor full tech autonomy demo [vercel skip]",
+          "event": "push",
+          "headBranch": "main",
+          "status": "completed",
+          "updatedAt": "2026-04-29T05:05:51Z",
+          "url": "https://github.com/unitonzengarden/Uniton_OS/actions/runs/25091879233",
+          "workflowName": "CI"
+        },
+        {
+          "conclusion": "failure",
+          "createdAt": "2026-04-29T04:54:51Z",
+          "databaseId": 25091621309,
+          "displayTitle": "LANE01-OPS-BRIDGE-01-APPLY-MIGRATION: apply Lane_03 AIER Life Bridge …",
+          "event": "push",
+          "headBranch": "main",
+          "status": "completed",
+          "updatedAt": "2026-04-29T04:55:36Z",
+          "url": "https://github.com/unitonzengarden/Uniton_OS/actions/runs/25091621309",
+          "workflowName": "CI"
+        },
+        {
+          "conclusion": "failure",
+          "createdAt": "2026-04-29T04:54:48Z",
+          "databaseId": 25091619874,
+          "displayTitle": "LANE01-OPS-BRIDGE-01-APPLY-MIGRATION: apply Lane_03 AIER Life Bridge migration",
+          "event": "pull_request",
+          "headBranch": "feat/LANE01-OPS-BRIDGE-01-apply-migration",
+          "status": "completed",
+          "updatedAt": "2026-04-29T04:55:34Z",
+          "url": "https://github.com/unitonzengarden/Uniton_OS/actions/runs/25091619874",
+          "workflowName": "CI"
+        },
+        {
+          "conclusion": "failure",
+          "createdAt": "2026-04-29T04:53:55Z",
+          "databaseId": 25091597475,
+          "displayTitle": "LANE01-AUDIT-LANE03-BRIDGE-WORK-V1: Audit Lane_03 Bridge work (#6)",
+          "event": "push",
+          "headBranch": "main",
+          "status": "completed",
+          "updatedAt": "2026-04-29T04:54:41Z",
+          "url": "https://github.com/unitonzengarden/Uniton_OS/actions/runs/25091597475",
+          "workflowName": "CI"
+        },
+        {
+          "conclusion": "failure",
+          "createdAt": "2026-04-29T04:53:42Z",
+          "databaseId": 25091591755,
+          "displayTitle": "LANE01-AUDIT-LANE03-BRIDGE-WORK-V1: Audit Lane_03 Bridge work",
+          "event": "pull_request",
+          "headBranch": "audit/LANE01-AUDIT-LANE03-BRIDGE-WORK-V1",
+          "status": "completed",
+          "updatedAt": "2026-04-29T04:54:31Z",
+          "url": "https://github.com/unitonzengarden/Uniton_OS/actions/runs/25091591755",
+          "workflowName": "CI"
+        }
+      ],
+      "open_pr_count": 4,
+      "open_prs_sample": [
+        {
+          "baseRefName": "main",
+          "createdAt": "2026-04-28T15:32:40Z",
+          "headRefName": "chore/LANE01-naming-convention-2026-04-29",
+          "isDraft": false,
+          "number": 4,
+          "title": "[LANE01-NAMING-CONVENTION-LOCK-V1] Rename + convention doc (Uniton_OS)",
+          "url": "https://github.com/unitonzengarden/Uniton_OS/pull/4"
+        },
+        {
+          "baseRefName": "main",
+          "createdAt": "2026-04-28T15:09:06Z",
+          "headRefName": "feat/T-INT-02-service-token-broker",
+          "isDraft": false,
+          "number": 3,
+          "title": "[T-INT-02] Service-role token broker for cross-Lane API",
+          "url": "https://github.com/unitonzengarden/Uniton_OS/pull/3"
+        },
+        {
+          "baseRefName": "main",
+          "createdAt": "2026-04-28T12:46:36Z",
+          "headRefName": "feat/T-INT-01-aier-code-schema",
+          "isDraft": false,
+          "number": 2,
+          "title": "[T-INT-01] Schema migration: AIER Code legacy -> Uniton_OS",
+          "url": "https://github.com/unitonzengarden/Uniton_OS/pull/2"
+        },
+        {
+          "baseRefName": "main",
+          "createdAt": "2026-04-28T11:52:20Z",
+          "headRefName": "audit/cla-integration-2026-04-29",
+          "isDraft": false,
+          "number": 1,
+          "title": "[AUDIT] Uniton_OS inventory for AIER Code integration",
+          "url": "https://github.com/unitonzengarden/Uniton_OS/pull/1"
+        }
+      ],
+      "open_issue_count_listed": 0,
+      "open_issues_sample": [],
+      "open_issues_count_api": 4,
+      "releases": [],
+      "tags": [
+        {
+          "name": "v0.2.0",
+          "sha": "a28527921700d889670a32ae27cf5ed258b8d3f4"
+        }
+      ],
+      "latest_release": null,
+      "latest_tag": null,
+      "api_errors": {
+        "branches": null,
+        "protection": "gh: Branch not protected (HTTP 404)\n{\"message\":\"Branch not protected\",\"documentation_url\":\"https://docs.github.com/rest/branches/branch-protection#get-branch-protection\",\"status\":\"404\"}",
+        "root": null,
+        "workflows_contents": null,
+        "workflows": null,
+        "runs": null,
+        "prs": null,
+        "issues": null,
+        "releases": null,
+        "tags": null,
+        "languages": null,
+        "packages": "{\n  \"message\": \"Not Found\",\n  \"documentation_url\": \"https://docs.github.com/rest\",\n  \"status\": \"404\"\ngh: Not Found (HTTP 404)\n}",
+        "readme": null
+      },
+      "current_classification": "RUNTIME / EXECUTION",
+      "recommended_classification": "Keep active as runtime/execution repo; add governance protections before further integration work.",
+      "folder_quality_notes": "missing description",
+      "governance_risks": [
+        "default main branch has no branch protection",
+        "missing GitHub description",
+        "recent workflow failure observed"
+      ],
+      "required_next_action": "Add repo description, protect main, and repair failing CI before any runtime or bridge task.",
+      "future_law_github_should_cover": true
+    },
+    {
+      "requested_name": "uzgplus-app",
+      "renamed_from": null,
+      "full_name": "unitonzengarden/uzgplus-app",
+      "accessible": true,
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app",
+      "visibility": "PRIVATE",
+      "private": true,
+      "archived": false,
+      "disabled": false,
+      "fork": false,
+      "is_template": false,
+      "mirror_url": null,
+      "description": "UZG+ Super App frontend — Auth Core, onboarding, dashboard and future V1 modules",
+      "topics": [],
+      "default_branch": "main",
+      "created_at": "2026-03-08T17:35:24Z",
+      "updated_at": "2026-04-29T04:24:51Z",
+      "pushed_at": "2026-04-29T04:43:57Z",
+      "size": 50435,
+      "primary_language": "JavaScript",
+      "languages": {
+        "JavaScript": 18656059,
+        "PLpgSQL": 4308542,
+        "CSS": 2265292,
+        "TypeScript": 90298,
+        "PowerShell": 36195,
+        "HTML": 27727,
+        "Shell": 8000
+      },
+      "license": null,
+      "package_indicators": [
+        "package-lock.json",
+        "package.json"
+      ],
+      "packages_api": {
+        "accessible": false,
+        "error": "{\n  \"message\": \"Not Found\",\n  \"documentation_url\": \"https://docs.github.com/rest\",\n  \"status\": \"404\"\ngh: Not Found (HTTP 404)\n}",
+        "data": null
+      },
+      "has_issues": true,
+      "has_projects": true,
+      "has_wiki": false,
+      "merge_settings": {
+        "merge_commit_allowed": true,
+        "squash_merge_allowed": true,
+        "rebase_merge_allowed": true,
+        "auto_merge_allowed": false,
+        "delete_branch_on_merge": false,
+        "allow_update_branch": false,
+        "pull_request_creation_policy": "all"
+      },
+      "root_items": [
+        {
+          "name": ".aier",
+          "type": "dir",
+          "path": ".aier",
+          "size": 0
+        },
+        {
+          "name": ".codex-artifacts",
+          "type": "dir",
+          "path": ".codex-artifacts",
+          "size": 0
+        },
+        {
+          "name": ".editorconfig",
+          "type": "file",
+          "path": ".editorconfig",
+          "size": 65
+        },
+        {
+          "name": ".env",
+          "type": "file",
+          "path": ".env",
+          "size": 997
+        },
+        {
+          "name": ".env.test",
+          "type": "file",
+          "path": ".env.test",
+          "size": 455
+        },
+        {
+          "name": ".github",
+          "type": "dir",
+          "path": ".github",
+          "size": 0
+        },
+        {
+          "name": ".gitignore",
+          "type": "file",
+          "path": ".gitignore",
+          "size": 2183
+        },
+        {
+          "name": ".lane_02",
+          "type": "dir",
+          "path": ".lane_02",
+          "size": 0
+        },
+        {
+          "name": ".tmp_aier_root.html",
+          "type": "file",
+          "path": ".tmp_aier_root.html",
+          "size": 463
+        },
+        {
+          "name": "AIER_ARCHITECTURE_PROPOSAL.json",
+          "type": "file",
+          "path": "AIER_ARCHITECTURE_PROPOSAL.json",
+          "size": 2263
+        },
+        {
+          "name": "AIER_ARCHITECTURE_STATUS.json",
+          "type": "file",
+          "path": "AIER_ARCHITECTURE_STATUS.json",
+          "size": 1149
+        },
+        {
+          "name": "AIER_BUG_REPORT.json",
+          "type": "file",
+          "path": "AIER_BUG_REPORT.json",
+          "size": 4404
+        },
+        {
+          "name": "AIER_BUILD_EXECUTION.json",
+          "type": "file",
+          "path": "AIER_BUILD_EXECUTION.json",
+          "size": 642
+        },
+        {
+          "name": "AIER_BUILD_PLAN.json",
+          "type": "file",
+          "path": "AIER_BUILD_PLAN.json",
+          "size": 1508
+        },
+        {
+          "name": "AIER_DATABASE_ANALYSIS.json",
+          "type": "file",
+          "path": "AIER_DATABASE_ANALYSIS.json",
+          "size": 8670
+        },
+        {
+          "name": "AIER_DEPLOY_REPORT.json",
+          "type": "file",
+          "path": "AIER_DEPLOY_REPORT.json",
+          "size": 369
+        },
+        {
+          "name": "AIER_DEVELOPMENT_PLAN.json",
+          "type": "file",
+          "path": "AIER_DEVELOPMENT_PLAN.json",
+          "size": 1923
+        },
+        {
+          "name": "AIER_ECONOMY_STATUS.json",
+          "type": "file",
+          "path": "AIER_ECONOMY_STATUS.json",
+          "size": 722
+        },
+        {
+          "name": "AIER_EVOLUTION_APPROVALS.json",
+          "type": "file",
+          "path": "AIER_EVOLUTION_APPROVALS.json",
+          "size": 363
+        },
+        {
+          "name": "AIER_HARMONY_RECOMMENDATIONS.json",
+          "type": "file",
+          "path": "AIER_HARMONY_RECOMMENDATIONS.json",
+          "size": 2554
+        },
+        {
+          "name": "AIER_INNOVATION_PROPOSALS.json",
+          "type": "file",
+          "path": "AIER_INNOVATION_PROPOSALS.json",
+          "size": 3156
+        },
+        {
+          "name": "AIER_MODULE_STATUS.json",
+          "type": "file",
+          "path": "AIER_MODULE_STATUS.json",
+          "size": 7689
+        },
+        {
+          "name": "AIER_NETWORK_ENGINE_STATUS.json",
+          "type": "file",
+          "path": "AIER_NETWORK_ENGINE_STATUS.json",
+          "size": 973
+        },
+        {
+          "name": "AIER_REPO_ANALYSIS.json",
+          "type": "file",
+          "path": "AIER_REPO_ANALYSIS.json",
+          "size": 4866
+        },
+        {
+          "name": "AIER_REPO_STATUS.json",
+          "type": "file",
+          "path": "AIER_REPO_STATUS.json",
+          "size": 5013
+        },
+        {
+          "name": "AIER_SCHEDULER_STATUS.json",
+          "type": "file",
+          "path": "AIER_SCHEDULER_STATUS.json",
+          "size": 3682
+        },
+        {
+          "name": "AIER_SIMULATION_REPORT.json",
+          "type": "file",
+          "path": "AIER_SIMULATION_REPORT.json",
+          "size": 2067
+        },
+        {
+          "name": "AIER_SOCIAL_ANALYSIS.json",
+          "type": "file",
+          "path": "AIER_SOCIAL_ANALYSIS.json",
+          "size": 868
+        },
+        {
+          "name": "AIER_SOCIAL_PREDICTION.json",
+          "type": "file",
+          "path": "AIER_SOCIAL_PREDICTION.json",
+          "size": 1011
+        },
+        {
+          "name": "AIER_SOCIAL_STATE.json",
+          "type": "file",
+          "path": "AIER_SOCIAL_STATE.json",
+          "size": 830
+        },
+        {
+          "name": "AIER_SYSTEM_KNOWLEDGE.json",
+          "type": "file",
+          "path": "AIER_SYSTEM_KNOWLEDGE.json",
+          "size": 24947
+        },
+        {
+          "name": "AIER_TASK_EXECUTION.json",
+          "type": "file",
+          "path": "AIER_TASK_EXECUTION.json",
+          "size": 466
+        },
+        {
+          "name": "AIER_TASK_QUEUE.json",
+          "type": "file",
+          "path": "AIER_TASK_QUEUE.json",
+          "size": 1790
+        },
+        {
+          "name": "AIER_TEST_REPORT.json",
+          "type": "file",
+          "path": "AIER_TEST_REPORT.json",
+          "size": 2815
+        },
+        {
+          "name": "AI_AGENT_INSTRUCTIONS.md",
+          "type": "file",
+          "path": "AI_AGENT_INSTRUCTIONS.md",
+          "size": 4254
+        },
+        {
+          "name": "AI_AGENT_RUNTIME_LOOP.md",
+          "type": "file",
+          "path": "AI_AGENT_RUNTIME_LOOP.md",
+          "size": 1501
+        },
+        {
+          "name": "AI_AUTONOMOUS_DEBUG_PROTOCOL.md",
+          "type": "file",
+          "path": "AI_AUTONOMOUS_DEBUG_PROTOCOL.md",
+          "size": 2178
+        },
+        {
+          "name": "AI_AUTONOMOUS_DEV_PROTOCOL.md",
+          "type": "file",
+          "path": "AI_AUTONOMOUS_DEV_PROTOCOL.md",
+          "size": 3226
+        },
+        {
+          "name": "AI_CIVILIZATION_MODEL.md",
+          "type": "file",
+          "path": "AI_CIVILIZATION_MODEL.md",
+          "size": 4133
+        },
+        {
+          "name": "AI_CONTEXT_BOOTSTRAP.md",
+          "type": "file",
+          "path": "AI_CONTEXT_BOOTSTRAP.md",
+          "size": 3425
+        },
+        {
+          "name": "AI_DEV_GUARDRAILS.md",
+          "type": "file",
+          "path": "AI_DEV_GUARDRAILS.md",
+          "size": 4988
+        },
+        {
+          "name": "AI_FILE_EDIT_BOUNDARY.md",
+          "type": "file",
+          "path": "AI_FILE_EDIT_BOUNDARY.md",
+          "size": 1903
+        },
+        {
+          "name": "AI_REPO_BOOT_SEQUENCE.md",
+          "type": "file",
+          "path": "AI_REPO_BOOT_SEQUENCE.md",
+          "size": 2336
+        },
+        {
+          "name": "AI_REPO_GUARDIAN.md",
+          "type": "file",
+          "path": "AI_REPO_GUARDIAN.md",
+          "size": 1544
+        },
+        {
+          "name": "AI_REPO_RUNTIME_STATE.md",
+          "type": "file",
+          "path": "AI_REPO_RUNTIME_STATE.md",
+          "size": 1629
+        },
+        {
+          "name": "AI_SYSTEM_HEALTH.md",
+          "type": "file",
+          "path": "AI_SYSTEM_HEALTH.md",
+          "size": 1666
+        },
+        {
+          "name": "AI_SYSTEM_PROMPT.md",
+          "type": "file",
+          "path": "AI_SYSTEM_PROMPT.md",
+          "size": 4360
+        },
+        {
+          "name": "AI_TASK_ROUTER.md",
+          "type": "file",
+          "path": "AI_TASK_ROUTER.md",
+          "size": 2586
+        },
+        {
+          "name": "ARCHITECTURE_DECISION_RECORDS.md",
+          "type": "file",
+          "path": "ARCHITECTURE_DECISION_RECORDS.md",
+          "size": 5981
+        },
+        {
+          "name": "CHANGELOG_SYSTEM.md",
+          "type": "file",
+          "path": "CHANGELOG_SYSTEM.md",
+          "size": 2967
+        },
+        {
+          "name": "CODEX_TASK_PROTOCOL.md",
+          "type": "file",
+          "path": "CODEX_TASK_PROTOCOL.md",
+          "size": 3729
+        },
+        {
+          "name": "COLLECTIVE_INTELLIGENCE_METRICS.md",
+          "type": "file",
+          "path": "COLLECTIVE_INTELLIGENCE_METRICS.md",
+          "size": 5962
+        },
+        {
+          "name": "DEVELOPER_ONBOARDING_MAP.md",
+          "type": "file",
+          "path": "DEVELOPER_ONBOARDING_MAP.md",
+          "size": 4511
+        },
+        {
+          "name": "ENTA_EMERGENT_INTELLIGENCE_MODEL.md",
+          "type": "file",
+          "path": "ENTA_EMERGENT_INTELLIGENCE_MODEL.md",
+          "size": 5185
+        },
+        {
+          "name": "ENTA_KNOWLEDGE_ENGINE_SPEC.md",
+          "type": "file",
+          "path": "ENTA_KNOWLEDGE_ENGINE_SPEC.md",
+          "size": 4419
+        },
+        {
+          "name": "ENTA_NETWORK_CONSCIOUSNESS_MODEL.md",
+          "type": "file",
+          "path": "ENTA_NETWORK_CONSCIOUSNESS_MODEL.md",
+          "size": 5056
+        },
+        {
+          "name": "ENTA_SOCIAL_PHYSICS_MODEL.md",
+          "type": "file",
+          "path": "ENTA_SOCIAL_PHYSICS_MODEL.md",
+          "size": 4749
+        },
+        {
+          "name": "MASTER_CONTEXT.md",
+          "type": "file",
+          "path": "MASTER_CONTEXT.md",
+          "size": 3240
+        },
+        {
+          "name": "NETWORK_EVOLUTION_SIMULATION_SPEC.md",
+          "type": "file",
+          "path": "NETWORK_EVOLUTION_SIMULATION_SPEC.md",
+          "size": 5089
+        },
+        {
+          "name": "NETWORK_INTELLIGENCE_ENGINE_SPEC.md",
+          "type": "file",
+          "path": "NETWORK_INTELLIGENCE_ENGINE_SPEC.md",
+          "size": 5671
+        },
+        {
+          "name": "NETWORK_STATE_DASHBOARD_SPEC.md",
+          "type": "file",
+          "path": "NETWORK_STATE_DASHBOARD_SPEC.md",
+          "size": 4749
+        },
+        {
+          "name": "PROJECT_CONTEXT.md",
+          "type": "file",
+          "path": "PROJECT_CONTEXT.md",
+          "size": 3959
+        },
+        {
+          "name": "PROMPT_ENGINEERING_GUIDE.md",
+          "type": "file",
+          "path": "PROMPT_ENGINEERING_GUIDE.md",
+          "size": 4013
+        },
+        {
+          "name": "README.md",
+          "type": "file",
+          "path": "README.md",
+          "size": 1175
+        },
+        {
+          "name": "REPOSITORY_BOOTSTRAP_GUIDE.md",
+          "type": "file",
+          "path": "REPOSITORY_BOOTSTRAP_GUIDE.md",
+          "size": 3787
+        },
+        {
+          "name": "REPOSITORY_CANON.md",
+          "type": "file",
+          "path": "REPOSITORY_CANON.md",
+          "size": 6047
+        },
+        {
+          "name": "REPO_INTELLIGENCE_INDEX.md",
+          "type": "file",
+          "path": "REPO_INTELLIGENCE_INDEX.md",
+          "size": 3942
+        },
+        {
+          "name": "REPO_NAVIGATION_INDEX.md",
+          "type": "file",
+          "path": "REPO_NAVIGATION_INDEX.md",
+          "size": 2487
+        },
+        {
+          "name": "REPO_OPERATING_SYSTEM.md",
+          "type": "file",
+          "path": "REPO_OPERATING_SYSTEM.md",
+          "size": 4635
+        },
+        {
+          "name": "RISK_AND_FAILURE_MODES.md",
+          "type": "file",
+          "path": "RISK_AND_FAILURE_MODES.md",
+          "size": 5061
+        },
+        {
+          "name": "SYSTEM_EVOLUTION_ROADMAP.md",
+          "type": "file",
+          "path": "SYSTEM_EVOLUTION_ROADMAP.md",
+          "size": 4667
+        },
+        {
+          "name": "SYSTEM_HEALTH_MONITORING.md",
+          "type": "file",
+          "path": "SYSTEM_HEALTH_MONITORING.md",
+          "size": 4394
+        },
+        {
+          "name": "SYSTEM_MAP.md",
+          "type": "file",
+          "path": "SYSTEM_MAP.md",
+          "size": 4113
+        },
+        {
+          "name": "UNITON_CIVILIZATION_OPERATING_SYSTEM.md",
+          "type": "file",
+          "path": "UNITON_CIVILIZATION_OPERATING_SYSTEM.md",
+          "size": 5566
+        },
+        {
+          "name": "UNITON_CIVILIZATION_STACK.md",
+          "type": "file",
+          "path": "UNITON_CIVILIZATION_STACK.md",
+          "size": 4853
+        },
+        {
+          "name": "UNITON_CIVILIZATION_WHITEPAPER.md",
+          "type": "file",
+          "path": "UNITON_CIVILIZATION_WHITEPAPER.md",
+          "size": 6671
+        },
+        {
+          "name": "UNITON_COLLECTIVE_CONSCIOUSNESS_MODEL.md",
+          "type": "file",
+          "path": "UNITON_COLLECTIVE_CONSCIOUSNESS_MODEL.md",
+          "size": 5234
+        },
+        {
+          "name": "UNITON_MANIFESTO.md",
+          "type": "file",
+          "path": "UNITON_MANIFESTO.md",
+          "size": 4446
+        },
+        {
+          "name": "UNITON_MASTER_CANON.md",
+          "type": "file",
+          "path": "UNITON_MASTER_CANON.md",
+          "size": 4767
+        },
+        {
+          "name": "UNITON_ONE_PAGE.md",
+          "type": "file",
+          "path": "UNITON_ONE_PAGE.md",
+          "size": 3024
+        },
+        {
+          "name": "UNITON_PROTOCOL_STACK.md",
+          "type": "file",
+          "path": "UNITON_PROTOCOL_STACK.md",
+          "size": 4855
+        },
+        {
+          "name": "UNITON_REPOSITORY_OPERATING_SYSTEM.md",
+          "type": "file",
+          "path": "UNITON_REPOSITORY_OPERATING_SYSTEM.md",
+          "size": 3827
+        },
+        {
+          "name": "UNITON_SYSTEM_ENTRYPOINT.md",
+          "type": "file",
+          "path": "UNITON_SYSTEM_ENTRYPOINT.md",
+          "size": 3296
+        },
+        {
+          "name": "UNITON_THEORY_OF_DIGITAL_CIVILIZATION.md",
+          "type": "file",
+          "path": "UNITON_THEORY_OF_DIGITAL_CIVILIZATION.md",
+          "size": 5858
+        },
+        {
+          "name": "UZG_DEV_CANON_STATUS.md",
+          "type": "file",
+          "path": "UZG_DEV_CANON_STATUS.md",
+          "size": 940
+        },
+        {
+          "name": "UZG_PLUS_MODULE_ROADMAP.md",
+          "type": "file",
+          "path": "UZG_PLUS_MODULE_ROADMAP.md",
+          "size": 3560
+        },
+        {
+          "name": "UZG_PLUS_PRODUCT_MAP.md",
+          "type": "file",
+          "path": "UZG_PLUS_PRODUCT_MAP.md",
+          "size": 4659
+        },
+        {
+          "name": "ai",
+          "type": "dir",
+          "path": "ai",
+          "size": 0
+        },
+        {
+          "name": "ai_snapshot_live.json",
+          "type": "file",
+          "path": "ai_snapshot_live.json",
+          "size": 4797
+        },
+        {
+          "name": "aier",
+          "type": "dir",
+          "path": "aier",
+          "size": 0
+        },
+        {
+          "name": "aier_reports_v2",
+          "type": "dir",
+          "path": "aier_reports_v2",
+          "size": 0
+        },
+        {
+          "name": "api",
+          "type": "dir",
+          "path": "api",
+          "size": 0
+        },
+        {
+          "name": "apps",
+          "type": "dir",
+          "path": "apps",
+          "size": 0
+        },
+        {
+          "name": "data",
+          "type": "dir",
+          "path": "data",
+          "size": 0
+        },
+        {
+          "name": "deploy-report.json",
+          "type": "file",
+          "path": "deploy-report.json",
+          "size": 362
+        },
+        {
+          "name": "docs",
+          "type": "dir",
+          "path": "docs",
+          "size": 0
+        },
+        {
+          "name": "ecosystem.config.cjs",
+          "type": "file",
+          "path": "ecosystem.config.cjs",
+          "size": 1421
+        },
+        {
+          "name": "ecosystem.config.js",
+          "type": "file",
+          "path": "ecosystem.config.js",
+          "size": 1880
+        },
+        {
+          "name": "eslint.config.js",
+          "type": "file",
+          "path": "eslint.config.js",
+          "size": 758
+        },
+        {
+          "name": "index.html",
+          "type": "file",
+          "path": "index.html",
+          "size": 1220
+        },
+        {
+          "name": "infrastructure",
+          "type": "dir",
+          "path": "infrastructure",
+          "size": 0
+        },
+        {
+          "name": "lib",
+          "type": "dir",
+          "path": "lib",
+          "size": 0
+        },
+        {
+          "name": "os-app",
+          "type": "dir",
+          "path": "os-app",
+          "size": 0
+        },
+        {
+          "name": "package-lock.json",
+          "type": "file",
+          "path": "package-lock.json",
+          "size": 182045
+        },
+        {
+          "name": "package.json",
+          "type": "file",
+          "path": "package.json",
+          "size": 9764
+        },
+        {
+          "name": "packages",
+          "type": "dir",
+          "path": "packages",
+          "size": 0
+        },
+        {
+          "name": "private_html",
+          "type": "dir",
+          "path": "private_html",
+          "size": 0
+        },
+        {
+          "name": "product_v2_master_tasks.json",
+          "type": "file",
+          "path": "product_v2_master_tasks.json",
+          "size": 90528
+        },
+        {
+          "name": "public",
+          "type": "dir",
+          "path": "public",
+          "size": 0
+        },
+        {
+          "name": "public_html",
+          "type": "dir",
+          "path": "public_html",
+          "size": 0
+        },
+        {
+          "name": "repo_index.json",
+          "type": "file",
+          "path": "repo_index.json",
+          "size": 142956
+        },
+        {
+          "name": "reports",
+          "type": "dir",
+          "path": "reports",
+          "size": 0
+        },
+        {
+          "name": "schemas",
+          "type": "dir",
+          "path": "schemas",
+          "size": 0
+        },
+        {
+          "name": "scripts",
+          "type": "dir",
+          "path": "scripts",
+          "size": 0
+        },
+        {
+          "name": "server",
+          "type": "dir",
+          "path": "server",
+          "size": 0
+        },
+        {
+          "name": "services",
+          "type": "dir",
+          "path": "services",
+          "size": 0
+        },
+        {
+          "name": "src",
+          "type": "dir",
+          "path": "src",
+          "size": 0
+        },
+        {
+          "name": "supabase",
+          "type": "dir",
+          "path": "supabase",
+          "size": 0
+        },
+        {
+          "name": "supabase_windows_amd64",
+          "type": "dir",
+          "path": "supabase_windows_amd64",
+          "size": 0
+        },
+        {
+          "name": "system",
+          "type": "dir",
+          "path": "system",
+          "size": 0
+        },
+        {
+          "name": "tailwind.config.js",
+          "type": "file",
+          "path": "tailwind.config.js",
+          "size": 664
+        },
+        {
+          "name": "test-results",
+          "type": "dir",
+          "path": "test-results",
+          "size": 0
+        },
+        {
+          "name": "tests",
+          "type": "dir",
+          "path": "tests",
+          "size": 0
+        },
+        {
+          "name": "tmp",
+          "type": "dir",
+          "path": "tmp",
+          "size": 0
+        },
+        {
+          "name": "vercel.json",
+          "type": "file",
+          "path": "vercel.json",
+          "size": 366
+        },
+        {
+          "name": "vite.config.js",
+          "type": "file",
+          "path": "vite.config.js",
+          "size": 3821
+        }
+      ],
+      "root_presence": {
+        "README": true,
+        "LICENSE": false,
+        "gitignore": true,
+        "docs": true,
+        "reports": true,
+        "snapshots": false,
+        "audit_logs": false,
+        "github_workflows": true
+      },
+      "readme": {
+        "exists": true,
+        "char_count": 1174,
+        "line_count": 17,
+        "headings": [
+          "# React + Vite",
+          "## React Compiler",
+          "## Expanding the ESLint configuration"
+        ],
+        "excerpt": "# React + Vite\nThis template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.\nCurrently, two official plugins are available:\n- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh\n- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh\n## React Compiler",
+        "error": null
+      },
+      "branches": [
+        {
+          "name": "codex/auto-go-live",
+          "protected": false,
+          "commit_sha": "54e4bd7335324f720e8f8e94e1563ea3eed3bf23"
+        },
+        {
+          "name": "codex/v2-p5-business-commission-publish",
+          "protected": false,
+          "commit_sha": "c3a573b4f102643d526150f9633a9724cd1d851b"
+        },
+        {
+          "name": "codex/v2-p6-notification-lock",
+          "protected": false,
+          "commit_sha": "12af9f99f389eb7e171b21e304a4306b6d5901a6"
+        },
+        {
+          "name": "codex/v2-p7-qot-system-lock",
+          "protected": false,
+          "commit_sha": "9eabd0d732ec4e4d056de99658f97776143a5e03"
+        },
+        {
+          "name": "codex/v3-ui-flow-feed-redesign",
+          "protected": false,
+          "commit_sha": "ae670a8cc631624dd591b43d32d1b485da72eac7"
+        },
+        {
+          "name": "codex/v3-ui-topbar-layout-base",
+          "protected": false,
+          "commit_sha": "8b08872ab97d6d9afc90c4b6b6b7b99af99f0481"
+        },
+        {
+          "name": "feat/lane02/T-LANE02-TAO-DOCS-DROP-V1",
+          "protected": false,
+          "commit_sha": "fa332eff0a47f1312ee6bf7f357418ef654e9e59"
+        },
+        {
+          "name": "main",
+          "protected": false,
+          "commit_sha": "8794851a1bad84b4916dceece1f9f6faa7db4abc"
+        }
+      ],
+      "default_branch_commit": {
+        "name": "main",
+        "protected": false,
+        "commit_sha": "8794851a1bad84b4916dceece1f9f6faa7db4abc"
+      },
+      "branch_protection": {
+        "protected": false,
+        "reason": "gh: Branch not protected (HTTP 404)\n{\"message\":\"Branch not protected\",\"documentation_url\":\"https://docs.github.com/rest/branches/branch-protection#get-branch-protection\",\"status\":\"404\"}"
+      },
+      "workflow_files": [
+        "cloudways-deploy.yml",
+        "deploy.yml"
+      ],
+      "workflows": [
+        {
+          "id": 247248183,
+          "name": "Deprecated Legacy Deploy",
+          "path": ".github/workflows/cloudways-deploy.yml",
+          "state": "active"
+        },
+        {
+          "id": 247011910,
+          "name": "Deploy to Cloudflare Pages (Stable)",
+          "path": ".github/workflows/deploy.yml",
+          "state": "active"
+        }
+      ],
+      "recent_runs": [
+        {
+          "conclusion": "success",
+          "createdAt": "2026-04-29T04:24:49Z",
+          "databaseId": 25090834695,
+          "displayTitle": "Merge pull request #6 from unitonzengarden/chore/T-HYGIENE-001-FU-01-…",
+          "event": "push",
+          "headBranch": "main",
+          "status": "completed",
+          "updatedAt": "2026-04-29T04:25:58Z",
+          "url": "https://github.com/unitonzengarden/uzgplus-app/actions/runs/25090834695",
+          "workflowName": "Deploy to Cloudflare Pages (Stable)"
+        },
+        {
+          "conclusion": "success",
+          "createdAt": "2026-04-27T17:16:49Z",
+          "databaseId": 25009251611,
+          "displayTitle": "Merge pull request #5 from unitonzengarden/chore/T-HYGIENE-001-repo-r…",
+          "event": "push",
+          "headBranch": "main",
+          "status": "completed",
+          "updatedAt": "2026-04-27T17:18:23Z",
+          "url": "https://github.com/unitonzengarden/uzgplus-app/actions/runs/25009251611",
+          "workflowName": "Deploy to Cloudflare Pages (Stable)"
+        },
+        {
+          "conclusion": "success",
+          "createdAt": "2026-04-27T12:57:19Z",
+          "databaseId": 24996334730,
+          "displayTitle": "Merge pull request #4 from unitonzengarden/chore/T-MERGE-001-reports",
+          "event": "push",
+          "headBranch": "main",
+          "status": "completed",
+          "updatedAt": "2026-04-27T12:58:29Z",
+          "url": "https://github.com/unitonzengarden/uzgplus-app/actions/runs/24996334730",
+          "workflowName": "Deploy to Cloudflare Pages (Stable)"
+        },
+        {
+          "conclusion": "success",
+          "createdAt": "2026-04-27T11:27:44Z",
+          "databaseId": 24992348887,
+          "displayTitle": "Merge pull request #3 from unitonzengarden/feat/T-TAO-UI-001-1.0a-log…",
+          "event": "push",
+          "headBranch": "main",
+          "status": "completed",
+          "updatedAt": "2026-04-27T11:28:57Z",
+          "url": "https://github.com/unitonzengarden/uzgplus-app/actions/runs/24992348887",
+          "workflowName": "Deploy to Cloudflare Pages (Stable)"
+        },
+        {
+          "conclusion": "success",
+          "createdAt": "2026-04-27T11:27:26Z",
+          "databaseId": 24992336205,
+          "displayTitle": "Merge pull request #2 from unitonzengarden/chore/T-GOV-001-canonical-…",
+          "event": "push",
+          "headBranch": "main",
+          "status": "completed",
+          "updatedAt": "2026-04-27T11:28:33Z",
+          "url": "https://github.com/unitonzengarden/uzgplus-app/actions/runs/24992336205",
+          "workflowName": "Deploy to Cloudflare Pages (Stable)"
+        }
+      ],
+      "open_pr_count": 1,
+      "open_prs_sample": [
+        {
+          "baseRefName": "main",
+          "createdAt": "2026-04-29T04:44:03Z",
+          "headRefName": "feat/lane02/T-LANE02-TAO-DOCS-DROP-V1",
+          "isDraft": false,
+          "number": 7,
+          "title": "feat(lane02): T-LANE02-TAO-DOCS-DROP-V1 — drop 22 canonical TAO docs",
+          "url": "https://github.com/unitonzengarden/uzgplus-app/pull/7"
+        }
+      ],
+      "open_issue_count_listed": 0,
+      "open_issues_sample": [],
+      "open_issues_count_api": 1,
+      "releases": [],
+      "tags": [
+        {
+          "name": "v1-progress-v0.5-final-shell",
+          "sha": "766d0b718339f3a824c645f36ef6b62e323eeff9"
+        },
+        {
+          "name": "v1-progress-v0.4",
+          "sha": "b7aeb4b2ef2abe7c5361de8d482a260c15f3ff8a"
+        }
+      ],
+      "latest_release": null,
+      "latest_tag": {
+        "name": "v1-progress-v0.5-final-shell",
+        "sha": "766d0b718339f3a824c645f36ef6b62e323eeff9"
+      },
+      "api_errors": {
+        "branches": null,
+        "protection": "gh: Branch not protected (HTTP 404)\n{\"message\":\"Branch not protected\",\"documentation_url\":\"https://docs.github.com/rest/branches/branch-protection#get-branch-protection\",\"status\":\"404\"}",
+        "root": null,
+        "workflows_contents": null,
+        "workflows": null,
+        "runs": null,
+        "prs": null,
+        "issues": null,
+        "releases": null,
+        "tags": null,
+        "languages": null,
+        "packages": "{\n  \"message\": \"Not Found\",\n  \"documentation_url\": \"https://docs.github.com/rest\",\n  \"status\": \"404\"\ngh: Not Found (HTTP 404)\n}",
+        "readme": null
+      },
+      "current_classification": "PRODUCT",
+      "recommended_classification": "Keep active product repo; separate product runtime from repo-brain documents where possible.",
+      "folder_quality_notes": "very broad root surface (126 root entries); root .env files present; contents not inspected",
+      "governance_risks": [
+        "default main branch has no branch protection",
+        "root .env files require secret review"
+      ],
+      "required_next_action": "Replace generic Vite README with product README; review root .env files for secret exposure; protect main.",
+      "future_law_github_should_cover": true
+    },
+    {
+      "requested_name": "aier-life-super-app",
+      "renamed_from": null,
+      "full_name": "unitonzengarden/aier-life-super-app",
+      "accessible": true,
+      "html_url": "https://github.com/unitonzengarden/aier-life-super-app",
+      "visibility": "PRIVATE",
+      "private": true,
+      "archived": false,
+      "disabled": false,
+      "fork": false,
+      "is_template": false,
+      "mirror_url": null,
+      "description": "",
+      "topics": [],
+      "default_branch": "main",
+      "created_at": "2026-03-21T16:57:37Z",
+      "updated_at": "2026-04-15T13:27:54Z",
+      "pushed_at": "2026-04-15T13:27:40Z",
+      "size": 276269,
+      "primary_language": "TypeScript",
+      "languages": {
+        "TypeScript": 5389273,
+        "JavaScript": 874571,
+        "PLpgSQL": 32991,
+        "Batchfile": 498
+      },
+      "license": null,
+      "package_indicators": [
+        "package-lock.json",
+        "package.json"
+      ],
+      "packages_api": {
+        "accessible": false,
+        "error": "{\n  \"message\": \"Not Found\",\n  \"documentation_url\": \"https://docs.github.com/rest\",\n  \"status\": \"404\"\ngh: Not Found (HTTP 404)\n}",
+        "data": null
+      },
+      "has_issues": true,
+      "has_projects": true,
+      "has_wiki": false,
+      "merge_settings": {
+        "merge_commit_allowed": true,
+        "squash_merge_allowed": true,
+        "rebase_merge_allowed": true,
+        "auto_merge_allowed": false,
+        "delete_branch_on_merge": false,
+        "allow_update_branch": false,
+        "pull_request_creation_policy": "all"
+      },
+      "root_items": [
+        {
+          "name": ".env.example",
+          "type": "file",
+          "path": ".env.example",
+          "size": 222
+        },
+        {
+          "name": ".gitignore",
+          "type": "file",
+          "path": ".gitignore",
+          "size": 447
+        },
+        {
+          "name": ".vercelignore",
+          "type": "file",
+          "path": ".vercelignore",
+          "size": 96
+        },
+        {
+          "name": "OPENAI.md",
+          "type": "file",
+          "path": "OPENAI.md",
+          "size": 164
+        },
+        {
+          "name": "aier-core",
+          "type": "dir",
+          "path": "aier-core",
+          "size": 0
+        },
+        {
+          "name": "aier-cto",
+          "type": "dir",
+          "path": "aier-cto",
+          "size": 0
+        },
+        {
+          "name": "aier_runtime",
+          "type": "dir",
+          "path": "aier_runtime",
+          "size": 0
+        },
+        {
+          "name": "app",
+          "type": "dir",
+          "path": "app",
+          "size": 0
+        },
+        {
+          "name": "brain",
+          "type": "dir",
+          "path": "brain",
+          "size": 0
+        },
+        {
+          "name": "cloudflare.md",
+          "type": "file",
+          "path": "cloudflare.md",
+          "size": 182
+        },
+        {
+          "name": "components",
+          "type": "dir",
+          "path": "components",
+          "size": 0
+        },
+        {
+          "name": "deploy",
+          "type": "dir",
+          "path": "deploy",
+          "size": 0
+        },
+        {
+          "name": "desktop.ini",
+          "type": "file",
+          "path": "desktop.ini",
+          "size": 42
+        },
+        {
+          "name": "docs",
+          "type": "dir",
+          "path": "docs",
+          "size": 0
+        },
+        {
+          "name": "lib",
+          "type": "dir",
+          "path": "lib",
+          "size": 0
+        },
+        {
+          "name": "next-env.d.ts",
+          "type": "file",
+          "path": "next-env.d.ts",
+          "size": 247
+        },
+        {
+          "name": "next.config.js",
+          "type": "file",
+          "path": "next.config.js",
+          "size": 178
+        },
+        {
+          "name": "package-lock.json",
+          "type": "file",
+          "path": "package-lock.json",
+          "size": 69025
+        },
+        {
+          "name": "package.json",
+          "type": "file",
+          "path": "package.json",
+          "size": 2331
+        },
+        {
+          "name": "pdf-parse-legacy.d.ts",
+          "type": "file",
+          "path": "pdf-parse-legacy.d.ts",
+          "size": 359
+        },
+        {
+          "name": "playwright.config.ts",
+          "type": "file",
+          "path": "playwright.config.ts",
+          "size": 999
+        },
+        {
+          "name": "proxy.ts",
+          "type": "file",
+          "path": "proxy.ts",
+          "size": 859
+        },
+        {
+          "name": "render.yaml",
+          "type": "file",
+          "path": "render.yaml",
+          "size": 615
+        },
+        {
+          "name": "scripts",
+          "type": "dir",
+          "path": "scripts",
+          "size": 0
+        },
+        {
+          "name": "supabase",
+          "type": "dir",
+          "path": "supabase",
+          "size": 0
+        },
+        {
+          "name": "tests",
+          "type": "dir",
+          "path": "tests",
+          "size": 0
+        },
+        {
+          "name": "tsconfig.json",
+          "type": "file",
+          "path": "tsconfig.json",
+          "size": 640
+        },
+        {
+          "name": "tsconfig.worker.json",
+          "type": "file",
+          "path": "tsconfig.worker.json",
+          "size": 613
+        },
+        {
+          "name": "types",
+          "type": "dir",
+          "path": "types",
+          "size": 0
+        },
+        {
+          "name": "vercel.json",
+          "type": "file",
+          "path": "vercel.json",
+          "size": 196
+        },
+        {
+          "name": "word-extractor.d.ts",
+          "type": "file",
+          "path": "word-extractor.d.ts",
+          "size": 375
+        },
+        {
+          "name": "workers",
+          "type": "dir",
+          "path": "workers",
+          "size": 0
+        }
+      ],
+      "root_presence": {
+        "README": false,
+        "LICENSE": false,
+        "gitignore": true,
+        "docs": true,
+        "reports": false,
+        "snapshots": false,
+        "audit_logs": false,
+        "github_workflows": false
+      },
+      "readme": {
+        "exists": false,
+        "char_count": 0,
+        "line_count": 0,
+        "headings": [],
+        "excerpt": "",
+        "error": "gh: Not Found (HTTP 404)\n{\"message\":\"Not Found\",\"documentation_url\":\"https://docs.github.com/rest/repos/contents#get-a-repository-readme\",\"status\":\"404\"}"
+      },
+      "branches": [
+        {
+          "name": "codex/create-aier-life-canonical-document",
+          "protected": false,
+          "commit_sha": "53ad3c445601faf56a2fdbf8e79543fe7366fe4f"
+        },
+        {
+          "name": "codex/create-master-memory-documentation-file",
+          "protected": false,
+          "commit_sha": "b4104d354577dfef5c60c5d1502ae5e3e4ca6773"
+        },
+        {
+          "name": "codex/create-master-memory-documentation-file-4tfj7u",
+          "protected": false,
+          "commit_sha": "555b8254653facbf77dc42c6eb5330e52f00b035"
+        },
+        {
+          "name": "codex/create-master-memory-documentation-file-6sao80",
+          "protected": false,
+          "commit_sha": "1d8f0aa6bf023709522c5a6b41c31c4be89c5c6f"
+        },
+        {
+          "name": "main",
+          "protected": false,
+          "commit_sha": "73960cdb4738334791cb6e58ad0fd898b85b1c8a"
+        }
+      ],
+      "default_branch_commit": {
+        "name": "main",
+        "protected": false,
+        "commit_sha": "73960cdb4738334791cb6e58ad0fd898b85b1c8a"
+      },
+      "branch_protection": {
+        "protected": false,
+        "reason": "gh: Branch not protected (HTTP 404)\n{\"message\":\"Branch not protected\",\"documentation_url\":\"https://docs.github.com/rest/branches/branch-protection#get-branch-protection\",\"status\":\"404\"}"
+      },
+      "workflow_files": [],
+      "workflows": [],
+      "recent_runs": [],
+      "open_pr_count": 3,
+      "open_prs_sample": [
+        {
+          "baseRefName": "main",
+          "createdAt": "2026-03-23T17:09:32Z",
+          "headRefName": "codex/create-master-memory-documentation-file-4tfj7u",
+          "isDraft": true,
+          "number": 4,
+          "title": "Add minimal Next.js AI chat app with OpenAI + Supabase memory, health endpoint, styles, and docs",
+          "url": "https://github.com/unitonzengarden/aier-life-super-app/pull/4"
+        },
+        {
+          "baseRefName": "main",
+          "createdAt": "2026-03-23T17:06:24Z",
+          "headRefName": "codex/create-master-memory-documentation-file-6sao80",
+          "isDraft": false,
+          "number": 3,
+          "title": "Add minimal Next.js AI chat app with OpenAI + Supabase memory, health endpoint, styles, and docs",
+          "url": "https://github.com/unitonzengarden/aier-life-super-app/pull/3"
+        },
+        {
+          "baseRefName": "main",
+          "createdAt": "2026-03-23T17:06:03Z",
+          "headRefName": "codex/create-master-memory-documentation-file",
+          "isDraft": false,
+          "number": 2,
+          "title": "Add minimal Next.js AI chat app with OpenAI + Supabase memory, health endpoint, styles, and docs",
+          "url": "https://github.com/unitonzengarden/aier-life-super-app/pull/2"
+        }
+      ],
+      "open_issue_count_listed": 0,
+      "open_issues_sample": [],
+      "open_issues_count_api": 3,
+      "releases": [],
+      "tags": [],
+      "latest_release": null,
+      "latest_tag": null,
+      "api_errors": {
+        "branches": null,
+        "protection": "gh: Branch not protected (HTTP 404)\n{\"message\":\"Branch not protected\",\"documentation_url\":\"https://docs.github.com/rest/branches/branch-protection#get-branch-protection\",\"status\":\"404\"}",
+        "root": null,
+        "workflows_contents": "gh: Not Found (HTTP 404)\n{\"message\":\"Not Found\",\"documentation_url\":\"https://docs.github.com/rest/repos/contents#get-repository-content\",\"status\":\"404\"}",
+        "workflows": null,
+        "runs": null,
+        "prs": null,
+        "issues": null,
+        "releases": null,
+        "tags": null,
+        "languages": null,
+        "packages": "{\n  \"message\": \"Not Found\",\n  \"documentation_url\": \"https://docs.github.com/rest\",\n  \"status\": \"404\"\ngh: Not Found (HTTP 404)\n}",
+        "readme": "gh: Not Found (HTTP 404)\n{\"message\":\"Not Found\",\"documentation_url\":\"https://docs.github.com/rest/repos/contents#get-a-repository-readme\",\"status\":\"404\"}"
+      },
+      "current_classification": "UNKNOWN / PRODUCT CANDIDATE - NEEDS NTS DECISION",
+      "recommended_classification": "NTS decision required: keep as product, archive, or merge/consolidate with AIFI_LIFE/uzgplus-app.",
+      "folder_quality_notes": "missing README; missing description; no workflow files",
+      "governance_risks": [
+        "default main branch has no branch protection",
+        "missing GitHub description",
+        "missing README",
+        "no active GitHub Actions workflow listed",
+        "active/archive/product role is ambiguous against AIFI_LIFE"
+      ],
+      "required_next_action": "Decide active/archive/consolidate status; if active, add README, description, CI, and governance folders.",
+      "future_law_github_should_cover": true
+    },
+    {
+      "requested_name": "AIFI_LIFE",
+      "renamed_from": null,
+      "full_name": "unitonzengarden/AIFI_LIFE",
+      "accessible": true,
+      "html_url": "https://github.com/unitonzengarden/AIFI_LIFE",
+      "visibility": "PRIVATE",
+      "private": true,
+      "archived": false,
+      "disabled": false,
+      "fork": false,
+      "is_template": false,
+      "mirror_url": null,
+      "description": "",
+      "topics": [],
+      "default_branch": "main",
+      "created_at": "2026-04-06T09:24:29Z",
+      "updated_at": "2026-04-19T17:08:28Z",
+      "pushed_at": "2026-04-19T17:08:23Z",
+      "size": 107805,
+      "primary_language": "TypeScript",
+      "languages": {
+        "TypeScript": 664170,
+        "JavaScript": 54300,
+        "PLpgSQL": 36763,
+        "CSS": 35267
+      },
+      "license": null,
+      "package_indicators": [
+        "package-lock.json",
+        "package.json"
+      ],
+      "packages_api": {
+        "accessible": false,
+        "error": "{\n  \"message\": \"Not Found\",\n  \"documentation_url\": \"https://docs.github.com/rest\",\n  \"status\": \"404\"\ngh: Not Found (HTTP 404)\n}",
+        "data": null
+      },
+      "has_issues": true,
+      "has_projects": true,
+      "has_wiki": false,
+      "merge_settings": {
+        "merge_commit_allowed": true,
+        "squash_merge_allowed": true,
+        "rebase_merge_allowed": true,
+        "auto_merge_allowed": false,
+        "delete_branch_on_merge": false,
+        "allow_update_branch": false,
+        "pull_request_creation_policy": "all"
+      },
+      "root_items": [
+        {
+          "name": ".cursor",
+          "type": "dir",
+          "path": ".cursor",
+          "size": 0
+        },
+        {
+          "name": ".env.example",
+          "type": "file",
+          "path": ".env.example",
+          "size": 1602
+        },
+        {
+          "name": ".gitignore",
+          "type": "file",
+          "path": ".gitignore",
+          "size": 228
+        },
+        {
+          "name": "AIER_LIFE_CANON_v1.md",
+          "type": "file",
+          "path": "AIER_LIFE_CANON_v1.md",
+          "size": 1800
+        },
+        {
+          "name": "DATABASE_URL_GUIDE.md",
+          "type": "file",
+          "path": "DATABASE_URL_GUIDE.md",
+          "size": 2884
+        },
+        {
+          "name": "PROJECT_PROGRESS.md",
+          "type": "file",
+          "path": "PROJECT_PROGRESS.md",
+          "size": 20343
+        },
+        {
+          "name": "README.md",
+          "type": "file",
+          "path": "README.md",
+          "size": 2326
+        },
+        {
+          "name": "app",
+          "type": "dir",
+          "path": "app",
+          "size": 0
+        },
+        {
+          "name": "canon",
+          "type": "dir",
+          "path": "canon",
+          "size": 0
+        },
+        {
+          "name": "global.d.ts",
+          "type": "file",
+          "path": "global.d.ts",
+          "size": 25
+        },
+        {
+          "name": "lib",
+          "type": "dir",
+          "path": "lib",
+          "size": 0
+        },
+        {
+          "name": "middleware.ts",
+          "type": "file",
+          "path": "middleware.ts",
+          "size": 3708
+        },
+        {
+          "name": "next-env.d.ts",
+          "type": "file",
+          "path": "next-env.d.ts",
+          "size": 262
+        },
+        {
+          "name": "next.config.js",
+          "type": "file",
+          "path": "next.config.js",
+          "size": 120
+        },
+        {
+          "name": "package-lock.json",
+          "type": "file",
+          "path": "package-lock.json",
+          "size": 141949
+        },
+        {
+          "name": "package.json",
+          "type": "file",
+          "path": "package.json",
+          "size": 2159
+        },
+        {
+          "name": "public",
+          "type": "dir",
+          "path": "public",
+          "size": 0
+        },
+        {
+          "name": "reports",
+          "type": "dir",
+          "path": "reports",
+          "size": 0
+        },
+        {
+          "name": "scripts",
+          "type": "dir",
+          "path": "scripts",
+          "size": 0
+        },
+        {
+          "name": "status",
+          "type": "dir",
+          "path": "status",
+          "size": 0
+        },
+        {
+          "name": "supabase",
+          "type": "dir",
+          "path": "supabase",
+          "size": 0
+        },
+        {
+          "name": "tests",
+          "type": "dir",
+          "path": "tests",
+          "size": 0
+        },
+        {
+          "name": "tsconfig.json",
+          "type": "file",
+          "path": "tsconfig.json",
+          "size": 634
+        },
+        {
+          "name": "vercel.json",
+          "type": "file",
+          "path": "vercel.json",
+          "size": 361
+        }
+      ],
+      "root_presence": {
+        "README": true,
+        "LICENSE": false,
+        "gitignore": true,
+        "docs": false,
+        "reports": true,
+        "snapshots": false,
+        "audit_logs": false,
+        "github_workflows": false
+      },
+      "readme": {
+        "exists": true,
+        "char_count": 2241,
+        "line_count": 99,
+        "headings": [
+          "# AIFI (AIER LIFE Finance) – Next.js App Project Setup",
+          "## 🌱 Goal",
+          "## 🗂️ Required Files & Structure",
+          "### 1️⃣ app/api/at/heartbeat/route.ts",
+          "### 2️⃣ app/page.tsx",
+          "### 3️⃣ vercel.json",
+          "## 🛠️ How to Set Up",
+          "## 💡 Notes"
+        ],
+        "excerpt": "# AIFI (AIER LIFE Finance) – Next.js App Project Setup\nThis project sets up the **AIER Trainer (AT) Living Loop** on Next.js (App Router).\n---\n## 🌱 Goal\nInitialize **AIER Trainer (AT)** Living Loop with:\n- A heartbeat API that logs to Supabase",
+        "error": null
+      },
+      "branches": [
+        {
+          "name": "main",
+          "protected": false,
+          "commit_sha": "2690235e00117b5f829a0231a1b34c3d9d0c36db"
+        }
+      ],
+      "default_branch_commit": null,
+      "branch_protection": {
+        "protected": false,
+        "reason": "gh: Branch not protected (HTTP 404)\n{\"message\":\"Branch not protected\",\"documentation_url\":\"https://docs.github.com/rest/branches/branch-protection#get-branch-protection\",\"status\":\"404\"}"
+      },
+      "workflow_files": [],
+      "workflows": [],
+      "recent_runs": [],
+      "open_pr_count": 0,
+      "open_prs_sample": [],
+      "open_issue_count_listed": 0,
+      "open_issues_sample": [],
+      "open_issues_count_api": 0,
+      "releases": [],
+      "tags": [
+        {
+          "name": "v71.0",
+          "sha": "6ca7766997eefd90e705800195b780df016dc049"
+        },
+        {
+          "name": "v70.0",
+          "sha": "f647bba20dee90ad9f2d9427701a0eb55e1b0fee"
+        },
+        {
+          "name": "v69.0",
+          "sha": "ec6ddf74a4b8e3b1cdb0a1c18de7461f0abadb4d"
+        },
+        {
+          "name": "v68.0",
+          "sha": "ce4c59e0fb8cf75be9bc2349bfa4345a10d8a1c5"
+        },
+        {
+          "name": "v67.0",
+          "sha": "bbae1ee2ecbe097419d12622e7f8f2827907900f"
+        },
+        {
+          "name": "v66.0",
+          "sha": "4a9556e7e2acc29e6d57c8c92bbb28aa662e891c"
+        },
+        {
+          "name": "v65.0",
+          "sha": "6e932e02219cfb4cfa23d91464fcfd139fbdbf4d"
+        },
+        {
+          "name": "v64.0",
+          "sha": "361f4dfd4c2f38e175165d70f17c863da71d2785"
+        },
+        {
+          "name": "v63.0",
+          "sha": "3ac0a95788ba24e0e785307b067773b18c52cb7d"
+        },
+        {
+          "name": "v62.0",
+          "sha": "82671df96779bae79953bceecae898b7f9640a0e"
+        },
+        {
+          "name": "v61.0",
+          "sha": "535a2f8584264a0d75b4e090df3a424bf252fa21"
+        },
+        {
+          "name": "v60.0",
+          "sha": "25981bbb8e5d67b095a73a30bd037dc3c0f798a5"
+        },
+        {
+          "name": "v59.0",
+          "sha": "0be04953ad5e1c24d63e3d4555e421e0d6992894"
+        },
+        {
+          "name": "v58.0",
+          "sha": "992e599c24dc34fb2a9c531de9ad2fed048baf31"
+        },
+        {
+          "name": "v57.0",
+          "sha": "95d0cfa9554772a71dd2e8d898dc350f4271f43f"
+        },
+        {
+          "name": "v56.0",
+          "sha": "c8fe0d34612e392b8d31629fe237e39306bbb50f"
+        },
+        {
+          "name": "v55.0",
+          "sha": "c763f3374b95dfbd4d42b699ccbb2b9e95bbcf2e"
+        },
+        {
+          "name": "v54.0",
+          "sha": "204a4d632aa712767a9a953637732b384ba62fa3"
+        },
+        {
+          "name": "v53.0",
+          "sha": "d69250ce6f80d3ab63267d3c11cc02b63f00f2da"
+        },
+        {
+          "name": "v52.0",
+          "sha": "39c7eea76658d84f808e5719f1380b8ac64c2d91"
+        }
+      ],
+      "latest_release": null,
+      "latest_tag": {
+        "name": "v71.0",
+        "sha": "6ca7766997eefd90e705800195b780df016dc049"
+      },
+      "api_errors": {
+        "branches": null,
+        "protection": "gh: Branch not protected (HTTP 404)\n{\"message\":\"Branch not protected\",\"documentation_url\":\"https://docs.github.com/rest/branches/branch-protection#get-branch-protection\",\"status\":\"404\"}",
+        "root": null,
+        "workflows_contents": "gh: Not Found (HTTP 404)\n{\"message\":\"Not Found\",\"documentation_url\":\"https://docs.github.com/rest/repos/contents#get-repository-content\",\"status\":\"404\"}",
+        "workflows": null,
+        "runs": null,
+        "prs": null,
+        "issues": null,
+        "releases": null,
+        "tags": null,
+        "languages": null,
+        "packages": "{\n  \"message\": \"Not Found\",\n  \"documentation_url\": \"https://docs.github.com/rest\",\n  \"status\": \"404\"\ngh: Not Found (HTTP 404)\n}",
+        "readme": null
+      },
+      "current_classification": "PRODUCT",
+      "recommended_classification": "Keep as product repo only if NTS confirms finance-domain ownership; otherwise consolidate/rename by future decision.",
+      "folder_quality_notes": "missing description; no workflow files",
+      "governance_risks": [
+        "default main branch has no branch protection",
+        "missing GitHub description",
+        "no active GitHub Actions workflow listed"
+      ],
+      "required_next_action": "Add description, CI, audit/snapshot convention, and clarify relation to aier-life-super-app.",
+      "future_law_github_should_cover": true
+    },
+    {
+      "requested_name": "_archive_chatbot",
+      "renamed_from": null,
+      "full_name": "unitonzengarden/_archive_chatbot",
+      "accessible": true,
+      "html_url": "https://github.com/unitonzengarden/_archive_chatbot",
+      "visibility": "PRIVATE",
+      "private": true,
+      "archived": true,
+      "disabled": false,
+      "fork": false,
+      "is_template": false,
+      "mirror_url": null,
+      "description": "",
+      "topics": [],
+      "default_branch": "main",
+      "created_at": "2026-03-21T16:07:20Z",
+      "updated_at": "2026-04-24T16:42:46Z",
+      "pushed_at": "2026-04-24T16:42:36Z",
+      "size": 411,
+      "primary_language": "TypeScript",
+      "languages": {
+        "TypeScript": 588458,
+        "JavaScript": 13313,
+        "CSS": 11156
+      },
+      "license": null,
+      "package_indicators": [
+        "package.json",
+        "pnpm-lock.yaml"
+      ],
+      "packages_api": {
+        "accessible": false,
+        "error": "{\n  \"message\": \"Not Found\",\n  \"documentation_url\": \"https://docs.github.com/rest\",\n  \"status\": \"404\"\ngh: Not Found (HTTP 404)\n}",
+        "data": null
+      },
+      "has_issues": true,
+      "has_projects": true,
+      "has_wiki": false,
+      "merge_settings": {
+        "merge_commit_allowed": true,
+        "squash_merge_allowed": true,
+        "rebase_merge_allowed": true,
+        "auto_merge_allowed": false,
+        "delete_branch_on_merge": false,
+        "allow_update_branch": false,
+        "pull_request_creation_policy": "all"
+      },
+      "root_items": [
+        {
+          "name": ".cursor",
+          "type": "dir",
+          "path": ".cursor",
+          "size": 0
+        },
+        {
+          "name": ".env.example",
+          "type": "file",
+          "path": ".env.example",
+          "size": 407
+        },
+        {
+          "name": ".gitignore",
+          "type": "file",
+          "path": ".gitignore",
+          "size": 335
+        },
+        {
+          "name": ".vscode",
+          "type": "dir",
+          "path": ".vscode",
+          "size": 0
+        },
+        {
+          "name": "ARCHIVED.md",
+          "type": "file",
+          "path": "ARCHIVED.md",
+          "size": 386
+        },
+        {
+          "name": "LICENSE",
+          "type": "file",
+          "path": "LICENSE",
+          "size": 552
+        },
+        {
+          "name": "README.md",
+          "type": "file",
+          "path": "README.md",
+          "size": 3555
+        },
+        {
+          "name": "app",
+          "type": "dir",
+          "path": "app",
+          "size": 0
+        },
+        {
+          "name": "artifacts",
+          "type": "dir",
+          "path": "artifacts",
+          "size": 0
+        },
+        {
+          "name": "biome.jsonc",
+          "type": "file",
+          "path": "biome.jsonc",
+          "size": 1272
+        },
+        {
+          "name": "components.json",
+          "type": "file",
+          "path": "components.json",
+          "size": 402
+        },
+        {
+          "name": "components",
+          "type": "dir",
+          "path": "components",
+          "size": 0
+        },
+        {
+          "name": "drizzle.config.ts",
+          "type": "file",
+          "path": "drizzle.config.ts",
+          "size": 300
+        },
+        {
+          "name": "hooks",
+          "type": "dir",
+          "path": "hooks",
+          "size": 0
+        },
+        {
+          "name": "instrumentation-client.ts",
+          "type": "file",
+          "path": "instrumentation-client.ts",
+          "size": 142
+        },
+        {
+          "name": "instrumentation.ts",
+          "type": "file",
+          "path": "instrumentation.ts",
+          "size": 121
+        },
+        {
+          "name": "lib",
+          "type": "dir",
+          "path": "lib",
+          "size": 0
+        },
+        {
+          "name": "next.config.ts",
+          "type": "file",
+          "path": "next.config.ts",
+          "size": 1123
+        },
+        {
+          "name": "package.json",
+          "type": "file",
+          "path": "package.json",
+          "size": 3278
+        },
+        {
+          "name": "playwright.config.ts",
+          "type": "file",
+          "path": "playwright.config.ts",
+          "size": 2522
+        },
+        {
+          "name": "pnpm-lock.yaml",
+          "type": "file",
+          "path": "pnpm-lock.yaml",
+          "size": 297772
+        },
+        {
+          "name": "postcss.config.mjs",
+          "type": "file",
+          "path": "postcss.config.mjs",
+          "size": 146
+        },
+        {
+          "name": "proxy.ts",
+          "type": "file",
+          "path": "proxy.ts",
+          "size": 1290
+        },
+        {
+          "name": "public",
+          "type": "dir",
+          "path": "public",
+          "size": 0
+        },
+        {
+          "name": "tests",
+          "type": "dir",
+          "path": "tests",
+          "size": 0
+        },
+        {
+          "name": "tsconfig.json",
+          "type": "file",
+          "path": "tsconfig.json",
+          "size": 702
+        },
+        {
+          "name": "vercel-template.json",
+          "type": "file",
+          "path": "vercel-template.json",
+          "size": 330
+        },
+        {
+          "name": "vercel.json",
+          "type": "file",
+          "path": "vercel.json",
+          "size": 28
+        }
+      ],
+      "root_presence": {
+        "README": true,
+        "LICENSE": true,
+        "gitignore": true,
+        "docs": false,
+        "reports": false,
+        "snapshots": false,
+        "audit_logs": false,
+        "github_workflows": false
+      },
+      "readme": {
+        "exists": true,
+        "char_count": 3550,
+        "line_count": 71,
+        "headings": [
+          "## Features",
+          "## Model Providers",
+          "### AI Gateway Authentication",
+          "## Deploy Your Own",
+          "## Running locally"
+        ],
+        "excerpt": "<a href=\"https://chat.vercel.ai/\">\n  <img alt=\"Chatbot\" src=\"app/(chat)/opengraph-image.png\">\n  <h1 align=\"center\">Chatbot</h1>\n</a>\n<p align=\"center\">\n    Chatbot (formerly AI Chatbot) is a free, open-source template built with Next.js and the AI SDK that helps you quickly build powerful chatbot applications.",
+        "error": null
+      },
+      "branches": [
+        {
+          "name": "main",
+          "protected": false,
+          "commit_sha": "7ded30f4301b29efa2a03d6ed4959a913aed1349"
+        }
+      ],
+      "default_branch_commit": null,
+      "branch_protection": {
+        "protected": false,
+        "reason": "gh: Branch not protected (HTTP 404)\n{\"message\":\"Branch not protected\",\"documentation_url\":\"https://docs.github.com/rest/branches/branch-protection#get-branch-protection\",\"status\":\"404\"}"
+      },
+      "workflow_files": [],
+      "workflows": [],
+      "recent_runs": [],
+      "open_pr_count": 0,
+      "open_prs_sample": [],
+      "open_issue_count_listed": 0,
+      "open_issues_sample": [],
+      "open_issues_count_api": 0,
+      "releases": [],
+      "tags": [],
+      "latest_release": null,
+      "latest_tag": null,
+      "api_errors": {
+        "branches": null,
+        "protection": "gh: Branch not protected (HTTP 404)\n{\"message\":\"Branch not protected\",\"documentation_url\":\"https://docs.github.com/rest/branches/branch-protection#get-branch-protection\",\"status\":\"404\"}",
+        "root": null,
+        "workflows_contents": "gh: Not Found (HTTP 404)\n{\"message\":\"Not Found\",\"documentation_url\":\"https://docs.github.com/rest/repos/contents#get-repository-content\",\"status\":\"404\"}",
+        "workflows": null,
+        "runs": null,
+        "prs": null,
+        "issues": null,
+        "releases": null,
+        "tags": null,
+        "languages": null,
+        "packages": "{\n  \"message\": \"Not Found\",\n  \"documentation_url\": \"https://docs.github.com/rest\",\n  \"status\": \"404\"\ngh: Not Found (HTTP 404)\n}",
+        "readme": null
+      },
+      "current_classification": "ARCHIVE / LEGACY / NOT ACTIVE",
+      "recommended_classification": "Keep archived; not active; no Codex work except archive evidence.",
+      "folder_quality_notes": "missing description; no workflow files",
+      "governance_risks": [],
+      "required_next_action": "Leave archived and excluded from active project lists; optionally add archive topic/description if GitHub settings are later approved.",
+      "future_law_github_should_cover": true
+    }
+  ],
+  "boundaries": {
+    "no_product_code_modified": true,
+    "no_uniton_os_runtime_code_modified": true,
+    "no_law_files_modified": true,
+    "no_github_settings_changed": true,
+    "no_deploy_performed": true,
+    "writes_confined_to": "D:/UZG/Projects-v2/Uniton_Shared reports/snapshots/audit_logs only"
+  },
+  "evidence_commands": [
+    "pwd",
+    "git remote get-url origin",
+    "git branch --show-current",
+    "git status --short",
+    "gh auth status",
+    "gh repo list unitonzengarden --limit 100 --json name,nameWithOwner,visibility,isArchived,description,defaultBranchRef,updatedAt,pushedAt,url,repositoryTopics",
+    "gh repo view unitonzengarden/{repo} --json name,nameWithOwner,visibility,isArchived,description,defaultBranchRef,updatedAt,pushedAt,createdAt,url,repositoryTopics,isFork,isTemplate,licenseInfo,primaryLanguage,owner,hasIssuesEnabled,hasProjectsEnabled,hasWikiEnabled,mergeCommitAllowed,squashMergeAllowed,rebaseMergeAllowed,deleteBranchOnMerge",
+    "gh api /repos/unitonzengarden/{repo}",
+    "gh api --paginate /repos/unitonzengarden/{repo}/branches?per_page=100",
+    "gh api /repos/unitonzengarden/{repo}/branches/{default_branch}/protection",
+    "gh api /repos/unitonzengarden/{repo}/contents?ref={default_branch}",
+    "gh api /repos/unitonzengarden/{repo}/contents/.github/workflows?ref={default_branch}",
+    "gh workflow list --repo unitonzengarden/{repo} --json id,name,path,state",
+    "gh run list --repo unitonzengarden/{repo} --limit 5 --json databaseId,workflowName,displayTitle,status,conclusion,createdAt,updatedAt,headBranch,event,url",
+    "gh pr list --repo unitonzengarden/{repo} --state open --limit 100 --json number,title,headRefName,baseRefName,isDraft,createdAt,url",
+    "gh issue list --repo unitonzengarden/{repo} --state open --limit 100 --json number,title,createdAt,url",
+    "gh api /repos/unitonzengarden/{repo}/releases?per_page=10",
+    "gh api /repos/unitonzengarden/{repo}/tags?per_page=20",
+    "gh api /repos/unitonzengarden/{repo}/languages",
+    "gh api /repos/unitonzengarden/{repo}/readme -H Accept:application/vnd.github.raw"
+  ]
+}

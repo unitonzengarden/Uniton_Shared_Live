@@ -1,0 +1,171 @@
+{
+  "task_id": "LANE03-GITHUB-BRANCH-PROTECTION-APPLY-UNITON_SHARED_LIVE-V1",
+  "snapshot_type": "GITHUB_BRANCH_PROTECTION_APPLY_UNITON_SHARED_LIVE",
+  "result": "PASS",
+  "timestamp": "2026-04-30T00:50:23.0991706+07:00",
+  "execution_header": {
+    "lane": "Lane_03",
+    "executor": "Codex",
+    "authority": "NTS",
+    "mode": "CONTROLLED_EXECUTION",
+    "task_id": "LANE03-GITHUB-BRANCH-PROTECTION-APPLY-UNITON_SHARED_LIVE-V1",
+    "scope": "Apply mirror-safe branch protection to Uniton_Shared_Live main without blocking sync automation.",
+    "working_dir": "D:/UZG/Projects-v2/Uniton_Shared",
+    "repo": "unitonzengarden/Uniton_Shared",
+    "branch": "main",
+    "commit_sha": "ddb3012183fe4a28e686dc5ad41b33802e5627b3"
+  },
+  "scope_verification": {
+    "scope_integrity": "PASS",
+    "target_repo": "unitonzengarden/Uniton_Shared_Live",
+    "target_branch": "main",
+    "github_settings_changed": true,
+    "branch_protection_changed": true,
+    "status_checks_required": false,
+    "pr_requirement_enabled": false,
+    "source_workflow_modified": false,
+    "uniton_os_touched": false,
+    "product_repos_touched": false,
+    "law_files_modified": false,
+    "evidence_created": true
+  },
+  "capability_check": {
+    "actor": "Lane_03",
+    "action": "Apply mirror-safe branch protection to Uniton_Shared_Live main and write scoped evidence.",
+    "side_effect_class": "Scoped GitHub settings mutation for Uniton_Shared_Live main plus evidence artifact creation in Uniton_Shared.",
+    "capability_source": "NTS task authorization; LAW_GITHUB_01; LAW_N5 REPORT_TEMPLATE_V2; GITHUB_BRANCH_PROTECTION_PLAN_V1.",
+    "authorization": "Explicitly allowed only if mirror sync write path was proven safe."
+  },
+  "repo_boundary_check": {
+    "repo_ownership": "VALID",
+    "cross_repo_write": "NONE",
+    "notes": "Only Uniton_Shared_Live branch protection settings were changed. Evidence artifacts were written only in Uniton_Shared."
+  },
+  "preflight": {
+    "working_dir_confirmed": "D:/UZG/Projects-v2/Uniton_Shared",
+    "remote": "https://github.com/unitonzengarden/Uniton_Shared.git",
+    "branch": "main",
+    "local_head_after_fast_forward": "ddb3012183fe4a28e686dc5ad41b33802e5627b3",
+    "origin_main_head_after_fast_forward": "ddb3012183fe4a28e686dc5ad41b33802e5627b3",
+    "worktree_clean_before_apply": true,
+    "gh_account": "unitonzengarden",
+    "target_repo_viewer_permission": "ADMIN"
+  },
+  "mirror_safety_gate": {
+    "result": "PASS",
+    "sync_workflow": ".github/workflows/sync_runtime_to_public.yml",
+    "sync_writer_mechanism": "actions/checkout target checkout uses secrets.LIVE_SYNC_TOKEN, then git push from target checkout",
+    "writer_identity_configured_in_workflow": "AIER Code Sync Bot <sync-bot@unitonzengarden>",
+    "token_type_evidence": "Secret name LIVE_SYNC_TOKEN; token value redacted by GitHub Actions logs",
+    "latest_successful_sync_run_id": 25123225369,
+    "latest_successful_sync_source_commit": "ff6baac5522afa1ded31f645d1bf9b19a5a659b2",
+    "latest_successful_mirror_commit": "c4e45e93092d64300ef4f11d3a7c3798bccec76d",
+    "latest_push_log_evidence": "Run 25123225369 pushed 943c7ce..c4e45e9 main -> main using Uniton_Shared_Live checkout credentials",
+    "sync_path_safe_reason": "Protection does not require PRs, status checks, deployments, or push restrictions. Normal fast-forward git push remains allowed; force pushes and deletions are blocked.",
+    "sync_info_raw_readable": true,
+    "sync_info_http_status": 200,
+    "optional_sync_test": "Not triggered. SYNC_INFO was read only; source runtime files were not modified just to force a sync."
+  },
+  "pre_apply_state": {
+    "target_repo": "unitonzengarden/Uniton_Shared_Live",
+    "target_branch": "main",
+    "branch_head": "c4e45e93092d64300ef4f11d3a7c3798bccec76d",
+    "branch_protected": false,
+    "classic_branch_protection": "NO_CLASSIC_PROTECTION",
+    "rulesets_count": 0,
+    "open_pr_count": 0
+  },
+  "applied_settings": {
+    "protected_branch": true,
+    "required_pull_request_reviews": null,
+    "pr_requirement_enabled": false,
+    "required_status_checks": null,
+    "required_status_checks_enabled": false,
+    "required_deployments_enabled": false,
+    "required_conversation_resolution": false,
+    "required_linear_history": false,
+    "enforce_admins": false,
+    "restrictions": null,
+    "allow_force_pushes": false,
+    "allow_deletions": false,
+    "block_creations": false,
+    "lock_branch": false,
+    "allow_fork_syncing": false,
+    "rulesets_created": 0
+  },
+  "post_apply_verification": {
+    "main_protected": true,
+    "force_pushes_disabled": true,
+    "deletions_disabled": true,
+    "required_status_checks_not_enabled": true,
+    "pr_requirement_disabled": true,
+    "admin_enforcement": false,
+    "restrictions": null,
+    "rulesets_count": 0,
+    "sync_workflow_compatibility_documented": true
+  },
+  "other_repo_safety_check": {
+    "unitonzengarden/Uniton_Shared": {
+      "classic_protection": "CLASSIC_PROTECTION_PRESENT",
+      "rulesets_count": 0,
+      "note": "Previously applied governance source protection; not modified by this task."
+    },
+    "unitonzengarden/Uniton_OS": {
+      "classic_protection": "NO_CLASSIC_PROTECTION_OR_INACCESSIBLE",
+      "rulesets_count": 0
+    },
+    "unitonzengarden/uzgplus-app": {
+      "classic_protection": "CLASSIC_PROTECTION_PRESENT",
+      "rulesets_count": 0,
+      "note": "Pre-existing product protection; not modified by this task."
+    },
+    "unitonzengarden/AIFI_LIFE": {
+      "classic_protection": "NO_CLASSIC_PROTECTION_OR_INACCESSIBLE",
+      "rulesets_count": 0
+    },
+    "unitonzengarden/aier-life-super-app": {
+      "classic_protection": "NO_CLASSIC_PROTECTION_OR_INACCESSIBLE",
+      "rulesets_count": 0
+    },
+    "unitonzengarden/_archive_chatbot": {
+      "classic_protection": "NO_CLASSIC_PROTECTION_OR_INACCESSIBLE",
+      "rulesets_count": 0
+    }
+  },
+  "validation": {
+    "mirror_safety_gate": "PASS",
+    "target_protection_verify": "PASS",
+    "status_checks_disabled_verify": "PASS",
+    "pr_requirement_disabled_verify": "PASS",
+    "source_workflow_unchanged": "PASS",
+    "report_template_v2_check": "PASS",
+    "json_parse": "PASS"
+  },
+  "risks_warnings": [
+    "Branch protection intentionally does not require PRs on Uniton_Shared_Live because the mirror sync workflow writes directly to main.",
+    "Admin enforcement remains disabled to preserve NTS/admin emergency access.",
+    "The LIVE_SYNC_TOKEN value and exact backing account are redacted by GitHub; safety is based on workflow configuration, recent successful push evidence, and a non-blocking protection profile.",
+    "Post-protection sync was not triggered because forcing source runtime changes solely for a sync test was out of scope."
+  ],
+  "sync": {
+    "local_head": "ddb3012183fe4a28e686dc5ad41b33802e5627b3 at snapshot generation",
+    "origin_main_head": "ddb3012183fe4a28e686dc5ad41b33802e5627b3 at snapshot generation",
+    "match": "YES at snapshot generation",
+    "worktree_clean": "NO - evidence artifacts pending commit; final clean sync verified after push"
+  },
+  "governance_confirmation": {
+    "no_law_modified": true,
+    "no_cross_lane_violation": true,
+    "no_authority_override": true,
+    "repo_integrity_preserved": true,
+    "one_task_only": true,
+    "no_required_status_checks": true,
+    "no_pr_requirement": true,
+    "no_source_workflow_modified": true,
+    "no_uniton_os_touched": true,
+    "no_product_repo_touched": true,
+    "no_deployment_or_integration_task": true,
+    "no_prs_merged_or_closed": true
+  },
+  "next_task": "LANE03-GITHUB-BRANCH-PROTECTION-VERIFY-UNITON_SHARED_LIVE-V1"
+}

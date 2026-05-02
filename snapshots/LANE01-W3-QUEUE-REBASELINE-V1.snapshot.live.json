@@ -1,0 +1,113 @@
+{
+  "task_id": "LANE01-W3-QUEUE-REBASELINE-V1",
+  "title": "W3 queue rebaseline — defer Lane_04 strategic; unblock 3-Lane parallel",
+  "lane": "Lane_01",
+  "executor": "CLAC-1",
+  "model": "claude-opus-4-7",
+  "self_approve_authority": "AMD_LANE01_CTO_AUTO_APPROVE_TECH_NON_CANON §3.1 YES list (queue management = tech non-canon, no canon/law/skill edits)",
+  "parent_head": "284a12c271313bf69775d864b747724bf2defe0a",
+  "phases": [
+    {
+      "id": "PRE-FLIGHT",
+      "actions": ["git fetch origin", "git pull --rebase origin main", "git status check"]
+    },
+    {
+      "id": "A",
+      "name": "Lane_01 queue: remove Lane_04 rows + renumber",
+      "actions": [
+        "Delete row 3 LANE01-W3-LANE04-CONFIG-V1",
+        "Delete row 4 LANE01-W3-LANE04-LIVE-V1",
+        "Renumber rows 5-11 → 3-9 (subtract 2)",
+        "New row 3 = LANE01-W3-QA-LOOP-WIRE-V1; rebase deps to LANE01-W2-CLOSEOUT-V1; status READY",
+        "Total: 9 rows (was 11; -2)"
+      ]
+    },
+    {
+      "id": "B",
+      "name": "Lane_02 queue: rebase NETWORK-CONSOLIDATE deps",
+      "actions": [
+        "Row 2 LANE02-W3-LANE-NETWORK-CONSOLIDATE-V1: rebase deps from LANE01-W3-LANE04-LIVE-V1 → LANE01-W2-CLOSEOUT-V1 (DONE) + LANE02-W2-NETWORK-BRAIN-MVP-V1 (DONE)",
+        "Status READY (was BLOCKED)",
+        "Rows 3-6 unchanged",
+        "Total: 6 rows unchanged"
+      ]
+    },
+    {
+      "id": "C",
+      "name": "Lane_03 queue: defer LAW_N13 + insert 2 hygiene tickets",
+      "actions": [
+        "Row 3 LANE03-W3-LAW-N13-AUTHOR-V1 → status DEFERRED-STRATEGIC (re-activate when NTS approves Lane_04 onboarding)",
+        "Insert NEW row 3 LANE03-W2-CANON-GUARD-HEADING-FIX-V1 READY no deps no NTS gate",
+        "Insert NEW row 4 LANE03-W3-CAPABILITY-REGISTRY-RECONCILE-V1 READY no deps no NTS gate",
+        "Renumber remaining rows downstream",
+        "Row 7 LANE03-W4-LAW-COMPILATION-V1: remove LAW_N13 status dep (LAW_N13 deferred); keep SMOKE-LIVE dep",
+        "Move LAW_N13 row to STRATEGIC DEFERRED section in same file",
+        "Net: insert 2, defer 1 → active table 10 rows"
+      ]
+    },
+    {
+      "id": "D",
+      "name": "Move 3 Lane_04-related task specs to strategic roadmap",
+      "actions": [
+        "mkdir roadmaps/strategic/future_lanes/",
+        "git mv task_specs/LANE01-W3-LANE04-CONFIG-V1.md → roadmaps/strategic/future_lanes/",
+        "git mv task_specs/LANE01-W3-LANE04-LIVE-V1.md → roadmaps/strategic/future_lanes/",
+        "git mv task_specs/LANE03-W3-LAW-N13-AUTHOR-V1.md → roadmaps/strategic/future_lanes/",
+        "Add STRATEGIC header banner to each moved file",
+        "Author roadmaps/strategic/future_lanes/README.md (deferred specs + activation criteria)"
+      ]
+    },
+    {
+      "id": "E",
+      "name": "Verify cascade via lane_dispatch.py",
+      "actions": [
+        "Run --pick-next for Lane_01 → expect LANE01-W3-QA-LOOP-WIRE-V1 READY",
+        "Run --pick-next for Lane_02 → expect LANE02-W3-LANE-NETWORK-CONSOLIDATE-V1 READY",
+        "Run --pick-next for Lane_03 → expect LANE03-W2-CANON-GUARD-HEADING-FIX-V1 READY"
+      ]
+    },
+    {
+      "id": "F",
+      "name": "Update governance surfaces",
+      "actions": [
+        "MASTER_CHECKLIST.md: rebaseline banner + STRATEGIC DEFERRED section + PENDING table updates",
+        "current_state.md: §1 Phase = W3_AUTOMATION_PHASE_ACTIVE / 3-LANE-PARALLEL-RUN; §13 changelog",
+        "NOTIFICATION_LEDGER.md + .json: +1 entry NTF-L01-ALL-20260429-028 QUEUE_REBASELINE",
+        "AMENDMENTS_LOG.md: +1 row Lane_01 self-approve (queue management = tech non-canon)",
+        "MASTER_TASK_LIST_V1.1.md: §2 Lane_01 W3 row update; §2 Lane_03 W3 row update; §5 Approval Gates revision; +§13 STRATEGIC DEFERRED section"
+      ]
+    }
+  ],
+  "boundary_check": {
+    "no_shared_laws_edited": true,
+    "no_canon_edited": true,
+    "no_5_active_skills_modified": true,
+    "no_existing_workers_modified": true,
+    "no_dispatcher_modified": true,
+    "no_lane_dispatch_modified": true,
+    "no_generators_modified": true,
+    "no_lane_02_internal_logic_modified": true,
+    "no_lane_03_internal_logic_modified": true,
+    "no_secrets_hardcoded": true,
+    "queue_management_only": true,
+    "amendments_log_row_only_for_lane_03": "+1 row in AMENDMENTS_LOG by Lane_01 — same precedent as prior Lane_01 self-approve tasks",
+    "task_specs_relocation_only": "git mv preserves history; no content edits beyond STATUS banner header insertion"
+  },
+  "expected_deliverables": [
+    "snapshots/LANE01-W3-QUEUE-REBASELINE-V1.snapshot.live.json",
+    "reports/LANE01-W3-QUEUE-REBASELINE-V1_REPORT.md",
+    "audit_logs/LANE01-W3-QUEUE-REBASELINE-V1_audit.log",
+    "network/task_queues/Lane_01.md (rebaselined)",
+    "network/task_queues/Lane_02.md (rebaselined)",
+    "network/task_queues/Lane_03.md (rebaselined)",
+    "roadmaps/strategic/future_lanes/LANE01-W3-LANE04-CONFIG-V1.md (moved)",
+    "roadmaps/strategic/future_lanes/LANE01-W3-LANE04-LIVE-V1.md (moved)",
+    "roadmaps/strategic/future_lanes/LANE03-W3-LAW-N13-AUTHOR-V1.md (moved)",
+    "roadmaps/strategic/future_lanes/README.md (NEW)",
+    "runtime/checklist/MASTER_CHECKLIST.md (updated)",
+    "runtime/current_state.md (updated)",
+    "notifications/NOTIFICATION_LEDGER.md + .json (+1 entry)",
+    "docs/LAW_CLA_LLM/SHARED/amendments/AMENDMENTS_LOG.md (+1 row)",
+    "roadmaps/MASTER_TASK_LIST_V1.1.md (updated)"
+  ]
+}

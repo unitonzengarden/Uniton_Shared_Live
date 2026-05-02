@@ -1,0 +1,19 @@
+{
+  "timestamp": "2026-04-26T21:00:14+07:00",
+  "task_id": "LANE03-AIER-CODE-CANON-SPEC-STACK-AMENDMENT-PLAN-V1",
+  "git_head_at_snapshot_generation": "1e56656e341d74f5fba684457778b7b0026043b6",
+  "git_origin_main_at_snapshot_generation": "1e56656e341d74f5fba684457778b7b0026043b6",
+  "git_final_local_head": "recorded in final NTS output",
+  "git_final_origin_main": "recorded in final NTS output",
+  "packet_id": "AMD_LANE03_AIER_CODE_CANON_SPEC_STACK_2026-04-26",
+  "amendment_plan_path": "docs/LAW_CLA_LLM/SHARED/amendments/pending/AMD_LANE03_AIER_CODE_CANON_SPEC_STACK_2026-04-26/AMENDMENT_PLAN_V1.md",
+  "issue_count": 5,
+  "proposed_candidate_file_count": 5,
+  "report_paths": {
+    "markdown": "reports/LANE03-AIER-CODE-CANON-SPEC-STACK-AMENDMENT-PLAN-V1_REPORT.md",
+    "json": "reports/LANE03-AIER-CODE-CANON-SPEC-STACK-AMENDMENT-PLAN-V1.json",
+    "audit_log": "audit_logs/LANE03-AIER-CODE-CANON-SPEC-STACK-AMENDMENT-PLAN-V1_audit.log"
+  },
+  "warning": "Pre-existing out-of-scope untracked CANON draft left untouched."
+}
+

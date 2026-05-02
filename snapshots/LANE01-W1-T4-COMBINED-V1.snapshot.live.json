@@ -1,0 +1,65 @@
+{
+  "task_id": "LANE01-W1-T4-COMBINED-V1",
+  "task_title": "3-in-1: Runtime slim + Mirror sync verify + W1.T4 smoke test",
+  "phase": "ROADMAP_W1_EXECUTION — combined runtime hygiene + sync verify + W1.T4 smoke",
+  "executor": {
+    "lane": "Lane_01 (Claude Opus 4.7 on Vultr Windows Server)",
+    "role": "CTO author + self-approve under AMD_LANE01_CTO_AUTO_APPROVE_TECH_NON_CANON §3.1 — runtime hygiene + Boot Minimum updates are explicitly in YES list",
+    "agent": "CLAC-1 (Claude Code Desktop)",
+    "model": "claude-opus-4-7",
+    "working_dir": "C:\\workspace\\Uniton_Shared"
+  },
+  "execution_started_utc": "2026-04-27T16:00:00Z",
+  "parent_head_at_start": "c7c4be6 (full-repo audit landed)",
+  "branch": "main",
+  "remote": "https://github.com/unitonzengarden/Uniton_Shared.git",
+  "preflight_result": "PASS — HEAD == c7c4be6; branch main; up to date; gh CLI authenticated",
+  "phase_a_plan": {
+    "current_line_counts": {
+      "current_state.md": 245,
+      "MASTER_CHECKLIST.md": 92,
+      "ACTION_REQUIRED_BOARD.md": 18,
+      "NOTIFICATION_LEDGER.md": 21,
+      "NOTIFICATION_LEDGER.json": 253
+    },
+    "rotation_finding": "Repo too fresh for rotation — all entries are 2026-04-26/27, within the 7-day / 3-day / 30-entry retention windows. Build archive infrastructure now so future rotations have a home; minimal trimming this turn (only current_state §6 has 6 entries vs 5-target).",
+    "actions": [
+      "Create runtime/archive/README.md + notifications/archive/README.md (policy docs)",
+      "Trim current_state §6 from 6 → 5 most-recent tasks (drop LANE03-LAB-RULE-FOUNDATION-V1)",
+      "Update sync workflow paths exclusion: '!runtime/archive/**', '!notifications/archive/**'"
+    ]
+  },
+  "phase_b_plan": {
+    "diagnose_targets": [
+      "git rev-parse origin/main vs raw URL fetch of public mirror current_state.md",
+      "gh run list --workflow=sync_runtime_to_public.yml --limit 10",
+      "Document GitHub raw CDN cache typical 5-min lag",
+      "Recommend cache-busting pattern for CLA"
+    ]
+  },
+  "phase_c_plan": {
+    "smoke_target_task": "LANE01-W1-T3-BOOT-PROTOCOL-UPDATE-V1 — small real task per Roadmap V1 FINAL §3 W1.T3",
+    "smoke_loop": [
+      "Invoke aier-dispatch DRAFT v0.1 — generate task prompt + handoff JSON; with explicit Lane_01 consent + audit-log marker per SKILL_INVOCATION_PROTOCOL.md §5",
+      "Execute W1.T3: update SHARED/boot/AIER_CODE_BOOT_MINIMUM_V1.md with 5-step skill boot sequence",
+      "Commit + push the boot protocol update",
+      "Invoke aier-verify DRAFT v0.1 — verify W1.T3 output against AC; with explicit Lane_01 consent + audit-log marker",
+      "Document smoke evidence: skill instructions followed, output schema-conformant, verdict captured"
+    ]
+  },
+  "boundary_planned": {
+    "shared_laws_modified": false,
+    "canon_modified": false,
+    "skill_md_or_metadata_modified": "NO — only INVOKE skills, do not modify their content",
+    "skills_marked_active": false,
+    "lane_other_folders_modified": false,
+    "outside_repo_touched": false,
+    "force_push_or_rebase": false,
+    "archive_files_synced_to_public": "NO — workflow paths exclusion prevents",
+    "boot_minimum_updates_in_yes_list": "YES per AMD_LANE01_CTO_AUTO_APPROVE_TECH_NON_CANON §3.1 YES list"
+  },
+  "git_final_local_HEAD": "(populated after final push)",
+  "git_final_origin_main": "(populated after final push)",
+  "worktree_clean": "(verified post-final-push)",
+  "next_recommended_task": "After this 3-phase task: ACTIVATE-V1 readiness check (Lane_01 evaluates whether W1.T4 smoke evidence is sufficient to bundle 4 DRAFT skills DRAFT→ACTIVE). Then dispatch LANE03-W1-T2-CANON-GUARD-AUTHOR-V1 to complete the 5th skill."
+}

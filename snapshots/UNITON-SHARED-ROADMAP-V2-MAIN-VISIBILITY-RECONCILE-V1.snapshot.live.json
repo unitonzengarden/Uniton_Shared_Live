@@ -1,0 +1,62 @@
+{
+  "task_id": "UNITON-SHARED-ROADMAP-V2-MAIN-VISIBILITY-RECONCILE-V1",
+  "lane": "Lane_03",
+  "created_at": "2026-04-26T08:24:13+07:00",
+  "repo": {
+    "url": "https://github.com/unitonzengarden/Uniton_Shared.git",
+    "branch": "main",
+    "local_working_directory": "D:\\UZG\\Projects-v2\\Uniton_Shared",
+    "reconciliation_worktree": "D:\\UZG\\Projects-v2\\Uniton_Shared_visibility_reconcile"
+  },
+  "git_state_before_reconcile": {
+    "local_head": "29e0ff294918d367d4f897a4d97189430490592f",
+    "origin_main": "2edf9dd6241ad83f9918bbd21ca6b0b921e02f47",
+    "status_short": "clean",
+    "branch_relation": "main...origin/main [ahead 16, behind 15]"
+  },
+  "visibility_before_reconcile": {
+    "git_ls_tree_origin_main": "missing",
+    "github_api_main": "404_not_found",
+    "verdict": "expected files existed locally but were not visible on origin/main"
+  },
+  "source_commits": {
+    "roadmap_discussion_pack_and_review_messages": "29e0ff294918d367d4f897a4d97189430490592f",
+    "lane_response_schema": "0e9fe0984b204b44700a8860c5c47b47ce548e9c"
+  },
+  "expected_paths": [
+    {
+      "path": "handoffs/inbox/MSG-L03-L01-REVIEW-20260426-001.json",
+      "local_head_present": true,
+      "origin_main_before_present": false,
+      "restored_from_commit": "29e0ff294918d367d4f897a4d97189430490592f"
+    },
+    {
+      "path": "handoffs/inbox/MSG-L03-L02-REVIEW-20260426-001.json",
+      "local_head_present": true,
+      "origin_main_before_present": false,
+      "restored_from_commit": "29e0ff294918d367d4f897a4d97189430490592f"
+    },
+    {
+      "path": "docs/LAW_CLA_LLM/ROADMAPS/AIER_CODE_ROADMAP_V2_DISCUSSION_PACK.md",
+      "local_head_present": true,
+      "origin_main_before_present": false,
+      "restored_from_commit": "29e0ff294918d367d4f897a4d97189430490592f"
+    },
+    {
+      "path": "contracts/lane_response.schema.json",
+      "local_head_present": true,
+      "origin_main_before_present": false,
+      "restored_from_commit": "0e9fe0984b204b44700a8860c5c47b47ce548e9c"
+    }
+  ],
+  "reconciliation": {
+    "strategy": "restore only expected paths from existing local evidence onto current origin/main, then push fast-forward to main",
+    "force_push": false,
+    "deploy": false,
+    "roadmap_content_modified": false,
+    "shared_laws_modified": false,
+    "lane_folders_modified": false,
+    "product_app_backend_created": false
+  },
+  "post_push_origin_main_sha": "recorded in final operator output after push and verification"
+}

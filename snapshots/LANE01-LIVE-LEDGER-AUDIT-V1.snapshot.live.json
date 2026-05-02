@@ -1,0 +1,151 @@
+{
+  "task_id": "LANE01-LIVE-LEDGER-AUDIT-V1",
+  "executor": "CLAC-1",
+  "model": "claude-opus-4-7",
+  "lane": "Lane_01",
+  "self_approve_authority": "AMD_LANE01_CTO_AUTO_APPROVE_TECH_NON_CANON §3.1 (read-only audit = tech non-canon)",
+  "purpose": "Read-only audit of Uniton_Shared_Live legacy state + gap analysis vs URL_REGISTRY tier-1 expectations + NTS Live Ledger vision (every task done → live log)",
+  "started_at": "2026-04-29T19:00:00Z",
+  "audit_target_repo": "unitonzengarden/Uniton_Shared_Live",
+  "audit_target_head": "7785581",
+  "audit_target_last_push": "2026-04-28T19:33:50Z",
+  "deliverables_repo_head": "32701083",
+  "branch": "audit/LANE01-LIVE-LEDGER-AUDIT-V1 (in Uniton_Shared)",
+  "phases_completed": ["A", "B", "C", "E", "F", "G", "H"],
+  "phases_skipped_with_reason": {
+    "D": "skipped per task spec time-box (≤30 min on Phase D); content patterns characterized via Phase C header sampling instead"
+  },
+  "phases_pending": ["I (this snapshot is part of)", "J PR + self-merge", "K handoff CLA"],
+  "executive_summary": {
+    "repo_size_bytes": 285000,
+    "file_count": 12,
+    "last_commit": "7785581 sync: runtime state from 9798af2cd11dd2",
+    "last_commit_date": "2026-04-28T19:33:50Z",
+    "activity_30d": 75,
+    "activity_30d_breakdown": "74 by AIER Code Sync Bot + 1 by Uniton Future",
+    "tier_1_expected_files_present": "7/7",
+    "lane_queues_present": "3/4 (Lane_04 expected absent)",
+    "sync_workflow_active": true,
+    "sync_workflow_last_run": "2026-04-28T19:33:43Z",
+    "sync_broken_since_hours": "~14",
+    "live_ledger_readiness": "PARTIAL"
+  },
+  "top_3_gaps": [
+    {
+      "severity": "CRITICAL",
+      "gap": "Sync workflow has not run since 2026-04-28T19:33Z. 28+ qualifying pushes on 2026-04-29 did not trigger sync.",
+      "root_cause_hypothesis": "GitHub Actions default GITHUB_TOKEN cannot trigger downstream workflows on push (anti-loop protection). Auto-status + heartbeat workflows commit using default token → sync downstream blocked. Recent PR merges happened but their diffs touched docs/scripts (not in sync paths-filter), so they don't trigger either.",
+      "evidence": "gh run list --workflow=sync_runtime_to_public.yml shows last 15 runs all on 2026-04-28; current Uniton_Shared HEAD 32701083 vs last sync source 9798af2 (28 commits behind)"
+    },
+    {
+      "severity": "MAJOR",
+      "gap": "No task-log surface synced. /reports/, /audit_logs/, /snapshots/, /handoffs/ are NOT in whitelist, so finished task artifacts are not publicly visible.",
+      "evidence": "Folder presence check Phase F: 11 of 14 critical Uniton_Shared dirs missing in Live; the missing 4 task-log dirs are most relevant to NTS vision."
+    },
+    {
+      "severity": "MEDIUM",
+      "gap": "No AIER status / decision ledger / deploy state surfaces. UDNA marker, heartbeat ledger, NTS_DECISION packets all live elsewhere; none reachable via Live mirror.",
+      "evidence": "Uniton_Shared_Live has only 3 top-level dirs (runtime, notifications, network) + README + SYNC_INFO. Missing aier-status/, ledger/, status/ namespaces."
+    }
+  ],
+  "structural_assessment": {
+    "what_works": [
+      "7-file runtime mirror is the right primitive for V0",
+      "Whitelist by design is correct (canon/code stays private)",
+      "SYNC_INFO.md self-documents sync mechanism",
+      "Bot identity distinguishable in git log",
+      "All 7 expected tier-1 files exist with real content"
+    ],
+    "what_missing": [
+      "Task-log surfaces (/reports/, /audit_logs/, /snapshots/, /handoffs/)",
+      "AIER status surface (UDNA, heartbeat ledger, brain pointers)",
+      "Deploy/release state",
+      "Decision ledger (NTS_DECISION packets)",
+      "Index for searchability"
+    ],
+    "what_outdated": [
+      "All synced files reflect Uniton_Shared HEAD 9798af2 (2026-04-28T19:33Z)",
+      "Current Uniton_Shared HEAD 32701083 — 28 commits + ~14h newer",
+      "auto_project_status workflow generating fresh content; sync workflow not picking it up"
+    ],
+    "what_unclear": [
+      "LIVE_SYNC_TOKEN health/expiration",
+      "Whether bot push commits are explicitly excluded by hidden filter",
+      "Whether [vercel skip] marker has Actions side-effect",
+      "Whether anyone noticed the auto-trigger break"
+    ]
+  },
+  "options": {
+    "A_keep_augment": {
+      "summary": "Keep 7-file whitelist; ALSO add task-log surfaces; fix chained trigger.",
+      "pros": ["Smallest change", "Backward compatible URLs", "Workflow understands paths-filter"],
+      "cons": ["Whitelist gets long", "Bigger blast radius", "Trigger fix needed regardless"],
+      "effort_days": 1
+    },
+    "B_migrate": {
+      "summary": "Keep 7-file mirror as runtime/ block. Add tasks/, logs/, ledger/, status/, aier-status/. Fix trigger.",
+      "pros": ["Clean separation", "Maps NTS vision", "Doesn't disturb URLs"],
+      "cons": ["More upfront design", "Sync workflow rewrite", "Need decisions on mirror-vs-derive"],
+      "effort_days": 3
+    },
+    "C_redesign": {
+      "summary": "Wipe Uniton_Shared_Live, build greenfield.",
+      "pros": ["No legacy", "Fully designed for vision"],
+      "cons": ["Breaks tier-1 URL_REGISTRY contracts", "Loses commit history", "Risky"],
+      "effort_days": 5
+    }
+  },
+  "claco_recommendation": {
+    "option": "B",
+    "rationale": "7-file runtime/ mirror works architecturally; only sync trigger is broken (fixable). NTS vision adds layers, not replaces — Option A becomes paths-filter monster; Option C breaks URL_REGISTRY tier-1. Option B keeps runtime/* URLs stable + adds new namespaces matching natural growth pattern (each top-level dir = one concern)."
+  },
+  "proposed_structure_summary": {
+    "preserved_v0": ["runtime/", "notifications/", "network/", "README.md", "SYNC_INFO.md"],
+    "new_v1": ["tasks/", "ledger/", "status/", "aier-status/aier-code/"],
+    "rejected_overkill": ["tasks/active/ folder (use single roll-up file)", "aier-status/aier-ops/ (cross-AIER goes through Bridge, not file mirror)"],
+    "additions_suggested": ["health/INVARIANTS.live.md", "FAQ.live.md", "30-day archive policy for tasks/completed/"]
+  },
+  "critical_fix_required_regardless_of_option": {
+    "title": "Chained-workflow trigger fix",
+    "options": [
+      "Use PAT (Personal Access Token) for auto_project_status push instead of default GITHUB_TOKEN",
+      "Use repository_dispatch event chain (auto_project_status fires repository_dispatch → sync listens for it)",
+      "Add workflow_run trigger to sync workflow (listens for auto_project_status completion)"
+    ],
+    "blocking_for": "All 3 options (A/B/C) — without this fix, no sync ever fires from auto-regen pushes"
+  },
+  "boundary_check": {
+    "no_modify_uniton_shared_live": "PASS — only git pull, git log, find, cat used",
+    "no_modify_uniton_os": "PASS",
+    "no_modify_code_uniton_shared": "PASS — only audit/snapshots/reports/audit_logs/handoffs touched",
+    "vercel_skip_on_commit": "PENDING (will apply at Phase J)",
+    "lane01_dot_format_3_deliverables": "PASS",
+    "self_merge_per_AMD": "PENDING (Phase J)",
+    "nts_clicks": 0,
+    "no_admin_no_force_push": "PASS"
+  },
+  "acceptance_criteria_status": {
+    "AC1_clone_synced": true,
+    "AC2_metadata_captured": true,
+    "AC3_inventory_complete": true,
+    "AC4_7_expected_files_checked": true,
+    "AC5_lane_queues_checked": "PASS (3/4; Lane_04 expected absent)",
+    "AC6_top_10_files_sampled": "PARTIAL (skipped per time-box; pattern characterized)",
+    "AC7_sync_workflow_audited": true,
+    "AC8_cross_reference_done": true,
+    "AC9_gap_matrix_vs_NTS_vision": true,
+    "AC10_audit_report_12_sections": "PASS (14 sections)",
+    "AC11_options_A_B_C_with_recommendation": "PASS (Option B recommended)",
+    "AC12_proposed_structure_with_critique": true,
+    "AC13_3_deliverables_DOT_format": true,
+    "AC14_PR_self_merged": "PENDING",
+    "AC15_no_modify_uniton_shared_live": true,
+    "AC16_nts_clicks_zero": true
+  },
+  "expected_deliverables": [
+    "reports/LANE01-LIVE-LEDGER-AUDIT-V1_REPORT.md (the audit report)",
+    "snapshots/LANE01-LIVE-LEDGER-AUDIT-V1.snapshot.live.json (this)",
+    "audit_logs/LANE01-LIVE-LEDGER-AUDIT-V1_audit.log",
+    "handoffs/inbox/Lane_01/MSG-CLAC1-LIVE-LEDGER-AUDIT-V1-COMPLETE.json"
+  ]
+}

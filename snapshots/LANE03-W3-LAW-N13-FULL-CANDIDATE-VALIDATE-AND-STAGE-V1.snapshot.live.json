@@ -1,0 +1,61 @@
+{
+  "task_id": "LANE03-W3-LAW-N13-FULL-CANDIDATE-VALIDATE-AND-STAGE-V1",
+  "lane": "Lane_03",
+  "generated_at": "2026-04-28T23:42:09+07:00",
+  "write_repo": "Uniton_Shared",
+  "read_repos": [
+    "Uniton_Shared",
+    "Uniton_OS"
+  ],
+  "repo_mode": {
+    "uniton_shared_write_allowed": true,
+    "uniton_os_read_only": true,
+    "uniton_os_modified": false,
+    "law_n13_activated": false,
+    "active_laws_modified": false,
+    "implementation_created": false
+  },
+  "candidate": {
+    "path": "docs/LAW_CLA_LLM/SHARED/architecture/AIER_LIFE_BRIDGE_CONTRACTS/LAW_N13_MULTI_REPO_AND_HANDOFFS_FULL_CANDIDATE.md",
+    "status": "DRAFT / PENDING NTS APPROVAL",
+    "amendment_ready": true,
+    "activation_allowed": false,
+    "metadata_reference_fixed": true
+  },
+  "sync_before": {
+    "uniton_shared_head": "93f9c6bb301b08bdd85d212cda0bb5437b85867d",
+    "uniton_shared_origin_main": "93f9c6bb301b08bdd85d212cda0bb5437b85867d",
+    "uniton_os_head": "58a084187bef36e15f1dc540f8ea88266d29f4dc"
+  },
+  "sync_precommit": {
+    "origin_advanced_during_task": true,
+    "uniton_shared_fast_forwarded_to": "1f61712604589cb29467090bf40769c825fa4c06",
+    "incoming_files": [
+      "network/ACTIVITY_FEED.md",
+      "network/LANE_REGISTRY.md",
+      "runtime/PROJECT_STATUS.md"
+    ]
+  },
+  "validation": {
+    "completed_at": "2026-04-28T23:45:13+07:00",
+    "git_status_uniton_shared": "PASS_EXPECTED_TASK_FILES_ONLY",
+    "file_existence_checks": "PASS",
+    "decision_json_parse": "PASS",
+    "contract_file_check": "PASS",
+    "pytest_governance_tests": "PASS_174_PASSED_39_WARNINGS",
+    "aier_loop_selftest": "PASS",
+    "route_messages_selftest": "PASS",
+    "uniton_os_status": "PASS_CLEAN",
+    "uniton_os_head": "58a084187bef36e15f1dc540f8ea88266d29f4dc"
+  },
+  "created_files": [
+    "docs/LAW_CLA_LLM/SHARED/architecture/AIER_LIFE_BRIDGE_CONTRACTS/LANE03-W3-LAW-N13-FULL-CANDIDATE-VALIDATE-AND-STAGE-V1/LAW_N13_FULL_CANDIDATE_VALIDATION_REVIEW.md",
+    "docs/LAW_CLA_LLM/SHARED/architecture/AIER_LIFE_BRIDGE_CONTRACTS/LANE03-W3-LAW-N13-FULL-CANDIDATE-VALIDATE-AND-STAGE-V1/LAW_N13_FULL_CANDIDATE_VS_V1_2_DIFF_SUMMARY.md",
+    "docs/LAW_CLA_LLM/SHARED/architecture/AIER_LIFE_BRIDGE_CONTRACTS/LANE03-W3-LAW-N13-FULL-CANDIDATE-VALIDATE-AND-STAGE-V1/LAW_N13_AMENDMENT_READINESS_DECISION.json",
+    "reports/LANE03-W3-LAW-N13-FULL-CANDIDATE-VALIDATE-AND-STAGE-V1_REPORT.md",
+    "snapshots/LANE03-W3-LAW-N13-FULL-CANDIDATE-VALIDATE-AND-STAGE-V1.snapshot.live.json",
+    "audit_logs/LANE03-W3-LAW-N13-FULL-CANDIDATE-VALIDATE-AND-STAGE-V1_audit.log"
+  ],
+  "result": "PASS",
+  "next_task": "LANE03-AIER-LIFE-INTEGRATION-AMENDMENT-PREP-V1"
+}

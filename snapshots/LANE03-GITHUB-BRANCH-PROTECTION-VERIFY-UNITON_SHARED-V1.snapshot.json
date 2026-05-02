@@ -1,0 +1,157 @@
+{
+  "task_id": "LANE03-GITHUB-BRANCH-PROTECTION-VERIFY-UNITON_SHARED-V1",
+  "snapshot_type": "GITHUB_BRANCH_PROTECTION_VERIFY_UNITON_SHARED",
+  "result": "PASS",
+  "timestamp": "2026-04-30T00:10:58.9899392+07:00",
+  "execution_header": {
+    "lane": "Lane_03",
+    "executor": "Codex",
+    "authority": "NTS",
+    "mode": "CONTROLLED_EXECUTION",
+    "task_id": "LANE03-GITHUB-BRANCH-PROTECTION-VERIFY-UNITON_SHARED-V1",
+    "scope": "Verify Uniton_Shared main branch protection state via read-only GitHub API and confirm no drift.",
+    "working_dir": "D:/UZG/Projects-v2/Uniton_Shared",
+    "repo": "unitonzengarden/Uniton_Shared",
+    "branch": "main",
+    "commit_sha": "bdba937192bab97edaa65266d8c7dbf9158f4352"
+  },
+  "scope_verification": {
+    "scope_integrity": "PASS",
+    "read_only_github_api_verification": true,
+    "github_settings_changed": false,
+    "branch_protection_modified": false,
+    "uniton_shared_live_touched": false,
+    "uniton_os_touched": false,
+    "product_repos_touched": false,
+    "law_files_modified": false,
+    "evidence_created": true
+  },
+  "capability_check": {
+    "actor": "Lane_03",
+    "action": "Verify Uniton_Shared branch protection state and write scoped evidence.",
+    "side_effect_class": "Read-only GitHub verification plus evidence artifact creation in Uniton_Shared.",
+    "capability_source": "NTS task authorization; LAW_GITHUB_01; LAW_N5 REPORT_TEMPLATE_V2; prior apply task evidence.",
+    "authorization": "Explicitly allowed for read-only verification and Uniton_Shared evidence artifacts only."
+  },
+  "repo_boundary_check": {
+    "repo_ownership": "VALID",
+    "cross_repo_write": "NONE",
+    "notes": "GitHub API calls were read-only; only Uniton_Shared evidence artifacts were created."
+  },
+  "repo_view": {
+    "name_with_owner": "unitonzengarden/Uniton_Shared",
+    "default_branch": "main",
+    "visibility": "PRIVATE",
+    "is_archived": false,
+    "viewer_permission": "ADMIN",
+    "pushed_at": "2026-04-29T16:42:08Z"
+  },
+  "verified_branch_state": {
+    "branch": "main",
+    "head_sha": "bdba937192bab97edaa65266d8c7dbf9158f4352",
+    "protected": true,
+    "rulesets_count": 0,
+    "required_pull_request_reviews": {
+      "enabled": true,
+      "required_approving_review_count": 1,
+      "dismiss_stale_reviews": false,
+      "require_code_owner_reviews": false,
+      "require_last_push_approval": false
+    },
+    "required_conversation_resolution": true,
+    "required_status_checks": "NOT_ENABLED",
+    "required_status_checks_endpoint": "404 Required status checks not enabled",
+    "admin_enforcement": false,
+    "force_pushes_enabled": false,
+    "deletions_enabled": false,
+    "restrictions": null
+  },
+  "expected_state_from_apply": {
+    "main_protected": true,
+    "pr_before_merge_required": true,
+    "conversation_resolution_required": true,
+    "force_pushes_disabled": true,
+    "deletions_disabled": true,
+    "required_status_checks_not_enabled": true,
+    "admin_enforcement": false,
+    "rulesets_count": 0
+  },
+  "drift_check": {
+    "drift_detected": false,
+    "additional_rules_added": false,
+    "status_checks_suddenly_required": false,
+    "rulesets_unexpectedly_created": false,
+    "uniton_shared_live_protection_drift": false,
+    "uniton_os_protection_drift": false,
+    "product_repo_protection_drift": false
+  },
+  "other_repo_safety_check": {
+    "unitonzengarden/Uniton_Shared_Live": {
+      "classic_protection": "NO_CLASSIC_PROTECTION_OR_INACCESSIBLE",
+      "rulesets_count": 0,
+      "role": "MIRROR / PUBLIC STATE"
+    },
+    "unitonzengarden/Uniton_OS": {
+      "classic_protection": "NO_CLASSIC_PROTECTION_OR_INACCESSIBLE",
+      "rulesets_count": 0,
+      "role": "RUNTIME / EXECUTION"
+    },
+    "unitonzengarden/uzgplus-app": {
+      "classic_protection": "CLASSIC_PROTECTION_PRESENT",
+      "rulesets_count": 0,
+      "role": "PRODUCT / UZG+",
+      "note": "Pre-existing protection; no write was made by this task."
+    },
+    "unitonzengarden/AIFI_LIFE": {
+      "classic_protection": "NO_CLASSIC_PROTECTION_OR_INACCESSIBLE",
+      "rulesets_count": 0,
+      "role": "PRODUCT / AIFI LIFE"
+    },
+    "unitonzengarden/aier-life-super-app": {
+      "classic_protection": "NO_CLASSIC_PROTECTION_OR_INACCESSIBLE",
+      "rulesets_count": 0,
+      "role": "PRODUCT / AIER LIFE"
+    },
+    "unitonzengarden/_archive_chatbot": {
+      "classic_protection": "NO_CLASSIC_PROTECTION_OR_INACCESSIBLE",
+      "rulesets_count": 0,
+      "role": "ARCHIVE / LEGACY / NOT ACTIVE"
+    }
+  },
+  "validation": {
+    "branch_protection_verified_via_api": "PASS",
+    "repo_view_verified": "PASS",
+    "rulesets_verified": "PASS",
+    "required_status_checks_absent": "PASS",
+    "conversation_resolution_verified": "PASS",
+    "no_drift_detected": "PASS",
+    "report_template_v2_check": "PASS",
+    "json_parse": "PASS"
+  },
+  "risks_warnings": [
+    "Admin enforcement remains disabled by design to preserve NTS/admin emergency access.",
+    "Required status checks remain disabled by design until governance checks stabilize.",
+    "The dedicated conversation-resolution endpoint returned 404 for this REST path, but the full branch protection payload reports required_conversation_resolution.enabled=true."
+  ],
+  "sync": {
+    "local_head": "bdba937192bab97edaa65266d8c7dbf9158f4352 at snapshot generation",
+    "origin_main_head": "bdba937192bab97edaa65266d8c7dbf9158f4352 at snapshot generation",
+    "match": "YES at snapshot generation",
+    "worktree_clean": "NO - evidence artifacts pending commit; final clean sync verified after push"
+  },
+  "governance_confirmation": {
+    "no_law_modified": true,
+    "no_cross_lane_violation": true,
+    "no_authority_override": true,
+    "repo_integrity_preserved": true,
+    "one_task_only": true,
+    "no_github_settings_changed": true,
+    "no_branch_protection_modified": true,
+    "no_status_checks_required": true,
+    "no_github_actions_modified": true,
+    "no_other_repo_touched": true,
+    "no_prs_merged_or_closed": true,
+    "no_deployment_or_integration_task": true
+  },
+  "next_task": "LANE03-GITHUB-BRANCH-PROTECTION-APPLY-UNITON_SHARED_LIVE-V1"
+}

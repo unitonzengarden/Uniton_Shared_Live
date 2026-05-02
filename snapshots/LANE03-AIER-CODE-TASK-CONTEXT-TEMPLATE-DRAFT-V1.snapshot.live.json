@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-04-26T22:25:46+07:00",
+  "task_id": "LANE03-AIER-CODE-TASK-CONTEXT-TEMPLATE-DRAFT-V1",
+  "git_final_local_head": "pending_post_push_verification",
+  "git_final_origin_main": "pending_post_push_verification",
+  "file_path": "docs/LAW_CLA_LLM/CANON/AIER_CODE_TASK_CONTEXT_TEMPLATE_V1_draft.md",
+  "status": "DRAFT / PENDING_REVIEW",
+  "report_paths": {
+    "markdown": "reports/LANE03-AIER-CODE-TASK-CONTEXT-TEMPLATE-DRAFT-V1_REPORT.md",
+    "json": "reports/LANE03-AIER-CODE-TASK-CONTEXT-TEMPLATE-DRAFT-V1.json",
+    "audit": "audit_logs/LANE03-AIER-CODE-TASK-CONTEXT-TEMPLATE-DRAFT-V1_audit.log"
+  },
+  "worktree_clean": "pending_post_push_verification"
+}

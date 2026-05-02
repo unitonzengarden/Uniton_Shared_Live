@@ -1,0 +1,205 @@
+{
+  "task_id": "AIER-CODE-DOCUMENT-STACK-AUTHORITY-MAP-V1",
+  "result": "PASS",
+  "repo_sync": {
+    "canonical_root": "D:\\UZG\\Projects-v2\\Uniton_Shared",
+    "remote": "https://github.com/unitonzengarden/Uniton_Shared.git",
+    "branch": "main",
+    "local_before": "d671a6573bafe7b28b465f026643b15b66581c99",
+    "origin_before": "d671a6573bafe7b28b465f026643b15b66581c99",
+    "local_after_pull": "3a523870e6f75dd861b96feff3730711ec1d16ff",
+    "origin_after_pull": "3a523870e6f75dd861b96feff3730711ec1d16ff",
+    "final_local_at_report_creation": "3a523870e6f75dd861b96feff3730711ec1d16ff",
+    "final_origin_at_report_creation": "3a523870e6f75dd861b96feff3730711ec1d16ff",
+    "match": true,
+    "worktree_clean_before_artifacts": true,
+    "duplicate_active_repo_or_worktree": false
+  },
+  "document_inventory": [
+    {
+      "path": "docs/00_ECOSYSTEM_CANON/01_UNITON_OS_CANON_v1.md",
+      "detected_role": "SUPER_CANON",
+      "status": "Canon Lock - Binding",
+      "authority_level": "Parent Uniton OS authority",
+      "overlap_risk": "LOW",
+      "recommended_action": "Use as top authority for Uniton OS relation."
+    },
+    {
+      "path": "docs/00_ECOSYSTEM_CANON/MASTER_CANON_MAPPING_OFFICIAL_V2_docx.md",
+      "detected_role": "MASTER_MAPPING",
+      "status": "Canon Lock Final",
+      "authority_level": "Ecosystem mapping",
+      "overlap_risk": "MEDIUM",
+      "recommended_action": "Use to position UZG+, AIER LIFE, and AIFI LIFE."
+    },
+    {
+      "path": "docs/00_ECOSYSTEM_CANON/WHITEPAPER_AIER_LIFE_V3_OFFICIAL.md",
+      "detected_role": "WHITEPAPER",
+      "status": "Official",
+      "authority_level": "AIER LIFE strategy",
+      "overlap_risk": "MEDIUM",
+      "recommended_action": "Use for meaning, not implementation."
+    },
+    {
+      "path": "docs/00_ECOSYSTEM_CANON/AIER_COMPLETE_SYSTEM_BLUEPRINT_v2_0.md",
+      "detected_role": "ARCHITECTURE",
+      "status": "Official blueprint",
+      "authority_level": "AIER LIFE architecture",
+      "overlap_risk": "HIGH",
+      "recommended_action": "Extract principles into AIER CODE architecture."
+    },
+    {
+      "path": "docs/01_AIER_COMMON/GOVERNANCE_AS_CODE_ARCHITECTURE_v1.md",
+      "detected_role": "GOVERNANCE_SPEC",
+      "status": "DRAFT",
+      "authority_level": "Candidate governance architecture",
+      "overlap_risk": "HIGH",
+      "recommended_action": "Rebuild as AIER CODE governance-as-code spec after master canon."
+    },
+    {
+      "path": "docs/LAW_CLA_LLM/SHARED/laws/LAW_SYSTEM.md",
+      "detected_role": "SUPER_CANON",
+      "status": "ACTIVE",
+      "authority_level": "AIER CODE meta-law",
+      "overlap_risk": "LOW",
+      "recommended_action": "Keep as mandatory parent."
+    },
+    {
+      "path": "docs/LAW_CLA_LLM/SHARED/laws/BOOT_MINIMUM.md",
+      "detected_role": "SUPER_CANON",
+      "status": "ACTIVE",
+      "authority_level": "Boot/load authority",
+      "overlap_risk": "LOW",
+      "recommended_action": "Keep mandatory."
+    },
+    {
+      "path": "docs/LAW_CLA_LLM/SHARED/laws/REDLINES.md",
+      "detected_role": "SUPER_CANON",
+      "status": "ACTIVE",
+      "authority_level": "AIER CODE redlines",
+      "overlap_risk": "MEDIUM",
+      "recommended_action": "Cross-map to ecosystem redlines."
+    },
+    {
+      "path": "docs/LAW_CLA_LLM/SHARED/laws/LAW_N1-N6",
+      "detected_role": "CANON",
+      "status": "ACTIVE",
+      "authority_level": "Current AIER CODE operating canon",
+      "overlap_risk": "LOW",
+      "recommended_action": "Preserve and rebuild below this authority."
+    },
+    {
+      "path": "docs/LAW_CLA_LLM/SHARED/laws/LAW_N7-N11",
+      "detected_role": "DRAFT_PENDING",
+      "status": "v0.1 DRAFT",
+      "authority_level": "Candidate future law",
+      "overlap_risk": "HIGH",
+      "recommended_action": "Do not activate; use as inputs after master canon."
+    },
+    {
+      "path": "docs/LAW_CLA_LLM/SHARED/runtime/*.md",
+      "detected_role": "RUNTIME_SPEC",
+      "status": "Active support docs",
+      "authority_level": "Runtime operation",
+      "overlap_risk": "MEDIUM",
+      "recommended_action": "Consolidate into runtime and handoff specs."
+    },
+    {
+      "path": "contracts/*.schema.json",
+      "detected_role": "CONTRACT",
+      "status": "Active schemas",
+      "authority_level": "Machine contract authority",
+      "overlap_risk": "MEDIUM",
+      "recommended_action": "Build formal contract/handoff spec from schemas."
+    },
+    {
+      "path": "docs/LAW_CLA_LLM/SHARED/os_operations/*.md",
+      "detected_role": "OS_OPERATION",
+      "status": "Mixed active/skeleton/draft",
+      "authority_level": "Operating procedure layer",
+      "overlap_risk": "HIGH",
+      "recommended_action": "Rebuild after governance and runtime specs."
+    },
+    {
+      "path": "runtime/current_state.md",
+      "detected_role": "RUNTIME_SPEC",
+      "status": "Active operational state",
+      "authority_level": "Runtime state evidence",
+      "overlap_risk": "HIGH",
+      "recommended_action": "Reconcile with memory/state spec."
+    },
+    {
+      "path": "docs/LAW_CLA_LLM/ROADMAPS/AIER_CODE_ROADMAP_V2_DISCUSSION_PACK.md",
+      "detected_role": "ROADMAP_CANDIDATE",
+      "status": "DISCUSSION ONLY",
+      "authority_level": "No build authority",
+      "overlap_risk": "HIGH",
+      "recommended_action": "Freeze until rebuilt stack exists."
+    }
+  ],
+  "authority_layers": [
+    "0 NTS decision",
+    "1 Ecosystem super canon",
+    "2 AIER LIFE strategic canon",
+    "3 AIER common law/spec",
+    "4 AIER CODE active SHARED law",
+    "5 AIER CODE active runtime/contracts",
+    "6 Draft pending law/procedure",
+    "7 Evidence and discussion"
+  ],
+  "recommended_stack": [
+    "AIER_CODE_DOCUMENT_STACK_AND_AUTHORITY_MAP_V1",
+    "AIER_CODE_MASTER_CANON_V1",
+    "AIER_CODE_MASTER_ARCHITECTURE_V2",
+    "AIER_CODE_GOVERNANCE_AS_CODE_SPEC_V1",
+    "AIER_ENTITY_RUNTIME_SPEC_V2",
+    "AIER_CODE_BACKEND_ARCHITECTURE_V1",
+    "AIER_CODE_MEMORY_AND_STATE_SPEC_V1",
+    "AIER_CODE_CONTRACT_AND_HANDOFF_SPEC_V1",
+    "AIER_CODE_CAPABILITY_MATRIX_SPEC_V1",
+    "AIER_CODE_OS_OPERATIONS_SPEC_V1",
+    "AIER_CODE_PRODUCTIZATION_SPEC_V1",
+    "AIER_CODE_ROADMAP_V1"
+  ],
+  "missing_documents": [
+    "AIER_CODE_MASTER_CANON_V1",
+    "AIER_CODE_MASTER_ARCHITECTURE_V2",
+    "AIER_CODE_GOVERNANCE_AS_CODE_SPEC_V1",
+    "AIER_ENTITY_RUNTIME_SPEC_V2",
+    "AIER_CODE_BACKEND_ARCHITECTURE_V1",
+    "AIER_CODE_MEMORY_AND_STATE_SPEC_V1",
+    "AIER_CODE_CONTRACT_AND_HANDOFF_SPEC_V1",
+    "AIER_CODE_CAPABILITY_MATRIX_SPEC_V1",
+    "AIER_CODE_OS_OPERATIONS_SPEC_V1",
+    "AIER_CODE_PRODUCTIZATION_SPEC_V1",
+    "AIER_CODE_ROADMAP_V1",
+    "Formal master table of contents for rebuilt AIER CODE stack"
+  ],
+  "overlap_risks": [
+    "LAW_N7 memory draft conflicts with root runtime/current_state.md placement and schema unless reconciled.",
+    "LAW_N8 runtime draft overlaps with active runtime protocol docs and scripts.",
+    "LAW_N11 backend bridge draft anticipates backend/action paths before backend architecture exists.",
+    "GOVERNANCE_AS_CODE_ARCHITECTURE_v1 overlaps with active AIER CODE laws while remaining draft.",
+    "Roadmap V2 discussion material is downstream of missing master canon and architecture."
+  ],
+  "validations": {
+    "json_report_parse": "PASS",
+    "snapshot_json_parse": "PASS",
+    "contract_validation": "PASS",
+    "routing_self_test": "PASS",
+    "aier_loop_self_test": "PASS",
+    "lane_03_dry_run": "PASS",
+    "governance_tests": "PASS: 35 tests"
+  },
+  "next_recommended_task": "AIER-CODE-MASTER-CANON-V1-DRAFT",
+  "canon_boundary": {
+    "roadmap_created": false,
+    "amendment_activated": false,
+    "canon_approved": false,
+    "shared_laws_changed": false,
+    "contracts_changed": false,
+    "backend_product_app_code_created": false,
+    "deploy_occurred": false,
+    "lane_opened": false
+  }
+}

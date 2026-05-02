@@ -1,0 +1,83 @@
+{
+  "task_id": "LANE01-W1-CORE-SKILLS-ACTIVATE-V1",
+  "lane": "Lane_01",
+  "executor": "CLAC-1",
+  "model": "claude-opus-4-7",
+  "captured_at": "2026-04-28T02:00:00Z",
+  "parent_head": "261816a302790cab41f90e3036c243a59db9209d",
+  "working_dir": "C:\\workspace\\Uniton_Shared",
+  "branch": "main",
+  "v1_1_phase": "W1.5 ACTIVATE",
+  "next_phase": "W1.6 LOOP VALIDATION",
+  "scope": "Bundle promote 4 tech non-canon skills DRAFT->ACTIVE; aier-canon-guard EXCLUDED (canon_adjacent, defer to W1.7)",
+  "skills_promoted": [
+    {
+      "skill_id": "aier-dispatch",
+      "before": {"status": "DRAFT", "version": "v0.2"},
+      "after": {"status": "ACTIVE", "version": "v1.0"},
+      "owner_lane": "Lane_01",
+      "canon_adjacent": false
+    },
+    {
+      "skill_id": "aier-verify",
+      "before": {"status": "DRAFT", "version": "v0.2"},
+      "after": {"status": "ACTIVE", "version": "v1.0"},
+      "owner_lane": "Lane_01",
+      "canon_adjacent": false
+    },
+    {
+      "skill_id": "aier-state-update",
+      "before": {"status": "DRAFT", "version": "v0.1"},
+      "after": {"status": "ACTIVE", "version": "v1.0"},
+      "owner_lane": "Lane_01",
+      "canon_adjacent": false
+    },
+    {
+      "skill_id": "aier-handoff-route",
+      "before": {"status": "DRAFT", "version": "v0.1"},
+      "after": {"status": "ACTIVE", "version": "v1.0"},
+      "owner_lane": "Lane_01",
+      "canon_adjacent": false
+    }
+  ],
+  "skills_excluded": [
+    {
+      "skill_id": "aier-canon-guard",
+      "current_status": "DRAFT",
+      "current_version": "v0.1",
+      "owner_lane": "Lane_03",
+      "canon_adjacent": true,
+      "exclusion_reason": "canon_adjacent: true requires NTS amendment per LAW_N9 §L9.20 + R-SKILL-01; defer to W1.7 per V1.1 sequence"
+    }
+  ],
+  "authority": "AMD_LANE01_CTO_AUTO_APPROVE_TECH_NON_CANON §3.1 YES list item 1 (architecture/spec drafts non-SHARED/laws/) — 4 skills are tech non-canon, Lane_01-owned",
+  "evidence_chain": [
+    "LANE01-W1-T2-CORE-SKILLS-AUTHOR-V1 commit af525b7 (initial DRAFT v0.1)",
+    "LANE01-W1-T2-SHARED-SKILL-LAW-N9-CONFORMANCE-REPAIR-V1 commit 0a158a8 (LAW_N9 conformance)",
+    "LANE01-W1-T4-COMBINED-V1 commit 2d6d273 (smoke test PASS — aier-dispatch + aier-verify ENDORSE)",
+    "LANE01-W1-SKILLS-INFRASTRUCTURE-FINALIZE-V1 commit 261816a (LAW_N9 v1.1 alignment + spec-drift v0.2 fixes + REGISTRY rename)"
+  ],
+  "boundary_check": {
+    "no_shared_laws_edit": true,
+    "no_canon_edit": true,
+    "no_canon_guard_edit": true,
+    "no_skill_md_body_edit": true,
+    "no_schema_edit": true,
+    "no_examples_or_tests_edit": true,
+    "no_lane_other": true,
+    "no_nts_escalation": true
+  },
+  "expected_deliverables": [
+    "snapshots/LANE01-W1-CORE-SKILLS-ACTIVATE-V1.snapshot.live.json (this file)",
+    "4 METADATA.yaml updated (status + version + activated_date + activated_by)",
+    "4 SKILL.md footer version-history v1.0 entry",
+    "REGISTRY.md v1.1->v1.2 (4 ACTIVE + 1 DRAFT canon-guard preserved)",
+    "SHARED_INDEX.md updated",
+    "AMENDMENTS_LOG.md +1 row (Lane_01 self-approve)",
+    "runtime/current_state.md v1.9->v1.10",
+    "runtime/checklist/MASTER_CHECKLIST.md atomic update",
+    "notifications/NOTIFICATION_LEDGER.md + .json +1 entry",
+    "reports/LANE01-W1-CORE-SKILLS-ACTIVATE-V1_REPORT.md",
+    "audit_logs/LANE01-W1-CORE-SKILLS-ACTIVATE-V1_audit.log"
+  ]
+}

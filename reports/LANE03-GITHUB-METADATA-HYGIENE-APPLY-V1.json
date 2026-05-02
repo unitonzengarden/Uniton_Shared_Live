@@ -1,0 +1,100 @@
+{
+  "task_id": "LANE03-GITHUB-METADATA-HYGIENE-APPLY-V1",
+  "result": "WARNING",
+  "timestamp": "2026-04-29T17:11:29.5702325+07:00",
+  "execution_header": {
+    "lane": "Lane_03",
+    "executor": "Codex",
+    "authority": "NTS",
+    "mode": "CONTROLLED_EXECUTION",
+    "task_id": "LANE03-GITHUB-METADATA-HYGIENE-APPLY-V1",
+    "scope": "Apply GitHub metadata hygiene for active repos only, then write V2 evidence into Uniton_Shared.",
+    "working_dir": "D:/UZG/Projects-v2/Uniton_Shared",
+    "repo": "unitonzengarden/Uniton_Shared",
+    "branch": "main",
+    "commit_sha_at_report_generation": "a68a3d2b32854074a48669bc0b7b90d337b83d75"
+  },
+  "metadata_applied": {
+    "active_repos_updated": [
+      "unitonzengarden/Uniton_Shared",
+      "unitonzengarden/Uniton_Shared_Live",
+      "unitonzengarden/Uniton_OS",
+      "unitonzengarden/uzgplus-app",
+      "unitonzengarden/AIFI_LIFE",
+      "unitonzengarden/aier-life-super-app"
+    ],
+    "archive_repo": {
+      "repo": "unitonzengarden/_archive_chatbot",
+      "description_update": "BLOCKED_BY_ARCHIVE_READ_ONLY",
+      "topic_update": "APPLIED",
+      "archived": true,
+      "warning": "HTTP 403: Repository was archived so is read-only."
+    }
+  },
+  "scope_verification": {
+    "in_scope_actions": [
+      "Read active LAW_GITHUB_01, LAW_N5, REPO_REGISTRY, and GITHUB_METADATA_HYGIENE_PLAN_V1.",
+      "Captured pre-apply GitHub descriptions/topics and branch-protection read state.",
+      "Applied GitHub descriptions/topics where allowed.",
+      "Verified post-apply GitHub metadata.",
+      "Created V2 evidence artifacts in Uniton_Shared."
+    ],
+    "out_of_scope_avoided": [
+      "No branch protection changes.",
+      "No GitHub Actions changes.",
+      "No PR merges or closures.",
+      "No code edits in product or runtime repositories.",
+      "No deployment.",
+      "No secret changes.",
+      "No repo rename, delete, archive, or unarchive."
+    ],
+    "scope_integrity": "PASS"
+  },
+  "capability_check": {
+    "actor": "Lane_03",
+    "action": "Apply scoped GitHub metadata descriptions/topics and create V2 evidence.",
+    "side_effect_class": "GitHub metadata settings update plus Uniton_Shared evidence commit.",
+    "capability_source": "Active LAW_GITHUB_01, LAW_N5 REPORT_TEMPLATE_V2, REPO_REGISTRY, and NTS task authorization.",
+    "authorization": "NTS scoped metadata hygiene apply task."
+  },
+  "repo_boundary_check": {
+    "repo_ownership": "VALID",
+    "cross_repo_file_write": "NONE",
+    "scoped_github_metadata_write": "YES",
+    "notes": "No repository code/files were changed outside Uniton_Shared. Only authorized GitHub description/topic metadata was changed on target repos."
+  },
+  "validation": [
+    "Preflight workspace, remote, branch, git status, and gh auth passed.",
+    "Source governance files were read.",
+    "Post-apply gh repo view confirmed descriptions/topics for six active/non-archived repos.",
+    "Post-apply gh repo view confirmed _archive_chatbot remains archived and has archive/not-active topics.",
+    "Branch protection read state matched before and after.",
+    "No branch protection, CI, PR, code, deploy, secret, archive-state, delete, or rename changes were made."
+  ],
+  "risks_warnings": [
+    "_archive_chatbot description update blocked by GitHub archived read-only state; repository remained archived and not active.",
+    "Branch protection planning/apply remains a future task.",
+    "README orientation, CI hardening, PR backlog review, and uzgplus-app secret review remain future tasks."
+  ],
+  "sync": {
+    "local_head_at_report_generation": "a68a3d2b32854074a48669bc0b7b90d337b83d75",
+    "origin_main_at_report_generation": "a68a3d2b32854074a48669bc0b7b90d337b83d75",
+    "match_at_report_generation": "YES",
+    "worktree_clean_at_report_generation": "NO - evidence artifacts pending commit",
+    "final_sync": "VERIFY_AFTER_COMMIT_AND_PUSH"
+  },
+  "governance_confirmation": {
+    "no_law_modified": true,
+    "no_cross_lane_violation": true,
+    "no_authority_override": true,
+    "repo_integrity_preserved": true,
+    "one_task_only": true
+  },
+  "evidence_commands": [
+    "gh auth status",
+    "gh repo view unitonzengarden/<repo> --json nameWithOwner,description,repositoryTopics,isArchived,isPrivate,defaultBranchRef,url",
+    "gh api -i repos/unitonzengarden/<repo>/branches/<branch>/protection",
+    "gh repo edit unitonzengarden/<repo> --description <description> --add-topic <topic>"
+  ],
+  "next_task": "LANE03-GITHUB-BRANCH-PROTECTION-PLAN-V1"
+}

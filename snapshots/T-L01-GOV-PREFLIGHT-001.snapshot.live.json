@@ -1,0 +1,58 @@
+{
+  "task_id": "T-L01-GOV-PREFLIGHT-001",
+  "phase": "Step 3 of 3 governance layer fix (FINAL)",
+  "predecessors": [
+    "T-L01-GOV-VALIDATOR-001 (Step 1) at 72a979d — task prompt CI validator",
+    "T-L01-GOV-HANDOFF-001 (Step 2) at e5e4a4c — cross-Lane handoff validator"
+  ],
+  "lane": "Lane_01",
+  "executor": "Lane_01 code agent (CLAC-1) on Vultr Windows Server",
+  "model": "claude-sonnet-4-7",
+  "started_at": "2026-04-26T03:21:08Z",
+  "git_head_before": "e5e4a4cf353721d187fc77938181e0b397fcc437",
+
+  "intent": "Build reusable pre-flight sync gate (PowerShell + Python wrapper) enforcing local-vs-remote consistency BEFORE any task execution. Solves Layer 3 of governance fix (repo state divergence). Mirrors Step 1+2 patterns.",
+
+  "next_steps_after_step_3": [
+    "Optional: T-L01-LAW-N5-AMEND-001 (formal LAW_N5 §L22 amendment to mandate use of preflight_check)",
+    "Carried over: T-BRANCH-CLEANUP-001, T-LANE03-MANIFEST-UPDATE-001"
+  ],
+
+  "checks_implemented": [
+    "1. Verify git remote URL matches expected unitonzengarden/Uniton_Shared.git",
+    "2. git fetch origin main",
+    "3. Verify local branch = main (or fail unless --allow-branch override)",
+    "4. Verify origin/main SHA matches expected_remote_sha",
+    "5. Compare local HEAD vs origin/main: behind/ahead/equal/diverged",
+    "6. Verify clean tree (no uncommitted changes) unless --allow-dirty"
+  ],
+
+  "exit_code_table": {
+    "0": "PASS — all checks green",
+    "1": "Sync mismatch (local behind remote without explicit --allow-behind, or other generic sync issue)",
+    "2": "Remote URL wrong (not unitonzengarden/Uniton_Shared.git)",
+    "3": "Branch wrong (not main, no --allow-branch override)",
+    "4": "SHA mismatch (origin/main != expected_remote_sha)",
+    "5": "Dirty tree (uncommitted changes, no --allow-dirty override)"
+  },
+
+  "files_planned": [
+    "scripts/governance/preflight_check.ps1 — PowerShell primary (Windows native)",
+    "scripts/governance/preflight_check.py — Python wrapper (cross-platform / CI)",
+    "scripts/governance/test_preflight_check.py — pytest suite (10+ tests with tmp git repos)",
+    "scripts/governance/README.md — UPDATE with new section",
+    ".github/workflows/preflight_validator.yml — CI: validate task prompts that reference preflight_check"
+  ],
+
+  "ac_status": {
+    "AC1_powershell_script": "pending",
+    "AC2_python_wrapper": "pending",
+    "AC3_pytest_10_plus": "pending",
+    "AC4_github_action": "pending",
+    "AC5_readme_updated": "pending",
+    "AC6_eat_own_dogfood": "pending",
+    "AC7_single_commit_pushed": "pending"
+  },
+
+  "overall_status": "in_progress"
+}

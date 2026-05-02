@@ -1,0 +1,78 @@
+{
+  "task_id": "T-L01-AMD-ROLE-REFRAME-001",
+  "created_at": "2026-04-26T08:41:51Z",
+  "canonical_repo": {
+    "path": "C:\\workspace\\Uniton_Shared",
+    "remote": "https://github.com/unitonzengarden/Uniton_Shared.git",
+    "branch": "main",
+    "local_before_pull": "3b8dd37ecc4cd8c0fd523114d90d43095bcd4a87",
+    "origin_before_pull": "783c5283d5da28e53798d3811db1aa4af0a9b244",
+    "local_after_pull": "783c5283d5da28e53798d3811db1aa4af0a9b244",
+    "origin_after_pull": "783c5283d5da28e53798d3811db1aa4af0a9b244",
+    "preflight_method": "scripts/governance/preflight_check.py --allow-dirty (Step 3)",
+    "preflight_result": "PASS",
+    "sync_clean_before_work": true
+  },
+  "task_intent": {
+    "type": "amendment packet — STEP 1 propose (LAW_SYSTEM §4)",
+    "amendment_id": "AMD_LANE01_ROLE_REFRAME_2026-04-26",
+    "proposer": "Lane_01 (CLA-1 + CLAC-1)",
+    "reviewer_canon_adjacent": "Lane_03 (verdict AMEND at commit 783c528)",
+    "final_approver": "NTS (pending)",
+    "status": "PENDING — not active, not canon, not approved",
+    "scope": "6-file amendment packet at docs/LAW_CLA_LLM/SHARED/amendments/pending/AMD_LANE01_ROLE_REFRAME_2026-04-26/"
+  },
+  "evidence_inputs": {
+    "lane_03_rsp_json": "handoffs/outbox/Lane_03/RSP-L03-L01-ROLE-REFRAME-20260426-001.json",
+    "lane_03_rsp_md": "handoffs/outbox/Lane_03/RSP-L03-L01-ROLE-REFRAME-20260426-001.md",
+    "lane_03_rsp_commit_sha": "783c5283d5da28e53798d3811db1aa4af0a9b244",
+    "lane_01_original_msg": "handoffs/inbox/Lane_03/MSG-L01-L03-PROPOSAL-20260426-001.json",
+    "lane_01_msg_commit_sha": "3b8dd37ecc4cd8c0fd523114d90d43095bcd4a87",
+    "amendment_template": "docs/LAW_CLA_LLM/SHARED/templates/AMENDMENT_PROPOSAL_TEMPLATE.md",
+    "authority_declaration_baseline": "docs/LAW_CLA_LLM/SHARED/os_operations/AUTHORITY_DECLARATION.md v1.0",
+    "amendment_workflow_procedure": "docs/LAW_CLA_LLM/SHARED/os_operations/AMENDMENT_WORKFLOW_PROCEDURE.md"
+  },
+  "deliverables": {
+    "packet_files": [
+      "docs/LAW_CLA_LLM/SHARED/amendments/pending/AMD_LANE01_ROLE_REFRAME_2026-04-26/AMENDMENT_PROPOSAL.md",
+      "docs/LAW_CLA_LLM/SHARED/amendments/pending/AMD_LANE01_ROLE_REFRAME_2026-04-26/IMPACT_ANALYSIS.md",
+      "docs/LAW_CLA_LLM/SHARED/amendments/pending/AMD_LANE01_ROLE_REFRAME_2026-04-26/ROLE_BOUNDARY_MATRIX.md",
+      "docs/LAW_CLA_LLM/SHARED/amendments/pending/AMD_LANE01_ROLE_REFRAME_2026-04-26/LANE_03_REVIEW_INCORPORATION.md",
+      "docs/LAW_CLA_LLM/SHARED/amendments/pending/AMD_LANE01_ROLE_REFRAME_2026-04-26/ROLLBACK_PLAN.md",
+      "docs/LAW_CLA_LLM/SHARED/amendments/pending/AMD_LANE01_ROLE_REFRAME_2026-04-26/NTS_DECISION.md.template"
+    ],
+    "standard_deliverables": [
+      "snapshots/T-L01-AMD-ROLE-REFRAME-001.snapshot.live.json",
+      "reports/T-L01-AMD-ROLE-REFRAME-001_REPORT.md",
+      "audit_logs/T-L01-AMD-ROLE-REFRAME-001_audit.log"
+    ]
+  },
+  "lane_03_amend_extraction": {
+    "verdict": "AMEND",
+    "q1_amendments_count": 5,
+    "q2_concerns_count": 6,
+    "q3_lane03_reviewed_items_count": 7,
+    "q3_nts_gated_items_count": 10,
+    "q4_consensus_subrules_count": 5,
+    "what_lane03_accepts_count": 4,
+    "what_lane03_rejects_count": 6
+  },
+  "canon_preserved": {
+    "shared_laws_unchanged": "MUST be true at end",
+    "authority_declaration_unchanged": "MUST be true at end",
+    "shared_index_unchanged": "MUST be true at end",
+    "lane_03_files_unchanged": "MUST be true at end",
+    "amendment_status_in_files": "PENDING (never approved/active)"
+  },
+  "validation": {
+    "qa_gate_checks": "10 checks per spec",
+    "ci_workflows_potentially_triggered": ["lane-guardrails.yml", "validate-canon.yml"]
+  },
+  "risks": [
+    "COI: Lane_01 is proposer AND beneficiary of CTO role expansion (disclosed in AMENDMENT_PROPOSAL §6).",
+    "Lane_03 AMEND requirements must be verbatim-preserved in incorporation file.",
+    "Status PENDING must be explicit in every file; no language asserting active/approved.",
+    "Amendment touches authority matrix — maximum scrutiny."
+  ],
+  "final_commit_sha": "recorded after commit and push"
+}

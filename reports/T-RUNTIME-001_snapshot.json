@@ -1,0 +1,101 @@
+{
+  "task_id": "T-RUNTIME-001",
+  "task_title": "Populate runtime/current_state.md v0 (Memory Layer bootstrap)",
+  "phase": "Communication Layer Bootstrap",
+  "executor": {
+    "lane": "Lane_01",
+    "role": "CTO",
+    "agent": "Claude Code Desktop (Vultr Windows Server)",
+    "account": "Account A"
+  },
+  "dispatched_by": "NTS",
+  "dispatch_date": "2026-04-26",
+  "execution_date": "2026-04-26",
+  "status": "PARTIAL_AC2_BLOCKED",
+  "status_note": "5 of 6 ACs PASS. AC2 BLOCKED: raw.githubusercontent.com returns 404 because repo is private. NTS decision required between (A) make repo public, or (B) route Lane_03 through authenticated GitHub API (T-RUNTIME-003). See REPORT §11.",
+  "parent_head_at_start": "b51934ddddb605055631b3df1dd1c7a40b77447b",
+  "branch": "main",
+  "remote": "https://github.com/unitonzengarden/Uniton_Shared.git",
+  "files_created": [
+    "runtime/current_state.md",
+    "reports/T-RUNTIME-001_snapshot.json",
+    "reports/T-RUNTIME-001_REPORT.md"
+  ],
+  "files_modified": [],
+  "files_deleted": [],
+  "acceptance_criteria": {
+    "AC1": {
+      "description": "runtime/current_state.md exists trên main branch, GitHub UI accessible",
+      "status": "PASS",
+      "evidence": {
+        "blob_url": "https://github.com/unitonzengarden/Uniton_Shared/blob/main/runtime/current_state.md",
+        "api_check": "gh api repos/unitonzengarden/Uniton_Shared/contents/runtime/current_state.md?ref=main",
+        "blob_sha": "39bed209bb0f20cf8f2fa889e7ae49a527aae614",
+        "size_bytes": 4221,
+        "note": "Blob URL loads for authenticated viewers; repo is private."
+      }
+    },
+    "AC2": {
+      "description": "Raw URL trả 200 OK với content trên",
+      "url": "https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared/main/runtime/current_state.md",
+      "status": "BLOCKED",
+      "actual_http_status": 404,
+      "root_cause": "Repository is private (gh api repos/unitonzengarden/Uniton_Shared --jq .private => true). raw.githubusercontent.com does not serve content from private repos without auth — by GitHub design, not a propagation lag. Verified by polling 30 times over 90s at both main-pinned and commit-pinned (798b87a) URL forms; both 404.",
+      "authenticated_alternative_works": "gh api repos/unitonzengarden/Uniton_Shared/contents/runtime/current_state.md?ref=main returns full 4221-byte file correctly.",
+      "resolution_paths": [
+        "A — NTS makes repo public; AC2 immediately passes; trade-off is irreversible historical exposure of all repo content.",
+        "B — Keep repo private; T-RUNTIME-003 (Custom GPT Action) provides authenticated API access for Lane_03; follow-up T-RUNTIME-001-FIX updates AC2 wording and §9 RAW URL in current_state.md."
+      ],
+      "lane_01_recommendation": "Path B — preserves historical privacy; T-RUNTIME-003 work is already queued; PAT scope can be narrowed."
+    },
+    "AC3": {
+      "description": "reports/T-RUNTIME-001_snapshot.json exists",
+      "status": "PASS",
+      "path": "reports/T-RUNTIME-001_snapshot.json"
+    },
+    "AC4": {
+      "description": "reports/T-RUNTIME-001_REPORT.md exists, chứa commit hash + raw URL",
+      "status": "PASS",
+      "path": "reports/T-RUNTIME-001_REPORT.md"
+    },
+    "AC5": {
+      "description": "Commit message có suffix [vercel skip]",
+      "status": "PASS",
+      "deliverables_commit": "798b87a",
+      "correction_commit_note": "This snapshot was edited in a follow-up correction commit, also carrying [vercel skip]."
+    },
+    "AC6": {
+      "description": "No secrets in file (no PAT, no .env, no credentials)",
+      "status": "PASS",
+      "verification": "grep scan against ghp_/github_pat_/PRIVATE KEY/AWS/secret patterns"
+    }
+  },
+  "qa_gate_law_27": {
+    "blocked_until": "NTS resolves AC2 visibility decision (Path A or Path B) — see REPORT §11",
+    "test_1": {
+      "name": "GitHub UI render check",
+      "url": "https://github.com/unitonzengarden/Uniton_Shared/blob/main/runtime/current_state.md",
+      "owner": "NTS",
+      "executable_now": true
+    },
+    "test_2": {
+      "name": "Cold-start ChatGPT thread can read raw URL and summarize",
+      "url": "https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared/main/runtime/current_state.md",
+      "owner": "NTS",
+      "executable_now": false,
+      "blocker_reason": "URL returns 404 because repo is private; cold-start ChatGPT cannot fetch. Will become executable after Path A or Path B resolution."
+    },
+    "close_condition": "Both tests PASS → T-RUNTIME-001 CLOSED"
+  },
+  "next_tasks_queued": [
+    "T-RUNTIME-002 — Schema formalize cho current_state.md v1",
+    "T-RUNTIME-003 — Lane_03 Custom GPT Action spec",
+    "T-RUNTIME-004 — Verify Lane_03 runtime scripts (aier_loop.ps1 + route_messages.ps1)"
+  ],
+  "rollback": "git revert <commit-hash> && git push origin main",
+  "canon_compliance": {
+    "R-CANON-02": "Append-only — file is new, no past entries deleted",
+    "LAW_27_QA_GATE": "Two NTS-owned tests defined above",
+    "secrets_redline": "AC6 verified clean"
+  }
+}

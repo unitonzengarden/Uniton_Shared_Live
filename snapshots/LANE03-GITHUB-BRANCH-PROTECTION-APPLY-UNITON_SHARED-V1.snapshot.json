@@ -1,0 +1,131 @@
+{
+  "task_id": "LANE03-GITHUB-BRANCH-PROTECTION-APPLY-UNITON_SHARED-V1",
+  "snapshot_type": "GITHUB_BRANCH_PROTECTION_APPLY_UNITON_SHARED",
+  "result": "PASS",
+  "timestamp": "2026-04-29T23:38:12.3574165+07:00",
+  "execution_header": {
+    "lane": "Lane_03",
+    "executor": "Codex",
+    "authority": "NTS",
+    "mode": "CONTROLLED_EXECUTION",
+    "task_id": "LANE03-GITHUB-BRANCH-PROTECTION-APPLY-UNITON_SHARED-V1",
+    "scope": "Apply minimal safe branch protection to Uniton_Shared main without requiring status checks.",
+    "working_dir": "D:/UZG/Projects-v2/Uniton_Shared",
+    "repo": "unitonzengarden/Uniton_Shared",
+    "branch": "main",
+    "commit_sha": "46bdaa228afa1f7b1882791187070b16661f58e7"
+  },
+  "scope_verification": {
+    "scope_integrity": "PASS",
+    "target_repo": "unitonzengarden/Uniton_Shared",
+    "target_branch": "main",
+    "github_settings_changed": true,
+    "branch_protection_changed": true,
+    "status_checks_required": false,
+    "github_actions_modified": false,
+    "law_files_modified": false,
+    "other_repos_touched": false,
+    "evidence_created": true
+  },
+  "capability_check": {
+    "actor": "Lane_03",
+    "action": "Apply minimal branch protection to Uniton_Shared main and write scoped evidence.",
+    "side_effect_class": "Scoped GitHub settings mutation for Uniton_Shared main plus evidence artifact creation.",
+    "capability_source": "NTS task authorization; LAW_GITHUB_01; LAW_N5 REPORT_TEMPLATE_V2; GITHUB_BRANCH_PROTECTION_PLAN_V1.",
+    "authorization": "Explicitly allowed for Uniton_Shared main branch protection only."
+  },
+  "repo_boundary_check": {
+    "repo_ownership": "VALID",
+    "cross_repo_write": "NONE",
+    "notes": "Only Uniton_Shared branch protection was changed; no Uniton_Shared_Live, Uniton_OS, product repo, archive repo, workflow, or law file was modified."
+  },
+  "preflight": {
+    "working_dir_confirmed": "D:/UZG/Projects-v2/Uniton_Shared",
+    "remote": "https://github.com/unitonzengarden/Uniton_Shared.git",
+    "branch": "main",
+    "local_head_after_fast_forward": "46bdaa228afa1f7b1882791187070b16661f58e7",
+    "origin_main_head_after_fast_forward": "46bdaa228afa1f7b1882791187070b16661f58e7",
+    "worktree_clean_before_apply": true,
+    "gh_account": "unitonzengarden",
+    "viewer_permission": "ADMIN"
+  },
+  "pre_apply_state": {
+    "target_repo": "unitonzengarden/Uniton_Shared",
+    "target_branch": "main",
+    "classic_branch_protection": "NO_CLASSIC_PROTECTION",
+    "rulesets_count": 0,
+    "open_pr_count_at_apply": 0,
+    "latest_workflow_evidence": [
+      "Sync Runtime to Public success on 46bdaa2",
+      "Handoff Validator failure on 819e07e",
+      "Build Artifacts success on 819e07e",
+      "AIER Verify Skill success on 819e07e"
+    ]
+  },
+  "applied_settings": {
+    "protected_branch": true,
+    "required_pull_request_reviews_enabled": true,
+    "required_approving_review_count": 1,
+    "dismiss_stale_reviews": false,
+    "require_code_owner_reviews": false,
+    "require_last_push_approval": false,
+    "required_conversation_resolution": true,
+    "required_status_checks": null,
+    "enforce_admins": false,
+    "restrictions": null,
+    "allow_force_pushes": false,
+    "allow_deletions": false,
+    "required_deployments": false,
+    "rulesets_created": 0
+  },
+  "post_apply_verification": {
+    "main_protected": true,
+    "pr_before_merge_required": true,
+    "conversation_resolution_required": true,
+    "force_pushes_disabled": true,
+    "deletions_disabled": true,
+    "required_status_checks_not_enabled": true,
+    "admin_enforcement": false,
+    "other_repo_protection_checks": {
+      "Uniton_Shared_Live": "NO_CLASSIC_PROTECTION_OR_INACCESSIBLE; rulesets=0",
+      "Uniton_OS": "NO_CLASSIC_PROTECTION_OR_INACCESSIBLE; rulesets=0",
+      "uzgplus-app": "CLASSIC_PROTECTION_PRESENT; rulesets=0",
+      "AIFI_LIFE": "NO_CLASSIC_PROTECTION_OR_INACCESSIBLE; rulesets=0",
+      "aier-life-super-app": "NO_CLASSIC_PROTECTION_OR_INACCESSIBLE; rulesets=0",
+      "_archive_chatbot": "NO_CLASSIC_PROTECTION_OR_INACCESSIBLE; rulesets=0"
+    }
+  },
+  "validation": {
+    "report_template_v2_check": "PASS",
+    "json_parse": "PASS",
+    "target_protection_verify": "PASS",
+    "status_checks_disabled_verify": "PASS",
+    "admin_emergency_access_preserved": "PASS",
+    "no_law_or_workflow_file_diff": "PASS"
+  },
+  "risks_warnings": [
+    "Admin enforcement is disabled by design to preserve NTS/admin emergency access, so admins can still bypass normal PR flow.",
+    "Required status checks remain disabled because current governance checks are not stable enough to require.",
+    "A later verification task should confirm UI/API state after the evidence commit is pushed."
+  ],
+  "sync": {
+    "local_head": "46bdaa228afa1f7b1882791187070b16661f58e7 at snapshot generation",
+    "origin_main_head": "46bdaa228afa1f7b1882791187070b16661f58e7 at snapshot generation",
+    "match": "YES at snapshot generation",
+    "worktree_clean": "NO - evidence artifacts pending commit; final clean sync verified after push"
+  },
+  "governance_confirmation": {
+    "no_law_modified": true,
+    "no_cross_lane_violation": true,
+    "no_authority_override": true,
+    "repo_integrity_preserved": true,
+    "one_task_only": true,
+    "no_status_checks_required": true,
+    "no_github_actions_modified": true,
+    "no_other_repo_branch_protection_enabled": true,
+    "no_prs_merged_or_closed": true,
+    "no_product_or_runtime_repo_touched": true,
+    "no_deployment_or_integration_task": true
+  },
+  "next_task": "LANE03-GITHUB-BRANCH-PROTECTION-VERIFY-UNITON_SHARED-V1"
+}

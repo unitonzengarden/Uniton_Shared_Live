@@ -1,0 +1,82 @@
+{
+  "task_id": "UNITON-SHARED-RUNTIME-SYNC-SYSTEM-V1",
+  "snapshot_type": "live",
+  "created_at": "2026-04-25T15:15:20Z",
+  "repo": {
+    "local_path": "D:\\UZG\\Projects-v2\\uniton_shared",
+    "remote": "https://github.com/unitonzengarden/Uniton_Shared.git",
+    "branch": "main",
+    "base_head": "844ed753d23f73b322fb13a174a33495c35bee76",
+    "root_version": "v1.0.0",
+    "shared_version": "v1.1.0"
+  },
+  "roots": {
+    "shared_root": "docs/LAW_CLA_LLM/SHARED",
+    "lane_root_pattern": "docs/LAW_CLA_LLM/LANE_<NN>",
+    "lane_03_root": "docs/LAW_CLA_LLM/LANE_03"
+  },
+  "runtime_sync": {
+    "manifest": "docs/LAW_CLA_LLM/SHARED/sync/SYNC_MANIFEST.json",
+    "status_source": "docs/LAW_CLA_LLM/SHARED/sync/LANE_SYNC_STATUS.md",
+    "version_source": "docs/LAW_CLA_LLM/SHARED/VERSION",
+    "scripts": [
+      "scripts/sync/check_lane_sync.ps1",
+      "scripts/sync/generate_sync_manifest.ps1",
+      "scripts/sync/update_lane_sync.ps1"
+    ],
+    "status_enum": [
+      "IN_SYNC",
+      "BEHIND",
+      "UNSYNCED",
+      "LEGACY_PENDING",
+      "PLANNED"
+    ],
+    "runtime_types": [
+      "code-agent",
+      "web-LLM",
+      "AIER-entity",
+      "hybrid"
+    ]
+  },
+  "lane_state": [
+    {
+      "lane_id": "Lane_01",
+      "status": "LEGACY_PENDING",
+      "sync_version": "v1.1.0",
+      "folder_status": "LEGACY_PRESENT_NORMALIZED_PENDING",
+      "canonical_path": "docs/LAW_CLA_LLM/LANE_01",
+      "legacy_path": "docs/LAW_CLA_LLM/CLA_01_VULTR"
+    },
+    {
+      "lane_id": "Lane_02",
+      "status": "LEGACY_PENDING",
+      "sync_version": "TBD",
+      "folder_status": "MISSING_PENDING",
+      "canonical_path": "docs/LAW_CLA_LLM/LANE_02",
+      "legacy_path": null
+    },
+    {
+      "lane_id": "Lane_03",
+      "status": "IN_SYNC",
+      "sync_version": "v1.1.0",
+      "folder_status": "PRESENT",
+      "canonical_path": "docs/LAW_CLA_LLM/LANE_03",
+      "legacy_path": null
+    },
+    {
+      "lane_id": "Lane_n",
+      "status": "PLANNED",
+      "sync_version": "PLANNED",
+      "folder_status": "PLANNED",
+      "canonical_path": null,
+      "legacy_path": null
+    }
+  ],
+  "scope_assertions": {
+    "uniton_os_product_built": false,
+    "runtime_app_folders_created": false,
+    "shared_laws_modified": false,
+    "deploy_run": false,
+    "secrets_added": false
+  }
+}

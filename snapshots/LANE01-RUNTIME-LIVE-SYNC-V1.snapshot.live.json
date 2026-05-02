@@ -1,0 +1,105 @@
+{
+  "task_id": "LANE01-RUNTIME-LIVE-SYNC-V1",
+  "task_title": "Build GitHub Action sync runtime/ from Uniton_Shared (private) → Uniton_Shared_Live (public)",
+  "phase": "ROADMAP_W1_PARTIAL_EXECUTION (mid-week new infrastructure pull-forward of W2.T2-class work)",
+  "executor": {
+    "lane": "Lane_01 (Claude Opus 4.7 on Vultr Windows Server)",
+    "role": "CTO author + self-approve under AMD_LANE01_CTO_AUTO_APPROVE_TECH_NON_CANON §3.1 YES list item 1 (architecture/spec drafts non-SHARED/laws/) — workflow YAML is config / spec class; secrets pre-existing per task body",
+    "agent": "CLAC-1 (Claude Code Desktop)",
+    "model": "claude-opus-4-7",
+    "working_dir": "C:\\workspace\\Uniton_Shared"
+  },
+  "authority_chain": {
+    "task_dispatched_by": "NTS chat dispatch on 2026-04-27 (LANE01-RUNTIME-LIVE-SYNC-V1 task body)",
+    "self_approve_authority": "AMD_LANE01_CTO_AUTO_APPROVE_TECH_NON_CANON §3.1 YES list item 1; workflow file is configuration that automates an existing manual sync responsibility; secret LIVE_SYNC_TOKEN pre-provisioned by NTS per task body",
+    "boundary_concerns_flagged_in_report": [
+      "Pulls W2.T2-class work forward (FINAL §3 schedules state_update.yml for W2; this is sync_runtime_to_public.yml — different workflow, similar Layer 0 GitHub Actions infrastructure)",
+      "current_state.md §4 currently says 'No daemon, no scheduler, no autonomous execution' — push-triggered workflow IS scheduled-on-event execution; report will note this transition + recommend current_state.md update once test passes",
+      "R-RUN-04 (No trigger without contract): satisfied — workflow YAML + paths filter + workflow_dispatch are the contract",
+      "R-AUTH-04 / R-BRIDGE-01..07 (no prod DB / secrets / bridge mutation): workflow consumes pre-provisioned LIVE_SYNC_TOKEN + writes to public mirror; not production system mutation",
+      "R-RUN-03 (no production auto-trigger): public mirror is not production system; this is governance visibility",
+      "Per LAW_N8 §L8.2 modes FORBIDDEN BY DEFAULT — this workflow's existence + authorization is the explicit enabling event for a single named CI mode (state-mirror sync); narrowly scoped"
+    ]
+  },
+  "execution_started_utc": "2026-04-27T15:00:00Z",
+  "parent_head_at_start": "5ea4297d48005e37377a8ce8aa049c499fd6b3dc",
+  "branch": "main",
+  "remote": "https://github.com/unitonzengarden/Uniton_Shared.git",
+  "preflight_result": "PASS — HEAD == 5ea4297; branch main; worktree clean; up to date with origin/main; gh CLI authenticated as unitonzengarden; Uniton_Shared_Live verified PUBLIC + reachable (last pushedAt 2026-04-27T14:27:13Z, currently has only README.md); LIVE_SYNC_TOKEN secret listing returned 403 (PAT lacks admin scope to list — trusting task body that NTS pre-added; workflow will validate during test run)",
+  "files_to_create": [
+    "snapshots/LANE01-RUNTIME-LIVE-SYNC-V1.snapshot.live.json (this file)",
+    ".github/workflows/sync_runtime_to_public.yml (the deliverable)",
+    "reports/LANE01-RUNTIME-LIVE-SYNC-V1_REPORT.md",
+    "audit_logs/LANE01-RUNTIME-LIVE-SYNC-V1_audit.log"
+  ],
+  "files_to_edit": [
+    "runtime/checklist/MASTER_CHECKLIST.md (atomic update — header bump + +1 DONE row)"
+  ],
+  "files_NOT_to_edit": [
+    "docs/LAW_CLA_LLM/CANON/* (R-AUTH-01)",
+    "docs/LAW_CLA_LLM/SHARED/laws/* (R-AUTH-01)",
+    "docs/LAW_CLA_LLM/SHARED/skills/* (out of scope of this task)",
+    "docs/LAW_CLA_LLM/LANE_<other>/* (R-LANE-01)",
+    "Anything outside .github/workflows/ + standard deliverables + checklist update"
+  ],
+  "filename_artifact_note": "Task body again contains dispatch-time markdown rendering artifacts where bare filenames got auto-linked (e.g., '[state.md](http://state.md)', '[secrets.LIVE](http://secrets.LIVE)_SYNC_TOKEN', '[user.name](http://user.name)'). Workflow YAML written with clean references per author intent (consistent with all prior tasks).",
+  "sync_targets": {
+    "source": {
+      "repo": "unitonzengarden/Uniton_Shared",
+      "files": [
+        "runtime/current_state.md",
+        "runtime/checklist/MASTER_CHECKLIST.md",
+        "runtime/ACTION_REQUIRED_BOARD.md",
+        "notifications/NOTIFICATION_LEDGER.md"
+      ]
+    },
+    "target": {
+      "repo": "unitonzengarden/Uniton_Shared_Live",
+      "visibility": "public",
+      "verified_exists": true,
+      "files_after_sync": [
+        "runtime/current_state.md",
+        "runtime/checklist/MASTER_CHECKLIST.md",
+        "runtime/ACTION_REQUIRED_BOARD.md",
+        "notifications/NOTIFICATION_LEDGER.md",
+        "SYNC_INFO.md (auto-generated metadata)"
+      ]
+    },
+    "trigger": "push to main with paths filter on the 4 files + workflow_dispatch",
+    "auth": "secrets.LIVE_SYNC_TOKEN (pre-provisioned by NTS per task body)"
+  },
+  "boundary_verified_planned": {
+    "shared_laws_modified": false,
+    "canon_modified": false,
+    "lane_other_folders_modified": false,
+    "outside_repo_touched_via_local_edit": false,
+    "outside_repo_touched_via_workflow_when_run": "YES (intended) — workflow runs on GitHub infra, writes to Uniton_Shared_Live public mirror via secrets.LIVE_SYNC_TOKEN; this IS the deliverable's purpose and is per-task-spec",
+    "force_push_or_rebase": false,
+    "new_capabilities_granted": false,
+    "secrets_authored_or_modified": false,
+    "production_deploy": false,
+    "non_runtime_state_files_synced": false
+  },
+  "validation_planned": [
+    "YAML syntax parse (Python yaml.safe_load)",
+    "Workflow file existence + path correct",
+    "After commit + push: workflow visible via gh workflow list",
+    "Test 1: gh workflow run sync_runtime_to_public.yml --ref main",
+    "Test 2: gh run list --workflow=sync_runtime_to_public.yml --limit 1 — verify success",
+    "Test 3: gh api repos/unitonzengarden/Uniton_Shared_Live/contents — verify 4 files + SYNC_INFO.md present",
+    "Test 4: curl 1 raw URL on public mirror — verify content non-empty"
+  ],
+  "git_apply_commit_sha": "2c5b649437b05123c9d10692fdf2a2f60a27e71b",
+  "test_results": {
+    "push_triggered_run": {"id": "25002044848", "trigger": "push", "duration_seconds": 11, "status": "completed_success"},
+    "workflow_dispatch_run": {"id": "25002096700", "trigger": "workflow_dispatch", "duration_seconds": 12, "status": "completed_success"},
+    "public_mirror_files_present": ["README.md (pre-existing)", "SYNC_INFO.md (972 bytes, auto-generated)", "runtime/ACTION_REQUIRED_BOARD.md", "runtime/current_state.md", "runtime/checklist/MASTER_CHECKLIST.md", "notifications/NOTIFICATION_LEDGER.md"],
+    "raw_url_curl_test": "PASS — byte-faithful sync confirmed via SYNC_INFO.md + current_state.md + MASTER_CHECKLIST.md curl fetches"
+  },
+  "git_backfill_commit_sha": "c7bed90",
+  "git_final_local_HEAD": "c7bed90",
+  "git_final_origin_main": "c7bed90",
+  "worktree_clean": "YES",
+  "live_sync_followup_note": "The backfill commit c7bed90 also touched runtime/checklist/MASTER_CHECKLIST.md, which is in the workflow's paths filter — so the workflow will auto-fire once more to mirror this commit. Working as designed.",
+  "next_recommended_task": "After workflow_dispatch test PASS: (a) update runtime/current_state.md §4 to reflect 'automated state-mirror sync ACTIVE' + clarify this is one specific named CI mode — separate small task; (b) re-evaluate LANE03-W1-T2-CANON-GUARD-AUTHOR-V1 (still UNBLOCKED); (c) Lane_03 may also self-dispatch its planned tasks per AMD_LANE01_FAST_ENDORSER_MODE Rule 2."
+}

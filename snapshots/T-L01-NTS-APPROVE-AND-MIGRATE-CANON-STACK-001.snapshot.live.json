@@ -1,0 +1,100 @@
+{
+  "task_id": "T-L01-NTS-APPROVE-AND-MIGRATE-CANON-STACK-001",
+  "task_title": "NTS APPROVE + Lane_01 apply-migration of AIER Code V0 canon spec stack (11 files)",
+  "phase": "Communication Layer Bootstrap → V0 Canon Activation",
+  "executor": {
+    "lane": "Lane_01",
+    "role": "CTO + apply-delegated executor per AMD_LANE01_ROLE_REFRAME §3 + §3.1",
+    "agent": "Claude Code Desktop (Vultr Windows Server)",
+    "model": "claude-opus-4-7"
+  },
+  "authority_chain": {
+    "decided_by": "NTS",
+    "decision_channel": "natural language chat dispatch (this task)",
+    "decision_recorder": "Lane_01 (Claude Opus 4.7) writing NTS_DECISION.md per NTS dispatch — same pattern as commit c034c22 (role reframe)",
+    "apply_authority": "Lane_01 delegated per AMD_LANE01_ROLE_REFRAME §3 ('Apply approved amendment | YES if delegated') + §3.1 (CTO-style operator within delegated scope)",
+    "precedent": "T-L01-AMD-MIGRATE-ROLE-REFRAME-001 (commit b51934d): NTS approval c034c22 → Lane_01 migration b51934d"
+  },
+  "execution_started_utc": "2026-04-26T15:12:21Z",
+  "parent_head_at_start": "8050d4cd06c5ee60bb6d531c411c78faf8a4394f",
+  "branch": "main",
+  "remote": "https://github.com/unitonzengarden/Uniton_Shared.git",
+  "scope": {
+    "ntS_decision_packet": "AMD_LANE03_AIER_CODE_CANON_SPEC_STACK_2026-04-26",
+    "files_activated": 11,
+    "files_to_SHARED_architecture": [
+      "(from pending/.../revisions/) aier_code_master_canon_v_1_v0_2_candidate.md",
+      "(from pending/.../revisions/) aier_code_memory_spec_v_1_v0_2_candidate.md",
+      "(from pending/.../revisions/) aier_code_lane_federation_spec_v_1_v0_2_candidate.md",
+      "(from pending/.../revisions/) aier_code_capability_matrix_spec_v_1_v0_2_candidate.md",
+      "(from pending/.../revisions/) aier_code_backend_event_spec_v_1_v0_2_candidate.md",
+      "(from CANON/) aier_code_master_architecture_v_1_draft.md",
+      "(from CANON/) aier_code_v_0_architecture_spec_draft.md",
+      "(from CANON/) aier_code_communication_spec_v_1_draft.md",
+      "(from CANON/) aier_code_os_operations_spec_v_1_draft.md",
+      "(from CANON/) aier_code_productization_spec_v_1_draft.md",
+      "(from CANON/) aier_code_v_0_to_v_1_roadmap_spec_draft.md"
+    ],
+    "files_NOT_in_scope": [
+      "CANON/aier_code_master_canon_v_1_draft.md (superseded source draft — left untouched)",
+      "CANON/aier_code_memory_spec_v_1_draft.md (superseded source draft — left untouched)",
+      "CANON/aier_code_lane_federation_spec_v_1_draft.md (superseded source draft — left untouched)",
+      "CANON/aier_code_capability_matrix_spec_v_1_draft.md (superseded source draft — left untouched)",
+      "CANON/aier_code_backend_event_spec_v_1_draft.md (superseded source draft — left untouched)",
+      "CANON/aier_code_token_and_context_optimization_protocol_v_1_draft.md (separate packet AMD_LANE03_AIER_CODE_TOKEN_CONTEXT_PROTOCOL_2026-04-26 — NOT touched)"
+    ]
+  },
+  "two_commit_plan": {
+    "commit_1_decision": {
+      "message": "decision(amendment): APPROVE AIER Code canon spec stack [vercel skip]",
+      "changes": [
+        "DELETE pending/.../NTS_DECISION.md.template",
+        "CREATE pending/.../NTS_DECISION.md (decision: APPROVE; decided_by: NTS; decision_date: 2026-04-26; effective_date: 2026-04-26; rationale: per task)"
+      ]
+    },
+    "commit_2_migration": {
+      "message": "apply(amendment): activate AIER Code V0 canon stack [vercel skip]",
+      "changes": [
+        "git mv 5 candidates from pending/.../revisions/ to SHARED/architecture/",
+        "git mv 6 source drafts from CANON/ to SHARED/architecture/",
+        "edit each of 11 files frontmatter Status to ACTIVE (minimal change for internal consistency)",
+        "edit SHARED_INDEX.md: rename pending section, mark 11 rows ACTIVE with new SHARED/architecture/ paths, leave token/context protocol row pending",
+        "append AMENDMENTS_LOG.md with apply entry",
+        "git mv pending/AMD_LANE03_AIER_CODE_CANON_SPEC_STACK_2026-04-26/ to approved/AMD_LANE03_AIER_CODE_CANON_SPEC_STACK_2026-04-26/",
+        "create snapshot + report + audit log + update MASTER_CHECKLIST"
+      ]
+    }
+  },
+  "boundary_constraints": {
+    "WILL_DO": [
+      "Move 11 files to SHARED/architecture/ (final canon home) via git mv (preserves history)",
+      "Edit 11 file frontmatters minimally (Status field) for internal consistency with SHARED_INDEX",
+      "Update SHARED_INDEX.md (NTS explicit instruction)",
+      "Append AMENDMENTS_LOG.md (NTS explicit instruction)",
+      "Move packet pending/ to approved/ (NTS explicit instruction)",
+      "Write NTS_DECISION.md per NTS dispatch (Lane_01 recording NTS-spoken approval per precedent)"
+    ],
+    "WILL_NOT_DO": [
+      "NOT delete or move the 5 superseded source drafts in CANON/ (NTS did not ask)",
+      "NOT touch the unrelated token/context protocol draft (separate packet)",
+      "NOT modify SHARED/laws/* (no canon law change in this packet)",
+      "NOT modify other active SHARED/ files outside the explicit scope",
+      "NOT modify LANE_02/ or LANE_03/ folders (R-LANE-01)",
+      "NOT open new Lane",
+      "NOT deploy",
+      "NOT force-push or rebase"
+    ]
+  },
+  "post_migration_state_target": {
+    "SHARED/architecture/": "12 files (1 pre-existing + 11 newly activated)",
+    "CANON/": "6 files (5 superseded source drafts + 1 unrelated token/context protocol)",
+    "pending/AMD_LANE03_AIER_CODE_CANON_SPEC_STACK_2026-04-26/": "EMPTY (moved to approved/)",
+    "approved/AMD_LANE03_AIER_CODE_CANON_SPEC_STACK_2026-04-26/": "8 metadata files + NTS_DECISION.md (filled APPROVED)",
+    "SHARED_INDEX.md": "11 ACTIVE entries pointing at SHARED/architecture/; 1 token/context protocol still pending",
+    "AMENDMENTS_LOG.md": "2 entries (role reframe + canon stack)"
+  },
+  "qa_gate": {
+    "result": "PENDING_RUN"
+  },
+  "next_recommended_task": "After NTS verifies migration, dispatch follow-up tasks: T-RUNTIME-002 (current_state schema formalize per Memory Spec §6.4 future formal target); cleanup task for 5 superseded source drafts in CANON/ (move to _archive or append note); polish task for Backend/Event §13.3 + §10.2 inconsistencies (Lane_01 prior review notes)."
+}

@@ -1,0 +1,91 @@
+{
+  "task_id": "LANE01-W3-QA-LOOP-WIRE-V1",
+  "title": "Wire 3-worker QA family into automation loop (controlled cadence; NO daemon)",
+  "lane": "Lane_01",
+  "executor": "CLAC-1",
+  "model": "claude-opus-4-7",
+  "self_approve_authority": "AMD_LANE01_CTO_AUTO_APPROVE_TECH_NON_CANON §3.1 YES list (Python coordinator + JSON Schema + workflow YAML + pytest tests are tech non-canon; READS 3 worker reports but does NOT edit workers)",
+  "parent_head": "7e10f18a6c7c1c2329c52a694d7451fffbc5f72c",
+  "parent_task": "LANE01-W2-CLOSEOUT-V1 (DONE) — rebased deps via LANE01-W3-QUEUE-REBASELINE-V1 2026-04-29",
+  "wraps_under": "LANE01-W3-FIRE-3-LANES-V1 (Phase C — full task lifecycle as Lane_01 task)",
+  "phases": [
+    {
+      "id": "A",
+      "name": "Aggregate report schema",
+      "actions": [
+        "Create contracts/qa_loop_report.schema.json (NEW JSON Schema draft-07)",
+        "Required: qa_loop_id (pattern AIER-QA-LOOP-YYYY-MM-DD-NNN), scan_started_at + scan_finished_at, repo_head_sha, three sub-reports (scan / canon / skill), aggregate_health_score 0..100, recommended_actions",
+        "Update scripts/ci/check_contract_files.ps1 +qa_loop_report"
+      ]
+    },
+    {
+      "id": "B",
+      "name": "Coordinator script",
+      "actions": [
+        "Create scripts/workers/aier_qa_loop.py v1.0 (~300 lines)",
+        "Invoke 3 workers as subprocesses (--scan-only --report-out <path>) + load each report + aggregate",
+        "scan_health_score derived from findings (no scan_health_score field in scan_report); compute via 100 - critical*10 - warning*3 - info*1",
+        "aggregate_health_score = weighted avg (scan_health=30%, canon=40%, skill=30%)",
+        "Modes: --scan-only / --dry-run / --self-test / --report-out / --keep-subreports",
+        "Audit event 9-field shape per LAW_N9 §L9.15"
+      ]
+    },
+    {
+      "id": "C",
+      "name": "Workflow",
+      "actions": [
+        "Create .github/workflows/aier_qa_loop.yml workflow_dispatch only (R-RUN-01..06)",
+        "Inputs: dry_run (bool), keep_subreports (bool default false)",
+        "Steps: checkout → pip install jsonschema → self-test → run loop → upload artifact → conditional auto-commit unified report",
+        "Race-safe pull-rebase pattern from W2.T2 onwards"
+      ]
+    },
+    {
+      "id": "D",
+      "name": "Tests",
+      "actions": [
+        "tests/test_aier_qa_loop.py 8 pytest tests",
+        "Targets: aggregate health score formula + sub-report parse fixtures + schema validation + self-test mode + audit event 9-field + dispatch behavior + missing sub-report graceful + duration aggregation",
+        "pytest 112+ → 120+"
+      ]
+    },
+    {
+      "id": "E",
+      "name": "Real loop run",
+      "actions": [
+        "Run python scripts/workers/aier_qa_loop.py against actual repo",
+        "Capture aggregate_health_score baseline",
+        "Schema-validate output",
+        "Verify 3 sub-reports referenced + counted"
+      ]
+    }
+  ],
+  "boundary_check": {
+    "no_shared_laws_edited": true,
+    "no_canon_edited": true,
+    "no_5_active_skills_modified": true,
+    "no_aier_scan_modified": true,
+    "no_aier_qa_canon_modified": true,
+    "no_aier_qa_skill_modified": true,
+    "no_dispatcher_modified": true,
+    "no_lane_dispatch_modified": true,
+    "no_generators_modified": true,
+    "no_lane_02_03_modified": true,
+    "no_daemon_or_cron": true,
+    "no_secrets_hardcoded": true,
+    "workflow_dispatch_only": true,
+    "subprocess_invocations_only": true,
+    "weighted_avg_score_formula": "scan_health*0.30 + canon_health*0.40 + skill_health*0.30 (canon highest weight = canon drift is most consequential)"
+  },
+  "expected_deliverables": [
+    "contracts/qa_loop_report.schema.json (NEW)",
+    "scripts/workers/aier_qa_loop.py v1.0 (NEW)",
+    ".github/workflows/aier_qa_loop.yml (NEW workflow_dispatch only)",
+    "tests/test_aier_qa_loop.py (NEW 8 pytest tests)",
+    "qa_loop_reports/AIER-QA-LOOP-YYYY-MM-DD-NNN.json (NEW; first real run)",
+    "scripts/ci/check_contract_files.ps1 (UPDATED +qa_loop_report)",
+    "snapshots/LANE01-W3-QA-LOOP-WIRE-V1.snapshot.live.json",
+    "reports/LANE01-W3-QA-LOOP-WIRE-V1_REPORT.md",
+    "audit_logs/LANE01-W3-QA-LOOP-WIRE-V1_audit.log"
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "task_id": "LANE02-LOOP-T4-DOCS-OPERATOR-MANUAL-DRAFT-V1",
+  "loop_test_id": "LANE02-LOOP-TEST-V1-20260428",
+  "loop_order": "4/5",
+  "type": "docs_draft",
+  "lane": "Lane_02",
+  "executor": "CLAC2",
+  "timestamp_utc": "2026-04-28T08:05:00Z",
+  "verdict": "PASS",
+  "head_before": "215d04fe2641d0b603b08d856727f5fc7c5804f6",
+
+  "deliverable": {
+    "path": "docs/OPERATOR_MANUAL_DRAFT.md",
+    "status": "DRAFT v0.1",
+    "sections": 10,
+    "approx_lines": 186,
+    "audience": "NTS + future operators",
+    "approval_path": "Lane_03 cross-review -> Lane_01 cross-review -> NTS approve before v1.0 GA"
+  },
+
+  "boundary_compliance": {
+    "no_canon_edits": true,
+    "no_law_edits": true,
+    "no_other_lane_docs_edited": true,
+    "no_secrets": true,
+    "draft_status_explicit": true,
+    "paraphrase_only_no_verbatim_copy": true,
+    "no_policy_creation": true
+  },
+
+  "files_changed": {
+    "new": [
+      "docs/OPERATOR_MANUAL_DRAFT.md",
+      "reports/LANE02-LOOP-T4-DOCS-OPERATOR-MANUAL-DRAFT-V1_REPORT.md",
+      "snapshots/LANE02-LOOP-T4-DOCS-OPERATOR-MANUAL-DRAFT-V1_snapshot.live.json",
+      "audit_logs/LANE02-LOOP-T4-DOCS-OPERATOR-MANUAL-DRAFT-V1_audit.log",
+      "handoffs/outbox/Lane_02/RSP-L02-L01-T4-COMPLETE-20260428-001.json"
+    ],
+    "modified": [
+      "runtime/current_state.md",
+      "runtime/checklist/MASTER_CHECKLIST.md",
+      "notifications/NOTIFICATION_LEDGER.md",
+      "notifications/NOTIFICATION_LEDGER.json"
+    ]
+  },
+
+  "commit": {
+    "sha": "249371348e9c37afed3cb5611b8dfc22825403f6",
+    "message": "docs: operator manual DRAFT v0.1 [vercel skip]"
+  },
+
+  "schema_version": "lane02_snapshot_v1"
+}

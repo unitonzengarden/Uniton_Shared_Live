@@ -1,0 +1,29 @@
+{
+  "timestamp": "2026-04-26T18:11:00+07:00",
+  "task_id": "UNITON-SHARED-LANE-REVIEWS-COLLECTION-AUDIT-V1",
+  "git_final_local_head_at_report_creation": "508a2731a2ac94190c84411e3f2680a21dfdf330",
+  "git_final_origin_main_at_report_creation": "508a2731a2ac94190c84411e3f2680a21dfdf330",
+  "reviewed_packet_ids": [
+    "AMD_LANE03_OS_OPERATIONS_PROCEDURES_2026-04-26",
+    "AMD_LANE03_LAWS_N7_N11_2026-04-26"
+  ],
+  "review_statuses": {
+    "AMD_LANE03_OS_OPERATIONS_PROCEDURES_2026-04-26": {
+      "Lane_01": "REQUEST_FOUND_NO_RESPONSE",
+      "Lane_02": "REQUEST_FOUND_NO_RESPONSE"
+    },
+    "AMD_LANE03_LAWS_N7_N11_2026-04-26": {
+      "Lane_01": "RESPONSE_FOUND_VALID",
+      "Lane_02": "REQUEST_FOUND_NO_RESPONSE"
+    }
+  },
+  "responses_found": [
+    "handoffs/outbox/Lane_03/RSP-L01-L03-LAWS-REVIEW-20260426-001.json"
+  ],
+  "report_paths": {
+    "markdown": "reports/UNITON-SHARED-LANE-REVIEWS-COLLECTION-AUDIT-V1.md",
+    "json": "reports/UNITON-SHARED-LANE-REVIEWS-COLLECTION-AUDIT-V1.json",
+    "snapshot": "snapshots/UNITON-SHARED-LANE-REVIEWS-COLLECTION-AUDIT-V1.snapshot.json"
+  }
+}
+

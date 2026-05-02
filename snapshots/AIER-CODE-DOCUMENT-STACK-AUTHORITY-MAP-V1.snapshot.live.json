@@ -1,0 +1,35 @@
+{
+  "timestamp": "2026-04-26T19:06:29+07:00",
+  "task_id": "AIER-CODE-DOCUMENT-STACK-AUTHORITY-MAP-V1",
+  "git_final_local_head_at_report_creation": "3a523870e6f75dd861b96feff3730711ec1d16ff",
+  "git_final_origin_main_at_report_creation": "3a523870e6f75dd861b96feff3730711ec1d16ff",
+  "created_artifacts": [
+    "docs/LAW_CLA_LLM/SHARED/architecture/AIER_CODE_DOCUMENT_STACK_AND_AUTHORITY_MAP_V1.draft.md",
+    "reports/AIER-CODE-DOCUMENT-STACK-AUTHORITY-MAP-V1_REPORT.md",
+    "reports/AIER-CODE-DOCUMENT-STACK-AUTHORITY-MAP-V1.json",
+    "snapshots/AIER-CODE-DOCUMENT-STACK-AUTHORITY-MAP-V1.snapshot.live.json"
+  ],
+  "authority_layers": [
+    "NTS decision",
+    "Ecosystem super canon",
+    "AIER LIFE strategic canon",
+    "AIER common law/spec",
+    "AIER CODE active SHARED law",
+    "AIER CODE active runtime/contracts",
+    "Draft pending law/procedure",
+    "Evidence and discussion"
+  ],
+  "recommended_next_document": "AIER_CODE_MASTER_CANON_V1",
+  "next_recommended_task": "AIER-CODE-MASTER-CANON-V1-DRAFT",
+  "canon_boundary": {
+    "roadmap_created": false,
+    "amendment_activated": false,
+    "canon_approved": false,
+    "shared_laws_changed": false,
+    "contracts_changed": false,
+    "backend_product_app_code_created": false,
+    "deploy_occurred": false,
+    "lane_opened": false
+  }
+}
+

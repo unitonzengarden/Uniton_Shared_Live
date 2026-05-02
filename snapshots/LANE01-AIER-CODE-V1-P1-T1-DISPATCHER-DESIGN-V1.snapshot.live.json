@@ -1,0 +1,89 @@
+{
+  "task_id": "LANE01-AIER-CODE-V1-P1-T1-DISPATCHER-DESIGN-V1",
+  "task_title": "AIER Code v1.0 Phase 1 T1 — Dispatcher Design Spec (DRAFT)",
+  "phase": "AIER_CODE_V1 → Phase 1 T1 (Dispatcher Design)",
+  "executor": {
+    "lane": "Lane_01 (Claude Opus 4.7 on Vultr Windows Server)",
+    "role": "CTO author per AMD_LANE01_ROLE_REFRAME §3.1",
+    "agent": "CLAC-1 (Claude Code Desktop)",
+    "model": "claude-opus-4-7",
+    "working_dir": "C:\\workspace\\Uniton_Shared"
+  },
+  "authority_chain": {
+    "task_dispatched_by": "NTS chat dispatch on 2026-04-27 (LANE01-AIER-CODE-V1-P1-T1-DISPATCHER-DESIGN-V1 task body)",
+    "authoring_scope": "Lane_01 CTO authoring per AMD_LANE01_ROLE_REFRAME §3.1",
+    "self_approve_basis": "AMD_LANE01_CTO_AUTO_APPROVE_TECH_NON_CANON_2026-04-26 §3.1 YES list item 1 (architecture/spec drafts non-SHARED/laws); spec is DRAFT and not SHARED canon",
+    "draft_status_note": "Spec is DRAFT v0.1 — Lane_03 cross-review required before further graduation (DRAFT → PROPOSED → ACTIVE per §11 rollout plan)"
+  },
+  "execution_started_utc": "2026-04-27T04:30:00Z",
+  "parent_head_at_start_pre_rebase": "9d2762bcdaef03980ff59eb3919f96a3ad6d294f (per task spec)",
+  "parent_head_at_start_post_rebase": "759017b5f6cc30afe7322865445e742a21308784 (Lane_03 commits landed during dispatch)",
+  "branch": "main",
+  "remote": "https://github.com/unitonzengarden/Uniton_Shared.git",
+  "preflight_result": "PASS (preflight_check.py with --expected-remote-sha 759017b confirmed remote URL, branch, origin SHA, local HEAD = origin/main, working tree clean)",
+  "canon_binding": [
+    "LAW_N6_OS (OS layout, GitHub as source of truth, audit append-only)",
+    "LAW_N8_RUNTIME (R-RUN-01..06: no daemon/auto-trigger/silent escalation)",
+    "LAW_N10_CAPABILITY_MATRIX (R-CAP-01..05: no action without capability)",
+    "LAW_N11_BACKEND_BRIDGE (R-BRIDGE-01..07: no direct prod, no auth = no execution)",
+    "REDLINES: R-AUTH-01, R-AUTH-02, R-LANE-01, R-MEM-04",
+    "Handoff schemas: contracts/lane_message.schema.json, contracts/lane_response.schema.json, contracts/handoff.schema.json, contracts/control_signal.schema.json",
+    "Roadmap parent: roadmaps/AIER_CODE_V1_AUTOPILOT_ROADMAP.md (Phase 1 T1)"
+  ],
+  "files_to_create": [
+    "snapshots/LANE01-AIER-CODE-V1-P1-T1-DISPATCHER-DESIGN-V1.snapshot.live.json (this file)",
+    "roadmaps/AIER_CODE_DISPATCHER_SPEC_V1.md (the deliverable spec)",
+    "reports/LANE01-AIER-CODE-V1-P1-T1-DISPATCHER-DESIGN-V1_REPORT.md",
+    "audit_logs/LANE01-AIER-CODE-V1-P1-T1-DISPATCHER-DESIGN-V1_audit.log"
+  ],
+  "files_to_edit": [
+    "runtime/checklist/MASTER_CHECKLIST.md (atomic header bump + new DONE row)"
+  ],
+  "boundary_will_do": [
+    "Author DRAFT spec at roadmaps/AIER_CODE_DISPATCHER_SPEC_V1.md",
+    "Cite existing contract schemas (no schema modification)",
+    "Reference existing handoff inbox/outbox conventions (no protocol mutation)",
+    "Reference existing AIER_CODE_LANE_NOTIFICATION_ACK_PROTOCOL_V1 (no modification)",
+    "Standard task deliverables (snapshot, report, audit log)",
+    "Atomic MASTER_CHECKLIST update"
+  ],
+  "boundary_will_not_do": [
+    "Modify SHARED/laws/* (R-AUTH-01)",
+    "Modify any active architecture/boot/os_operations file",
+    "Modify any contract schema",
+    "Modify LANE_<other>/* folders (R-LANE-01)",
+    "Touch outside repo (uzgplus, side repos, UZG+ product)",
+    "Mark spec status APPROVED or ACTIVE (DRAFT only)",
+    "Author runtime/backend/product code (spec is design-only)",
+    "Specify daemon mode as proposed mechanism (R-RUN-01 — must be forbidden in §6.4 or out-of-scope in §12)",
+    "Specify auto-deploy / auto-merge / auto-execute as proposed mechanism (R-RUN-03 — must be out-of-scope §12)",
+    "Force-push or rebase shared",
+    "Open new Lane",
+    "Production deploy"
+  ],
+  "acceptance_criteria_planned": [
+    "Spec file exists at roadmaps/AIER_CODE_DISPATCHER_SPEC_V1.md",
+    "All 12 sections present (§1-§12)",
+    "Status = DRAFT, Version = v0.1",
+    "Every redline R-AUTH/R-LANE/R-RUN/R-CAP/R-BRIDGE explicitly addressed in §6 or §7",
+    "At least 5 open questions in §10 for Lane_03 cross-review",
+    "All 4 contract schemas cited with paths",
+    "No SHARED/laws/* modified",
+    "No LANE_<other>/ touched",
+    "HEAD pushed to origin/main, match verified",
+    "Worktree clean post-push",
+    "Snapshot + report + audit log + checklist all present",
+    "Spec is design-only — NO executable code, NO daemon spec violating R-RUN-01"
+  ],
+  "qa_gate_self_grep_planned": [
+    "grep redline IDs (R-AUTH-01/02, R-LANE-01, R-RUN-01..06, R-CAP-01..05, R-BRIDGE-01..07, R-MEM-04) → must appear in §6 or §7",
+    "grep 'daemon' → must appear ONLY in §6.4 (forbidden) or §12 (out of scope), NEVER as proposed mechanism",
+    "grep 'auto-deploy' / 'auto-merge' / 'auto-execute' → must appear ONLY in §12 (out of scope)",
+    "verify all section headers §1-§12 present",
+    "verify no edits outside: roadmaps/, snapshots/, reports/, audit_logs/, runtime/checklist/"
+  ],
+  "git_final_local_HEAD": "14471ee926cf64faea2b240029b1d48dcd7332ed",
+  "git_final_origin_main": "14471ee926cf64faea2b240029b1d48dcd7332ed",
+  "worktree_clean": "YES",
+  "next_recommended_task": "Lane_03 cross-review of Dispatcher Design Spec V1 DRAFT — output: handoffs/outbox/Lane_01/RSP-L03-L01-DISPATCHER-SPEC-V1-CROSS-REVIEW-* (verdict: ENDORSE / ENDORSE_WITH_NOTES / AMEND / OBJECT) + Lane_03 task report. After Lane_03 ENDORSE → spec graduates DRAFT → PROPOSED per §11 rollout plan."
+}

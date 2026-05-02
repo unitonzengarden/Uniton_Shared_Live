@@ -1,0 +1,49 @@
+{
+  "task_id": "UNITON-SHARED-LOCAL-WORKSPACE-CANONICALIZATION-AND-REPO-INTEGRITY-LOCK-V1",
+  "created_at": "2026-04-26T08:55:46+07:00",
+  "lane": "Lane_03",
+  "repo": {
+    "canonical_path": "D:\\UZG\\Projects-v2\\Uniton_Shared",
+    "expected_remote": "https://github.com/unitonzengarden/Uniton_Shared.git",
+    "verified_remote": "https://github.com/unitonzengarden/Uniton_Shared.git",
+    "branch": "main",
+    "base_head_for_policy_commit": "5f410a20d3b8ebd9a6beb6faf58c11236035455b",
+    "previous_local_main_head": "29e0ff294918d367d4f897a4d97189430490592f",
+    "previous_local_main_backup_branch": "backup/local-main-before-canonicalization-20260426_085536"
+  },
+  "preflight": {
+    "active_uniton_shared_folders_before": [
+      "D:\\UZG\\Projects-v2\\Uniton_Shared",
+      "D:\\UZG\\Projects-v2\\Uniton_Shared_visibility_reconcile"
+    ],
+    "canonical_repo_clean_before": true,
+    "noncanonical_status_short_before": "",
+    "noncanonical_head_before": "5f410a20d3b8ebd9a6beb6faf58c11236035455b",
+    "noncanonical_uncommitted_work": false
+  },
+  "canonicalization": {
+    "noncanonical_original_path": "D:\\UZG\\Projects-v2\\Uniton_Shared_visibility_reconcile",
+    "noncanonical_quarantine_path": "D:\\UZG\\Projects-v2\\_archive_noncanonical\\Uniton_Shared_visibility_reconcile_20260426_085431",
+    "permanently_deleted": false,
+    "archive_marker": "README_QUARANTINED_NONCANONICAL.txt",
+    "archive_git_file_renamed": ".git.quarantined",
+    "active_worktree_removed_after_archive_copy": true
+  },
+  "policy": {
+    "path": "docs/LAW_CLA_LLM/SHARED/os_operations/WORKSPACE_REPO_INTEGRITY_POLICY.md",
+    "shared_index_updated": true
+  },
+  "forbidden_scope_checks": {
+    "shared_laws_modified": false,
+    "lane_folders_modified": false,
+    "product_app_backend_created": false,
+    "deploy_run": false,
+    "force_push": false
+  },
+  "active_uniton_shared_folders_after": [
+    "D:\\UZG\\Projects-v2\\Uniton_Shared"
+  ],
+  "archive_folders_after": [
+    "D:\\UZG\\Projects-v2\\_archive_noncanonical\\Uniton_Shared_visibility_reconcile_20260426_085431"
+  ]
+}

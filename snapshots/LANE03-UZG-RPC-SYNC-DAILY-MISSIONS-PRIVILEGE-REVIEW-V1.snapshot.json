@@ -1,0 +1,51 @@
+{
+  "schema_version": "LANE03_TASK_SNAPSHOT_V1",
+  "task_id": "LANE03-UZG-RPC-SYNC-DAILY-MISSIONS-PRIVILEGE-REVIEW-V1",
+  "generated_at": "2026-05-01T15:16:18+07:00",
+  "result": "PASS",
+  "mode": "REVIEW_DESIGN_ONLY",
+  "repos": {
+    "uniton_shared": {
+      "path": "D:/UZG/Projects-v2/Uniton_Shared",
+      "head_before_writes": "0f2cb78de081236b09a52ba8434cbe7fee038073"
+    },
+    "uzgplus_app": {
+      "path": "D:/UZG/Projects/uzgplus-app",
+      "scan_ref": "origin/main",
+      "origin_main_commit": "f4fa499ce91db118506d5f9cc768783417627888",
+      "local_worktree_dirty": true,
+      "pull_performed": false
+    }
+  },
+  "target": {
+    "function": "public.rpc_sync_daily_missions(uuid,date)",
+    "live_grants": {
+      "public": true,
+      "anon": true,
+      "authenticated": true,
+      "service_role": true
+    },
+    "security_definer": true,
+    "owner": "postgres",
+    "references_rpc_sync_energy_daily": true
+  },
+  "dependency_state": {
+    "direct_browser_dependency_found": false,
+    "worker_or_api_dependency_found": true,
+    "worker_or_api_uses_service_role_path": true,
+    "trigger_model": "MIXED_USER_TRIGGERED_SERVER_EXECUTED"
+  },
+  "decision": {
+    "classification": "RESTRICT_SERVICE_ROLE_ONLY",
+    "sql_applied": false,
+    "requires_nts_approval_before_apply": true,
+    "risk_rating": "HIGH"
+  },
+  "future_sql_not_applied": [
+    "REVOKE EXECUTE ON FUNCTION public.rpc_sync_daily_missions(uuid,date) FROM PUBLIC;",
+    "REVOKE EXECUTE ON FUNCTION public.rpc_sync_daily_missions(uuid,date) FROM anon;",
+    "REVOKE EXECUTE ON FUNCTION public.rpc_sync_daily_missions(uuid,date) FROM authenticated;",
+    "GRANT EXECUTE ON FUNCTION public.rpc_sync_daily_missions(uuid,date) TO service_role;"
+  ],
+  "next_safe_action": "LANE03-UZG-RPC-SYNC-DAILY-MISSIONS-SERVICE-ROLE-HARDENING-APPLY-WITH-NTS-APPROVAL-V1"
+}

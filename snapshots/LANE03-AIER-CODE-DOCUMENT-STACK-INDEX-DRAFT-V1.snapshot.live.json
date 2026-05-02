@@ -1,0 +1,17 @@
+{
+  "timestamp": "2026-04-26T22:43:11+07:00",
+  "task_id": "LANE03-AIER-CODE-DOCUMENT-STACK-INDEX-DRAFT-V1",
+  "git_final_local_head": "pending_post_push_verification",
+  "git_final_origin_main": "pending_post_push_verification",
+  "file_path": "docs/LAW_CLA_LLM/CANON/AIER_CODE_DOCUMENT_STACK_INDEX_V1_draft.md",
+  "status": "DRAFT / PENDING_REVIEW",
+  "active_stack_count": 11,
+  "draft_support_docs_count": 3,
+  "report_paths": {
+    "markdown": "reports/LANE03-AIER-CODE-DOCUMENT-STACK-INDEX-DRAFT-V1_REPORT.md",
+    "json": "reports/LANE03-AIER-CODE-DOCUMENT-STACK-INDEX-DRAFT-V1.json",
+    "snapshot": "snapshots/LANE03-AIER-CODE-DOCUMENT-STACK-INDEX-DRAFT-V1.snapshot.live.json",
+    "audit_log": "audit_logs/LANE03-AIER-CODE-DOCUMENT-STACK-INDEX-DRAFT-V1_audit.log"
+  },
+  "worktree_clean": "pending_post_push_verification"
+}

@@ -1,0 +1,61 @@
+{
+  "task_id": "UNITON-SHARED-CI-LANE-GUARDRAILS-V1",
+  "created_at": "2026-04-25T22:04:29.0972864+07:00",
+  "result": "LIVE_CI_GUARDRAILS_SNAPSHOT",
+  "mode": "governance_enforcement_only",
+  "repo": {
+    "local_path": "D:\\UZG\\Projects-v2\\uniton_shared",
+    "remote_origin": "https://github.com/unitonzengarden/Uniton_Shared.git",
+    "branch": "main",
+    "head_before_commit": "3a09dacc72d58cb5264f7ba95a320558b9a9a3c3"
+  },
+  "guardrails_implemented": {
+    "workflow": ".github/workflows/lane-guardrails.yml",
+    "scripts": [
+      "scripts/ci/check_shared_immutability.ps1",
+      "scripts/ci/check_lane_isolation.ps1",
+      "scripts/ci/check_deliverables.ps1",
+      "scripts/ci/check_commit_policy.ps1",
+      "scripts/ci/check_topology.ps1",
+      "scripts/ci/run_all_checks.ps1"
+    ],
+    "shared_immutability": "FAILS direct docs/LAW_CLA_LLM/SHARED/laws/*.md changes unless commit message contains amendment-approved.",
+    "lane_isolation": "FAILS multiple normalized Lane folder changes in one task and blocks apps/, src/, backend/, services/ paths.",
+    "deliverables": "FAILS changed tasks that do not include report, snapshot, and audit log deliverables.",
+    "commit_policy": "FAILS commit messages missing [vercel skip].",
+    "topology": "Emits warnings for SHARED_INDEX missing paths and registered Lane folder mismatches; does not fail.",
+    "version_presence": "Topology check warns if root VERSION or SHARED/VERSION is missing."
+  },
+  "local_simulations": {
+    "pass_case": "PASS run_all_checks with this task's changed files, deliverables, and [vercel skip] commit message.",
+    "shared_law_without_marker": "EXPECTED_FAIL direct SHARED law edit blocked.",
+    "shared_law_with_marker": "PASS amendment-approved marker allowed SHARED law change.",
+    "cross_lane": "EXPECTED_FAIL changes to LANE_03 and LANE_04 together blocked.",
+    "missing_deliverables": "EXPECTED_FAIL missing report/snapshot/audit detected.",
+    "missing_commit_suffix": "EXPECTED_FAIL commit without [vercel skip] rejected.",
+    "build_drift": "EXPECTED_FAIL apps/ path blocked."
+  },
+  "known_warnings": [
+    "Topology check warns that Lane_01 is ACTIVE but normalized LANE_01 folder is not present; documented as legacy CLA_01_VULTR.",
+    "Topology check warns that Lane_02 is ACTIVE but normalized LANE_02 folder is not present; documented as pending setup.",
+    "Local PyYAML is unavailable; workflow YAML was structurally checked locally and will be parsed by GitHub Actions on run."
+  ],
+  "changed_files": [
+    ".github/workflows/lane-guardrails.yml",
+    "scripts/ci/check_shared_immutability.ps1",
+    "scripts/ci/check_lane_isolation.ps1",
+    "scripts/ci/check_deliverables.ps1",
+    "scripts/ci/check_commit_policy.ps1",
+    "scripts/ci/check_topology.ps1",
+    "scripts/ci/run_all_checks.ps1",
+    "snapshots/UNITON-SHARED-CI-LANE-GUARDRAILS-V1.snapshot.live.json",
+    "reports/UNITON-SHARED-CI-LANE-GUARDRAILS-V1_REPORT.md",
+    "audit_logs/UNITON-SHARED-CI-LANE-GUARDRAILS-V1_audit.log"
+  ],
+  "deployment": {
+    "vercel_deploy": "NO",
+    "production_infrastructure_touched": false,
+    "uniton_os_built": false,
+    "product_or_runtime_files_changed": false
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "task_id": "LANE01-W1-T2-SHARED-SKILL-LAW-N9-CONFORMANCE-REPAIR-V1",
+  "task_title": "Repair 4 authored DRAFT SHARED skills to active LAW_N9 conformance",
+  "phase": "ROADMAP_W1_PARTIAL_EXECUTION / LAW_N9_CONFORMANCE_REPAIR",
+  "executor": {
+    "lane": "Lane_01 (Claude Opus 4.7 on Vultr Windows Server)",
+    "role": "Repair scope only — add METADATA.yaml + restructure SKILL.md headings to LAW_N9 §L9.7-§L9.9 conformance; preserve DRAFT status; no ACTIVE promotion; aier-canon-guard untouched per task spec",
+    "agent": "CLAC-1 (Claude Code Desktop)",
+    "model": "claude-opus-4-7 (per task body REASON: governance-sensitive repair)",
+    "working_dir": "C:\\workspace\\Uniton_Shared (Vultr local clone of D:\\UZG\\Projects-v2\\Uniton_Shared canonical Lane_03 root)"
+  },
+  "authority_chain": {
+    "task_dispatched_by": "Lane_03 audit task AIER-CODE-ROADMAP-EXECUTION-READINESS-AUDIT-V1 (commit 6f053e8) generated this packet at task_packets/pending/LANE01-W1-T2-SHARED-SKILL-LAW-N9-CONFORMANCE-REPAIR-V1/; NTS dispatched via chat",
+    "scope": "Repair 4 DRAFT SHARED skills to LAW_N9 conformance ONLY; no ACTIVE promotion; no canon-guard authoring",
+    "self_approve_authority": "Lane_01 self-approve REPAIR (no status change DRAFT→ACTIVE; metadata + structure repair) under AMD_LANE01_CTO_AUTO_APPROVE_TECH_NON_CANON §3.1 YES list item 1 (architecture/spec drafts non-SHARED/laws/) + cleanup/archive precedent. Active LAW_N9 wins per task §7 SPEC DIVERGENCE decision."
+  },
+  "execution_started_utc": "2026-04-27T14:30:00Z",
+  "parent_head_at_start": "6f053e8 (Lane_03 readiness audit + packet generation)",
+  "branch": "main",
+  "remote": "https://github.com/unitonzengarden/Uniton_Shared.git",
+  "preflight_result": "PASS — fast-forwarded from 61d3e43 to 6f053e8 to receive Lane_03 readiness audit + this packet; branch main; up to date with origin/main",
+  "law_n9_required_structure": {
+    "files_required": ["SKILL.md", "METADATA.yaml", "README.md", "examples/", "tests/"],
+    "files_optional": ["CHANGELOG.md", "schemas/", "fixtures/"],
+    "skill_md_required_headings": [
+      "# <skill-name> (h1)",
+      "## Purpose",
+      "## When to use",
+      "## When not to use",
+      "## Inputs required",
+      "## Preconditions",
+      "## Step-by-step",
+      "## Outputs",
+      "## Audit event emitted",
+      "## Failure modes",
+      "## Recovery",
+      "## Redlines",
+      "## Examples"
+    ],
+    "metadata_yaml_required_keys": [
+      "skill_id", "version", "owner_lane", "status", "scope",
+      "canon_adjacent", "side_effect_class",
+      "dependencies (laws, contracts, skills)",
+      "capabilities_required",
+      "inputs (required, optional)",
+      "outputs (required)",
+      "tests (required)",
+      "review (lane_03_required, nts_approval_required)"
+    ]
+  },
+  "skills_to_repair": [
+    "docs/LAW_CLA_LLM/SHARED/skills/aier-dispatch/ (overwrite SKILL.md to LAW_N9 layout; ADD METADATA.yaml; preserve README.md + inputs.schema.json + outputs.schema.json + examples/ + tests/)",
+    "docs/LAW_CLA_LLM/SHARED/skills/aier-verify/ (same pattern)",
+    "docs/LAW_CLA_LLM/SHARED/skills/aier-state-update/ (same pattern)",
+    "docs/LAW_CLA_LLM/SHARED/skills/aier-handoff-route/ (same pattern)"
+  ],
+  "skill_NOT_to_repair": "docs/LAW_CLA_LLM/SHARED/skills/aier-canon-guard/ — DEFERRED per task §6 + §9 forbidden item 3; SKELETON SKILL.md preserved unchanged",
+  "files_NOT_to_edit": [
+    "docs/LAW_CLA_LLM/SHARED/laws/* (R-AUTH-01)",
+    "docs/LAW_CLA_LLM/CANON/* (R-AUTH-01)",
+    "docs/LAW_CLA_LLM/SHARED/skills/aier-canon-guard/* (DEFERRED)",
+    "docs/LAW_CLA_LLM/SHARED/skills/SKILL_AUTHORING_GUIDE.md (not in allowed list — its non-conformance with LAW_N9 §L9.8 is a separate follow-up)",
+    "docs/LAW_CLA_LLM/SHARED/skills/SKILL_INVOCATION_PROTOCOL.md (not in allowed list)",
+    "docs/LAW_CLA_LLM/SHARED/lab/* (Lane_03 owned, R-LANE-01)",
+    "docs/LAW_CLA_LLM/SHARED/rules/* (Lane_03 owned, R-LANE-01)",
+    "docs/LAW_CLA_LLM/LANE_02/* and LANE_03/* (R-LANE-01)",
+    "roadmaps/* (locked V1 FINAL)",
+    "Outside repo"
+  ],
+  "preservation_decisions": {
+    "schemas": "PRESERVE inputs.schema.json + outputs.schema.json — LAW_N9 §L9.7 lists schemas/ as optional but allowed; current schemas are useful additions; LAW_N9 does not forbid them",
+    "examples": "PRESERVE examples/ (LAW_N9 §L9.7 mandatory) — keep existing example files",
+    "tests": "PRESERVE tests/ (LAW_N9 §L9.7 mandatory) — keep existing test files",
+    "readme": "PRESERVE README.md (LAW_N9 §L9.7 mandatory)",
+    "old_skill_md_yaml_frontmatter_metadata": "MIGRATE to METADATA.yaml — frontmatter fields (name, version, status, owner_lane, description, date, canon_binding) become METADATA.yaml keys plus expand to LAW_N9 §L9.9 full key set",
+    "old_skill_md_section_descriptions": "PRESERVE semantic content; remap to LAW_N9 §L9.8 heading structure"
+  },
+  "boundary_verified_planned": {
+    "shared_laws_modified": false,
+    "canon_modified": false,
+    "shared_lab_or_rules_modified": false,
+    "lane_other_folders_modified": false,
+    "outside_repo_touched": false,
+    "force_push_or_rebase": false,
+    "skill_status_set_to_active": false,
+    "aier_canon_guard_touched": false,
+    "skill_authoring_guide_or_invocation_protocol_modified": false,
+    "new_capabilities_granted": false,
+    "nts_approval_recorded": false
+  },
+  "validation_planned": [
+    "File existence: 4 skill bundles each have SKILL.md + METADATA.yaml + README.md + examples/ + tests/",
+    "YAML parse: 4 METADATA.yaml + key check (skill_id, version, owner_lane, status, scope, canon_adjacent, side_effect_class, dependencies, capabilities_required, inputs, outputs, tests, review)",
+    "Heading grep: 4 SKILL.md must have all 12 LAW_N9 headings",
+    "JSON parse: 4 inputs.schema.json + 4 outputs.schema.json + 1 snapshot + 1 report.json",
+    "Search: no skill ACTIVE; no NTS approval claim",
+    "Boundary diff: no SHARED/laws, no CANON, no lab, no rules, no roadmaps, no LANE_02/03, no product repo",
+    "scripts/ci/check_contract_files.ps1",
+    "pytest scripts/governance/test_validate_*.py -q",
+    "scripts/runtime/aier_loop.ps1 -SelfTest",
+    "scripts/runtime/route_messages.ps1 -SelfTest"
+  ],
+  "git_apply_commit_sha": "0a158a8e869a0fdbed9d4c72811388e7bbec7471",
+  "git_backfill_commit_sha": "7c4a972",
+  "git_final_local_HEAD": "7c4a972",
+  "git_final_origin_main": "7c4a972",
+  "worktree_clean": "YES",
+  "next_recommended_task": "After this repair PASS: revisit LANE03-W1-T2-CANON-GUARD-AUTHOR-V1 (5th skill) using LAW_N9-conformant layout. Separate follow-up: review SKILL_AUTHORING_GUIDE.md + SKILL_INVOCATION_PROTOCOL.md for LAW_N9 alignment + create SHARED/skills/REGISTRY.md per LAW_N9 §L9.12 (current INDEX.md serves the registry role but with different filename)."
+}

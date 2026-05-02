@@ -1,0 +1,113 @@
+{
+  "task_id": "T-LANE01-RUNTIME-ACCEPTANCE-001",
+  "executed_at": "2026-04-25T15:47:03Z",
+  "executor": "CLAC-1 Lane_01",
+  "model": "claude-sonnet-4-7",
+  "stream": "Lane_01",
+  "working_dir": "C:\\workspace\\Uniton_Shared",
+  "working_dir_verified": true,
+  "task_type": "infrastructure",
+
+  "originating_request": {
+    "request_id": "LANE_01_RUNTIME_SYNC_AND_ACCEPTANCE_V1",
+    "source_lane": "Lane_03 (ChatGPT)",
+    "forwarded_by": "NTS in CLA-1 thread 2026-04-25"
+  },
+
+  "pre_task_state": {
+    "remote_main_head_pre": "866b70709d8913e4baccdf75e091bc27094d1ffa",
+    "remote_main_head_post_pull": "3fb451d49c30b098eb67e27b3c7162a545a7deec",
+    "lane_01_acceptance_status_before": "PENDING",
+    "lane_03_setup_files_present": true
+  },
+
+  "backup": {
+    "location": "/tmp/T-LANE01-RUNTIME-ACCEPTANCE-001-backup/LAW_CLA_LLM",
+    "file_count": 68,
+    "verified": true
+  },
+
+  "lane_03_setup_verification": {
+    "VERSION": {"path": "docs/LAW_CLA_LLM/SHARED/VERSION", "size_bytes": 8, "present": true},
+    "runtime_manifest": {"path": "docs/LAW_CLA_LLM/SHARED/runtime/UNITON_SHARED_RUNTIME_ACCEPTANCE_MANIFEST.json", "size_bytes": 2505, "present": true},
+    "protocol_doc": {"path": "docs/LAW_CLA_LLM/SHARED/runtime/LANE_ACCEPTANCE_PROTOCOL.md", "size_bytes": 2130, "present": true},
+    "sync_manifest": {"path": "docs/LAW_CLA_LLM/SHARED/sync/SYNC_MANIFEST.json", "size_bytes": 3349, "present": true},
+    "ps1_script": {"path": "scripts/sync/check_lane_sync.ps1", "size_bytes": 2950, "present": true}
+  },
+
+  "shared_version": "v1.1.0",
+
+  "sync_check_result": {
+    "command": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/sync/check_lane_sync.ps1 -LaneId Lane_01",
+    "exit_code": 0,
+    "status": "LEGACY_PENDING",
+    "raw_output": "SHARED version: v1.1.0\\nLane_01: LEGACY_PENDING sync_version=v1.1.0 method=code-agent (git pull) notes=Synced after PR #4 merge; filesystem still uses legacy `CLA_01_VULTR/`, normalized `LANE_01/` pending"
+  },
+
+  "receipt": {
+    "path": "handoffs/lane_acceptance/LANE_01_ACCEPTANCE.md",
+    "size_bytes_local": 1764,
+    "size_bytes_remote": 1764,
+    "lines": 43,
+    "created_at": "2026-04-25T15:47:03Z",
+    "fields_present": [
+      "Lane ID: Lane_01",
+      "SHARED version accepted: v1.1.0",
+      "Runtime sync status: LEGACY_PENDING",
+      "Runtime type: code-agent",
+      "Executor: Claude Code (CLAC-1) on Vultr Windows Server",
+      "Created at: 2026-04-25T15:47:03Z",
+      "Request ID: LANE_01_RUNTIME_SYNC_AND_ACCEPTANCE_V1",
+      "Acceptance Statement",
+      "Scope Statement",
+      "Authority Chain"
+    ]
+  },
+
+  "commits": [
+    {"hash": "7fe90d8edf77664089d8242f207d24e02bb4dc4c", "message": "accept(lane-01): runtime acceptance v1.1.0 [vercel skip]", "files": 1},
+    {"hash": "9b1763b81ab93fd4a35bf1566e7d2429277c0ffd", "message": "docs(report): T-LANE01-RUNTIME-ACCEPTANCE-001 deliverables [vercel skip]"}
+  ],
+
+  "qa_gate": {
+    "result": "PASS",
+    "checks_run": 5,
+    "checks_passed": 5,
+    "failures": [],
+    "details": {
+      "check1_receipt_remote_size_bytes": 1764,
+      "check2_required_fields_missing": 0,
+      "check3_shared_laws_changed": 0,
+      "check4_other_lane_folders_changed": 0,
+      "check5_commit_has_vercel_skip": true
+    }
+  },
+  "tests": null,
+  "ui_review": null,
+
+  "self_audit_log": "audit_logs/T-LANE01-RUNTIME-ACCEPTANCE-001_audit.log",
+  "steps_total": 11,
+  "steps_passed": 11,
+  "steps_failed": 0,
+  "steps_skipped": 0,
+
+  "rollback_available": true,
+  "rollback_reason": "Backup at /tmp/T-LANE01-RUNTIME-ACCEPTANCE-001-backup. Single commit on main; can be reverted via git revert if needed.",
+  "backup_path": "/tmp/T-LANE01-RUNTIME-ACCEPTANCE-001-backup/",
+
+  "ac1_status": "PASS",
+  "ac2_status": "PASS",
+  "ac3_status": "PASS",
+  "ac4_status": "PASS",
+  "ac5_status": "PASS (LEGACY_PENDING is acceptable per spec)",
+  "ac6_status": "PASS",
+  "ac7_status": "PASS",
+  "ac8_status": "PASS",
+  "ac9_status": "PASS",
+  "ac10_status": "PASS",
+  "ac11_status": "PASS",
+  "ac12_status": "PASS",
+  "overall_status": "PASS",
+
+  "follow_up_action_for_lane_03": "Lane_03 may now update UNITON_SHARED_RUNTIME_ACCEPTANCE_MANIFEST.json: lanes[Lane_01].acceptance_status: PENDING → ACCEPTED, receipt_path: null → handoffs/lane_acceptance/LANE_01_ACCEPTANCE.md (out of scope for Lane_01 per R-LANE-01)"
+}

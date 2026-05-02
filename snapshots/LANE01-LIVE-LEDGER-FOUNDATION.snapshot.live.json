@@ -1,0 +1,139 @@
+{
+  "task_id": "LANE01-LIVE-LEDGER-FOUNDATION",
+  "executor": "CLAC-1",
+  "model": "claude-opus-4-7",
+  "lane": "Lane_01",
+  "self_approve_authority": "AMD_LANE01_CTO_AUTO_APPROVE_TECH_NON_CANON §3.1 (structural extension = tech non-canon, no canon modification)",
+  "purpose": "Implement Option B from LANE01-LIVE-LEDGER-AUDIT-V1: preserve V0 7-file runtime mirror, add 4 namespaces (tasks/, ledger/, status/, aier-status/), backfill ecosystem state, extend sync whitelist, generate first DASHBOARD.live.md.",
+  "started_at": "2026-04-29T13:55:00Z (post trigger fix)",
+  "head_pre_flight": "post LANE01-LIVE-LEDGER-TRIGGER-FIX merge + Lane_03 SYNC_VERIFY",
+  "branch": "feat/LANE01-LIVE-LEDGER-FOUNDATION (squash-merged + deleted)",
+  "pr": "https://github.com/unitonzengarden/Uniton_Shared/pull/16",
+  "merge_commit": "ab2b20851796e1dea5c6167b5acb7d0850d961ab",
+  "phases_completed": ["A schema", "B dirs", "C backfill 8 tasks", "D decisions", "E canon-changes + deploy + halt", "F aier-status (state + heartbeat + brain-pointer)", "G BLOCKERS + NEXT_ACTIONS", "H dashboard generator + first run", "I sync workflow whitelist + cp blocks", "J PR + self-merge + E2E sync verify"],
+  "files_changed": 23,
+  "lines_added": 1433,
+  "lines_removed": 0,
+  "schema_doc": "docs/architecture/LIVE_LEDGER_SCHEMA_v1.md (10 sections)",
+  "namespaces_created": [
+    {
+      "namespace": "tasks/",
+      "files": "8 backfilled JSON in completed/2026-04-29/ + 2 .gitkeep (active/, failed/)",
+      "purpose": "Task lifecycle surface — 1 JSON file per task across active/completed/failed"
+    },
+    {
+      "namespace": "ledger/",
+      "files": "4 markdown files (decisions, canon-changes, deploy-events, halt-events)",
+      "purpose": "Append-only governance ledger"
+    },
+    {
+      "namespace": "status/",
+      "files": "3 markdown files (DASHBOARD, BLOCKERS, NEXT_ACTIONS)",
+      "purpose": "Refresh-allowed aggregations"
+    },
+    {
+      "namespace": "aier-status/aier-code/",
+      "files": "3 files (state.live.json, heartbeat.live.json, brain-pointer.live.md)",
+      "purpose": "Per-AIER identity + brain + heartbeat pointers"
+    }
+  ],
+  "backfill_summary": {
+    "tuần_1_tasks": 8,
+    "tasks_breakdown": {
+      "claco_authored": 4,
+      "cursor_authored": 4
+    },
+    "decisions_verified_in_repo": 9,
+    "decisions_pending_repo_back": 3,
+    "canon_changes_logged": 26,
+    "deploy_events_logged": 5,
+    "halt_events_logged": 4,
+    "active_blockers_p0": 0,
+    "active_blockers_p1": 3,
+    "active_blockers_p2": 3,
+    "recently_resolved": 5
+  },
+  "live_state_queried_from_supabase": {
+    "udna_id": "aier-code-genesis",
+    "udna_genesis_hash": "aa8aea32179ff8fe9d77db93b697447b2f4ac9b26c3853dac2c4c981ca81dc94",
+    "udna_genesis_timestamp": "2026-04-21T00:00:00+00:00",
+    "udna_sponsor": "NTS",
+    "l1_chunks_total": 410,
+    "l1_breakdown": {"canon": 300, "laws": 66, "skills": 30, "glossary": 11, "redlines": 3},
+    "heartbeat_status": "alive",
+    "first_bloch_id": "8f187d2b-686f-42e7-9032-d68b124118fa",
+    "first_bloch_domain": "governance.naming"
+  },
+  "sync_workflow_changes": {
+    "file": ".github/workflows/sync_runtime_to_public.yml",
+    "paths_added": ["tasks/**", "ledger/**", "status/**", "aier-status/**"],
+    "paths_excluded_added": ["!tasks/archive/**"],
+    "cp_block_added": "rsync-style recursive copy for new namespaces (cp -R source/$ns/. target/$ns/)",
+    "sync_info_urls_added": 11
+  },
+  "dashboard_generator": {
+    "script": "scripts/generate_dashboard.cjs",
+    "language": "Node CommonJS, stdlib only (no npm deps)",
+    "size_bytes": 6488,
+    "reads_from": ["tasks/active/", "tasks/completed/<latest-date>/", "tasks/failed/", "ledger/decisions.live.md", "status/BLOCKERS.live.md", "status/NEXT_ACTIONS.live.md", "aier-status/aier-code/state.live.json", "aier-status/aier-code/heartbeat.live.json"],
+    "writes_to": "status/DASHBOARD.live.md",
+    "cli_flag_stdout": true,
+    "regen_idempotent": true
+  },
+  "e2e_sync_proof": {
+    "test_step_1": "Merged PR #16 at 2026-04-29T14:30:31Z (commit ab2b208)",
+    "test_step_2": "Sync workflow ran — run 25114973661, event=push, conclusion=success at 2026-04-29T14:30:35Z (4 seconds after merge)",
+    "test_step_3": "Live mirror Uniton_Shared_Live HEAD updated 86105cb → 4e74aa0",
+    "test_step_4": "All 4 new namespaces visible at Uniton_Shared_Live root (tasks/, ledger/, status/, aier-status/)",
+    "test_step_5": "All 8 backfilled task JSONs present at tasks/completed/2026-04-29/",
+    "test_step_6": "DASHBOARD.live.md fetched from raw.githubusercontent.com — content matches local generation"
+  },
+  "boundary_check": {
+    "no_uniton_os_modified": true,
+    "no_canon_files_modified": true,
+    "no_law_files_modified": true,
+    "no_amendment_packets_modified": true,
+    "no_migrations_created": true,
+    "no_bloch_endpoints_touched": true,
+    "no_trigger_workflow_internals_changed": "PASS — only whitelist + cp blocks extended, not changed",
+    "url_registry_tier_1_preserved": "PASS — runtime/, notifications/, network/ contracts unchanged",
+    "vercel_skip_on_commit": true,
+    "lane01_dot_format_3_deliverables": true,
+    "self_merge_per_AMD": true,
+    "nts_clicks": 0
+  },
+  "acceptance_criteria_status": {
+    "AC1_schema_doc_complete": true,
+    "AC2_4_namespaces_created": true,
+    "AC3_8_tasks_backfilled": true,
+    "AC4_decisions_9_entries": "PASS (9 verified + 3 pending repo-back honestly disclosed)",
+    "AC5_canon_changes_last_7_days": "PASS (26 events)",
+    "AC6_aier_state_live_query_supabase": true,
+    "AC7_aier_heartbeat_live": true,
+    "AC8_aier_brain_pointer_generated": true,
+    "AC9_blockers_current": true,
+    "AC10_next_actions_current": true,
+    "AC11_dashboard_script_functional": true,
+    "AC12_dashboard_generated": true,
+    "AC13_sync_whitelist_extended": true,
+    "AC14_e2e_sync_test": "PASS (run 25114973661 propagated all new namespaces in <5s)",
+    "AC15_existing_runtime_mirror_unchanged": true,
+    "AC16_3_deliverables_DOT_format": true,
+    "AC17_PR_self_merged_CI_green": "PASS (PR #16 merged at ab2b208)",
+    "AC18_NTS_clicks_zero": true
+  },
+  "expected_deliverables": [
+    "snapshots/LANE01-LIVE-LEDGER-FOUNDATION.snapshot.live.json (this)",
+    "reports/LANE01-LIVE-LEDGER-FOUNDATION_REPORT.md",
+    "audit_logs/LANE01-LIVE-LEDGER-FOUNDATION_audit.log",
+    "handoffs/inbox/Lane_01/MSG-CLAC1-LIVE-LEDGER-FOUNDATION-COMPLETE.json",
+    "(plus the 23 files from PR #16 already merged)"
+  ],
+  "next_recommended_tasks": [
+    "LANE01-LIVE-LEDGER-EMIT-AUTOMATION — auto-emit hooks in workflows so future tasks self-publish to tasks/, ledger/, etc. without manual writes",
+    "LANE01-PROMOTE-AMD-NTS-FULL-TECH-AUTONOMY — author repo-backed AMD packet (closes BLK-002)",
+    "LANE01-PROMOTE-LAW-NTS-LLM — promote LAW-NTS-LLM-11/12 to numbered LAW or formalize as dispatch-template-only (closes BLK-003)",
+    "Tuần 2 brain L2/L3/L4 (after Emit Automation)",
+    "UI deploy track (Cursor) — UI-FIX-P1 → -PRECHECK → -PREVIEW → -PROD"
+  ]
+}

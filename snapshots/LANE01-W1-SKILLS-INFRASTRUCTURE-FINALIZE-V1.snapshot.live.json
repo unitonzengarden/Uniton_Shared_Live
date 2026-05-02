@@ -1,0 +1,63 @@
+{
+  "task_id": "LANE01-W1-SKILLS-INFRASTRUCTURE-FINALIZE-V1",
+  "lane": "Lane_01",
+  "executor": "CLAC-1",
+  "model": "claude-opus-4-7",
+  "captured_at": "2026-04-28T01:00:00Z",
+  "parent_head": "39557ebb4e70b904b33b608e23edbdfc4ae83c38",
+  "working_dir": "C:\\workspace\\Uniton_Shared",
+  "branch": "main",
+  "phases": {
+    "A": "AUTHORING_GUIDE + INVOCATION_PROTOCOL LAW_N9 alignment v1.0 -> v1.1",
+    "B": "git mv INDEX.md -> REGISTRY.md per LAW_N9 §L9.12 + update all internal references",
+    "C": "Fix 2 spec-drift findings from W1.T4 smoke (aier-dispatch + aier-verify v0.1 -> v0.2 DRAFT)",
+    "D": "Re-verify 4 existing DRAFT skills LAW_N9 conformance after guide update"
+  },
+  "files_in_scope": {
+    "phase_A": [
+      "docs/LAW_CLA_LLM/SHARED/skills/SKILL_AUTHORING_GUIDE.md",
+      "docs/LAW_CLA_LLM/SHARED/skills/SKILL_INVOCATION_PROTOCOL.md"
+    ],
+    "phase_B_rename": "docs/LAW_CLA_LLM/SHARED/skills/INDEX.md -> REGISTRY.md",
+    "phase_B_refs": [
+      "docs/LAW_CLA_LLM/SHARED/SHARED_INDEX.md",
+      "docs/LAW_CLA_LLM/SHARED/skills/SKILL_AUTHORING_GUIDE.md",
+      "docs/LAW_CLA_LLM/SHARED/skills/SKILL_INVOCATION_PROTOCOL.md",
+      "docs/LAW_CLA_LLM/SHARED/skills/README.md",
+      "docs/LAW_CLA_LLM/SHARED/boot/AIER_CODE_BOOT_MINIMUM_V1.md",
+      "runtime/current_state.md",
+      "runtime/checklist/MASTER_CHECKLIST.md (PLANNED row removal)"
+    ],
+    "phase_C_dispatch": [
+      "docs/LAW_CLA_LLM/SHARED/skills/aier-dispatch/SKILL.md",
+      "docs/LAW_CLA_LLM/SHARED/skills/aier-dispatch/METADATA.yaml"
+    ],
+    "phase_C_verify": [
+      "docs/LAW_CLA_LLM/SHARED/skills/aier-verify/SKILL.md",
+      "docs/LAW_CLA_LLM/SHARED/skills/aier-verify/METADATA.yaml",
+      "docs/LAW_CLA_LLM/SHARED/skills/aier-verify/inputs.schema.json"
+    ]
+  },
+  "boundary_check": {
+    "no_shared_laws_edit": true,
+    "no_canon_edit": true,
+    "no_active_promotion": true,
+    "no_canon_guard_edit": true,
+    "no_top_level_skills_touch": true,
+    "no_lane_other": true,
+    "no_nts_escalation": true,
+    "self_approve_authority": "AMD_LANE01_CTO_AUTO_APPROVE_TECH_NON_CANON_2026-04-26 §3.1 YES list — skills authoring guide + invocation protocol + skill spec docs are tech non-canon"
+  },
+  "out_of_scope_kept_locked": [
+    "roadmaps/AIER_CODE_V1_AUTOPILOT_ROADMAP_FINAL.md (LOCKED tag roadmap-locked-v2-final — historic INDEX.md reference left as-is)",
+    "skills/ top-level (DUPLICATE issue — defer W2 hygiene)",
+    "aier-canon-guard SKELETON (Lane_03 queued)",
+    "Historic reports/, snapshots/, audit_logs/ (R-CANON-02 append-only)"
+  ],
+  "expected_deliverables": [
+    "snapshots/LANE01-W1-SKILLS-INFRASTRUCTURE-FINALIZE-V1.snapshot.live.json (this file)",
+    "reports/LANE01-W1-SKILLS-INFRASTRUCTURE-FINALIZE-V1_REPORT.md",
+    "audit_logs/LANE01-W1-SKILLS-INFRASTRUCTURE-FINALIZE-V1_audit.log",
+    "Single commit + push, HEAD match origin, worktree clean"
+  ]
+}

@@ -1,0 +1,99 @@
+{
+  "task_id": "CLAC-DAY1-BUNDLE-V1",
+  "executor": "CLAC-1",
+  "model": "claude-opus-4-7",
+  "lane": "Lane_01",
+  "self_approve_authority": "AMD_LANE01_CTO_AUTO_APPROVE_TECH_NON_CANON §3.1 YES list (multi-repo doc + handoffs + pre-audit are tech non-canon)",
+  "parent_task": "INTEGRATION_ROADMAP_AIER_CODE_TO_UNITON_OS_v1_0",
+  "parallel_with": "Cursor T-INT-01-RUNTIME-APPLY-V1",
+  "nts_verbatim_2026_04_29": "tranh thủ để tích hợp 2 hệ thống thành một hệ và cho các lane 2-3 làm việc",
+  "started_at": "2026-04-29T06:30:00Z",
+  "completed_at": "2026-04-29T07:00:00Z",
+  "apply_commit": "a8d430d74d36744278b13784758891396eed43cc",
+  "apply_commit_short": "a8d430d",
+  "auto_status_followup": "c42027f074ad072428099033f11b99e048567d3f",
+  "auto_status_followup_short": "c42027f",
+  "head_at_completion": "c42027f",
+  "phases_planned": 5,
+  "phases_completed": 5,
+  "phases": [
+    {
+      "id": "A",
+      "name": "Merge PR Uniton_Shared#6",
+      "outcome": "MERGED at HEAD 1e2a2a5; audit branch deleted; 4 audit files visible on main"
+    },
+    {
+      "id": "B",
+      "name": "Multi-repo setup",
+      "outcome": "docs/MULTI_REPO_LOCAL_PATHS.md authored; canonical layout for 4 operators (Lane_01 CLAC + Cursor + Lane_02 CLAC-2 + Lane_03 Codex); Vultr-side C:\\workspace\\Uniton_OS confirmed (Cursor primary; shared read-only ref); Lane_02/03 setups happen on own machines per documented path scheme"
+    },
+    {
+      "id": "C",
+      "name": "Dispatch 2 pause handoffs",
+      "outcome": "handoffs/inbox/Lane_02/MSG-L01-L02-NOTICE-20260429-001.json + handoffs/inbox/Lane_03/MSG-L01-L03-NOTICE-20260429-002.json (both schema-valid against contracts/lane_message.schema.json); NOTIFICATION_LEDGER +1 entry NTF-LANE01-MULTI-REPO-PAUSE-20260429 with NTS verbatim quote inline"
+    },
+    {
+      "id": "D",
+      "name": "Pre-audit Lane_02 Brain MVP",
+      "outcome": "audit/LANE02_BRAIN_MVP_SCOPE.md authored; 4 files / 1202 lines in scripts/brain/ scoped for archive (NOT deletion per inheritance preserved); 3 duplicates with Uniton_OS identified (intent_parser → LLM-based; lane_matcher → DB-backed; capability_matrix → live API); 7-step decommission plan documented for T-INT-05 Day 5; 24 pytest tests preserved as historical fixtures; rollback plan documented"
+    },
+    {
+      "id": "E",
+      "name": "Commit + push + CI verify",
+      "outcome": "Apply commit a8d430d (9 files / 371 insertions / 0 deletions); auto-status follow-up c42027f; HEAD = origin/main; worktree clean; CI 4/4 SUCCESS (Build Artifacts + Handoff Validator + Lane Guardrails + Auto PROJECT_STATUS Regenerate)"
+    }
+  ],
+  "deliverables_actual": {
+    "phase_a": ["PR #6 merged at 1e2a2a5"],
+    "phase_b": ["docs/MULTI_REPO_LOCAL_PATHS.md"],
+    "phase_c": [
+      "handoffs/inbox/Lane_02/MSG-L01-L02-NOTICE-20260429-001.json",
+      "handoffs/inbox/Lane_03/MSG-L01-L03-NOTICE-20260429-002.json",
+      "notifications/NOTIFICATION_LEDGER.md (+1 entry)",
+      "notifications/NOTIFICATION_LEDGER.json (+1 mirror entry)"
+    ],
+    "phase_d": [
+      "audit/LANE02_BRAIN_MVP_SCOPE.md",
+      "audit/LANE02_BRAIN_MVP_FILES.txt",
+      "audit/LANE02_BRAIN_MVP_HISTORY.txt"
+    ],
+    "phase_e": ["commit a8d430d", "auto-status c42027f"],
+    "retroactive_mandatory_3": [
+      "snapshots/CLAC-DAY1-BUNDLE-V1.snapshot.json (this file)",
+      "reports/CLAC-DAY1-BUNDLE-V1_REPORT.md",
+      "audit_logs/CLAC-DAY1-BUNDLE-V1_audit.log"
+    ]
+  },
+  "stats": {
+    "files_added_or_modified": 9,
+    "insertions": 371,
+    "deletions": 0,
+    "ci_workflows_pass": "4/4 (Build Artifacts + Handoff Validator + Lane Guardrails + Auto PROJECT_STATUS)"
+  },
+  "boundary_check": {
+    "no_uniton_os_source_modified": true,
+    "no_shared_laws_modified": true,
+    "no_canon_modified": true,
+    "no_lane_02_03_internal_modified": true,
+    "no_scripts_brain_decommissioned": true,
+    "scripts_brain_archive_DEFERRED_to_T-INT-05": true,
+    "no_secrets_in_commits": true,
+    "branch_or_PR_workflow_used_for_audit": "PR #6 was used; Day 1 bundle pushed to main directly under Lane_01 self-approve scope (LAW_N12 + AMD §3.1)"
+  },
+  "phase_d_findings": {
+    "scripts_brain_files": 4,
+    "scripts_brain_lines": 1202,
+    "duplicates_with_uniton_os": 3,
+    "pytest_tests_to_preserve_as_historical_fixtures": 24,
+    "decommission_steps_planned": 7,
+    "rollback_plan_documented": true,
+    "lane_02_v2_role": "Compliance Officer + Governance Control (per pending AMD_LANE02_COMPLIANCE_OFFICER_REFRAME)"
+  },
+  "retroactive_authoring_note": {
+    "retroactive_task_id": "CLAC-DAY1-BUNDLE-RETROACTIVE-REPORT-V1",
+    "reason": "NTS rule 2026-04-29 — 'từ task sau, CLAC và Cursor xong mỗi Task bắt buộc phải có report file mới được Pass'",
+    "original_task_passed_technical_work_at": "a8d430d (CI 4/4 SUCCESS)",
+    "retroactive_deliverables_landed_at": "TBD (this commit)",
+    "rule_application_going_forward": "All future CLAC/Cursor task specs must include the 3 mandatory deliverables (snapshot + report + audit log) in Phase E execution order. Rule will be ratified by Lane_03 post-migration as canonical addition to LAW_N5 (TASK_PROMPT) or LAW_N12 (REPO_RUNTIME_STANDARD)."
+  }
+}

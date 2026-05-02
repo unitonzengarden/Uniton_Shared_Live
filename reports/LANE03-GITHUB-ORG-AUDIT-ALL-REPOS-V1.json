@@ -1,0 +1,374 @@
+{
+  "task_id": "LANE03-GITHUB-ORG-AUDIT-ALL-REPOS-V1",
+  "result": "WARNING",
+  "audited_owner": "unitonzengarden",
+  "audited_repos": [
+    {
+      "requested_name": "Uniton_Shared",
+      "full_name": "unitonzengarden/Uniton_Shared",
+      "accessible": true,
+      "visibility": "PRIVATE",
+      "archived": false,
+      "default_branch": "main",
+      "current_classification": "GOVERNANCE / BRAIN",
+      "recommended_classification": "Keep active as canonical governance, audit, canon, reports, snapshots, and shared skills repo.",
+      "open_pr_count": 0,
+      "open_issue_count": 0,
+      "branch_protected": false,
+      "workflow_count": 16,
+      "latest_workflow": {
+        "conclusion": "failure",
+        "createdAt": "2026-04-29T04:58:08Z",
+        "databaseId": 25091701617,
+        "displayTitle": "LANE01-INFRA-AUTOMATION-V1: Notify CLAC-1 prerequisites cleared [verc…",
+        "event": "push",
+        "headBranch": "main",
+        "status": "completed",
+        "updatedAt": "2026-04-29T04:58:25Z",
+        "url": "https://github.com/unitonzengarden/Uniton_Shared/actions/runs/25091701617",
+        "workflowName": "Handoff Validator"
+      },
+      "release_count": 1,
+      "tag_count": 14,
+      "root_presence": {
+        "README": true,
+        "LICENSE": true,
+        "gitignore": true,
+        "docs": true,
+        "reports": true,
+        "snapshots": true,
+        "audit_logs": true,
+        "github_workflows": true
+      },
+      "risks": [
+        "default main branch has no branch protection",
+        "recent workflow failure observed"
+      ],
+      "required_next_action": "Add main branch protection and fix latest Handoff Validator failure before LAW_GITHUB activation."
+    },
+    {
+      "requested_name": "Uniton_Shared_Live",
+      "full_name": "unitonzengarden/Uniton_Shared_Live",
+      "accessible": true,
+      "visibility": "PUBLIC",
+      "archived": false,
+      "default_branch": "main",
+      "current_classification": "MIRROR / PUBLIC STATE",
+      "recommended_classification": "Keep as public mirror only; no manual truth edits; sync from Uniton_Shared by controlled workflow.",
+      "open_pr_count": 0,
+      "open_issue_count": 0,
+      "branch_protected": false,
+      "workflow_count": 0,
+      "latest_workflow": null,
+      "release_count": 0,
+      "tag_count": 0,
+      "root_presence": {
+        "README": true,
+        "LICENSE": false,
+        "gitignore": false,
+        "docs": false,
+        "reports": false,
+        "snapshots": false,
+        "audit_logs": false,
+        "github_workflows": false
+      },
+      "risks": [
+        "default main branch has no branch protection",
+        "README too thin for Codex/human orientation",
+        "public mirror lacks explicit mirror-only enforcement evidence"
+      ],
+      "required_next_action": "Correct description typo, document mirror-only rule, and add mirror sync/status evidence standard."
+    },
+    {
+      "requested_name": "Uniton_OS",
+      "full_name": "unitonzengarden/Uniton_OS",
+      "accessible": true,
+      "visibility": "PRIVATE",
+      "archived": false,
+      "default_branch": "main",
+      "current_classification": "RUNTIME / EXECUTION",
+      "recommended_classification": "Keep active as runtime/execution repo; add governance protections before further integration work.",
+      "open_pr_count": 4,
+      "open_issue_count": 0,
+      "branch_protected": false,
+      "workflow_count": 1,
+      "latest_workflow": {
+        "conclusion": "failure",
+        "createdAt": "2026-04-29T05:04:57Z",
+        "databaseId": 25091879233,
+        "displayTitle": "LANE01-INFRA-AUTOMATION-V1: Cursor full tech autonomy demo [vercel skip]",
+        "event": "push",
+        "headBranch": "main",
+        "status": "completed",
+        "updatedAt": "2026-04-29T05:05:51Z",
+        "url": "https://github.com/unitonzengarden/Uniton_OS/actions/runs/25091879233",
+        "workflowName": "CI"
+      },
+      "release_count": 0,
+      "tag_count": 1,
+      "root_presence": {
+        "README": true,
+        "LICENSE": false,
+        "gitignore": true,
+        "docs": true,
+        "reports": true,
+        "snapshots": true,
+        "audit_logs": true,
+        "github_workflows": true
+      },
+      "risks": [
+        "default main branch has no branch protection",
+        "missing GitHub description",
+        "recent workflow failure observed"
+      ],
+      "required_next_action": "Add repo description, protect main, and repair failing CI before any runtime or bridge task."
+    },
+    {
+      "requested_name": "uzgplus-app",
+      "full_name": "unitonzengarden/uzgplus-app",
+      "accessible": true,
+      "visibility": "PRIVATE",
+      "archived": false,
+      "default_branch": "main",
+      "current_classification": "PRODUCT",
+      "recommended_classification": "Keep active product repo; separate product runtime from repo-brain documents where possible.",
+      "open_pr_count": 1,
+      "open_issue_count": 0,
+      "branch_protected": false,
+      "workflow_count": 2,
+      "latest_workflow": {
+        "conclusion": "success",
+        "createdAt": "2026-04-29T04:24:49Z",
+        "databaseId": 25090834695,
+        "displayTitle": "Merge pull request #6 from unitonzengarden/chore/T-HYGIENE-001-FU-01-…",
+        "event": "push",
+        "headBranch": "main",
+        "status": "completed",
+        "updatedAt": "2026-04-29T04:25:58Z",
+        "url": "https://github.com/unitonzengarden/uzgplus-app/actions/runs/25090834695",
+        "workflowName": "Deploy to Cloudflare Pages (Stable)"
+      },
+      "release_count": 0,
+      "tag_count": 2,
+      "root_presence": {
+        "README": true,
+        "LICENSE": false,
+        "gitignore": true,
+        "docs": true,
+        "reports": true,
+        "snapshots": false,
+        "audit_logs": false,
+        "github_workflows": true
+      },
+      "risks": [
+        "default main branch has no branch protection",
+        "root .env files require secret review"
+      ],
+      "required_next_action": "Replace generic Vite README with product README; review root .env files for secret exposure; protect main."
+    },
+    {
+      "requested_name": "aier-life-super-app",
+      "full_name": "unitonzengarden/aier-life-super-app",
+      "accessible": true,
+      "visibility": "PRIVATE",
+      "archived": false,
+      "default_branch": "main",
+      "current_classification": "UNKNOWN / PRODUCT CANDIDATE - NEEDS NTS DECISION",
+      "recommended_classification": "NTS decision required: keep as product, archive, or merge/consolidate with AIFI_LIFE/uzgplus-app.",
+      "open_pr_count": 3,
+      "open_issue_count": 0,
+      "branch_protected": false,
+      "workflow_count": 0,
+      "latest_workflow": null,
+      "release_count": 0,
+      "tag_count": 0,
+      "root_presence": {
+        "README": false,
+        "LICENSE": false,
+        "gitignore": true,
+        "docs": true,
+        "reports": false,
+        "snapshots": false,
+        "audit_logs": false,
+        "github_workflows": false
+      },
+      "risks": [
+        "default main branch has no branch protection",
+        "missing GitHub description",
+        "missing README",
+        "no active GitHub Actions workflow listed",
+        "active/archive/product role is ambiguous against AIFI_LIFE"
+      ],
+      "required_next_action": "Decide active/archive/consolidate status; if active, add README, description, CI, and governance folders."
+    },
+    {
+      "requested_name": "AIFI_LIFE",
+      "full_name": "unitonzengarden/AIFI_LIFE",
+      "accessible": true,
+      "visibility": "PRIVATE",
+      "archived": false,
+      "default_branch": "main",
+      "current_classification": "PRODUCT",
+      "recommended_classification": "Keep as product repo only if NTS confirms finance-domain ownership; otherwise consolidate/rename by future decision.",
+      "open_pr_count": 0,
+      "open_issue_count": 0,
+      "branch_protected": false,
+      "workflow_count": 0,
+      "latest_workflow": null,
+      "release_count": 0,
+      "tag_count": 20,
+      "root_presence": {
+        "README": true,
+        "LICENSE": false,
+        "gitignore": true,
+        "docs": false,
+        "reports": true,
+        "snapshots": false,
+        "audit_logs": false,
+        "github_workflows": false
+      },
+      "risks": [
+        "default main branch has no branch protection",
+        "missing GitHub description",
+        "no active GitHub Actions workflow listed"
+      ],
+      "required_next_action": "Add description, CI, audit/snapshot convention, and clarify relation to aier-life-super-app."
+    },
+    {
+      "requested_name": "_archive_chatbot",
+      "full_name": "unitonzengarden/_archive_chatbot",
+      "accessible": true,
+      "visibility": "PRIVATE",
+      "archived": true,
+      "default_branch": "main",
+      "current_classification": "ARCHIVE / LEGACY / NOT ACTIVE",
+      "recommended_classification": "Keep archived; not active; no Codex work except archive evidence.",
+      "open_pr_count": 0,
+      "open_issue_count": 0,
+      "branch_protected": false,
+      "workflow_count": 0,
+      "latest_workflow": null,
+      "release_count": 0,
+      "tag_count": 0,
+      "root_presence": {
+        "README": true,
+        "LICENSE": true,
+        "gitignore": true,
+        "docs": false,
+        "reports": false,
+        "snapshots": false,
+        "audit_logs": false,
+        "github_workflows": false
+      },
+      "risks": [],
+      "required_next_action": "Leave archived and excluded from active project lists; optionally add archive topic/description if GitHub settings are later approved."
+    }
+  ],
+  "repo_classification": [
+    {
+      "repo": "unitonzengarden/Uniton_Shared",
+      "current_classification": "GOVERNANCE / BRAIN",
+      "recommended_classification": "Keep active as canonical governance, audit, canon, reports, snapshots, and shared skills repo.",
+      "active": true,
+      "future_law_github_should_cover": true
+    },
+    {
+      "repo": "unitonzengarden/Uniton_Shared_Live",
+      "current_classification": "MIRROR / PUBLIC STATE",
+      "recommended_classification": "Keep as public mirror only; no manual truth edits; sync from Uniton_Shared by controlled workflow.",
+      "active": false,
+      "future_law_github_should_cover": true
+    },
+    {
+      "repo": "unitonzengarden/Uniton_OS",
+      "current_classification": "RUNTIME / EXECUTION",
+      "recommended_classification": "Keep active as runtime/execution repo; add governance protections before further integration work.",
+      "active": true,
+      "future_law_github_should_cover": true
+    },
+    {
+      "repo": "unitonzengarden/uzgplus-app",
+      "current_classification": "PRODUCT",
+      "recommended_classification": "Keep active product repo; separate product runtime from repo-brain documents where possible.",
+      "active": true,
+      "future_law_github_should_cover": true
+    },
+    {
+      "repo": "unitonzengarden/aier-life-super-app",
+      "current_classification": "UNKNOWN / PRODUCT CANDIDATE - NEEDS NTS DECISION",
+      "recommended_classification": "NTS decision required: keep as product, archive, or merge/consolidate with AIFI_LIFE/uzgplus-app.",
+      "active": false,
+      "future_law_github_should_cover": true
+    },
+    {
+      "repo": "unitonzengarden/AIFI_LIFE",
+      "current_classification": "PRODUCT",
+      "recommended_classification": "Keep as product repo only if NTS confirms finance-domain ownership; otherwise consolidate/rename by future decision.",
+      "active": true,
+      "future_law_github_should_cover": true
+    },
+    {
+      "repo": "unitonzengarden/_archive_chatbot",
+      "current_classification": "ARCHIVE / LEGACY / NOT ACTIVE",
+      "recommended_classification": "Keep archived; not active; no Codex work except archive evidence.",
+      "active": false,
+      "future_law_github_should_cover": true
+    }
+  ],
+  "risks": [
+    "All audited repos currently report no default-branch protection on main; this creates direct-main and unreviewed-change risk for active repos.",
+    "Core automation is not fully green: Uniton_Shared latest Handoff Validator run failed, and Uniton_OS latest CI runs failed.",
+    "Several repos have weak or missing orientation metadata: Uniton_OS, aier-life-super-app, AIFI_LIFE, and _archive_chatbot lack descriptions; aier-life-super-app lacks README; Uniton_Shared_Live README is skeletal; uzgplus-app README is still generic React/Vite text.",
+    "Product truth is ambiguous between aier-life-super-app, AIFI_LIFE, and parts of uzgplus-app unless NTS assigns domain ownership.",
+    "Open PR backlog exists in Uniton_OS, uzgplus-app, and aier-life-super-app, including integration/runtime-looking work that should not be merged before repo governance is settled.",
+    "Uniton_Shared_Live is public and mirror-like but has no workflow/status enforcement in that repo; mirror drift risk should be governed from Uniton_Shared.",
+    "uzgplus-app contains root .env/.env.test files; contents were not inspected in this audit, but their presence should trigger a secret-handling review.",
+    "Topics are absent across the audited repo list, increasing Codex and human repo-selection ambiguity."
+  ],
+  "recommendations": [
+    "Adopt GitHub topics for every repo: governance-brain, runtime-execution, product, mirror-public, archive-legacy, active, nts-decision-needed as applicable.",
+    "Protect main on active repos with PR requirement, one NTS-approved review or CODEOWNER review, no force pushes, no branch deletion, and required checks once CI is reliable.",
+    "Use PRs for all active repo changes except explicit NTS emergency exceptions; one task = one branch = one report, with report-only commits allowed in Uniton_Shared.",
+    "Set CI minimums: lint/build/test or governance validator for active repos; mirror sync verification for Uniton_Shared_Live; no CI requirement for archived repos.",
+    "Standardize reports, snapshots, and audit logs using the task id and canonical directories; governance-wide evidence belongs in Uniton_Shared.",
+    "Make Uniton_Shared the default Codex repo for governance/audit tasks; Uniton_OS only for runtime/execution; product repos only for product work; Uniton_Shared_Live read-only mirror; _archive_chatbot excluded from active work.",
+    "Document mirror sync as source-of-truth Uniton_Shared to public Uniton_Shared_Live with hash/manifest evidence and no manual edits in the mirror.",
+    "Require an NTS decision on aier-life-super-app vs AIFI_LIFE to remove duplicate product truth risk before product LAW coverage is enforced."
+  ],
+  "future_law_github_outline": [
+    "Purpose and authority: Human = Authority, AI = Execution, Repo = Truth.",
+    "Repo role registry: governance/brain, runtime/execution, product, mirror/public state, archive/legacy, unknown/NTS decision.",
+    "Repo selection rule for Codex and humans before any task starts.",
+    "Branch protection and PR policy by role, including exception path.",
+    "Actions/CI minimum by role and how failing checks block active work.",
+    "Report/snapshot/audit artifact standard and canonical evidence location.",
+    "Mirror sync rule, drift detection, and public-state boundaries.",
+    "Archive handling: archived repos are not active, are excluded from dispatch, and retain evidence only.",
+    "Security hygiene minimum: descriptions, README, topics, no secrets in repo, env examples only.",
+    "Review cadence and amendment path for future GitHub governance updates."
+  ],
+  "next_recommended_task": "LAW_GITHUB_01_REPO_GOVERNANCE_DRAFT_V1",
+  "evidence_commands": [
+    "pwd",
+    "git remote get-url origin",
+    "git branch --show-current",
+    "git status --short",
+    "gh auth status",
+    "gh repo list unitonzengarden --limit 100 --json name,nameWithOwner,visibility,isArchived,description,defaultBranchRef,updatedAt,pushedAt,url,repositoryTopics",
+    "gh repo view unitonzengarden/{repo} --json name,nameWithOwner,visibility,isArchived,description,defaultBranchRef,updatedAt,pushedAt,createdAt,url,repositoryTopics,isFork,isTemplate,licenseInfo,primaryLanguage,owner,hasIssuesEnabled,hasProjectsEnabled,hasWikiEnabled,mergeCommitAllowed,squashMergeAllowed,rebaseMergeAllowed,deleteBranchOnMerge",
+    "gh api /repos/unitonzengarden/{repo}",
+    "gh api --paginate /repos/unitonzengarden/{repo}/branches?per_page=100",
+    "gh api /repos/unitonzengarden/{repo}/branches/{default_branch}/protection",
+    "gh api /repos/unitonzengarden/{repo}/contents?ref={default_branch}",
+    "gh api /repos/unitonzengarden/{repo}/contents/.github/workflows?ref={default_branch}",
+    "gh workflow list --repo unitonzengarden/{repo} --json id,name,path,state",
+    "gh run list --repo unitonzengarden/{repo} --limit 5 --json databaseId,workflowName,displayTitle,status,conclusion,createdAt,updatedAt,headBranch,event,url",
+    "gh pr list --repo unitonzengarden/{repo} --state open --limit 100 --json number,title,headRefName,baseRefName,isDraft,createdAt,url",
+    "gh issue list --repo unitonzengarden/{repo} --state open --limit 100 --json number,title,createdAt,url",
+    "gh api /repos/unitonzengarden/{repo}/releases?per_page=10",
+    "gh api /repos/unitonzengarden/{repo}/tags?per_page=20",
+    "gh api /repos/unitonzengarden/{repo}/languages",
+    "gh api /repos/unitonzengarden/{repo}/readme -H Accept:application/vnd.github.raw"
+  ],
+  "timestamp": "2026-04-29T06:04:53.353Z"
+}

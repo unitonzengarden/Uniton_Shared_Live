@@ -1,0 +1,207 @@
+{
+  "task_id": "LANE03-UNITON_SHARED_LIVE-SYNC-VERIFY-V1",
+  "result": "PASS",
+  "timestamp": "2026-04-29T21:05:52.2458829+07:00",
+  "execution_header": {
+    "lane": "Lane_03",
+    "executor": "Codex",
+    "authority": "NTS",
+    "mode": "CONTROLLED_EXECUTION",
+    "task_id": "LANE03-UNITON_SHARED_LIVE-SYNC-VERIFY-V1",
+    "scope": "Verify Uniton_Shared_Live public mirror availability and hash parity for the 7 AIER context/health files.",
+    "working_dir": "D:/UZG/Projects-v2/Uniton_Shared",
+    "repo": "unitonzengarden/Uniton_Shared",
+    "branch": "main",
+    "commit_sha": "c752d15c237e7db3ad3b523beb8e3c12f58685fd",
+    "commit_sha_context": "Source HEAD at report generation; final evidence commit is verified after push."
+  },
+  "scope_verification": {
+    "in_scope_actions": [
+      "Read sync workflow, source packet/health files, and prior sync expansion evidence.",
+      "Verify latest Sync Runtime to Public workflow run status.",
+      "Verify all 7 mirror files are present.",
+      "Verify all 7 raw URLs are readable.",
+      "Compare source and mirror blob hashes plus SHA-256 hashes.",
+      "Verify SYNC_INFO.md contains all 7 new raw URLs.",
+      "Scan public mirror tree for unexpected private paths.",
+      "Create REPORT_TEMPLATE_V2 evidence artifacts in Uniton_Shared."
+    ],
+    "out_of_scope_avoided": [
+      "No sync workflow modification.",
+      "No direct Uniton_Shared_Live modification.",
+      "No GitHub settings change.",
+      "No branch protection change.",
+      "No Uniton_OS or product repo touch.",
+      "No deployment.",
+      "No law file modification.",
+      "No old report rewrite."
+    ],
+    "scope_integrity": "PASS"
+  },
+  "capability_check": {
+    "actor": "Lane_03",
+    "action": "Read-only mirror verification and evidence generation.",
+    "side_effect_class": "Read-only GitHub/API/raw URL inspection plus Uniton_Shared report/snapshot/audit artifacts.",
+    "capability_source": "NTS task authorization; LAW_GITHUB_01 mirror sync evidence rule; LAW_N5 REPORT_TEMPLATE_V2.",
+    "authorization": "Explicitly allowed for verification and Uniton_Shared evidence only."
+  },
+  "repo_boundary_check": {
+    "repo_ownership": "VALID",
+    "cross_repo_write": "NONE",
+    "notes": "No write was made to Uniton_Shared_Live; mirror checks used read-only GitHub API and raw URL reads."
+  },
+  "workflow_status": {
+    "workflow": "Sync Runtime to Public",
+    "run_id": 25113539568,
+    "url": "https://github.com/unitonzengarden/Uniton_Shared/actions/runs/25113539568",
+    "event": "workflow_run",
+    "status": "completed",
+    "conclusion": "success",
+    "head_sha": "c752d15c237e7db3ad3b523beb8e3c12f58685fd",
+    "created_at": "2026-04-29T14:03:18Z",
+    "updated_at": "2026-04-29T14:03:32Z",
+    "jobs": [
+      {
+        "name": "sync",
+        "status": "completed",
+        "conclusion": "success"
+      }
+    ]
+  },
+  "mirror_status": {
+    "repo": "unitonzengarden/Uniton_Shared_Live",
+    "default_branch": "main",
+    "is_private": false,
+    "is_archived": false,
+    "pushed_at": "2026-04-29T14:03:28Z",
+    "latest_commit": "86105cb1498df0e2b9496cb489b7c7fe7bfa3204",
+    "latest_commit_message": "sync: runtime state from c752d15c237e7db3ad3b523beb8e3c12f58685fd"
+  },
+  "sync_info": {
+    "raw_status": 200,
+    "last_sync": "2026-04-29T14:03:27Z",
+    "source_commit": "c752d15c237e7db3ad3b523beb8e3c12f58685fd",
+    "triggered_by": "workflow_run",
+    "all_required_raw_urls_present": true
+  },
+  "file_verification": [
+    {
+      "path": "runtime/AIER_CONTEXT_PACKET.md",
+      "raw_url": "https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/runtime/AIER_CONTEXT_PACKET.md",
+      "raw_status": 200,
+      "source_blob_sha": "b5233ceec82fe32d9659c019e28defc63671daa7",
+      "mirror_blob_sha": "b5233ceec82fe32d9659c019e28defc63671daa7",
+      "source_sha256": "fdfb855a28f5bbdc3224eda7c9376a905aaa1054242b7ea3ee382e6bb1b92dee",
+      "mirror_sha256": "fdfb855a28f5bbdc3224eda7c9376a905aaa1054242b7ea3ee382e6bb1b92dee",
+      "hash_match": true
+    },
+    {
+      "path": "runtime/AIER_CONTEXT_PACKET.json",
+      "raw_url": "https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/runtime/AIER_CONTEXT_PACKET.json",
+      "raw_status": 200,
+      "source_blob_sha": "52de3ae8d0f98e9ad107a63f847e62956782768f",
+      "mirror_blob_sha": "52de3ae8d0f98e9ad107a63f847e62956782768f",
+      "source_sha256": "a288ee39b10cd75b49c1d0d4596d2b8c440429a37032a3adda8b68bf98308724",
+      "mirror_sha256": "a288ee39b10cd75b49c1d0d4596d2b8c440429a37032a3adda8b68bf98308724",
+      "hash_match": true
+    },
+    {
+      "path": "runtime/health/ECOSYSTEM_HEALTH_STATE.md",
+      "raw_url": "https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/runtime/health/ECOSYSTEM_HEALTH_STATE.md",
+      "raw_status": 200,
+      "source_blob_sha": "e68b7a4c9d507a8b07df1894d874296056438378",
+      "mirror_blob_sha": "e68b7a4c9d507a8b07df1894d874296056438378",
+      "source_sha256": "6ab4a22b005d3f2fee5ebe188168fd0e00fc05724c96c76d9176a541e2428469",
+      "mirror_sha256": "6ab4a22b005d3f2fee5ebe188168fd0e00fc05724c96c76d9176a541e2428469",
+      "hash_match": true
+    },
+    {
+      "path": "runtime/health/ECOSYSTEM_HEALTH_STATE.json",
+      "raw_url": "https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/runtime/health/ECOSYSTEM_HEALTH_STATE.json",
+      "raw_status": 200,
+      "source_blob_sha": "9d7b790f31b70107b00434e0e6bad2e20c4091f0",
+      "mirror_blob_sha": "9d7b790f31b70107b00434e0e6bad2e20c4091f0",
+      "source_sha256": "c99a59996cd15f68dbe09678030f6d0139b5f5ef74c941ece4914450822a2b1f",
+      "mirror_sha256": "c99a59996cd15f68dbe09678030f6d0139b5f5ef74c941ece4914450822a2b1f",
+      "hash_match": true
+    },
+    {
+      "path": "runtime/health/LATEST_VERIFIED_COMMITS.json",
+      "raw_url": "https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/runtime/health/LATEST_VERIFIED_COMMITS.json",
+      "raw_status": 200,
+      "source_blob_sha": "99a8eb187a024b3eb7e19c48635f114fd40ed4a8",
+      "mirror_blob_sha": "99a8eb187a024b3eb7e19c48635f114fd40ed4a8",
+      "source_sha256": "9405c42ed2400f1e2561379673ae1486cb5a920fca8b1d48fc82b7616a49866c",
+      "mirror_sha256": "9405c42ed2400f1e2561379673ae1486cb5a920fca8b1d48fc82b7616a49866c",
+      "hash_match": true
+    },
+    {
+      "path": "runtime/health/BLOCKERS_AND_RISKS.md",
+      "raw_url": "https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/runtime/health/BLOCKERS_AND_RISKS.md",
+      "raw_status": 200,
+      "source_blob_sha": "c312154a86402ab29224d7f4508c8cbc5ae5a6c7",
+      "mirror_blob_sha": "c312154a86402ab29224d7f4508c8cbc5ae5a6c7",
+      "source_sha256": "90eb3da5ac7be64403095bf15324130c0077af83d170c8ae284eb79c1e7d2234",
+      "mirror_sha256": "90eb3da5ac7be64403095bf15324130c0077af83d170c8ae284eb79c1e7d2234",
+      "hash_match": true
+    },
+    {
+      "path": "runtime/health/NEXT_SAFE_ACTION.md",
+      "raw_url": "https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/runtime/health/NEXT_SAFE_ACTION.md",
+      "raw_status": 200,
+      "source_blob_sha": "ac9d5d7ea3afba08efa14bf68b9e2358691d68b3",
+      "mirror_blob_sha": "ac9d5d7ea3afba08efa14bf68b9e2358691d68b3",
+      "source_sha256": "ffdc4a0ffd4f7b1dde5966f2e420e70e056d56b3c08cb298a310c7b04df64631",
+      "mirror_sha256": "ffdc4a0ffd4f7b1dde5966f2e420e70e056d56b3c08cb298a310c7b04df64631",
+      "hash_match": true
+    }
+  ],
+  "private_exposure_check": {
+    "result": "PASS",
+    "unexpected_private_paths_found": false,
+    "mirror_tree_paths": [
+      "README.md",
+      "SYNC_INFO.md",
+      "network/ACTIVITY_FEED.md",
+      "network/LANE_REGISTRY.md",
+      "network/task_queues/Lane_01.md",
+      "network/task_queues/Lane_02.md",
+      "network/task_queues/Lane_03.md",
+      "notifications/NOTIFICATION_LEDGER.md",
+      "runtime/ACTION_REQUIRED_BOARD.md",
+      "runtime/AIER_CONTEXT_PACKET.json",
+      "runtime/AIER_CONTEXT_PACKET.md",
+      "runtime/PROJECT_STATUS.md",
+      "runtime/checklist/MASTER_CHECKLIST.md",
+      "runtime/current_state.md",
+      "runtime/health/BLOCKERS_AND_RISKS.md",
+      "runtime/health/ECOSYSTEM_HEALTH_STATE.json",
+      "runtime/health/ECOSYSTEM_HEALTH_STATE.md",
+      "runtime/health/LATEST_VERIFIED_COMMITS.json",
+      "runtime/health/NEXT_SAFE_ACTION.md"
+    ]
+  },
+  "risks_warnings": [
+    "Mirrored packet metadata still records original generator source commit 32701083b367e1a8d595f3b4d53cba10d7a2f1b8; refresh is next.",
+    "Existing ecosystem health remains YELLOW; branch protection, CI, product readiness, PR backlog, and secret-review status were not changed."
+  ],
+  "sync": {
+    "local_head": "c752d15c237e7db3ad3b523beb8e3c12f58685fd at report generation",
+    "origin_main_head": "c752d15c237e7db3ad3b523beb8e3c12f58685fd at report generation",
+    "match": "YES at report generation",
+    "worktree_clean": "NO - scoped evidence artifacts pending commit; final clean sync verified after push"
+  },
+  "governance_confirmation": {
+    "no_law_modified": true,
+    "no_cross_lane_violation": true,
+    "no_authority_override": true,
+    "repo_integrity_preserved": true,
+    "one_task_only": true,
+    "no_sync_workflow_modified": true,
+    "no_direct_uniton_shared_live_write": true,
+    "no_github_settings_changed": true,
+    "no_product_or_runtime_repo_touched": true,
+    "no_private_content_exposed": true
+  },
+  "next_task": "LANE03-AIER-CONTEXT-PACKET-REFRESH-AFTER-MIRROR-VERIFY-V1"
+}

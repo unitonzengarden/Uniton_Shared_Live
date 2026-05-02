@@ -1,0 +1,71 @@
+{
+  "task_id": "LANE03-UZG-MIGRATION-DRIFT-BATCH-C-LEDGER-AND-RPC-PRIVILEGE-OWNER-DECISION-V1",
+  "result": "PASS",
+  "captured_at": "2026-05-01T01:25:31+07:00",
+  "mode": "GOVERNANCE_LEDGER_DECISION_ONLY",
+  "safety": {
+    "supabase_db_push_run": false,
+    "migrations_applied": false,
+    "database_mutated": false,
+    "schema_migrations_modified": false,
+    "supabase_permissions_changed": false,
+    "sql_applied": false,
+    "backend_code_changed": false
+  },
+  "source_evidence": [
+    "runtime/uzg-plus/lane_03/LANE03_MIGRATION_DRIFT_STATE.json",
+    "runtime/uzg-plus/lane_03/LANE03_SUPABASE_HEALTH_STATE.json",
+    "runtime/uzg-plus/lane_03/LANE03_BACKEND_RUNTIME_STATE.json",
+    "reports/LANE03-UZG-MIGRATION-DRIFT-BATCH-C-FUNCTION-RPC-PUBLICATION-BODY-DIFF-AND-DRY-RUN-DESIGN-V1.json",
+    "docs/canon/LANE03_SUPABASE_SCHEMA_RLS_RPC_SECURITY_CANON_V1.md",
+    "docs/canon/LANE03_BACKEND_API_RUNTIME_OWNERSHIP_CANON_V1.md"
+  ],
+  "ledger_created": {
+    "live_equivalent_entries": [
+      "20260320180501",
+      "20260412163000",
+      "20260412193000",
+      "20260417124500",
+      "20260418093000"
+    ],
+    "status": "COMPLETE",
+    "apply": false,
+    "reason": "already represented in production state"
+  },
+  "do_not_apply_locked": {
+    "versions": [
+      "20260320154501",
+      "20260320161001"
+    ],
+    "status": "LOCKED",
+    "apply": false,
+    "reason": "superseded / conflicting / not needed"
+  },
+  "rpc_privilege_decision": {
+    "target": "public.rpc_sync_energy_daily(uuid,date)",
+    "current_risk": "EXECUTE granted to PUBLIC and anon; authenticated also has EXECUTE in prior evidence.",
+    "decision": "RESTRICT_TO_SERVICE_ROLE_ONLY",
+    "revoke_public_execute": true,
+    "revoke_anon_execute": true,
+    "revoke_authenticated_execute": true,
+    "preserve_or_grant_service_role_execute": true,
+    "sql_applied": false,
+    "decision_file": "runtime/uzg-plus/lane_03/LANE03_RPC_PRIVILEGE_DECISION.json"
+  },
+  "created_files": [
+    "runtime/uzg-plus/lane_03/LANE03_MIGRATION_BATCH_C_LEDGER.json",
+    "runtime/uzg-plus/lane_03/LANE03_RPC_PRIVILEGE_DECISION.json",
+    "reports/LANE03-UZG-MIGRATION-DRIFT-BATCH-C-LEDGER-AND-RPC-PRIVILEGE-OWNER-DECISION-V1_REPORT.md",
+    "reports/LANE03-UZG-MIGRATION-DRIFT-BATCH-C-LEDGER-AND-RPC-PRIVILEGE-OWNER-DECISION-V1.json",
+    "snapshots/LANE03-UZG-MIGRATION-DRIFT-BATCH-C-LEDGER-AND-RPC-PRIVILEGE-OWNER-DECISION-V1.snapshot.json",
+    "audit_logs/LANE03-UZG-MIGRATION-DRIFT-BATCH-C-LEDGER-AND-RPC-PRIVILEGE-OWNER-DECISION-V1_audit.log"
+  ],
+  "remaining_risks": [
+    "RPC privilege decision not yet applied.",
+    "Frontend direct RPC dependency check required before revoking authenticated execute.",
+    "Batch D high-risk migrations remain blocked pending NTS approval.",
+    "Broad supabase db push remains blocked.",
+    "schema_migrations remains unrepaired by design."
+  ],
+  "next_safe_action": "LANE03-UZG-RPC-SYNC-ENERGY-DAILY-SERVICE-ROLE-PRIVILEGE-HARDENING-DESIGN-OR-APPLY-V1"
+}

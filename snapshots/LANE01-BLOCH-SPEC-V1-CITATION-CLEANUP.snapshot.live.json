@@ -1,0 +1,81 @@
+{
+  "task_id": "LANE01-BLOCH-SPEC-V1-CITATION-CLEANUP",
+  "executor": "CLAC-1",
+  "model": "claude-opus-4-7",
+  "lane": "Lane_01",
+  "self_approve_authority": "AMD_LANE01_CTO_AUTO_APPROVE_TECH_NON_CANON §3.1 (citation cleanup = tech non-canon, no semantic change) + AMD_NTS_FULL_TECH_AUTONOMY_2026-04-29 (executor self-merge)",
+  "purpose": "Narrow 'pending Canon V1.1 / LAW_N14' citation markers in docs/architecture/BLOCH_SCHEMA_SPEC_v1.md (PR #11 merged) to in-repo paths now that Canon V1.1 + LAW_N14 prose landed via LANE01-CANON-V1-1-LAW-N14 (commit 5140700, PR #12).",
+  "started_at": "2026-04-29T09:15:00Z",
+  "head_pre_flight": "5140700",
+  "branch": "docs/LANE01-BLOCH-SPEC-V1-CITATION-CLEANUP",
+  "phases": [
+    {
+      "id": "A",
+      "name": "Pre-flight + branch + verify Canon V1.1 + LAW_N14 in repo",
+      "outcome": "git pull main HEAD 5140700 clean; branch docs/LANE01-BLOCH-SPEC-V1-CITATION-CLEANUP created; verified docs/architecture/INTER_AIER_BRIDGE_CANON_v1_1.md + docs/LAW_CLA_LLM/SHARED/laws/LAW_N14_INTER_AIER_BRIDGE_STANDARD_v1_1.md + docs/architecture/BLOCH_SCHEMA_SPEC_v1.md all present"
+    },
+    {
+      "id": "B",
+      "name": "Read current spec §0/§9/§11/§12 verbatim",
+      "outcome": "Identified 4 spots needing narrowing: §0 row 18 (Canon V1.1 ⏳ pending) + §0 row 22 (LAW-AIER-CODE-14 ⏳ not in repo), §9 cross-ref table 8 rows pending/MVP, §11 LANE03-BRIDGE-CANON-AUTHOR Tuần 2 task row, §12 changelog (single entry)"
+    },
+    {
+      "id": "C",
+      "name": "Apply 4 narrow edits",
+      "outcome": "(1) §0 Canon V1.1 row → ✅ in repo at docs/architecture/INTER_AIER_BRIDGE_CANON_v1_1.md (commit 5140700); (2) §0 LAW row → ✅ LAW_N14 in repo at docs/LAW_CLA_LLM/SHARED/laws/LAW_N14_INTER_AIER_BRIDGE_STANDARD_v1_1.md + reading guide rewritten to 'MVP implementer profile under canon' with (a)-(d) specialization list; (3) §9 cross-ref table 8 rows updated with exact in-repo Canon V1.1 §X.X / LAW_N14 §L14.X paths; (4) §11 LANE03-BRIDGE-CANON-AUTHOR row marked DONE (strikethrough); §12 changelog v1.0.1 entry added"
+    },
+    {
+      "id": "D",
+      "name": "Diff scope verification (semantic content untouched)",
+      "outcome": "git diff stat: 1 file changed, 15 insertions(+), 14 deletions(-). 3 hunks touched: §0 (lines 15-x), §9 (lines 288-x), §11+§12 (lines 328-x). AC5 12 fields table UNTOUCHED ✓ · AC6 V1-V9 verify rules + failure modes UNTOUCHED ✓ · AC7 worked examples (bloch_id, qot_chain, signature lines) UNTOUCHED ✓"
+    },
+    {
+      "id": "E",
+      "name": "Commit + push + PR + self-merge",
+      "outcome": "Commit daa58b8 'docs(LANE01): narrow Canon V1.1 + LAW_N14 citations in BLOCH spec'; push + PR + self-merge to follow"
+    },
+    {
+      "id": "F",
+      "name": "3 mandatory deliverables + handoff",
+      "outcome": "snapshots/LANE01-BLOCH-SPEC-V1-CITATION-CLEANUP.snapshot.live.json (this) + reports/LANE01-BLOCH-SPEC-V1-CITATION-CLEANUP_REPORT.md + audit_logs/LANE01-BLOCH-SPEC-V1-CITATION-CLEANUP_audit.log + handoffs/inbox/Lane_01/MSG-CLAC1-BLOCH-SPEC-CITATION-CLEANUP-COMPLETE.json"
+    }
+  ],
+  "diff_summary": {
+    "files_changed": 1,
+    "insertions": 15,
+    "deletions": 14,
+    "net_lines_changed": 29,
+    "hunks": 3,
+    "hunks_locations": ["§0 Authority chain", "§9 Cross-reference table", "§11 Tuần 2 task preview + §12 Changelog"]
+  },
+  "qa_gate_evidence": {
+    "AC1_section_0_authority_chain_narrowed": true,
+    "AC2_section_9_cross_ref_4_or_more_rows_updated": "PASS (8 rows updated: §2/§3/§4 point at Canon §3.2/§3.3/§3.6; §5/§6/§7 marked MVP-only specialization; R-BRIDGE-CANON-06 + R-ENCRYPTION-01 point at LAW_N14 §L14.2/§L14.7)",
+    "AC3_section_11_LANE03_BRIDGE_CANON_AUTHOR_marked_DONE": true,
+    "AC4_section_12_changelog_v1_0_1_added": true,
+    "AC5_12_fields_content_UNTOUCHED": "PASS (diff grep -E '^-\\| [0-9]+ \\|' empty)",
+    "AC6_V1_to_V9_rules_UNTOUCHED": "PASS (diff grep -E '^-.*\\*\\*V[1-9]\\*\\*' empty)",
+    "AC7_worked_examples_UNTOUCHED": "PASS (diff grep for bloch_id/qot_chain/signature lines empty)",
+    "AC8_3_deliverables_LANE01_DOT_format": "PASS (this + report + audit log)",
+    "AC9_PR_self_merged": "PENDING (Phase E next)",
+    "AC10_NTS_clicks_zero": "PASS"
+  },
+  "boundary_check": {
+    "only_BLOCH_SCHEMA_SPEC_v1_modified": true,
+    "no_canon_v1_1_modified": true,
+    "no_law_n14_modified": true,
+    "no_NTS_DECISION_packet_modified": true,
+    "no_uniton_os_repo_touched": true,
+    "vercel_skip_on_commit": true,
+    "lane01_dot_format_3_deliverables": true,
+    "self_merge_per_AMD": "PENDING",
+    "nts_clicks": 0
+  },
+  "expected_deliverables": [
+    "docs/architecture/BLOCH_SCHEMA_SPEC_v1.md (modified)",
+    "snapshots/LANE01-BLOCH-SPEC-V1-CITATION-CLEANUP.snapshot.live.json (this)",
+    "reports/LANE01-BLOCH-SPEC-V1-CITATION-CLEANUP_REPORT.md",
+    "audit_logs/LANE01-BLOCH-SPEC-V1-CITATION-CLEANUP_audit.log",
+    "handoffs/inbox/Lane_01/MSG-CLAC1-BLOCH-SPEC-CITATION-CLEANUP-COMPLETE.json"
+  ]
+}

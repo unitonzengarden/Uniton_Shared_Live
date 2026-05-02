@@ -1,0 +1,81 @@
+{
+  "task_id": "T-LAW-LOCK-002",
+  "executed_at": "2026-04-25T07:44:30+00:00",
+  "executor": "CLA-1 Vultr (in-session, acting as CLAC-1 per NTS in-thread instruction)",
+  "model": "claude-opus-4-7",
+  "stream": "Vultr",
+  "working_dir": "C:\\workspace\\Uniton_Shared",
+  "working_dir_verified": true,
+  "task_type": "docs",
+
+  "pre_task_state": {
+    "head_hash_branch": "e98d11a40d2d9970155cc31b4d0234dc4e5a88f0",
+    "branch": "feat/law-cla-llm-init",
+    "open_prs": [1],
+    "files_count_in_branch": 11,
+    "anomaly_detected_at_preflight": "4 v1 files locally deleted before task start; restored via NTS Pick A (git checkout HEAD -- <4 v1 paths>)"
+  },
+
+  "files_added": [
+    "docs/LAW_CLA_LLM/LAW_N5_TASK_PROMPT_v2_2026-04-25.md",
+    "docs/LAW_CLA_LLM/TASK_PROMPT_TEMPLATE_v2.2_2026-04-25.md",
+    "docs/LAW_CLA_LLM/LAW_INDEX_v2_2026-04-25.md",
+    "docs/LAW_CLA_LLM/CLA_01_VULTR/LAW_CLA01_v2_2026-04-25.md"
+  ],
+  "files_added_count": 4,
+  "files_old_preserved_count": 11,
+  "files_total_after": 15,
+
+  "commits": [
+    {
+      "hash": "2dc6fb16789c49006154d22093380e339cd06be4",
+      "message": "feat(law): add LAW_N5 v2 + TEMPLATE v2.2 (L27-L31 enforcement) [vercel skip]"
+    },
+    {
+      "hash": "237f4ec908df6f06ad0503cdd892b6341b427b45",
+      "message": "docs(law): add LAW_INDEX v2 + Custom Instructions v2 [vercel skip]"
+    }
+  ],
+
+  "pr_updated": 1,
+  "pr_url": "https://github.com/unitonzengarden/Uniton_Shared/pull/1",
+  "pr_commit_count": 3,
+  "tag": "law-v2.0.0",
+  "tag_sha": "237f4ec908df6f06ad0503cdd892b6341b427b45",
+
+  "qa_gate": {
+    "result": "PASS",
+    "checks_run": 5,
+    "checks_passed": 5,
+    "failures": [],
+    "details": {
+      "check_1_new_files": "4/4 PASS",
+      "check_2_old_preserved": "11/11 PASS",
+      "check_3_vercel_skip": "0 missing PASS",
+      "check_4_no_secrets": "0 hits PASS",
+      "check_5_scope": "no out-of-scope PASS"
+    }
+  },
+  "tests": null,
+  "ui_review": null,
+  "ci_status": "no checks reported on branch (no workflow configured for this PR yet)",
+
+  "self_audit_log": "audit_logs/T-LAW-LOCK-002_audit.log",
+  "steps_total": 11,
+  "steps_passed": 11,
+  "steps_failed": 0,
+  "steps_fallback": 0,
+
+  "rollback_available": true,
+  "rollback_script": "scripts/rollback_T-LAW-LOCK-002.sh",
+  "rollback_rto_minutes": 10,
+
+  "ac1_status": "PASS",
+  "ac2_status": "PASS",
+  "ac3_status": "PASS",
+  "ac4_status": "PASS",
+  "ac5_status": "PASS",
+  "ac6_status": "PASS",
+  "ac7_status": "PASS",
+  "overall_status": "PASS"
+}

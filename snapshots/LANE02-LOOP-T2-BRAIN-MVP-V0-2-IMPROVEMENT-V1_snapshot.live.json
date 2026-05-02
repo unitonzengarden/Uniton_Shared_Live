@@ -1,0 +1,85 @@
+{
+  "task_id": "LANE02-LOOP-T2-BRAIN-MVP-V0-2-IMPROVEMENT-V1",
+  "loop_test_id": "LANE02-LOOP-TEST-V1-20260428",
+  "loop_order": "2/5",
+  "type": "brain_mvp_v0_2_improvement",
+  "version": "0.2.0",
+  "previous_version": "0.1.0",
+  "timestamp_utc": "2026-04-28T07:30:00Z",
+  "verdict": "PASS",
+  "head_before": "004a1652b557957da483a0bcecfbce02a62b2309",
+
+  "intent_parser_changes": {
+    "intent_keywords_added": 13,
+    "domain_keywords_added": 21,
+    "new_domains": ["governance", "runtime"],
+    "fixtures_v0_1": 5,
+    "fixtures_v0_2": 6,
+    "fixtures_total": 11,
+    "self_test_passed": true,
+    "confidence_base_bump": "0.2 -> 0.3"
+  },
+
+  "lane_matcher_changes": {
+    "domain_priors_updated": true,
+    "intent_priors_updated": true,
+    "scoring_weight_adjustment": "domain *0.3->*0.35; intent *0.2->*0.25",
+    "fixtures_v0_1": 4,
+    "fixtures_v0_2": 4,
+    "fixtures_total": 8,
+    "self_test_passed": true
+  },
+
+  "real_test_results": [
+    {"input": "Lane_3 viết spec ví thanh toán", "v0_1_score": 0.55, "v0_2_score": 0.50, "matched_lane": "Lane_03", "match_lane_v0_1": "Lane_03", "match": true},
+    {"input": "Audit canon để check drift", "v0_1_score": 0.45, "v0_2_score": 0.56, "matched_lane": "Lane_03", "match_lane_v0_1": "Lane_03", "match": true, "improvement": "+0.11"},
+    {"input": "Build worker mới", "v0_1_score": 0.17, "v0_2_score": 0.24, "matched_lane": "Lane_01", "match_lane_v0_1": "Lane_01", "match": true, "improvement": "+0.07 (+41%)"}
+  ],
+
+  "tests_v0_2": {
+    "intent_parser_tests_added": 4,
+    "lane_matcher_tests_added": 4,
+    "total_added": 8,
+    "all_passed": true,
+    "baseline_pytest": 112,
+    "new_pytest_total": 120
+  },
+
+  "boundary_compliance": {
+    "stdlib_only": true,
+    "no_llm_no_daemon": true,
+    "scripts_brain_scope_only": true,
+    "tests_scope_only": true,
+    "tests_add_only_no_existing_edits": true,
+    "shared_canon_lane01_lane03_untouched": true
+  },
+
+  "files_changed": {
+    "modified": [
+      "scripts/brain/__init__.py",
+      "scripts/brain/intent_parser.py",
+      "scripts/brain/lane_matcher.py",
+      "tests/test_intent_parser.py",
+      "tests/test_lane_matcher.py"
+    ],
+    "new": [
+      "reports/LANE02-LOOP-T2-BRAIN-MVP-V0-2-IMPROVEMENT-V1_REPORT.md",
+      "snapshots/LANE02-LOOP-T2-BRAIN-MVP-V0-2-IMPROVEMENT-V1_snapshot.live.json",
+      "audit_logs/LANE02-LOOP-T2-BRAIN-MVP-V0-2-IMPROVEMENT-V1_audit.log",
+      "handoffs/outbox/Lane_02/RSP-L02-L01-T2-COMPLETE-20260428-001.json"
+    ],
+    "hot_memory": [
+      "runtime/current_state.md",
+      "runtime/checklist/MASTER_CHECKLIST.md",
+      "notifications/NOTIFICATION_LEDGER.md",
+      "notifications/NOTIFICATION_LEDGER.json"
+    ]
+  },
+
+  "commit": {
+    "sha": "7b85ef4ff625eaf4149b943e411b06ccdcf6196b",
+    "message": "feat(brain): v0.2 improvements - keyword extensions + scoring tuning [vercel skip]"
+  },
+
+  "schema_version": "lane02_snapshot_v1"
+}

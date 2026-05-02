@@ -1,0 +1,81 @@
+{
+  "task_id": "LANE01-LAWS-N7-N11-APPROVAL-APPLY-V1",
+  "task_title": "Apply NTS-approved LAW_N7-N11 v0.4 packet to SHARED/laws/* — canon-level activation per R-AUTH-01",
+  "phase": "AIER_CODE_V0 → LAW_N7-N11 v1.0 canon activation (post-NTS-APPROVE)",
+  "executor": {
+    "lane": "Lane_01",
+    "role": "Lane_01 apply-delegated executor per AMD_LANE01_ROLE_REFRAME §3 + §3.1; recording NTS chat APPROVE decision per LAW_SYSTEM §4 STEP 4",
+    "agent": "Claude Code Desktop (Vultr Windows Server)",
+    "model": "claude-opus-4-7",
+    "working_root": "C:\\workspace\\Uniton_Shared"
+  },
+  "authority_chain": {
+    "decision_authority": "NTS (Kernel Human) — sole authority over SHARED/laws/* per R-AUTH-01 + AUTHORITY_DECLARATION §1",
+    "decision_channel": "NTS chat dispatch on 2026-04-27 (LANE01-LAWS-N7-N11-APPROVAL-APPLY-V1 task body); explicit verbatim: 'NTS APPROVE qua chat dispatch (this task) cho LAW_N7-N11 v0.4 packet.'",
+    "decision_recorded_in": "docs/LAW_CLA_LLM/SHARED/amendments/approved/AMD_LANE03_LAWS_N7_N11_2026-04-26/NTS_DECISION.md (decision commit b7e72d8)",
+    "apply_authority": "Lane_01 delegated per AMD_LANE01_ROLE_REFRAME_2026-04-26 §3 + §3.1 apply-delegated executor scope"
+  },
+  "execution_started_utc": "2026-04-27T03:50:00Z",
+  "parent_head_at_start": "707736663e0711d989361ad4e410fb1484a21923",
+  "branch": "main",
+  "remote": "https://github.com/unitonzengarden/Uniton_Shared.git",
+  "decision_commit_sha": "b7e72d82953a3771adf9c67430e6d829cfff7fc0",
+  "migration_commit_sha": "f10c885aa32cd2717d5f020a4602defdc984a3af",
+  "git_final_local_HEAD": "f10c885aa32cd2717d5f020a4602defdc984a3af",
+  "git_final_origin_main": "f10c885aa32cd2717d5f020a4602defdc984a3af",
+  "activation_scope": {
+    "law_n7_memory": "v0.1 DRAFT → v1.0 ACTIVE (3 sections amended via v0.4: §L7.2 path, §L7.4 expanded reads, §L7.6 schema deferral)",
+    "law_n8_runtime": "v0.1 DRAFT → v1.0 ACTIVE (3 sections amended via v0.4: §L8.5 daemon registry path, §L8.8 heartbeat path + 60s, §L8.12 incident path)",
+    "law_n11_backend_bridge": "v0.1 DRAFT → v1.0 ACTIVE (4 sections amended via v0.4: §L11.5 actions paths, §L11.16 + §L11.17 backend registry path, §L11.27 incident path)",
+    "law_n9_skill": "v0.1 DRAFT → v1.0 ACTIVE (no content change; ENDORSE preserved; frontmatter only)",
+    "law_n10_capability_matrix": "v0.1 DRAFT → v1.0 ACTIVE (no content change; ENDORSE preserved; frontmatter only)"
+  },
+  "audit_trail_preserved": {
+    "approved_packet": "docs/LAW_CLA_LLM/SHARED/amendments/approved/AMD_LANE03_LAWS_N7_N11_2026-04-26/",
+    "v0_x_candidates_preserved_in_revisions": [
+      "LAW_N7_MEMORY.v0.2.candidate.md",
+      "LAW_N7_MEMORY.v0.3.candidate.md",
+      "LAW_N7_MEMORY.v0.4.candidate.md (apply source)",
+      "LAW_N8_RUNTIME.v0.2.candidate.md",
+      "LAW_N8_RUNTIME.v0.3.candidate.md",
+      "LAW_N8_RUNTIME.v0.4.candidate.md (apply source)",
+      "LAW_N11_BACKEND_BRIDGE.v0.2.candidate.md",
+      "LAW_N11_BACKEND_BRIDGE.v0.3.candidate.md",
+      "LAW_N11_BACKEND_BRIDGE.v0.4.candidate.md (apply source)"
+    ],
+    "revision_notes_preserved": [
+      "V0_3_REVISION_NOTES.md",
+      "V0_4_REVISION_NOTES.md"
+    ]
+  },
+  "boundary_verified": {
+    "shared_laws_modified_only_n7_n8_n9_n10_n11": true,
+    "law_system_redlines_authority_declaration_modified": false,
+    "v0_2_or_v0_3_candidates_modified": false,
+    "nts_decision_pre_filled_after_creation": false,
+    "amendment_workflow_followed": true,
+    "any_other_lane_folders_modified": false,
+    "active_architecture_modified": false,
+    "active_boot_modified": false,
+    "active_os_operations_modified": false,
+    "runtime_backend_product_code_created": false,
+    "production_deploy": false,
+    "aier_kill_switch": false,
+    "lane_registration_or_new_lane": false,
+    "force_push_or_rebase_shared": false,
+    "outside_repo_touched": false,
+    "uzgplus_repo_touched": false
+  },
+  "acs_planned": {
+    "AC1": "NTS_DECISION.md created with APPROVE rationale + signed",
+    "AC2": "Decision commit pushed",
+    "AC3": "3 active LAW files (N7, N8, N11) replaced with v0.4 content",
+    "AC4": "2 active LAW files (N9, N10) frontmatter updated to v1.0 ACTIVE",
+    "AC5": "Packet pending → approved (with revisions/ preserved)",
+    "AC6": "SHARED_INDEX 5 rows DRAFT → ACTIVE",
+    "AC7": "AMENDMENTS_LOG +1 row appended",
+    "AC8": "MASTER_CHECKLIST updated atomically; HEAD = origin/main; worktree clean"
+  },
+  "worktree_clean": "YES",
+  "next_recommended_task": "Phase 2 work — capability matrix per-Lane files, backend bridge implementation gating, runtime daemon registry preparation (all gated by activated LAW_N7-N11). Specific next dispatched by NTS."
+}

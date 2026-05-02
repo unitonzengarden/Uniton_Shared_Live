@@ -1,0 +1,88 @@
+{
+  "task_id": "LANE03-UNITON_SHARED_LIVE-SYNC-EXPANSION-V1",
+  "snapshot_type": "REPORT_TEMPLATE_V2_EVIDENCE_SNAPSHOT",
+  "result": "PASS",
+  "timestamp": "2026-04-29T18:52:08.9166677+07:00",
+  "source_repo": "unitonzengarden/Uniton_Shared",
+  "source_branch": "main",
+  "source_head_at_generation": "eb576ef5dc1ca00a321e319385d715c68971edeb",
+  "execution_header": {
+    "lane": "Lane_03",
+    "executor": "Codex",
+    "authority": "NTS",
+    "mode": "CONTROLLED_EXECUTION",
+    "task_id": "LANE03-UNITON_SHARED_LIVE-SYNC-EXPANSION-V1",
+    "scope": "Expand the Uniton_Shared to Uniton_Shared_Live sync workflow to include public AIER context packet and health spine files.",
+    "working_dir": "D:/UZG/Projects-v2/Uniton_Shared",
+    "repo": "unitonzengarden/Uniton_Shared",
+    "branch": "main",
+    "commit_sha": "eb576ef5dc1ca00a321e319385d715c68971edeb"
+  },
+  "scope_verification": {
+    "scope_integrity": "PASS",
+    "only_workflow_and_evidence_changed": true,
+    "uniton_shared_live_direct_write": false,
+    "github_settings_changed": false
+  },
+  "capability_check": {
+    "actor": "Lane_03",
+    "action": "Workflow allowlist/copy/SYNC_INFO expansion.",
+    "side_effect_class": "Workflow configuration change for controlled mirror sync.",
+    "capability_source": "NTS task authorization; LAW_GITHUB_01; LAW_N5.",
+    "authorization": "Explicit in task prompt."
+  },
+  "repo_boundary_check": {
+    "repo_ownership": "VALID",
+    "cross_repo_write": "NONE"
+  },
+  "sync_additions": [
+    "runtime/AIER_CONTEXT_PACKET.md",
+    "runtime/AIER_CONTEXT_PACKET.json",
+    "runtime/health/ECOSYSTEM_HEALTH_STATE.md",
+    "runtime/health/ECOSYSTEM_HEALTH_STATE.json",
+    "runtime/health/LATEST_VERIFIED_COMMITS.json",
+    "runtime/health/BLOCKERS_AND_RISKS.md",
+    "runtime/health/NEXT_SAFE_ACTION.md"
+  ],
+  "raw_urls_added": [
+    "https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/runtime/AIER_CONTEXT_PACKET.md",
+    "https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/runtime/AIER_CONTEXT_PACKET.json",
+    "https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/runtime/health/ECOSYSTEM_HEALTH_STATE.md",
+    "https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/runtime/health/ECOSYSTEM_HEALTH_STATE.json",
+    "https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/runtime/health/LATEST_VERIFIED_COMMITS.json",
+    "https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/runtime/health/BLOCKERS_AND_RISKS.md",
+    "https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/runtime/health/NEXT_SAFE_ACTION.md"
+  ],
+  "file_hashes": {
+    ".github/workflows/sync_runtime_to_public.yml": "651A042F02F1D4F3C4531B88222D64B3E121CBCECB20677BD5FFBF2C5F00C641",
+    "runtime/AIER_CONTEXT_PACKET.md": "FDFB855A28F5BBDC3224EDA7C9376A905AAA1054242B7EA3EE382E6BB1B92DEE",
+    "runtime/AIER_CONTEXT_PACKET.json": "A288EE39B10CD75B49C1D0D4596D2B8C440429A37032A3ADDA8B68BF98308724",
+    "runtime/health/ECOSYSTEM_HEALTH_STATE.md": "6AB4A22B005D3F2FEE5EBE188168FD0E00FC05724C96C76D9176A541E2428469",
+    "runtime/health/ECOSYSTEM_HEALTH_STATE.json": "C99A59996CD15F68DBE09678030F6D0139B5F5EF74C941ECE4914450822A2B1F",
+    "runtime/health/LATEST_VERIFIED_COMMITS.json": "9405C42ED2400F1E2561379673AE1486CB5A920FCA8B1D48FC82B7616A49866C",
+    "runtime/health/BLOCKERS_AND_RISKS.md": "90EB3DA5AC7BE64403095BF15324130C0077AF83D170C8AE284EB79C1E7D2234",
+    "runtime/health/NEXT_SAFE_ACTION.md": "FFDC4A0FFD4F7B1DDE5966F2E420E70E056D56B3C08CB298A310C7B04DF64631"
+  },
+  "validation": {
+    "security_scan": "PASS - no credential literals detected; benign governance references only.",
+    "workflow_path_filter_check": "PASS",
+    "copy_step_check": "PASS",
+    "sync_info_raw_url_check": "PASS",
+    "private_path_allowlist_check": "PASS",
+    "report_template_v2_check": "PASS"
+  },
+  "sync": {
+    "local_head": "eb576ef5dc1ca00a321e319385d715c68971edeb at snapshot generation",
+    "origin_main_head": "eb576ef5dc1ca00a321e319385d715c68971edeb at snapshot generation",
+    "match": "YES at snapshot generation",
+    "worktree_clean": "NO - scoped changes pending commit; final clean sync verified after push"
+  },
+  "governance_confirmation": {
+    "no_law_modified": true,
+    "no_cross_lane_violation": true,
+    "no_authority_override": true,
+    "repo_integrity_preserved": true,
+    "one_task_only": true
+  },
+  "next_task": "LANE03-UNITON_SHARED_LIVE-SYNC-VERIFY-V1"
+}

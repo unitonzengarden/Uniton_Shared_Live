@@ -1,0 +1,39 @@
+{
+  "snapshot_id": "LANE03-UZG-MIGRATION-DRIFT-BATCH-C-LEDGER-AND-RPC-PRIVILEGE-OWNER-DECISION-V1",
+  "captured_at": "2026-05-01T01:25:31+07:00",
+  "system": "uzg-plus",
+  "lane": "Lane_03",
+  "result": "PASS",
+  "state": {
+    "batch_c_live_equivalent_ledger": "COMPLETE",
+    "batch_c_do_not_apply_locks": "COMPLETE",
+    "rpc_sync_energy_daily_privilege_decision": "SERVICE_ROLE_ONLY_DECISION_LOCKED_NOT_APPLIED",
+    "migration_apply_status": "BLOCKED_BY_CANON",
+    "schema_migrations_repair_status": "NOT_MODIFIED"
+  },
+  "counts": {
+    "live_equivalent_ledger_entries": 5,
+    "do_not_apply_locks": 2,
+    "rpc_privilege_decisions": 1,
+    "migrations_applied": 0,
+    "database_mutations": 0,
+    "permission_changes": 0
+  },
+  "ledger_entries": [
+    "20260320180501",
+    "20260412163000",
+    "20260412193000",
+    "20260417124500",
+    "20260418093000"
+  ],
+  "do_not_apply": [
+    "20260320154501",
+    "20260320161001"
+  ],
+  "rpc_decision": {
+    "target": "public.rpc_sync_energy_daily(uuid,date)",
+    "decision": "RESTRICT_TO_SERVICE_ROLE_ONLY",
+    "sql_applied": false
+  },
+  "next_safe_action": "LANE03-UZG-RPC-SYNC-ENERGY-DAILY-SERVICE-ROLE-PRIVILEGE-HARDENING-DESIGN-OR-APPLY-V1"
+}

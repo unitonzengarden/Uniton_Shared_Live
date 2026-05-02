@@ -1,0 +1,56 @@
+{
+  "task_id": "T-L01-GOV-VALIDATOR-001",
+  "lane": "Lane_01",
+  "executor": "Lane_01 code agent (CLAC-1) on Vultr Windows Server",
+  "model": "claude-sonnet-4-7",
+  "started_at": "2026-04-26T02:26:08Z",
+  "git_head_before": "442dd3ec7623b68b5374c4a504ce13029269adce",
+  "intent": "Build task prompt CI validator + GitHub Action workflow (Step 1 of 3 governance layer fix). Mechanical enforcement of LAW_N5 — task prompts missing required fields fail CI before merge.",
+  "phase": "Step 1 of 3 governance layer fix",
+  "next_steps": ["Step 2: repo-backed handoff workflow", "Step 3: pre-flight sync stricter"],
+
+  "law_n5_fields_enforced": [
+    "1. MODEL: line with non-empty value (LAW_N5 §L9)",
+    "2. REASON: line with non-empty value (LAW_N5 §L9)",
+    "3. VERCEL_DEPLOY: NO literal (LAW_N5 §L10)",
+    "4. Commit suffix: [vercel skip] literal (LAW_N5 §L10)",
+    "5. WORKING_DIR: line with absolute path (LAW_N5 §L22)",
+    "6. LANE: Lane_<NN> pattern (LAW_N5 §L22)",
+    "7. ## CANON BINDING section + >=1 line (LAW_N5 §L17)",
+    "8. ## SCOPE section + <=1 sentence (LAW_N5 §L13)",
+    "9. ## ACCEPTANCE CRITERIA section + >=1 AC1: entry",
+    "10. ## QA GATE section + >=1 line (LAW_N5 §L27)",
+    "11. ## DELIVERABLES ORDER section (LAW_N5 §L16)",
+    "12. ## EXECUTION SEQUENCE section",
+    "13. ## SELF-AUDIT LOG section (LAW_N5 §L30)",
+    "14. ## TEST PLAN section (N/A justified allowed) (LAW_N5 §L28)",
+    "15. ## UI/SCREEN REVIEW section (N/A justified allowed) (LAW_N5 §L29)",
+    "16. ## ROLLBACK PLAN section (N/A justified allowed) (LAW_N5 §L31)"
+  ],
+
+  "fixtures_planned": {
+    "valid": [
+      "valid_minimal.md — bare-minimum passing prompt (all 16 fields present, minimal content)",
+      "valid_full_template.md — mirror of TASK_PROMPT_TEMPLATE v3.0 structure",
+      "valid_n_a_justified.md — TEST/UI/ROLLBACK = N/A with justification",
+      "valid_multi_lane.md — Lane_02 example (cross-Lane validity)"
+    ],
+    "invalid": [
+      "invalid_missing_model.md — missing MODEL: line",
+      "invalid_no_vercel_skip.md — missing [vercel skip] literal",
+      "invalid_multi_sentence_scope.md — SCOPE > 1 sentence (multiple sentences in single line)",
+      "invalid_no_ac.md — no AC1: entry"
+    ]
+  },
+
+  "ac_status": {
+    "AC1_validator_script": "pending",
+    "AC2_pytest_8_of_8": "pending",
+    "AC3_github_action_yaml": "pending",
+    "AC4_scripts_readme": "pending",
+    "AC5_task_prompts_readme": "pending",
+    "AC6_single_commit_pushed": "pending"
+  },
+
+  "overall_status": "in_progress"
+}

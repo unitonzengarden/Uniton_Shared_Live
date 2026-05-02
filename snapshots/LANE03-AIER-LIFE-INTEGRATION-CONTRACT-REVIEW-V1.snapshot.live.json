@@ -1,0 +1,103 @@
+{
+  "task_id": "LANE03-AIER-LIFE-INTEGRATION-CONTRACT-REVIEW-V1",
+  "generated_at": "2026-04-28T14:54:54Z",
+  "result": "WARNING",
+  "contract_readiness": "NOT_READY",
+  "bridge_readiness": "BLOCKED_FOR_IMPLEMENTATION",
+  "implementation_decision": "BLOCKED",
+  "repo_mode": {
+    "primary_write_target": "D:\\UZG\\Projects-v2\\Uniton_Shared",
+    "secondary_read_only": "D:\\UZG\\Projects-v2\\Uniton_OS",
+    "uniton_os_mutation_allowed": false,
+    "uniton_os_modified": false
+  },
+  "sync": {
+    "uniton_shared_head_before_review": "63ed0ad56b13f3295deb08acb745207dacb5518e",
+    "uniton_shared_head_before_commit": "83fda04c039f7fe63287369db553a3cfef6d7c88",
+    "uniton_shared_head_after": null,
+    "uniton_os_head": "4b977a9297830c1b4874a993db9be0e754546880",
+    "uniton_shared_worktree_clean_after_commit": null,
+    "uniton_os_worktree_clean": true
+  },
+  "inputs_reviewed": {
+    "uniton_shared": [
+      "runtime/current_state.md",
+      "runtime/checklist/MASTER_CHECKLIST.md",
+      "docs/LAW_CLA_LLM/SHARED/architecture/LAW_N13_INTEGRATION_HARDEN_V1_1/LAW_N13_MULTI_REPO_AND_HANDOFFS_V1.1.md",
+      "docs/LAW_CLA_LLM/SHARED/architecture/LAW_N13_INTEGRATION_HARDEN_V1_1/INTEGRATION_HANDOFF_SPEC.md",
+      "docs/LAW_CLA_LLM/SHARED/architecture/LAW_N13_INTEGRATION_HARDEN_V1_1/EXECUTION_BOUNDARY_SPEC.md",
+      "docs/LAW_CLA_LLM/SHARED/architecture/LAW_N13_INTEGRATION_HARDEN_V1_1/API_BRIDGE_CONTRACT.md",
+      "docs/LAW_CLA_LLM/SHARED/architecture/AIER_LIFE_INTEGRATION_AUDITS/UNITON-OS-LOCAL-CLONE-AND-INTEGRATION-READINESS-AUDIT-V1/UNITON_OS_LOCAL_CLONE_AUDIT.md",
+      "docs/LAW_CLA_LLM/SHARED/architecture/AIER_LIFE_INTEGRATION_AUDITS/UNITON-OS-LOCAL-CLONE-AND-INTEGRATION-READINESS-AUDIT-V1/UNITON_OS_INTEGRATION_SURFACE_MAP.md",
+      "docs/LAW_CLA_LLM/SHARED/architecture/AIER_LIFE_INTEGRATION_AUDITS/UNITON-OS-LOCAL-CLONE-AND-INTEGRATION-READINESS-AUDIT-V1/UNITON_OS_TO_AIER_CODE_GAP_REPORT.md",
+      "docs/LAW_CLA_LLM/SHARED/architecture/AIER_LIFE_INTEGRATION_AUDITS/UNITON-OS-LOCAL-CLONE-AND-INTEGRATION-READINESS-AUDIT-V1/UNITON_OS_READY_FOR_CONTRACT_REVIEW.json",
+      "contracts/lane_message.schema.json",
+      "contracts/lane_response.schema.json",
+      "scripts/runtime/aier_loop.ps1",
+      "scripts/runtime/route_messages.ps1"
+    ],
+    "uniton_os_read_only": [
+      "apps/web/src/app/api/tasks/route.ts",
+      "apps/web/src/app/api/tasks/[id]/route.ts",
+      "apps/web/src/app/api/tasks/[id]/dispatch/route.ts",
+      "apps/web/src/app/api/tasks/[id]/report/route.ts",
+      "apps/web/src/app/api/tasks/[id]/snapshot/route.ts",
+      "apps/web/src/app/api/tasks/[id]/diff/route.ts",
+      "apps/web/src/app/api/chat/build-context/route.ts",
+      "apps/web/src/app/api/knowledge/retrieve/route.ts",
+      "apps/web/src/app/api/memory/events/route.ts",
+      "apps/web/src/app/api/memory/facts/route.ts",
+      "apps/web/src/app/api/memory/profile/route.ts",
+      "apps/web/src/app/api/memory/commitments/route.ts",
+      "apps/web/src/app/api/kill/auto/route.ts",
+      "apps/web/src/lib/ai/kill-switch-guard.ts",
+      "apps/web/src/lib/killswitch/auto-detector.ts",
+      "apps/web/src/lib/auth/nts-auth.ts",
+      "apps/web/src/lib/memory/orchestration.ts",
+      "apps/web/src/lib/memory/event-emitter.ts",
+      "apps/web/src/lib/memory/schemas.ts",
+      "supabase/migrations/20260420120100_identity_kernel.sql",
+      "supabase/migrations/20260420120300_tasks.sql",
+      "supabase/migrations/20260421030000_tasks_extend.sql",
+      "supabase/migrations/20260420120400_history.sql",
+      "supabase/migrations/0011_knowledge_chunks.sql",
+      "supabase/migrations/0012_episodic_events.sql",
+      "supabase/migrations/0013_episodic_events_triggers.sql",
+      "supabase/migrations/0014_retrieve_events_rpc.sql",
+      "supabase/migrations/0015_nts_profile.sql",
+      "supabase/migrations/0016_project_facts.sql",
+      "supabase/migrations/0017_commitments.sql"
+    ]
+  },
+  "classification_counts": {
+    "READY": 2,
+    "READY_WITH_WARNING": 7,
+    "NEEDS_UNITON_OS_CHANGE": 0,
+    "NEEDS_AIER_CODE_CHANGE": 0,
+    "NEEDS_BOTH": 15,
+    "BLOCKED": 3,
+    "DEFERRED": 1
+  },
+  "major_gaps": [
+    "LAW_N13 is draft/pending review and not active law.",
+    "Uniton_OS main has no /bridge routes.",
+    "No concrete shared bridge schema exists.",
+    "No cross-system idempotency/replay persistence exists.",
+    "No contracted kill-switch state/proof endpoint exists.",
+    "Bridge auth/service identity is undefined.",
+    "AIER Code, LAW_N13, and Uniton_OS lifecycle states are unmapped."
+  ],
+  "validation": {
+    "git_status_uniton_shared_before": "clean main...origin/main at 63ed0ad56b13f3295deb08acb745207dacb5518e; refreshed to origin/main 83fda04c039f7fe63287369db553a3cfef6d7c88 before commit",
+    "git_status_uniton_os_before": "clean main...origin/main",
+    "file_existence_checks": "PASS: all 7 requested LANE03 artifacts exist",
+    "json_parse": "PASS: next-task recommendation, live snapshot, and prior ready-for-review JSON parsed",
+    "scripts_ci_check_contract_files": "PASS: strict contract validation completed",
+    "pytest_governance_tests": "WARNING: pytest command not on PATH; python -m pytest governance/tests reported path missing; fallback python -m pytest scripts/governance passed 35 tests",
+    "aier_loop_selftest": "PASS: scripts/runtime/aier_loop.ps1 -SelfTest",
+    "route_messages_selftest": "PASS: scripts/runtime/route_messages.ps1 -SelfTest",
+    "git_status_uniton_shared_after": "DIRTY_EXPECTED_BEFORE_COMMIT: only LANE03 review artifacts pending",
+    "git_status_uniton_os_after": "PASS: clean main...origin/main"
+  },
+  "next_task": "LANE03-AIER-LIFE-BRIDGE-CONTRACT-FINALIZE-V1"
+}
