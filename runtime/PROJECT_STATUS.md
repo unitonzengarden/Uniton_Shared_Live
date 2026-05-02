@@ -10,7 +10,7 @@
 ## §0. Header
 
 - **Generator:** `aier-state-update v1.0` invoked via `scripts/runtime/generate_project_status.py v1.1`
-- **Source commit:** `825585473f10ae6046281a3853ecbd98d10455de` (short: `8255854`)
+- **Source commit:** `eb9d1a1f1d3eb9928c501da0519df501a6000c6c` (short: `eb9d1a1`)
 - **Auto-generated:** `true` (do not hand-edit)
 - **Authority:** repo-backed automation per LAW_N8 §L8.2 explicitly enabled CI mode (state-mirror auto-regenerate scope only)
 
@@ -68,11 +68,11 @@
 
 | SHA | Author | Subject |
 |---|---|---|
-| `8255854` | unitonzengarden | audit(lane02/phase6): backfill 4 missing runtime ledger entries |
-| `ba2c7c1` | AIER State Bot | [auto-status] regen runtime+network surfaces from 59a2ac7 [vercel skip] |
-| `59a2ac7` | unitonzengarden | docs(lane02): LANE02-PHASE6-AIER-CHAT-WIRE-V1 deliverables (PARTIAL) |
-| `61adfca` | Ecosystem Poller Bot | poll: ecosystem state update [vercel skip] |
-| `0dcf304` | AIER Code Heartbeat | AIER Code heartbeat 2026-05-02T12:02:24Z [vercel skip] |
+| `eb9d1a1` | unitonzengarden | feat(lane02/sync): verify sync workflow + confirm Lane_02 visibility PASS |
+| `d57245a` | Ecosystem Poller Bot | poll: ecosystem state update [vercel skip] |
+| `7dc6a89` | AIER Code Heartbeat | AIER Code heartbeat 2026-05-02T13:46:01Z [vercel skip] |
+| `b917e54` | Uniton Zen | audit p6-endgame v3 home (#97) |
+| `a00216b` | AIER State Bot | [auto-status] regen runtime+network surfaces from 8255854 [vercel skip] |
 
 ## §7. Latest 5 DONE Tasks (from MASTER_CHECKLIST)
 
