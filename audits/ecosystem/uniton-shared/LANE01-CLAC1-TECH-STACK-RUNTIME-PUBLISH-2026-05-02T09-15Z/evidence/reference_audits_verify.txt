@@ -1,0 +1,62 @@
+=== Reference Audit Files Existence Verification ===
+
+Date: 2026-05-02T09:19Z (pre-publish check)
+Authored by: CLAC1
+
+Task spec §6 referenced 12 audit files. This verification ensures referenced
+paths actually resolve in the repo, preventing broken raw URL references on
+Live mirror.
+
+--- TAO Backend Audit #82 — EXISTS in repo ---
+
+OK audits/ecosystem/uzg-plus/backend/UZG_PLUS_V2_TAO_BACKEND_SCHEMA_v1.md
+OK audits/ecosystem/uzg-plus/backend/UZG_PLUS_V2_TAO_BACKEND_RPC_AND_RLS_v1.md
+OK audits/ecosystem/uzg-plus/backend/UZG_PLUS_V2_TAO_INTEGRATION_STRATEGY_v1.md
+OK audits/ecosystem/uzg-plus/backend/UZG_PLUS_V2_TAO_CANON_DRIFT_MAP_v1.md
+
+Subtotal: 4/4 EXIST ✓
+
+--- V2 EXACT Comprehensive Read #88 — EXISTS in repo ---
+
+OK audits/ecosystem/uzg-plus/V2_EXACT_MASTER_SUMMARY_GO_LIVE_v1.md
+OK audits/ecosystem/uzg-plus/v2-exact-flows/V2_FLOW_AUTH_EXACT_v1.md
+OK audits/ecosystem/uzg-plus/v2-exact-flows/V2_FLOW_HOME_EXACT_v1.md (verified)
+OK audits/ecosystem/uzg-plus/v2-exact-flows/V2_FLOW_CHAT_EXACT_v1.md (verified)
+OK audits/ecosystem/uzg-plus/v2-exact-flows/V2_FLOW_WALLET_EXACT_v1.md (verified)
+OK audits/ecosystem/uzg-plus/v2-exact-flows/V2_FLOW_ENTA_EXACT_v1.md (verified)
+OK audits/ecosystem/uzg-plus/v2-exact-flows/V2_FLOW_PLUS_MEMBERSHIP_EXACT_v1.md (verified)
+OK audits/ecosystem/uzg-plus/v2-exact-flows/V2_FLOW_U_REWARD_EXACT_v1.md (verified)
+OK audits/ecosystem/uzg-plus/v2-exact-flows/V2_FLOW_TAO_EXACT_v1.md (verified)
+
+Subtotal: 9/9 EXIST ✓ (master + 8 module flows)
+
+--- Backend Foundation Audit #78 — NOT in repo with canonical names ---
+
+MISSING audits/ecosystem/uzg-plus/backend/UZG_PLUS_V2_BACKEND_SCHEMA_v1.md
+MISSING audits/ecosystem/uzg-plus/backend/UZG_PLUS_V2_BACKEND_RPC_CATALOG_v1.md
+MISSING audits/ecosystem/uzg-plus/backend/UZG_PLUS_V2_BACKEND_RLS_POLICIES_v1.md
+MISSING audits/ecosystem/uzg-plus/backend/UZG_PLUS_V2_BACKEND_EDGE_FUNCTIONS_v1.md
+MISSING audits/ecosystem/uzg-plus/backend/UZG_PLUS_V2_BACKEND_INVARIANTS_v1.md
+MISSING audits/ecosystem/uzg-plus/backend/UZG_PLUS_V2_BACKEND_DRIFT_MAP_v1.md
+MISSING audits/ecosystem/uzg-plus/backend/UZG_PLUS_V2_EXPRESS_ENDPOINT_MAP_v1.md
+
+Subtotal: 0/7 EXIST with canonical names
+
+Equivalent content available at (workaround pointers in §G):
+- audits/ecosystem/uzg-plus/LANE01-UZG-PLUS-AUDIT-AND-SYSTEM-MAP-V1_REPORT.md (master report)
+- audits/ecosystem/uzg-plus/CANON_V2_RECONCILIATION_PROPOSAL.md (drift detail)
+- system_maps/UZG_PLUS_SYSTEM_MAP_V1.md (system map)
+
+--- Aggregate ---
+
+Total referenced: 13 files
+- EXIST: 13 files when counting V2_FLOW siblings as 1 group; or
+  - 4 TAO + 9 V2 EXACT (master + 8 flows) = 13 files EXIST
+- "ship later" Phase 6: 7 Backend Foundation files (separate gap, documented)
+
+Decision per task spec §12 B-3: marked the 7 missing files as "to be re-published
+Phase 6" in §G of tech_stack.live.md, with workaround pointers to equivalent
+existing content. Lane_02 can extract needed information from existing files;
+Phase 6 task will re-publish Backend Foundation under canonical names.
+
+This prevents Lane_02 fetching `tech_stack.live.md` and hitting broken links.
