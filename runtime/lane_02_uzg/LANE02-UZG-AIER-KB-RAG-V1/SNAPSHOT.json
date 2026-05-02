@@ -1,0 +1,74 @@
+{
+  "task_id": "LANE02-UZG-AIER-KB-RAG-V1",
+  "stream": "Lane_02",
+  "executor": "CURSOR-2",
+  "status": "COMPLETE",
+  "timestamp": "2026-05-02T10:25:00+07:00",
+  "branch": "feat/lane02/cursor2/aier-kb-rag-v1",
+  "repo": "uzgplus-app",
+  "commit": "ee83c65",
+
+  "supabase": {
+    "project_id": "kkhhpecofolmrodyeslp",
+    "migration": "20260502093001_lane02_aier_kb_rag_v1",
+    "migration_applied": true,
+    "table": "public.aier_kb_entries",
+    "rpc": "public.search_aier_kb",
+    "index": "idx_aier_kb_embedding_hnsw (HNSW, vector_cosine_ops, m=16, ef_construction=64)"
+  },
+
+  "kb": {
+    "source": "https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/runtime/lane_02_uzg/kb/KB_TUVI_CHINH_TINH_x_CUNG_v1_0_FINAL_2026-05-01.json",
+    "version": "KB_TUVI_CHINH_TINH_x_CUNG_v1_0",
+    "authority": ["Tran Doan (Hi Di)", "Cu Thien Luong"],
+    "entries_total": 168,
+    "entries_embedded": 168,
+    "stars": 14,
+    "palaces": 12
+  },
+
+  "embedding": {
+    "model": "text-embedding-3-small",
+    "dims": 1536,
+    "tokens_used": 6789,
+    "cost_usd": 0.00014,
+    "budget_cap_usd": 0.03,
+    "under_budget": true
+  },
+
+  "deliverables": [
+    "supabase/migrations/20260502093001_lane02_aier_kb_rag_v1.sql",
+    "scripts/import_aier_kb_embeddings.mjs",
+    "lib/tao/ziwei/aier/context-builder.js",
+    "tests/qa/aier-kb-rag.qa.spec.js"
+  ],
+
+  "tier_gating": {
+    "explorer": "summary only",
+    "seeker": "member_depth (fallback: summary)",
+    "builder": "member_depth (fallback: summary)",
+    "sovereign": "premium_depth (fallback chain: premium > member > summary)"
+  },
+
+  "tests": {
+    "Q-RAG-01": "search_aier_kb returns results + similarity > 0.5",
+    "Q-RAG-02": "explorer tier = depth_level summary only",
+    "Q-RAG-03": "seeker tier = member|summary, never premium"
+  },
+
+  "compliance": {
+    "law_4_no_deterministic_fate": true,
+    "law_5_no_fear_based_ux": true,
+    "redline_1_no_death_catastrophe_prediction": true,
+    "redline_3_no_thay_phan_tone": true,
+    "law_10_vercel_skip": true,
+    "law_22_stream_boundary": "Desktop stream (uzgplus-app) — OK"
+  },
+
+  "verification": {
+    "migration_sql": "applied via Supabase MCP",
+    "import_run": "168/168 upserted, 0 errors, exit code 0",
+    "db_count_check": "[{\"total\":168,\"with_embedding\":168,\"with_member_depth\":0}]",
+    "branch_pushed": "https://github.com/unitonzengarden/uzgplus-app/tree/feat/lane02/cursor2/aier-kb-rag-v1"
+  }
+}
