@@ -1,0 +1,1890 @@
+{
+  "schema_version": "KB_TUVI_CHINH_TINH_x_CUNG_v1_0",
+  "doc_id": "KB_TUVI_CHINH_TINH_x_CUNG_v1_0_FINAL_2026-05-01",
+  "version": "1.0_DRAFT",
+  "issued_by": "CLA-2 Lane_02",
+  "date": "2026-05-01",
+  "status": "DRAFT_v1.0_summary_only_pending_NTS_review",
+  "scope": "168 entries — 14 chính tinh × 12 cung. Format: summary 1-2 câu cho RAG retrieval. member_depth + premium_depth fill sau.",
+  "school": "Vietnamese (Tử Vi Đẩu Số Việt Nam)",
+  "language": "Vietnamese",
+  "stars_count": 14,
+  "palaces_count": 12,
+  "total_entries": 168,
+  "vong_tu_vi": [
+    "Tử Vi",
+    "Thiên Cơ",
+    "Thái Dương",
+    "Vũ Khúc",
+    "Thiên Đồng",
+    "Liêm Trinh"
+  ],
+  "vong_thien_phu": [
+    "Thiên Phủ",
+    "Thái Âm",
+    "Tham Lang",
+    "Cự Môn",
+    "Thiên Tướng",
+    "Thiên Lương",
+    "Thất Sát",
+    "Phá Quân"
+  ],
+  "palaces": [
+    "Mệnh",
+    "Phụ Mẫu",
+    "Phúc Đức",
+    "Điền Trạch",
+    "Quan Lộc",
+    "Nô Bộc",
+    "Thiên Di",
+    "Tật Ách",
+    "Tài Bạch",
+    "Tử Tức",
+    "Phu Thê",
+    "Huynh Đệ"
+  ],
+  "source_authority": [
+    "Tử Vi Đẩu Số Toàn Thư - Hi Di Trần Đoàn (Nam Mệnh + Nữ Mệnh [Sao] ca)",
+    "Tử Vi Nghiệm Lý - cụ Thiên Lương",
+    "TAO_ZIWEI_CANON_OFFICIAL_v1.0_2026-04-25.md",
+    "TAO_ZIWEI_SYSTEM_LAW_v1.1_2026-04-29.md",
+    "TAO_ZIWEI_FORMULA_REFERENCE_v1.0_2026-04-29.md",
+    "UZG_TAO_CORE_V2.md (algorithm canon)"
+  ],
+  "compliance": {
+    "law_4_no_deterministic_fate": true,
+    "law_5_no_fear_based_ux": true,
+    "redline_1_no_death_catastrophe_prediction": true,
+    "redline_3_no_thay_phan_tone": true,
+    "cultural_framing_mandatory": true,
+    "vn_school_binding": "Tết Nguyên Đán + lunar month, không dùng classical Chinese school"
+  },
+  "entry_format": {
+    "id": "kb_<star_slug>_<palace_slug>",
+    "type": "chinh_tinh",
+    "subject": "<star> @ <palace>",
+    "summary": "1-2 câu — Free tier preview + RAG retrieval grounding",
+    "tags": [
+      "<star>",
+      "<palace>",
+      "<keywords>"
+    ]
+  },
+  "_next_phase_instructions": [
+    "Phase 2: NTS hoặc chuyên gia Tử Vi VN fill member_depth (1-2 đoạn) cho mỗi entry",
+    "Phase 3: Fill premium_depth (multi-paragraph) cho mỗi entry",
+    "Phase 4: CURSOR-2 import vào Supabase pgvector + embedding generation",
+    "Phase 5: AIER TAO RAG retrieval pipeline wire (already done Sprint 4.4 commit 9809f07)"
+  ],
+  "entries": [
+    {
+      "id": "kb_tuvi_menh",
+      "type": "chinh_tinh",
+      "subject": "Tử Vi @ Mệnh",
+      "summary": "Đế tinh tọa Mệnh — gợi ý cấu trúc lãnh đạo, tự trọng, ưa vị trí trung tâm. Gặp tá phò (Tả Hữu, Xương Khúc) thì phú quý song toàn, đơn độc dễ cô độc kiêu căng.",
+      "tags": [
+        "Tử Vi",
+        "Mệnh",
+        "đế tinh",
+        "lãnh đạo"
+      ]
+    },
+    {
+      "id": "kb_tuvi_phumau",
+      "type": "chinh_tinh",
+      "subject": "Tử Vi @ Phụ Mẫu",
+      "summary": "Cha mẹ có vị thế xã hội, có uy tín, có ảnh hưởng định hướng lớn đến anh/chị. Mối quan hệ tôn ti, đôi khi áp lực kỳ vọng cao.",
+      "tags": [
+        "Tử Vi",
+        "Phụ Mẫu",
+        "cha mẹ",
+        "uy tín"
+      ]
+    },
+    {
+      "id": "kb_tuvi_phucduc",
+      "type": "chinh_tinh",
+      "subject": "Tử Vi @ Phúc Đức",
+      "summary": "Phước báo dày, tinh thần ổn định, có duyên với điều cao quý. Có thể cô độc tinh thần, đặt tiêu chuẩn nội tâm cao.",
+      "tags": [
+        "Tử Vi",
+        "Phúc Đức",
+        "phước báo"
+      ]
+    },
+    {
+      "id": "kb_tuvi_dientrach",
+      "type": "chinh_tinh",
+      "subject": "Tử Vi @ Điền Trạch",
+      "summary": "Bất động sản giá trị cao, nhà có vị thế. Quản lý tài sản nhà đất tốt khi có hệ thống. Tổ ấm trang trọng, có quy tắc.",
+      "tags": [
+        "Tử Vi",
+        "Điền Trạch",
+        "bất động sản"
+      ]
+    },
+    {
+      "id": "kb_tuvi_quanloc",
+      "type": "chinh_tinh",
+      "subject": "Tử Vi @ Quan Lộc",
+      "summary": "Sự nghiệp đế vương — phát triển trong vai trò lãnh đạo, tổ chức có cấu trúc, ngành truyền thống uy tín. Cần tá phò để phát huy tối đa.",
+      "tags": [
+        "Tử Vi",
+        "Quan Lộc",
+        "sự nghiệp",
+        "lãnh đạo"
+      ]
+    },
+    {
+      "id": "kb_tuvi_nobac",
+      "type": "chinh_tinh",
+      "subject": "Tử Vi @ Nô Bộc",
+      "summary": "Bạn bè và cấp dưới có vị thế, có chất lượng. Quan hệ tôn ti, anh/chị thường ở vai 'đầu tàu', đôi khi thiếu bạn ngang hàng.",
+      "tags": [
+        "Tử Vi",
+        "Nô Bộc",
+        "bạn bè"
+      ]
+    },
+    {
+      "id": "kb_tuvi_thiendi",
+      "type": "chinh_tinh",
+      "subject": "Tử Vi @ Thiên Di",
+      "summary": "Đế tinh xuất ngoại — ra ngoài được trọng dụng, đi xa phát triển tốt hơn ở quê. Cơ duyên du học, công tác quốc tế.",
+      "tags": [
+        "Tử Vi",
+        "Thiên Di",
+        "đi xa",
+        "xuất ngoại"
+      ]
+    },
+    {
+      "id": "kb_tuvi_tatach",
+      "type": "chinh_tinh",
+      "subject": "Tử Vi @ Tật Ách",
+      "summary": "Sức khỏe nền tảng vững. Cần chú ý hệ tim mạch, thần kinh trung ương, tiêu hóa cao cấp. Stress kéo dài là nguyên nhân gốc.",
+      "tags": [
+        "Tử Vi",
+        "Tật Ách",
+        "tim mạch",
+        "thần kinh"
+      ]
+    },
+    {
+      "id": "kb_tuvi_taibach",
+      "type": "chinh_tinh",
+      "subject": "Tử Vi @ Tài Bạch",
+      "summary": "Dòng tiền có quy mô — kiếm từ vị thế cao, doanh nghiệp lớn, tài sản đầu tư. Có khuynh hướng chi 'xứng tầm', cần cân bằng.",
+      "tags": [
+        "Tử Vi",
+        "Tài Bạch",
+        "tiền bạc",
+        "đầu tư"
+      ]
+    },
+    {
+      "id": "kb_tuvi_tutuc",
+      "type": "chinh_tinh",
+      "subject": "Tử Vi @ Tử Tức",
+      "summary": "Con có cá tính mạnh, có khả năng thành đạt. Số con ít (1-2). Quan hệ tôn ti, dễ va chạm vương quyền giai đoạn dậy thì.",
+      "tags": [
+        "Tử Vi",
+        "Tử Tức",
+        "con cái"
+      ]
+    },
+    {
+      "id": "kb_tuvi_phuthe",
+      "type": "chinh_tinh",
+      "subject": "Tử Vi @ Phu Thê",
+      "summary": "Bạn đời có cá tính mạnh, có vị thế. Hôn nhân 'hai vương quyền' — cần tôn trọng không gian riêng. Tuổi kết hôn thường muộn.",
+      "tags": [
+        "Tử Vi",
+        "Phu Thê",
+        "hôn nhân"
+      ]
+    },
+    {
+      "id": "kb_tuvi_huynhde",
+      "type": "chinh_tinh",
+      "subject": "Tử Vi @ Huynh Đệ",
+      "summary": "Anh chị em có cá tính mạnh, có thể có người vị thế xã hội. Quan hệ tôn trọng có khoảng cách, đoàn kết khi việc lớn.",
+      "tags": [
+        "Tử Vi",
+        "Huynh Đệ",
+        "anh chị em"
+      ]
+    },
+    {
+      "id": "kb_thiencơ_menh",
+      "type": "chinh_tinh",
+      "subject": "Thiên Cơ @ Mệnh",
+      "summary": "Trí tuệ, mưu lược, quyền biến. Gặp Khoa Quyền Lộc thì chức vị cao. Hóa Kỵ ở nhàn cung dù có tài cũng phiêu bồng.",
+      "tags": [
+        "Thiên Cơ",
+        "Mệnh",
+        "trí tuệ",
+        "mưu lược"
+      ]
+    },
+    {
+      "id": "kb_thiencơ_phumau",
+      "type": "chinh_tinh",
+      "subject": "Thiên Cơ @ Phụ Mẫu",
+      "summary": "Cha mẹ thông minh, có học vấn, có khả năng tư duy logic. Mối quan hệ thường có yếu tố trao đổi tri thức.",
+      "tags": [
+        "Thiên Cơ",
+        "Phụ Mẫu",
+        "trí tuệ"
+      ]
+    },
+    {
+      "id": "kb_thiencơ_phucduc",
+      "type": "chinh_tinh",
+      "subject": "Thiên Cơ @ Phúc Đức",
+      "summary": "Tâm trí năng động, suy nghĩ nhiều, hay biến đổi. Phước thông qua trí tuệ và học vấn. Cần thiền định để giảm tâm động.",
+      "tags": [
+        "Thiên Cơ",
+        "Phúc Đức",
+        "tâm trí"
+      ]
+    },
+    {
+      "id": "kb_thiencơ_dientrach",
+      "type": "chinh_tinh",
+      "subject": "Thiên Cơ @ Điền Trạch",
+      "summary": "Nhà cửa hay thay đổi, di chuyển nhiều. Có thể có nhiều bất động sản nhỏ thay vì 1 căn lớn. Đầu tư bất động sản theo trí tuệ.",
+      "tags": [
+        "Thiên Cơ",
+        "Điền Trạch",
+        "thay đổi"
+      ]
+    },
+    {
+      "id": "kb_thiencơ_quanloc",
+      "type": "chinh_tinh",
+      "subject": "Thiên Cơ @ Quan Lộc",
+      "summary": "Sự nghiệp dùng trí tuệ — tham mưu, cố vấn, kế hoạch, IT, giáo dục. Hợp Cơ Nguyệt Đồng Lương là cách tốt. Hay đổi việc.",
+      "tags": [
+        "Thiên Cơ",
+        "Quan Lộc",
+        "tham mưu",
+        "trí tuệ"
+      ]
+    },
+    {
+      "id": "kb_thiencơ_nobac",
+      "type": "chinh_tinh",
+      "subject": "Thiên Cơ @ Nô Bộc",
+      "summary": "Bạn bè nhiều, đa dạng, hay thay đổi. Quan hệ qua trao đổi trí tuệ, học hỏi. Cấp dưới thông minh nhưng dễ rời.",
+      "tags": [
+        "Thiên Cơ",
+        "Nô Bộc",
+        "đa dạng"
+      ]
+    },
+    {
+      "id": "kb_thiencơ_thiendi",
+      "type": "chinh_tinh",
+      "subject": "Thiên Cơ @ Thiên Di",
+      "summary": "Di chuyển nhiều, đi học xa, công tác xa thuận lợi. Tư duy mở rộng qua di chuyển. Cẩn thận an toàn giao thông.",
+      "tags": [
+        "Thiên Cơ",
+        "Thiên Di",
+        "di chuyển"
+      ]
+    },
+    {
+      "id": "kb_thiencơ_tatach",
+      "type": "chinh_tinh",
+      "subject": "Thiên Cơ @ Tật Ách",
+      "summary": "Cần chú ý hệ thần kinh, gan, mắt. Stress trí óc, mất ngủ. Ngồi lâu hại lưng cổ. Cần vận động cân bằng.",
+      "tags": [
+        "Thiên Cơ",
+        "Tật Ách",
+        "thần kinh",
+        "gan"
+      ]
+    },
+    {
+      "id": "kb_thiencơ_taibach",
+      "type": "chinh_tinh",
+      "subject": "Thiên Cơ @ Tài Bạch",
+      "summary": "Tiền từ trí tuệ — tư vấn, môi giới, công nghệ, đầu tư phân tích. Dòng tiền hay biến động, cần kế hoạch cẩn thận.",
+      "tags": [
+        "Thiên Cơ",
+        "Tài Bạch",
+        "tư vấn"
+      ]
+    },
+    {
+      "id": "kb_thiencơ_tutuc",
+      "type": "chinh_tinh",
+      "subject": "Thiên Cơ @ Tử Tức",
+      "summary": "Con thông minh, có khả năng học, hiếu động. Số con ít, có thể chỉ 1-2. Quan hệ qua giao tiếp trí tuệ.",
+      "tags": [
+        "Thiên Cơ",
+        "Tử Tức",
+        "thông minh"
+      ]
+    },
+    {
+      "id": "kb_thiencơ_phuthe",
+      "type": "chinh_tinh",
+      "subject": "Thiên Cơ @ Phu Thê",
+      "summary": "Bạn đời thông minh, có học vấn. Hôn nhân cần giao tiếp trí tuệ, không hợp người tâm trí khác biệt nhiều. Có thể tái hôn.",
+      "tags": [
+        "Thiên Cơ",
+        "Phu Thê",
+        "trí tuệ"
+      ]
+    },
+    {
+      "id": "kb_thiencơ_huynhde",
+      "type": "chinh_tinh",
+      "subject": "Thiên Cơ @ Huynh Đệ",
+      "summary": "Anh chị em thông minh, có học vấn. Số có thể nhiều hoặc bằng phụ thuộc tá phò. Quan hệ qua trao đổi trí tuệ.",
+      "tags": [
+        "Thiên Cơ",
+        "Huynh Đệ",
+        "trí tuệ"
+      ]
+    },
+    {
+      "id": "kb_thaiduong_menh",
+      "type": "chinh_tinh",
+      "subject": "Thái Dương @ Mệnh",
+      "summary": "Quang minh, nhiệt huyết, thẳng thắn. Miếu vượng (Dần Mão Thìn Tỵ Ngọ Mùi) thì phú thọ. Hãm địa (Thân Dậu Tuất Hợi Tý Sửu) gặp Hóa Kỵ thì kiển muội.",
+      "tags": [
+        "Thái Dương",
+        "Mệnh",
+        "quang minh",
+        "nhiệt huyết"
+      ]
+    },
+    {
+      "id": "kb_thaiduong_phumau",
+      "type": "chinh_tinh",
+      "subject": "Thái Dương @ Phụ Mẫu",
+      "summary": "Cha có vai trò mạnh trong gia đình, là chỗ dựa lớn. Quan hệ với cha thường rõ nét hơn với mẹ. Nếu hãm địa, cha vất vả.",
+      "tags": [
+        "Thái Dương",
+        "Phụ Mẫu",
+        "cha"
+      ]
+    },
+    {
+      "id": "kb_thaiduong_phucduc",
+      "type": "chinh_tinh",
+      "subject": "Thái Dương @ Phúc Đức",
+      "summary": "Tinh thần lạc quan, hướng ngoại, ưa hoạt động. Phước qua công việc và đóng góp xã hội. Hãm địa dễ áp lực tinh thần.",
+      "tags": [
+        "Thái Dương",
+        "Phúc Đức",
+        "lạc quan"
+      ]
+    },
+    {
+      "id": "kb_thaiduong_dientrach",
+      "type": "chinh_tinh",
+      "subject": "Thái Dương @ Điền Trạch",
+      "summary": "Nhà có hướng tốt (Đông, Đông Nam — đón ánh sáng). Bất động sản từ công việc xã hội. Hãm địa ít cơ hội bất động sản.",
+      "tags": [
+        "Thái Dương",
+        "Điền Trạch"
+      ]
+    },
+    {
+      "id": "kb_thaiduong_quanloc",
+      "type": "chinh_tinh",
+      "subject": "Thái Dương @ Quan Lộc",
+      "summary": "Sự nghiệp công khai, có tầm ảnh hưởng — chính trị, truyền thông, giáo dục, lãnh đạo công đoàn. Miếu vượng thì danh hiển.",
+      "tags": [
+        "Thái Dương",
+        "Quan Lộc",
+        "công khai",
+        "ảnh hưởng"
+      ]
+    },
+    {
+      "id": "kb_thaiduong_nobac",
+      "type": "chinh_tinh",
+      "subject": "Thái Dương @ Nô Bộc",
+      "summary": "Bạn bè đông, quan hệ rộng, được nhiều người biết. Cấp dưới trung thành nếu Mệnh sáng. Hãm địa có khi bị bạn xấu.",
+      "tags": [
+        "Thái Dương",
+        "Nô Bộc",
+        "rộng rãi"
+      ]
+    },
+    {
+      "id": "kb_thaiduong_thiendi",
+      "type": "chinh_tinh",
+      "subject": "Thái Dương @ Thiên Di",
+      "summary": "Đi xa thuận lợi nếu miếu vượng — được trọng vọng. Nước có tên có ánh sáng (Đông Nam Á, châu Mỹ). Hãm địa đi xa vất vả.",
+      "tags": [
+        "Thái Dương",
+        "Thiên Di"
+      ]
+    },
+    {
+      "id": "kb_thaiduong_tatach",
+      "type": "chinh_tinh",
+      "subject": "Thái Dương @ Tật Ách",
+      "summary": "Chú ý mắt (đặc biệt khi hãm địa), tim, đầu, huyết áp. Lao động quá sức dễ kiệt sức. Cần nghỉ ngơi đầy đủ.",
+      "tags": [
+        "Thái Dương",
+        "Tật Ách",
+        "mắt",
+        "tim"
+      ]
+    },
+    {
+      "id": "kb_thaiduong_taibach",
+      "type": "chinh_tinh",
+      "subject": "Thái Dương @ Tài Bạch",
+      "summary": "Tiền từ công khai — lương cao, danh chức, hoa hồng. Tiêu rộng rãi, ít giấu giếm. Hãm địa kiếm vất vả.",
+      "tags": [
+        "Thái Dương",
+        "Tài Bạch",
+        "công khai"
+      ]
+    },
+    {
+      "id": "kb_thaiduong_tutuc",
+      "type": "chinh_tinh",
+      "subject": "Thái Dương @ Tử Tức",
+      "summary": "Con trai có vai trò nổi (đặc biệt nếu Mệnh nam), con tài giỏi, có ảnh hưởng xã hội. Hãm địa con vất vả.",
+      "tags": [
+        "Thái Dương",
+        "Tử Tức",
+        "con trai"
+      ]
+    },
+    {
+      "id": "kb_thaiduong_phuthe",
+      "type": "chinh_tinh",
+      "subject": "Thái Dương @ Phu Thê",
+      "summary": "Bạn đời (đặc biệt là chồng nếu mệnh nữ) có cá tính mạnh, công việc xã hội. Hãm địa hôn nhân vất vả, có thể muộn.",
+      "tags": [
+        "Thái Dương",
+        "Phu Thê",
+        "chồng"
+      ]
+    },
+    {
+      "id": "kb_thaiduong_huynhde",
+      "type": "chinh_tinh",
+      "subject": "Thái Dương @ Huynh Đệ",
+      "summary": "Có anh trai có vai trò trong gia đình. Anh chị em thẳng thắn, hào sảng. Hãm địa anh chị em vất vả.",
+      "tags": [
+        "Thái Dương",
+        "Huynh Đệ",
+        "anh trai"
+      ]
+    },
+    {
+      "id": "kb_vukhuc_menh",
+      "type": "chinh_tinh",
+      "subject": "Vũ Khúc @ Mệnh",
+      "summary": "Tài tinh — chủ tiền bạc, quyết đoán, kỷ luật. Hóa Quyền là cách tốt. Cát tinh vây thì phúc thọ. Sát tinh phá thì giàu cũng lụn bại.",
+      "tags": [
+        "Vũ Khúc",
+        "Mệnh",
+        "tài tinh",
+        "kỷ luật"
+      ]
+    },
+    {
+      "id": "kb_vukhuc_phumau",
+      "type": "chinh_tinh",
+      "subject": "Vũ Khúc @ Phụ Mẫu",
+      "summary": "Cha mẹ kỷ luật, nghiêm khắc, có yếu tố quân sự hoặc tài chính. Mối quan hệ rõ ràng, ít tình cảm bộc lộ.",
+      "tags": [
+        "Vũ Khúc",
+        "Phụ Mẫu",
+        "kỷ luật"
+      ]
+    },
+    {
+      "id": "kb_vukhuc_phucduc",
+      "type": "chinh_tinh",
+      "subject": "Vũ Khúc @ Phúc Đức",
+      "summary": "Tinh thần thực tế, ưa hành động hơn suy nghĩ. Phước qua nỗ lực thực tế. Có thể thiếu chiều sâu tâm linh, cần cân bằng.",
+      "tags": [
+        "Vũ Khúc",
+        "Phúc Đức",
+        "thực tế"
+      ]
+    },
+    {
+      "id": "kb_vukhuc_dientrach",
+      "type": "chinh_tinh",
+      "subject": "Vũ Khúc @ Điền Trạch",
+      "summary": "Bất động sản kiên cố, có giá trị thực. Mua nhà từ tích lũy lao động. Quan tâm chất lượng xây dựng.",
+      "tags": [
+        "Vũ Khúc",
+        "Điền Trạch",
+        "kiên cố"
+      ]
+    },
+    {
+      "id": "kb_vukhuc_quanloc",
+      "type": "chinh_tinh",
+      "subject": "Vũ Khúc @ Quan Lộc",
+      "summary": "Sự nghiệp tài chính, ngân hàng, kế toán, quân đội, công an, kỹ thuật. Quyết đoán, kỷ luật. Lên đều qua nỗ lực.",
+      "tags": [
+        "Vũ Khúc",
+        "Quan Lộc",
+        "tài chính",
+        "quân sự"
+      ]
+    },
+    {
+      "id": "kb_vukhuc_nobac",
+      "type": "chinh_tinh",
+      "subject": "Vũ Khúc @ Nô Bộc",
+      "summary": "Bạn bè thực tế, hợp tác qua công việc. Quan hệ rõ ràng, ít tình cảm. Cấp dưới có kỷ luật, làm việc trách nhiệm.",
+      "tags": [
+        "Vũ Khúc",
+        "Nô Bộc",
+        "thực tế"
+      ]
+    },
+    {
+      "id": "kb_vukhuc_thiendi",
+      "type": "chinh_tinh",
+      "subject": "Vũ Khúc @ Thiên Di",
+      "summary": "Đi xa vì công việc thực tế — kinh doanh, công tác kỹ thuật, quân sự. Kiếm tiền tốt khi xa nhà.",
+      "tags": [
+        "Vũ Khúc",
+        "Thiên Di",
+        "công việc"
+      ]
+    },
+    {
+      "id": "kb_vukhuc_tatach",
+      "type": "chinh_tinh",
+      "subject": "Vũ Khúc @ Tật Ách",
+      "summary": "Chú ý hệ hô hấp (phổi, mũi xoang), răng, vết thương kim loại. Lao động nặng dễ chấn thương xương khớp.",
+      "tags": [
+        "Vũ Khúc",
+        "Tật Ách",
+        "hô hấp",
+        "xương"
+      ]
+    },
+    {
+      "id": "kb_vukhuc_taibach",
+      "type": "chinh_tinh",
+      "subject": "Vũ Khúc @ Tài Bạch",
+      "summary": "Cách tài chính tốt nhất — tiền từ kinh doanh thực tế, đầu tư có kế hoạch. Tích lũy chặt chẽ, ít tiêu hoang.",
+      "tags": [
+        "Vũ Khúc",
+        "Tài Bạch",
+        "kinh doanh"
+      ]
+    },
+    {
+      "id": "kb_vukhuc_tutuc",
+      "type": "chinh_tinh",
+      "subject": "Vũ Khúc @ Tử Tức",
+      "summary": "Con cứng cỏi, kỷ luật. Số con ít, đôi khi muộn con. Quan hệ qua hành động hơn lời nói tình cảm.",
+      "tags": [
+        "Vũ Khúc",
+        "Tử Tức",
+        "kỷ luật"
+      ]
+    },
+    {
+      "id": "kb_vukhuc_phuthe",
+      "type": "chinh_tinh",
+      "subject": "Vũ Khúc @ Phu Thê",
+      "summary": "Bạn đời thực tế, kỷ luật, hợp tác kinh doanh. Hôn nhân thường muộn (sau 30). Ít lãng mạn nhưng vững chắc.",
+      "tags": [
+        "Vũ Khúc",
+        "Phu Thê",
+        "muộn"
+      ]
+    },
+    {
+      "id": "kb_vukhuc_huynhde",
+      "type": "chinh_tinh",
+      "subject": "Vũ Khúc @ Huynh Đệ",
+      "summary": "Anh chị em ít, kỷ luật, có thể trong ngành tài chính/quân sự. Quan hệ rõ ràng, hỗ trợ thực tế khi cần.",
+      "tags": [
+        "Vũ Khúc",
+        "Huynh Đệ"
+      ]
+    },
+    {
+      "id": "kb_thiendong_menh",
+      "type": "chinh_tinh",
+      "subject": "Thiên Đồng @ Mệnh",
+      "summary": "Phúc tinh — ôn hòa, tử tế, đa thọ. Miếu vượng có lộc và danh tiếng. Hãm địa gặp Hỏa Đà thì hung, nên an phận.",
+      "tags": [
+        "Thiên Đồng",
+        "Mệnh",
+        "phúc tinh",
+        "ôn hòa"
+      ]
+    },
+    {
+      "id": "kb_thiendong_phumau",
+      "type": "chinh_tinh",
+      "subject": "Thiên Đồng @ Phụ Mẫu",
+      "summary": "Cha mẹ ôn hòa, ít áp đặt, thiên về tình cảm hơn nghiêm khắc. Mối quan hệ ấm áp, thân thiết.",
+      "tags": [
+        "Thiên Đồng",
+        "Phụ Mẫu",
+        "ấm áp"
+      ]
+    },
+    {
+      "id": "kb_thiendong_phucduc",
+      "type": "chinh_tinh",
+      "subject": "Thiên Đồng @ Phúc Đức",
+      "summary": "Cấu trúc phúc đức tốt nhất — tinh thần an nhàn, biết hưởng thụ chính đáng. Có thể lười nỗ lực, cần động lực bên ngoài.",
+      "tags": [
+        "Thiên Đồng",
+        "Phúc Đức",
+        "an nhàn"
+      ]
+    },
+    {
+      "id": "kb_thiendong_dientrach",
+      "type": "chinh_tinh",
+      "subject": "Thiên Đồng @ Điền Trạch",
+      "summary": "Nhà cửa thoải mái, không quá lớn nhưng đủ tiện nghi. Tổ ấm hài hòa, có không khí gia đình.",
+      "tags": [
+        "Thiên Đồng",
+        "Điền Trạch",
+        "thoải mái"
+      ]
+    },
+    {
+      "id": "kb_thiendong_quanloc",
+      "type": "chinh_tinh",
+      "subject": "Thiên Đồng @ Quan Lộc",
+      "summary": "Sự nghiệp dịch vụ, F&B, du lịch, giải trí, tư vấn. Lên không nhanh nhưng đều. Dễ chịu áp lực, ít stress.",
+      "tags": [
+        "Thiên Đồng",
+        "Quan Lộc",
+        "dịch vụ"
+      ]
+    },
+    {
+      "id": "kb_thiendong_nobac",
+      "type": "chinh_tinh",
+      "subject": "Thiên Đồng @ Nô Bộc",
+      "summary": "Bạn bè nhiều, quan hệ vui vẻ, hỗ trợ tinh thần. Cấp dưới hòa đồng nhưng có thể thiếu kỷ luật.",
+      "tags": [
+        "Thiên Đồng",
+        "Nô Bộc",
+        "vui vẻ"
+      ]
+    },
+    {
+      "id": "kb_thiendong_thiendi",
+      "type": "chinh_tinh",
+      "subject": "Thiên Đồng @ Thiên Di",
+      "summary": "Đi xa thuận lợi cho an dưỡng, du lịch, học hỏi nhẹ nhàng. Không hợp công tác cường độ cao xa nhà.",
+      "tags": [
+        "Thiên Đồng",
+        "Thiên Di",
+        "an nhàn"
+      ]
+    },
+    {
+      "id": "kb_thiendong_tatach",
+      "type": "chinh_tinh",
+      "subject": "Thiên Đồng @ Tật Ách",
+      "summary": "Chú ý hệ tiêu hóa (Thủy hành), thận, tiết niệu. Có khuynh hướng béo nếu thiếu vận động. Bệnh nhẹ phục hồi nhanh.",
+      "tags": [
+        "Thiên Đồng",
+        "Tật Ách",
+        "tiêu hóa"
+      ]
+    },
+    {
+      "id": "kb_thiendong_taibach",
+      "type": "chinh_tinh",
+      "subject": "Thiên Đồng @ Tài Bạch",
+      "summary": "Tiền vừa đủ tiêu, không quá nhiều cũng không thiếu. Tích lũy chậm. Tiêu dùng cho hưởng thụ cuộc sống.",
+      "tags": [
+        "Thiên Đồng",
+        "Tài Bạch",
+        "vừa đủ"
+      ]
+    },
+    {
+      "id": "kb_thiendong_tutuc",
+      "type": "chinh_tinh",
+      "subject": "Thiên Đồng @ Tử Tức",
+      "summary": "Con dễ thương, hiền hòa, ngoan. Số con vừa phải (2-3). Quan hệ ấm áp, ít xung đột.",
+      "tags": [
+        "Thiên Đồng",
+        "Tử Tức",
+        "hiền hòa"
+      ]
+    },
+    {
+      "id": "kb_thiendong_phuthe",
+      "type": "chinh_tinh",
+      "subject": "Thiên Đồng @ Phu Thê",
+      "summary": "Bạn đời ôn hòa, dễ tính, thiên tình cảm. Hôn nhân ấm áp, ít sóng gió. Cần chú ý thiếu kỷ luật chung.",
+      "tags": [
+        "Thiên Đồng",
+        "Phu Thê",
+        "ôn hòa"
+      ]
+    },
+    {
+      "id": "kb_thiendong_huynhde",
+      "type": "chinh_tinh",
+      "subject": "Thiên Đồng @ Huynh Đệ",
+      "summary": "Anh chị em hòa thuận, hỗ trợ tinh thần. Số 2-3 người. Quan hệ ấm áp, gắn bó suốt đời.",
+      "tags": [
+        "Thiên Đồng",
+        "Huynh Đệ",
+        "hòa thuận"
+      ]
+    },
+    {
+      "id": "kb_liemtrinh_menh",
+      "type": "chinh_tinh",
+      "subject": "Liêm Trinh @ Mệnh",
+      "summary": "Phi thường, chí khí cao, ngang ngược. Đi đường đấu tranh có thể đại quý. Hãm địa gặp Tham Phá Kình Hỏa thì bấp bênh, dễ tai nạn.",
+      "tags": [
+        "Liêm Trinh",
+        "Mệnh",
+        "chí khí"
+      ]
+    },
+    {
+      "id": "kb_liemtrinh_phumau",
+      "type": "chinh_tinh",
+      "subject": "Liêm Trinh @ Phụ Mẫu",
+      "summary": "Cha mẹ cá tính mạnh, có thể nghiêm khắc, đôi khi xa cách. Mối quan hệ phức tạp, có thể có hiểu lầm.",
+      "tags": [
+        "Liêm Trinh",
+        "Phụ Mẫu",
+        "phức tạp"
+      ]
+    },
+    {
+      "id": "kb_liemtrinh_phucduc",
+      "type": "chinh_tinh",
+      "subject": "Liêm Trinh @ Phúc Đức",
+      "summary": "Tinh thần phức tạp, hay đấu tranh nội tâm. Cần thiền định, tâm linh. Hãm địa dễ trầm cảm, lo âu.",
+      "tags": [
+        "Liêm Trinh",
+        "Phúc Đức",
+        "đấu tranh"
+      ]
+    },
+    {
+      "id": "kb_liemtrinh_dientrach",
+      "type": "chinh_tinh",
+      "subject": "Liêm Trinh @ Điền Trạch",
+      "summary": "Bất động sản qua đấu tranh hoặc kiện tụng. Nhà có thể có yếu tố lịch sử phức tạp. Cẩn thận pháp lý nhà đất.",
+      "tags": [
+        "Liêm Trinh",
+        "Điền Trạch",
+        "đấu tranh"
+      ]
+    },
+    {
+      "id": "kb_liemtrinh_quanloc",
+      "type": "chinh_tinh",
+      "subject": "Liêm Trinh @ Quan Lộc",
+      "summary": "Sự nghiệp đấu tranh — luật, công an, chính trị, quan tòa. Lên qua thử thách. Cần Khoa Quyền Lộc để thuận lợi.",
+      "tags": [
+        "Liêm Trinh",
+        "Quan Lộc",
+        "luật"
+      ]
+    },
+    {
+      "id": "kb_liemtrinh_nobac",
+      "type": "chinh_tinh",
+      "subject": "Liêm Trinh @ Nô Bộc",
+      "summary": "Bạn bè phức tạp, có thể có người gây họa. Cần chọn bạn cẩn thận. Cấp dưới có cá tính, dễ xung đột.",
+      "tags": [
+        "Liêm Trinh",
+        "Nô Bộc",
+        "phức tạp"
+      ]
+    },
+    {
+      "id": "kb_liemtrinh_thiendi",
+      "type": "chinh_tinh",
+      "subject": "Liêm Trinh @ Thiên Di",
+      "summary": "Đi xa qua đấu tranh hoặc thử thách. Có thể đi vì pháp lý, kiện tụng. Cẩn thận an toàn khi xa nhà.",
+      "tags": [
+        "Liêm Trinh",
+        "Thiên Di"
+      ]
+    },
+    {
+      "id": "kb_liemtrinh_tatach",
+      "type": "chinh_tinh",
+      "subject": "Liêm Trinh @ Tật Ách",
+      "summary": "Chú ý huyết áp, tim, máu, viêm nhiễm. Hãm địa gặp ác sát có thể tai nạn, phẫu thuật. Cần kiểm tra sức khỏe định kỳ.",
+      "tags": [
+        "Liêm Trinh",
+        "Tật Ách",
+        "huyết áp",
+        "máu"
+      ]
+    },
+    {
+      "id": "kb_liemtrinh_taibach",
+      "type": "chinh_tinh",
+      "subject": "Liêm Trinh @ Tài Bạch",
+      "summary": "Tiền qua đấu tranh, có thể từ kiện tụng, cạnh tranh thương trường. Dòng tiền không ổn định, lên xuống lớn.",
+      "tags": [
+        "Liêm Trinh",
+        "Tài Bạch",
+        "đấu tranh"
+      ]
+    },
+    {
+      "id": "kb_liemtrinh_tutuc",
+      "type": "chinh_tinh",
+      "subject": "Liêm Trinh @ Tử Tức",
+      "summary": "Con cá tính mạnh, có thể bướng bỉnh. Số con ít. Cần kiên nhẫn và tôn trọng cá tính riêng.",
+      "tags": [
+        "Liêm Trinh",
+        "Tử Tức",
+        "cá tính"
+      ]
+    },
+    {
+      "id": "kb_liemtrinh_phuthe",
+      "type": "chinh_tinh",
+      "subject": "Liêm Trinh @ Phu Thê",
+      "summary": "Bạn đời cá tính mạnh, hôn nhân có sóng gió. Cần thời gian dài để hiểu nhau. Hãm địa có thể có chuyện kiện tụng.",
+      "tags": [
+        "Liêm Trinh",
+        "Phu Thê",
+        "sóng gió"
+      ]
+    },
+    {
+      "id": "kb_liemtrinh_huynhde",
+      "type": "chinh_tinh",
+      "subject": "Liêm Trinh @ Huynh Đệ",
+      "summary": "Anh chị em ít, có thể có người tính cứng. Quan hệ phức tạp, có khi tranh chấp tài sản gia đình. Cần giao tiếp rõ ràng.",
+      "tags": [
+        "Liêm Trinh",
+        "Huynh Đệ"
+      ]
+    },
+    {
+      "id": "kb_thienphu_menh",
+      "type": "chinh_tinh",
+      "subject": "Thiên Phủ @ Mệnh",
+      "summary": "Tài năng từ bi, tích lũy. Hội Quyền Lộc + Khôi Xương + Tả Hữu thì dựa quyền quý có chức tước. Hỏa Linh Dương Đà vây thì gian trá lận đận.",
+      "tags": [
+        "Thiên Phủ",
+        "Mệnh",
+        "tài năng",
+        "tích lũy"
+      ]
+    },
+    {
+      "id": "kb_thienphu_phumau",
+      "type": "chinh_tinh",
+      "subject": "Thiên Phủ @ Phụ Mẫu",
+      "summary": "Cha mẹ tốt bụng, có khả năng tích lũy gia sản. Quan hệ ấm cúng, được bảo trợ về vật chất và tinh thần.",
+      "tags": [
+        "Thiên Phủ",
+        "Phụ Mẫu",
+        "bảo trợ"
+      ]
+    },
+    {
+      "id": "kb_thienphu_phucduc",
+      "type": "chinh_tinh",
+      "subject": "Thiên Phủ @ Phúc Đức",
+      "summary": "Phước báo dày, tinh thần ổn định, có duyên với của cải. Tâm thiện, có lòng từ bi giúp người. Đời sống an nhàn về vật chất.",
+      "tags": [
+        "Thiên Phủ",
+        "Phúc Đức",
+        "phước báo"
+      ]
+    },
+    {
+      "id": "kb_thienphu_dientrach",
+      "type": "chinh_tinh",
+      "subject": "Thiên Phủ @ Điền Trạch",
+      "summary": "Cách bất động sản tốt — tích lũy nhà đất qua thời gian. Tổ ấm sung túc, có kho lẫm. Ngành liên quan: kho vận, kinh doanh.",
+      "tags": [
+        "Thiên Phủ",
+        "Điền Trạch",
+        "tích lũy"
+      ]
+    },
+    {
+      "id": "kb_thienphu_quanloc",
+      "type": "chinh_tinh",
+      "subject": "Thiên Phủ @ Quan Lộc",
+      "summary": "Sự nghiệp tài chính, ngân hàng, kế toán, kho bạc, quản trị tài sản. Tích lũy chậm nhưng vững. Vai trò \"thủ kho quốc gia\".",
+      "tags": [
+        "Thiên Phủ",
+        "Quan Lộc",
+        "tài chính"
+      ]
+    },
+    {
+      "id": "kb_thienphu_nobac",
+      "type": "chinh_tinh",
+      "subject": "Thiên Phủ @ Nô Bộc",
+      "summary": "Bạn bè giàu có, hỗ trợ vật chất khi cần. Cấp dưới trung thành, làm việc bền bỉ, có khả năng quản lý.",
+      "tags": [
+        "Thiên Phủ",
+        "Nô Bộc",
+        "giàu có"
+      ]
+    },
+    {
+      "id": "kb_thienphu_thiendi",
+      "type": "chinh_tinh",
+      "subject": "Thiên Phủ @ Thiên Di",
+      "summary": "Đi xa thuận lợi cho kinh doanh, tích lũy của cải nơi xa. Được người ngoài tin tưởng giao tài sản. An toàn khi di chuyển.",
+      "tags": [
+        "Thiên Phủ",
+        "Thiên Di",
+        "kinh doanh"
+      ]
+    },
+    {
+      "id": "kb_thienphu_tatach",
+      "type": "chinh_tinh",
+      "subject": "Thiên Phủ @ Tật Ách",
+      "summary": "Sức khỏe ổn định, ít bệnh nặng. Chú ý hệ tiêu hóa, dạ dày (Thổ hành), béo phì do ăn uống dư thừa. Phục hồi tốt.",
+      "tags": [
+        "Thiên Phủ",
+        "Tật Ách",
+        "tiêu hóa"
+      ]
+    },
+    {
+      "id": "kb_thienphu_taibach",
+      "type": "chinh_tinh",
+      "subject": "Thiên Phủ @ Tài Bạch",
+      "summary": "Cách tài chính cực tốt — tích lũy bền vững. Tiền không nhiều như Vũ Khúc nhưng vững chắc, ít hao. Đầu tư an toàn dài hạn.",
+      "tags": [
+        "Thiên Phủ",
+        "Tài Bạch",
+        "tích lũy",
+        "an toàn"
+      ]
+    },
+    {
+      "id": "kb_thienphu_tutuc",
+      "type": "chinh_tinh",
+      "subject": "Thiên Phủ @ Tử Tức",
+      "summary": "Con cái khá đông (3-4 người), hiền lành, có khả năng tích lũy. Quan hệ ấm áp. Con thường có cuộc sống tài chính ổn.",
+      "tags": [
+        "Thiên Phủ",
+        "Tử Tức"
+      ]
+    },
+    {
+      "id": "kb_thienphu_phuthe",
+      "type": "chinh_tinh",
+      "subject": "Thiên Phủ @ Phu Thê",
+      "summary": "Bạn đời tốt bụng, có khả năng tích lũy. Hôn nhân ấm cúng, ít sóng gió về tài chính. Đối tác đời lý tưởng cho gia đình bền vững.",
+      "tags": [
+        "Thiên Phủ",
+        "Phu Thê",
+        "ấm cúng"
+      ]
+    },
+    {
+      "id": "kb_thienphu_huynhde",
+      "type": "chinh_tinh",
+      "subject": "Thiên Phủ @ Huynh Đệ",
+      "summary": "Anh chị em đông (3-5), hỗ trợ tài chính khi cần. Có người trong gia đình giàu có, đóng vai \"trụ cột vật chất\".",
+      "tags": [
+        "Thiên Phủ",
+        "Huynh Đệ"
+      ]
+    },
+    {
+      "id": "kb_thaiam_menh",
+      "type": "chinh_tinh",
+      "subject": "Thái Âm @ Mệnh",
+      "summary": "Tinh hoa Thủy — Dậu Tuất Hợi đắc địa thì danh hiển. Nhập miếu Hóa Quyền thanh tú thông minh. Hãm địa gặp Hỏa Đà thì khốn cùng.",
+      "tags": [
+        "Thái Âm",
+        "Mệnh",
+        "thanh tú",
+        "ôn lương"
+      ]
+    },
+    {
+      "id": "kb_thaiam_phumau",
+      "type": "chinh_tinh",
+      "subject": "Thái Âm @ Phụ Mẫu",
+      "summary": "Mẹ có vai trò lớn trong gia đình (đặc biệt nếu mệnh nam). Quan hệ với mẹ ấm áp, sâu sắc. Hãm địa thì mẹ vất vả.",
+      "tags": [
+        "Thái Âm",
+        "Phụ Mẫu",
+        "mẹ"
+      ]
+    },
+    {
+      "id": "kb_thaiam_phucduc",
+      "type": "chinh_tinh",
+      "subject": "Thái Âm @ Phúc Đức",
+      "summary": "Tinh thần thanh tú, hướng nội, ưa nghệ thuật. Phước qua tâm linh, văn chương. Miếu vượng tâm an, hãm địa hay buồn.",
+      "tags": [
+        "Thái Âm",
+        "Phúc Đức",
+        "thanh tú"
+      ]
+    },
+    {
+      "id": "kb_thaiam_dientrach",
+      "type": "chinh_tinh",
+      "subject": "Thái Âm @ Điền Trạch",
+      "summary": "Nhà gần nước (sông, biển, hồ). Bất động sản từ mẹ hoặc bên ngoại. Không gian thẩm mỹ, có yếu tố nghệ thuật.",
+      "tags": [
+        "Thái Âm",
+        "Điền Trạch",
+        "gần nước"
+      ]
+    },
+    {
+      "id": "kb_thaiam_quanloc",
+      "type": "chinh_tinh",
+      "subject": "Thái Âm @ Quan Lộc",
+      "summary": "Sự nghiệp văn hóa, nghệ thuật, văn chương, ngành dịch vụ tinh tế (spa, beauty, F&B cao cấp). Phù hợp công việc đêm.",
+      "tags": [
+        "Thái Âm",
+        "Quan Lộc",
+        "văn hóa"
+      ]
+    },
+    {
+      "id": "kb_thaiam_nobac",
+      "type": "chinh_tinh",
+      "subject": "Thái Âm @ Nô Bộc",
+      "summary": "Bạn nữ nhiều, quan hệ tinh tế, sâu sắc. Cấp dưới (đặc biệt nữ) trung thành, làm việc tỉ mỉ.",
+      "tags": [
+        "Thái Âm",
+        "Nô Bộc"
+      ]
+    },
+    {
+      "id": "kb_thaiam_thiendi",
+      "type": "chinh_tinh",
+      "subject": "Thái Âm @ Thiên Di",
+      "summary": "Đi xa về đêm thuận lợi. Du lịch, công tác nước có biển. Hợp với người nước ngoài, đặc biệt phương Tây.",
+      "tags": [
+        "Thái Âm",
+        "Thiên Di"
+      ]
+    },
+    {
+      "id": "kb_thaiam_tatach",
+      "type": "chinh_tinh",
+      "subject": "Thái Âm @ Tật Ách",
+      "summary": "Chú ý hệ thận, tiết niệu, sinh dục, mắt (Thủy hành). Da mặt nhạy cảm. Hãm địa dễ trầm cảm, mất ngủ.",
+      "tags": [
+        "Thái Âm",
+        "Tật Ách",
+        "thận",
+        "mắt"
+      ]
+    },
+    {
+      "id": "kb_thaiam_taibach",
+      "type": "chinh_tinh",
+      "subject": "Thái Âm @ Tài Bạch",
+      "summary": "Tiền từ nguồn kín đáo, không phô trương. Tích lũy âm thầm. Hợp đầu tư bất động sản gần nước, nghệ thuật.",
+      "tags": [
+        "Thái Âm",
+        "Tài Bạch",
+        "kín đáo"
+      ]
+    },
+    {
+      "id": "kb_thaiam_tutuc",
+      "type": "chinh_tinh",
+      "subject": "Thái Âm @ Tử Tức",
+      "summary": "Có con gái có vai trò nổi (đặc biệt nếu mệnh nam). Con thanh tú, thông minh. Quan hệ tình cảm sâu.",
+      "tags": [
+        "Thái Âm",
+        "Tử Tức",
+        "con gái"
+      ]
+    },
+    {
+      "id": "kb_thaiam_phuthe",
+      "type": "chinh_tinh",
+      "subject": "Thái Âm @ Phu Thê",
+      "summary": "Bạn đời (đặc biệt vợ nếu mệnh nam) thanh tú, hiền hòa, có duyên. Hôn nhân ấm áp. Hãm địa vợ chồng vất vả.",
+      "tags": [
+        "Thái Âm",
+        "Phu Thê",
+        "vợ"
+      ]
+    },
+    {
+      "id": "kb_thaiam_huynhde",
+      "type": "chinh_tinh",
+      "subject": "Thái Âm @ Huynh Đệ",
+      "summary": "Có em gái hoặc chị gái có vai trò trong gia đình. Quan hệ tình cảm sâu, ít xung đột.",
+      "tags": [
+        "Thái Âm",
+        "Huynh Đệ",
+        "em gái"
+      ]
+    },
+    {
+      "id": "kb_thamlang_menh",
+      "type": "chinh_tinh",
+      "subject": "Tham Lang @ Mệnh",
+      "summary": "Đào hoa, dục vọng, đa tài. Tứ mộ địa (Thìn Tuất Sửu Mùi) miếu vượng — Hỏa Tinh thì oai quyền danh chấn. Đồng Dương + Đà Sát thì khốn cùng.",
+      "tags": [
+        "Tham Lang",
+        "Mệnh",
+        "đào hoa",
+        "đa tài"
+      ]
+    },
+    {
+      "id": "kb_thamlang_phumau",
+      "type": "chinh_tinh",
+      "subject": "Tham Lang @ Phụ Mẫu",
+      "summary": "Cha mẹ có cá tính, đa tài. Có thể có yếu tố tình cảm phức tạp trong gia đình. Quan hệ năng động, nhiều màu sắc.",
+      "tags": [
+        "Tham Lang",
+        "Phụ Mẫu"
+      ]
+    },
+    {
+      "id": "kb_thamlang_phucduc",
+      "type": "chinh_tinh",
+      "subject": "Tham Lang @ Phúc Đức",
+      "summary": "Tinh thần đam mê, ưa khám phá, đa năng. Phước qua đam mê đa dạng. Cần kiềm chế dục vọng để giữ tâm an.",
+      "tags": [
+        "Tham Lang",
+        "Phúc Đức",
+        "đam mê"
+      ]
+    },
+    {
+      "id": "kb_thamlang_dientrach",
+      "type": "chinh_tinh",
+      "subject": "Tham Lang @ Điền Trạch",
+      "summary": "Nhà nhiều, hay đổi. Bất động sản từ kinh doanh giải trí, F&B, beauty. Có thể có nhà thứ hai.",
+      "tags": [
+        "Tham Lang",
+        "Điền Trạch"
+      ]
+    },
+    {
+      "id": "kb_thamlang_quanloc",
+      "type": "chinh_tinh",
+      "subject": "Tham Lang @ Quan Lộc",
+      "summary": "Sự nghiệp đa năng — sales, marketing, giải trí, F&B, làm đẹp, kinh doanh đối ngoại. Tứ mộ + Tả Hữu thì phú ông.",
+      "tags": [
+        "Tham Lang",
+        "Quan Lộc",
+        "đa năng"
+      ]
+    },
+    {
+      "id": "kb_thamlang_nobac",
+      "type": "chinh_tinh",
+      "subject": "Tham Lang @ Nô Bộc",
+      "summary": "Bạn bè đông, đa dạng giới. Quan hệ qua giải trí, ăn uống, đam mê. Cần chọn bạn cẩn thận, dễ bị kéo theo.",
+      "tags": [
+        "Tham Lang",
+        "Nô Bộc",
+        "đa dạng"
+      ]
+    },
+    {
+      "id": "kb_thamlang_thiendi",
+      "type": "chinh_tinh",
+      "subject": "Tham Lang @ Thiên Di",
+      "summary": "Đi xa qua đam mê — du lịch, kinh doanh giải trí xa. Có duyên với người nước ngoài. Cẩn thận tửu sắc.",
+      "tags": [
+        "Tham Lang",
+        "Thiên Di"
+      ]
+    },
+    {
+      "id": "kb_thamlang_tatach",
+      "type": "chinh_tinh",
+      "subject": "Tham Lang @ Tật Ách",
+      "summary": "Chú ý gan (rượu), hệ sinh dục, da liễu. Lối sống đam mê dễ ảnh hưởng sức khỏe. Cần kỷ luật ăn uống.",
+      "tags": [
+        "Tham Lang",
+        "Tật Ách",
+        "gan"
+      ]
+    },
+    {
+      "id": "kb_thamlang_taibach",
+      "type": "chinh_tinh",
+      "subject": "Tham Lang @ Tài Bạch",
+      "summary": "Tiền từ đam mê, kinh doanh đa dạng, sales. Dòng tiền lên xuống lớn. Tiêu rộng cho hưởng thụ. Tứ mộ + Khoa Quyền Lộc thì lớn.",
+      "tags": [
+        "Tham Lang",
+        "Tài Bạch"
+      ]
+    },
+    {
+      "id": "kb_thamlang_tutuc",
+      "type": "chinh_tinh",
+      "subject": "Tham Lang @ Tử Tức",
+      "summary": "Con đa tài, đa cảm, có khả năng nghệ thuật. Số con vừa phải. Quan hệ năng động, đôi khi có tranh cãi.",
+      "tags": [
+        "Tham Lang",
+        "Tử Tức"
+      ]
+    },
+    {
+      "id": "kb_thamlang_phuthe",
+      "type": "chinh_tinh",
+      "subject": "Tham Lang @ Phu Thê",
+      "summary": "Bạn đời đa tài, có duyên, có thể có lịch sử tình cảm. Hôn nhân năng động. Cần chú ý chung thủy. Có thể tái hôn.",
+      "tags": [
+        "Tham Lang",
+        "Phu Thê"
+      ]
+    },
+    {
+      "id": "kb_thamlang_huynhde",
+      "type": "chinh_tinh",
+      "subject": "Tham Lang @ Huynh Đệ",
+      "summary": "Anh chị em đa cảm, năng động. Quan hệ vui vẻ nhưng có lúc tranh cãi vì cá tính khác biệt.",
+      "tags": [
+        "Tham Lang",
+        "Huynh Đệ"
+      ]
+    },
+    {
+      "id": "kb_cumon_menh",
+      "type": "chinh_tinh",
+      "subject": "Cự Môn @ Mệnh",
+      "summary": "Khẩu tài, tranh luận, ám tinh. Tý Ngọ vinh hiển, có Khoa Quyền Lộc thì quan cao. Hãm địa gặp Kình Linh Hỏa thì tính nóng, dễ tổn thương lời nói.",
+      "tags": [
+        "Cự Môn",
+        "Mệnh",
+        "khẩu tài",
+        "ám tinh"
+      ]
+    },
+    {
+      "id": "kb_cumon_phumau",
+      "type": "chinh_tinh",
+      "subject": "Cự Môn @ Phụ Mẫu",
+      "summary": "Cha mẹ có khẩu tài, có thể nóng tính, hay tranh luận. Quan hệ phức tạp, có lúc xa cách lúc gần. Cần giao tiếp khéo.",
+      "tags": [
+        "Cự Môn",
+        "Phụ Mẫu"
+      ]
+    },
+    {
+      "id": "kb_cumon_phucduc",
+      "type": "chinh_tinh",
+      "subject": "Cự Môn @ Phúc Đức",
+      "summary": "Tinh thần nhiều suy nghĩ, hay nghi ngờ. Phước qua nói chuyện, văn chương, giảng dạy. Cần thiền để giảm tâm động.",
+      "tags": [
+        "Cự Môn",
+        "Phúc Đức"
+      ]
+    },
+    {
+      "id": "kb_cumon_dientrach",
+      "type": "chinh_tinh",
+      "subject": "Cự Môn @ Điền Trạch",
+      "summary": "Nhà cửa hay có vấn đề pháp lý nhỏ, tranh chấp ranh giới. Cẩn thận giấy tờ. Có thể nhà gần chợ hoặc khu sôi động.",
+      "tags": [
+        "Cự Môn",
+        "Điền Trạch"
+      ]
+    },
+    {
+      "id": "kb_cumon_quanloc",
+      "type": "chinh_tinh",
+      "subject": "Cự Môn @ Quan Lộc",
+      "summary": "Sự nghiệp khẩu tài — luật, giáo dục, truyền thông, MC, sales, môi giới. Hợp ngành dùng lời nói. Tý Ngọ thì quan cao.",
+      "tags": [
+        "Cự Môn",
+        "Quan Lộc",
+        "khẩu tài"
+      ]
+    },
+    {
+      "id": "kb_cumon_nobac",
+      "type": "chinh_tinh",
+      "subject": "Cự Môn @ Nô Bộc",
+      "summary": "Bạn bè qua giao tiếp, tranh luận. Quan hệ đôi khi có hiểu lầm vì lời nói. Cẩn thận lời ra tiếng vào.",
+      "tags": [
+        "Cự Môn",
+        "Nô Bộc"
+      ]
+    },
+    {
+      "id": "kb_cumon_thiendi",
+      "type": "chinh_tinh",
+      "subject": "Cự Môn @ Thiên Di",
+      "summary": "Đi xa qua công việc giao tiếp — đàm phán, hội nghị, giảng dạy. Cẩn thận tranh cãi nơi xa. Học ngoại ngữ thuận lợi.",
+      "tags": [
+        "Cự Môn",
+        "Thiên Di"
+      ]
+    },
+    {
+      "id": "kb_cumon_tatach",
+      "type": "chinh_tinh",
+      "subject": "Cự Môn @ Tật Ách",
+      "summary": "Chú ý miệng, răng, môi, họng, hệ tiêu hóa trên. Stress lời nói gây căng thẳng. Hãm địa dễ tổn thương vùng mặt.",
+      "tags": [
+        "Cự Môn",
+        "Tật Ách",
+        "miệng",
+        "họng"
+      ]
+    },
+    {
+      "id": "kb_cumon_taibach",
+      "type": "chinh_tinh",
+      "subject": "Cự Môn @ Tài Bạch",
+      "summary": "Tiền từ lời nói — tư vấn, luật sư, giáo viên, MC. Cẩn thận tranh chấp tiền bạc. Kiếm qua đàm phán, môi giới.",
+      "tags": [
+        "Cự Môn",
+        "Tài Bạch"
+      ]
+    },
+    {
+      "id": "kb_cumon_tutuc",
+      "type": "chinh_tinh",
+      "subject": "Cự Môn @ Tử Tức",
+      "summary": "Con khẩu tài, hay tranh luận, có chính kiến mạnh. Quan hệ cha-con cần giao tiếp khéo, dễ xung đột nếu áp đặt.",
+      "tags": [
+        "Cự Môn",
+        "Tử Tức"
+      ]
+    },
+    {
+      "id": "kb_cumon_phuthe",
+      "type": "chinh_tinh",
+      "subject": "Cự Môn @ Phu Thê",
+      "summary": "Bạn đời khẩu tài, hay tranh cãi nhẹ. Hôn nhân cần giao tiếp tốt. Hãm địa dễ có hiểu lầm, lời ra tiếng vào.",
+      "tags": [
+        "Cự Môn",
+        "Phu Thê"
+      ]
+    },
+    {
+      "id": "kb_cumon_huynhde",
+      "type": "chinh_tinh",
+      "subject": "Cự Môn @ Huynh Đệ",
+      "summary": "Anh chị em hay tranh luận, có chính kiến riêng. Quan hệ có lúc căng thẳng. Cần giao tiếp công khai để tránh hiểu lầm.",
+      "tags": [
+        "Cự Môn",
+        "Huynh Đệ"
+      ]
+    },
+    {
+      "id": "kb_thientuong_menh",
+      "type": "chinh_tinh",
+      "subject": "Thiên Tướng @ Mệnh",
+      "summary": "Tinh tú siêu quần — thủ Thân Mệnh đáng mừng. Tự chủ quyết đoán, làm quan có thể đến tể tướng. Gặp Vũ-Phá + Sát tinh thì làm thợ, lái buôn.",
+      "tags": [
+        "Thiên Tướng",
+        "Mệnh",
+        "tể tướng"
+      ]
+    },
+    {
+      "id": "kb_thientuong_phumau",
+      "type": "chinh_tinh",
+      "subject": "Thiên Tướng @ Phụ Mẫu",
+      "summary": "Cha mẹ có vị thế, có khả năng bảo trợ. Quan hệ ấm áp, có yếu tố tôn ti nhẹ. Được hưởng phúc cha mẹ.",
+      "tags": [
+        "Thiên Tướng",
+        "Phụ Mẫu",
+        "bảo trợ"
+      ]
+    },
+    {
+      "id": "kb_thientuong_phucduc",
+      "type": "chinh_tinh",
+      "subject": "Thiên Tướng @ Phúc Đức",
+      "summary": "Tinh thần ổn định, có nguyên tắc. Phước qua giúp người, quan hệ xã hội. Có duyên với cao nhân.",
+      "tags": [
+        "Thiên Tướng",
+        "Phúc Đức"
+      ]
+    },
+    {
+      "id": "kb_thientuong_dientrach",
+      "type": "chinh_tinh",
+      "subject": "Thiên Tướng @ Điền Trạch",
+      "summary": "Nhà cửa khang trang, có vị thế. Tổ ấm có yếu tố trang nghiêm. Bất động sản từ vị trí xã hội.",
+      "tags": [
+        "Thiên Tướng",
+        "Điền Trạch"
+      ]
+    },
+    {
+      "id": "kb_thientuong_quanloc",
+      "type": "chinh_tinh",
+      "subject": "Thiên Tướng @ Quan Lộc",
+      "summary": "Sự nghiệp có vị thế — hành chính, ngoại giao, quản lý cấp cao, cố vấn. Vai trò \"trợ lý đắc lực\" cho vị thế cao.",
+      "tags": [
+        "Thiên Tướng",
+        "Quan Lộc"
+      ]
+    },
+    {
+      "id": "kb_thientuong_nobac",
+      "type": "chinh_tinh",
+      "subject": "Thiên Tướng @ Nô Bộc",
+      "summary": "Bạn bè có vị thế, đáng tin. Cấp dưới trung thành, có khả năng hỗ trợ. Quan hệ chất lượng cao.",
+      "tags": [
+        "Thiên Tướng",
+        "Nô Bộc"
+      ]
+    },
+    {
+      "id": "kb_thientuong_thiendi",
+      "type": "chinh_tinh",
+      "subject": "Thiên Tướng @ Thiên Di",
+      "summary": "Đi xa được trọng vọng, có vị thế. Hợp công việc đại diện, ngoại giao. Cộng sự nước ngoài tốt.",
+      "tags": [
+        "Thiên Tướng",
+        "Thiên Di"
+      ]
+    },
+    {
+      "id": "kb_thientuong_tatach",
+      "type": "chinh_tinh",
+      "subject": "Thiên Tướng @ Tật Ách",
+      "summary": "Sức khỏe ổn. Chú ý hệ bài tiết (Thủy hành), thận, da. Stress công việc cao dễ ảnh hưởng nội tiết.",
+      "tags": [
+        "Thiên Tướng",
+        "Tật Ách"
+      ]
+    },
+    {
+      "id": "kb_thientuong_taibach",
+      "type": "chinh_tinh",
+      "subject": "Thiên Tướng @ Tài Bạch",
+      "summary": "Tiền từ vị thế, lương cao, hoa hồng quản lý. Tích lũy đều, ít rủi ro. Đầu tư an toàn.",
+      "tags": [
+        "Thiên Tướng",
+        "Tài Bạch"
+      ]
+    },
+    {
+      "id": "kb_thientuong_tutuc",
+      "type": "chinh_tinh",
+      "subject": "Thiên Tướng @ Tử Tức",
+      "summary": "Con có vị thế tương lai, học vấn tốt. Số con vừa phải. Quan hệ ấm áp, được con tôn trọng.",
+      "tags": [
+        "Thiên Tướng",
+        "Tử Tức"
+      ]
+    },
+    {
+      "id": "kb_thientuong_phuthe",
+      "type": "chinh_tinh",
+      "subject": "Thiên Tướng @ Phu Thê",
+      "summary": "Bạn đời có vị thế, đáng tin cậy, hỗ trợ tốt. Hôn nhân ổn định, có yếu tố \"cộng sự đời\". Tuổi kết hôn vừa phải.",
+      "tags": [
+        "Thiên Tướng",
+        "Phu Thê"
+      ]
+    },
+    {
+      "id": "kb_thientuong_huynhde",
+      "type": "chinh_tinh",
+      "subject": "Thiên Tướng @ Huynh Đệ",
+      "summary": "Anh chị em có vị thế, hỗ trợ nhau. Quan hệ tôn trọng, ấm áp. Có người trong gia đình thành đạt.",
+      "tags": [
+        "Thiên Tướng",
+        "Huynh Đệ"
+      ]
+    },
+    {
+      "id": "kb_thienluong_menh",
+      "type": "chinh_tinh",
+      "subject": "Thiên Lương @ Mệnh",
+      "summary": "Sao thọ tinh, hình dáng bệ vệ ôn lương. Gặp Tả Hữu Xương Khúc thì phú quý. Cơ-Lương Thìn Tuất + Phá Quân Mão Dậu đều xấu. Nữ mệnh dễ cô độc.",
+      "tags": [
+        "Thiên Lương",
+        "Mệnh",
+        "thọ tinh"
+      ]
+    },
+    {
+      "id": "kb_thienluong_phumau",
+      "type": "chinh_tinh",
+      "subject": "Thiên Lương @ Phụ Mẫu",
+      "summary": "Cha mẹ trí tuệ, có học, đời sống ổn. Là chỗ dựa tinh thần. Quan hệ qua tri thức, đạo lý.",
+      "tags": [
+        "Thiên Lương",
+        "Phụ Mẫu"
+      ]
+    },
+    {
+      "id": "kb_thienluong_phucduc",
+      "type": "chinh_tinh",
+      "subject": "Thiên Lương @ Phúc Đức",
+      "summary": "Cấu trúc phúc đức tốt — sống thọ, tinh thần ổn định, có duyên đạo lý. Có thể nghiên cứu tâm linh, triết học.",
+      "tags": [
+        "Thiên Lương",
+        "Phúc Đức",
+        "thọ"
+      ]
+    },
+    {
+      "id": "kb_thienluong_dientrach",
+      "type": "chinh_tinh",
+      "subject": "Thiên Lương @ Điền Trạch",
+      "summary": "Nhà có yếu tố cổ kính, truyền thống. Bất động sản từ thừa kế hoặc đầu tư có lịch sử. Tổ ấm yên bình.",
+      "tags": [
+        "Thiên Lương",
+        "Điền Trạch"
+      ]
+    },
+    {
+      "id": "kb_thienluong_quanloc",
+      "type": "chinh_tinh",
+      "subject": "Thiên Lương @ Quan Lộc",
+      "summary": "Sự nghiệp giáo dục, y tế, từ thiện, cố vấn cao cấp, nghiên cứu. Tý Ngọ Dần Thân nhập miếu thì quan thanh hiển.",
+      "tags": [
+        "Thiên Lương",
+        "Quan Lộc",
+        "giáo dục"
+      ]
+    },
+    {
+      "id": "kb_thienluong_nobac",
+      "type": "chinh_tinh",
+      "subject": "Thiên Lương @ Nô Bộc",
+      "summary": "Bạn bè trí tuệ, đáng tin, có người cao niên giúp đỡ. Quan hệ qua tri thức, đạo lý.",
+      "tags": [
+        "Thiên Lương",
+        "Nô Bộc"
+      ]
+    },
+    {
+      "id": "kb_thienluong_thiendi",
+      "type": "chinh_tinh",
+      "subject": "Thiên Lương @ Thiên Di",
+      "summary": "Đi xa thuận lợi cho học hỏi, nghiên cứu. Hợp công việc tư vấn, giảng dạy nước ngoài. Có quý nhân nơi xa.",
+      "tags": [
+        "Thiên Lương",
+        "Thiên Di"
+      ]
+    },
+    {
+      "id": "kb_thienluong_tatach",
+      "type": "chinh_tinh",
+      "subject": "Thiên Lương @ Tật Ách",
+      "summary": "Sức khỏe nền tảng tốt, sống thọ. Bệnh thường nhẹ, phục hồi nhanh. Chú ý vùng cổ vai gáy do ngồi nhiều.",
+      "tags": [
+        "Thiên Lương",
+        "Tật Ách",
+        "thọ"
+      ]
+    },
+    {
+      "id": "kb_thienluong_taibach",
+      "type": "chinh_tinh",
+      "subject": "Thiên Lương @ Tài Bạch",
+      "summary": "Tiền vừa đủ, không quá giàu nhưng ổn. Có lộc trời, đôi khi nhận quà bất ngờ, thừa kế. Tiêu cho học vấn, tâm linh.",
+      "tags": [
+        "Thiên Lương",
+        "Tài Bạch"
+      ]
+    },
+    {
+      "id": "kb_thienluong_tutuc",
+      "type": "chinh_tinh",
+      "subject": "Thiên Lương @ Tử Tức",
+      "summary": "Con học giỏi, có đạo lý. Số con không nhiều (1-2). Con có thể đi xa học. Quan hệ qua tri thức.",
+      "tags": [
+        "Thiên Lương",
+        "Tử Tức"
+      ]
+    },
+    {
+      "id": "kb_thienluong_phuthe",
+      "type": "chinh_tinh",
+      "subject": "Thiên Lương @ Phu Thê",
+      "summary": "Bạn đời lớn tuổi hơn hoặc trí tuệ. Hôn nhân ổn định, ít sóng gió. Hợp người ngành giáo dục, y tế.",
+      "tags": [
+        "Thiên Lương",
+        "Phu Thê"
+      ]
+    },
+    {
+      "id": "kb_thienluong_huynhde",
+      "type": "chinh_tinh",
+      "subject": "Thiên Lương @ Huynh Đệ",
+      "summary": "Anh chị em ít, có học, sống thọ. Quan hệ qua tri thức, đạo lý. Có người làm ngành giáo dục/y tế.",
+      "tags": [
+        "Thiên Lương",
+        "Huynh Đệ"
+      ]
+    },
+    {
+      "id": "kb_thatsat_menh",
+      "type": "chinh_tinh",
+      "subject": "Thất Sát @ Mệnh",
+      "summary": "Anh hùng, quyết đoán, ưa quân sự. Dần Thân Tý Ngọ + Khôi Việt Tả Hữu Văn Xương Khoa Lộc thì danh cao. Hãm địa hung họa lớn.",
+      "tags": [
+        "Thất Sát",
+        "Mệnh",
+        "anh hùng"
+      ]
+    },
+    {
+      "id": "kb_thatsat_phumau",
+      "type": "chinh_tinh",
+      "subject": "Thất Sát @ Phụ Mẫu",
+      "summary": "Cha mẹ cứng cỏi, kỷ luật, có thể nghiêm khắc. Quan hệ đôi khi xa cách. Có thể có chuyện chia ly thời niên thiếu.",
+      "tags": [
+        "Thất Sát",
+        "Phụ Mẫu"
+      ]
+    },
+    {
+      "id": "kb_thatsat_phucduc",
+      "type": "chinh_tinh",
+      "subject": "Thất Sát @ Phúc Đức",
+      "summary": "Tinh thần mạnh mẽ, ưa thử thách. Phước qua đấu tranh và vượt khó. Hãm địa dễ stress, lo âu.",
+      "tags": [
+        "Thất Sát",
+        "Phúc Đức"
+      ]
+    },
+    {
+      "id": "kb_thatsat_dientrach",
+      "type": "chinh_tinh",
+      "subject": "Thất Sát @ Điền Trạch",
+      "summary": "Bất động sản qua đấu tranh, mua nhà từ tích lũy lao động cường độ cao. Nhà cửa bền vững nhưng ít hoa mỹ.",
+      "tags": [
+        "Thất Sát",
+        "Điền Trạch"
+      ]
+    },
+    {
+      "id": "kb_thatsat_quanloc",
+      "type": "chinh_tinh",
+      "subject": "Thất Sát @ Quan Lộc",
+      "summary": "Sự nghiệp quân sự, công an, kỹ thuật, kinh doanh chiến lược. Lên qua đấu tranh, không sợ thử thách. Dần Thân Tý Ngọ thì danh cao.",
+      "tags": [
+        "Thất Sát",
+        "Quan Lộc",
+        "quân sự"
+      ]
+    },
+    {
+      "id": "kb_thatsat_nobac",
+      "type": "chinh_tinh",
+      "subject": "Thất Sát @ Nô Bộc",
+      "summary": "Bạn bè cứng cỏi, có cá tính. Quan hệ qua đấu tranh chung. Cấp dưới kỷ luật nhưng dễ nổi loạn nếu không quản tốt.",
+      "tags": [
+        "Thất Sát",
+        "Nô Bộc"
+      ]
+    },
+    {
+      "id": "kb_thatsat_thiendi",
+      "type": "chinh_tinh",
+      "subject": "Thất Sát @ Thiên Di",
+      "summary": "Đi xa qua đấu tranh, kinh doanh chiến lược, công tác kỹ thuật. Cẩn thận an toàn. Tinh thần kiên cường khi xa nhà.",
+      "tags": [
+        "Thất Sát",
+        "Thiên Di"
+      ]
+    },
+    {
+      "id": "kb_thatsat_tatach",
+      "type": "chinh_tinh",
+      "subject": "Thất Sát @ Tật Ách",
+      "summary": "Cẩn thận tai nạn, chấn thương xương khớp, vết thương. Hệ tiêu hóa do stress. Cần kiểm tra sức khỏe định kỳ.",
+      "tags": [
+        "Thất Sát",
+        "Tật Ách"
+      ]
+    },
+    {
+      "id": "kb_thatsat_taibach",
+      "type": "chinh_tinh",
+      "subject": "Thất Sát @ Tài Bạch",
+      "summary": "Tiền qua đấu tranh, lao động cường độ cao, kinh doanh chiến lược. Thu nhập biến động lớn, có thể giàu nhanh chóng.",
+      "tags": [
+        "Thất Sát",
+        "Tài Bạch"
+      ]
+    },
+    {
+      "id": "kb_thatsat_tutuc",
+      "type": "chinh_tinh",
+      "subject": "Thất Sát @ Tử Tức",
+      "summary": "Con cứng cỏi, có chí, có thể bướng. Số con ít. Quan hệ cần kiên nhẫn, tôn trọng cá tính độc lập của con.",
+      "tags": [
+        "Thất Sát",
+        "Tử Tức"
+      ]
+    },
+    {
+      "id": "kb_thatsat_phuthe",
+      "type": "chinh_tinh",
+      "subject": "Thất Sát @ Phu Thê",
+      "summary": "Bạn đời cứng cỏi, có chí. Hôn nhân có thử thách, cần thời gian dài hiểu nhau. Tuổi kết hôn thường muộn.",
+      "tags": [
+        "Thất Sát",
+        "Phu Thê"
+      ]
+    },
+    {
+      "id": "kb_thatsat_huynhde",
+      "type": "chinh_tinh",
+      "subject": "Thất Sát @ Huynh Đệ",
+      "summary": "Anh chị em ít, có cá tính độc lập mạnh. Quan hệ ít gần gũi nhưng đoàn kết khi việc lớn. Có thể có người làm quân sự/công an.",
+      "tags": [
+        "Thất Sát",
+        "Huynh Đệ"
+      ]
+    },
+    {
+      "id": "kb_phaquan_menh",
+      "type": "chinh_tinh",
+      "subject": "Phá Quân @ Mệnh",
+      "summary": "Tính phá hủy + tái tạo, tiên phong. Tý Ngọ + Văn Xương Tả Hữu nhập miếu thì anh hùng quan võ. Hãm địa cuộc đời nhiều biến động.",
+      "tags": [
+        "Phá Quân",
+        "Mệnh",
+        "tiên phong"
+      ]
+    },
+    {
+      "id": "kb_phaquan_phumau",
+      "type": "chinh_tinh",
+      "subject": "Phá Quân @ Phụ Mẫu",
+      "summary": "Cha mẹ có cuộc đời nhiều biến động, có thể chia ly hoặc sự nghiệp thay đổi lớn. Quan hệ phức tạp.",
+      "tags": [
+        "Phá Quân",
+        "Phụ Mẫu"
+      ]
+    },
+    {
+      "id": "kb_phaquan_phucduc",
+      "type": "chinh_tinh",
+      "subject": "Phá Quân @ Phúc Đức",
+      "summary": "Tinh thần thay đổi, ưa cái mới. Phước qua phá-tái tạo. Cần học buông bỏ cũ để đón mới. Dễ trầm cảm khi mất hướng.",
+      "tags": [
+        "Phá Quân",
+        "Phúc Đức"
+      ]
+    },
+    {
+      "id": "kb_phaquan_dientrach",
+      "type": "chinh_tinh",
+      "subject": "Phá Quân @ Điền Trạch",
+      "summary": "Nhà cửa hay đổi, có thể mua bán nhiều lần. Bất động sản từ phá cũ xây mới. Đầu tư cải tạo, sửa chữa.",
+      "tags": [
+        "Phá Quân",
+        "Điền Trạch"
+      ]
+    },
+    {
+      "id": "kb_phaquan_quanloc",
+      "type": "chinh_tinh",
+      "subject": "Phá Quân @ Quan Lộc",
+      "summary": "Sự nghiệp tiên phong, khởi nghiệp, ngành đột phá, công nghệ mới. Hay đổi nghề. Tý Ngọ + tá phò thì làm tướng.",
+      "tags": [
+        "Phá Quân",
+        "Quan Lộc",
+        "khởi nghiệp"
+      ]
+    },
+    {
+      "id": "kb_phaquan_nobac",
+      "type": "chinh_tinh",
+      "subject": "Phá Quân @ Nô Bộc",
+      "summary": "Bạn bè đa dạng, hay thay đổi. Quan hệ qua dự án mới. Cấp dưới có sáng tạo nhưng dễ rời đi.",
+      "tags": [
+        "Phá Quân",
+        "Nô Bộc"
+      ]
+    },
+    {
+      "id": "kb_phaquan_thiendi",
+      "type": "chinh_tinh",
+      "subject": "Phá Quân @ Thiên Di",
+      "summary": "Di chuyển nhiều, đổi nơi ở. Hợp khởi nghiệp ở môi trường mới. Có duyên với di cư, định cư nước ngoài.",
+      "tags": [
+        "Phá Quân",
+        "Thiên Di"
+      ]
+    },
+    {
+      "id": "kb_phaquan_tatach",
+      "type": "chinh_tinh",
+      "subject": "Phá Quân @ Tật Ách",
+      "summary": "Cẩn thận tai nạn, chấn thương đột ngột. Hệ thận + sinh dục. Sức khỏe biến động, cần kiểm tra định kỳ.",
+      "tags": [
+        "Phá Quân",
+        "Tật Ách"
+      ]
+    },
+    {
+      "id": "kb_phaquan_taibach",
+      "type": "chinh_tinh",
+      "subject": "Phá Quân @ Tài Bạch",
+      "summary": "Tiền lên xuống mạnh — kiếm nhanh, tiêu nhanh. Tiền từ đột phá, khởi nghiệp. Cần kế hoạch dài hạn để giữ.",
+      "tags": [
+        "Phá Quân",
+        "Tài Bạch"
+      ]
+    },
+    {
+      "id": "kb_phaquan_tutuc",
+      "type": "chinh_tinh",
+      "subject": "Phá Quân @ Tử Tức",
+      "summary": "Con có cá tính độc lập, sáng tạo. Số con ít. Có thể có chuyện sinh con muộn hoặc khó khăn. Con tiên phong.",
+      "tags": [
+        "Phá Quân",
+        "Tử Tức"
+      ]
+    },
+    {
+      "id": "kb_phaquan_phuthe",
+      "type": "chinh_tinh",
+      "subject": "Phá Quân @ Phu Thê",
+      "summary": "Hôn nhân có biến động lớn, có thể tái hôn. Bạn đời cá tính độc lập. Cần kiên nhẫn và linh hoạt.",
+      "tags": [
+        "Phá Quân",
+        "Phu Thê"
+      ]
+    },
+    {
+      "id": "kb_phaquan_huynhde",
+      "type": "chinh_tinh",
+      "subject": "Phá Quân @ Huynh Đệ",
+      "summary": "Anh chị em ít, có người sống xa. Quan hệ có biến động — gần xa thay đổi. Đoàn kết khi gia đình có việc lớn.",
+      "tags": [
+        "Phá Quân",
+        "Huynh Đệ"
+      ]
+    }
+  ]
+}
