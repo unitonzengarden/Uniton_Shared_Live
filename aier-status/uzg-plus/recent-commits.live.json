@@ -1,9 +1,30 @@
 {
   "project_slug": "uzg-plus",
   "github_repo": "unitonzengarden/uzgplus-app",
-  "polled_at": "2026-05-02T03:51:14.115Z",
+  "polled_at": "2026-05-02T06:07:49.436Z",
   "count": 30,
   "commits": [
+    {
+      "sha": "43954194a4b03149bfd232d6747ded0a98185d5e",
+      "message": "test(lane02/golive): aier-tao-golive smoke suite Q1-Q5 [vercel skip]",
+      "author": "unitonzengarden",
+      "committed_at": "2026-05-02T04:28:49Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/43954194a4b03149bfd232d6747ded0a98185d5e"
+    },
+    {
+      "sha": "25d07d372d5daa5ff400fb8b40e123ca2e745a19",
+      "message": "feat(lane02/aier-kb-rag): pgvector KB + RAG retrieval + smoke tests [vercel skip] (#90)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-02T04:25:54Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/25d07d372d5daa5ff400fb8b40e123ca2e745a19"
+    },
+    {
+      "sha": "268fec7e334d988a97979ece13533f491ba685b7",
+      "message": "hotfix(p5-10): UZG+ Phase 5 Sprint 5.10 — Auth OTP refactor (Sprint 5.1+5.9 P0 bug correction) (#89)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-02T03:55:54Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/268fec7e334d988a97979ece13533f491ba685b7"
+    },
     {
       "sha": "feb0fecb6d30fa0a77d37cadfc8aee17e4f5d239",
       "message": "feat(p5-9): UZG+ Phase 5 Sprint 5.9 — Auth UX hardening + Settings + Profile + Follow [solo CLAC1] (#88)",
@@ -192,27 +213,6 @@
       "author": "Uniton Zen",
       "committed_at": "2026-05-01T08:32:12Z",
       "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/5ffed557dc8b349049e9072b1985cc8c878e7941"
-    },
-    {
-      "sha": "f4fa499ce91db118506d5f9cc768783417627888",
-      "message": "feat(s7): UZG+ V3 PLUS Hub — springboard + 10 components + mini app takeover (#67)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-05-01T07:53:55Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/f4fa499ce91db118506d5f9cc768783417627888"
-    },
-    {
-      "sha": "de1c25ff3775bd200c17a4a2232beb9213eb8152",
-      "message": "feat(s6): UZG+ V3 ENTA module — Pentagon Wheel + 4 tabs + Onboarding + G01 fix (#66)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-05-01T07:32:38Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/de1c25ff3775bd200c17a4a2232beb9213eb8152"
-    },
-    {
-      "sha": "5a893e7dc940a2e3ba27044e6a1b5106d0cd8d82",
-      "message": "audit(lane02/tao-ziwei): Phase 8A 6-chart engine vs lyso GT audit (#65)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-05-01T07:23:57Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/5a893e7dc940a2e3ba27044e6a1b5106d0cd8d82"
     }
   ]
 }

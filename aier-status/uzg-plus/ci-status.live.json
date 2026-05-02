@@ -1,9 +1,74 @@
 {
   "project_slug": "uzg-plus",
   "github_repo": "unitonzengarden/uzgplus-app",
-  "polled_at": "2026-05-02T03:51:14.115Z",
+  "polled_at": "2026-05-02T06:07:49.436Z",
   "count": 20,
   "workflow_runs": [
+    {
+      "id": 25243770550,
+      "name": "Deploy to Cloudflare Pages (Stable)",
+      "head_branch": "main",
+      "head_sha": "43954194a4b03149bfd232d6747ded0a98185d5e",
+      "event": "push",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-05-02T04:29:44Z",
+      "updated_at": "2026-05-02T04:31:04Z",
+      "run_started_at": "2026-05-02T04:29:44Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/actions/runs/25243770550"
+    },
+    {
+      "id": 25243707962,
+      "name": "Deploy to Cloudflare Pages (Stable)",
+      "head_branch": "main",
+      "head_sha": "25d07d372d5daa5ff400fb8b40e123ca2e745a19",
+      "event": "push",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-05-02T04:25:56Z",
+      "updated_at": "2026-05-02T04:27:19Z",
+      "run_started_at": "2026-05-02T04:25:56Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/actions/runs/25243707962"
+    },
+    {
+      "id": 25243707956,
+      "name": "TAO Bazi CI Regression",
+      "head_branch": "main",
+      "head_sha": "25d07d372d5daa5ff400fb8b40e123ca2e745a19",
+      "event": "push",
+      "status": "completed",
+      "conclusion": "failure",
+      "created_at": "2026-05-02T04:25:56Z",
+      "updated_at": "2026-05-02T04:37:47Z",
+      "run_started_at": "2026-05-02T04:25:56Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/actions/runs/25243707956"
+    },
+    {
+      "id": 25243706144,
+      "name": "TAO Bazi CI Regression",
+      "head_branch": "feat/lane02/cursor2/aier-kb-rag-v1",
+      "head_sha": "5629ebfbcc70545f027fcb42f5263ceb0b8fe40b",
+      "event": "pull_request",
+      "status": "completed",
+      "conclusion": "failure",
+      "created_at": "2026-05-02T04:25:49Z",
+      "updated_at": "2026-05-02T04:37:24Z",
+      "run_started_at": "2026-05-02T04:25:49Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/actions/runs/25243706144"
+    },
+    {
+      "id": 25243184697,
+      "name": "Deploy to Cloudflare Pages (Stable)",
+      "head_branch": "main",
+      "head_sha": "268fec7e334d988a97979ece13533f491ba685b7",
+      "event": "push",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-05-02T03:55:57Z",
+      "updated_at": "2026-05-02T03:57:27Z",
+      "run_started_at": "2026-05-02T03:55:57Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/actions/runs/25243184697"
+    },
     {
       "id": 25241540855,
       "name": "Deploy to Cloudflare Pages (Stable)",
@@ -198,71 +263,6 @@
       "updated_at": "2026-05-01T13:58:33Z",
       "run_started_at": "2026-05-01T13:57:08Z",
       "html_url": "https://github.com/unitonzengarden/uzgplus-app/actions/runs/25217007351"
-    },
-    {
-      "id": 25216758078,
-      "name": "TAO Bazi CI Regression",
-      "head_branch": "main",
-      "head_sha": "e28e4621f4b2ff983e3989ad0449a95e0ea13da2",
-      "event": "push",
-      "status": "completed",
-      "conclusion": "success",
-      "created_at": "2026-05-01T13:49:54Z",
-      "updated_at": "2026-05-01T14:01:14Z",
-      "run_started_at": "2026-05-01T13:49:54Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/actions/runs/25216758078"
-    },
-    {
-      "id": 25216758076,
-      "name": "Deploy to Cloudflare Pages (Stable)",
-      "head_branch": "main",
-      "head_sha": "e28e4621f4b2ff983e3989ad0449a95e0ea13da2",
-      "event": "push",
-      "status": "completed",
-      "conclusion": "success",
-      "created_at": "2026-05-01T13:49:54Z",
-      "updated_at": "2026-05-01T13:51:17Z",
-      "run_started_at": "2026-05-01T13:49:54Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/actions/runs/25216758076"
-    },
-    {
-      "id": 25216750230,
-      "name": "TAO Bazi CI Regression",
-      "head_branch": "feat/lane01-p4s5-bazi-premium-phong-thuy",
-      "head_sha": "280123639c1b4d9a7af7597b84dc357d6af5fac2",
-      "event": "pull_request",
-      "status": "completed",
-      "conclusion": "success",
-      "created_at": "2026-05-01T13:49:41Z",
-      "updated_at": "2026-05-01T14:01:16Z",
-      "run_started_at": "2026-05-01T13:49:41Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/actions/runs/25216750230"
-    },
-    {
-      "id": 25215697197,
-      "name": "Deploy to Cloudflare Pages (Stable)",
-      "head_branch": "main",
-      "head_sha": "9809f077bf5ccf709310d1ac73c90594ea732f90",
-      "event": "push",
-      "status": "completed",
-      "conclusion": "success",
-      "created_at": "2026-05-01T13:17:37Z",
-      "updated_at": "2026-05-01T13:18:56Z",
-      "run_started_at": "2026-05-01T13:17:37Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/actions/runs/25215697197"
-    },
-    {
-      "id": 25215697187,
-      "name": "TAO Bazi CI Regression",
-      "head_branch": "main",
-      "head_sha": "9809f077bf5ccf709310d1ac73c90594ea732f90",
-      "event": "push",
-      "status": "completed",
-      "conclusion": "success",
-      "created_at": "2026-05-01T13:17:37Z",
-      "updated_at": "2026-05-01T13:29:16Z",
-      "run_started_at": "2026-05-01T13:17:37Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/actions/runs/25215697187"
     }
   ]
 }
