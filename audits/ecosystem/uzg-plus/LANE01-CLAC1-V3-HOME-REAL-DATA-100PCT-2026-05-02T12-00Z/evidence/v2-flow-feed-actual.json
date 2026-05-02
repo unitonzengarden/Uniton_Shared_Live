@@ -1,0 +1,118 @@
+{
+  "ok": false,
+  "code": "ENTA_ROOT_REQUIRED",
+  "message": "Complete ENTA Root before entering this Product V2 flow step.",
+  "path": "/api/v1/flow/feed",
+  "runtime": "cloudflare-pages-worker",
+  "api_mode": "ssh-free-foundation",
+  "architecture": {
+    "frontend": "cloudflare-pages",
+    "api": "cloudflare-worker",
+    "db_auth_realtime_storage": "supabase",
+    "db_near_compute": "supabase-edge-functions",
+    "legacy_node_primary_runtime": false
+  },
+  "env_contract": {
+    "worker": [
+      "SUPABASE_URL",
+      "SUPABASE_ANON_KEY",
+      "SUPABASE_SERVICE_ROLE_KEY"
+    ],
+    "workerAliases": [
+      "VITE_SUPABASE_URL",
+      "VITE_SUPABASE_ANON_KEY",
+      "VITE_SUPABASE_PUBLISHABLE_KEY",
+      "SUPABASE_SERVICE_ROLE_KEY_B64"
+    ],
+    "r2Primary": [
+      "R2_ACCOUNT_ID",
+      "R2_ENDPOINT",
+      "R2_BUCKET",
+      "R2_ACCESS_KEY_ID",
+      "R2_SECRET_ACCESS_KEY",
+      "R2_API_TOKEN"
+    ],
+    "aiOptional": [
+      "OPENAI_API_KEY",
+      "OPENAI_PRIMARY_MODEL",
+      "OPENAI_FALLBACK_MODEL",
+      "AITAO_OPENAI_MODEL",
+      "GEMINI_API_KEY"
+    ],
+    "deprecatedProxy": [
+      "AIER_API_PROXY_TARGET",
+      "API_PROXY_TARGET",
+      "AIER_API_PROXY_HOST",
+      "API_PROXY_HOST"
+    ]
+  },
+  "env_state": {
+    "supabase_url": true,
+    "supabase_anon_key": true,
+    "supabase_service_role_key": true,
+    "supabase_service_role_key_transport": "raw",
+    "vite_supabase_url": true,
+    "vite_supabase_anon_key": true,
+    "vite_supabase_publishable_key": true,
+    "r2_account_id": true,
+    "r2_endpoint": true,
+    "r2_bucket": true,
+    "r2_access_key_id": true,
+    "r2_secret_access_key": true,
+    "r2_api_token": true,
+    "openai_api_key": true,
+    "aitao_openai_model": "gpt-5.4",
+    "openai_primary_model": "gpt-5.4",
+    "openai_fallback_model": "gpt-5-mini",
+    "gemini_api_key": false,
+    "gemini_model": "gemini-2.5-flash",
+    "deprecated_proxy_target": false,
+    "deprecated_proxy_host": false
+  },
+  "version": {
+    "commit": "ef9bf3314d2c",
+    "time": "2026-05-02T12:03:31.765Z",
+    "workflow": "LOCAL->GITHUB->CLOUDFLARE->UZG.PLUS"
+  },
+  "auth_context": {
+    "verified": true,
+    "user_id": "e21e43d5-6815-459d-bb46-b3f19b9cb06b",
+    "email": "lane02-test-sovereign@uzg.local",
+    "aud": "authenticated",
+    "role": "authenticated",
+    "email_confirmed": true,
+    "phone_confirmed": false,
+    "last_sign_in_at": "2026-05-02T13:05:14.923193Z",
+    "created_at": "2026-05-02T10:01:33.275894Z",
+    "provider": "email",
+    "providers": [
+      "email"
+    ],
+    "is_anonymous": false
+  },
+  "role_context": {
+    "verified": true,
+    "resolved": true,
+    "user_id": "e21e43d5-6815-459d-bb46-b3f19b9cb06b",
+    "primary_role": "user",
+    "role_level": 0,
+    "canonical_roles": [
+      "user"
+    ],
+    "role_codes": [
+      "user"
+    ],
+    "is_admin": false,
+    "is_private_admin": false,
+    "admin_sections": [],
+    "subject_ids": [
+      "e21e43d5-6815-459d-bb46-b3f19b9cb06b"
+    ],
+    "roles": []
+  },
+  "data": {
+    "enta_present": false,
+    "next_route": "/enta/view",
+    "gate": "enta_required_before_downstream_flow"
+  }
+}

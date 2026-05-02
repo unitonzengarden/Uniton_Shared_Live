@@ -1,0 +1,42 @@
+=== AC-3: Authenticated Playwright /v3/home — 5x Consecutive Run on Production ===
+
+Date: 2026-05-02T13:21Z
+Production deploy: PR #97 chore: redeploy trigger merged at 2026-05-02T13:16:31Z
+Production bundle: main-D8KCrac_.js (verified contains page_size + data.items strings)
+
+Command:
+  for i in 1..5; do
+    npx playwright test --config playwright.lane01.config.js \
+      audit/02-home-real-data.audit.spec.js --reporter=line
+  done
+
+Test 1: Authenticated /v3/home does NOT show "Cannot read properties of undefined" crash
+  Assertions:
+    - body text NOT contain "Cannot read properties of undefined"
+    - body text NOT contain "reading 'length'"
+    - body text contains valid HOME shell (Cộng đồng OR Chia sẻ hành trình OR Complete ENTA Root OR Hoàn tất ENTA OR Chưa có bài viết)
+    - 0 page errors
+    - 0 network failures (uzg.plus / supabase domains)
+
+Test 2: V3 /v3/home network calls match V2 EXACT contract (page + page_size)
+  Assertions:
+    - flowFeedRequests.length > 0 (V3 actually calls /api/v1/flow/feed)
+    - First request method = GET
+    - URL contains "page="
+    - URL contains "page_size="
+    - URL does NOT contain "cursor="
+    - URL does NOT contain "limit="
+
+Results:
+  === Run 1 === 2 passed (9.7s)
+  === Run 2 === 2 passed (8.6s)
+  === Run 3 === 2 passed (8.6s)
+  === Run 4 === 2 passed (8.5s)
+  === Run 5 === 2 passed (8.4s)
+
+  FINAL: 5/5 passed, 0/5 failed
+
+Verdict: AC-3 PASS
+
+The crash NTS reported is FIXED. V3 calls V2 with EXACT params, maps response correctly,
+renders V2 EXACT behavior including ENTA Root gate for users without ENTA.
