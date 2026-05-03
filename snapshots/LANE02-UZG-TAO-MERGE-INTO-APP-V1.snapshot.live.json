@@ -1,0 +1,116 @@
+{
+  "task_id": "LANE02-UZG-TAO-MERGE-INTO-APP-V1",
+  "executor": "CLAC-2 (Claude Code Desktop, Opus 4.7)",
+  "lane": "Lane_02",
+  "project": "UZG",
+  "branch": "lane02/uzg-tao-merge-into-app-v1",
+  "started_at": "2026-05-03T09:35:00+07:00",
+  "completed_at": "2026-05-03T10:25:00+07:00",
+  "supersedes": "LANE02-UZG-TAO-WIRE-V3-V1 (PR #123 357378d, cross-bundle architecture wrong)",
+  "phases": {
+    "phase_1_root_cause": "usePlusHub localStorage stale state + cross-bundle nav diagnosed",
+    "phase_2_architectural": "TaoMiniAppShell + 5 panels in V2 bundle, /app/tao route, /v3/tao DELETED with cross-bundle redirect",
+    "phase_3_visibility": "usePlusHub.readPinned ensureTaoVisible always includes 'tao'",
+    "phase_4_build_deploy": "Build PASS, PR #124 merged self-admin, CF Pages SUCCESS",
+    "phase_5_qa_4_method": "ALL 4 methods PASS production",
+    "phase_6_deliverables": "4 file LAW-compliant pushed Uniton_Shared"
+  },
+  "root_cause_analysis": {
+    "issue": "NTS account real KHONG thay TAO icon on /app despite Playwright fixture seeing it",
+    "cause_1": "usePlusHub.readPinned() reads localStorage[uzg-plus-pinned-v1]. Existing users (e.g., NTS) with stale state from prior catalog iterations may have pinned ids missing 'tao'. Default pinned has tao, but users who previously pinned different apps see stale state.",
+    "cause_2": "PR #123 cross-bundle navigation (/v3/tao) felt broken - V2 PWA navigate('/v3/tao') triggered window.location.assign hard reload, perceived as failure",
+    "fix_1": "ensureTaoVisible() helper unions ALWAYS_PINNED_IDS=['tao'] into pinned set. Existing users transparently migrated.",
+    "fix_2": "TAO module merged into V2 bundle at /app/tao. Same-bundle navigation via react-router. /v3/tao deleted with cross-bundle redirect for legacy URLs.",
+    "law_ref": "LAW-NTS-LLM-08 (fix root cause)"
+  },
+  "architectural_change": {
+    "before": "TAO icon click -> navigate('/v3/tao') -> cross-bundle hard reload to V3 PWA SPA",
+    "after": "TAO icon click -> navigate('/app/tao') -> V2 SPA renders TaoMiniAppShell (same-bundle)",
+    "tao_mini_app_shell": "apps/uzg-pwa/src/components/tao-mini-app-v3/TaoMiniAppShell.tsx - 5 tabs state-managed",
+    "panels": ["TaoBaziPanel", "TaoZiweiPanel", "TaoPhongThuyPanel", "TaoLichVanNienPanel", "TaoAierChatPanel"],
+    "v3_route_redirect": "TaoCrossBundleRedirect in V3App.jsx redirects /v3/tao* -> /app/tao via window.location.assign"
+  },
+  "qa_real_user_4_method_gate": {
+    "method_1_playwright": {
+      "spec": "tests/lane02/qa/09-tao-merge-into-app.spec.js",
+      "result": "11/11 PASS",
+      "cases": [
+        "TAO-MERGE-01: /app PLUS Hub renders with TAO icon visible (count >= 2)",
+        "TAO-MERGE-02: TAO icon present in 3 sections + route attr verifies /app/tao",
+        "TAO-MERGE-03: TAO icon click navigates to /app/tao (same-bundle)",
+        "TAO-MERGE-04: TaoMiniAppShell + 5 tabs + close button render",
+        "TAO-MERGE-05: Bat Tu tab default + V3 dark theme",
+        "TAO-MERGE-06: Tu Vi tab switch + render",
+        "TAO-MERGE-07: Phong Thuy tab switch + render",
+        "TAO-MERGE-08: Lich Van Nien tab switch + render",
+        "TAO-MERGE-09: AIER Tao tab + composer visible",
+        "TAO-MERGE-10: Close X returns /app same-bundle",
+        "TAO-DOM-INSPECT: Method 2 querySelectorAll count >= 2"
+      ]
+    },
+    "method_2_dom_inspection": {
+      "command": "document.querySelectorAll('[data-app-id=tao]').length",
+      "result": 3,
+      "expected": ">= 2",
+      "verdict": "PASS"
+    },
+    "method_3_bundle_marker": {
+      "v2_bundle": "https://uzg.plus/assets/index-DpQJTG_9.js",
+      "markers_found": ["/app/tao", "tao-miniapp-shell", "tao-tab-", "nam-tao-badge", "cultural-framing-strip", "\"tao\""],
+      "verdict": "PASS"
+    },
+    "method_4_app_catalog_inspection": {
+      "tao_entry": "id:\"tao\" + name:\"TAO\" present in V2 production bundle",
+      "verdict": "PASS"
+    }
+  },
+  "files_modified_count": 22,
+  "code_pr": "https://github.com/unitonzengarden/uzgplus-app/pull/124",
+  "code_commit": "9a957154de031880c5df94b858943f356ec30f92",
+  "deploy_workflow_run": "https://github.com/unitonzengarden/uzgplus-app/actions/runs/25268162833",
+  "production_probe": {
+    "/app": "HTTP 200 OK",
+    "/app/tao": "HTTP 200 OK (in-bundle TaoMiniAppShell)",
+    "/v3/tao": "HTTP 200 OK (renders TaoCrossBundleRedirect that window.location.assign /app/tao)"
+  },
+  "qa_results": {
+    "playwright_tests": "11/11 PASS",
+    "screenshots": 11,
+    "test_environment": "https://uzg.plus production",
+    "viewport": "480x900 mobile-first",
+    "auth_method": "ENTA-complete user via Admin SDK (lane02-tao-merge-1777776853744@uzg.local)"
+  },
+  "deliverables_actual": [
+    "snapshots/LANE02-UZG-TAO-MERGE-INTO-APP-V1.snapshot.live.json",
+    "reports/LANE02-UZG-TAO-MERGE-INTO-APP-V1_REPORT.md",
+    "audit_logs/LANE02-UZG-TAO-MERGE-INTO-APP-V1_audit.log",
+    "screenshots/LANE02-UZG-TAO-MERGE-INTO-APP-V1/ (11 PNG _LIVE_uzg.plus.png)"
+  ],
+  "boundary_check": {
+    "v2_backend_unmodified": true,
+    "lane01_namespace_unmodified": true,
+    "ascii_commit": true,
+    "no_new_features": true
+  },
+  "ac_status": "41/41 verifiable PASS",
+  "qa_verdict": "PASS",
+  "constraints_honored": {
+    "zero_questions_to_nts": true,
+    "zero_suggestions_for_nts_actions": true,
+    "no_modify_v2_backend": true,
+    "no_modify_lane_01_namespace": true,
+    "ascii_commit_message": true,
+    "no_new_features": true,
+    "self_merge_admin": true,
+    "enta_complete_user_autonomous": true,
+    "real_user_4_method_gate_pass": true
+  },
+  "target_repo": "unitonzengarden/uzgplus-app + unitonzengarden/Uniton_Shared",
+  "forbidden_repos_untouched": ["AIFI_LIFE", "aier-life-super-app", "_archive_chatbot", "Uniton_OS"],
+  "local_desktop_paths": {
+    "snapshot": "D:\\UZG\\Projects-v2\\Uniton_Shared\\snapshots\\LANE02-UZG-TAO-MERGE-INTO-APP-V1.snapshot.live.json",
+    "report": "D:\\UZG\\Projects-v2\\Uniton_Shared\\reports\\LANE02-UZG-TAO-MERGE-INTO-APP-V1_REPORT.md",
+    "audit_log": "D:\\UZG\\Projects-v2\\Uniton_Shared\\audit_logs\\LANE02-UZG-TAO-MERGE-INTO-APP-V1_audit.log",
+    "screenshots_dir": "D:\\UZG\\Projects-v2\\Uniton_Shared\\screenshots\\LANE02-UZG-TAO-MERGE-INTO-APP-V1\\"
+  }
+}
