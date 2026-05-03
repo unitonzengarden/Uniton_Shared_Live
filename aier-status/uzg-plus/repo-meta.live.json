@@ -1,7 +1,7 @@
 {
   "project_slug": "uzg-plus",
   "github_repo": "unitonzengarden/uzgplus-app",
-  "polled_at": "2026-05-03T17:29:04.344Z",
+  "polled_at": "2026-05-03T18:31:53.865Z",
   "name": "uzgplus-app",
   "full_name": "unitonzengarden/uzgplus-app",
   "private": true,
@@ -9,8 +9,8 @@
   "description": "UZG+ — Human Value Origin Layer. Mobile-first super-app combining identity, social, value, community business, AI guidance, and governance. Live at uzg.plus.",
   "stars": 0,
   "forks": 0,
-  "open_issues_total": 3,
-  "pushed_at": "2026-05-03T17:12:02Z",
-  "updated_at": "2026-05-03T17:12:07Z",
+  "open_issues_total": 4,
+  "pushed_at": "2026-05-03T18:23:59Z",
+  "updated_at": "2026-05-03T18:24:03Z",
   "html_url": "https://github.com/unitonzengarden/uzgplus-app"
 }

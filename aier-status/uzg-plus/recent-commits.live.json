@@ -1,9 +1,44 @@
 {
   "project_slug": "uzg-plus",
   "github_repo": "unitonzengarden/uzgplus-app",
-  "polled_at": "2026-05-03T17:29:04.344Z",
+  "polled_at": "2026-05-03T18:31:53.865Z",
   "count": 30,
   "commits": [
+    {
+      "sha": "b2149d6ce3f9addf4a0b1193c5f9fbc7459dabcd",
+      "message": "chore(lane02): U-Reward V3 Sprint 2 IMPL V2 deliverables (Lane_03 pattern)",
+      "author": "unitonzengarden",
+      "committed_at": "2026-05-03T18:23:11Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/b2149d6ce3f9addf4a0b1193c5f9fbc7459dabcd"
+    },
+    {
+      "sha": "7f6bd2f956b9122ff465e610e978b98319340640",
+      "message": "feat(lane02/uzg/u-reward): Sprint 2 IMPL V2 — Quiz fix + Telegram polish + content seed + Wallet pill (#172)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-03T18:18:11Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/7f6bd2f956b9122ff465e610e978b98319340640"
+    },
+    {
+      "sha": "6c3df4624d702306d1c0ab817e836dd54323eabe",
+      "message": "fix(lane01): remove product language bundle cycle",
+      "author": "unitonzengarden",
+      "committed_at": "2026-05-03T18:12:34Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/6c3df4624d702306d1c0ab817e836dd54323eabe"
+    },
+    {
+      "sha": "b079abe291ab9d123ef683f3f92eb42220c2388e",
+      "message": "chore(LANE01): erratum on AUDIT-ENTA-MODULE-V1 bundle weights post PR #168 revert [vercel skip] (#171)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-03T18:00:21Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/b079abe291ab9d123ef683f3f92eb42220c2388e"
+    },
+    {
+      "sha": "8045f049710459bf51ed5113a4cfa97083c2533c",
+      "message": "audit(LANE01): Sprint 8.1 ENTA module audit - 4 root causes + fix sequence [vercel skip] (#170)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-03T17:42:07Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/8045f049710459bf51ed5113a4cfa97083c2533c"
+    },
     {
       "sha": "da0a6f53b8ad463527d0c592b51b191e763ef779",
       "message": "audit(lane02/dev1/u-reward): Sprint 2 audit complete (NO code changes)",
@@ -178,41 +213,6 @@
       "author": "unitonzengarden",
       "committed_at": "2026-05-03T11:13:59Z",
       "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/4e1ae59b47b4dadd2319242991b277902a9196b2"
-    },
-    {
-      "sha": "49cdc0638230f3175f49e04016d74cf56aa8d6e6",
-      "message": "chore(LANE01): cross-lane handoff to Lane_02 - vite dev blocker (tao/ziwei syntax err) [vercel skip] (#157)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-05-03T11:14:21Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/49cdc0638230f3175f49e04016d74cf56aa8d6e6"
-    },
-    {
-      "sha": "b85bd440790a105014dfc5735dd0e9ac5bb3175e",
-      "message": "chore(LANE01): update INDEX.md with FIX-QA-USER-SEED-V1 row [vercel skip]",
-      "author": "LANE01-Cursor",
-      "committed_at": "2026-05-03T11:12:56Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/b85bd440790a105014dfc5735dd0e9ac5bb3175e"
-    },
-    {
-      "sha": "e5edb91eea35087b485f2d8030cb5ddb0f26f233",
-      "message": "audit(LANE01): FIX-QA-USER-SEED-V1 deliverables 4 muc FLAT [vercel skip] (#156)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-05-03T11:12:33Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/e5edb91eea35087b485f2d8030cb5ddb0f26f233"
-    },
-    {
-      "sha": "54e453afcc5b14029511b31a572523134c768ad6",
-      "message": "fix(LANE01): QA user seed enta_profiles for Sprint 7.4.2 - closes Cat 1 data gap (#155)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-05-03T11:08:57Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/54e453afcc5b14029511b31a572523134c768ad6"
-    },
-    {
-      "sha": "0d1d0dbf115526dcfebaef74d4064de8e72f2958",
-      "message": "feat(lane02/uzg/tao): TUVI FINAL V2 Phase A audit + root fix (DO NOT MERGE — Phase B QA gate) (#153)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-05-03T11:08:12Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/0d1d0dbf115526dcfebaef74d4064de8e72f2958"
     }
   ]
 }
