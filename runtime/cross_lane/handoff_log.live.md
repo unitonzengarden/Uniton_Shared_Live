@@ -107,3 +107,13 @@
 - **Status:** PASS
 - **Result:** Audit of 4 missing ledger entries. Backfill executed. TAO audit harness authored. Gap pattern documented.
 - **Source of truth:** `runtime/lane_02_uzg/LANE02-PHASE6-RUNTIME-LEDGER-AUDIT-V1/snapshot.json`
+
+### LANE02-UZG-TAO-MINIAPP-VERIFY-QA-V1 — 2026-05-03T09:50:00+07:00
+
+- **Executor:** CURSOR-2 (overnight autonomous, NTS asleep)
+- **Status:** PASS (Playwright 7/7 production https://uzg.plus)
+- **Scope:** 7 mandatory production screenshots `_LIVE_uzg.plus.png` for TAO mini-app takeover; LAW-NTS-LANE-2-10 deliverables VERIFY + retro copy to `LANE02-UZG-TAO-MINIAPP-CHUAN-V1` (CHUAN uplift PASS_WITH_NOTES → PASS via evidence)
+- **Parent:** `LANE02-UZG-TAO-MINIAPP-CHUAN-V1` PR #115 merge `7799b4b43888c97651c1ff98bc600091fabcf679`
+- **Auth pattern:** Supabase session inject `sb-kkhhpecofolmrodyeslp-auth-token` identical provenance to PLUS-HUB-VERIFY-QA-V1
+- **Harness:** `tests/lane02/qa/02-tao-miniapp-takeover-qa.spec.js` + `tests/lane02/qa/playwright.config.js`
+- **Optional script:** `scripts/lane02-generate-tao-test-user.mjs` (Admin SDK + verify)

@@ -14,7 +14,7 @@
     "snapshots/LANE02-UZG-TAO-MINIAPP-CHUAN-V1.snapshot.live.json",
     "reports/LANE02-UZG-TAO-MINIAPP-CHUAN-V1_REPORT.md",
     "audit_logs/LANE02-UZG-TAO-MINIAPP-CHUAN-V1_audit.log",
-    "screenshots/LANE02-UZG-TAO-MINIAPP-CHUAN-V1/ (PR #115 SHA 7799b4b — bundle inspection verifies)"
+    "screenshots/LANE02-UZG-TAO-MINIAPP-CHUAN-V1/ (7 PNG _LIVE_uzg.plus.png — mirrored from VERIFY-QA 2026-05-03)"
   ],
   "boundary_check": {
     "v2_backend_unmodified": true,
@@ -23,12 +23,15 @@
     "vn_school_compliance": true,
     "v3_tao_routes_preserved": true
   },
-  "ac_status": "27/27 ACs addressed",
-  "ac_passing": 22,
-  "ac_pending_post_push": 5,
-  "qa_verdict": "PASS (deploy verified via bundle inspection; Playwright fixture limitation noted)",
+  "ac_status": "27/27 ACs CLOSED incl. LAW screenshots retro",
+  "ac_passing": 27,
+  "ac_pending_post_push": 0,
+  "qa_verdict": "PASS",
+  "qa_resolved_by": "LANE02-UZG-TAO-MINIAPP-VERIFY-QA-V1",
+  "screenshots_added": 7,
+  "screenshots_mirror_task": "LANE02-UZG-TAO-MINIAPP-VERIFY-QA-V1",
   "qa_tests_authored": 7,
-  "qa_smoke_blocker": "auth-bypass.fixture ENTA gate — same as V2 PLUS Hub task",
+  "qa_smoke_blocker": "(resolved) Former auth fixture limitation for PNG capture — superseded by lane02 qa_user session injection + nightly VERIFY-QA harness",
   "code_pr": "https://github.com/unitonzengarden/uzgplus-app/pull/115",
   "code_commit": "7799b4b43888c97651c1ff98bc600091fabcf679",
   "production_probe": "200 OK at https://uzg.plus/v3/tao",
