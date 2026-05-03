@@ -1,0 +1,98 @@
+{
+  "task_id": "LANE02-UZG-TAO-WIRE-V3-V1",
+  "executor": "CLAC-2 (Claude Code Desktop, Opus 4.7)",
+  "lane": "Lane_02",
+  "project": "UZG",
+  "branch": "lane02/uzg-tao-wire-v3-v1",
+  "started_at": "2026-05-03T08:35:00+07:00",
+  "completed_at": "2026-05-03T09:30:00+07:00",
+  "phases": {
+    "phase_1_audit": "6 TAO sub-modules catalogued + 40 V3 components inventoried",
+    "phase_2_wire": "PlusHubShellV3 cross-bundle navigation root cause fixed",
+    "phase_3_v3_swap": "6 V3 pages now import V3 canon NamTaoBadge + CulturalFramingStrip components",
+    "phase_4_build_deploy": "Build PASS, PR #123 merged self-admin, CF Pages SUCCESS",
+    "phase_5_qa": "8/8 Playwright PASS production with ENTA-complete user",
+    "phase_6_deliverables": "4 file LAW-compliant pushed Uniton_Shared"
+  },
+  "tao_audit": {
+    "bazi": {"v3_components": 4, "page": "V3TaoBaziPage.jsx", "data": "real", "ui": "V3 dark + CulturalFramingStrip"},
+    "ziwei": {"v3_components": 9, "page": "V3TaoZiweiPage.jsx", "data": "real", "ui": "V3 dark + CulturalFramingStrip"},
+    "aier_tao_chat": {"v3_components": 4, "page": "V3TaoAierPage.jsx", "data": "real", "ui": "V3 dark + CulturalFramingStrip"},
+    "aier_tao_v3": {"v3_components": 7, "page": "V3TaoAierPage.jsx (shared)", "data": "real", "ui": "V3"},
+    "phong_thuy": {"v3_components": 6, "page": "V3TaoPhongThuyPage.jsx", "data": "real (Phase 6.2)", "ui": "V3 dark + CulturalFramingStrip"},
+    "lich_van_nien": {"v3_components": 5, "page": "V3TaoLichVanNienPage.jsx", "data": "real (Phase 6.2)", "ui": "V3 dark + CulturalFramingStrip"},
+    "residence": {"v3_components": 5, "page": "(no page; component-only)", "data": "n/a", "ui": "V3"},
+    "total_v3_components": 40,
+    "total_v3_pages": 6
+  },
+  "root_cause_fix": {
+    "bug": "TAO icon click did not navigate from /app to /v3/tao",
+    "root_cause": "PlusHubShellV3.handleTap used react-router navigate(target). V2 PWA (apps/uzg-pwa) and V3 PWA (root vite.config.v3.ts base /v3/) are separate Vite SPA bundles - react-router cannot route across bundle boundaries.",
+    "fix": "handleTap detects (isV3Target XOR inV3Bundle) and uses window.location.assign(target) for hard navigation. Same fix for V3TaoOverviewPage close handler (V3 -> V2 /app).",
+    "law_ref": "LAW-NTS-LLM-08 (fix root cause)"
+  },
+  "files_modified_count": 14,
+  "files_modified": [
+    "src/components/plus-v3/PlusHubShellV3.tsx + apps/uzg-pwa mirror (cross-bundle nav fix)",
+    "src/pages/v3/V3TaoOverviewPage.jsx + mirror (NamTaoBadge + CulturalFramingStrip + close fix)",
+    "src/pages/v3/V3TaoBaziPage.jsx + mirror (CulturalFramingStrip variant=reading)",
+    "src/pages/v3/V3TaoZiweiPage.jsx + mirror (CulturalFramingStrip variant=reading)",
+    "src/pages/v3/V3TaoPhongThuyPage.jsx + mirror (CulturalFramingStrip variant=reading)",
+    "src/pages/v3/V3TaoLichVanNienPage.jsx + mirror (CulturalFramingStrip variant=default)",
+    "src/pages/v3/V3TaoAierPage.jsx + mirror (CulturalFramingStrip variant=short)"
+  ],
+  "code_pr": "https://github.com/unitonzengarden/uzgplus-app/pull/123",
+  "code_commit": "357378d7f488ad08306a2b9afba3c3c53176b5c9",
+  "deploy_workflow_run": "https://github.com/unitonzengarden/uzgplus-app/actions/runs/25267444107",
+  "production_probe": {
+    "/app": "HTTP 200 OK (TAO icon visible + click works)",
+    "/v3/tao": "HTTP 200 OK (mini-app takeover renders)",
+    "/v3/plus": "HTTP 200 OK (preserved, no regression)"
+  },
+  "production_bundle_evidence": {
+    "v2_bundle": "https://uzg.plus/assets/index-BZvwSHcX.js — contains 'window.location.assign' (cross-bundle nav fix)",
+    "v3_bundle": "https://uzg.plus/v3/assets/main-Ch9rSN3p.js — contains 'nam-tao-badge' + 'cultural-framing-strip' (V3 components shipped)"
+  },
+  "qa_results": {
+    "playwright_tests": "8/8 PASS",
+    "screenshots": 8,
+    "test_environment": "https://uzg.plus production",
+    "viewport": "480x900 mobile-first",
+    "auth_method": "ENTA-complete user via Admin SDK (Method 4 sbp_ + service role direct INSERT enta_profiles)",
+    "test_user": "lane02-tao-wire-1777774442476@uzg.local (id 21b90479-0327-40c7-a0c6-08630514c4a2)"
+  },
+  "deliverables_actual": [
+    "snapshots/LANE02-UZG-TAO-WIRE-V3-V1.snapshot.live.json",
+    "reports/LANE02-UZG-TAO-WIRE-V3-V1_REPORT.md",
+    "audit_logs/LANE02-UZG-TAO-WIRE-V3-V1_audit.log",
+    "screenshots/LANE02-UZG-TAO-WIRE-V3-V1/ (8 PNG _LIVE_uzg.plus.png)"
+  ],
+  "boundary_check": {
+    "v2_backend_unmodified": true,
+    "lane01_namespace_unmodified": true,
+    "ascii_commit": true,
+    "no_new_features": true,
+    "v3_only_no_v2_styling": true
+  },
+  "ac_status": "37/37 verifiable PASS",
+  "qa_verdict": "PASS",
+  "constraints_honored": {
+    "zero_questions_to_nts": true,
+    "zero_suggestions_for_nts_actions": true,
+    "no_modify_v2_backend": true,
+    "no_modify_lane_01_namespace": true,
+    "v3_plus_route_preserved": true,
+    "ascii_commit_message": true,
+    "no_new_features": true,
+    "self_merge_admin": true,
+    "enta_complete_user_autonomous": true
+  },
+  "target_repo": "unitonzengarden/uzgplus-app + unitonzengarden/Uniton_Shared",
+  "forbidden_repos_untouched": ["AIFI_LIFE", "aier-life-super-app", "_archive_chatbot", "Uniton_OS"],
+  "local_desktop_paths": {
+    "snapshot": "D:\\UZG\\Projects-v2\\Uniton_Shared\\snapshots\\LANE02-UZG-TAO-WIRE-V3-V1.snapshot.live.json",
+    "report": "D:\\UZG\\Projects-v2\\Uniton_Shared\\reports\\LANE02-UZG-TAO-WIRE-V3-V1_REPORT.md",
+    "audit_log": "D:\\UZG\\Projects-v2\\Uniton_Shared\\audit_logs\\LANE02-UZG-TAO-WIRE-V3-V1_audit.log",
+    "screenshots_dir": "D:\\UZG\\Projects-v2\\Uniton_Shared\\screenshots\\LANE02-UZG-TAO-WIRE-V3-V1\\"
+  }
+}
