@@ -1,9 +1,86 @@
 {
   "project_slug": "uzg-plus",
   "github_repo": "unitonzengarden/uzgplus-app",
-  "polled_at": "2026-05-03T18:31:53.865Z",
+  "polled_at": "2026-05-03T19:41:35.906Z",
   "count": 30,
   "commits": [
+    {
+      "sha": "4bd5d3864694104f5fc723f07324b6955b7d5fbb",
+      "message": "chore(LANE01): Sprint 8.2.1 P0 production probe evidence (post-merge curl) [vercel skip] (#178)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-03T19:29:54Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/4bd5d3864694104f5fc723f07324b6955b7d5fbb"
+    },
+    {
+      "sha": "da37caa126345f8a2f7f684d75e38b7f0f302775",
+      "message": "chore(lane02): U-Reward V3 Sprint 4 Achievements deliverables",
+      "author": "unitonzengarden",
+      "committed_at": "2026-05-03T19:27:22Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/da37caa126345f8a2f7f684d75e38b7f0f302775"
+    },
+    {
+      "sha": "1483835b63148e05709346a18ce164b807ff0447",
+      "message": "fix(LANE01): Sprint 8.2.1 P0 EMERGENCY - Step 3 black screen + theme contrast (white-on-light) (#177)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-03T19:24:38Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/1483835b63148e05709346a18ce164b807ff0447"
+    },
+    {
+      "sha": "7623653802de006b22df6058141619b28f9cd87f",
+      "message": "feat(lane02/uzg/u-reward): Sprint 4 achievements + streak milestone overlays (#176)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-03T19:21:06Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/7623653802de006b22df6058141619b28f9cd87f"
+    },
+    {
+      "sha": "df9f53d538e17a8e70029d3addbc0e88f3ad94b9",
+      "message": "fix(lane03): preserve profile identity on partial update",
+      "author": "unitonzengarden",
+      "committed_at": "2026-05-03T19:14:54Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/df9f53d538e17a8e70029d3addbc0e88f3ad94b9"
+    },
+    {
+      "sha": "a5c78c445e6bfd1333c0b4655fd644a2535175c8",
+      "message": "feat(u-reward): add StreakMilestoneOverlay and Sprint 4 achievements audit",
+      "author": "unitonzengarden",
+      "committed_at": "2026-05-03T19:13:57Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/a5c78c445e6bfd1333c0b4655fd644a2535175c8"
+    },
+    {
+      "sha": "dfaefff6af3288e4b525c91f6fc1c49111957e8d",
+      "message": "chore(lane02): U-Reward V3 Sprint 3 Quiz server-authoritative deliverables",
+      "author": "unitonzengarden",
+      "committed_at": "2026-05-03T19:02:47Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/dfaefff6af3288e4b525c91f6fc1c49111957e8d"
+    },
+    {
+      "sha": "2bb36c1c55c99cbfd9bd60e30e80762cc2cc72af",
+      "message": "feat(lane02/uzg/u-reward): Sprint 3 server-authoritative Quiz refactor (#175)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-03T18:58:41Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/2bb36c1c55c99cbfd9bd60e30e80762cc2cc72af"
+    },
+    {
+      "sha": "13d7881cb30c6b77c87d1fd11f2051354d2ea252",
+      "message": "chore(LANE01): Sprint 8.2 V3 cutover resume note - server upgrade interrupt 2026-05-04 [vercel skip] (#174)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-03T18:52:15Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/13d7881cb30c6b77c87d1fd11f2051354d2ea252"
+    },
+    {
+      "sha": "74856ea35e98ebed064496a682fe70851cb62e5c",
+      "message": "fix(LANE01): Sprint 8.2 ENTA V3 cutover - wire EntaShellV3 + onboarding 4+5 + public profile canon 6 (#173)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-03T18:48:38Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/74856ea35e98ebed064496a682fe70851cb62e5c"
+    },
+    {
+      "sha": "38e0eb807f1be33ea973bab22f7cf7d143c83373",
+      "message": "chore(lane02): add U-Reward seed SQL run audit, report, snapshot",
+      "author": "unitonzengarden",
+      "committed_at": "2026-05-03T18:47:35Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/38e0eb807f1be33ea973bab22f7cf7d143c83373"
+    },
     {
       "sha": "b2149d6ce3f9addf4a0b1193c5f9fbc7459dabcd",
       "message": "chore(lane02): U-Reward V3 Sprint 2 IMPL V2 deliverables (Lane_03 pattern)",
@@ -136,83 +213,6 @@
       "author": "Uniton Zen",
       "committed_at": "2026-05-03T12:24:41Z",
       "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/cc46be45689b2b4d67f3ecdd5fa6c4dc09fa81d2"
-    },
-    {
-      "sha": "9a8cc2df6ae66cb3aebf402157295ca255a8cdc5",
-      "message": "chore(lane02): PLUS Hub V3 IMPLEMENT V1 deliverables",
-      "author": "unitonzengarden",
-      "committed_at": "2026-05-03T12:22:46Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/9a8cc2df6ae66cb3aebf402157295ca255a8cdc5"
-    },
-    {
-      "sha": "7e32a68cbd62f37a98d651501b4c85d18ba618db",
-      "message": "feat(lane02/uzg/plus-hub): V3 alignment catalog wire theme typography (#162)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-05-03T12:19:29Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/7e32a68cbd62f37a98d651501b4c85d18ba618db"
-    },
-    {
-      "sha": "ef438b2f8cdc7c6f61feab548318f02d236f63db",
-      "message": "chore(LANE01): update INDEX.md with FIX-COMPOSE-UI-LEAN-V1 row [vercel skip]",
-      "author": "LANE01-Cursor",
-      "committed_at": "2026-05-03T11:58:23Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/ef438b2f8cdc7c6f61feab548318f02d236f63db"
-    },
-    {
-      "sha": "86043608c483a40985658d7d454fa199ba97ac97",
-      "message": "audit(LANE01): FIX-COMPOSE-UI-LEAN-V1 deliverables 4 muc FLAT [vercel skip] (#161)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-05-03T11:57:54Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/86043608c483a40985658d7d454fa199ba97ac97"
-    },
-    {
-      "sha": "c715ba2ca240eae15dd78070bbb317fd24f80bd1",
-      "message": "fix(lane03): deploy public enta route guard",
-      "author": "unitonzengarden",
-      "committed_at": "2026-05-03T11:48:30Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/c715ba2ca240eae15dd78070bbb317fd24f80bd1"
-    },
-    {
-      "sha": "a681343aaad939b7fd04189a4596b2b0812628da",
-      "message": "fix(LANE01): compose UI lean - suppress noise warnings + consolidate loading/error branches per HOME_SOCIAL_CANON 6.3 (#160)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-05-03T11:47:47Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/a681343aaad939b7fd04189a4596b2b0812628da"
-    },
-    {
-      "sha": "abfe5042fd26e79d21faa64fdd39ef06dec68ec7",
-      "message": "audit(lane02/dev1/plus-hub): V3 alignment audit complete (NO code changes)",
-      "author": "unitonzengarden",
-      "committed_at": "2026-05-03T11:44:40Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/abfe5042fd26e79d21faa64fdd39ef06dec68ec7"
-    },
-    {
-      "sha": "e8ad0d7d70024c48245e884c88ab8816c2d7cb82",
-      "message": "chore(LANE01): update INDEX.md with FIX-AUTH-RESTORE-PERF-V1 row [vercel skip]",
-      "author": "LANE01-Cursor",
-      "committed_at": "2026-05-03T11:27:43Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/e8ad0d7d70024c48245e884c88ab8816c2d7cb82"
-    },
-    {
-      "sha": "8519702308389c1a702fe6724132928bcdc70a9a",
-      "message": "audit(LANE01): FIX-AUTH-RESTORE-PERF-V1 deliverables 4 muc FLAT [vercel skip] (#159)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-05-03T11:27:18Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/8519702308389c1a702fe6724132928bcdc70a9a"
-    },
-    {
-      "sha": "1c9d8d4ad52b60c37dd9c11c1a267e53aabc54fb",
-      "message": "fix(LANE01): auth-restore PERSISTED_SESSION_RESTORE_TIMEOUT_MS 20000 -> 8000 per Audit 7.2.5 F2 (#158)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-05-03T11:20:04Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/1c9d8d4ad52b60c37dd9c11c1a267e53aabc54fb"
-    },
-    {
-      "sha": "4e1ae59b47b4dadd2319242991b277902a9196b2",
-      "message": "docs(lane02): close Tu Vi V2 module",
-      "author": "unitonzengarden",
-      "committed_at": "2026-05-03T11:13:59Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/4e1ae59b47b4dadd2319242991b277902a9196b2"
     }
   ]
 }
