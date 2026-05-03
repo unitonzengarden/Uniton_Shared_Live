@@ -1,9 +1,44 @@
 {
   "project_slug": "uzg-plus",
   "github_repo": "unitonzengarden/uzgplus-app",
-  "polled_at": "2026-05-02T23:44:31.905Z",
+  "polled_at": "2026-05-03T01:22:32.796Z",
   "count": 30,
   "commits": [
+    {
+      "sha": "d534e133a163483e26819d9499b5640844ff5903",
+      "message": "feat(lane02/uzg/plus-hub): redesign 12 mini app icons V3 canon + verify TAO (#122)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-03T01:06:03Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/d534e133a163483e26819d9499b5640844ff5903"
+    },
+    {
+      "sha": "3ae060890daa5de2228cbe3624397d6a2a5a256a",
+      "message": "test(lane02/uzg/tao): TAO VERIFY-QA Playwright harness + lane02 qa config [vercel skip]",
+      "author": "unitonzengarden",
+      "committed_at": "2026-05-03T00:38:33Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/3ae060890daa5de2228cbe3624397d6a2a5a256a"
+    },
+    {
+      "sha": "35896e9da24e687e9429509193e81b8101843f63",
+      "message": "fix(lane02/uzg/plus-hub): 3 critical bug hardening + V3 canon CSS (#121)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-03T00:33:52Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/35896e9da24e687e9429509193e81b8101843f63"
+    },
+    {
+      "sha": "001bba1fe4061d311648a590f3da116f7a2d1e4c",
+      "message": "Merge pull request #120 from unitonzengarden/fix/LANE01-emergency-scroll-lock-enta-blank",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-03T00:28:42Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/001bba1fe4061d311648a590f3da116f7a2d1e4c"
+    },
+    {
+      "sha": "c6b59faba3e4e11722af62997e48145626830278",
+      "message": "fix(p0): scroll lock root cause + ENTA blank defensive boundary",
+      "author": "LANE01-Cursor",
+      "committed_at": "2026-05-03T00:27:59Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/c6b59faba3e4e11722af62997e48145626830278"
+    },
     {
       "sha": "5d629477aaccf4e23a0f45e00b485c6a8afa9c79",
       "message": "test(lane02/uzg): PLUS Hub bugfix QA smoke tests + 6 screenshots [vercel skip]",
@@ -178,41 +213,6 @@
       "author": "Uniton Zen",
       "committed_at": "2026-05-02T14:22:22Z",
       "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/f5736f5147eb428e9b476d8466bb7e76364810c1"
-    },
-    {
-      "sha": "aec2f5369a8a367131046140f04ab54a4da5334b",
-      "message": "fix(lane02/phase6): wrap handleTaoAierChat in try/catch (surface 502 root cause) (#101)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-05-02T14:20:34Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/aec2f5369a8a367131046140f04ab54a4da5334b"
-    },
-    {
-      "sha": "18fe6a78fecf247fde9b83c8552528689178d73f",
-      "message": "fix(lane02/phase6): AIER chat 502 — Claude model name + try/catch fetch (#100)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-05-02T14:12:14Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/18fe6a78fecf247fde9b83c8552528689178d73f"
-    },
-    {
-      "sha": "5c56bd30d7796f9de3f9b9579d9ac440e5b657d3",
-      "message": "fix(lane02/phase6): sync apps/uzg-pwa/public/_worker.js with V1 changes (production deploy fix) (#99)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-05-02T14:04:15Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/5c56bd30d7796f9de3f9b9579d9ac440e5b657d3"
-    },
-    {
-      "sha": "dd7191a61d9a1ff710daadab1cd9059716b711f9",
-      "message": "fix p6 endgame 2 composer v2 exact field names (#98)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-05-02T13:58:07Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/dd7191a61d9a1ff710daadab1cd9059716b711f9"
-    },
-    {
-      "sha": "69a2ee23de57ffd7ce6c0852026a82cf3f64de35",
-      "message": "feat(lane02/phase6): wire AIER chat backend mock to real (#95)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-05-02T13:53:34Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/69a2ee23de57ffd7ce6c0852026a82cf3f64de35"
     }
   ]
 }
