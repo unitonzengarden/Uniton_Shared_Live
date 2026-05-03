@@ -1,9 +1,107 @@
 {
   "project_slug": "uzg-plus",
   "github_repo": "unitonzengarden/uzgplus-app",
-  "polled_at": "2026-05-03T04:59:22.714Z",
+  "polled_at": "2026-05-03T07:23:10.063Z",
   "count": 30,
   "commits": [
+    {
+      "sha": "145ba049055e87accd248c020244463f34d7c5e8",
+      "message": "chore(LANE01): update INDEX.md with FIX-COMPOSE-LAYOUT-V1 row [vercel skip] (#141)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-03T06:58:41Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/145ba049055e87accd248c020244463f34d7c5e8"
+    },
+    {
+      "sha": "19362141ae7eca2f0058780e8a7418f3fe1e8aa0",
+      "message": "audit(LANE01): FIX-COMPOSE-LAYOUT-V1 deliverables 4 muc FLAT [vercel skip] (#140)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-03T06:58:15Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/19362141ae7eca2f0058780e8a7418f3fe1e8aa0"
+    },
+    {
+      "sha": "4aa1971f5047462590b5abf9ac33c13f3a05a4e1",
+      "message": "fix(LANE01): compose layout - prevent composer card stretching to giant black-oval (#139)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-03T06:49:55Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/4aa1971f5047462590b5abf9ac33c13f3a05a4e1"
+    },
+    {
+      "sha": "26fe29c70c2b2d8f4c7a6347ee55e77ced7952df",
+      "message": "chore(lane02): TAO Tu Vi V3 full app deliverables + INDEX",
+      "author": "unitonzengarden",
+      "committed_at": "2026-05-03T06:38:15Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/26fe29c70c2b2d8f4c7a6347ee55e77ced7952df"
+    },
+    {
+      "sha": "656f32e379a5778226e3029474ada0b67414a2fd",
+      "message": "feat(lane02/uzg/tao): refactor 5 sub-route full app + Tu Vi V3 dark + Nam Tao branding (#138)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-03T06:23:01Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/656f32e379a5778226e3029474ada0b67414a2fd"
+    },
+    {
+      "sha": "03add32a834aa983570ae744210f01f2a9ba8c4c",
+      "message": "chore(LANE01): update INDEX.md with FIX-I18N-RESOLVER-PATCH-V1 row [vercel skip] (#137)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-03T06:21:48Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/03add32a834aa983570ae744210f01f2a9ba8c4c"
+    },
+    {
+      "sha": "9143450ed062e759284e0beda30b33c3f5538989",
+      "message": "audit(LANE01): FIX-I18N-RESOLVER-PATCH-V1 deliverables 4 muc FLAT [vercel skip] (#136)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-03T06:21:14Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/9143450ed062e759284e0beda30b33c3f5538989"
+    },
+    {
+      "sha": "d6d16e1bd9d42a0bf0978e302c20e701a5e08123",
+      "message": "fix(LANE01): i18n resolver fallback param honored, BUG-004 root patch (#135)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-03T06:11:56Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/d6d16e1bd9d42a0bf0978e302c20e701a5e08123"
+    },
+    {
+      "sha": "1ae3d3b1b633e91d133835377b26f9cb3a873f09",
+      "message": "chore(lane02): TAO Tu Vi engine wire B1 deliverables + INDEX",
+      "author": "unitonzengarden",
+      "committed_at": "2026-05-03T05:30:24Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/1ae3d3b1b633e91d133835377b26f9cb3a873f09"
+    },
+    {
+      "sha": "d1f06ae01f00686d08ea921bd7c1b095438fb80c",
+      "message": "audit(LANE01): SETUP-FLAT-PATTERN-MIGRATE-V1 companion verify [vercel skip] (#134)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-03T05:23:02Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/d1f06ae01f00686d08ea921bd7c1b095438fb80c"
+    },
+    {
+      "sha": "ccb9723eed6b17cc4152d5efbb0c07e4d4ce366f",
+      "message": "setup(LANE01): migrate to flat pattern Lane_02 standard [vercel skip] (#133)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-03T05:21:48Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/ccb9723eed6b17cc4152d5efbb0c07e4d4ce366f"
+    },
+    {
+      "sha": "fbb9e023a9e345f85d2d85221556a026c4b9731e",
+      "message": "feat(lane02/uzg/tao): B1 wire ZIWEI engine ENTA self chart render (#132)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-03T05:17:44Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/fbb9e023a9e345f85d2d85221556a026c4b9731e"
+    },
+    {
+      "sha": "02806baf033690f2c49819aec421d040dd483425",
+      "message": "audit(LANE01): SETUP-WORKSPACE-RESET-V1 companion files [vercel skip] (#131)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-03T05:04:03Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/02806baf033690f2c49819aec421d040dd483425"
+    },
+    {
+      "sha": "c16670fc367752509a82916bba67ad39b4006b0f",
+      "message": "setup(LANE01): workspace reset + lane_01 namespace v2.0 init [vercel skip] (#130)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-03T05:01:27Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/c16670fc367752509a82916bba67ad39b4006b0f"
+    },
     {
       "sha": "8e470d3e87ef21d85c1da2fea00d567e6d75c26d",
       "message": "chore(lane02): TAO PWA OS Mobile lock deliverables + INDEX update",
@@ -115,104 +213,6 @@
       "author": "Uniton Zen",
       "committed_at": "2026-05-02T18:26:07Z",
       "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/89a677cb38b7b6c5b128fb00881410959982f577"
-    },
-    {
-      "sha": "3c56418de6a14f0362a1192b301cd27c32011e0f",
-      "message": "Merge pull request #118 from unitonzengarden/feat/LANE01-enta-wizard-result-reveal",
-      "author": "Uniton Zen",
-      "committed_at": "2026-05-02T18:20:27Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/3c56418de6a14f0362a1192b301cd27c32011e0f"
-    },
-    {
-      "sha": "8a3b350bf780fff82ee7fd037adba2c94862ad45",
-      "message": "feat(enta): EntaWheelHero reusable + Step 3 Result Reveal + Dashboard hero mount",
-      "author": "LANE01-Cursor",
-      "committed_at": "2026-05-02T18:19:55Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/8a3b350bf780fff82ee7fd037adba2c94862ad45"
-    },
-    {
-      "sha": "036f61b1cf8df246d2a9c17f8e2fa91596eb7e02",
-      "message": "feat(lane02/uzg/tao): Phase 6.2 Phong Thủy + Vạn Niên flip mock to real (#117)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-05-02T18:02:24Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/036f61b1cf8df246d2a9c17f8e2fa91596eb7e02"
-    },
-    {
-      "sha": "d539225f054c66e6f60e13ebac11f54c4ff40a15",
-      "message": "Merge pull request #116 from unitonzengarden/feat/LANE01-enta-wizard-scaffold",
-      "author": "Uniton Zen",
-      "committed_at": "2026-05-02T18:00:45Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/d539225f054c66e6f60e13ebac11f54c4ff40a15"
-    },
-    {
-      "sha": "75e33cf670b46f0f8d57c6f95f7237330ce75ce1",
-      "message": "feat(enta): 5-step onboarding wizard scaffold + step indicator",
-      "author": "LANE01-Cursor",
-      "committed_at": "2026-05-02T17:59:57Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/75e33cf670b46f0f8d57c6f95f7237330ce75ce1"
-    },
-    {
-      "sha": "5a3049963e1bdeac08558cacca190f3d87e4d5ae",
-      "message": "test(lane02/uzg): PLUS Hub V2 upgrade QA spec (6 tests production) [vercel skip]",
-      "author": "unitonzengarden",
-      "committed_at": "2026-05-02T17:19:51Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/5a3049963e1bdeac08558cacca190f3d87e4d5ae"
-    },
-    {
-      "sha": "7799b4b43888c97651c1ff98bc600091fabcf679",
-      "message": "feat(lane02/uzg/tao): TAO mini app full-screen takeover pattern V3 canon (#115)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-05-02T16:45:24Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/7799b4b43888c97651c1ff98bc600091fabcf679"
-    },
-    {
-      "sha": "5e4dc686ae75197fb28aac4351070306cc51bda9",
-      "message": "Merge pull request #114 from unitonzengarden/feat/v2-home-fix-3-keystone-nts-5bugs",
-      "author": "Uniton Zen",
-      "committed_at": "2026-05-02T16:40:49Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/5e4dc686ae75197fb28aac4351070306cc51bda9"
-    },
-    {
-      "sha": "9202a0b8ec9f786828c198795980f23738e32daa",
-      "message": "fix(home): B4 media lightbox for image + video viewers",
-      "author": "LANE01-Cursor",
-      "committed_at": "2026-05-02T16:39:49Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/9202a0b8ec9f786828c198795980f23738e32daa"
-    },
-    {
-      "sha": "5af73cacc893b593cf33fe3690bb0553d55dd8a2",
-      "message": "fix(home): B3 dedicated /compose page wires real PostComposer",
-      "author": "LANE01-Cursor",
-      "committed_at": "2026-05-02T16:36:13Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/5af73cacc893b593cf33fe3690bb0553d55dd8a2"
-    },
-    {
-      "sha": "b470ec64b3105e6c8b0f47b246bfaf80391fff65",
-      "message": "fix(home): B5 content limits 900 chars, 9 images, 2 MB, 36s video",
-      "author": "LANE01-Cursor",
-      "committed_at": "2026-05-02T16:33:50Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/b470ec64b3105e6c8b0f47b246bfaf80391fff65"
-    },
-    {
-      "sha": "d8111bd68e7ab243811b662feaaf166f829c3e3e",
-      "message": "fix(home): B2 profile banner+avatar layering z-index",
-      "author": "LANE01-Cursor",
-      "committed_at": "2026-05-02T16:31:45Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/d8111bd68e7ab243811b662feaaf166f829c3e3e"
-    },
-    {
-      "sha": "d346219b397eab7d6a3588a36142c67601e2e9eb",
-      "message": "fix(home): B1 U-Reward popup close button + 24h dismissal",
-      "author": "LANE01-Cursor",
-      "committed_at": "2026-05-02T16:30:03Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/d346219b397eab7d6a3588a36142c67601e2e9eb"
-    },
-    {
-      "sha": "831595356c35819bbdd38a43aad0eabcec3d8187",
-      "message": "feat(lane02/v2live): PLUS Hub V2 UI upgrade icon grid + real modules wire (#113)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-05-02T15:58:51Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/831595356c35819bbdd38a43aad0eabcec3d8187"
     }
   ]
 }
