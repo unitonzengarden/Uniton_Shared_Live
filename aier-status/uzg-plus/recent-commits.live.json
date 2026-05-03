@@ -1,9 +1,44 @@
 {
   "project_slug": "uzg-plus",
   "github_repo": "unitonzengarden/uzgplus-app",
-  "polled_at": "2026-05-03T11:59:00.586Z",
+  "polled_at": "2026-05-03T13:42:15.412Z",
   "count": 30,
   "commits": [
+    {
+      "sha": "2e0115149f3ca63862f342f96e17facda4d4343f",
+      "message": "chore(LANE01): update INDEX.md with FIX-PWA-SW-WORKBOX-V1 row [vercel skip]",
+      "author": "LANE01-Cursor",
+      "committed_at": "2026-05-03T12:32:40Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/2e0115149f3ca63862f342f96e17facda4d4343f"
+    },
+    {
+      "sha": "40a90d3c534c68fb305fc64f8231ab7e98b2cd57",
+      "message": "audit(LANE01): FIX-PWA-SW-WORKBOX-V1 deliverables 4 muc FLAT [vercel skip] (#164)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-03T12:32:15Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/40a90d3c534c68fb305fc64f8231ab7e98b2cd57"
+    },
+    {
+      "sha": "cc46be45689b2b4d67f3ecdd5fa6c4dc09fa81d2",
+      "message": "fix(LANE01): PWA SW migration to Workbox via vite-plugin-pwa per Audit 7.2.5 F4 (#163)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-03T12:24:41Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/cc46be45689b2b4d67f3ecdd5fa6c4dc09fa81d2"
+    },
+    {
+      "sha": "9a8cc2df6ae66cb3aebf402157295ca255a8cdc5",
+      "message": "chore(lane02): PLUS Hub V3 IMPLEMENT V1 deliverables",
+      "author": "unitonzengarden",
+      "committed_at": "2026-05-03T12:22:46Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/9a8cc2df6ae66cb3aebf402157295ca255a8cdc5"
+    },
+    {
+      "sha": "7e32a68cbd62f37a98d651501b4c85d18ba618db",
+      "message": "feat(lane02/uzg/plus-hub): V3 alignment catalog wire theme typography (#162)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-03T12:19:29Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/7e32a68cbd62f37a98d651501b4c85d18ba618db"
+    },
     {
       "sha": "ef438b2f8cdc7c6f61feab548318f02d236f63db",
       "message": "chore(LANE01): update INDEX.md with FIX-COMPOSE-UI-LEAN-V1 row [vercel skip]",
@@ -178,41 +213,6 @@
       "author": "Uniton Zen",
       "committed_at": "2026-05-03T08:39:35Z",
       "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/83bcf0f9a1fccc5cb246c178a3dfc23ad0d657ef"
-    },
-    {
-      "sha": "dc86aa1bc84c66cd4c4fc9352c7328faf6b0ad2b",
-      "message": "fix(ci): open PR for CONTEXT regen instead of push to protected main [vercel skip] (#148)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-05-03T08:39:03Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/dc86aa1bc84c66cd4c4fc9352c7328faf6b0ad2b"
-    },
-    {
-      "sha": "3956743b4792ff6ad0a41546042a703dc69351b3",
-      "message": "feat(lane02/cursor2/runtime): context mechanism replaces passive LAW drift [vercel skip] (#147)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-05-03T08:36:08Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/3956743b4792ff6ad0a41546042a703dc69351b3"
-    },
-    {
-      "sha": "6cc64a9c9768d1c7c7a1f56267b6a147ac00bc13",
-      "message": "chore(LANE01): update INDEX.md with FIX-COMPOSE-1STEP-V1 row [vercel skip]",
-      "author": "LANE01-Cursor",
-      "committed_at": "2026-05-03T08:34:36Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/6cc64a9c9768d1c7c7a1f56267b6a147ac00bc13"
-    },
-    {
-      "sha": "edd8a3f18e1fdaa41ea0cc3205648a9fd8f75579",
-      "message": "audit(LANE01): FIX-COMPOSE-1STEP-V1 deliverables 4 muc FLAT [vercel skip] (#146)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-05-03T08:34:03Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/edd8a3f18e1fdaa41ea0cc3205648a9fd8f75579"
-    },
-    {
-      "sha": "eefcd974b1983044d20482bf9f03e09602ef2a07",
-      "message": "feat(lane02/cursor2/design): publish V3 design system canon [vercel skip] (#145)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-05-03T08:28:46Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/eefcd974b1983044d20482bf9f03e09602ef2a07"
     }
   ]
 }
