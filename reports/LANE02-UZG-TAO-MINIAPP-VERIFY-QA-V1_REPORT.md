@@ -88,9 +88,10 @@ Generation + QA + screenshots + LAW deliverables + retro copy + autonomy + bound
 
 ## 7. POST-COMMIT VERIFICATION
 
-Executor shall run `curl -o NUL -s -w "%{http_code}` against raw URLs in §11 sau khi đẩy lên canonical và sau khi workflow sync Uniton_Shared → Uniton_Shared_Live (~ vài phút).  
-`STATE.live.md` được generator cập nhật khi pipeline `auto_lane02_state.yml` kích hoạt theo các path đã whitelist (bao gồm snapshot lane02).
+Executor shall run HTTP checks against raw URLs in §11 sau khi workflow sync `Uniton_Shared → Uniton_Shared_Live` (thử lại sau ~90–120s lag).  
+`STATE.live.md` được generator cập nhật khi pipeline `auto_lane02_state.yml` kích hoạt theo các path đã whitelist (bao gồm snapshot lane02).  
 
+**Audit log mirror boundary:** `audit_logs/LANE02-UZG-TAO-MINIAPP-VERIFY-QA-V1_audit.log` tồn tại trên **canonical** `unitonzengarden/Uniton_Shared` (file force-add vì `.gitignore` `*.log`), nhưng **không được copy** sang `Uniton_Shared_Live` theo policy trong `.github/workflows/sync_runtime_to_public.yml` (operational logs). CLA dùng REPORT + snapshot cho quick URL; audit remains private canonical evidence.
 ---
 
 ## 8. POST-TASK STATE
@@ -114,6 +115,8 @@ DDL Phase 6.2 flip Phong Thủy / Vạn Niên mock→real như backlog đã note
 
 ## 11. RAW EVIDENCE (LAW-NTS-LLM-12 — minimum 4+ raw URLs)
 
+**Mirror policy note:** `.github/workflows/sync_runtime_to_public.yml` intentionally excludes `audit_logs/**` from `Uniton_Shared_Live` (operational/security boundary). Canonical repo `unitonzengarden/Uniton_Shared` carries `audit_logs/LANE02-UZG-TAO-MINIAPP-VERIFY-QA-V1_audit.log` on `main` (same commit series as snapshots below). CLA-facing raw URLs below use artifacts that mirror **does** sync.
+
 ```
 SNAPSHOT:
 https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/snapshots/LANE02-UZG-TAO-MINIAPP-VERIFY-QA-V1.snapshot.live.json
@@ -121,15 +124,15 @@ https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/snapsh
 REPORT:
 https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/reports/LANE02-UZG-TAO-MINIAPP-VERIFY-QA-V1_REPORT.md
 
-AUDIT LOG:
-https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/audit_logs/LANE02-UZG-TAO-MINIAPP-VERIFY-QA-V1_audit.log
-
-STATE (single fetch — auto Lane_02):
+STATE.live.md (Lane_02 aggregator):
 https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/runtime/lane_02_uzg/STATE.live.md
 
-TAO OVERVIEW SCREENSHOT:
-https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/screenshots/LANE02-UZG-TAO-MINIAPP-VERIFY-QA-V1/01_tao_overview_takeover_LIVE_uzg.plus.png
+SCREENSHOT 03 (bazi LIVE):
+https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/screenshots/LANE02-UZG-TAO-MINIAPP-VERIFY-QA-V1/03_bazi_real_backend_LIVE_uzg.plus.png
 
-CHUAN PARENT SNAPSHOT:
+SCREENSHOT 06 (close returns hub):
+https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/screenshots/LANE02-UZG-TAO-MINIAPP-VERIFY-QA-V1/06_close_returns_plus_hub_LIVE_uzg.plus.png
+
+CHUAN SNAPSHOT update (parent uplift):
 https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/snapshots/LANE02-UZG-TAO-MINIAPP-CHUAN-V1.snapshot.live.json
 ```

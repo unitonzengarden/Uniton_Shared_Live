@@ -43,7 +43,8 @@
   "constraints_honored": {
     "zero_questions_to_nts": true,
     "bearer_via_admin_pattern_available": true,
-    "screenshots_urls_verified_post_commit": "pending CI sync to Uniton_Shared_Live — see REPORT §11"
+    "live_mirror_checks": "HTTP 200 for snapshots/reports/screenshots + STATE.live on Uniton_Shared_Live ~90–120s after push (TAO-QA verifier)",
+    "audit_log_delivery": "Canonical Uniton_Shared only — audit_logs path excluded from public mirror by sync_runtime_to_public.yml operational boundary"
   },
   "qa_verdict": "PASS",
   "ac_status": "24/24 per task spec mapping"
