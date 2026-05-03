@@ -10,7 +10,7 @@
 ## §0. Header
 
 - **Generator:** `aier-state-update v1.0` invoked via `scripts/runtime/generate_project_status.py v1.1`
-- **Source commit:** `38ad9205992fe8f8bf26a8ef04ffd4f0e6fd932b` (short: `38ad920`)
+- **Source commit:** `b5b07e9925aa0c5b12cd6f43eb8af6d8afe59319` (short: `b5b07e9`)
 - **Auto-generated:** `true` (do not hand-edit)
 - **Authority:** repo-backed automation per LAW_N8 §L8.2 explicitly enabled CI mode (state-mirror auto-regenerate scope only)
 
@@ -68,11 +68,11 @@
 
 | SHA | Author | Subject |
 |---|---|---|
+| `b5b07e9` | unitonzengarden | docs(lane02/uzg/tao-merge-into-app-v1): ship deliverables LAW-compliant |
+| `d6df2e6` | AIER State Bot | [auto-status] regen runtime+network surfaces from 38ad920 [vercel skip] |
 | `38ad920` | unitonzengarden | docs(lane02/uzg/tao-wire-v3-v1): ship deliverables LAW-compliant |
 | `ae548c2` | Uniton Zen | audit: LANE01-V2-HOME-SOCIAL-FULL-AUDIT-V2 — comprehensive HOME re-audit (#108) |
 | `150fa21` | AIER State Bot | [auto-status] regen runtime+network surfaces from 9ef4414 [vercel skip] |
-| `9ef4414` | unitonzengarden | docs(lane02/uzg/plus-hub-icon-redesign-v1): ship deliverables LAW-compliant |
-| `f2079b6` | Ecosystem Poller Bot | poll: ecosystem state update [vercel skip] |
 
 ## §7. Latest 5 DONE Tasks (from MASTER_CHECKLIST)
 
