@@ -1,7 +1,7 @@
 {
   "project_slug": "uzg-plus",
   "github_repo": "unitonzengarden/uzgplus-app",
-  "last_polled_at": "2026-05-03T21:11:14.273Z",
+  "last_polled_at": "2026-05-03T22:01:59.051Z",
   "poll_status": "OK",
   "poll_token_source": "env:GH_TOKEN",
   "default_branch": "main",
@@ -18,5 +18,5 @@
   "last_workflow_run_status": "failure",
   "last_workflow_run_name": "auto_state_regen",
   "last_workflow_run_at": "2026-05-03T19:29:57Z",
-  "api_rate_limit_remaining": "4996"
+  "api_rate_limit_remaining": "4997"
 }
