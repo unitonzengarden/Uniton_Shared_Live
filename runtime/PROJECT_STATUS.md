@@ -10,7 +10,7 @@
 ## §0. Header
 
 - **Generator:** `aier-state-update v1.0` invoked via `scripts/runtime/generate_project_status.py v1.1`
-- **Source commit:** `9ef4414e50e1a164f62baecc24e801bc94687421` (short: `9ef4414`)
+- **Source commit:** `38ad9205992fe8f8bf26a8ef04ffd4f0e6fd932b` (short: `38ad920`)
 - **Auto-generated:** `true` (do not hand-edit)
 - **Authority:** repo-backed automation per LAW_N8 §L8.2 explicitly enabled CI mode (state-mirror auto-regenerate scope only)
 
@@ -68,11 +68,11 @@
 
 | SHA | Author | Subject |
 |---|---|---|
+| `38ad920` | unitonzengarden | docs(lane02/uzg/tao-wire-v3-v1): ship deliverables LAW-compliant |
+| `ae548c2` | Uniton Zen | audit: LANE01-V2-HOME-SOCIAL-FULL-AUDIT-V2 — comprehensive HOME re-audit (#108) |
+| `150fa21` | AIER State Bot | [auto-status] regen runtime+network surfaces from 9ef4414 [vercel skip] |
 | `9ef4414` | unitonzengarden | docs(lane02/uzg/plus-hub-icon-redesign-v1): ship deliverables LAW-compliant |
 | `f2079b6` | Ecosystem Poller Bot | poll: ecosystem state update [vercel skip] |
-| `2975f05` | Uniton Zen | Merge pull request #107 from unitonzengarden/audit/lane01-clac1-v2-emergency-scroll-lock-enta-blank- |
-| `7756168` | CLAC Executor | audit: P0 emergency scroll lock + ENTA blank fix LIVE [vercel skip] |
-| `4b1d78a` | unitonzengarden | docs(lane02/tao): mirror policy note for TAO VERIFY-QA audit log [vercel skip] |
 
 ## §7. Latest 5 DONE Tasks (from MASTER_CHECKLIST)
 
