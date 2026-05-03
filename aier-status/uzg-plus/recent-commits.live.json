@@ -1,9 +1,37 @@
 {
   "project_slug": "uzg-plus",
   "github_repo": "unitonzengarden/uzgplus-app",
-  "polled_at": "2026-05-03T16:30:13.623Z",
+  "polled_at": "2026-05-03T17:29:04.344Z",
   "count": 30,
   "commits": [
+    {
+      "sha": "da0a6f53b8ad463527d0c592b51b191e763ef779",
+      "message": "audit(lane02/dev1/u-reward): Sprint 2 audit complete (NO code changes)",
+      "author": "unitonzengarden",
+      "committed_at": "2026-05-03T17:11:14Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/da0a6f53b8ad463527d0c592b51b191e763ef779"
+    },
+    {
+      "sha": "96fed193f785cae6b99c01a34f35d75e5ecff8ed",
+      "message": "chore(lane02): HOME EMERGENCY FIX V1 deliverables + checkpoint (Lane_03 pattern)",
+      "author": "unitonzengarden",
+      "committed_at": "2026-05-03T16:50:39Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/96fed193f785cae6b99c01a34f35d75e5ecff8ed"
+    },
+    {
+      "sha": "096ac02d741ec93449a45c1f9bcee5460bd0f9a6",
+      "message": "feat(lane02/uzg/home): H2 - U pill NavLink to /app/u-reward (V3 canon) (#169)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-03T16:44:28Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/096ac02d741ec93449a45c1f9bcee5460bd0f9a6"
+    },
+    {
+      "sha": "b4d55d6d8e1c24355ec02a6ae2da93b1e5ac781b",
+      "message": "fix(lane02): EMERGENCY revert PR #165 manualChunks bundle split (TDZ fix) (#168)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-03T16:38:54Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/b4d55d6d8e1c24355ec02a6ae2da93b1e5ac781b"
+    },
     {
       "sha": "33b7d3d45aaf20f3d13ba8078015101043f8d8fe",
       "message": "chore(lane02): U-Reward V3 Sprint 1 deliverables",
@@ -185,34 +213,6 @@
       "author": "Uniton Zen",
       "committed_at": "2026-05-03T11:08:12Z",
       "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/0d1d0dbf115526dcfebaef74d4064de8e72f2958"
-    },
-    {
-      "sha": "0810c769d1572f127c7e2d8295c0bbd252dcbd25",
-      "message": "chore(LANE01): update INDEX.md with AUDIT-PROFILE-BOOTSTRAP-DIAGNOSTIC-V1 row [vercel skip]",
-      "author": "LANE01-Cursor",
-      "committed_at": "2026-05-03T10:19:58Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/0810c769d1572f127c7e2d8295c0bbd252dcbd25"
-    },
-    {
-      "sha": "064cc3f2ca85b63a31f844e46da89d7b4eec4059",
-      "message": "audit(LANE01): profile_bootstrap diagnostic Sprint 7.4.1 - Cat 1 QA data gap + Sprint 7.4.2 recommendation [vercel skip] (#154)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-05-03T10:19:33Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/064cc3f2ca85b63a31f844e46da89d7b4eec4059"
-    },
-    {
-      "sha": "eb574fad4f5ac50cfbca25d7151d7d8a6c4d4a47",
-      "message": "feat(lane02): TUVI Final V2 Phase B export PNG + QA deliverables [vercel skip]",
-      "author": "unitonzengarden",
-      "committed_at": "2026-05-03T09:59:02Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/eb574fad4f5ac50cfbca25d7151d7d8a6c4d4a47"
-    },
-    {
-      "sha": "da1cfed5eb017b87672580f50c2fc99816b439f8",
-      "message": "chore(lane02): add QA deliverables snapshots and root screenshots [vercel skip]",
-      "author": "unitonzengarden",
-      "committed_at": "2026-05-03T09:52:16Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/da1cfed5eb017b87672580f50c2fc99816b439f8"
     }
   ]
 }
