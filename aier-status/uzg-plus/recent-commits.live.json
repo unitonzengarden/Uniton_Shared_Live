@@ -1,9 +1,58 @@
 {
   "project_slug": "uzg-plus",
   "github_repo": "unitonzengarden/uzgplus-app",
-  "polled_at": "2026-05-03T09:03:51.600Z",
+  "polled_at": "2026-05-03T10:16:32.240Z",
   "count": 30,
   "commits": [
+    {
+      "sha": "eb574fad4f5ac50cfbca25d7151d7d8a6c4d4a47",
+      "message": "feat(lane02): TUVI Final V2 Phase B export PNG + QA deliverables [vercel skip]",
+      "author": "unitonzengarden",
+      "committed_at": "2026-05-03T09:59:02Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/eb574fad4f5ac50cfbca25d7151d7d8a6c4d4a47"
+    },
+    {
+      "sha": "da1cfed5eb017b87672580f50c2fc99816b439f8",
+      "message": "chore(lane02): add QA deliverables snapshots and root screenshots [vercel skip]",
+      "author": "unitonzengarden",
+      "committed_at": "2026-05-03T09:52:16Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/da1cfed5eb017b87672580f50c2fc99816b439f8"
+    },
+    {
+      "sha": "3e7c21ad4979652df9ddfc4ef15883c14324188b",
+      "message": "chore(LANE01): update INDEX.md with BUILD-QA-PLAYWRIGHT-FIXTURE-V1 row [vercel skip]",
+      "author": "LANE01-Cursor",
+      "committed_at": "2026-05-03T09:34:55Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/3e7c21ad4979652df9ddfc4ef15883c14324188b"
+    },
+    {
+      "sha": "105b86fc44310077114a5be9725493e3b18c1c3e",
+      "message": "audit(LANE01): BUILD-QA-PLAYWRIGHT-FIXTURE-V1 deliverables 4 muc FLAT [vercel skip] (#152)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-03T09:34:29Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/105b86fc44310077114a5be9725493e3b18c1c3e"
+    },
+    {
+      "sha": "d056b9780bca8f2c7b8edf8c3f6a89fdeec20f59",
+      "message": "build(LANE01): QA Playwright fixture w/ Supabase admin session inject + dev qa_bypass override (#151)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-03T09:25:21Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/d056b9780bca8f2c7b8edf8c3f6a89fdeec20f59"
+    },
+    {
+      "sha": "0dfdacad814ae0136b774de1e40b9b737a1a6a6d",
+      "message": "chore(lane02): TUVI PRODUCTION FIX V1 deliverables",
+      "author": "unitonzengarden",
+      "committed_at": "2026-05-03T09:14:13Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/0dfdacad814ae0136b774de1e40b9b737a1a6a6d"
+    },
+    {
+      "sha": "acaef5667eee1a9a92f5657c81270553d992dfcf",
+      "message": "feat(lane02/uzg/tao): TUVI PRODUCTION FIX 4 issues real data wizard reading aier (#150)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-03T09:04:36Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/acaef5667eee1a9a92f5657c81270553d992dfcf"
+    },
     {
       "sha": "c149d24724e1cd5110198436ea489b3051be454a",
       "message": "chore(lane02): TUVI OFFICIAL FINAL V1 deliverables (PR #142 + 84b72f9)",
@@ -164,55 +213,6 @@
       "author": "Uniton Zen",
       "committed_at": "2026-05-03T05:21:48Z",
       "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/ccb9723eed6b17cc4152d5efbb0c07e4d4ce366f"
-    },
-    {
-      "sha": "fbb9e023a9e345f85d2d85221556a026c4b9731e",
-      "message": "feat(lane02/uzg/tao): B1 wire ZIWEI engine ENTA self chart render (#132)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-05-03T05:17:44Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/fbb9e023a9e345f85d2d85221556a026c4b9731e"
-    },
-    {
-      "sha": "02806baf033690f2c49819aec421d040dd483425",
-      "message": "audit(LANE01): SETUP-WORKSPACE-RESET-V1 companion files [vercel skip] (#131)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-05-03T05:04:03Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/02806baf033690f2c49819aec421d040dd483425"
-    },
-    {
-      "sha": "c16670fc367752509a82916bba67ad39b4006b0f",
-      "message": "setup(LANE01): workspace reset + lane_01 namespace v2.0 init [vercel skip] (#130)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-05-03T05:01:27Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/c16670fc367752509a82916bba67ad39b4006b0f"
-    },
-    {
-      "sha": "8e470d3e87ef21d85c1da2fea00d567e6d75c26d",
-      "message": "chore(lane02): TAO PWA OS Mobile lock deliverables + INDEX update",
-      "author": "unitonzengarden",
-      "committed_at": "2026-05-03T04:36:11Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/8e470d3e87ef21d85c1da2fea00d567e6d75c26d"
-    },
-    {
-      "sha": "646b76235264f6b7271597c02e13335194434b31",
-      "message": "fix(lane02/uzg/tao): PWA OS Mobile canon lock TaoMiniAppShell max-width 480px (#129)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-05-03T04:27:57Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/646b76235264f6b7271597c02e13335194434b31"
-    },
-    {
-      "sha": "30fd79021d77f609513735a7a6c37e425cfd176a",
-      "message": "audit(LANE01): NAMESPACE-RESET-V1 companion files [vercel skip] (#128)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-05-03T03:35:39Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/30fd79021d77f609513735a7a6c37e425cfd176a"
-    },
-    {
-      "sha": "25851bd3e0a6f94c1965e9d14cd529bc04977146",
-      "message": "feat(LANE01): namespace reset V1 backup legacy + clean init [vercel skip] (#127)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-05-03T03:33:49Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/25851bd3e0a6f94c1965e9d14cd529bc04977146"
     }
   ]
 }

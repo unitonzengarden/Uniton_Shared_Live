@@ -1,9 +1,21 @@
 {
   "project_slug": "uzg-plus",
   "github_repo": "unitonzengarden/uzgplus-app",
-  "polled_at": "2026-05-03T09:03:51.600Z",
-  "count": 3,
+  "polled_at": "2026-05-03T10:16:32.240Z",
+  "count": 4,
   "prs": [
+    {
+      "number": 153,
+      "title": "feat(lane02/uzg/tao): TUVI FINAL V2 Phase A audit + root fix (DO NOT MERGE — Phase B QA gate)",
+      "state": "open",
+      "head_ref": "lane02/uzg-tao-tuvi-final-v2",
+      "base_ref": "main",
+      "author": "unitonzengarden",
+      "created_at": "2026-05-03T10:11:26Z",
+      "updated_at": "2026-05-03T10:14:53Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/pull/153",
+      "draft": false
+    },
     {
       "number": 109,
       "title": "fix(lane02/phase6): PIVOT skip OpenAI embedding (CF Worker crash beyond JS)",
