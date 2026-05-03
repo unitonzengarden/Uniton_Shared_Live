@@ -10,7 +10,7 @@
 ## §0. Header
 
 - **Generator:** `aier-state-update v1.0` invoked via `scripts/runtime/generate_project_status.py v1.1`
-- **Source commit:** `6be299f7d5dece9036afb2eb5e9587a0bc413603` (short: `6be299f`)
+- **Source commit:** `f8289b446a497deeb2588e83cb7fc3ff78959bd7` (short: `f8289b4`)
 - **Auto-generated:** `true` (do not hand-edit)
 - **Authority:** repo-backed automation per LAW_N8 §L8.2 explicitly enabled CI mode (state-mirror auto-regenerate scope only)
 
@@ -68,11 +68,11 @@
 
 | SHA | Author | Subject |
 |---|---|---|
+| `f8289b4` | unitonzengarden | chore(lane02/uzg/plus-hub): LAW-compliant deliverables critical fixes hardening |
+| `cb82ed2` | AIER State Bot | [auto-status] regen runtime+network surfaces from 6be299f [vercel skip] |
 | `6be299f` | unitonzengarden | qa(lane02/uzg/tao): TAO mini-app 7 production screenshots + LAW deliverables [vercel skip] |
 | `e624990` | AIER Code Heartbeat | AIER Code heartbeat 2026-05-02T23:59:02Z [vercel skip] |
 | `3f93a93` | Ecosystem Poller Bot | poll: ecosystem state update [vercel skip] |
-| `7e1b80a` | AIER Code Heartbeat | AIER Code heartbeat 2026-05-02T23:01:45Z [vercel skip] |
-| `c231f18` | Ecosystem Poller Bot | poll: ecosystem state update [vercel skip] |
 
 ## §7. Latest 5 DONE Tasks (from MASTER_CHECKLIST)
 
