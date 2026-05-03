@@ -1,0 +1,93 @@
+{
+  "task": "LANE01-V2-HOME-SOCIAL-FULL-AUDIT-V2",
+  "runner": "playwright-assertions.local.mjs",
+  "started_at": "2026-05-03T01:37:47.044Z",
+  "completed_at": "2026-05-03T01:38:36.021Z",
+  "base": "https://uzg.plus",
+  "user": "lane02-test-sovereign@uzg.local",
+  "total": 10,
+  "passed": 4,
+  "failed": 6,
+  "tests": [
+    {
+      "name": "compose_no_raw_i18n_keys",
+      "status": "pass",
+      "expected": "no [[vi_missing:]] or {{}}",
+      "actual": "viMissing=false curly=false",
+      "route": "/compose mobile",
+      "notes": ""
+    },
+    {
+      "name": "desktop_shell_480px_centered",
+      "status": "pass",
+      "expected": "shell width ~480px on 1280 viewport",
+      "actual": "[{\"sel\":\"main\",\"width\":460,\"maxWidth\":\"none\",\"left\":410,\"right\":870}]",
+      "route": "/dashboard desktop",
+      "notes": ""
+    },
+    {
+      "name": "bottom_nav_inside_480_shell",
+      "status": "fail",
+      "expected": "bottom nav width ≤500px (mobile shell)",
+      "actual": "null",
+      "route": "/dashboard desktop",
+      "notes": ""
+    },
+    {
+      "name": "post_has_5_ngu_hanh_reactions",
+      "status": "fail",
+      "expected": "5 reactions per post",
+      "actual": "{\"postsFound\":0}",
+      "route": "/dashboard mobile",
+      "notes": ""
+    },
+    {
+      "name": "compose_uses_vietnamese_locale",
+      "status": "fail",
+      "expected": "Vietnamese strings in composer",
+      "actual": "vi=false en=true",
+      "route": "/compose mobile",
+      "notes": ""
+    },
+    {
+      "name": "ureward_popup_has_close",
+      "status": "pass",
+      "expected": "close button in U-Reward popup",
+      "actual": "{\"sel\":\"[aria-label*=\\\"close\\\" i]\",\"found\":true}",
+      "route": "/dashboard mobile",
+      "notes": ""
+    },
+    {
+      "name": "compose_4_media_buttons",
+      "status": "fail",
+      "expected": "4 media buttons (image/video/poll/qot) exposed",
+      "actual": "{\"image\":false,\"video\":false,\"poll\":false,\"qot\":false}",
+      "route": "/compose mobile",
+      "notes": ""
+    },
+    {
+      "name": "tap_post_opens_detail",
+      "status": "fail",
+      "expected": "navigation OR overlay open",
+      "actual": "before=https://uzg.plus/dashboard after=https://uzg.plus/dashboard overlay=false",
+      "route": "/dashboard mobile",
+      "notes": ""
+    },
+    {
+      "name": "dashboard_renders_post_feed",
+      "status": "pass",
+      "expected": "≥1 post in feed (Fix-3 keystone)",
+      "actual": "posts_found=12",
+      "route": "/dashboard mobile",
+      "notes": ""
+    },
+    {
+      "name": "notifications_uses_vietnamese",
+      "status": "fail",
+      "expected": "Vietnamese in notifications",
+      "actual": "vi=false",
+      "route": "/notifications mobile",
+      "notes": ""
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+# KL-028 Production Probe — LANE01-V2-HOME-SOCIAL-FULL-AUDIT-V2
+# Captured: 2026-05-03T01:36:25Z
+# BASE: https://uzg.plus
+
+/                      HTTP 200 | bytes=1964       | time=0.054749 | redirect=
+/dashboard             HTTP 200 | bytes=1964       | time=0.057748 | redirect=
+/home                  HTTP 200 | bytes=1964       | time=0.076656 | redirect=
+/flow                  HTTP 200 | bytes=1964       | time=0.047794 | redirect=
+/compose               HTTP 200 | bytes=1964       | time=0.061798 | redirect=
+/search                HTTP 200 | bytes=1964       | time=0.074810 | redirect=
+/notifications         HTTP 200 | bytes=1964       | time=0.062393 | redirect=
+/connect               HTTP 200 | bytes=1964       | time=0.072806 | redirect=
+/profile/me            HTTP 200 | bytes=1964       | time=0.075169 | redirect=
+/post/test-id          HTTP 200 | bytes=1964       | time=0.074290 | redirect=
+/enta                  HTTP 200 | bytes=1964       | time=0.057239 | redirect=
+/settings              HTTP 200 | bytes=1964       | time=0.055594 | redirect=

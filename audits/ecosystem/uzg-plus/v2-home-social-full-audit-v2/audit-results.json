@@ -1,0 +1,418 @@
+[
+  {
+    "route": "/",
+    "viewport": "mobile",
+    "httpStatus": 200,
+    "actualUrl": "https://uzg.plus/dashboard",
+    "redirected": true,
+    "i18nLeaks": [],
+    "layoutMetrics": {
+      "shell": null,
+      "bottomNav": null,
+      "composer": null,
+      "reactionsCount": 0,
+      "postCardsCount": 0,
+      "bodyBg": "rgba(0, 0, 0, 0)",
+      "bodyFont": "\"Segoe UI\", Tahoma, sans-serif",
+      "viewportWidth": 375,
+      "viewportHeight": 812
+    },
+    "networkErrors": [],
+    "consoleErrors": [],
+    "screenshotFile": "00_root_mobile.png"
+  },
+  {
+    "route": "/",
+    "viewport": "desktop",
+    "httpStatus": 200,
+    "actualUrl": "https://uzg.plus/dashboard",
+    "redirected": true,
+    "i18nLeaks": [],
+    "layoutMetrics": {
+      "shell": null,
+      "bottomNav": null,
+      "composer": null,
+      "reactionsCount": 0,
+      "postCardsCount": 0,
+      "bodyBg": "rgba(0, 0, 0, 0)",
+      "bodyFont": "\"Segoe UI\", Tahoma, sans-serif",
+      "viewportWidth": 1280,
+      "viewportHeight": 800
+    },
+    "networkErrors": [],
+    "consoleErrors": [],
+    "screenshotFile": "00_root_desktop.png"
+  },
+  {
+    "route": "/dashboard",
+    "viewport": "mobile",
+    "httpStatus": 200,
+    "actualUrl": "https://uzg.plus/dashboard",
+    "redirected": false,
+    "i18nLeaks": [],
+    "layoutMetrics": {
+      "shell": null,
+      "bottomNav": null,
+      "composer": null,
+      "reactionsCount": 0,
+      "postCardsCount": 0,
+      "bodyBg": "rgba(0, 0, 0, 0)",
+      "bodyFont": "\"Segoe UI\", Tahoma, sans-serif",
+      "viewportWidth": 375,
+      "viewportHeight": 812
+    },
+    "networkErrors": [],
+    "consoleErrors": [],
+    "screenshotFile": "01_dashboard_mobile.png"
+  },
+  {
+    "route": "/dashboard",
+    "viewport": "desktop",
+    "httpStatus": 200,
+    "actualUrl": "https://uzg.plus/dashboard",
+    "redirected": false,
+    "i18nLeaks": [],
+    "layoutMetrics": {
+      "shell": null,
+      "bottomNav": null,
+      "composer": null,
+      "reactionsCount": 0,
+      "postCardsCount": 0,
+      "bodyBg": "rgba(0, 0, 0, 0)",
+      "bodyFont": "\"Segoe UI\", Tahoma, sans-serif",
+      "viewportWidth": 1280,
+      "viewportHeight": 800
+    },
+    "networkErrors": [],
+    "consoleErrors": [],
+    "screenshotFile": "01_dashboard_desktop.png"
+  },
+  {
+    "route": "/compose",
+    "viewport": "mobile",
+    "httpStatus": 200,
+    "actualUrl": "https://uzg.plus/compose",
+    "redirected": false,
+    "i18nLeaks": [],
+    "layoutMetrics": {
+      "shell": null,
+      "bottomNav": null,
+      "composer": null,
+      "reactionsCount": 0,
+      "postCardsCount": 0,
+      "bodyBg": "rgba(0, 0, 0, 0)",
+      "bodyFont": "\"Segoe UI\", Tahoma, sans-serif",
+      "viewportWidth": 375,
+      "viewportHeight": 812
+    },
+    "networkErrors": [],
+    "consoleErrors": [],
+    "screenshotFile": "02_compose_mobile.png"
+  },
+  {
+    "route": "/compose",
+    "viewport": "desktop",
+    "httpStatus": 200,
+    "actualUrl": "https://uzg.plus/compose",
+    "redirected": false,
+    "i18nLeaks": [],
+    "layoutMetrics": {
+      "shell": null,
+      "bottomNav": null,
+      "composer": null,
+      "reactionsCount": 0,
+      "postCardsCount": 0,
+      "bodyBg": "rgba(0, 0, 0, 0)",
+      "bodyFont": "\"Segoe UI\", Tahoma, sans-serif",
+      "viewportWidth": 1280,
+      "viewportHeight": 800
+    },
+    "networkErrors": [],
+    "consoleErrors": [],
+    "screenshotFile": "02_compose_desktop.png"
+  },
+  {
+    "route": "/notifications",
+    "viewport": "mobile",
+    "httpStatus": 200,
+    "actualUrl": "https://uzg.plus/notifications",
+    "redirected": false,
+    "i18nLeaks": [],
+    "layoutMetrics": {
+      "shell": null,
+      "bottomNav": null,
+      "composer": null,
+      "reactionsCount": 0,
+      "postCardsCount": 0,
+      "bodyBg": "rgba(0, 0, 0, 0)",
+      "bodyFont": "\"Segoe UI\", Tahoma, sans-serif",
+      "viewportWidth": 375,
+      "viewportHeight": 812
+    },
+    "networkErrors": [],
+    "consoleErrors": [],
+    "screenshotFile": "06_notifications_mobile.png"
+  },
+  {
+    "route": "/notifications",
+    "viewport": "desktop",
+    "httpStatus": 200,
+    "actualUrl": "https://uzg.plus/notifications",
+    "redirected": false,
+    "i18nLeaks": [],
+    "layoutMetrics": {
+      "shell": null,
+      "bottomNav": null,
+      "composer": null,
+      "reactionsCount": 0,
+      "postCardsCount": 0,
+      "bodyBg": "rgba(0, 0, 0, 0)",
+      "bodyFont": "\"Segoe UI\", Tahoma, sans-serif",
+      "viewportWidth": 1280,
+      "viewportHeight": 800
+    },
+    "networkErrors": [],
+    "consoleErrors": [],
+    "screenshotFile": "06_notifications_desktop.png"
+  },
+  {
+    "route": "/search",
+    "viewport": "mobile",
+    "httpStatus": 200,
+    "actualUrl": "https://uzg.plus/search",
+    "redirected": false,
+    "i18nLeaks": [],
+    "layoutMetrics": {
+      "shell": null,
+      "bottomNav": null,
+      "composer": null,
+      "reactionsCount": 0,
+      "postCardsCount": 0,
+      "bodyBg": "rgba(0, 0, 0, 0)",
+      "bodyFont": "\"Segoe UI\", Tahoma, sans-serif",
+      "viewportWidth": 375,
+      "viewportHeight": 812
+    },
+    "networkErrors": [],
+    "consoleErrors": [],
+    "screenshotFile": "07_search_mobile.png"
+  },
+  {
+    "route": "/search",
+    "viewport": "desktop",
+    "httpStatus": 200,
+    "actualUrl": "https://uzg.plus/search",
+    "redirected": false,
+    "i18nLeaks": [],
+    "layoutMetrics": {
+      "shell": null,
+      "bottomNav": null,
+      "composer": null,
+      "reactionsCount": 0,
+      "postCardsCount": 0,
+      "bodyBg": "rgba(0, 0, 0, 0)",
+      "bodyFont": "\"Segoe UI\", Tahoma, sans-serif",
+      "viewportWidth": 1280,
+      "viewportHeight": 800
+    },
+    "networkErrors": [],
+    "consoleErrors": [],
+    "screenshotFile": "07_search_desktop.png"
+  },
+  {
+    "route": "/connect",
+    "viewport": "mobile",
+    "httpStatus": 200,
+    "actualUrl": "https://uzg.plus/connect",
+    "redirected": false,
+    "i18nLeaks": [],
+    "layoutMetrics": {
+      "shell": null,
+      "bottomNav": null,
+      "composer": null,
+      "reactionsCount": 0,
+      "postCardsCount": 0,
+      "bodyBg": "rgba(0, 0, 0, 0)",
+      "bodyFont": "\"Segoe UI\", Tahoma, sans-serif",
+      "viewportWidth": 375,
+      "viewportHeight": 812
+    },
+    "networkErrors": [],
+    "consoleErrors": [],
+    "screenshotFile": "08_connect_mobile.png"
+  },
+  {
+    "route": "/connect",
+    "viewport": "desktop",
+    "httpStatus": 200,
+    "actualUrl": "https://uzg.plus/connect",
+    "redirected": false,
+    "i18nLeaks": [],
+    "layoutMetrics": {
+      "shell": null,
+      "bottomNav": null,
+      "composer": null,
+      "reactionsCount": 0,
+      "postCardsCount": 0,
+      "bodyBg": "rgba(0, 0, 0, 0)",
+      "bodyFont": "\"Segoe UI\", Tahoma, sans-serif",
+      "viewportWidth": 1280,
+      "viewportHeight": 800
+    },
+    "networkErrors": [],
+    "consoleErrors": [],
+    "screenshotFile": "08_connect_desktop.png"
+  },
+  {
+    "route": "/profile/me",
+    "viewport": "mobile",
+    "httpStatus": 0,
+    "actualUrl": "https://uzg.plus/profile/me",
+    "redirected": false,
+    "i18nLeaks": [
+      {
+        "kind": "bracket",
+        "text": "[[vi_missing:system.uReward.shell.closeShellAria]]",
+        "inner": "vi_missing:system.uReward.shell.closeShellAria"
+      }
+    ],
+    "layoutMetrics": {
+      "shell": null,
+      "bottomNav": null,
+      "composer": null,
+      "reactionsCount": 0,
+      "postCardsCount": 0,
+      "bodyBg": "rgba(0, 0, 0, 0)",
+      "bodyFont": "\"Segoe UI\", Tahoma, sans-serif",
+      "viewportWidth": 375,
+      "viewportHeight": 812
+    },
+    "networkErrors": [],
+    "consoleErrors": [
+      "goto failed: page.goto: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"https://uzg.plus/profile/me\", waiting until \"networkidle\"\u001b[22m\n"
+    ],
+    "screenshotFile": "09_profile_me_mobile.png"
+  },
+  {
+    "route": "/profile/me",
+    "viewport": "desktop",
+    "httpStatus": 0,
+    "actualUrl": "https://uzg.plus/profile/me",
+    "redirected": false,
+    "i18nLeaks": [],
+    "layoutMetrics": {
+      "shell": null,
+      "bottomNav": null,
+      "composer": null,
+      "reactionsCount": 0,
+      "postCardsCount": 0,
+      "bodyBg": "rgba(0, 0, 0, 0)",
+      "bodyFont": "\"Segoe UI\", Tahoma, sans-serif",
+      "viewportWidth": 1280,
+      "viewportHeight": 800
+    },
+    "networkErrors": [],
+    "consoleErrors": [
+      "goto failed: page.goto: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"https://uzg.plus/profile/me\", waiting until \"networkidle\"\u001b[22m\n"
+    ],
+    "screenshotFile": "09_profile_me_desktop.png"
+  },
+  {
+    "route": "/enta",
+    "viewport": "mobile",
+    "httpStatus": 200,
+    "actualUrl": "https://uzg.plus/enta",
+    "redirected": false,
+    "i18nLeaks": [],
+    "layoutMetrics": {
+      "shell": null,
+      "bottomNav": null,
+      "composer": null,
+      "reactionsCount": 0,
+      "postCardsCount": 0,
+      "bodyBg": "rgba(0, 0, 0, 0)",
+      "bodyFont": "\"Segoe UI\", Tahoma, sans-serif",
+      "viewportWidth": 375,
+      "viewportHeight": 812
+    },
+    "networkErrors": [],
+    "consoleErrors": [
+      "Error: Minified React error #31; visit https://react.dev/errors/31?args[]=object%20with%20keys%20%7Byin%2C%20yang%2C%20total_positions%2C%20label%2C%20yin_percent%2C%20yang_percent%2C%20balance_percent%7D for the full message or use the non-minified dev environment for full errors and additional helpful warnings.\n    at mn (https://uzg.plus/assets/react-vendor-COyDDddl.js:8:37802)\n    at At (https://uzg.plus/assets/react-vendor-COyDDddl.js:8:43258)\n    at https://uzg.plus/assets/react-vendor-COyDDddl.js:8:43503\n    at Ft (https://uzg.plus/assets/react-vendor-COyDDddl.js:8:67302)\n    at zs (https://uzg.plus/assets/react-vendor-COyDDddl.js:8:82787)\n    at eh (https://uzg.plus/assets/react-vendor-COyDDddl.js:8:116825)\n    at M0 (https://uzg.plus/assets/react-vendor-COyDDddl.js:8:115871)\n    at lf (https://uzg.plus/assets/react-vendor-COyDDddl.js:8:115703)\n    at Ws (https://uzg.plus/assets/react-vendor-COyDDddl.js:8:112501)\n    at mh (https://uzg.plus/assets/react-vendor-COyDDddl.js:8:124286)",
+      "[ErrorBoundary] enta-identity-hero Error: Minified React error #31; visit https://react.dev/errors/31?args[]=object%20with%20keys%20%7Byin%2C%20yang%2C%20total_positions%2C%20label%2C%20yin_percent%2C%20yang_percent%2C%20balance_percent%7D for the full message or use the non-minified dev environment for full errors and additional helpful warnings.\n    at mn (https://uzg.plus/assets/react-vendor-COyDDddl.js:8:37802)\n    at At (https://uzg.plus/assets/react-vendor-COyDDddl.js:8:43258)\n    at https://uzg.plus/assets/react-vendor-COyDDddl.js:8:43503\n    at Ft (https://uzg.plus/assets/react-vendor-COyDDddl.js:8:67302)\n    at zs (https://uzg.plus/assets/react-vendor-COyDDddl.js:8:82787)\n    at eh (https://uzg.plus/assets/react-vendor-COyDDddl.js:8:116825)\n    at M0 (https://uzg.plus/assets/react-vendor-COyDDddl.js:8:115871)\n    at lf (https://uzg.plus/assets/react-vendor-COyDDddl.js:8:115703)\n    at Ws (https://uzg.plus/assets/react-vendor-COyDDddl.js:8:112501)\n    at mh (https://uzg.plus/assets/react-vendor-COyDDddl.js:8:124286) {componentStack: \n    at text (<anonymous>)\n    at g (<anonymous>)\n…zg.plus/assets/react-vendor-COyDDddl.js:11:17479)}"
+    ],
+    "screenshotFile": "10_enta_mobile.png"
+  },
+  {
+    "route": "/enta",
+    "viewport": "desktop",
+    "httpStatus": 200,
+    "actualUrl": "https://uzg.plus/enta",
+    "redirected": false,
+    "i18nLeaks": [],
+    "layoutMetrics": {
+      "shell": null,
+      "bottomNav": null,
+      "composer": null,
+      "reactionsCount": 0,
+      "postCardsCount": 0,
+      "bodyBg": "rgba(0, 0, 0, 0)",
+      "bodyFont": "\"Segoe UI\", Tahoma, sans-serif",
+      "viewportWidth": 1280,
+      "viewportHeight": 800
+    },
+    "networkErrors": [],
+    "consoleErrors": [
+      "Error: Minified React error #31; visit https://react.dev/errors/31?args[]=object%20with%20keys%20%7Byin%2C%20yang%2C%20total_positions%2C%20label%2C%20yin_percent%2C%20yang_percent%2C%20balance_percent%7D for the full message or use the non-minified dev environment for full errors and additional helpful warnings.\n    at mn (https://uzg.plus/assets/react-vendor-COyDDddl.js:8:37802)\n    at At (https://uzg.plus/assets/react-vendor-COyDDddl.js:8:43258)\n    at https://uzg.plus/assets/react-vendor-COyDDddl.js:8:43503\n    at Ft (https://uzg.plus/assets/react-vendor-COyDDddl.js:8:67302)\n    at zs (https://uzg.plus/assets/react-vendor-COyDDddl.js:8:82787)\n    at eh (https://uzg.plus/assets/react-vendor-COyDDddl.js:8:116825)\n    at M0 (https://uzg.plus/assets/react-vendor-COyDDddl.js:8:115871)\n    at lf (https://uzg.plus/assets/react-vendor-COyDDddl.js:8:115703)\n    at Ws (https://uzg.plus/assets/react-vendor-COyDDddl.js:8:112501)\n    at mh (https://uzg.plus/assets/react-vendor-COyDDddl.js:8:124286)",
+      "[ErrorBoundary] enta-identity-hero Error: Minified React error #31; visit https://react.dev/errors/31?args[]=object%20with%20keys%20%7Byin%2C%20yang%2C%20total_positions%2C%20label%2C%20yin_percent%2C%20yang_percent%2C%20balance_percent%7D for the full message or use the non-minified dev environment for full errors and additional helpful warnings.\n    at mn (https://uzg.plus/assets/react-vendor-COyDDddl.js:8:37802)\n    at At (https://uzg.plus/assets/react-vendor-COyDDddl.js:8:43258)\n    at https://uzg.plus/assets/react-vendor-COyDDddl.js:8:43503\n    at Ft (https://uzg.plus/assets/react-vendor-COyDDddl.js:8:67302)\n    at zs (https://uzg.plus/assets/react-vendor-COyDDddl.js:8:82787)\n    at eh (https://uzg.plus/assets/react-vendor-COyDDddl.js:8:116825)\n    at M0 (https://uzg.plus/assets/react-vendor-COyDDddl.js:8:115871)\n    at lf (https://uzg.plus/assets/react-vendor-COyDDddl.js:8:115703)\n    at Ws (https://uzg.plus/assets/react-vendor-COyDDddl.js:8:112501)\n    at mh (https://uzg.plus/assets/react-vendor-COyDDddl.js:8:124286) {componentStack: \n    at text (<anonymous>)\n    at g (<anonymous>)\n…zg.plus/assets/react-vendor-COyDDddl.js:11:17479)}"
+    ],
+    "screenshotFile": "10_enta_desktop.png"
+  },
+  {
+    "route": "/settings",
+    "viewport": "mobile",
+    "httpStatus": 0,
+    "actualUrl": "https://uzg.plus/settings",
+    "redirected": false,
+    "i18nLeaks": [],
+    "layoutMetrics": {
+      "shell": null,
+      "bottomNav": null,
+      "composer": null,
+      "reactionsCount": 0,
+      "postCardsCount": 0,
+      "bodyBg": "rgba(0, 0, 0, 0)",
+      "bodyFont": "\"Segoe UI\", Tahoma, sans-serif",
+      "viewportWidth": 375,
+      "viewportHeight": 812
+    },
+    "networkErrors": [],
+    "consoleErrors": [
+      "goto failed: page.goto: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"https://uzg.plus/settings\", waiting until \"networkidle\"\u001b[22m\n"
+    ],
+    "screenshotFile": "11_settings_mobile.png"
+  },
+  {
+    "route": "/settings",
+    "viewport": "desktop",
+    "httpStatus": 0,
+    "actualUrl": "https://uzg.plus/settings",
+    "redirected": false,
+    "i18nLeaks": [],
+    "layoutMetrics": {
+      "shell": null,
+      "bottomNav": null,
+      "composer": null,
+      "reactionsCount": 0,
+      "postCardsCount": 0,
+      "bodyBg": "rgba(0, 0, 0, 0)",
+      "bodyFont": "\"Segoe UI\", Tahoma, sans-serif",
+      "viewportWidth": 1280,
+      "viewportHeight": 800
+    },
+    "networkErrors": [],
+    "consoleErrors": [
+      "goto failed: page.goto: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"https://uzg.plus/settings\", waiting until \"networkidle\"\u001b[22m\n"
+    ],
+    "screenshotFile": "11_settings_desktop.png"
+  }
+]

@@ -1,0 +1,163 @@
+{
+  "task_id": "LANE01-V2-HOME-SOCIAL-FULL-AUDIT-V2",
+  "executor": "CLAC1",
+  "lane": "Lane_01",
+  "branch": "audit/LANE01-V2-HOME-SOCIAL-FULL-AUDIT-V2",
+  "model": "Sonnet 4.6",
+  "model_reason": "Comprehensive audit task. Frontend visual + Playwright capture. Well-defined SPEC. No code modification. Per Model Optimization Matrix (Layer 1 §10) Sonnet 4.6 ideal for comprehensive audit pattern. No escalation triggered (no cross-cutting build break or auth corruption).",
+  "started_at": "2026-05-03T01:08:00Z",
+  "completed_at": "2026-05-03T01:50:00Z",
+  "duration_minutes": 42,
+  "phases": {
+    "A_login_route_inventory": "completed",
+    "B_screenshot_capture": "completed",
+    "C_language_os_audit": "completed",
+    "D_bug_cataloging": "completed",
+    "E_playwright_qa": "completed",
+    "F_production_probe": "completed",
+    "G_report": "completed"
+  },
+  "deliverables_actual": [
+    "audits/ecosystem/uzg-plus/snapshots/LANE01-V2-HOME-SOCIAL-FULL-AUDIT-V2.snapshot.live.json",
+    "audits/ecosystem/uzg-plus/reports/LANE01-V2-HOME-SOCIAL-FULL-AUDIT-V2_REPORT.md",
+    "audits/ecosystem/uzg-plus/audit_logs/LANE01-V2-HOME-SOCIAL-FULL-AUDIT-V2_audit.log"
+  ],
+  "companion_artifacts": [
+    "audits/ecosystem/uzg-plus/v2-home-social-full-audit-v2/HOME_SOCIAL_BUG_LIST_V2.md",
+    "audits/ecosystem/uzg-plus/v2-home-social-full-audit-v2/screen-list.md",
+    "audits/ecosystem/uzg-plus/v2-home-social-full-audit-v2/i18n-broken-keys.txt",
+    "audits/ecosystem/uzg-plus/v2-home-social-full-audit-v2/playwright-results.json",
+    "audits/ecosystem/uzg-plus/v2-home-social-full-audit-v2/audit-results.json",
+    "audits/ecosystem/uzg-plus/v2-home-social-full-audit-v2/kl-028-probe.txt",
+    "audits/ecosystem/uzg-plus/v2-home-social-full-audit-v2/re-audit-finding-summary.md",
+    "audits/ecosystem/uzg-plus/v2-home-social-full-audit-v2/audit-runner.mjs",
+    "audits/ecosystem/uzg-plus/v2-home-social-full-audit-v2/screenshots/"
+  ],
+  "boundary_check": {
+    "uzgplus_app_code_changes": 0,
+    "lane_02_files_touched": 0,
+    "documented_exceptions": [
+      "Created 3 *.local.mjs scripts in UZGPLUS root for audit-runner orchestration; deleted post-audit. Verified via git status — 0 staged or committed source changes.",
+      "Seeded 1 row in enta_profiles table for sovereign user (lane02-test-sovereign@uzg.local) to bypass ENTA gate for audit purposes; deleted post-audit."
+    ]
+  },
+  "ac_status": {
+    "AC-1": {"status": "PASS", "evidence": "audit-runner.mjs Authentication OK message + screenshots show authenticated state"},
+    "AC-2": {"status": "PASS", "evidence": "screen-list.md inventories 33 HOME social routes (≥7 minimum)"},
+    "AC-3": {"status": "PASS", "evidence": "18 screenshots captured (9 routes × 2 viewports), exceeds ≥14 minimum"},
+    "AC-4": {"status": "PASS", "evidence": "i18n-broken-keys.txt published with resolver bug documentation + 4 leak instances + locale inconsistency map"},
+    "AC-5": {"status": "PASS", "evidence": "HOME_SOCIAL_BUG_LIST_V2.md with 50 structured-field bugs (≥40 minimum)"},
+    "AC-6": {"status": "PASS", "evidence": "7 NTS-reported bugs cataloged with NTS-reported=Yes flag (BUG-001 BUG-002 BUG-003 BUG-007 BUG-008 BUG-013 + i18n root)"},
+    "AC-7": {"status": "PASS", "evidence": "Previous audit (G001-G030) baseline comparison table in HOME_SOCIAL_BUG_LIST_V2.md §Previous-audit-baseline-comparison"},
+    "AC-8": {"status": "PASS", "evidence": "playwright-results.json valid JSON with 10 assertions, 4 pass / 6 fail"},
+    "AC-9": {"status": "PASS", "evidence": "kl-028-probe.txt with 12 routes, all HTTP 200 OK"},
+    "AC-10": {"status": "PASS", "evidence": "3 mandatory files present at exact §7.X paths: .snapshot.live.json + _REPORT.md + _audit.log"},
+    "AC-11": {"status": "PENDING_POST_MERGE", "evidence": "Live mirror raw URL fetch verification deferred until after PR merge"},
+    "AC-12": {"status": "PASS", "evidence": "git status -- apps/uzg-pwa shows 0 changes; audit-runner scripts deleted post-audit"},
+    "AC-13": {"status": "PASS", "evidence": "All commits on audit/LANE01-V2-HOME-SOCIAL-FULL-AUDIT-V2 branch in Uniton_Shared repo only"}
+  },
+  "qa_verdict": "PASS",
+  "live_verification": {
+    "kl_028_probe_results": "12/12 HTTP 200 OK on all probed HOME social routes (/, /dashboard, /home, /flow, /compose, /search, /notifications, /connect, /profile/me, /post/test-id, /enta, /settings)",
+    "playwright_results_summary": "10 canon-driven assertions; 4 pass (compose_no_raw_i18n_keys, desktop_shell_480px_centered, ureward_popup_has_close, dashboard_renders_post_feed) + 6 fail (bottom_nav_inside_480_shell, post_has_5_ngu_hanh_reactions, compose_uses_vietnamese_locale, compose_4_media_buttons, tap_post_opens_detail, notifications_uses_vietnamese)",
+    "i18n_resolver_bug_confirmed": true,
+    "raw_key_leaks_found": 4,
+    "locale_inconsistency_pages": 5
+  },
+  "evidence_urls": {
+    "snapshot": "https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/audits/ecosystem/uzg-plus/snapshots/LANE01-V2-HOME-SOCIAL-FULL-AUDIT-V2.snapshot.live.json",
+    "report": "https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/audits/ecosystem/uzg-plus/reports/LANE01-V2-HOME-SOCIAL-FULL-AUDIT-V2_REPORT.md",
+    "audit_log": "https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/audits/ecosystem/uzg-plus/audit_logs/LANE01-V2-HOME-SOCIAL-FULL-AUDIT-V2_audit.log"
+  },
+  "bugs_total": 50,
+  "bugs_by_severity": {
+    "CRITICAL": 8,
+    "HIGH": 20,
+    "MEDIUM": 15,
+    "LOW": 7
+  },
+  "bugs_nts_reported": 7,
+  "bugs_nts_status": {
+    "still_present": 6,
+    "partial": 1,
+    "fully_resolved": 0
+  },
+  "previous_audit_comparison": {
+    "baseline": "LANE01-CLAC1-V2-HOME-AUDIT-DISCOVERY-2026-05-02T19-30Z (42 gaps G001-G030)",
+    "fully_done": 1,
+    "partial_done": 1,
+    "verified_changed": 4,
+    "still_present_or_worsened": 7,
+    "unverified_deferred": 17,
+    "merged_into_new_finding": 11
+  },
+  "categories_distribution": {
+    "i18n": 12,
+    "Layout_Position": 11,
+    "Color_Theme": 6,
+    "Visual_Typography": 5,
+    "UX_IA": 6,
+    "Logic_Architecture": 6,
+    "Network_Backend_Lane02": 1,
+    "Animation": 1,
+    "Accessibility": 2
+  },
+  "fix_complexity_distribution": {
+    "S_under_30min": 30,
+    "M_30_to_90min": 13,
+    "L_over_90min": 7
+  },
+  "aggregate_fix_eta_hours": "30-40 across 17 mini-sprints",
+  "recommended_next_sprints_top3": [
+    {
+      "name": "Sprint Fix-i18n-A",
+      "eta": "1-2h",
+      "auth_required": true,
+      "closes_bugs": ["BUG-004 (root cause)"],
+      "rationale": "Patches languageFoundation.js:7430 resolver to honor fallback param. Single-file CRITICAL surgical fix protects ALL future i18n work from raw key leaks."
+    },
+    {
+      "name": "Sprint Fix-Compose-Layout",
+      "eta": "30min",
+      "auth_required": false,
+      "closes_bugs": ["BUG-001"],
+      "rationale": "CSS override of composer container's oval/circle border-radius. Most NTS-visible single bug per 2026-05-03 evidence."
+    },
+    {
+      "name": "Sprint Fix-Theme-A",
+      "eta": "30min",
+      "auth_required": false,
+      "closes_bugs": ["BUG-002"],
+      "rationale": "Apply neutral-dark canvas (#0a0a0f) to body / app-shell across HOME social pages. Closes app-wide background drift from V2 UI Upgrade canon."
+    }
+  ],
+  "kl_extensions": [
+    {
+      "id": "KL-NEW-V2-HOME-SOCIAL-FULL-AUDIT-V2-A",
+      "title": "Architectural feature shipping must include LANG_OS retrofit + theme retrofit in same wave",
+      "summary": "PR #114 Fix-3 keystone shipped V2 HOME feed but did not retrofit appT() wrappers nor neutral-dark canvas. Within 24h NTS reported polish bugs the architectural sprint should have caught."
+    },
+    {
+      "id": "KL-NEW-V2-HOME-SOCIAL-FULL-AUDIT-V2-B",
+      "title": "Resolver-level i18n bug must be fixed at resolver, not at single key",
+      "summary": "PR #119 patched common.back symptom but languageFoundation.js:7430 resolver still ignores fallback. Same pattern re-leaked on system.uReward.shell.closeShellAria. Always audit resolver when forbidden pattern surfaces."
+    },
+    {
+      "id": "KL-NEW-V2-HOME-SOCIAL-FULL-AUDIT-V2-C",
+      "title": "Audit harness needs ENTA-Root pre-state seeding for HOME route capture",
+      "summary": "Lane_01 auth-bypass fixture (PR #94) authenticates user but doesn't seed enta_profile. Sovereign without ENTA Root redirects to /enta on every HOME route, hiding actual HOME state. Future fixture should accept seedEntaRoot:true flag."
+    }
+  ],
+  "law_compliance": {
+    "R-LANE-01": "PASS (no Lane_02 territory edits)",
+    "R-CANON-01": "PASS (append-only — previous audits intact)",
+    "R-MEM-02": "PASS (file paths referenced not dumped)",
+    "R-SEC-01": "PASS (no secrets in deliverables; sovereign email is non-secret test user; Service Role key never echoed)",
+    "R-DELIVERABLE-01": "PASS (3 mandatory in audits/ecosystem/uzg-plus/<sub-namespace>/)",
+    "KL-05": "N/A (no code edits)",
+    "KL-07": "PASS (sync cadence done at audit start)",
+    "KL-028": "PASS (production probe documented in companion folder)",
+    "KL-048": "PASS (file:line citations throughout)",
+    "KL-073": "PASS (naming format §7.X verbatim)"
+  }
+}

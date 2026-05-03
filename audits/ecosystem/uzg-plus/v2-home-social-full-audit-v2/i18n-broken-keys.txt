@@ -1,0 +1,160 @@
+# i18n broken keys + locale inconsistency map
+# Audit: LANE01-V2-HOME-SOCIAL-FULL-AUDIT-V2
+# Captured: 2026-05-03 (post Fix-3 PR #114 + bugfix PR #119)
+# Auditor: CLAC1
+# User locale: vi (sovereign profiles.preferred_language = 'vi')
+# Resolver: apps/uzg-pwa/src/system/languageFoundation.js:7427-7442
+
+================================================================
+ROOT CAUSE — Language OS resolver bug
+================================================================
+
+`createLanguageTranslator` at apps/uzg-pwa/src/system/languageFoundation.js:7427-7442:
+
+  return function translate(key = '', params = {}, fallback = '') {
+    const match = readDictionaryValue(dictionary, key)
+    if (resolvedLocale === 'vi' && typeof match !== 'string') {
+      return `[[vi_missing:${String(key || '').trim()}]]`    // <-- IGNORES the fallback param
+    }
+    const fallbackMatch = resolvedLocale === 'vi'
+      ? undefined
+      : readDictionaryValue(fallbackDictionary, key)
+    const template = typeof match === 'string'
+      ? match
+      : typeof fallbackMatch === 'string'
+        ? fallbackMatch
+        : fallback
+    return interpolateLanguageMessage(template, params)
+  }
+
+Bug: when `resolvedLocale === 'vi'` AND key absent from VI dictionary,
+the resolver returns `[[vi_missing:KEY]]` IGNORING the `fallback` argument
+that callers explicitly pass (e.g. ComposePage.jsx:54
+`appT('common.back', {}, 'Back')`).
+
+Per LANG_OS_10_FORBIDDEN_PATTERNS_v1_0_2026-04-29.md §forbidden — raw key
+leakage to UI is the #1 forbidden pattern. This is a CRITICAL violation.
+
+================================================================
+CONFIRMED RAW KEY LEAKS (from PHASE B Playwright DOM scan)
+================================================================
+
+ROUTE: /notifications @ desktop
+- bracket: `[[vi_missing:system.uReward.shell.closeShellAria]]`
+  KEY: system.uReward.shell.closeShellAria
+  CALLED FROM: U-Reward shell close-button aria-label
+  EXPECTED VI: "Đóng sảnh ứng dụng" (or similar)
+  FILE PATH SUSPECTED: components/layout/URewardV4FloatingShell.jsx
+
+ROUTE: /search @ mobile, desktop
+- bracket: `[[vi_missing:system.uReward.shell.closeShellAria]]`
+  Same root: U-Reward shell close-button aria-label
+  Same fix needed
+
+ROUTE: /profile/me @ mobile
+- bracket: `[[vi_missing:system.uReward.shell.closeShellAria]]`
+  Same root cause
+
+================================================================
+NTS-REPORTED RAW LEAK — IS the resolver still buggy?
+================================================================
+
+NTS evidence 2026-05-03 screenshot showed `[[vi_missing:common.back]]`
+on /compose page. PR #119 commit "BUG-PLUS-01 i18n + BUG-PLUS-02 ENTA gate /app"
+fixed `common.back` (added the key to the VI dictionary).
+
+Verification this audit:
+- /compose mobile + desktop: `compose_no_raw_i18n_keys` PASS — no
+  [[vi_missing:]] leak detected on /compose at audit time.
+- However the resolver itself (line 7430) STILL ignores fallback parameter
+  → ANY future missing key WILL re-leak to UI.
+- The `system.uReward.shell.closeShellAria` leak is an example of this
+  ongoing pattern.
+
+This is a **DRIFT-RISK CRITICAL** — fix-3 patched one symptom (common.back)
+but the disease (resolver returns bracket regardless of fallback) is
+unfixed. Recommend Sprint Fix-i18n-A: Patch resolver to honor `fallback`
+argument BEFORE returning [[vi_missing:KEY]] sentinel.
+
+================================================================
+LOCALE INCONSISTENCY MAP (visual inspection across screens)
+================================================================
+
+Sovereign locale: vi (set by profiles.preferred_language)
+
+PAGES WITH VIETNAMESE LOCALE APPLIED CORRECTLY:
+- /profile/me — "Hồ sơ", "Sửa hồ sơ", "Mở chat", "BÀI VIẾT", etc. (VI)
+- /enta — page content shown in VI mostly
+- /settings — "CÀI ĐẶT", "Ngôn ngữ và khu vực", "Lưu thay đổi" (VI)
+  PARTIAL: theme tile labels still in EN (WATER, WOOD, FIRE, EARTH...)
+- Bottom nav strip — "Trang chủ / Trò chuyện / UZG+ / Ví / ENTA" (VI)
+  appears on /profile/me ONLY but English on other routes
+
+PAGES WITH ENGLISH STRINGS (LOCALE NOT APPLIED — BUG):
+- /dashboard — top bar "Home", composer "What's happening?", tab bar
+  notification "Bạn ơi..." (mixed VI/EN)
+- /compose — "Share something" title, "What's happening?" placeholder,
+  "Post" button, "Back" link (all EN)
+- /notifications — "Signals", "Notifications", "Replies, mentions...",
+  "Unread", "Total", "Sync", "Quiet", "Refresh", "Mark all read",
+  "No notifications yet", "Background refresh is carrying the list"
+  (entirely EN)
+- /search — "SEARCH", "Users, circles, and posts", tabs "Top / Users /
+  Circles / Posts", "Search users, circles, and posts", "Start typing
+  to search" (entirely EN)
+- /connect — top bar "Chat / Communication" (wrong title bug + EN),
+  body "CHAT / New Chat / Pick a person...", tabs "New Chat / Personal
+  / Requests / People", "0 Friends / 0 Requests / 0 People",
+  "Earn next 7 U", "Search people", "Open search", "Suggested ENTA",
+  "No suggestions yet" (entirely EN)
+- Bottom nav on these pages: "Home / Chat / UZG+ / Wallet / ENTA" (EN)
+
+================================================================
+FORBIDDEN PATTERNS detected (per LANG_OS_10_FORBIDDEN_PATTERNS canon)
+================================================================
+
+Pattern 1: Raw key leakage `[[vi_missing:*]]` in production DOM
+  Severity: CRITICAL
+  Found: 4 instances (closeShellAria across 3 routes; common.back fixed by PR#119)
+
+Pattern 2: Inconsistent locale application across routes
+  Severity: HIGH
+  Found: ~30+ English strings on routes that should render Vietnamese
+  Affects: /dashboard, /compose, /notifications, /search, /connect
+
+Pattern 3: Hardcoded English strings (no t() lookup)
+  Severity: HIGH
+  Suspected files (need code grep follow-up):
+    - components/layout/BottomNav.jsx (or similar) — nav labels EN
+    - pages/NotificationsPage.jsx — body strings hardcoded EN
+    - pages/SearchPage.jsx — body strings hardcoded EN
+    - pages/ConnectionsPage.jsx — body strings hardcoded EN
+    - components/flow/PostComposer.jsx — placeholder + Post button hardcoded EN
+    - pages/ComposePage.jsx — title hardcoded EN
+
+================================================================
+SUMMARY (PHASE C OUTCOME)
+================================================================
+
+- 1 CRITICAL resolver bug (line 7430 ignores fallback) — drift risk for
+  any new key not in VI dictionary
+- 4 confirmed raw `[[vi_missing:KEY]]` leaks visible in production DOM
+- ~30+ English strings on 5 HOME social routes that should render VI per
+  user's preferred_language
+- Locale application is INCONSISTENT — same user, same session, gets VI on
+  /profile/me + /settings but EN on /dashboard + /compose + /notifications +
+  /search + /connect
+
+Root cause hypothesis: V2 HOME social pages were authored without
+`useLanguageFoundation()` hook + `appT()` wrapper. They use hardcoded
+English strings rather than dictionary lookups. Fix-3 keystone (PR #114)
+shipped the social feed but did not retro-apply the LANG_OS contract.
+
+Recommended fix sprints:
+  Sprint Fix-i18n-A (CRITICAL ~1-2h): Patch languageFoundation.js:7430
+    resolver to honor `fallback` argument BEFORE returning bracket sentinel.
+  Sprint Fix-i18n-B (HIGH ~3-4h): Retrofit HOME social pages
+    (Dashboard, ComposePage, NotificationsPage, SearchPage, ConnectionsPage,
+    PostComposer, BottomNav) to call appT() with all visible strings.
+  Sprint Fix-i18n-C (HIGH ~1-2h): Add VI dictionary entries for
+    system.uReward.shell.closeShellAria + audit other reward shell keys.
