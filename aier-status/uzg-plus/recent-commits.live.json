@@ -1,9 +1,93 @@
 {
   "project_slug": "uzg-plus",
   "github_repo": "unitonzengarden/uzgplus-app",
-  "polled_at": "2026-05-03T11:12:13.459Z",
+  "polled_at": "2026-05-03T11:59:00.586Z",
   "count": 30,
   "commits": [
+    {
+      "sha": "ef438b2f8cdc7c6f61feab548318f02d236f63db",
+      "message": "chore(LANE01): update INDEX.md with FIX-COMPOSE-UI-LEAN-V1 row [vercel skip]",
+      "author": "LANE01-Cursor",
+      "committed_at": "2026-05-03T11:58:23Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/ef438b2f8cdc7c6f61feab548318f02d236f63db"
+    },
+    {
+      "sha": "86043608c483a40985658d7d454fa199ba97ac97",
+      "message": "audit(LANE01): FIX-COMPOSE-UI-LEAN-V1 deliverables 4 muc FLAT [vercel skip] (#161)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-03T11:57:54Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/86043608c483a40985658d7d454fa199ba97ac97"
+    },
+    {
+      "sha": "c715ba2ca240eae15dd78070bbb317fd24f80bd1",
+      "message": "fix(lane03): deploy public enta route guard",
+      "author": "unitonzengarden",
+      "committed_at": "2026-05-03T11:48:30Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/c715ba2ca240eae15dd78070bbb317fd24f80bd1"
+    },
+    {
+      "sha": "a681343aaad939b7fd04189a4596b2b0812628da",
+      "message": "fix(LANE01): compose UI lean - suppress noise warnings + consolidate loading/error branches per HOME_SOCIAL_CANON 6.3 (#160)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-03T11:47:47Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/a681343aaad939b7fd04189a4596b2b0812628da"
+    },
+    {
+      "sha": "abfe5042fd26e79d21faa64fdd39ef06dec68ec7",
+      "message": "audit(lane02/dev1/plus-hub): V3 alignment audit complete (NO code changes)",
+      "author": "unitonzengarden",
+      "committed_at": "2026-05-03T11:44:40Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/abfe5042fd26e79d21faa64fdd39ef06dec68ec7"
+    },
+    {
+      "sha": "e8ad0d7d70024c48245e884c88ab8816c2d7cb82",
+      "message": "chore(LANE01): update INDEX.md with FIX-AUTH-RESTORE-PERF-V1 row [vercel skip]",
+      "author": "LANE01-Cursor",
+      "committed_at": "2026-05-03T11:27:43Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/e8ad0d7d70024c48245e884c88ab8816c2d7cb82"
+    },
+    {
+      "sha": "8519702308389c1a702fe6724132928bcdc70a9a",
+      "message": "audit(LANE01): FIX-AUTH-RESTORE-PERF-V1 deliverables 4 muc FLAT [vercel skip] (#159)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-03T11:27:18Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/8519702308389c1a702fe6724132928bcdc70a9a"
+    },
+    {
+      "sha": "1c9d8d4ad52b60c37dd9c11c1a267e53aabc54fb",
+      "message": "fix(LANE01): auth-restore PERSISTED_SESSION_RESTORE_TIMEOUT_MS 20000 -> 8000 per Audit 7.2.5 F2 (#158)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-03T11:20:04Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/1c9d8d4ad52b60c37dd9c11c1a267e53aabc54fb"
+    },
+    {
+      "sha": "4e1ae59b47b4dadd2319242991b277902a9196b2",
+      "message": "docs(lane02): close Tu Vi V2 module",
+      "author": "unitonzengarden",
+      "committed_at": "2026-05-03T11:13:59Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/4e1ae59b47b4dadd2319242991b277902a9196b2"
+    },
+    {
+      "sha": "49cdc0638230f3175f49e04016d74cf56aa8d6e6",
+      "message": "chore(LANE01): cross-lane handoff to Lane_02 - vite dev blocker (tao/ziwei syntax err) [vercel skip] (#157)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-03T11:14:21Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/49cdc0638230f3175f49e04016d74cf56aa8d6e6"
+    },
+    {
+      "sha": "b85bd440790a105014dfc5735dd0e9ac5bb3175e",
+      "message": "chore(LANE01): update INDEX.md with FIX-QA-USER-SEED-V1 row [vercel skip]",
+      "author": "LANE01-Cursor",
+      "committed_at": "2026-05-03T11:12:56Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/b85bd440790a105014dfc5735dd0e9ac5bb3175e"
+    },
+    {
+      "sha": "e5edb91eea35087b485f2d8030cb5ddb0f26f233",
+      "message": "audit(LANE01): FIX-QA-USER-SEED-V1 deliverables 4 muc FLAT [vercel skip] (#156)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-03T11:12:33Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/e5edb91eea35087b485f2d8030cb5ddb0f26f233"
+    },
     {
       "sha": "54e453afcc5b14029511b31a572523134c768ad6",
       "message": "fix(LANE01): QA user seed enta_profiles for Sprint 7.4.2 - closes Cat 1 data gap (#155)",
@@ -129,90 +213,6 @@
       "author": "Uniton Zen",
       "committed_at": "2026-05-03T08:28:46Z",
       "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/eefcd974b1983044d20482bf9f03e09602ef2a07"
-    },
-    {
-      "sha": "64cf79648799a407c659437c1f24fabf639d358c",
-      "message": "fix(LANE01): compose 1-step UX, allowCollapse honor card variant per HOME_SOCIAL_CANON 6.2 (#144)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-05-03T08:21:39Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/64cf79648799a407c659437c1f24fabf639d358c"
-    },
-    {
-      "sha": "84b72f9fdf0ac1df4e4c48abb7eec305a5542921",
-      "message": "fix(lane02/uzg/tao): useRealZiweiChart auto-compute on first visit",
-      "author": "unitonzengarden",
-      "committed_at": "2026-05-03T07:57:02Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/84b72f9fdf0ac1df4e4c48abb7eec305a5542921"
-    },
-    {
-      "sha": "c445c0b9b644fbf162f0fa02155795169ad367cb",
-      "message": "chore(LANE01): update INDEX.md with AUDIT-HOME-SOCIAL-ENGINE-V1 row [vercel skip]",
-      "author": "LANE01-Cursor",
-      "committed_at": "2026-05-03T07:46:28Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/c445c0b9b644fbf162f0fa02155795169ad367cb"
-    },
-    {
-      "sha": "4b6d93e786cf87db3e8b8d6340e9231d01f821bc",
-      "message": "audit(LANE01): HOME social engine V1 - 5 dimensions + 7 proposed fix tasks [vercel skip] (#143)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-05-03T07:45:45Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/4b6d93e786cf87db3e8b8d6340e9231d01f821bc"
-    },
-    {
-      "sha": "da7837b6d32ac2ca679db0df63a7fb4ca3553060",
-      "message": "feat(lane02/uzg/tao): TUVI OFFICIAL FINAL reuse 1333 LOC canonical components (#142)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-05-03T07:37:00Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/da7837b6d32ac2ca679db0df63a7fb4ca3553060"
-    },
-    {
-      "sha": "145ba049055e87accd248c020244463f34d7c5e8",
-      "message": "chore(LANE01): update INDEX.md with FIX-COMPOSE-LAYOUT-V1 row [vercel skip] (#141)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-05-03T06:58:41Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/145ba049055e87accd248c020244463f34d7c5e8"
-    },
-    {
-      "sha": "19362141ae7eca2f0058780e8a7418f3fe1e8aa0",
-      "message": "audit(LANE01): FIX-COMPOSE-LAYOUT-V1 deliverables 4 muc FLAT [vercel skip] (#140)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-05-03T06:58:15Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/19362141ae7eca2f0058780e8a7418f3fe1e8aa0"
-    },
-    {
-      "sha": "4aa1971f5047462590b5abf9ac33c13f3a05a4e1",
-      "message": "fix(LANE01): compose layout - prevent composer card stretching to giant black-oval (#139)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-05-03T06:49:55Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/4aa1971f5047462590b5abf9ac33c13f3a05a4e1"
-    },
-    {
-      "sha": "26fe29c70c2b2d8f4c7a6347ee55e77ced7952df",
-      "message": "chore(lane02): TAO Tu Vi V3 full app deliverables + INDEX",
-      "author": "unitonzengarden",
-      "committed_at": "2026-05-03T06:38:15Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/26fe29c70c2b2d8f4c7a6347ee55e77ced7952df"
-    },
-    {
-      "sha": "656f32e379a5778226e3029474ada0b67414a2fd",
-      "message": "feat(lane02/uzg/tao): refactor 5 sub-route full app + Tu Vi V3 dark + Nam Tao branding (#138)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-05-03T06:23:01Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/656f32e379a5778226e3029474ada0b67414a2fd"
-    },
-    {
-      "sha": "03add32a834aa983570ae744210f01f2a9ba8c4c",
-      "message": "chore(LANE01): update INDEX.md with FIX-I18N-RESOLVER-PATCH-V1 row [vercel skip] (#137)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-05-03T06:21:48Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/03add32a834aa983570ae744210f01f2a9ba8c4c"
-    },
-    {
-      "sha": "9143450ed062e759284e0beda30b33c3f5538989",
-      "message": "audit(LANE01): FIX-I18N-RESOLVER-PATCH-V1 deliverables 4 muc FLAT [vercel skip] (#136)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-05-03T06:21:14Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/9143450ed062e759284e0beda30b33c3f5538989"
     }
   ]
 }
