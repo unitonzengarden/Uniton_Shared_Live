@@ -10,7 +10,7 @@
 ## §0. Header
 
 - **Generator:** `aier-state-update v1.0` invoked via `scripts/runtime/generate_project_status.py v1.1`
-- **Source commit:** `e3e01047c2fd67e08ebcee5d9466b2f5dedd1219` (short: `e3e0104`)
+- **Source commit:** `6be299f7d5dece9036afb2eb5e9587a0bc413603` (short: `6be299f`)
 - **Auto-generated:** `true` (do not hand-edit)
 - **Authority:** repo-backed automation per LAW_N8 §L8.2 explicitly enabled CI mode (state-mirror auto-regenerate scope only)
 
@@ -68,11 +68,11 @@
 
 | SHA | Author | Subject |
 |---|---|---|
-| `e3e0104` | unitonzengarden | chore(lane02/uzg): LAW-compliant deliverables LANE02-UZG-PLUS-HUB-BUGFIX-V1 |
-| `83b41bb` | Ecosystem Poller Bot | poll: ecosystem state update [vercel skip] |
-| `f6e9a05` | AIER Code Heartbeat | AIER Code heartbeat 2026-05-02T18:31:03Z [vercel skip] |
-| `1a78847` | Uniton Zen | Merge pull request #106 from unitonzengarden/audit/lane01-clac1-v2-enta-wizard-result-reveal |
-| `e11181f` | CLAC Executor | audit: V2 ENTA wizard result reveal Fix-ENTA-3B LIVE [vercel skip] |
+| `6be299f` | unitonzengarden | qa(lane02/uzg/tao): TAO mini-app 7 production screenshots + LAW deliverables [vercel skip] |
+| `e624990` | AIER Code Heartbeat | AIER Code heartbeat 2026-05-02T23:59:02Z [vercel skip] |
+| `3f93a93` | Ecosystem Poller Bot | poll: ecosystem state update [vercel skip] |
+| `7e1b80a` | AIER Code Heartbeat | AIER Code heartbeat 2026-05-02T23:01:45Z [vercel skip] |
+| `c231f18` | Ecosystem Poller Bot | poll: ecosystem state update [vercel skip] |
 
 ## §7. Latest 5 DONE Tasks (from MASTER_CHECKLIST)
 
