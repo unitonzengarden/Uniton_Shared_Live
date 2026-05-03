@@ -1,9 +1,37 @@
 {
   "project_slug": "uzg-plus",
   "github_repo": "unitonzengarden/uzgplus-app",
-  "polled_at": "2026-05-03T10:16:32.240Z",
+  "polled_at": "2026-05-03T11:12:13.459Z",
   "count": 30,
   "commits": [
+    {
+      "sha": "54e453afcc5b14029511b31a572523134c768ad6",
+      "message": "fix(LANE01): QA user seed enta_profiles for Sprint 7.4.2 - closes Cat 1 data gap (#155)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-03T11:08:57Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/54e453afcc5b14029511b31a572523134c768ad6"
+    },
+    {
+      "sha": "0d1d0dbf115526dcfebaef74d4064de8e72f2958",
+      "message": "feat(lane02/uzg/tao): TUVI FINAL V2 Phase A audit + root fix (DO NOT MERGE — Phase B QA gate) (#153)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-03T11:08:12Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/0d1d0dbf115526dcfebaef74d4064de8e72f2958"
+    },
+    {
+      "sha": "0810c769d1572f127c7e2d8295c0bbd252dcbd25",
+      "message": "chore(LANE01): update INDEX.md with AUDIT-PROFILE-BOOTSTRAP-DIAGNOSTIC-V1 row [vercel skip]",
+      "author": "LANE01-Cursor",
+      "committed_at": "2026-05-03T10:19:58Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/0810c769d1572f127c7e2d8295c0bbd252dcbd25"
+    },
+    {
+      "sha": "064cc3f2ca85b63a31f844e46da89d7b4eec4059",
+      "message": "audit(LANE01): profile_bootstrap diagnostic Sprint 7.4.1 - Cat 1 QA data gap + Sprint 7.4.2 recommendation [vercel skip] (#154)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-03T10:19:33Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/064cc3f2ca85b63a31f844e46da89d7b4eec4059"
+    },
     {
       "sha": "eb574fad4f5ac50cfbca25d7151d7d8a6c4d4a47",
       "message": "feat(lane02): TUVI Final V2 Phase B export PNG + QA deliverables [vercel skip]",
@@ -185,34 +213,6 @@
       "author": "Uniton Zen",
       "committed_at": "2026-05-03T06:21:14Z",
       "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/9143450ed062e759284e0beda30b33c3f5538989"
-    },
-    {
-      "sha": "d6d16e1bd9d42a0bf0978e302c20e701a5e08123",
-      "message": "fix(LANE01): i18n resolver fallback param honored, BUG-004 root patch (#135)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-05-03T06:11:56Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/d6d16e1bd9d42a0bf0978e302c20e701a5e08123"
-    },
-    {
-      "sha": "1ae3d3b1b633e91d133835377b26f9cb3a873f09",
-      "message": "chore(lane02): TAO Tu Vi engine wire B1 deliverables + INDEX",
-      "author": "unitonzengarden",
-      "committed_at": "2026-05-03T05:30:24Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/1ae3d3b1b633e91d133835377b26f9cb3a873f09"
-    },
-    {
-      "sha": "d1f06ae01f00686d08ea921bd7c1b095438fb80c",
-      "message": "audit(LANE01): SETUP-FLAT-PATTERN-MIGRATE-V1 companion verify [vercel skip] (#134)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-05-03T05:23:02Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/d1f06ae01f00686d08ea921bd7c1b095438fb80c"
-    },
-    {
-      "sha": "ccb9723eed6b17cc4152d5efbb0c07e4d4ce366f",
-      "message": "setup(LANE01): migrate to flat pattern Lane_02 standard [vercel skip] (#133)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-05-03T05:21:48Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/ccb9723eed6b17cc4152d5efbb0c07e4d4ce366f"
     }
   ]
 }
