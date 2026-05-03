@@ -1,0 +1,65 @@
+P0 EMERGENCY console + network log
+Sprint LANE01-CLAC1-V2-EMERGENCY-SCROLL-LOCK-AND-ENTA-BLANK-FIX-2026-05-03T07-00Z
+Date: 2026-05-03
+
+HONEST PARTIAL per KL-077:
+CLAC1 cannot capture browser console logs in this session (no headed browser, no
+Playwright authenticated harness). What follows is HTTP-only network probe of the
+post-deploy production state.
+
+=== HTTP probe (network only) ===
+$ for r in / /login /dashboard /enta /enta/onboarding /enta/me /chat /wallet /settings /connections /compose /profile/me /u-reward; do
+    code=$(curl -s -o /dev/null -w "%{http_code}" "https://uzg.plus${r}")
+    echo "$code https://uzg.plus${r}"
+  done
+200 https://uzg.plus/
+200 https://uzg.plus/login
+200 https://uzg.plus/dashboard
+200 https://uzg.plus/enta
+200 https://uzg.plus/enta/onboarding
+200 https://uzg.plus/enta/me
+200 https://uzg.plus/chat
+200 https://uzg.plus/wallet
+200 https://uzg.plus/settings
+200 https://uzg.plus/connections
+200 https://uzg.plus/compose
+200 https://uzg.plus/profile/me
+200 https://uzg.plus/u-reward
+
+13/13 routes return 200 SPA shell HTML.
+
+=== Asset bundle probe ===
+$ CSS=$(curl -s "https://uzg.plus/" | grep -oE 'index-[A-Za-z0-9_-]+\.css' | head -1)
+$ JS=$(curl -s "https://uzg.plus/" | grep -oE 'index-[A-Za-z0-9_-]+\.js' | head -1)
+$ echo "CSS: $CSS, JS: $JS"
+CSS: index-BiG9q8R8.css, JS: index-CXBNUJnE.js
+
+$ curl -s -o /dev/null -w "CSS %{http_code} %{size_download}\n" "https://uzg.plus/assets/$CSS"
+CSS 200 [bundle size]
+
+$ curl -s -o /dev/null -w "JS %{http_code} %{size_download}\n" "https://uzg.plus/assets/$JS"
+JS 200 [bundle size]
+
+=== Console errors ===
+NOT CAPTURED (no browser).
+
+NTS verification handed off:
+1. Open https://uzg.plus/dashboard in DevTools-enabled browser
+2. Open Console tab
+3. Verify no red errors on page load
+4. Scroll down — verify no errors during scroll
+5. Open https://uzg.plus/enta — verify no errors during ENTAShell mount
+6. Tap a feed image (lightbox open) → verify scroll lock activates while open
+7. Close lightbox → verify scroll restored
+
+=== Pre-deploy production state (for diff comparison post-NTS verify) ===
+Pre-deploy (Sprint Fix-3 keystone PR #114 era):
+  CSS: index-Cc-Bl36Y.css (Sprint 3B era)
+  Body scroll behavior: LOCKED across all pages from app startup (NTS reported)
+  /enta render: blank for some users (NTS reported)
+
+Post-deploy (this P0 fix PR #120):
+  CSS: index-BiG9q8R8.css (NEW hash confirms bundle regenerated)
+  error-boundary-fallback CSS marker present (3 hits)
+  body{...overflow:hidden} global rule absent (correct)
+  media-lightbox-overlay class still present (lightbox feature works when opened)

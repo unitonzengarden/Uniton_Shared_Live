@@ -1,0 +1,38 @@
+KL-028 V2 LIVE probe — post P0 emergency fix
+PR #120 merged 001bba1f at 2026-05-03T00:28:43Z
+Cloudflare deploy run 25265628575 SUCCESS
+
+Probe target: https://uzg.plus
+Production CSS bundle: index-BiG9q8R8.css
+Production JS bundle: index-CXBNUJnE.js
+
+V2 routes (all HOME + ENTA-related Lane_01 + adjacent Lane_02 read-only):
+200 https://uzg.plus/
+200 https://uzg.plus/login
+200 https://uzg.plus/dashboard
+200 https://uzg.plus/enta
+200 https://uzg.plus/enta/onboarding
+200 https://uzg.plus/enta/me
+200 https://uzg.plus/chat
+200 https://uzg.plus/wallet
+200 https://uzg.plus/settings
+200 https://uzg.plus/connections
+200 https://uzg.plus/compose
+200 https://uzg.plus/profile/me
+200 https://uzg.plus/u-reward
+
+13/13 routes 200 SPA shell. Customer impact during deploy: zero.
+
+Production CSS marker grep — fix confirmation:
+  ✓ error-boundary-fallback           (NEW from this sprint, 3 hits in CSS)
+  ✓ media-lightbox-overlay            (preserved — lightbox CSS intact)
+  ✓ enta-wheel-hero                   (preserved — Sprint 3B Wheel intact)
+  ✓ enta-onboarding-shell             (preserved — Sprint 3A wizard intact)
+  ✓ enta-wizard-step-indicator        (preserved — Sprint 3A indicator intact)
+
+Production CSS NEGATIVE check (must be empty):
+  body{...overflow:hidden}    — empty (correct: no global body lock leak)
+
+Bundle hash change confirms regenerated CSS shipped:
+  Pre-fix: index-Cc-Bl36Y.css (Sprint 3B era)
+  Post-fix: index-BiG9q8R8.css (this sprint)

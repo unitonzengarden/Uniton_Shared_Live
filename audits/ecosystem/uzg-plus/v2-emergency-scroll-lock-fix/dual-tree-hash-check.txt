@@ -1,0 +1,16 @@
+KL-05 dual-tree byte-identical proof — Sprint LANE01-CLAC1-V2-EMERGENCY-SCROLL-LOCK-AND-ENTA-BLANK-FIX
+
+$ diff -q apps/uzg-pwa/src/components/media/MediaLightbox.jsx src/components/media/MediaLightbox.jsx
+(no output)
+
+$ diff -q apps/uzg-pwa/src/components/ui/ErrorBoundary.jsx src/components/ui/ErrorBoundary.jsx
+(no output)
+
+$ diff -q apps/uzg-pwa/src/components/enta/ENTAShell.jsx src/components/enta/ENTAShell.jsx
+(no output)
+
+$ diff -q apps/uzg-pwa/src/styles.css src/styles.css
+(no output)
+
+All 4 modified files (3 modified + 1 new) byte-identical between
+apps/uzg-pwa/src and root src/. KL-05 dual-tree compliance: PASS.
