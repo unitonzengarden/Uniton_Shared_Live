@@ -1,9 +1,9 @@
 # Uniton_Shared_Live — Sync Info
 
 **Source repo**: unitonzengarden/Uniton_Shared (private)
-**Last sync**: 2026-05-03T04:04:47Z
-**Source commit**: 756944524c18214284d1ea501fd2ca2e8f8faa08
-**Triggered by**: workflow_run
+**Last sync**: 2026-05-03T04:26:22Z
+**Source commit**: ab687182e5d1fca19509908f2bab370065270c40
+**Triggered by**: push
 
 ## Purpose
 
@@ -18,6 +18,8 @@ Canon, laws, skills, lab, rules remain private in Uniton_Shared.
 - runtime/PROJECT_STATUS.md
 - runtime/AIER_CONTEXT_PACKET.md
 - runtime/AIER_CONTEXT_PACKET.json
+- AIER_CONTEXT_START_HERE.md
+- runtime/aier-code/context/**
 - runtime/health/ECOSYSTEM_HEALTH_STATE.md
 - runtime/health/ECOSYSTEM_HEALTH_STATE.json
 - runtime/health/LATEST_VERIFIED_COMMITS.json
@@ -40,6 +42,7 @@ Canon, laws, skills, lab, rules remain private in Uniton_Shared.
 - https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/runtime/PROJECT_STATUS.md
 - https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/runtime/AIER_CONTEXT_PACKET.md
 - https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/runtime/AIER_CONTEXT_PACKET.json
+- https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/AIER_CONTEXT_START_HERE.md
 - https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/runtime/health/ECOSYSTEM_HEALTH_STATE.md
 - https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/runtime/health/ECOSYSTEM_HEALTH_STATE.json
 - https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/runtime/health/LATEST_VERIFIED_COMMITS.json
@@ -51,6 +54,15 @@ Canon, laws, skills, lab, rules remain private in Uniton_Shared.
 - https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/network/task_queues/Lane_01.md
 - https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/network/task_queues/Lane_02.md
 - https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/network/task_queues/Lane_03.md
+
+## AIER Code cold-start entry (LANE03-AIER-CODE-LIVE-COLD-START-HOME-SYNC-IMPLEMENTATION-V1)
+
+- https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/AIER_CONTEXT_START_HERE.md
+- https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/runtime/aier-code/context/SYSTEM_LAW_RUNTIME.md
+- https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/runtime/aier-code/context/PROJECT_STATE_RUNTIME.json
+- https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/runtime/aier-code/context/LANE03_RUNTIME_STATE.json
+- https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/runtime/aier-code/context/SYSTEM_MAP_RUNTIME.md
+- https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/runtime/aier-code/context/TASK_REPORT_STANDARD.md
 
 ## Lane_02 UZG runtime namespace (Lane_02 bootstrap — LANE01-SYNC-EXTEND-LANE02-V1)
 

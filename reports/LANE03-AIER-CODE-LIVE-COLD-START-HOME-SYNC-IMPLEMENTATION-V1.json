@@ -1,0 +1,130 @@
+{
+  "task_id": "LANE03-AIER-CODE-LIVE-COLD-START-HOME-SYNC-IMPLEMENTATION-V1",
+  "generated_at": "2026-05-03T09:55:20+07:00",
+  "repo": "D:/UZG/Projects-v2/Uniton_Shared",
+  "result": "WARNING",
+  "mode": "uniton_shared_sync_workflow_manifest_implementation_only",
+  "summary": "Implemented the approved cold-start home sync path in Uniton_Shared by updating sync_runtime_to_public.yml and public_mirror_manifest.json. No real sync, Live write, push, deployment, Supabase, product repo, law, enforcement, branch protection, task automation, or stale repair was performed.",
+  "rules_observed": {
+    "one_task_only": true,
+    "uniton_shared_only": true,
+    "uniton_shared_live_modified": false,
+    "manual_deploy_performed": false,
+    "supabase_touched": false,
+    "product_repo_touched": false,
+    "existing_laws_rewritten": false,
+    "enforcement_changed": false,
+    "branch_protection_changed": false,
+    "task_execution_automated": false,
+    "stale_surfaces_fixed": false,
+    "real_sync_executed": false,
+    "pushed": false
+  },
+  "source_of_truth_draft_used": [
+    "runtime/aier-code/sync/COLD_START_HOME_SYNC_DRAFT_V1.md",
+    "runtime/aier-code/sync/COLD_START_HOME_SYNC_DRAFT_V1.json"
+  ],
+  "files_created_or_changed": [
+    ".github/workflows/sync_runtime_to_public.yml",
+    "runtime/aier-code/state/public_mirror_manifest.json",
+    "reports/LANE03-AIER-CODE-LIVE-COLD-START-HOME-SYNC-IMPLEMENTATION-V1_REPORT.md",
+    "reports/LANE03-AIER-CODE-LIVE-COLD-START-HOME-SYNC-IMPLEMENTATION-V1.json"
+  ],
+  "workflow_changes": {
+    "file": ".github/workflows/sync_runtime_to_public.yml",
+    "trigger_paths_added": [
+      "AIER_CONTEXT_START_HERE.md",
+      "runtime/aier-code/context/**"
+    ],
+    "copy_logic_added": [
+      "source/AIER_CONTEXT_START_HERE.md -> target/AIER_CONTEXT_START_HERE.md",
+      "source/runtime/aier-code/context/. -> target/runtime/aier-code/context/"
+    ],
+    "sync_info_entries_added": [
+      "AIER_CONTEXT_START_HERE.md",
+      "runtime/aier-code/context/SYSTEM_LAW_RUNTIME.md",
+      "runtime/aier-code/context/PROJECT_STATE_RUNTIME.json",
+      "runtime/aier-code/context/LANE03_RUNTIME_STATE.json",
+      "runtime/aier-code/context/SYSTEM_MAP_RUNTIME.md",
+      "runtime/aier-code/context/TASK_REPORT_STANDARD.md"
+    ]
+  },
+  "manifest_changes": {
+    "file": "runtime/aier-code/state/public_mirror_manifest.json",
+    "safe_public_entries_added": [
+      "AIER_CONTEXT_START_HERE.md",
+      "runtime/aier-code/context/**"
+    ],
+    "kept_source_side_not_mirrored": [
+      "runtime/aier-code/state/**"
+    ],
+    "sync_workflow_changed": true
+  },
+  "validation": {
+    "source_files_exist": {
+      "result": "PASS",
+      "files": [
+        "AIER_CONTEXT_START_HERE.md",
+        "runtime/aier-code/context/SYSTEM_LAW_RUNTIME.md",
+        "runtime/aier-code/context/PROJECT_STATE_RUNTIME.json",
+        "runtime/aier-code/context/LANE03_RUNTIME_STATE.json",
+        "runtime/aier-code/context/SYSTEM_MAP_RUNTIME.md",
+        "runtime/aier-code/context/TASK_REPORT_STANDARD.md"
+      ]
+    },
+    "public_mirror_manifest_json": {
+      "result": "PASS",
+      "command": "Get-Content -Raw .\\runtime\\aier-code\\state\\public_mirror_manifest.json | ConvertFrom-Json | Out-Null"
+    },
+    "report_json": {
+      "result": "PASS",
+      "command": "Get-Content -Raw .\\reports\\LANE03-AIER-CODE-LIVE-COLD-START-HOME-SYNC-IMPLEMENTATION-V1.json | ConvertFrom-Json | Out-Null"
+    },
+    "exposure_keyword_scan": {
+      "result": "PASS_WITH_EXPECTED_TEXT_MATCHES",
+      "patterns": [
+        "secret",
+        "token",
+        "password",
+        "credential",
+        "private key",
+        "BEGIN ",
+        "SUPABASE_SERVICE",
+        "api[_-]?key"
+      ],
+      "notes": [
+        "Matches were only safety guidance text in TASK_REPORT_STANDARD.md.",
+        "No secret values were found."
+      ]
+    },
+    "git_diff_check": {
+      "result": "PASS_WITH_WARNING",
+      "command": "git diff --check",
+      "exit_code": 0,
+      "warning": "LF will be replaced by CRLF in .github/workflows/sync_runtime_to_public.yml the next time Git touches it."
+    },
+    "git_status": {
+      "result": "DIRTY_WITH_WARNING",
+      "command": "git status --short",
+      "notes": [
+        "Worktree includes this task's workflow change plus existing untracked artifacts.",
+        "git status printed warning: could not open directory '.pytest_cache/': Permission denied.",
+        "No commit was created."
+      ]
+    }
+  },
+  "risks": [
+    "This implementation updates the existing sync workflow but does not run the sync.",
+    "Uniton_Shared_Live remains untouched locally.",
+    "The broader sync workflow still has pre-existing public mirror scope conflicts identified by Phase 1.",
+    "No hash manifest or exposure gate was added.",
+    "Existing stale runtime surfaces remain stale.",
+    "The workflow file has a Git CRLF normalization warning.",
+    "The repo remains dirty with accumulated untracked artifacts."
+  ],
+  "next_safe_action": {
+    "task_id": "LANE03-AIER-CODE-LIVE-COLD-START-HOME-SYNC-VERIFY-V1",
+    "mode": "verify_after_nts_approved_commit_and_push",
+    "summary": "After this change is committed and pushed by NTS-approved process, verify that the existing sync workflow publishes the cold-start home entry and context pack to Uniton_Shared_Live without manually writing to Live."
+  }
+}

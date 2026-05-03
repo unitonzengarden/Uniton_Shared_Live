@@ -1,0 +1,122 @@
+{
+  "schema_version": "AIER_CODE_PROJECT_STATE_RUNTIME_V1",
+  "generated_at": "2026-05-03T09:02:00+07:00",
+  "project_name": "AIER Code Runtime OS",
+  "ecosystem_stack": {
+    "governance": "Uniton_Shared",
+    "public_cold_start_mirror": "Uniton_Shared_Live",
+    "future_execution_runtime": "Uniton_OS",
+    "product_repos": [
+      "uzgplus-app",
+      "AIFI_LIFE",
+      "AIER LIFE",
+      "other ecosystem product repos as registered in runtime/aier-status"
+    ],
+    "runtime_layers": [
+      "laws",
+      "runtime spine",
+      "context pack",
+      "pre-task gate",
+      "reports",
+      "ledger",
+      "lane queues",
+      "health",
+      "public mirror"
+    ]
+  },
+  "canonical_repos": {
+    "Uniton_Shared": {
+      "role": "governance and source of truth",
+      "write_policy": "scoped Uniton_Shared tasks only"
+    },
+    "Uniton_Shared_Live": {
+      "role": "public mirror and LLM cold-start state",
+      "write_policy": "sync output only; no direct source-of-truth writes"
+    },
+    "Uniton_OS": {
+      "role": "future execution/runtime plane",
+      "write_policy": "out of scope until explicit backend/runtime control phase"
+    },
+    "uzgplus-app": {
+      "role": "product repository",
+      "write_policy": "out of scope for AIER Code runtime governance tasks unless explicitly assigned"
+    }
+  },
+  "current_overall_status": "WARNING",
+  "current_overall_status_reason": "AIER Code has Phase 1 runtime spine and Phase 2 report-only pre-task gate, but current gate dry run still warns because stale/runtime findings exist.",
+  "current_aier_code_os_phase": {
+    "phase": "Context pack canon before Phase 3",
+    "phase_status": "in_progress",
+    "current_task": "LANE03-AIER-CODE-RUNTIME-CONTEXT-PACK-CANON-V1"
+  },
+  "completed_phases": [
+    {
+      "phase": "Phase 1 runtime spine normalization",
+      "task_id": "LANE03-AIER-CODE-RUNTIME-SPINE-NORMALIZATION-DESIGN-AND-SCHEMA-V1",
+      "result": "WARNING",
+      "summary": "Created runtime/aier-code/state spine, source map, freshness policy, public mirror manifest draft, runtime event schema, and read-only inventory script."
+    },
+    {
+      "phase": "Phase 2 pre-task runtime gate design",
+      "task_id": "LANE03-AIER-CODE-PRETASK-RUNTIME-GATE-DESIGN-V1",
+      "result": "WARNING",
+      "summary": "Created report-only pre-task gate, receipt schema, contract docs, and ALLOW/WARN/BLOCK sample receipts."
+    }
+  ],
+  "current_warning_state": {
+    "gate_mode": "report_only",
+    "latest_known_real_gate_verdict": "WARN",
+    "warning_reason": "Stale runtime surfaces, public mirror draft conflicts, and dirty/untracked local runtime artifacts are advisory findings.",
+    "enforcement_active": false
+  },
+  "main_blockers_stale_surfaces_summary": [
+    "runtime/current_state.md stale by Phase 1 policy",
+    "runtime/AIER_CONTEXT_PACKET.json and .md stale by Phase 1 policy",
+    "runtime/health/** stale by Phase 1 policy",
+    "status/DASHBOARD.live.md stale by Phase 1 policy",
+    "status/BLOCKERS.live.md and status/NEXT_ACTIONS.live.md stale by Phase 1 policy",
+    "network/task_queues/*.md stale/manual transitional",
+    "aier-status/aier-code/state.live.json stale/manual transitional",
+    "aier-status/aier-code/heartbeat.live.json stale compared with heartbeat workflow state",
+    "Uniton_Shared_Live mirror state has drift/dirty risk in local read-only inspection",
+    "current sync workflow mirrors some surfaces the Phase 1 public mirror draft marks unsafe pending reconciliation"
+  ],
+  "next_recommended_task": {
+    "task_id": "LANE03-AIER-CODE-POSTTASK-REPORT-STATE-EMITTER-DESIGN-V1",
+    "mode": "report_only_design_first",
+    "summary": "Design the Phase 3 emitter to consume pre-task receipts and reports, then draft task/ledger/status updates without enforcing task completion."
+  },
+  "last_verified_reports": [
+    {
+      "task_id": "LANE03-AIER-CODE-RUNTIME-GOVERNANCE-AND-LIVE-CONTROL-AUDIT-V1",
+      "path": "reports/LANE03-AIER-CODE-RUNTIME-GOVERNANCE-AND-LIVE-CONTROL-AUDIT-V1_REPORT.md",
+      "result": "AUDIT_COMPLETE_NOT_OS_READY"
+    },
+    {
+      "task_id": "LANE03-AIER-CODE-RUNTIME-SPINE-NORMALIZATION-DESIGN-AND-SCHEMA-V1",
+      "path": "reports/LANE03-AIER-CODE-RUNTIME-SPINE-NORMALIZATION-DESIGN-AND-SCHEMA-V1_REPORT.md",
+      "result": "WARNING"
+    },
+    {
+      "task_id": "LANE03-AIER-CODE-PRETASK-RUNTIME-GATE-DESIGN-V1",
+      "path": "reports/LANE03-AIER-CODE-PRETASK-RUNTIME-GATE-DESIGN-V1_REPORT.md",
+      "result": "WARNING"
+    }
+  ],
+  "machine_status": {
+    "source_of_truth_repo": "Uniton_Shared",
+    "public_mirror_repo": "Uniton_Shared_Live",
+    "runtime_spine_exists": true,
+    "pretask_gate_exists": true,
+    "context_pack_exists": true,
+    "posttask_emitter_exists": false,
+    "queue_controller_exists": false,
+    "skill_runner_exists": false,
+    "health_monitor_exists": false,
+    "governance_enforcement_active": false,
+    "live_write_allowed": false,
+    "supabase_write_allowed": false,
+    "product_repo_write_allowed": false,
+    "deployment_allowed": false
+  }
+}

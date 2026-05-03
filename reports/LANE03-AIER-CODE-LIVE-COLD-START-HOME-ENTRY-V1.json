@@ -1,0 +1,101 @@
+{
+  "task_id": "LANE03-AIER-CODE-LIVE-COLD-START-HOME-ENTRY-V1",
+  "generated_at": "2026-05-03T09:26:36+07:00",
+  "repo": "D:/UZG/Projects-v2/Uniton_Shared",
+  "result": "WARNING",
+  "mode": "uniton_shared_source_side_preparation_only",
+  "summary": "Created AIER_CONTEXT_START_HERE.md as a public-safe root cold-start entry intended for future Uniton_Shared_Live mirroring. Validation passed. Warning remains because the worktree is dirty with untracked runtime artifacts and git status reports a .pytest_cache permission warning.",
+  "rules_observed": {
+    "one_task_only": true,
+    "uniton_shared_only": true,
+    "uniton_shared_live_modified": false,
+    "supabase_touched": false,
+    "product_repo_touched": false,
+    "deployed": false,
+    "existing_laws_rewritten": false,
+    "governance_enforcement_changed": false,
+    "branch_protection_changed": false,
+    "task_execution_automated": false,
+    "stale_surfaces_fixed": false
+  },
+  "files_created_or_changed": [
+    "AIER_CONTEXT_START_HERE.md",
+    "reports/LANE03-AIER-CODE-LIVE-COLD-START-HOME-ENTRY-V1_REPORT.md",
+    "reports/LANE03-AIER-CODE-LIVE-COLD-START-HOME-ENTRY-V1.json"
+  ],
+  "validation": {
+    "cold_start_entry_exists": {
+      "result": "PASS",
+      "path": "AIER_CONTEXT_START_HERE.md"
+    },
+    "referenced_context_files_exist": {
+      "result": "PASS",
+      "files": [
+        "runtime/aier-code/context/SYSTEM_LAW_RUNTIME.md",
+        "runtime/aier-code/context/PROJECT_STATE_RUNTIME.json",
+        "runtime/aier-code/context/LANE03_RUNTIME_STATE.json",
+        "runtime/aier-code/context/SYSTEM_MAP_RUNTIME.md",
+        "runtime/aier-code/context/TASK_REPORT_STANDARD.md"
+      ]
+    },
+    "report_json_validation": {
+      "result": "PASS",
+      "command": "Get-Content -Raw .\\reports\\LANE03-AIER-CODE-LIVE-COLD-START-HOME-ENTRY-V1.json | ConvertFrom-Json | Out-Null"
+    },
+    "git_status": {
+      "result": "DIRTY_WITH_WARNING",
+      "command": "git status --short",
+      "notes": [
+        "Working tree contains untracked runtime/report/script/doc artifacts.",
+        "git status printed warning: could not open directory '.pytest_cache/': Permission denied.",
+        "No commit was created."
+      ]
+    }
+  },
+  "live_cold_start_entry_summary": {
+    "title": "AIER / Uniton Shared Live - Start Here",
+    "authority": [
+      "Uniton_Shared = source of truth",
+      "Uniton_Shared_Live = public mirror / cold-start state only",
+      "Chat memory is not source of truth"
+    ],
+    "mandatory_read_order": [
+      "runtime/aier-code/context/SYSTEM_LAW_RUNTIME.md",
+      "runtime/aier-code/context/PROJECT_STATE_RUNTIME.json",
+      "runtime/aier-code/context/LANE03_RUNTIME_STATE.json",
+      "runtime/aier-code/context/SYSTEM_MAP_RUNTIME.md",
+      "runtime/aier-code/context/TASK_REPORT_STANDARD.md"
+    ],
+    "raw_url_base": "https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/",
+    "lane_work_protocol": [
+      "Read runtime first",
+      "Run/report pre-task gate when available",
+      "Do exactly one scoped task",
+      "Produce report evidence after work",
+      "Never write directly to Uniton_Shared_Live as source of truth"
+    ],
+    "current_state": [
+      "AIER Code Phase 1 runtime spine completed",
+      "Phase 2 report-only pre-task gate completed",
+      "Runtime context pack completed",
+      "Next safe action: LANE03-AIER-CODE-POSTTASK-REPORT-STATE-EMITTER-DESIGN-V1"
+    ],
+    "existing_mirror_index_links": [
+      "LAW_INDEX_MASTER.md",
+      "SYNC_INFO.md",
+      "README.md"
+    ]
+  },
+  "risks": [
+    "This task prepares the source-side root entry only and does not modify Uniton_Shared_Live.",
+    "Current sync workflow may need a later scoped task to mirror AIER_CONTEXT_START_HERE.md and runtime/aier-code/context/**.",
+    "Existing stale runtime surfaces remain stale.",
+    "Existing repo dirty state remains dirty.",
+    "No enforcement behavior was introduced."
+  ],
+  "next_safe_action": {
+    "task_id": "LANE03-AIER-CODE-LIVE-COLD-START-HOME-SYNC-DRAFT-V1",
+    "mode": "report_only_sync_update_proposal",
+    "why": "A later scoped task should draft how to mirror the cold-start home entry and context pack to Uniton_Shared_Live without direct Live writes or enforcement changes."
+  }
+}

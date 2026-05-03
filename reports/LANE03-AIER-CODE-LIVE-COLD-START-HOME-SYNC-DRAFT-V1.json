@@ -1,0 +1,133 @@
+{
+  "task_id": "LANE03-AIER-CODE-LIVE-COLD-START-HOME-SYNC-DRAFT-V1",
+  "generated_at": "2026-05-03T09:47:02+07:00",
+  "repo": "D:/UZG/Projects-v2/Uniton_Shared",
+  "result": "WARNING",
+  "mode": "report_only_sync_update_proposal",
+  "summary": "Created a report-only proposal for mirroring AIER_CONTEXT_START_HERE.md and runtime/aier-code/context/** to Uniton_Shared_Live later. No workflow, manifest, Live repo, enforcement, Supabase, product repo, deploy, law, or branch protection change was made.",
+  "rules_observed": {
+    "one_task_only": true,
+    "uniton_shared_only": true,
+    "uniton_shared_live_modified": false,
+    "deployed": false,
+    "supabase_touched": false,
+    "product_repo_touched": false,
+    "existing_laws_rewritten": false,
+    "enforcement_changed": false,
+    "branch_protection_changed": false,
+    "real_sync_executed": false,
+    "draft_report_only": true
+  },
+  "files_created_or_changed": [
+    "runtime/aier-code/sync/COLD_START_HOME_SYNC_DRAFT_V1.md",
+    "runtime/aier-code/sync/COLD_START_HOME_SYNC_DRAFT_V1.json",
+    "reports/LANE03-AIER-CODE-LIVE-COLD-START-HOME-SYNC-DRAFT-V1_REPORT.md",
+    "reports/LANE03-AIER-CODE-LIVE-COLD-START-HOME-SYNC-DRAFT-V1.json"
+  ],
+  "source_files_confirmed": [
+    "AIER_CONTEXT_START_HERE.md",
+    "runtime/aier-code/context/SYSTEM_LAW_RUNTIME.md",
+    "runtime/aier-code/context/PROJECT_STATE_RUNTIME.json",
+    "runtime/aier-code/context/LANE03_RUNTIME_STATE.json",
+    "runtime/aier-code/context/SYSTEM_MAP_RUNTIME.md",
+    "runtime/aier-code/context/TASK_REPORT_STANDARD.md"
+  ],
+  "files_proposed_for_public_mirror": [
+    {
+      "source_path": "AIER_CONTEXT_START_HERE.md",
+      "target_path": "AIER_CONTEXT_START_HERE.md",
+      "raw_url": "https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/AIER_CONTEXT_START_HERE.md"
+    },
+    {
+      "source_path": "runtime/aier-code/context/SYSTEM_LAW_RUNTIME.md",
+      "target_path": "runtime/aier-code/context/SYSTEM_LAW_RUNTIME.md",
+      "raw_url": "https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/runtime/aier-code/context/SYSTEM_LAW_RUNTIME.md"
+    },
+    {
+      "source_path": "runtime/aier-code/context/PROJECT_STATE_RUNTIME.json",
+      "target_path": "runtime/aier-code/context/PROJECT_STATE_RUNTIME.json",
+      "raw_url": "https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/runtime/aier-code/context/PROJECT_STATE_RUNTIME.json"
+    },
+    {
+      "source_path": "runtime/aier-code/context/LANE03_RUNTIME_STATE.json",
+      "target_path": "runtime/aier-code/context/LANE03_RUNTIME_STATE.json",
+      "raw_url": "https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/runtime/aier-code/context/LANE03_RUNTIME_STATE.json"
+    },
+    {
+      "source_path": "runtime/aier-code/context/SYSTEM_MAP_RUNTIME.md",
+      "target_path": "runtime/aier-code/context/SYSTEM_MAP_RUNTIME.md",
+      "raw_url": "https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/runtime/aier-code/context/SYSTEM_MAP_RUNTIME.md"
+    },
+    {
+      "source_path": "runtime/aier-code/context/TASK_REPORT_STANDARD.md",
+      "target_path": "runtime/aier-code/context/TASK_REPORT_STANDARD.md",
+      "raw_url": "https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/runtime/aier-code/context/TASK_REPORT_STANDARD.md"
+    }
+  ],
+  "sync_workflow_change_proposal": {
+    "file": ".github/workflows/sync_runtime_to_public.yml",
+    "status": "proposal_only",
+    "trigger_paths_to_add": [
+      "AIER_CONTEXT_START_HERE.md",
+      "runtime/aier-code/context/**"
+    ],
+    "copy_logic_to_add": [
+      "Copy source/AIER_CONTEXT_START_HERE.md to target/AIER_CONTEXT_START_HERE.md when present.",
+      "Copy source/runtime/aier-code/context/. to target/runtime/aier-code/context/ when present."
+    ],
+    "sync_info_update": "Add AIER Code cold-start entry section with six raw URLs."
+  },
+  "manifest_change_proposal": {
+    "file": "runtime/aier-code/state/public_mirror_manifest.json",
+    "status": "proposal_only",
+    "safe_public_entries_to_add": [
+      "AIER_CONTEXT_START_HERE.md",
+      "runtime/aier-code/context/**"
+    ],
+    "keep_source_side": [
+      "runtime/aier-code/state/**"
+    ]
+  },
+  "exposure_safety_review": {
+    "contains_no_secrets": true,
+    "public_safe": true,
+    "context_cold_start_only": true,
+    "keyword_scan_result": "Only safety guidance text matched; no secret values found.",
+    "does_not_grant_live_authority": true,
+    "does_not_automate_task_execution": true
+  },
+  "validation": {
+    "source_files_exist": {
+      "result": "PASS"
+    },
+    "json_validation": {
+      "result": "PASS",
+      "commands": [
+        "Get-Content -Raw .\\runtime\\aier-code\\sync\\COLD_START_HOME_SYNC_DRAFT_V1.json | ConvertFrom-Json | Out-Null",
+        "Get-Content -Raw .\\reports\\LANE03-AIER-CODE-LIVE-COLD-START-HOME-SYNC-DRAFT-V1.json | ConvertFrom-Json | Out-Null"
+      ]
+    },
+    "git_status": {
+      "result": "DIRTY_WITH_WARNING",
+      "command": "git status --short",
+      "notes": [
+        "Working tree contains untracked runtime/report/script/doc artifacts.",
+        "git status printed warning: could not open directory '.pytest_cache/': Permission denied.",
+        "No commit was created."
+      ]
+    }
+  },
+  "risks": [
+    "Current sync workflow may conflict with Phase 1 public mirror draft.",
+    "Live direct writes remain forbidden.",
+    "Actual sync requires later explicit implementation task.",
+    "This draft does not add hash manifests or exposure gates.",
+    "This draft does not fix stale runtime surfaces.",
+    "This draft does not modify Uniton_Shared_Live."
+  ],
+  "next_safe_action": {
+    "task_id": "LANE03-AIER-CODE-LIVE-COLD-START-HOME-SYNC-IMPLEMENTATION-V1",
+    "mode": "implementation_only_if_nts_explicitly_approves",
+    "summary": "Modify Uniton_Shared sync workflow/manifest to include the cold-start home entry and context pack, then let the existing sync process publish to Uniton_Shared_Live."
+  }
+}

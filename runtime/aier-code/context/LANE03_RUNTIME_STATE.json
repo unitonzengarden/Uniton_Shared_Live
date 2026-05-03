@@ -1,0 +1,64 @@
+{
+  "schema_version": "AIER_CODE_LANE03_RUNTIME_STATE_V1",
+  "generated_at": "2026-05-03T09:02:00+07:00",
+  "lane": "Lane_03",
+  "role": "AIER Code / runtime governance lane",
+  "current_task": "LANE03-AIER-CODE-RUNTIME-CONTEXT-PACK-CANON-V1",
+  "previous_completed_tasks": [
+    {
+      "task_id": "LANE03-AIER-CODE-RUNTIME-GOVERNANCE-AND-LIVE-CONTROL-AUDIT-V1",
+      "result": "AUDIT_COMPLETE_NOT_OS_READY",
+      "summary": "Audited Uniton_Shared and Uniton_Shared_Live runtime governance and identified gaps preventing AIER Code from acting like an OS."
+    },
+    {
+      "task_id": "LANE03-AIER-CODE-RUNTIME-SPINE-NORMALIZATION-DESIGN-AND-SCHEMA-V1",
+      "result": "WARNING",
+      "summary": "Created runtime spine state files, source map, freshness policy, public mirror draft, runtime event schema, and read-only inventory script."
+    },
+    {
+      "task_id": "LANE03-AIER-CODE-PRETASK-RUNTIME-GATE-DESIGN-V1",
+      "result": "WARNING",
+      "summary": "Created report-only pre-task gate, receipt schema, contract, and sample ALLOW/WARN/BLOCK receipts."
+    }
+  ],
+  "current_state": "building runtime context pack",
+  "current_limitations": [
+    "Current pre-task gate is report-only and non-blocking.",
+    "Current gate dry run returns WARN due stale/runtime findings.",
+    "Post-task report/state emitter does not exist yet.",
+    "Lane queue controller does not exist yet.",
+    "Live mirror sync hardening is not implemented yet.",
+    "Skill runner is not unified yet.",
+    "Health monitor is not unified yet.",
+    "Stale runtime surfaces are reported only and are not repaired by this task.",
+    "Uniton_Shared_Live is not modified by this task."
+  ],
+  "next_safe_action_after_this_task": {
+    "task_id": "LANE03-AIER-CODE-POSTTASK-REPORT-STATE-EMITTER-DESIGN-V1",
+    "mode": "report_only_design_first",
+    "summary": "Design a post-task emitter that consumes pre-task receipts and report evidence, then drafts task/ledger/status state without enforcement."
+  },
+  "forbidden_actions": [
+    "Do not touch Supabase.",
+    "Do not touch product repos.",
+    "Do not deploy.",
+    "Do not rewrite existing laws.",
+    "Do not change governance enforcement.",
+    "Do not change Live branch protection.",
+    "Do not modify Uniton_Shared_Live.",
+    "Do not fix stale runtime surfaces unless explicitly tasked.",
+    "Do not automate task execution.",
+    "Do not treat chat memory as source of truth."
+  ],
+  "handoff_summary_for_new_chat": {
+    "start_here": [
+      "runtime/aier-code/context/SYSTEM_LAW_RUNTIME.md",
+      "runtime/aier-code/context/PROJECT_STATE_RUNTIME.json",
+      "runtime/aier-code/context/LANE03_RUNTIME_STATE.json",
+      "runtime/aier-code/context/SYSTEM_MAP_RUNTIME.md",
+      "runtime/aier-code/context/TASK_REPORT_STANDARD.md"
+    ],
+    "operating_instruction": "Read the context pack first, then run the report-only pre-task gate before accepting or starting new Lane_03 runtime governance work.",
+    "known_state": "AIER Code is between Phase 2 and Phase 3. Runtime spine and pre-task gate exist. Post-task emitter is the next safe design task."
+  }
+}

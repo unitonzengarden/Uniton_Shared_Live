@@ -1,0 +1,195 @@
+{
+  "task_id": "LANE03-AIER-CODE-LIVE-COLD-START-HOME-SYNC-VERIFY-V1",
+  "lane": "Lane_03",
+  "generated_at": "2026-05-03T10:04:11+07:00",
+  "mode": "verify_only",
+  "result": "WARNING",
+  "summary": "Cold-start home sync is not verified as published. All six Uniton_Shared_Live raw targets returned HTTP 404, and the local sync implementation appears uncommitted/unpushed from Uniton_Shared.",
+  "scope": {
+    "uniton_shared_only": true,
+    "live_write_performed": false,
+    "manual_sync_run": false,
+    "supabase_touched": false,
+    "product_repos_touched": false,
+    "deploy_performed": false,
+    "laws_rewritten": false,
+    "enforcement_changed": false,
+    "branch_protection_changed": false,
+    "stale_surfaces_fixed": false,
+    "boot_router_started": false
+  },
+  "sync_verify_result": {
+    "status": "WARNING",
+    "published_to_live": false,
+    "exact_blocker": "The required cold-start files are not present on Uniton_Shared_Live raw URLs. Local Uniton_Shared still has uncommitted/unpushed sync implementation changes, including a modified sync workflow and untracked cold-start/context artifacts.",
+    "local_head_sha": "38ad9205992fe8f8bf26a8ef04ffd4f0e6fd932b",
+    "remote_main_sha": "e913d0dc344ce004a388ee253d0b1c35291821f6",
+    "remote_contains_sync_implementation_commit": "not_confirmed",
+    "reason": [
+      "All six raw URL checks returned HTTP 404.",
+      "Local sync workflow implementation is modified but not committed in local HEAD.",
+      "Cold-start home/context files are untracked locally.",
+      "GitHub Actions activity was observed, but current raw targets are not published."
+    ]
+  },
+  "raw_url_checks": [
+    {
+      "path": "AIER_CONTEXT_START_HERE.md",
+      "url": "https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/AIER_CONTEXT_START_HERE.md",
+      "result": "FAIL",
+      "http_status": 404,
+      "content_available": false,
+      "notes": "Raw target is not published."
+    },
+    {
+      "path": "runtime/aier-code/context/SYSTEM_LAW_RUNTIME.md",
+      "url": "https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/runtime/aier-code/context/SYSTEM_LAW_RUNTIME.md",
+      "result": "FAIL",
+      "http_status": 404,
+      "content_available": false,
+      "notes": "Raw target is not published."
+    },
+    {
+      "path": "runtime/aier-code/context/PROJECT_STATE_RUNTIME.json",
+      "url": "https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/runtime/aier-code/context/PROJECT_STATE_RUNTIME.json",
+      "result": "FAIL",
+      "http_status": 404,
+      "content_available": false,
+      "notes": "Raw target is not published."
+    },
+    {
+      "path": "runtime/aier-code/context/LANE03_RUNTIME_STATE.json",
+      "url": "https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/runtime/aier-code/context/LANE03_RUNTIME_STATE.json",
+      "result": "FAIL",
+      "http_status": 404,
+      "content_available": false,
+      "notes": "Raw target is not published."
+    },
+    {
+      "path": "runtime/aier-code/context/SYSTEM_MAP_RUNTIME.md",
+      "url": "https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/runtime/aier-code/context/SYSTEM_MAP_RUNTIME.md",
+      "result": "FAIL",
+      "http_status": 404,
+      "content_available": false,
+      "notes": "Raw target is not published."
+    },
+    {
+      "path": "runtime/aier-code/context/TASK_REPORT_STANDARD.md",
+      "url": "https://raw.githubusercontent.com/unitonzengarden/Uniton_Shared_Live/main/runtime/aier-code/context/TASK_REPORT_STANDARD.md",
+      "result": "FAIL",
+      "http_status": 404,
+      "content_available": false,
+      "notes": "Raw target is not published."
+    }
+  ],
+  "context_home_link_check": {
+    "result": "FAIL",
+    "reason": "AIER_CONTEXT_START_HERE.md raw URL returned HTTP 404, so the five required context links could not be verified on Uniton_Shared_Live.",
+    "expected_paths": [
+      "runtime/aier-code/context/SYSTEM_LAW_RUNTIME.md",
+      "runtime/aier-code/context/PROJECT_STATE_RUNTIME.json",
+      "runtime/aier-code/context/LANE03_RUNTIME_STATE.json",
+      "runtime/aier-code/context/SYSTEM_MAP_RUNTIME.md",
+      "runtime/aier-code/context/TASK_REPORT_STANDARD.md"
+    ]
+  },
+  "json_checks": [
+    {
+      "path": "runtime/aier-code/context/PROJECT_STATE_RUNTIME.json",
+      "result": "FAIL",
+      "reason": "Remote raw URL returned HTTP 404; JSON parse was not possible."
+    },
+    {
+      "path": "runtime/aier-code/context/LANE03_RUNTIME_STATE.json",
+      "result": "FAIL",
+      "reason": "Remote raw URL returned HTTP 404; JSON parse was not possible."
+    }
+  ],
+  "git_status": {
+    "uniton_shared_worktree": "dirty",
+    "local_head_sha": "38ad9205992fe8f8bf26a8ef04ffd4f0e6fd932b",
+    "local_head_subject": "docs(lane02/uzg/tao-wire-v3-v1): ship deliverables LAW-compliant",
+    "remote_main_sha": "e913d0dc344ce004a388ee253d0b1c35291821f6",
+    "notable_local_findings": [
+      ".github/workflows/sync_runtime_to_public.yml is modified.",
+      "AIER_CONTEXT_START_HERE.md is untracked.",
+      "runtime/aier-code/ is untracked.",
+      "scripts/aier_code_os/ is untracked.",
+      "Multiple prior Lane_03 report/runtime artifacts are untracked.",
+      "Unrelated Lane_02 artifacts are untracked.",
+      "git status warned that .pytest_cache could not be opened because permission was denied."
+    ]
+  },
+  "github_actions_status": {
+    "accessible": true,
+    "workflow": "Sync Runtime to Public",
+    "latest_observed_runs": [
+      {
+        "status": "in_progress",
+        "conclusion": "",
+        "name": "Sync Runtime to Public",
+        "event": "workflow_run",
+        "run_id": "25268349583",
+        "started_at_utc": "2026-05-03T03:03:37Z"
+      },
+      {
+        "status": "completed",
+        "conclusion": "success",
+        "name": "[auto-status] regen runtime+network surfaces from b5b07e9 [vercel skip]",
+        "event": "push",
+        "run_id": "25268348331",
+        "started_at_utc": "2026-05-03T03:03:33Z"
+      },
+      {
+        "status": "completed",
+        "conclusion": "success",
+        "name": "docs(lane02/uzg/tao-merge-into-app-v1): ship deliverables LAW-compliant",
+        "event": "push",
+        "run_id": "25268343974",
+        "started_at_utc": "2026-05-03T03:03:19Z"
+      },
+      {
+        "status": "completed",
+        "conclusion": "failure",
+        "name": "Sync Runtime to Public",
+        "event": "workflow_run",
+        "run_id": "25267719178",
+        "started_at_utc": "2026-05-03T02:26:39Z"
+      },
+      {
+        "status": "completed",
+        "conclusion": "success",
+        "name": "[auto-status] regen runtime+network surfaces from 38ad920 [vercel skip]",
+        "event": "push",
+        "run_id": "25267718161",
+        "started_at_utc": "2026-05-03T02:26:35Z"
+      }
+    ],
+    "notes": "Actions are active, but raw URL verification currently fails for every required target."
+  },
+  "direct_live_write_check": {
+    "used_by_this_task": false,
+    "manual_sync_run_by_this_task": false,
+    "uniton_shared_live_local_clone_inspected_read_only": true,
+    "uniton_shared_live_local_clone_state": "dirty_pre_existing",
+    "evidence": "All six public raw targets are 404; this task performed no Live edits and no manual sync."
+  },
+  "validation": {
+    "raw_url_fetch": "FAIL_ALL_TARGETS_HTTP_404",
+    "remote_project_state_json_parse": "FAIL_RAW_URL_404",
+    "remote_lane03_runtime_state_json_parse": "FAIL_RAW_URL_404",
+    "report_json_convertfromjson": "PASS",
+    "git_status_command": "PASS_WITH_DIRTY_WORKTREE"
+  },
+  "changed_files": [
+    "reports/LANE03-AIER-CODE-LIVE-COLD-START-HOME-SYNC-VERIFY-V1_REPORT.md",
+    "reports/LANE03-AIER-CODE-LIVE-COLD-START-HOME-SYNC-VERIFY-V1.json"
+  ],
+  "risks": [
+    "Sync cannot be verified until the scoped implementation files are committed and pushed.",
+    "Existing GitHub Actions activity may complete without publishing these files if it is running from a commit that lacks the cold-start sync implementation.",
+    "Local Uniton_Shared_Live is dirty and must remain read-only for this task.",
+    "Remote main has advanced beyond local HEAD, so future commit/push work should reconcile carefully."
+  ],
+  "next_safe_action": "Commit and push only the approved scoped cold-start sync implementation and its required source files from Uniton_Shared, then rerun this verification task after the sync workflow completes."
+}
