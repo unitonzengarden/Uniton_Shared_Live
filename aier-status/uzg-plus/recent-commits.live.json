@@ -1,9 +1,30 @@
 {
   "project_slug": "uzg-plus",
   "github_repo": "unitonzengarden/uzgplus-app",
-  "polled_at": "2026-05-04T13:09:45.403Z",
+  "polled_at": "2026-05-04T15:25:05.443Z",
   "count": 30,
   "commits": [
+    {
+      "sha": "249660d64d364341141a8fab5c986a87a2bd15e8",
+      "message": "chore(lane02/u-reward-v6): P1 close-out deliverables — Phase 7 dứt điểm",
+      "author": "unitonzengarden",
+      "committed_at": "2026-05-04T15:22:11Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/249660d64d364341141a8fab5c986a87a2bd15e8"
+    },
+    {
+      "sha": "588e434443b334fbea12a331cd38ceba286aa8cb",
+      "message": "fix(LANE01): Sprint 8.13 V3 ENTA wire real data from useEnta + 3 sub-tab hooks [vercel skip] (#206)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-04T15:21:04Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/588e434443b334fbea12a331cd38ceba286aa8cb"
+    },
+    {
+      "sha": "7328cc78b11f2b5975aec12ea5ec369c8ef537b9",
+      "message": "fix(lane02/uzg/u-reward-v6): V6 P1 polish — Phase 7 dứt điểm (#205)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-04T15:11:08Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/7328cc78b11f2b5975aec12ea5ec369c8ef537b9"
+    },
     {
       "sha": "6566ee800825b72633bc51723b3979948277c84d",
       "message": "chore(lane01): Sprint 8.12 V3 mockup #5 compliance - post-merge evidence [vercel skip] (#204)",
@@ -192,27 +213,6 @@
       "author": "Uniton Zen",
       "committed_at": "2026-05-04T04:17:48Z",
       "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/896e935a76493299a0615c6e76f11aa2d5eee0df"
-    },
-    {
-      "sha": "1001aed5c609b0f0c0efb83f84fe4cbec30f8619",
-      "message": "fix(LANE01): Sprint 8.3 ENTA RPC coalesce - single Worker /api/v1/enta/dashboard - F2 closure [vercel skip] (#183)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-05-04T04:05:34Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/1001aed5c609b0f0c0efb83f84fe4cbec30f8619"
-    },
-    {
-      "sha": "dc37bdffe6552385fb1145fa23b0bf8d183de05b",
-      "message": "chore(lane02): U-Reward Campaign RPC refactor V1 — visual evidence + deliverables",
-      "author": "unitonzengarden",
-      "committed_at": "2026-05-04T04:04:00Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/dc37bdffe6552385fb1145fa23b0bf8d183de05b"
-    },
-    {
-      "sha": "34280c19a474d92641ce2b3cdf56d929c22841b0",
-      "message": "feat(lane02/uzg/u-reward): Sprint 5 Campaign RPC refactor (canon-aligned) (#182)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-05-04T03:51:55Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/34280c19a474d92641ce2b3cdf56d929c22841b0"
     }
   ]
 }
