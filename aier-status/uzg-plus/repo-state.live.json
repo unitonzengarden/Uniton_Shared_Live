@@ -1,7 +1,7 @@
 {
   "project_slug": "uzg-plus",
   "github_repo": "unitonzengarden/uzgplus-app",
-  "last_polled_at": "2026-05-03T23:03:28.727Z",
+  "last_polled_at": "2026-05-04T00:03:52.292Z",
   "poll_status": "OK",
   "poll_token_source": "env:GH_TOKEN",
   "default_branch": "main",
