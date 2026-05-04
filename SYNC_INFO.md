@@ -1,9 +1,9 @@
 # Uniton_Shared_Live — Sync Info
 
 **Source repo**: unitonzengarden/Uniton_Shared (private)
-**Last sync**: 2026-05-04T18:57:23Z
-**Source commit**: 0f0543139727f014c006ce1d9733c03e0bd8b8fb
-**Triggered by**: push
+**Last sync**: 2026-05-04T18:59:20Z
+**Source commit**: 481163c78db6b879650aeadbc7162fadf62dda4d
+**Triggered by**: workflow_run
 
 ## Purpose
 
