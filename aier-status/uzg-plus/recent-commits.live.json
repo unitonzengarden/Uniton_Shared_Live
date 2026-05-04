@@ -1,9 +1,44 @@
 {
   "project_slug": "uzg-plus",
   "github_repo": "unitonzengarden/uzgplus-app",
-  "polled_at": "2026-05-04T09:36:52.841Z",
+  "polled_at": "2026-05-04T11:27:03.804Z",
   "count": 30,
   "commits": [
+    {
+      "sha": "6566ee800825b72633bc51723b3979948277c84d",
+      "message": "chore(lane01): Sprint 8.12 V3 mockup #5 compliance - post-merge evidence [vercel skip] (#204)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-04T11:17:44Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/6566ee800825b72633bc51723b3979948277c84d"
+    },
+    {
+      "sha": "4e4e493958998ebb28deb2c3012db411db96f718",
+      "message": "fix(LANE01): Sprint 8.12 V3 mockup #5 compliance Pentagon Wheel + 4 sub-tabs demo data [vercel skip] (#203)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-04T11:11:30Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/4e4e493958998ebb28deb2c3012db411db96f718"
+    },
+    {
+      "sha": "30c0d19811c2ef512c84c5a7a313a7b3bf5f77e0",
+      "message": "chore(lane01): Sprint 8.11 /enta 3-tabs - post-merge evidence + Test 4 refinement [vercel skip] (#202)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-04T09:55:56Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/30c0d19811c2ef512c84c5a7a313a7b3bf5f77e0"
+    },
+    {
+      "sha": "2628256386145078c88f4d5729fa8b38a8f7d709",
+      "message": "fix(LANE01): Sprint 8.11 BUILD /enta 3-tabs unified ID Uniton (Profile/ENTA/Social) [vercel skip] (#201)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-04T09:48:01Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/2628256386145078c88f4d5729fa8b38a8f7d709"
+    },
+    {
+      "sha": "ffe8fbad17cd20b7f40c3aeed3c3ff7e7c98b09c",
+      "message": "chore(lane02/u-reward-v6): P0 close-out deliverables — report+snapshot+log+checkpoint+5 PNG (Lane_03 pattern)",
+      "author": "unitonzengarden",
+      "committed_at": "2026-05-04T09:41:23Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/ffe8fbad17cd20b7f40c3aeed3c3ff7e7c98b09c"
+    },
     {
       "sha": "90beb43b03b250099f4a16df7647a51b340aae90",
       "message": "feat(lane02/uzg/u-reward-v6): P0 close-out — dynamic rate + redirects + nav (T1-002 + T2-001 + T2-005) (#200)",
@@ -178,41 +213,6 @@
       "author": "Uniton Zen",
       "committed_at": "2026-05-04T03:51:55Z",
       "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/34280c19a474d92641ce2b3cdf56d929c22841b0"
-    },
-    {
-      "sha": "7d0c4d9c6810fc9943c43513c2b7270de10eae48",
-      "message": "fix(lane03): scope settings profile payload",
-      "author": "unitonzengarden",
-      "committed_at": "2026-05-04T02:27:55Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/7d0c4d9c6810fc9943c43513c2b7270de10eae48"
-    },
-    {
-      "sha": "c7df12ed918790168d3d61174f72180058733cc2",
-      "message": "chore(LANE01): Sprint 8.2.2 Playwright visual evidence (10 PNGs + contrast-evidence.txt) [vercel skip] (#181)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-05-04T02:26:49Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/c7df12ed918790168d3d61174f72180058733cc2"
-    },
-    {
-      "sha": "942314031dd5d6c63c7c34bc76143c07dc50bc17",
-      "message": "fix(LANE01): Sprint 8.2.2 root fix V3 theme light contrast - per-theme --text-* + Lane_01 V3 token cleanup + Playwright spec (#180)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-05-04T02:21:34Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/942314031dd5d6c63c7c34bc76143c07dc50bc17"
-    },
-    {
-      "sha": "a2c52f397fb0d4572a4d50d5949feebb84717b91",
-      "message": "chore(lane02): U-Reward Campaign hook fix V1 — visual evidence + PARTIAL escalation",
-      "author": "unitonzengarden",
-      "committed_at": "2026-05-04T02:19:20Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/a2c52f397fb0d4572a4d50d5949feebb84717b91"
-    },
-    {
-      "sha": "3cd6656e72fed1abf23477a4a4386cbaa075def2",
-      "message": "fix(lane02/uzg/u-reward): Campaign hook filter active -> live (P0) (#179)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-05-04T02:11:37Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/3cd6656e72fed1abf23477a4a4386cbaa075def2"
     }
   ]
 }
