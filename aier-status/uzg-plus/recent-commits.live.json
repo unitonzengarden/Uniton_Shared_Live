@@ -1,9 +1,100 @@
 {
   "project_slug": "uzg-plus",
   "github_repo": "unitonzengarden/uzgplus-app",
-  "polled_at": "2026-05-04T04:09:36.747Z",
+  "polled_at": "2026-05-04T07:24:18.201Z",
   "count": 30,
   "commits": [
+    {
+      "sha": "e3a3e1bdd83cc834810e8fdc96e6011d5cf584ef",
+      "message": "chore(lane01): Phase 8 closeout — Sprint 8.5+8.6+8.7 post-merge evidence batch [vercel skip] (#193)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-04T05:55:51Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/e3a3e1bdd83cc834810e8fdc96e6011d5cf584ef"
+    },
+    {
+      "sha": "8146430c4f9cb1527f09428458814f4f5ad144ad",
+      "message": "audit(LANE01): Sprint 8.7 ENTA V3 acceptance audit - Phase 8 CLOSEOUT [vercel skip] (#192)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-04T05:51:37Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/8146430c4f9cb1527f09428458814f4f5ad144ad"
+    },
+    {
+      "sha": "470eb2c251a3e7fc99eb5400cc42cfee81c84ade",
+      "message": "fix(LANE01): Sprint 8.6 V3 build retire - single-UI canon §1.1 enforcement [vercel skip] (#191)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-04T05:44:05Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/470eb2c251a3e7fc99eb5400cc42cfee81c84ade"
+    },
+    {
+      "sha": "0657f40b0b256a541f3cf81f6c1fbe23507da94a",
+      "message": "fix(LANE01): Sprint 8.5 ENTA legacy /profile retire - F4 redirect layer closed [vercel skip] (#190)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-04T05:36:28Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/0657f40b0b256a541f3cf81f6c1fbe23507da94a"
+    },
+    {
+      "sha": "b5b070a3fcfdfcd6ba9f234c0cb0c30ef4dc0c0e",
+      "message": "chore(lane02): U-Reward V5 mobile-only canon + Wallet polish — visual evidence + deliverables",
+      "author": "unitonzengarden",
+      "committed_at": "2026-05-04T05:21:50Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/b5b070a3fcfdfcd6ba9f234c0cb0c30ef4dc0c0e"
+    },
+    {
+      "sha": "502ab1083a00367ac42ebec0cf955f882fcc8827",
+      "message": "chore(lane01): Sprint 8.4 ENTA preload+chunk post-merge evidence + INDEX update (#189)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-04T05:16:34Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/502ab1083a00367ac42ebec0cf955f882fcc8827"
+    },
+    {
+      "sha": "50ebc3237adc04709387cc9fc1399053852e43fc",
+      "message": "fix(lane02/uzg/u-reward): V5 mobile-only canon + Wallet pill V4 dark polish (#188)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-04T05:15:47Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/50ebc3237adc04709387cc9fc1399053852e43fc"
+    },
+    {
+      "sha": "5c63ab8e1c45441b4eda251be11e689c32da08c2",
+      "message": "fix(LANE01): Sprint 8.4 ENTA preload+chunk vendor-only - F3 partial closure [vercel skip] (#187)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-04T05:10:36Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/5c63ab8e1c45441b4eda251be11e689c32da08c2"
+    },
+    {
+      "sha": "c5b3f92a84b24923c439d391eecdc9df26c3fe9f",
+      "message": "chore(lane02): U-Reward V4 Telegram dark mini-app — visual evidence + deliverables",
+      "author": "unitonzengarden",
+      "committed_at": "2026-05-04T04:58:38Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/c5b3f92a84b24923c439d391eecdc9df26c3fe9f"
+    },
+    {
+      "sha": "b05ffd4040dff4e795d5ce1ece204e5bddea669f",
+      "message": "feat(lane02/uzg/u-reward): V4 Telegram-style dark mini-app redesign (#186)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-04T04:48:49Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/b05ffd4040dff4e795d5ce1ece204e5bddea669f"
+    },
+    {
+      "sha": "ed95947e7c86e8125241c7020f31f0263f52a3ce",
+      "message": "fix(lane03): decouple home feed refresh",
+      "author": "unitonzengarden",
+      "committed_at": "2026-05-04T04:42:17Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/ed95947e7c86e8125241c7020f31f0263f52a3ce"
+    },
+    {
+      "sha": "46c17e68eef34bf2bbe4c8e5c0b600f116da4bea",
+      "message": "[Lane_01] Sprint 8.3 RPC coalesce post-merge evidence + INDEX update (#185)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-04T04:24:56Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/46c17e68eef34bf2bbe4c8e5c0b600f116da4bea"
+    },
+    {
+      "sha": "896e935a76493299a0615c6e76f11aa2d5eee0df",
+      "message": "fix(LANE01): Sprint 8.3 ENTA RPC coalesce - apply edits to canonical apps/uzg-pwa/public/_worker.js [vercel skip] (#184)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-04T04:17:48Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/896e935a76493299a0615c6e76f11aa2d5eee0df"
+    },
     {
       "sha": "1001aed5c609b0f0c0efb83f84fe4cbec30f8619",
       "message": "fix(LANE01): Sprint 8.3 ENTA RPC coalesce - single Worker /api/v1/enta/dashboard - F2 closure [vercel skip] (#183)",
@@ -122,97 +213,6 @@
       "author": "Uniton Zen",
       "committed_at": "2026-05-03T18:58:41Z",
       "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/2bb36c1c55c99cbfd9bd60e30e80762cc2cc72af"
-    },
-    {
-      "sha": "13d7881cb30c6b77c87d1fd11f2051354d2ea252",
-      "message": "chore(LANE01): Sprint 8.2 V3 cutover resume note - server upgrade interrupt 2026-05-04 [vercel skip] (#174)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-05-03T18:52:15Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/13d7881cb30c6b77c87d1fd11f2051354d2ea252"
-    },
-    {
-      "sha": "74856ea35e98ebed064496a682fe70851cb62e5c",
-      "message": "fix(LANE01): Sprint 8.2 ENTA V3 cutover - wire EntaShellV3 + onboarding 4+5 + public profile canon 6 (#173)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-05-03T18:48:38Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/74856ea35e98ebed064496a682fe70851cb62e5c"
-    },
-    {
-      "sha": "38e0eb807f1be33ea973bab22f7cf7d143c83373",
-      "message": "chore(lane02): add U-Reward seed SQL run audit, report, snapshot",
-      "author": "unitonzengarden",
-      "committed_at": "2026-05-03T18:47:35Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/38e0eb807f1be33ea973bab22f7cf7d143c83373"
-    },
-    {
-      "sha": "b2149d6ce3f9addf4a0b1193c5f9fbc7459dabcd",
-      "message": "chore(lane02): U-Reward V3 Sprint 2 IMPL V2 deliverables (Lane_03 pattern)",
-      "author": "unitonzengarden",
-      "committed_at": "2026-05-03T18:23:11Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/b2149d6ce3f9addf4a0b1193c5f9fbc7459dabcd"
-    },
-    {
-      "sha": "7f6bd2f956b9122ff465e610e978b98319340640",
-      "message": "feat(lane02/uzg/u-reward): Sprint 2 IMPL V2 — Quiz fix + Telegram polish + content seed + Wallet pill (#172)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-05-03T18:18:11Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/7f6bd2f956b9122ff465e610e978b98319340640"
-    },
-    {
-      "sha": "6c3df4624d702306d1c0ab817e836dd54323eabe",
-      "message": "fix(lane01): remove product language bundle cycle",
-      "author": "unitonzengarden",
-      "committed_at": "2026-05-03T18:12:34Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/6c3df4624d702306d1c0ab817e836dd54323eabe"
-    },
-    {
-      "sha": "b079abe291ab9d123ef683f3f92eb42220c2388e",
-      "message": "chore(LANE01): erratum on AUDIT-ENTA-MODULE-V1 bundle weights post PR #168 revert [vercel skip] (#171)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-05-03T18:00:21Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/b079abe291ab9d123ef683f3f92eb42220c2388e"
-    },
-    {
-      "sha": "8045f049710459bf51ed5113a4cfa97083c2533c",
-      "message": "audit(LANE01): Sprint 8.1 ENTA module audit - 4 root causes + fix sequence [vercel skip] (#170)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-05-03T17:42:07Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/8045f049710459bf51ed5113a4cfa97083c2533c"
-    },
-    {
-      "sha": "da0a6f53b8ad463527d0c592b51b191e763ef779",
-      "message": "audit(lane02/dev1/u-reward): Sprint 2 audit complete (NO code changes)",
-      "author": "unitonzengarden",
-      "committed_at": "2026-05-03T17:11:14Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/da0a6f53b8ad463527d0c592b51b191e763ef779"
-    },
-    {
-      "sha": "96fed193f785cae6b99c01a34f35d75e5ecff8ed",
-      "message": "chore(lane02): HOME EMERGENCY FIX V1 deliverables + checkpoint (Lane_03 pattern)",
-      "author": "unitonzengarden",
-      "committed_at": "2026-05-03T16:50:39Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/96fed193f785cae6b99c01a34f35d75e5ecff8ed"
-    },
-    {
-      "sha": "096ac02d741ec93449a45c1f9bcee5460bd0f9a6",
-      "message": "feat(lane02/uzg/home): H2 - U pill NavLink to /app/u-reward (V3 canon) (#169)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-05-03T16:44:28Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/096ac02d741ec93449a45c1f9bcee5460bd0f9a6"
-    },
-    {
-      "sha": "b4d55d6d8e1c24355ec02a6ae2da93b1e5ac781b",
-      "message": "fix(lane02): EMERGENCY revert PR #165 manualChunks bundle split (TDZ fix) (#168)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-05-03T16:38:54Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/b4d55d6d8e1c24355ec02a6ae2da93b1e5ac781b"
-    },
-    {
-      "sha": "33b7d3d45aaf20f3d13ba8078015101043f8d8fe",
-      "message": "chore(lane02): U-Reward V3 Sprint 1 deliverables",
-      "author": "unitonzengarden",
-      "committed_at": "2026-05-03T16:12:25Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/33b7d3d45aaf20f3d13ba8078015101043f8d8fe"
     }
   ]
 }
