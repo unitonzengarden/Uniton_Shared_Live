@@ -1,9 +1,72 @@
 {
   "project_slug": "uzg-plus",
   "github_repo": "unitonzengarden/uzgplus-app",
-  "polled_at": "2026-05-04T17:11:07.893Z",
+  "polled_at": "2026-05-04T18:56:53.677Z",
   "count": 30,
   "commits": [
+    {
+      "sha": "61e6d18b2a653d0eb46b6889513f0432e55f9e2e",
+      "message": "chore(lane02/u-reward): T1-001 COMPLETE V2 deliverables — Phase 7 dứt điểm với streak LIVE",
+      "author": "unitonzengarden",
+      "committed_at": "2026-05-04T18:36:14Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/61e6d18b2a653d0eb46b6889513f0432e55f9e2e"
+    },
+    {
+      "sha": "ea8f10332d07311891dc2696502a4b973bc954ed",
+      "message": "fix(lane02/uzg/u-reward): T1-001 complete — apply V5 migration + normalizer fallback (#214)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-04T18:23:34Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/ea8f10332d07311891dc2696502a4b973bc954ed"
+    },
+    {
+      "sha": "d8f8c2d284845f54d894b8e56f89e3349b4b1911",
+      "message": "chore(lane01): Sprint 8.16 Profile tab full V2 fields - post-merge evidence [vercel skip] (#215)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-04T18:21:32Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/d8f8c2d284845f54d894b8e56f89e3349b4b1911"
+    },
+    {
+      "sha": "3c995f6946d088001f80a6fcda63bac93cab5198",
+      "message": "fix(LANE01): Sprint 8.16 Profile tab full V2 fields + ENTA birth read-only + UserMenu reorganize [vercel skip] (#213)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-04T18:07:04Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/3c995f6946d088001f80a6fcda63bac93cab5198"
+    },
+    {
+      "sha": "042fea7d4dd86e3aa8b08d1975d7a6a68859882c",
+      "message": "chore(lane02): T1-001 DB verify checkpoint.json (companion to .md)",
+      "author": "unitonzengarden",
+      "committed_at": "2026-05-04T17:37:27Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/042fea7d4dd86e3aa8b08d1975d7a6a68859882c"
+    },
+    {
+      "sha": "ecfac9fa224dfdf79e1177b8bbd812ce8b61e3b5",
+      "message": "chore(lane02): T1-001 DB verify artifacts + verify scripts [vercel skip]",
+      "author": "unitonzengarden",
+      "committed_at": "2026-05-04T17:37:08Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/ecfac9fa224dfdf79e1177b8bbd812ce8b61e3b5"
+    },
+    {
+      "sha": "f23272f22bb18129b374d2dc1b15528ce38df7fa",
+      "message": "chore(lane01): Sprint 8.15 V3 ENTA Language OS 3 locales - post-merge evidence [vercel skip] (#212)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-04T17:32:15Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/f23272f22bb18129b374d2dc1b15528ce38df7fa"
+    },
+    {
+      "sha": "7e363f3df1e1011291d323fc6f4a3f7c7889ca23",
+      "message": "chore(lane02): LANE02-UZG-TAO-TUVI-V3-REDESIGN-NAMTAO-V1 Phase 9 deliverables [vercel skip]",
+      "author": "unitonzengarden",
+      "committed_at": "2026-05-04T17:31:13Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/7e363f3df1e1011291d323fc6f4a3f7c7889ca23"
+    },
+    {
+      "sha": "6bd830488550193980c5abea538bd6909f216f89",
+      "message": "feat(tao/tuvi): V3 redesign Nam Tao + UZG+ branding [LANE02-UZG-TAO-TUVI-V3-REDESIGN-NAMTAO-V1] (#211)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-04T17:24:52Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/6bd830488550193980c5abea538bd6909f216f89"
+    },
     {
       "sha": "3b101c1fecdefb0159939391a1fd3670ac338ed5",
       "message": "fix(LANE01): Sprint 8.15 V3 ENTA Language OS wire 3 locales (en+vi+fil) [vercel skip] (#210)",
@@ -150,69 +213,6 @@
       "author": "unitonzengarden",
       "committed_at": "2026-05-04T07:51:18Z",
       "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/249e34495e6e61ce6c1c4da52f56314db433a209"
-    },
-    {
-      "sha": "45c2c28c35e2372b3f0735f867c453eedf21d3a2",
-      "message": "docs(lane02/uzg/u-reward): V6 Canon Lock — single source of truth (#195)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-05-04T07:45:44Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/45c2c28c35e2372b3f0735f867c453eedf21d3a2"
-    },
-    {
-      "sha": "4ec61c7e8fb1f473585b1f51c9adacf4ae4b0ebb",
-      "message": "audit(LANE01): Sprint 8.8 V2 backend + V3 frontend gap analysis - smoking gun found [vercel skip] (#194)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-05-04T07:44:49Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/4ec61c7e8fb1f473585b1f51c9adacf4ae4b0ebb"
-    },
-    {
-      "sha": "e3a3e1bdd83cc834810e8fdc96e6011d5cf584ef",
-      "message": "chore(lane01): Phase 8 closeout — Sprint 8.5+8.6+8.7 post-merge evidence batch [vercel skip] (#193)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-05-04T05:55:51Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/e3a3e1bdd83cc834810e8fdc96e6011d5cf584ef"
-    },
-    {
-      "sha": "8146430c4f9cb1527f09428458814f4f5ad144ad",
-      "message": "audit(LANE01): Sprint 8.7 ENTA V3 acceptance audit - Phase 8 CLOSEOUT [vercel skip] (#192)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-05-04T05:51:37Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/8146430c4f9cb1527f09428458814f4f5ad144ad"
-    },
-    {
-      "sha": "470eb2c251a3e7fc99eb5400cc42cfee81c84ade",
-      "message": "fix(LANE01): Sprint 8.6 V3 build retire - single-UI canon §1.1 enforcement [vercel skip] (#191)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-05-04T05:44:05Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/470eb2c251a3e7fc99eb5400cc42cfee81c84ade"
-    },
-    {
-      "sha": "0657f40b0b256a541f3cf81f6c1fbe23507da94a",
-      "message": "fix(LANE01): Sprint 8.5 ENTA legacy /profile retire - F4 redirect layer closed [vercel skip] (#190)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-05-04T05:36:28Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/0657f40b0b256a541f3cf81f6c1fbe23507da94a"
-    },
-    {
-      "sha": "b5b070a3fcfdfcd6ba9f234c0cb0c30ef4dc0c0e",
-      "message": "chore(lane02): U-Reward V5 mobile-only canon + Wallet polish — visual evidence + deliverables",
-      "author": "unitonzengarden",
-      "committed_at": "2026-05-04T05:21:50Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/b5b070a3fcfdfcd6ba9f234c0cb0c30ef4dc0c0e"
-    },
-    {
-      "sha": "502ab1083a00367ac42ebec0cf955f882fcc8827",
-      "message": "chore(lane01): Sprint 8.4 ENTA preload+chunk post-merge evidence + INDEX update (#189)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-05-04T05:16:34Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/502ab1083a00367ac42ebec0cf955f882fcc8827"
-    },
-    {
-      "sha": "50ebc3237adc04709387cc9fc1399053852e43fc",
-      "message": "fix(lane02/uzg/u-reward): V5 mobile-only canon + Wallet pill V4 dark polish (#188)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-05-04T05:15:47Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/50ebc3237adc04709387cc9fc1399053852e43fc"
     }
   ]
 }
