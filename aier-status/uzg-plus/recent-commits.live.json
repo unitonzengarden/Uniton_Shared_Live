@@ -1,9 +1,72 @@
 {
   "project_slug": "uzg-plus",
   "github_repo": "unitonzengarden/uzgplus-app",
-  "polled_at": "2026-05-04T07:24:18.201Z",
+  "polled_at": "2026-05-04T09:36:52.841Z",
   "count": 30,
   "commits": [
+    {
+      "sha": "90beb43b03b250099f4a16df7647a51b340aae90",
+      "message": "feat(lane02/uzg/u-reward-v6): P0 close-out — dynamic rate + redirects + nav (T1-002 + T2-001 + T2-005) (#200)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-04T09:31:19Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/90beb43b03b250099f4a16df7647a51b340aae90"
+    },
+    {
+      "sha": "8f0f76d67d735a080bad1fa7fadb21aade2ef8f4",
+      "message": "chore(lane01): Sprint 8.10 V3 useEnta V2 EXACT mirror - post-merge evidence [vercel skip] (#199)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-04T08:37:55Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/8f0f76d67d735a080bad1fa7fadb21aade2ef8f4"
+    },
+    {
+      "sha": "8b666babca3607ea4be7ebcd0f16de5123f6ff43",
+      "message": "fix(LANE01): Sprint 8.10 V3 useEnta match V2 EXACT binary heuristic - all production user shapes [vercel skip] (#198)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-04T08:32:59Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/8b666babca3607ea4be7ebcd0f16de5123f6ff43"
+    },
+    {
+      "sha": "fc53fc90c64ae28e7cc36fd89d09607ee3cfa874",
+      "message": "chore(lane02/uzg/u-reward): V6 Compliance Audit V1 — gap analysis (audit-only)",
+      "author": "unitonzengarden",
+      "committed_at": "2026-05-04T08:16:34Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/fc53fc90c64ae28e7cc36fd89d09607ee3cfa874"
+    },
+    {
+      "sha": "3eeec4d49bd48f3e6c45c0209ebfdd6763c18cd2",
+      "message": "chore(lane01): Sprint 8.9 V3 onboarded semantics fix - post-merge evidence [vercel skip] (#197)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-04T08:06:18Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/3eeec4d49bd48f3e6c45c0209ebfdd6763c18cd2"
+    },
+    {
+      "sha": "76849454ec89a3883fb576825ca1d4e304d9ffaf",
+      "message": "fix(LANE01): Sprint 8.9 V3 useEnta gate INCOMPLETE on profile_status not currentFields - V2 backward compat [vercel skip] (#196)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-04T08:00:51Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/76849454ec89a3883fb576825ca1d4e304d9ffaf"
+    },
+    {
+      "sha": "249e34495e6e61ce6c1c4da52f56314db433a209",
+      "message": "chore(lane02): U-Reward V6 Canon Lock deliverables",
+      "author": "unitonzengarden",
+      "committed_at": "2026-05-04T07:51:18Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/249e34495e6e61ce6c1c4da52f56314db433a209"
+    },
+    {
+      "sha": "45c2c28c35e2372b3f0735f867c453eedf21d3a2",
+      "message": "docs(lane02/uzg/u-reward): V6 Canon Lock — single source of truth (#195)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-04T07:45:44Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/45c2c28c35e2372b3f0735f867c453eedf21d3a2"
+    },
+    {
+      "sha": "4ec61c7e8fb1f473585b1f51c9adacf4ae4b0ebb",
+      "message": "audit(LANE01): Sprint 8.8 V2 backend + V3 frontend gap analysis - smoking gun found [vercel skip] (#194)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-04T07:44:49Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/4ec61c7e8fb1f473585b1f51c9adacf4ae4b0ebb"
+    },
     {
       "sha": "e3a3e1bdd83cc834810e8fdc96e6011d5cf584ef",
       "message": "chore(lane01): Phase 8 closeout — Sprint 8.5+8.6+8.7 post-merge evidence batch [vercel skip] (#193)",
@@ -150,69 +213,6 @@
       "author": "Uniton Zen",
       "committed_at": "2026-05-04T02:11:37Z",
       "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/3cd6656e72fed1abf23477a4a4386cbaa075def2"
-    },
-    {
-      "sha": "fd9b374c46152f886da39218c26f8ed09420ac0c",
-      "message": "chore(lane02): commit checkpoints + governance fix",
-      "author": "unitonzengarden",
-      "committed_at": "2026-05-04T01:45:23Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/fd9b374c46152f886da39218c26f8ed09420ac0c"
-    },
-    {
-      "sha": "4bd5d3864694104f5fc723f07324b6955b7d5fbb",
-      "message": "chore(LANE01): Sprint 8.2.1 P0 production probe evidence (post-merge curl) [vercel skip] (#178)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-05-03T19:29:54Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/4bd5d3864694104f5fc723f07324b6955b7d5fbb"
-    },
-    {
-      "sha": "da37caa126345f8a2f7f684d75e38b7f0f302775",
-      "message": "chore(lane02): U-Reward V3 Sprint 4 Achievements deliverables",
-      "author": "unitonzengarden",
-      "committed_at": "2026-05-03T19:27:22Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/da37caa126345f8a2f7f684d75e38b7f0f302775"
-    },
-    {
-      "sha": "1483835b63148e05709346a18ce164b807ff0447",
-      "message": "fix(LANE01): Sprint 8.2.1 P0 EMERGENCY - Step 3 black screen + theme contrast (white-on-light) (#177)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-05-03T19:24:38Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/1483835b63148e05709346a18ce164b807ff0447"
-    },
-    {
-      "sha": "7623653802de006b22df6058141619b28f9cd87f",
-      "message": "feat(lane02/uzg/u-reward): Sprint 4 achievements + streak milestone overlays (#176)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-05-03T19:21:06Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/7623653802de006b22df6058141619b28f9cd87f"
-    },
-    {
-      "sha": "df9f53d538e17a8e70029d3addbc0e88f3ad94b9",
-      "message": "fix(lane03): preserve profile identity on partial update",
-      "author": "unitonzengarden",
-      "committed_at": "2026-05-03T19:14:54Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/df9f53d538e17a8e70029d3addbc0e88f3ad94b9"
-    },
-    {
-      "sha": "a5c78c445e6bfd1333c0b4655fd644a2535175c8",
-      "message": "feat(u-reward): add StreakMilestoneOverlay and Sprint 4 achievements audit",
-      "author": "unitonzengarden",
-      "committed_at": "2026-05-03T19:13:57Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/a5c78c445e6bfd1333c0b4655fd644a2535175c8"
-    },
-    {
-      "sha": "dfaefff6af3288e4b525c91f6fc1c49111957e8d",
-      "message": "chore(lane02): U-Reward V3 Sprint 3 Quiz server-authoritative deliverables",
-      "author": "unitonzengarden",
-      "committed_at": "2026-05-03T19:02:47Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/dfaefff6af3288e4b525c91f6fc1c49111957e8d"
-    },
-    {
-      "sha": "2bb36c1c55c99cbfd9bd60e30e80762cc2cc72af",
-      "message": "feat(lane02/uzg/u-reward): Sprint 3 server-authoritative Quiz refactor (#175)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-05-03T18:58:41Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/2bb36c1c55c99cbfd9bd60e30e80762cc2cc72af"
     }
   ]
 }
