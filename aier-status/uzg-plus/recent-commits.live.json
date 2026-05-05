@@ -1,9 +1,44 @@
 {
   "project_slug": "uzg-plus",
   "github_repo": "unitonzengarden/uzgplus-app",
-  "polled_at": "2026-05-05T01:19:47.480Z",
+  "polled_at": "2026-05-05T04:41:53.931Z",
   "count": 30,
   "commits": [
+    {
+      "sha": "aa9fb9b9b5c44f10381de0e473fc5566cb85c730",
+      "message": "chore(lane02): Tao TuVi V3 final REPORT closeout [LANE02-DEV1-TAO-TUVI-V3-FULL-FEATURE-V1] [vercel skip]",
+      "author": "unitonzengarden",
+      "committed_at": "2026-05-05T04:16:33Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/aa9fb9b9b5c44f10381de0e473fc5566cb85c730"
+    },
+    {
+      "sha": "628500c4aabd2689c0362fdeeb8e0ea59d34fa90",
+      "message": "chore(lane02): Tao TuVi V3 QA scripts, checkpoints, snapshot [vercel skip]",
+      "author": "unitonzengarden",
+      "committed_at": "2026-05-05T04:14:59Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/628500c4aabd2689c0362fdeeb8e0ea59d34fa90"
+    },
+    {
+      "sha": "0adc0151394137df1af4951dc0e4517ba5e15c8e",
+      "message": "audit(wallet-v3): LANE02-DEV2-WALLET-V3-AUDIT-V1 deliverables",
+      "author": "unitonzengarden",
+      "committed_at": "2026-05-05T04:05:20Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/0adc0151394137df1af4951dc0e4517ba5e15c8e"
+    },
+    {
+      "sha": "3db59fe7b45849b4d2adb3ff089ffd43eb733ac5",
+      "message": "fix(tao/tuvi): extend useRealZiweiChart SELECT include version + last_edited_at [LANE02-DEV1-TAO-TUVI-V3-FULL-FEATURE-V1] [vercel skip] (#217)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-05T04:05:26Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/3db59fe7b45849b4d2adb3ff089ffd43eb733ac5"
+    },
+    {
+      "sha": "27e04f0789a85a2a78d262f01f9edaf78e29b8b1",
+      "message": "feat(tao/tuvi): V3 full feature [LANE02-DEV1-TAO-TUVI-V3-FULL-FEATURE-V1] (#216)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-05T04:02:55Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/27e04f0789a85a2a78d262f01f9edaf78e29b8b1"
+    },
     {
       "sha": "61e6d18b2a653d0eb46b6889513f0432e55f9e2e",
       "message": "chore(lane02/u-reward): T1-001 COMPLETE V2 deliverables — Phase 7 dứt điểm với streak LIVE",
@@ -178,41 +213,6 @@
       "author": "Uniton Zen",
       "committed_at": "2026-05-04T08:37:55Z",
       "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/8f0f76d67d735a080bad1fa7fadb21aade2ef8f4"
-    },
-    {
-      "sha": "8b666babca3607ea4be7ebcd0f16de5123f6ff43",
-      "message": "fix(LANE01): Sprint 8.10 V3 useEnta match V2 EXACT binary heuristic - all production user shapes [vercel skip] (#198)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-05-04T08:32:59Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/8b666babca3607ea4be7ebcd0f16de5123f6ff43"
-    },
-    {
-      "sha": "fc53fc90c64ae28e7cc36fd89d09607ee3cfa874",
-      "message": "chore(lane02/uzg/u-reward): V6 Compliance Audit V1 — gap analysis (audit-only)",
-      "author": "unitonzengarden",
-      "committed_at": "2026-05-04T08:16:34Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/fc53fc90c64ae28e7cc36fd89d09607ee3cfa874"
-    },
-    {
-      "sha": "3eeec4d49bd48f3e6c45c0209ebfdd6763c18cd2",
-      "message": "chore(lane01): Sprint 8.9 V3 onboarded semantics fix - post-merge evidence [vercel skip] (#197)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-05-04T08:06:18Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/3eeec4d49bd48f3e6c45c0209ebfdd6763c18cd2"
-    },
-    {
-      "sha": "76849454ec89a3883fb576825ca1d4e304d9ffaf",
-      "message": "fix(LANE01): Sprint 8.9 V3 useEnta gate INCOMPLETE on profile_status not currentFields - V2 backward compat [vercel skip] (#196)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-05-04T08:00:51Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/76849454ec89a3883fb576825ca1d4e304d9ffaf"
-    },
-    {
-      "sha": "249e34495e6e61ce6c1c4da52f56314db433a209",
-      "message": "chore(lane02): U-Reward V6 Canon Lock deliverables",
-      "author": "unitonzengarden",
-      "committed_at": "2026-05-04T07:51:18Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/249e34495e6e61ce6c1c4da52f56314db433a209"
     }
   ]
 }
