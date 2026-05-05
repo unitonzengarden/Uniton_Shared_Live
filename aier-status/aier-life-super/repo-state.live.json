@@ -1,7 +1,7 @@
 {
   "project_slug": "aier-life-super",
   "github_repo": "unitonzengarden/aier-life-super-app",
-  "last_polled_at": "2026-05-05T20:40:14.601Z",
+  "last_polled_at": "2026-05-05T21:42:39.288Z",
   "poll_status": "OK",
   "poll_token_source": "env:GH_TOKEN",
   "default_branch": "main",
