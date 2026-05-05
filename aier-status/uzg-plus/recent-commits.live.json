@@ -1,9 +1,37 @@
 {
   "project_slug": "uzg-plus",
   "github_repo": "unitonzengarden/uzgplus-app",
-  "polled_at": "2026-05-05T09:20:59.012Z",
+  "polled_at": "2026-05-05T11:00:49.746Z",
   "count": 30,
   "commits": [
+    {
+      "sha": "9d9a438204e15e989f6ef0d3f84dd8af37aa8b23",
+      "message": "chore(lane02): TAO TUVI design final deliverables [LANE02-DEV1-TAO-TUVI-FIX-DESIGN-FINAL-V1] [vercel skip]",
+      "author": "unitonzengarden",
+      "committed_at": "2026-05-05T10:40:18Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/9d9a438204e15e989f6ef0d3f84dd8af37aa8b23"
+    },
+    {
+      "sha": "4460a0646488b8ad84bb369486ff3522439c103c",
+      "message": "fix(tao/tuvi): final design fix — palace font sizes 60pct + chart bg solid + watermark scope [LANE02-DEV1-TAO-TUVI-FIX-DESIGN-FINAL-V1] [vercel skip] (#223)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-05T10:31:48Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/4460a0646488b8ad84bb369486ff3522439c103c"
+    },
+    {
+      "sha": "0fb50b4f02dd08670331f7f04920014b5b29ed34",
+      "message": "chore(lane02): TAO TUVI fix final resume deliverables [LANE02-DEV1-TAO-TUVI-FIX-FINAL-RESUME-V1] [vercel skip]",
+      "author": "unitonzengarden",
+      "committed_at": "2026-05-05T10:07:14Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/0fb50b4f02dd08670331f7f04920014b5b29ed34"
+    },
+    {
+      "sha": "465f38606508e67b7bb7b1e03bafcd2d15b6e60b",
+      "message": "chore(lane02): U-REWARD-MINIAPP-FIX-V1 deliverables + LIVE verify spec timing",
+      "author": "unitonzengarden",
+      "committed_at": "2026-05-05T09:21:23Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/465f38606508e67b7bb7b1e03bafcd2d15b6e60b"
+    },
     {
       "sha": "444cd5969cb05c339258522d738082f00d5b944e",
       "message": "fix(lane02/u-reward): mini-app /app/u-reward blank screen P0 (#222)",
@@ -185,34 +213,6 @@
       "author": "unitonzengarden",
       "committed_at": "2026-05-04T17:05:56Z",
       "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/2d67f0419f001ed766be48b11b56b1d981d954ed"
-    },
-    {
-      "sha": "591f73209259939c39289743151c9aea19edea71",
-      "message": "fix(lane02/uzg/u-reward): T1-001 streak server-published via V5 reuse (#209)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-05-04T16:56:08Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/591f73209259939c39289743151c9aea19edea71"
-    },
-    {
-      "sha": "a38d7b1bafee0f93d6ebba15ab62af7c8aa05a0a",
-      "message": "audit(LANE01): Sprint 8.14a ENTA sub-tab hooks root cause investigation [vercel skip] [audit-only] (#208)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-05-04T16:02:16Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/a38d7b1bafee0f93d6ebba15ab62af7c8aa05a0a"
-    },
-    {
-      "sha": "7dcc50b6c0ed532160052b69a30b14dabfba4b6d",
-      "message": "audit(lane02/u-reward/t1-001): streak backend audit V1 — REUSE existing V5 daily_checkin recommended (NO code changes)",
-      "author": "unitonzengarden",
-      "committed_at": "2026-05-04T15:58:37Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/7dcc50b6c0ed532160052b69a30b14dabfba4b6d"
-    },
-    {
-      "sha": "a1f8d59c4fb65c000bea3aed5edfc47ae0c6af4e",
-      "message": "chore(lane01): Sprint 8.13 V3 ENTA real data wiring - post-merge evidence [vercel skip] (#207)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-05-04T15:27:13Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/a1f8d59c4fb65c000bea3aed5edfc47ae0c6af4e"
     }
   ]
 }
