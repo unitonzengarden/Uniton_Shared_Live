@@ -1,9 +1,51 @@
 {
   "project_slug": "uzg-plus",
   "github_repo": "unitonzengarden/uzgplus-app",
-  "polled_at": "2026-05-05T04:41:53.931Z",
+  "polled_at": "2026-05-05T07:06:35.486Z",
   "count": 30,
   "commits": [
+    {
+      "sha": "c9e8f4627524d5a42b6dcc7e90b2d5debc3504d0",
+      "message": "chore(lane02): REPORT §8 fix — artifact SHAs + REPORT via main (stable raw link)",
+      "author": "unitonzengarden",
+      "committed_at": "2026-05-05T05:58:51Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/c9e8f4627524d5a42b6dcc7e90b2d5debc3504d0"
+    },
+    {
+      "sha": "e6a5ea836a8508aa3bc2f592eae560f42cd98876",
+      "message": "chore(lane02): fix REPORT §8 raw URLs pinned to deliverables SHA 202b47ab",
+      "author": "unitonzengarden",
+      "committed_at": "2026-05-05T05:56:04Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/e6a5ea836a8508aa3bc2f592eae560f42cd98876"
+    },
+    {
+      "sha": "202b47ab6e2494dd82adf68d7a30c247fb94a104",
+      "message": "chore(lane02): SPRINT-1-V2 final deliverables",
+      "author": "unitonzengarden",
+      "committed_at": "2026-05-05T05:54:58Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/202b47ab6e2494dd82adf68d7a30c247fb94a104"
+    },
+    {
+      "sha": "850104e3e47f3013652c6c184ea842dd8445398c",
+      "message": "feat(lane02/wallet-v3): Sprint 1 V2 foundation pill wallet_balances routing",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-05T05:46:14Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/850104e3e47f3013652c6c184ea842dd8445398c"
+    },
+    {
+      "sha": "4b97d1c7e0aff6fcca01caeeadcfe20a5e0f3fc7",
+      "message": "audit(lane02): TAO TUVI full-stack diagnostic [LANE02-DEV1-TAO-TUVI-AUDIT-FULL-V1] [vercel skip]",
+      "author": "unitonzengarden",
+      "committed_at": "2026-05-05T05:35:20Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/4b97d1c7e0aff6fcca01caeeadcfe20a5e0f3fc7"
+    },
+    {
+      "sha": "8b83895a4240a39c53042c31700aaac9c800beb9",
+      "message": "chore(lane02): TAO TUVI V3 capture closeout [LANE02-DEV1-TAO-TUVI-V3-CAPTURE-CLOSEOUT-V1] [vercel skip]",
+      "author": "unitonzengarden",
+      "committed_at": "2026-05-05T05:01:14Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/8b83895a4240a39c53042c31700aaac9c800beb9"
+    },
     {
       "sha": "aa9fb9b9b5c44f10381de0e473fc5566cb85c730",
       "message": "chore(lane02): Tao TuVi V3 final REPORT closeout [LANE02-DEV1-TAO-TUVI-V3-FULL-FEATURE-V1] [vercel skip]",
@@ -171,48 +213,6 @@
       "author": "Uniton Zen",
       "committed_at": "2026-05-04T11:17:44Z",
       "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/6566ee800825b72633bc51723b3979948277c84d"
-    },
-    {
-      "sha": "4e4e493958998ebb28deb2c3012db411db96f718",
-      "message": "fix(LANE01): Sprint 8.12 V3 mockup #5 compliance Pentagon Wheel + 4 sub-tabs demo data [vercel skip] (#203)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-05-04T11:11:30Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/4e4e493958998ebb28deb2c3012db411db96f718"
-    },
-    {
-      "sha": "30c0d19811c2ef512c84c5a7a313a7b3bf5f77e0",
-      "message": "chore(lane01): Sprint 8.11 /enta 3-tabs - post-merge evidence + Test 4 refinement [vercel skip] (#202)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-05-04T09:55:56Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/30c0d19811c2ef512c84c5a7a313a7b3bf5f77e0"
-    },
-    {
-      "sha": "2628256386145078c88f4d5729fa8b38a8f7d709",
-      "message": "fix(LANE01): Sprint 8.11 BUILD /enta 3-tabs unified ID Uniton (Profile/ENTA/Social) [vercel skip] (#201)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-05-04T09:48:01Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/2628256386145078c88f4d5729fa8b38a8f7d709"
-    },
-    {
-      "sha": "ffe8fbad17cd20b7f40c3aeed3c3ff7e7c98b09c",
-      "message": "chore(lane02/u-reward-v6): P0 close-out deliverables — report+snapshot+log+checkpoint+5 PNG (Lane_03 pattern)",
-      "author": "unitonzengarden",
-      "committed_at": "2026-05-04T09:41:23Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/ffe8fbad17cd20b7f40c3aeed3c3ff7e7c98b09c"
-    },
-    {
-      "sha": "90beb43b03b250099f4a16df7647a51b340aae90",
-      "message": "feat(lane02/uzg/u-reward-v6): P0 close-out — dynamic rate + redirects + nav (T1-002 + T2-001 + T2-005) (#200)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-05-04T09:31:19Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/90beb43b03b250099f4a16df7647a51b340aae90"
-    },
-    {
-      "sha": "8f0f76d67d735a080bad1fa7fadb21aade2ef8f4",
-      "message": "chore(lane01): Sprint 8.10 V3 useEnta V2 EXACT mirror - post-merge evidence [vercel skip] (#199)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-05-04T08:37:55Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/8f0f76d67d735a080bad1fa7fadb21aade2ef8f4"
     }
   ]
 }
