@@ -1,9 +1,86 @@
 {
   "project_slug": "uzg-plus",
   "github_repo": "unitonzengarden/uzgplus-app",
-  "polled_at": "2026-05-05T12:13:22.216Z",
+  "polled_at": "2026-05-05T16:11:46.867Z",
   "count": 30,
   "commits": [
+    {
+      "sha": "532ee48aef50baf3ba4827023ed00126e501ada9",
+      "message": "chore(lane02): TAO LICH VAN NIEN WIRE deliverables [LANE02-DEV1-TAO-LICH-VANNIEN-WIRE-V1] [vercel skip]",
+      "author": "unitonzengarden",
+      "committed_at": "2026-05-05T15:33:59Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/532ee48aef50baf3ba4827023ed00126e501ada9"
+    },
+    {
+      "sha": "fcc29b87e92f3f9013850022effde285253047a4",
+      "message": "fix(tao/lich): render sao tot/xau objects safely [LANE02-DEV1-TAO-LICH-VANNIEN-WIRE-V1] [vercel skip] (#231)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-05T15:25:36Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/fcc29b87e92f3f9013850022effde285253047a4"
+    },
+    {
+      "sha": "62db4127614119a83c6813ad314d2bbf93a069dd",
+      "message": "feat(tao/lich): WIRE v1 - shell + 3 tabs + Layer 2 personalization via Bat Tu day master [LANE02-DEV1-TAO-LICH-VANNIEN-WIRE-V1] (#230)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-05T14:55:57Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/62db4127614119a83c6813ad314d2bbf93a069dd"
+    },
+    {
+      "sha": "a31a8ef30b50cb1252d6d61f5f8117ea76288cfd",
+      "message": "chore(lane02): TAO BAZI READINGS deliverables [LANE02-DEV1-TAO-BAZI-READINGS-V1] [vercel skip]",
+      "author": "unitonzengarden",
+      "committed_at": "2026-05-05T14:32:44Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/a31a8ef30b50cb1252d6d61f5f8117ea76288cfd"
+    },
+    {
+      "sha": "1bf29e42a9d1632e0854159fbba317a0d8c53d03",
+      "message": "fix(tao/bazi): defensive RPC patch + chart_id in metadata [LANE02-DEV1-TAO-BAZI-READINGS-V1] [vercel skip] (#229)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-05T14:29:57Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/1bf29e42a9d1632e0854159fbba317a0d8c53d03"
+    },
+    {
+      "sha": "f18cb830c0e0e5acf06477de09328b15d49b8fb9",
+      "message": "fix(tao/bazi): widen bazi_audit_log event_type CHECK [LANE02-DEV1-TAO-BAZI-READINGS-V1] [vercel skip] (#228)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-05T14:20:05Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/f18cb830c0e0e5acf06477de09328b15d49b8fb9"
+    },
+    {
+      "sha": "2d9bedc606f7a9e1bf1dc6d27666c05ced7e5c9a",
+      "message": "feat(tao/bazi): READINGS v1 - bazi_readings table + module + library panel + edit RPC + 6th tab [LANE02-DEV1-TAO-BAZI-READINGS-V1] (#227)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-05T14:11:57Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/2d9bedc606f7a9e1bf1dc6d27666c05ced7e5c9a"
+    },
+    {
+      "sha": "a85171356b51c83fdbdd31fa94b1315f13a10d4b",
+      "message": "chore(lane02): TAO BAZI CORE deliverables [LANE02-DEV1-TAO-BAZI-CORE-V1] [vercel skip]",
+      "author": "unitonzengarden",
+      "committed_at": "2026-05-05T13:28:06Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/a85171356b51c83fdbdd31fa94b1315f13a10d4b"
+    },
+    {
+      "sha": "02fec2ebed41cf1494749cbbcf64f5486bc7c60c",
+      "message": "fix(tao/bazi): strip ?demo=1 for authed viewers in CORE shell [LANE02-DEV1-TAO-BAZI-CORE-V1] [vercel skip] (#226)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-05T13:21:27Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/02fec2ebed41cf1494749cbbcf64f5486bc7c60c"
+    },
+    {
+      "sha": "d8216bd72b289bdb934bedd55469bf6adcd343fb",
+      "message": "feat(tao/bazi): CORE shell + auto-bootstrap + library + schema migration [LANE02-DEV1-TAO-BAZI-CORE-V1] (#225)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-05T13:15:22Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/d8216bd72b289bdb934bedd55469bf6adcd343fb"
+    },
+    {
+      "sha": "cc7ca5eaabbe27166648e1356cf8ee5d872992a8",
+      "message": "audit(lane02): TAO ENTA dataflow audit - Tu Vi reference + Bat Tu/Vannien gaps [LANE02-DEV1-TAO-ENTA-DATAFLOW-AUDIT-V1] [vercel skip]",
+      "author": "unitonzengarden",
+      "committed_at": "2026-05-05T12:47:24Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/cc7ca5eaabbe27166648e1356cf8ee5d872992a8"
+    },
     {
       "sha": "ffc78880db72fbee6ab991a3c43b0020bea66add",
       "message": "chore(lane02): TAO BAZI wire deliverables [LANE02-DEV1-TAO-BAZI-WIRE-V1] [vercel skip]",
@@ -136,83 +213,6 @@
       "author": "unitonzengarden",
       "committed_at": "2026-05-05T04:14:59Z",
       "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/628500c4aabd2689c0362fdeeb8e0ea59d34fa90"
-    },
-    {
-      "sha": "0adc0151394137df1af4951dc0e4517ba5e15c8e",
-      "message": "audit(wallet-v3): LANE02-DEV2-WALLET-V3-AUDIT-V1 deliverables",
-      "author": "unitonzengarden",
-      "committed_at": "2026-05-05T04:05:20Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/0adc0151394137df1af4951dc0e4517ba5e15c8e"
-    },
-    {
-      "sha": "3db59fe7b45849b4d2adb3ff089ffd43eb733ac5",
-      "message": "fix(tao/tuvi): extend useRealZiweiChart SELECT include version + last_edited_at [LANE02-DEV1-TAO-TUVI-V3-FULL-FEATURE-V1] [vercel skip] (#217)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-05-05T04:05:26Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/3db59fe7b45849b4d2adb3ff089ffd43eb733ac5"
-    },
-    {
-      "sha": "27e04f0789a85a2a78d262f01f9edaf78e29b8b1",
-      "message": "feat(tao/tuvi): V3 full feature [LANE02-DEV1-TAO-TUVI-V3-FULL-FEATURE-V1] (#216)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-05-05T04:02:55Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/27e04f0789a85a2a78d262f01f9edaf78e29b8b1"
-    },
-    {
-      "sha": "61e6d18b2a653d0eb46b6889513f0432e55f9e2e",
-      "message": "chore(lane02/u-reward): T1-001 COMPLETE V2 deliverables — Phase 7 dứt điểm với streak LIVE",
-      "author": "unitonzengarden",
-      "committed_at": "2026-05-04T18:36:14Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/61e6d18b2a653d0eb46b6889513f0432e55f9e2e"
-    },
-    {
-      "sha": "ea8f10332d07311891dc2696502a4b973bc954ed",
-      "message": "fix(lane02/uzg/u-reward): T1-001 complete — apply V5 migration + normalizer fallback (#214)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-05-04T18:23:34Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/ea8f10332d07311891dc2696502a4b973bc954ed"
-    },
-    {
-      "sha": "d8f8c2d284845f54d894b8e56f89e3349b4b1911",
-      "message": "chore(lane01): Sprint 8.16 Profile tab full V2 fields - post-merge evidence [vercel skip] (#215)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-05-04T18:21:32Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/d8f8c2d284845f54d894b8e56f89e3349b4b1911"
-    },
-    {
-      "sha": "3c995f6946d088001f80a6fcda63bac93cab5198",
-      "message": "fix(LANE01): Sprint 8.16 Profile tab full V2 fields + ENTA birth read-only + UserMenu reorganize [vercel skip] (#213)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-05-04T18:07:04Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/3c995f6946d088001f80a6fcda63bac93cab5198"
-    },
-    {
-      "sha": "042fea7d4dd86e3aa8b08d1975d7a6a68859882c",
-      "message": "chore(lane02): T1-001 DB verify checkpoint.json (companion to .md)",
-      "author": "unitonzengarden",
-      "committed_at": "2026-05-04T17:37:27Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/042fea7d4dd86e3aa8b08d1975d7a6a68859882c"
-    },
-    {
-      "sha": "ecfac9fa224dfdf79e1177b8bbd812ce8b61e3b5",
-      "message": "chore(lane02): T1-001 DB verify artifacts + verify scripts [vercel skip]",
-      "author": "unitonzengarden",
-      "committed_at": "2026-05-04T17:37:08Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/ecfac9fa224dfdf79e1177b8bbd812ce8b61e3b5"
-    },
-    {
-      "sha": "f23272f22bb18129b374d2dc1b15528ce38df7fa",
-      "message": "chore(lane01): Sprint 8.15 V3 ENTA Language OS 3 locales - post-merge evidence [vercel skip] (#212)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-05-04T17:32:15Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/f23272f22bb18129b374d2dc1b15528ce38df7fa"
-    },
-    {
-      "sha": "7e363f3df1e1011291d323fc6f4a3f7c7889ca23",
-      "message": "chore(lane02): LANE02-UZG-TAO-TUVI-V3-REDESIGN-NAMTAO-V1 Phase 9 deliverables [vercel skip]",
-      "author": "unitonzengarden",
-      "committed_at": "2026-05-04T17:31:13Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/7e363f3df1e1011291d323fc6f4a3f7c7889ca23"
     }
   ]
 }
