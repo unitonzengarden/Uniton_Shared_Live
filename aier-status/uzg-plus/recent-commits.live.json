@@ -1,9 +1,30 @@
 {
   "project_slug": "uzg-plus",
   "github_repo": "unitonzengarden/uzgplus-app",
-  "polled_at": "2026-05-05T11:00:49.746Z",
+  "polled_at": "2026-05-05T12:13:22.216Z",
   "count": 30,
   "commits": [
+    {
+      "sha": "ffc78880db72fbee6ab991a3c43b0020bea66add",
+      "message": "chore(lane02): TAO BAZI wire deliverables [LANE02-DEV1-TAO-BAZI-WIRE-V1] [vercel skip]",
+      "author": "unitonzengarden",
+      "committed_at": "2026-05-05T11:51:50Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/ffc78880db72fbee6ab991a3c43b0020bea66add"
+    },
+    {
+      "sha": "87e0e3bb113617e0f7e263eb857821e7a0558175",
+      "message": "feat(tao/bazi): wire /app/tao/bazi mini-app shell [LANE02-DEV1-TAO-BAZI-WIRE-V1] (#224)",
+      "author": "Uniton Zen",
+      "committed_at": "2026-05-05T11:46:23Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/87e0e3bb113617e0f7e263eb857821e7a0558175"
+    },
+    {
+      "sha": "2116a2835a0a592e9320cab1df2c77331b7d5d54",
+      "message": "audit(lane02): TAO module audit - 5 modules + AIER backend [LANE02-DEV1-TAO-MODULE-AUDIT-V1] [vercel skip]",
+      "author": "unitonzengarden",
+      "committed_at": "2026-05-05T11:23:32Z",
+      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/2116a2835a0a592e9320cab1df2c77331b7d5d54"
+    },
     {
       "sha": "9d9a438204e15e989f6ef0d3f84dd8af37aa8b23",
       "message": "chore(lane02): TAO TUVI design final deliverables [LANE02-DEV1-TAO-TUVI-FIX-DESIGN-FINAL-V1] [vercel skip]",
@@ -192,27 +213,6 @@
       "author": "unitonzengarden",
       "committed_at": "2026-05-04T17:31:13Z",
       "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/7e363f3df1e1011291d323fc6f4a3f7c7889ca23"
-    },
-    {
-      "sha": "6bd830488550193980c5abea538bd6909f216f89",
-      "message": "feat(tao/tuvi): V3 redesign Nam Tao + UZG+ branding [LANE02-UZG-TAO-TUVI-V3-REDESIGN-NAMTAO-V1] (#211)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-05-04T17:24:52Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/6bd830488550193980c5abea538bd6909f216f89"
-    },
-    {
-      "sha": "3b101c1fecdefb0159939391a1fd3670ac338ed5",
-      "message": "fix(LANE01): Sprint 8.15 V3 ENTA Language OS wire 3 locales (en+vi+fil) [vercel skip] (#210)",
-      "author": "Uniton Zen",
-      "committed_at": "2026-05-04T17:07:08Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/3b101c1fecdefb0159939391a1fd3670ac338ed5"
-    },
-    {
-      "sha": "2d67f0419f001ed766be48b11b56b1d981d954ed",
-      "message": "chore(lane02/u-reward): T1-001 streak fix deliverables — U-Reward dứt điểm",
-      "author": "unitonzengarden",
-      "committed_at": "2026-05-04T17:05:56Z",
-      "html_url": "https://github.com/unitonzengarden/uzgplus-app/commit/2d67f0419f001ed766be48b11b56b1d981d954ed"
     }
   ]
 }
